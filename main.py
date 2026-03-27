@@ -1,4 +1,49 @@
-# main.py
+# main.py 42v2
+# part 1 configure 
+# part 2.2 plot CO2 Mauna Loa
+# part 2.3 plot23_Glen_CO2 
+# part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
+#
+# part 3.4 plot34_CO2_emission summed
+#
+# part 4 EEI CERES data
+# part41_ceres_eei = 3 # print EEI 12 month running mean. Info in line 3 below the plot
+# part42_ceres_eei = 4 # print EEI 48 month running mean. Info in line 4 below the plot
+# part44_ceres_eei = 77 #  print EEI 77 month running mean. Info in line 5 below the plot
+#
+# part 5.2 plot52_delta_CO2_red_bars
+# part 5.3 plot53_CO2_orange2025
+# part 5.4 plot54_Glen_delta_on
+# part 5.5 plot55_population_on human earth population 
+#
+# part 71 plot quadratic temperature with right y axis
+# part 72 plot temperature ECS = 8°C with right y axis
+# part 73 plot temperature ECS = 4.5°C with right y axis
+# part 74 plot Hansen GIS temperature 1880 2027
+# part 75      Hansen 2015 .41°C linear fit
+# part 76  my  T 
+# part 77 deepseek.com 
+#
+# part 8 print headline, axis numbers. around figue
+# 8.2 print the headline above the plot
+# 8.3 print the left y axis 
+# 8.4 
+# 8.5 configure the right y axis legend  
+# 8.6 print the vertical lines CO2=constant
+# 8.7 print the right y axis
+# 8.8 print the x axis 
+# 8.9 print the horizontal lines year 2026
+
+# yl_mode = 2 ppm CO2 y axis left mode
+# yl_mode = 3 Gt CO2 y axis left mode
+# yl_mode = 4 EEI in W/m2 y axis left mode
+# yl_mode = 5 delta ppm CO2 y axis left mode
+# yl_mode = 7 Temperature in °C y axis left mode
+
+# part 9 print line 1 to 5 below the figure 
+
+
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
