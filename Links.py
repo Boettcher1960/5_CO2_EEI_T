@@ -2929,4 +2929,7 @@ scale_mode = 10
 Ordner 4_Python_CO2 Alt
 5_CO2_EEI_T
 
+shift cmd f   suchen 
 
+
+part44_ceres_eei = 11 makes 12 month moving average 

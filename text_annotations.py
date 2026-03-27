@@ -15,7 +15,7 @@ def add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y, tr2x):
     """Add text below the plot"""
     trs = 12
     text_below = (f"Figure from {filename} v {v}  "
-                  f"https://github.com/Boettcher1960/co2_python       Parameter {header_parameter}")
+                  f"https://github.com/Boettcher1960/5_CO2_EEI_T       Parameter {header_parameter}")
     ax1.text(-0.1, tr1y, text_below, color="black", fontname="Arial", fontsize=trs,
             transform=ax1.transAxes)
 
