@@ -1,0 +1,709 @@
+# part 1 configure 
+# part 2.2 plot CO2 Mauna Loa
+# part 2.3 plot23_Glen_CO2 = 3
+#
+# part 3.4 plot34_CO2_emission summed
+#
+# part 5.2 plot52_delta_CO2_red_bars
+# part 5.3 plot53_CO2_orange2025
+# part 5.4 plot54_Glen_delta_on
+# part 5.5 plot55_population_on human earth population 
+#
+# part 71 plot temperature with right y axis
+# part 72 plot temperature ECS = 8°C with right y axis
+# part 73 plot temperature ECS = 4.5°C with right y axis
+#
+# part 8 print headline, axis numbers. around figue
+# part 9 print line 1 to 5 below the figure 
+
+yl_mode = 2 # y axis left, mode =2 CO2 in ppm
+yl_mode = 4 # y axis left, mode =4 EEI in W/m2
+yl_mode = 7 # y axis left, mode =7 Temperature in °C
+
+
+# -----------------------------
+# 2.2 Mauna_Loa 13.3.2026
+# plot22_CO2_Mauna_Loa data
+values for part 2.2 plot22_CO2_Mauna_Loa 
+https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt
+
+( I deleted the https://gml.noaa.gov/ccgg/trends/global.html )
+( I deleted https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_clobal.txt )
+
+# -----------------------------
+# 2.3 plot23_Glen_CO2 = 0.013t² - 51t + 49,536 in dark blue 
+# https://x.com/Gergyl/status/1810632238230589564
+# -----------------------------
+# text_plot23_Glen="blue dashed @gergyl.bsky atmosphere ppm = 0.0132251t² - 51.0337t + 49,536"
+text_plot23_Glen="calculated CO2 dashed blue line ppm = 0.0132251t² - 51.0337t + 49,536"
+
+# plot25_long_CO2 = 3 # 2, 3 print -800 000 years ppm CO2 file
+# https://ourworldindata.org/grapher/co2-long-term-concentration?overlay=download-data
+# Data sources: NOAA Global Monitoring Laboratory - Trends in Atmospheric Carbon Dioxide (2026)EPA 
+# based on various sources (2022) – with major processing by Our World in Data
+# Retrieved from https://gml.noaa.gov/ccgg/trends/gl_data.html
+# -----------------------------
+#  part 2.5 plot CO2 Mauna Loa
+blue25_text="blue: CO2 measured at Mauna Loa ( 2025 = 427.35 ppm ) 22"
+
+Asynchrony between Antarctic temperature and CO2 associated with obliquity over the past 720,000 years
+Valérie Masson-Delmotte, csv temperature data
+https://www.nature.com/articles/s41467-018-03328-3
+https://www.ncei.noaa.gov/access/paleo-search/study/23371
+
+https://www.ncei.noaa.gov/pub/data/paleo/reconstructions/
+
+
+# part 3.4 plot34_CO2_emission summed
+# co2_cumul.csv
+# https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
+# 3.4.0 Entity,Code,Year,Cumulat
+#       World,OWID_WRL,1750,9305937
+if plot34_CO2_emission > 0:
+   print34_text =" red dots: measured cumulative CO2 emissions by Carbon Brief 34"
+   # plot34_CO2_emission_A = 1, read self made csv 2000 GtCO2
+   # plot34_CO2_emission_A = 2, read csv 2000 000 000 000 tCO2
+   # plot34_CO2_emission_A = 3, read csv 2000 GtCO2
+   # plot34_CO2_emission_A = 4, read csv 2000 GtCO2
+   # plot34_CO2_emission_A = 5
+
+
+
+
+
+
+
+
+
+
+"""
+# Load the annual GISTEMP data
+url = "https://datahub.io/core/global-temp/r/annual.csv"
+df2 = pd.read_csv(url)
+
+# Inspect the first rows
+print(df2.head())
+
+# Plot
+plt.figure(figsize=(10,5))
+plt.plot(df2["Year"], df2["Mean"], marker="o")
+plt.title("Global Annual Temperature Anomalies (GISTEMP)")
+plt.xlabel("Year")
+plt.ylabel("Temperature Anomaly (°C)")
+plt.grid(True)
+plt.show()
+"""
+# 8.4 legende Mauna Loa blau plot22_CO2_Mauna_Loa
+if plot22_CO2_Mauna_Loa > 6: # 8.15.1 legende world data plot22_CO2_Mauna_Loa
+   K1_text=" Blue: CO2 measured at Mauna Loa ( 2025 = 424.61ppm + 3.69 ppm )"
+   plt.text(0.02, 0.95, K1_text, color="blue", fontname="Arial", fontsize=16,
+   transform=plt.gca().transAxes)
+   ax1.plot([x_anf+1, x_anf +2], [y_max -5, y_max -5], marker="o", markersize=5, color="blue", linewidth=2, label="short line")
+# 8.15 plot55_population_on = 1 # 0 keine Bevölkerung , 1 = Bevölkerung in grün
+if plot22_CO2_Mauna_Loa > 8:
+   if plot55_population_on > 0:
+      plt.text(0.02, 0.90,"green: Human Population in billion K2", color="green", fontname="Arial", fontsize=14,
+      transform=plt.gca().transAxes)
+# 8.16 legende
+if plot22_CO2_Mauna_Loa > 8:
+   if plot52_delta_CO2_red_bars > 0:
+      plt.text(0.02, 0.86," red bars: Mauna Loa yearly increase. //see right larger ppm scaling", color="red", fontname="Arial", fontsize=14,
+      transform=plt.gca().transAxes)
+      ax1.plot([x_anf+1, x_anf +2], [y_max -21, y_max -21], marker="_", markersize=5, color="red", linewidth=8)
+# 8.7 legende '--', label="Glen *parabola* ( 0.0132t² - 51t + 49,536) K4", color="orange", linewidth=3)
+if plot22_CO2_Mauna_Loa > 8:
+   if plot53_CO2_orange2025 > 0:
+      plt.text(0.02, 0.80," orange: Glen formula ppm = 0.0132 t² - 51 t + 49,536 ", color="orange", fontname="Arial", fontsize=14,
+      transform=plt.gca().transAxes)
+      ax1.plot([x_anf+1, x_anf +2], [y_max -30.5, y_max -30.5], marker="_", markersize=5, color="orange", linewidth=3)
+# 8.8 legend in the plot
+if plot22_CO2_Mauna_Loa > 8:
+   if plot54_Glen_delta_on > 0:
+      plt.text(0.02, 0.29," green bars: Difference Mauna Loa - Glen quadratic t² //see right larger ppm scaling", color="green", fontname="Arial", fontsize=14,
+      transform=plt.gca().transAxes)
+      ax1.plot([x_anf+1, x_anf +2], [y_max -52, y_max -52], marker="_", markersize=5, color="green", linewidth=8)
+# 8.9 legend in the plot
+if plot22_CO2_Mauna_Loa > 8:
+   if plot23_Glen_CO2 > 0:
+      plt.text(0.02, 0.85," Red: Glen formula ppm = 0.0132251t² - 51.0337t + 49,536", color="red", fontname="Arial", fontsize=16,
+      transform=plt.gca().transAxes)
+      ax1.plot([x_anf+1, x_anf +2], [y_max -12, y_max -12], marker="_", markersize=5, color="red", linewidth=3)
+
+
+
+
+
+
+
+Links to github
+
+# Garvin Schmidt (follow up of James Hansen)
+# climateofgavin.bsky.social recommends
+https://github.com/Climate-REF
+https://dashboard.climate-ref.org/
+
+https://wcrp-cmip.org/tools/model-benchmarking-and-evaluation-tools/
+
+# Zack Labe
+https://github.com/zmlabe
+Zachary Labe Climate Scientist 
+https://www.linkedin.com/in/zacharylabe/
+https://matplotlib.org/cmocean/
+https://chadagreene.com/CDT/CDT_Getting_Started.html
+https://www.mathworks.com/matlabcentral/fileexchange/47638-antarctic-mapping-tools/files/coord.m
+https://www.ncei.noaa.gov/access/monitoring/monthly-report/global/202602
+
+
+
+https://robbieandrew.github.io
+
+https://robbieandrew.github.io/country/?country=DEU
+
+
+https://matplotlib.org/cmocean/
+
+# CO₂: Mauna-Loa/NOAA Jahresmittel (bis 2023), 2024/2025 vorläufig/Schätzung wie zuvor verwendet.
+# https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt
+# ppm CO2 = 0.0132251t² - 51.0337t + 49,536.7
+# https://github.com/zmlabe 
+
+co2_cumul.csv
+https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
+https://ourworldindata.org/grapher/cumulative-co-emissions
+https://globalcarbonbudget.org/gcb-2025/
+
+
+Title	Temperature Vostok and GISP2
+Reference	Alley, R.B..  (2004) GISP2 Ice Core Temperature and Accumulation Data
+Reference	Jouzel et al. (1987, 1993 and 1996)
+Source	
+http://www.ncdc.noaa.gov/paleo/indexice.html
+File	gisp2_temp_accum_alley2000.txt
+File	vostok_deld.txt
+Age	Vostok
+http://www.climatedata.info/proxies/data-downloads/
+https://www.ncei.noaa.gov/products/paleoclimatology
+
+
+
+# part 5.2 plot52_delta_CO2_red_bars
+# 5.2.2 ΔCO₂ berechnen (per pandas) Balken
+# df2["CO2"].diff() Calculates the difference between consecutive CO₂ values
+# -----------------------------
+if plot52_delta_CO2_red_bars > 0:
+   df2["Delta_CO2"] = df2["CO2"].diff().fillna(0)  
+   # This line creates a new column in your DataFrame called Delta_CO2.
+   ax52 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+# growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
+#  2020        2.30        0.11
+#  2021        2.35        0.11
+#  2022        1.87        0.11
+#  2023        3.32   2,55     0.11
+#  2024        3.33   3,53     0.11
+#  2025        2.23   2.74     0.11
+# anual mean data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt
+#  year   noa     my.py  noa  
+#  2020   414.21   2,58  2.30
+#  2021   416.41   2,17  2.35
+#  2022   418.53   2,12  1.87
+#  2023   421.08   2,55  3.32
+#  2024   424.61   3,53  3.33
+#  2025   427.35   2,74  2.23
+
+
+
+# part 74 plot NASA GIS temperature
+https://data.giss.nasa.gov/gistemp/zonal_means/
+https://data.giss.nasa.gov/gistemp/zonal_means/
+/4_PYTHON/csv_save/nasa_giss_global.csv
+https://data.giss.nasa.gov/tmp/gistemp/ltmap/tmp.4_ob4LOTI_E5_12_1880_2027_1951_1980-0/global.txt
+/4_PYTHON/csv_save/csv_74_giss_temperature.txt
+https://www.columbia.edu/~jeh1/mailings/2026/ElNino.2026.02.06.pdf 
+Hansen adds 0.3K to GIS Temperature in https://www.columbia.edu/~jeh1/mailings/2026/ElNino.2026.02.06.pdf
+line ax74.plot(df74["Year74"], df74["GIS_temp"]+0.3, '-', label="T GIS  K74", color=c74, linewidth=3)
+# part 7.4.6 add 0.3°C same as Hansen to GIS
+   ax74.plot(df74["Year74"], df74["GIS_temp"]+0.3, '-', label="T GIS  K74", color=c74, linewidth=3)
+/4_PYTHON/csv_save/74_GIS_temperature/
+
+# part 76 
+can you make a quadatic function like the below T_model76(t)
+def T_model76(t):
+    return 0.00052537 * t**2 - 2.071 * t + 2040.65
+which returns 0.2 for t = 1950
+which returns 1.0 for t = 2013
+which returns 1.5 for t = 2023
+
+def T_model76(t):
+    return 0.00052537 * t**2 - 2.071 * t + 2040.65
+
+#can you make a quadatic function like the below T_model71(t) in python
+# which returns 0.2 for t = 1950
+# which returns 1.0 for t = 2013
+# which returns 1.5 for t = 2023
+def T_model76b(t):
+    return 0.00052537 * t**2 - 2.071 * t + 2040.65
+def T_model76c(t):
+    return (
+        0.000525368248010184 * t**2
+        - 2.07099741100324 * t
+        + 2040.64663023679
+    )
+def T_model76d(t):
+    x = t - 2000
+    return 0.000525368248010184 * x**2 + 0.030377 * x + 0.9027
+def T_model71d(t):
+   return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+# 
+def T_model76e(t):
+    x = t - 2000
+    return 0.000525368248010184 * x**2 + 0.030377 * x + 0.7
+def T_model76(t):
+    x = t - 2000
+    return 0.000525368248010184 * x**2 + 0.030377 * x + 0.7
+def T_model71d(t):
+   return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+def T_model76e(t):
+    x = t - 2000
+    return 0.000525368248010184 * x**2 + 0.030377 * x + 0.7
+def T_model76f(t):
+    x = t - 2000
+    return 0.000525368248010184 * x**2 + 0.030377 * x + 0.7
+def T_model76f(t):
+    x = t - 2000
+    return 0.000525368248010184 * x**2 + 0.030377 * x + 0.7
+def T_model76g(t):
+    x = t - 2000
+    return 0.0005 * x**2 + 0.02 * x + 0.7
+def T_model76(t):
+    x = t - 2000
+    return 0.0005 * x**2 + 0.02 * x + 0.7
+def T_model76f(t):
+    x = t - 2000
+    return 0.000525368248010184 * x**2 + 0.030377 * x + 0.7
+def T_model76g(t):
+    x = t - 2000
+    return 0.0005 * x**2 + 0.02 * x + 0.7
+def T_model76h(t):
+    x = t - 2000
+    return 0.00035 * x**2 + 0.02 * x + 0.5
+def T_model76h2(t):
+    x = t - 2000
+    return 0.00027 * x**2 + 0.025 * x + 0.6
+def T_model76h3(t):
+    x = t - 2000
+    return 0.00023 * x**2 + 0.027 * x + 0.8
+def T_model76h4(t):
+    x = t - 2000
+    return 0.00021 * x**2 + 0.028 * x + 0.95
+def T_model76k(t):
+    x = t - 2000
+    return 0.00018 * x**2 + 0.025 * x + 0.95
+#can you make a quadatic function like the below T_model71(t)
+# which returns 0.2 for t = 1950
+# which returns 1.0 for t = 2013
+# which returns 1.5 for t = 2023
+def T_model76m(t):
+    x = t - 2000
+    return 0.00017 * x**2 + 0.022 * x + 0.85
+
+ def T_model76a(t):
+   CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
+   #yppm = 440 -340   # scaling left y axis
+   #yT   = 1.6 - 0.6  # scaling right y axis
+   # scale 1.5°C at 410 ppm 2022: 418.53, 418-280 = 138
+   temp76= ( CO2 -280 ) / 99
+   temp76= temp76 +0.02
+   return temp76   
+def T_model76m1(t):
+    x = t - 2000
+    return 0.00017 * x**2 + 0.022 * x + 0.85
+def T_model76m2(t):
+    x = t - 2000
+    return 0.00016 * x**2 + 0.0207 * x + 0.85
+def T_model76m3(t):
+    x = t - 2000
+    return 0.00016 * x**2 + 0.021 * x + 0.85
+def T_model76m4(t):
+    x = t - 2000
+    return 0.00016 * x**2 + 0.0225 * x + 0.85
+    def T_model76m4(t):
+    x = t - 2000
+    return 0.00016 * x**2 + 0.0225 * x + 0.85
+def T_model76m5(t):
+    x = t - 2000
+    return 0.00017 * x**2 + 0.0233 * x + 0.85
+def T_model76m6(t):
+    x = t - 2000
+    return 0.00018 * x**2 + 0.0233 * x + 0.85
+def T_model76m7(t):
+    x = t - 2000
+    return 0.00023 * x**2 + 0.0233 * x + 0.8
+def T_model76m8(t):
+    x = t - 2000
+    return 0.00025 * x**2 + 0.0233 * x + 0.8
+def T_model76m9(t):
+    x = t - 2000
+    return 0.00033 * x**2 + 0.0236 * x + 0.7
+def T_model76m10(t):
+    x = t - 2000
+    return 0.00034 * x**2 + 0.0238 * x + 0.7
+def T_model76(t):
+    x = t - 2000
+    return 0.00034 * x**2 + 0.0238 * x + 0.7
+
+https://chat.deepseek.com/a/chat/s/d9a11bdb-f2ce-4c34-b14e-492b673e0a4e
+
+def T_model76(t):
+    """
+    Alternative formulation using polynomial coefficients directly
+    (same as above but without solving the system each time)
+    """
+    # Pre-calculated coefficients (solve once)
+    # These were computed by solving the system of equations
+    a = 0.00188034188034188
+    b = -7.31623931623932
+    c = 7130.73076923077
+   
+    return a * t**2 + b * t + c
+homasboettcher@MacBookAir 4_Python_CO2 % /usr/local/bin/python3 /Users/thomasboettcher/Documents/Python/4_Python_CO2/42_CO2_T.py
+14.064102564095265   1950
+22.604102564096138   2013
+25.332307692299764   2023
+26.22410256409603    2026
+26.837435897428804   2028
+print(T_model76(1950) ,"  1950")  # 0.2
+print(T_model76(2013) ,"  2013")  # 1.0
+print(T_model76(2023) ,"  2023")
+print(T_model76(2026) ,"  2026")  # 1.5
+print(T_model76(2028) ,"  2028")  # 1.5
+
+correct the formula 
+#can you make a quadatic function like the below T_model71(t) in python
+# which returns 0.2 for t = 1950
+# which returns 1.0 for t = 2013
+# which returns 1.5 for t = 2023
+
+
+
+
+https://x.com/rahmstorf/status/2036000186967769338
+
+https://www.jkclimate.fr/InteractiveDashboard2025/dashboard.html
+
+https://library.wmo.int/viewer/69807/download?file=WMO-1391-2025_en.pdf&type=pdf&navigator=1
+
+https://wmo.int/publication-series/state-of-global-climate/state-of-global-climate-2025
+
+
+https://substack.com/@jimehansen
+
+linear_41_75  = 4 # part 75    Hansen 2015 .41°C linear fit
+
+# yl_mode = 2 ppm CO2 y axis left mode
+# yl_mode = 3 Gt CO2 y axis left mode
+# yl_mode = 4 EEI in W/m2 y axis left mode
+# yl_mode = 5 delta ppm CO2 y axis left mode
+# yl_mode = 7 Temperature in °C y axis left mode
+
+which python command makes the scaling on the right y axis?
+(note: I have 3 scalings on the right y axis)
+https://chat.deepseek.com/a/chat/s/d9a11bdb-f2ce-4c34-b14e-492b673e0a4e
+
+1. Creating Multiple Right Y-Axes (twinx())
+python
+# Each of these creates a new right y-axis
+ax71 = ax1.twinx()  # First right y-axis
+ax72 = ax1.twinx()  # Second right y-axis (overlays on right)
+ax73 = ax1.twinx()  # Third right y-axis (overlays on right)
+2. Positioning Multiple Right Y-Axes
+python
+# To avoid overlapping, you can offset them:
+ax71.spines.right.set_position(("outward", 0))    # Default position
+ax72.spines.right.set_position(("outward", 60))   # Offset outward by 60 points
+ax73.spines.right.set_position(("outward", 120))  # Offset outward by 120 points
+
+3. Setting Y-Axis Limits (Scaling)
+python
+# Set the min/max values for each right y-axis
+ax71.set_ylim(y_Tmin, y_Tmax)  # e.g., 0 to 2.5°C
+ax72.set_ylim(y_Tmin, y_Tmax)  # e.g., 0 to 2.5°C
+ax73.set_ylim(y_Tmin, y_Tmax)  # e.g., 0 to 2.5°C
+
+4. Setting Tick Locations (Scale Intervals)
+python
+# Control the major and minor tick spacing
+ax71.yaxis.set_major_locator(MultipleLocator(0.5))  # Major ticks every 0.5°C
+ax71.yaxis.set_minor_locator(MultipleLocator(0.1))  # Minor ticks every 0.1°C
+
+ax72.yaxis.set_major_locator(MultipleLocator(0.5))
+ax72.yaxis.set_minor_locator(MultipleLocator(0.1))
+
+ax73.yaxis.set_major_locator(MultipleLocator(0.5))
+ax73.yaxis.set_minor_locator(MultipleLocator(0.1))
+
+5. Setting Tick Label Size
+python
+ax71.tick_params(axis="y", labelsize=20)
+ax72.tick_params(axis="y", labelsize=20)
+ax73.tick_params(axis="y", labelsize=20)
+
+6. Setting Y-Axis Labels
+python
+ax71.set_ylabel("Δ Temperature in °C 71", color="red", fontsize=20)
+ax72.set_ylabel("Δ Temperature calc72 in °C", color="red", fontsize=20)
+ax73.set_ylabel("Δ Temperature in °C (ECS = 4.5°C)", color="red", fontsize=20)
+
+7. Controlling Which Axis is Visible
+python
+# Hide the spine of some axes to avoid clutter
+ax72.spines["right"].set_visible(False)
+ax72.tick_params(right=False, labelright=False)
+# Or only show labels on the outermost axis
+ax73.tick_params(axis="y", labelcolor="red", labelsize=20)
+
+Complete Example from Your Code
+In your script, the right y-axes are configured in section 8.7:
+
+python
+# 8.7 print the right y axis
+if yr_mode == 7:  # Temperature mode
+    ax74.tick_params(axis="y", labelcolor=c74)
+    ax74.set_ylim(y_Tmin, y_Tmax)
+    ax74.yaxis.set_major_locator(MultipleLocator(y_Tmayor_ticks))
+    ax74.yaxis.set_minor_locator(MultipleLocator(y_Tminor_ticks))
+    
+elif plot71_temperature > 0:
+    ax71.set_ylim(y_Tmin, y_Tmax)
+    ax71.yaxis.set_major_locator(MultipleLocator(y_Tmayor_ticks))
+    ax71.yaxis.set_minor_locator(MultipleLocator(y_Tminor_ticks))
+    
+elif plot72_AESS_T > 0:
+    ax72.set_ylim(y_Tmin, y_Tmax)
+    ax72.yaxis.set_major_locator(MultipleLocator(y_Tmayor_ticks))
+    ax72.yaxis.set_minor_locator(MultipleLocator(y_Tminor_ticks))
+Key Points for Multiple Right Y-Axes:
+Each ax.twinx() creates a new independent y-axis
+
+Use spines.right.set_position() to offset them horizontally
+
+Set ylim() independently for each axis
+
+Use set_major_locator() and set_minor_locator() to control tick spacing
+
+Hide unnecessary axes with set_visible(False) to avoid clutter
+
+The scaling commands that directly control the y-axis range are:
+
+set_ylim(y_min, y_max) - Sets the min/max values
+
+set_major_locator() - Sets the major tick spacing
+
+set_minor_locator() - Sets the minor tick spacing
+
+tick_params() - Controls tick appearance and size
+
+------------ 42t3 ------------- delete y axis left -----------
+part41_ceres_eei = 3 # 3,5,12,47,48,50 convert txt to csv runnig 12 month avg , 48 convert txt to csv runnig 48 month avg
+part42_ceres_eei = 4 
+plot74_GIS_T  = 2 #
+linear_41_75  = 3 # part 75    Hansen 2015 .41°C linear fit
+
+------------ 42t4 ------------- run with part41_ceres_eei = 50 -----------
+
+
+part 4.1.1 Successfully converted 311 records to csv/csv41/csv41b_ceres.csv
+Data range: 2000-03-01 00:00:00 to 2026-01-01 00:00:00
+Decimal year range: 2000.2083 to 2026.0417
+Flux range: -10.49 to 10.67 W/m²
+
+4.1.1 First 3 rows of the converted data:
+        date  year  month  toa_net_flux_w_m2  decimal_year
+0 2000-03-01  2000      3               5.96   2000.208333
+1 2000-04-01  2000      4               1.93   2000.291667
+2 2000-05-01  2000      5              -5.93   2000.375000
+4.1.9
+============================================================
+48-MONTH RUNNING AVERAGE
+============================================================
+Window: 48 months (4 years)
+Centered: False
+Min periods: 30
+Output file: csv/csv41/csv41d50_ceres.csv
+Valid records: 282 out of 311
+
+First 5 valid values:
+  2002-08: -0.471 W/m²
+  2002-09: -0.493 W/m²
+  2002-10: -0.397 W/m²
+  2002-11: -0.278 W/m²
+  2002-12: -0.092 W/m²
+
+4.1.9 Last 5 valid values:
+  2025-09: 1.386 W/m²
+  2025-10: 1.380 W/m²
+  2025-11: 1.373 W/m²
+  2025-12: 1.410 W/m²
+  2026-01: 1.421 W/m²
+thomasboettcher@MacBookAir 4_Python_CO2 % 
+
+------------ 42t5 ------------- run with part41_ceres_eei = 84 -----------
+
+4.1.9
+============================================================
+84-MONTH RUNNING AVERAGE
+============================================================
+Window: 84 months (7 years)
+Centered: False
+Min periods: 30
+Output file: csv/csv41/csv41d84_ceres.csv
+Valid records: 282 out of 311
+
+First 5 valid values:
+  2002-08: -0.471 W/m²
+  2002-09: -0.493 W/m²
+  2002-10: -0.397 W/m²
+  2002-11: -0.278 W/m²
+  2002-12: -0.092 W/m²
+
+4.1.9 Last 5 valid values:
+  2025-09: 1.326 W/m²
+  2025-10: 1.318 W/m²
+  2025-11: 1.312 W/m²
+  2025-12: 1.319 W/m²
+  2026-01: 1.332 W/m²
+
+-------- v = "42t5" #  part 43 84 month average EEI -----------
+
+
+if part44_ceres_eei > 13:
+    out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
+    df_with_avg = create_running_average(
+        'csv/csv44/csv44b_ceres.csv', 
+        out,
+        window_months=part44_ceres_eei,
+        min_periods=30,
+        center=True,
+        keep_original=True,
+        column_name='EEI'  # This will create a column named 'EEI'
+    )
+    # if part44_ceres_eei is even the above create_running_average call shall be done
+    # if part44_ceres_eei is odd the below create_running_average call shall be done
+    df_with_avg = create_running_average(
+        'csv/csv44/csv44b_ceres.csv', 
+        out,
+        window_months=part44_ceres_eei,
+        min_periods=30,
+        center=False,
+        keep_original=True,
+        column_name='EEI'  # This will create a column named 'EEI'
+    )
+
+
+delete 41 items 
+42 is EEI 12 window_months
+43 is EEI 48 months
+44 produces csv files and diplays 77 months in line 5
+45 new CERS cloud data David Ulrich
+
+
+
+
+File Structure
+text
+climate_analysis/
+├── main.py                 # Main execution and configuration
+├── config.py               # Configuration parameters
+├── data_processing.py      # Data processing functions (CERES, CO2)
+├── plotting.py             # Plotting functions
+├── temperature_models.py   # Temperature model functions
+├── text_annotations.py     # Text annotations and legends
+└── utils.py                # Utility functions
+1. config.py - Configuration Parameters
+python
+# config.py
+# Configuration parameters for the climate analysis tool
+
+# Version
+v = "42u13"
+
+# Plot configuration flags
+plot22_CO2_Mauna_Loa = 0
+plot23_Glen_CO2 = 0
+plot25_long_CO2 = 0
+plot34_CO2_emission = 0
+part41_ceres_eei = 3
+part42_ceres_eei = 4
+part43_ceres_eei = 0
+part44_ceres_eei = 11
+plot52_delta_CO2_red_bars = 0
+plot53_CO2_orange2025 = 0
+plot54_Glen_delta_on = 0
+plot55_population_on = 0
+plot71_temperature = 0
+plot72_AESS_T = 0
+plot73_ECS_T = 0
+plot74_GIS_T = 2
+linear_41_75 = 3
+plot76_my_T = 0
+plot_T_77 = 0
+parameter84_save_png = 8
+
+# Colors
+c22 = "blue"
+c23 = "#4554A8C6"
+c25 = "green"
+c34 = "#942296C5"
+c41 = "#289C1684"
+c42 = "purple"
+c43 = "#13DF2F84"
+c44 = "blue"
+c74 = "red"
+c75 = "#371EA484"
+c76 = "red"
+c71 = "red"
+
+# Axis ranges
+y_min = 250
+y_max = 500
+y_Tmin = 0
+y_Tmax = 2.5
+y_Emin = 0
+y_Emax = 2
+x_anf = 2000
+x_end = 2026
+C280 = 280
+
+# Axis modes
+yl_mode = 4  # EEI in W/m2 y axis left mode
+yr_mode = 7  # Temperature in °C y axis right mode
+
+# Text positioning
+tr1x = -0.09
+tr2x = 0.01
+tr1y = -.19
+tr2y = -.26
+tr3y = -.33
+tr4y = -.40
+tr5y = -.46
+tr6y = -.57
+trs = 20
+
+# Legend line positions
+lr2x1 = 0.065
+lr2x2 = 0.085
+lr1y = 0.248
+lr2y = 0.211
+lr3y = 0.168
+lr4y = 0.129
+lr5y = 0.095
+lr6y = 0.034
+
+# Figure size
+scale_mode = 10
+2. 
+
+
+Ordner 4_Python_CO2 Alt
+5_CO2_EEI_T
+
+

@@ -1,0 +1,96 @@
+Conventions,G,BADC-CSV,1
+title,G,Earths Energy Imbalance
+last_revised_date,G,2026-03-20
+date_valid,G,2026-03-20
+feature_type,G,area average
+creator,G,WMO
+source,G,Produced by climind version 1.3.0
+observation_station,G,derived data
+location,G,90.,-180.,-90.,180.
+activity,G,WMO
+history,G,"Data set created from file ['EEI_timeseries.csv'] downloaded from [''] at ['2026-03-17 14:09:42']"
+reference,G,"Von Schuckmann, K.; Mini&egrave;re, A.; Gues, F. et al. Heat Stored in the Earth System 1960–2020: Where Does the Energy Go? Earth System Science Data 2023, 15 (4), 1675–1709. https://doi.org/10.5194/essd-15-1675-2023."
+reference,G,"Ishii, M.; Fukuda, Y.; Hirahara, S. et al. Accuracy of Global Upper Ocean Heat Content Estimation Expected from Present Observational Data Sets. SOLA 2017, 13, 163–167. https://doi.org/10.2151/sola.2017-030."
+reference,G,"Lyman, J. M.; Johnson, G. C. Estimating Global Ocean Heat Content Changes in the Upper 1800 m since 1950 and the Influence of Climatology Choice. Journal of Climate 2014, 27 (5), 1945–1957. https://doi.org/10.1175/JCLI-D-12-00752.1."
+reference,G,"Desbruyères, D.; McDonagh, E. L.; King, B. A. et al. Global and Full-Depth Ocean Temperature Trends during the Early Twenty-First Century from Argo and Repeat Hydrography. Journal of Climate 2017, 30 (6), 1985–1997. https://doi.org/10.1175/JCLI-D-16-0396.1."
+reference,G,"Cheng, L.; Trenberth, K. E.; Fasullo, J. et al. Improved Estimates of Ocean Heat Content from 1960 to 2015. Science Advances 2017, 3 (3). https://doi.org/10.1126/sciadv.1601545."
+reference,G,"Roemmich, D.; Gilson, J. The 2004–2008 Mean and Annual Cycle of Temperature, Salinity, and Steric Height in the Global Ocean from the Argo Program. Progress in Oceanography 2009, 82 (2), 81–100. https://doi.org/10.1016/j.pocean.2009.03.004."
+reference,G,"Good, S. A.; Martin, M. J.; Rayner, N. A. EN4: Quality Controlled Ocean Temperature and Salinity Profiles and Monthly Objective Analyses with Uncertainty Estimates. Journal of Geophysical Research: Oceans 2013, 118 (12), 6704–6716. https://doi.org/10.1002/2013JC009067."
+reference,G,"Cabanes, C.; Grouazel, A.; Von Schuckmann, K. et al. The CORA Dataset: Validation and Diagnostics of In-Situ Ocean Temperature and Salinity Measurements. Ocean Science 2013, 9 (1), 1–18. https://doi.org/10.5194/os-9-1-2013."
+reference,G,"Von Schuckmann, K.; Le Traon, P.-Y. How Well Can We Derive Global Ocean Indicators from Argo Data? Ocean Science 2011, 7 (6), 783–91. https://doi.org/10.5194/os-7-783-2011."
+reference,G,"Giglio, D.; Sukianto, T.; Kuusela, M. et al. Global Ocean Heat Content Anomalies and Ocean Heat Uptake Based on Mapping Argo Data Using Local Gaussian Processes. Zenodo, 1 February 2026, Version 4.0.1. https://doi.org/10.5281/ZENODO.18187866."
+reference,G,"Hosoda, S. Grid Point Value of the Monthly Objective Analysis Using the Argo Data. JAMSTEC, 2007. https://doi.org/10.17596/0000102."
+reference,G,"Hosoda, S.; Ohira, T.; Nakamura, T. A Monthly Mean Dataset of Global Oceanic Temperature and Salinity Derived from Argo Float Observations. JAMSTEC Report of Research and Development 2008, 8, 47–59. https://doi.org/10.5918/jamstecr.8.47."
+reference,G,"Li, H.; Xu, F.; Zhou, W. et al. Development of a Global Gridded Argo Data Set with Barnes Successive Corrections. Journal of Geophysical Research: Oceans 2017, 122 (2), 866–89. https://doi.org/10.1002/2016JC012285."
+reference,G,"Domingues, C. M.; Church, J. A.; White, N. J. et al. Improved Estimates of Upper-Ocean Warming and Multi-Decadal Sea-Level Rise. Nature 2008, 453 (7198), 1090–1093. https://doi.org/10.1038/nature07080."
+reference,G,"Church, J. A.; White, N. J.; Konikow, L.F. et al. Revisiting the Earth’s Sea-Level and Energy Budgets from 1961 to 2008. Geophysical Research Letters 2011, 38 (18). https://doi.org/10.1029/2011GL048794."
+reference,G,"Levitus, S.; Antonov, J. I.; Boyer, T. P. et al. World Ocean Heat Content and Thermosteric Sea Level Change (0–2 000 m), 1955–2010. Geophysical Research Letters 2012, 39 (10). https://doi.org/10.1029/2012GL051106."
+reference,G,"Johnson, G. C.; Purkey, S. G. Refined Estimates of Global Ocean Deep and Abyssal Decadal Warming Trends. Geophysical Research Letters 2024, 51 (18). https://doi.org/10.1029/2024GL111229."
+rights,G,TBD
+comments,G,Data produced by climind version 1.3.0
+comments,G,Format description https://help.ceda.ac.uk/article/105-badc-csv
+comments,G,"Original data acknowledgement: "
+long_name,time,time,days since 1800-01-01 00:00:00.0
+type,time,int
+long_name,year,year,1
+type,year,int
+long_name,data,eei,wm2
+type,data,float
+long_name,uncertainty,eei uncertainty,wm2
+type,uncertainty,float
+coordinate_variable,time,t
+data
+time,year,data,uncertainty
+63552,1974,-0.0574,0.4351
+63917,1975,-0.0226,0.4691
+64282,1976,0.0104,0.5958
+64648,1977,0.0846,0.6506
+65013,1978,0.1464,0.7460
+65378,1979,0.1795,0.7126
+65743,1980,0.2421,0.4743
+66109,1981,0.3068,0.3384
+66474,1982,0.3222,0.2625
+66839,1983,0.2901,0.3590
+67204,1984,0.2616,0.4183
+67570,1985,0.2342,0.4990
+67935,1986,0.2168,0.3893
+68300,1987,0.1673,0.3767
+68665,1988,0.1366,0.3339
+69031,1989,0.1132,0.3363
+69396,1990,0.0942,0.3158
+69761,1991,0.0943,0.2995
+70126,1992,0.0967,0.3003
+70492,1993,0.0978,0.3043
+70857,1994,0.1009,0.3156
+71222,1995,0.1342,0.2090
+71587,1996,0.1953,0.1660
+71953,1997,0.2179,0.2154
+72318,1998,0.2217,0.2229
+72683,1999,0.2477,0.2153
+73048,2000,0.2786,0.1942
+73414,2001,0.2938,0.2147
+73779,2002,0.3111,0.2307
+74144,2003,0.3717,0.2441
+74509,2004,0.4291,0.2896
+74875,2005,0.4475,0.2479
+75240,2006,0.4793,0.2543
+75605,2007,0.4804,0.2383
+75970,2008,0.4794,0.2337
+76336,2009,0.4861,0.2338
+76701,2010,0.4593,0.2829
+77066,2011,0.4672,0.2846
+77431,2012,0.4646,0.2609
+77797,2013,0.4745,0.1986
+78162,2014,0.4973,0.2200
+78527,2015,0.5151,0.2220
+78892,2016,0.4934,0.2087
+79258,2017,0.5039,0.1885
+79623,2018,0.5477,0.1468
+79988,2019,0.5969,0.1513
+80353,2020,0.6179,0.1083
+80719,2021,0.6429,0.0948
+81084,2022,0.6590,0.0859
+81449,2023,0.6752,0.0770
+81814,2024,0.6957,0.0824
+82180,2025,0.7126,0.0888
+end data
