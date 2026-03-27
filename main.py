@@ -167,6 +167,13 @@ def add_text_annotations(fig, ax1, header_parameter):
     add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y, tr2x)
     
     # Add legend lines for active plots
+    if plot74_GIS_T == 2:
+        add_legend_line(fig, lr2x1, lr2x2, lr2y, c74)
+        add_text_row(ax1, tr2x, tr2y, 
+                    "Temperature in °C giss.nasa.gov Hansen+0.3°C 74", 
+                    c74, trs)
+
+
     if part41_ceres_eei == 3:
         add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
         add_text_row(ax1, tr2x, tr3y, 
