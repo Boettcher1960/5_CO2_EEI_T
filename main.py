@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a30" # bugs 43 is too low
+v = "5a31" # bugs 43 is too low
 #
 #  part42_ceres_eei
 # 
@@ -111,7 +111,7 @@ def process_ceres_data():
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
-    part44_ceres_eei = 77 # makes 48month trailing plot
+    part44_ceres_eei = 0 # makes 48month trailing plot
 
     if part44_ceres_eei > 3:
         out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
