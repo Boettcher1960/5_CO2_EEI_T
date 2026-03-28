@@ -196,6 +196,35 @@ def hide_other_right_axes(ax1, keep_axis):
                 ax.tick_params(right=False, labelright=False)
 
 
+def load_plot_data(): # not called
+    """Load all data needed for plotting"""
+    data = {}
+    
+    # Load CO2 data if needed
+    if plot22_CO2_Mauna_Loa > 0:
+        data['co2'] = load_co2_mauna_loa(x_anf, x_end)
+    
+    # Load GIS temperature data
+    if plot74_GIS_T > 0:
+        data['gis_temp'] = load_gis_temperature()
+    
+    # Load CERES data
+    if part41_ceres_eei > 0:
+        data['ceres_12'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
+    
+    if part42_ceres_eei > 0:
+        data['ceres_48'] = pd.read_csv("csv/csv44/_plot_42_41g50.csv")
+    
+    if part43_ceres_eei > 0: # 43.9 read made csv from 44 # not called
+         print(f"main_read_219: 43.9 ={part43_ceres_eei}")
+         data['ceres_43'] = pd.read_csv("read_csv/c44d_ceres_12month_EEI.csv")
+         # not called
+    if part44_ceres_eei > 0:
+        data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
+    
+    return data
+    # not called
+
 def create_plots(ax1, data):
     """Create all plots based on configuration"""
     # Plot CERES data
