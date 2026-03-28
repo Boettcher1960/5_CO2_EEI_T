@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a31" # bugs 43 is too low
+v = "5a32" # bugs 43 is too low
 #
 #  part42_ceres_eei
 # 
@@ -303,7 +303,7 @@ def load_plot_data():
     if part43_ceres_eei > 0: # 43.2 read1
         print(f"main_read_301: 43.2 ={part43_ceres_eei}")
         #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
-        data['ceres_43'] = pd.read_csv("read_csv/c44d_ceres_12month_EEI.csv")
+        data['ceres_43'] = pd.read_csv("read_csv/a44d_ceres_12month_EEI.csv")
   
 
     if part44_ceres_eei > 0:
