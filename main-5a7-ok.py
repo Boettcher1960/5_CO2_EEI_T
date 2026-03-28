@@ -391,7 +391,7 @@ def save_plot(fig, header_parameter):
         path = f"/Users/thomasboettcher/Desktop/{filename}"
         fig.savefig(path, dpi=300, bbox_inches="tight")
         
-        path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/42_CO2_T.png"
+        path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/5_CO2_T.png"
         fig.savefig(path, dpi=300, bbox_inches="tight")
 
 def main():

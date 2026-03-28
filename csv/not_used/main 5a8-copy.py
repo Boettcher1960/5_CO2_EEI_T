@@ -1,7 +1,7 @@
 # main.py 5a1
 # part 1 configure 
-v = "5a10" # text 1 up
-# ok EEI 11 is not shown
+v = "5a8" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
+# bug EEI 11 is not shown
 
 # ok horizontal 1.8°C line is T value
 
@@ -247,7 +247,7 @@ def add_text_annotations(fig, ax1, header_parameter):
     add_header(ax1, x_anf, x_end, yl_mode)
     
     # Add bottom text
-    add_bottom_text(fig, ax1, filename, v, header_parameter, tr0y, tr2x)
+    add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y, tr2x)
     
     # Add legend lines for active plots
     if plot74_GIS_T == 2:
@@ -270,8 +270,7 @@ def add_text_annotations(fig, ax1, header_parameter):
                     c42, trs)
     
     if part44_ceres_eei > 0:
-        #add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
-        add_legend_line(fig, lr2x1, lr2x2, lr4y, c44)
+        add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
         p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44"
         add_text_row(ax1, tr2x, tr5y, p44_text, c44, trs)
 
@@ -386,16 +385,14 @@ def add_text_annotations(fig, ax1, header_parameter):
 
 def save_plot(fig, header_parameter):
     """Save the plot if configured"""
-    print(f"main_save_plot_389: {fig}")
     if parameter84_save_png > 0:
         filename = os.path.basename(__file__)[:parameter84_save_png]
         filename = f"{filename}_{header_parameter}{x_end}"
-        # bug path = f"/Users/thomasboettcher/Desktop/{filename}"
-        #fig.savefig(path, dpi=300, bbox_inches="tight")
-        
-        path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/5_CO2_EEI_T.png"
+        path = f"/Users/thomasboettcher/Desktop/{filename}"
         fig.savefig(path, dpi=300, bbox_inches="tight")
-        print(f"main_save_plot_400: {path}")
+        
+        path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/42_CO2_T.png"
+        fig.savefig(path, dpi=300, bbox_inches="tight")
 
 def main():
     """Main execution function"""
