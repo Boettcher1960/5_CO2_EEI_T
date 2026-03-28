@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a23" # 
+v = "5a24" # row 6 is ok
 # run1 part41_ceres_eei = 12
 # run2 part41_ceres_eei = 48
 # run3 part41_ceres_eei = 50
@@ -333,6 +333,11 @@ def add_text_annotations(fig, ax1, header_parameter):
     add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y)
     # def add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y):
  
+
+    # add_text_row(ax1, tr2x, tr5y, "--row5---main338--- tr5y", c43, trs)
+    add_text_row(ax1, 0.8, tr6y, 
+                    "-main339-row6-tr6y", 
+                    c43, trs)
 
     # Add legend lines for active plots
     if plot74_GIS_T == 2:
