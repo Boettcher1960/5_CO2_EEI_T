@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a42" # bugs 44 12month is 0.5 low
+v = "5a43" # bugs 44 12month is 0.5 low   48month is 0.5 low
 #
 #  part42_ceres_eei
 # 
@@ -107,7 +107,7 @@ def process_ceres_data():
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
-    part44_ceres_eei = 11 # makes 48month trailing plot
+    part44_ceres_eei = 47 # makes 48month trailing plot
     print(f"main_111: 44.3 local variable={part44_ceres_eei}")
 
     if part44_ceres_eei > 3:
@@ -237,7 +237,7 @@ def load_plot_data():
   
 
     if part44_ceres_eei > 0:
-        print(f"main custom-read_237: 44.4 ={part44_ceres_eei}")
+        print(f"main custom-read_240: 44.7 ={part44_ceres_eei}")
         data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
         # data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
         # data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
@@ -271,7 +271,7 @@ def create_plots(ax1, data):
 
 
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
-        print(f"main ax44 _270: 44.8 variable={part44_ceres_eei}")
+        print(f"main ax44 _274: 44.8 variable={part44_ceres_eei}")
         ax44 = ax1.twinx()
         ax44.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
                   label="EEI K44", color=c44, linewidth=2)
