@@ -1,11 +1,11 @@
 # main.py
 # part 1 configure 
-v = "5a19" # 
+v = "5a20" # 
 # run1 part41_ceres_eei = 12
 # run2 part41_ceres_eei = 48
 # run3 part41_ceres_eei = 50
-# line 111 part44_ceres_eei = 47
-# ok EEI 11 is not shown
+# line 111 part44_ceres_eei = 47 makes 48m avg
+# 
 
 # ok horizontal 1.8°C line is T value
 
@@ -109,11 +109,13 @@ def process_ceres_data():
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
+    # part44_ceres_eei = 47 makes 48month trailing plot
     part44_ceres_eei = 47
+
     if part44_ceres_eei > 3:
         out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
         df44 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES.txt', 
-                                    'work/c44_ceres.csv')
+                                    'work/c44b_ceres.csv')
         if part44_ceres_eei % 2 == 0:
             use_center = True
             min_periods = part44_ceres_eei // 2
@@ -123,8 +125,8 @@ def process_ceres_data():
             min_periods = part44_ceres_eei
             avg_type = "TRAILING"
             part44_ceres_eei = part44_ceres_eei + 1
-        df_with_avg = create_running_average('csv/csv44/csv44b_ceres.csv', 
-                                            "csv/csv44/csv44d_out.csv",
+        df_with_avg = create_running_average('work/c44b_ceres.csv', 
+                                            "work/c44d_ceres.csv",
                                             window_months=part44_ceres_eei,
                                             min_periods=min_periods,
                                             center=use_center,

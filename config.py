@@ -9,10 +9,12 @@ plot22_CO2_Mauna_Loa = 0
 plot23_Glen_CO2 = 0
 plot25_long_CO2 = 0
 plot34_CO2_emission = 0
+
 part41_ceres_eei = 50
 part42_ceres_eei = 4
 part43_ceres_eei = 0
 part44_ceres_eei = 47
+
 plot52_delta_CO2_red_bars = 0
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
