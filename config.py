@@ -98,3 +98,74 @@ lr6y = 0.034
 
 # Figure size
 scale_mode = 10
+
+
+#########################################################
+# How to make EEI files #################################
+#########################################################
+#
+# download 2016_01_EEI_CERES.txt
+# rename      to 2016_01_EEI_CERES.txt
+# 
+# #8T44 2 download asci file TOA flux
+# CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts
+# csv41_CERES_TOA_FluxtoJanuary-2026.txt
+# https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mhuowkhfq22h
+# save file as csv41_CERES_TOA_FluxtoJanuary-2026.txt
+# part44_ceres_eei = 47
+# 
+# 1) goto https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 2) enter email + password
+# https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
+# 4) select TOA top of atmosphere
+#    select monthly
+#    select global mean
+#    enter email 
+# 5) hit "Visualize Data" (on the bottom left)
+# 6) a new window appears with 6 blue sinus curves
+# 7) select curve number 3
+#    TOA Net Flux
+# 8) the TOA Net Flux gets yellow color
+#    click with left mouse button
+# 9) a new window "March -2000 TOA Net Flux" appears
+# 10) on the bottom right hit "Show Anomaly"
+# 11) the window changes -2 to +2 W/m2
+# 12) hit "Save Data as ASCII File" on the bottom
+# 13) the download starts
+# 14) open the download folder
+# 15) CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Net_Flux_-_All-Sky_March-2000toJanuary-2026 (2).txt
+# 16) copy CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Net_Flux_-_All-Sky_March-2000toJanuary-2026 (2).txt
+#     to the
+#     /read_csv/ folder
+#     /Dokumente/Python/5_CO2_EEI_T/read_csv/
+# 17) rename CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Net_Flux_-_All-Sky_March-2000toJanuary-2026 (2).txt
+#     to
+#     /Dokumente/Python/5_CO2_EEI_T/read_csv/2016_01_EEI_CERES_TOA Net Flux.txt
+# 
+# 21)  set part44_ceres_eei = 47
+# 22) /Dokumente/Python/5_CO2_EEI_T/main.py reads 
+#     /Dokumente/Python/5_CO2_EEI_T/read_csv/2016_01_EEI_CERES_TOA Net Flux.txt
+#        df44 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
+#                                   'work/c44b_ceres.csv')
+# 23) the file /Dokumente/Python/5_CO2_EEI_T/work/c44b_ceres.csv is created with year as decimal
+# 24) the file /Dokumente/Python/5_CO2_EEI_T/work/c44d_ceres.csv is created 
+#                      with 48 month trailing average in new column EEI
+#                               df_with_avg = create_running_average('work/c44b_ceres.csv', 
+#                                            "work/c44d_ceres.csv",
+#                                            column_name='EEI')
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#

@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a20" # 
+v = "5a21" # 
 # run1 part41_ceres_eei = 12
 # run2 part41_ceres_eei = 48
 # run3 part41_ceres_eei = 50
@@ -114,7 +114,8 @@ def process_ceres_data():
 
     if part44_ceres_eei > 3:
         out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
-        df44 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES.txt', 
+        # /Dokumente/Python/5_CO2_EEI_T/read_csv/2016_01_EEI_CERES_TOA Net Flux.txt
+        df44 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
                                     'work/c44b_ceres.csv')
         if part44_ceres_eei % 2 == 0:
             use_center = True
