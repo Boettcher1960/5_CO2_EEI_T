@@ -11,10 +11,10 @@ plot25_long_CO2 = 0
 plot34_CO2_emission = 0
 
 part41_ceres_eei = 0
-part42_ceres_eei = 0
+part42_ceres_eei = 3  # 4 print EEI 48 month running mean. Info in line 4 below the plot
 part43_ceres_eei = 0
 part44_eei = 77
-part44_ceres_eei = 0
+part44_ceres_eei = 0 # is local 
 
 plot52_delta_CO2_red_bars = 0
 plot53_CO2_orange2025 = 0

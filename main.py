@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a24" # row 6 is ok
+v = "5a25" # 42 EEI in row 3,4 is ok
 # run1 part41_ceres_eei = 12
 # run2 part41_ceres_eei = 48
 # run3 part41_ceres_eei = 50
@@ -352,11 +352,18 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month 41", 
                     c41, trs)
-    
+    elif part42_ceres_eei == 3:
+        add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
+        add_text_row(ax1, tr2x, tr3y, 
+                    "Earth Energy Imbalance W/m² moving average 48 month -main358--42", 
+                    c42, trs)
+
+
+
     if part42_ceres_eei == 4:
         add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
         add_text_row(ax1, tr2x, tr4y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month 42", 
+                    "Earth Energy Imbalance W/m² moving average 48 month main366--42", 
                     c42, trs)
     
     # in row 5 display part44_ceres_eei
