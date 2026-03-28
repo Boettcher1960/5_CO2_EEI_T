@@ -1,6 +1,6 @@
 # main.py 5a1
 # part 1 configure 
-v = "5a3" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
+v = "5a4" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
 # bug line linear_41_75 = 3 is not displayed
 # bug left y axis
 # bug right y axis
@@ -65,6 +65,26 @@ from data_processing import *
 from plotting import *
 from data_processing import *
 from text_annotations import *
+
+def get_active_temperature_axis(ax1):
+    """Find which temperature axis is active"""
+    if plot71_temperature > 0:
+        return ax1.twinx()
+    elif plot72_AESS_T > 0:
+        return ax1.twinx()
+    elif plot73_ECS_T > 0:
+        return ax1.twinx()
+    elif plot74_GIS_T > 0:
+        return ax1.twinx()
+    elif linear_41_75 > 0:
+        return ax1.twinx()
+    return None
+
+
+
+
+
+
 
 def process_ceres_data():
     """Process CERES data based on configuration"""
@@ -232,7 +252,7 @@ def main():
     
     # Configure axes plotting.py 
     ax1 = configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
-                         y_Tmin, y_Tmax, yl_mode, c22, c42)
+                         y_Tmin, y_Tmax, yl_mode, c22, c42, c74)
     
     # Create plots
     create_plots(ax1, data)
