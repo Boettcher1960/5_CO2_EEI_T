@@ -1,6 +1,6 @@
-# main.py 5a1
+# main.py
 # part 1 configure 
-v = "5a10" # text 1 up
+v = "5a12" # text 1 up
 # ok EEI 11 is not shown
 
 # ok horizontal 1.8°C line is T value
