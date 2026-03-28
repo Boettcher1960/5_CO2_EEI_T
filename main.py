@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a40" # bugs 43 is too low
+v = "5a41" # bugs 43 is too low
 #
 #  part42_ceres_eei
 # 
@@ -119,6 +119,7 @@ def process_ceres_data():
         print(f"main_118: 44.5 variable={part44_ceres_eei}")
         if part44_ceres_eei % 2 == 0:
             use_center = True
+            # min_periods = part44_ceres_eei // 2
             min_periods = part44_ceres_eei // 2
             avg_type = "CENTERED"
         else: # 47 make trailing 48 month runnin average
