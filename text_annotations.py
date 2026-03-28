@@ -47,12 +47,12 @@ def add_axis_info_line(ax, yl_mode, y_Emin, y_Emax, y_Tmin, y_Tmax,
     if yl_mode == 4:  # EEI mode
         # Left Y-axis info
         text6_left = f"Left Y axis: EEI = {y_Emin:.1f} ... {y_Emax:.1f} W/m²"
-        ax.text(-0.12, tr6y, text6_left, color=c42, fontname="Arial", fontsize=trs,
+        ax.text(-0.12, tr5y, text6_left, color=c42, fontname="Arial", fontsize=trs,
                 transform=ax.transAxes)
         
         # Right Y-axis info (Temperature)
         text6_right = f"Right Y axis: Temperature = {y_Tmin:.1f} ... {y_Tmax:.1f} °C"
-        ax.text(0.42, tr6y, text6_right, color="red", fontname="Arial", fontsize=trs,
+        ax.text(0.42, tr5y, text6_right, color="red", fontname="Arial", fontsize=trs,
                 transform=ax.transAxes)
     
     elif yl_mode == 2:  # CO2 mode

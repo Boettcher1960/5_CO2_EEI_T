@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a12" # text 1 up
+v = "5a14" # text 1 up
 # ok EEI 11 is not shown
 
 # ok horizontal 1.8°C line is T value
@@ -14,7 +14,7 @@ v = "5a12" # text 1 up
 # part 4 EEI CERES data
 # part41_ceres_eei = 3 # print EEI 12 month running mean. Info in line 3 below the plot
 # part42_ceres_eei = 4 # print EEI 48 month running mean. Info in line 4 below the plot
-# part44_ceres_eei = 77 #  print EEI 77 month running mean. Info in line 5 below the plot
+# part44_ceres_eei = 11 #  print EEI 77 month running mean. Info in line 5 below the plot
 #
 # part 5.2 plot52_delta_CO2_red_bars
 # part 5.3 plot53_CO2_orange2025
@@ -46,8 +46,6 @@ v = "5a12" # text 1 up
 # yl_mode = 7 Temperature in °C y axis left mode
 
 # part 9 print line 1 to 5 below the figure 
-
-
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -86,11 +84,11 @@ def process_ceres_data():
     """Process CERES data based on configuration"""
     if part41_ceres_eei > 10:
         df41a = convert_ceres_to_csv('csv/csv41/csv41a_in_CERES.txt', 
-                                      'csv/csv41/csv41b_ceres.csv')
+                                      'csv/csv41/c41b_ceres.csv')
     
     if part41_ceres_eei == 12:
         df_with_12avg = create_running_average('csv/csv41/csv41b_ceres.csv', 
-                                               'csv/csv41/csv41d12_ceres.csv',
+                                               'csv/csv41/c41d12_ceres.csv',
                                                window_months=12)
     
     elif part41_ceres_eei == 48:
