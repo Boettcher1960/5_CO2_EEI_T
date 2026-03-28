@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a23" # 
+v = "5a21" # 
 # run1 part41_ceres_eei = 12
 # run2 part41_ceres_eei = 48
 # run3 part41_ceres_eei = 50
@@ -65,6 +65,7 @@ from data_processing import *
 from text_annotations import *
 
 
+part44_ceres_eei = 11
 
 def get_active_temperature_axis(ax1):
     """Find which temperature axis is active"""
@@ -111,7 +112,8 @@ def process_ceres_data():
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
-    part44_ceres_eei = 77 # makes 48month trailing plot
+    # part44_ceres_eei = 47 makes 48month trailing plot
+    part44_ceres_eei = 0
 
     if part44_ceres_eei > 3:
         out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
@@ -252,6 +254,41 @@ def create_plots(ax1, data):
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
 
+def add_text_annotations(fig, ax1, header_parameter):
+    """Add all text annotations to the plot"""
+    filename = os.path.basename(sys.argv[0])
+    
+    # Add header
+    add_header(ax1, x_anf, x_end, yl_mode)
+    
+    # Add bottom text
+    add_bottom_text(fig, ax1, filename, v, header_parameter, tr0y, tr2x)
+    
+    # Add legend lines for active plots
+    if plot74_GIS_T == 2:
+        add_legend_line(fig, lr2x1, lr2x2, lr2y, c74)
+        add_text_row(ax1, tr2x, tr2y, 
+                    "Temperature in °C giss.nasa.gov Hansen+0.3°C 74-main272", # no call
+                    c74, trs)
+
+
+    if part41_ceres_eei == 3:
+        add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
+        add_text_row(ax1, tr2x, tr3y, 
+                    "Earth Energy Imbalance W/m² moving average 12 month 41", 
+                    c41, trs)
+    
+    if part42_ceres_eei == 4:
+        add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
+        add_text_row(ax1, tr2x, tr4y, 
+                    "Earth Energy Imbalance W/m² moving average 48 month 42", 
+                    c42, trs)
+    
+    if part44_ceres_eei > 0:
+        #add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
+        add_legend_line(fig, lr2x1, lr2x2, lr4y, c44)
+        p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44"
+        add_text_row(ax1, tr2x, tr5y, p44_text, c44, trs)
 
 def save_plot(fig, header_parameter):
     """Save the plot if configured"""
@@ -263,6 +300,9 @@ def save_plot(fig, header_parameter):
         
         path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/42_CO2_T.png"
         fig.savefig(path, dpi=300, bbox_inches="tight")
+
+
+
 
 
 
@@ -338,7 +378,7 @@ def add_text_annotations(fig, ax1, header_parameter):
     if plot74_GIS_T == 2:
         add_legend_line(fig, lr2x1, lr2x2, lr2y, c74)
         add_text_row(ax1, tr2x, tr2y, 
-                    "Temperature in °C giss.nasa.gov Hansen+0.3°C 74 -main343", 
+                    "Temperature in °C giss.nasa.gov Hansen+0.3°C 74 -main381", 
                     c74, trs)
 
 
@@ -354,11 +394,10 @@ def add_text_annotations(fig, ax1, header_parameter):
                     "Earth Energy Imbalance W/m² moving average 48 month 42", 
                     c42, trs)
     
-    # in row 5 display part44_ceres_eei
     if part44_ceres_eei > 0:
         add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
-        p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44 main361"
-        add_text_row(ax1, tr2x, tr5y, p44_text, c44, trs) 
+        p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44"
+        add_text_row(ax1, tr2x, tr5y, p44_text, c44, trs)
 
 
 def save_plot(fig, header_parameter):

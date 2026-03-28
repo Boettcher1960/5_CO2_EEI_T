@@ -10,10 +10,11 @@ plot23_Glen_CO2 = 0
 plot25_long_CO2 = 0
 plot34_CO2_emission = 0
 
-part41_ceres_eei = 50
-part42_ceres_eei = 4
+part41_ceres_eei = 0
+part42_ceres_eei = 0
 part43_ceres_eei = 0
-part44_ceres_eei = 47
+part44_eei = 77
+part44_ceres_eei = 0
 
 plot52_delta_CO2_red_bars = 0
 plot53_CO2_orange2025 = 0
@@ -23,7 +24,7 @@ plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
 plot74_GIS_T = 2
-linear_41_75 = 3
+linear_41_75 = 0
 plot76_my_T = 0
 plot_T_77 = 0
 parameter84_save_png = 8
@@ -155,8 +156,17 @@ scale_mode = 10
 #                               df_with_avg = create_running_average('work/c44b_ceres.csv', 
 #                                            "work/c44d_ceres.csv",
 #                                            column_name='EEI')
+# 25) copy /work/c44d_ceres.csv to /read_csv/c44d_ceres_48month_EEI.csv
 #
-#
+# 31)  set part44_ceres_eei = 11
+# 32) /Dokumente/Python/5_CO2_EEI_T/main.py reads 
+#     /Dokumente/Python/5_CO2_EEI_T/read_csv/2016_01_EEI_CERES_TOA Net Flux.txt
+#        df44 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
+#                                   'work/c44b_ceres.csv')
+# 33) the file /Dokumente/Python/5_CO2_EEI_T/work/c44b_ceres.csv is created with year as decimal
+# 34) the file /Dokumente/Python/5_CO2_EEI_T/work/c44d_ceres.csv is created 
+#                      with 48 month trailing average in new column EEI
+# 35) copy /work/c44d_ceres.csv to /read_csv/c44d_ceres_12month_EEI.csv
 #
 #
 #
