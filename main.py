@@ -1,10 +1,10 @@
 # main.py
 # part 1 configure 
-v = "5a36" # bugs 43 is too low
+v = "5a38" # bugs 43 is too low
 #
 #  part42_ceres_eei
 # 
-# line 111 part44_ceres_eei = 47 makes 48m avg
+# line 111 part44_ceres_eei = 5 makes 48m avg
 # 
 
 # ok horizontal 1.8°C line is T value
@@ -107,13 +107,16 @@ def process_ceres_data():
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
-    part44_ceres_eei = 0 # makes 48month trailing plot
+    part44_ceres_eei = 5 # makes 48month trailing plot
+    print(f"main_111: 44.3 local variable={part44_ceres_eei}")
 
     if part44_ceres_eei > 3:
         out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
+        print(f"main_116: 44.4 variable={part44_ceres_eei}")
         # /Dokumente/Python/5_CO2_EEI_T/read_csv/2016_01_EEI_CERES_TOA Net Flux.txt
         df44 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
                                     'work/c44b_ceres.csv')
+        print(f"main_118: 44.5 variable={part44_ceres_eei}")
         if part44_ceres_eei % 2 == 0:
             use_center = True
             min_periods = part44_ceres_eei // 2
@@ -225,12 +228,13 @@ def load_plot_data():
         data['ceres_48'] = pd.read_csv("csv/csv44/_plot_42_41g50.csv")
     
     if part43_ceres_eei > 0: # 43.2 read1
-        print(f"main_read_275: 43.2 ={part43_ceres_eei}")
+        print(f"main_read_228: 43.2 ={part43_ceres_eei}")
         #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
         data['ceres_43'] = pd.read_csv("read_csv/a44d_ceres_12month_EEI.csv")
   
 
     if part44_ceres_eei > 0:
+        print(f"main_read_234: 44.4 ={part44_ceres_eei} --- not called")
         data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
     
     return data
