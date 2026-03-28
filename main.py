@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a25" # 42 EEI in row 3,4 is ok
+v = "5a26" # 41 42 EEI in row 3,4 is ok
 # run1 part41_ceres_eei = 12
 # run2 part41_ceres_eei = 48
 # run3 part41_ceres_eei = 50

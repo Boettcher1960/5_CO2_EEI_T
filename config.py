@@ -10,9 +10,9 @@ plot23_Glen_CO2 = 0
 plot25_long_CO2 = 0
 plot34_CO2_emission = 0
 
-part41_ceres_eei = 0
-part42_ceres_eei = 3  # 4 print EEI 48 month running mean. Info in line 4 below the plot
-part43_ceres_eei = 0
+part41_ceres_eei = 3  # print EEI 12 month running mean. Info in line 3 below the plot
+part42_ceres_eei = 4  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
+part43_ceres_eei = 0  # 3,4 print EEI 12 month running mean.
 part44_eei = 77
 part44_ceres_eei = 0 # is local 
 
