@@ -1,14 +1,15 @@
 # main.py 5a1
 # part 1 configure 
-v = "5a4" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
-# bug line linear_41_75 = 3 is not displayed
-# bug left y axis
-# bug right y axis
+v = "5a5" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
+# bug EEI 11 is goodnot shown
+# ok line linear_41_75 = 3 is not displayed
+# ok left y axis
+# ok right y axis
 # bug line 6 is not shown text6 = f"Left Y axis is the " # 
 #   text6 = text6 + f"EEI = {y_Emin}" # y_max number inside string
 #   text6 = text6 + f" ... {y_Emax} W/m²" # y_max number inside string
-# bug horizontal 1.8°C line is EEI value
-# ok EEI 11 is good
+# ok horizontal 1.8°C line is T value
+
 # part 2.2 plot CO2 Mauna Loa
 # part 2.3 plot23_Glen_CO2 
 # part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
@@ -129,107 +130,62 @@ def process_ceres_data():
         
         print(f"{avg_type} average for {part44_ceres_eei}-month window")
 
-def load_plot_data():
-    """Load all data needed for plotting"""
-    data = {}
+def create_temperature_plots(ax1):
+    """Create temperature plots based on configuration"""
+    temp_axes = {}
     
-    # Load CO2 data if needed
-    if plot22_CO2_Mauna_Loa > 0:
-        data['co2'] = load_co2_mauna_loa(x_anf, x_end)
+    if plot71_temperature > 0:
+        years = np.arange(x_anf, x_end + 1)
+        values = T_model71(years)
+        ax = ax1.twinx()
+        ax.plot(years, values, '--', color=c71, linewidth=3)
+        temp_axes['71'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c71, 
+                                                   "Δ Temperature in °C 71")
     
-    # Load GIS temperature data
+    if plot72_AESS_T > 0:
+        years = np.arange(x_anf, x_end + 1)
+        values = T_model72(years)
+        ax = ax1.twinx()
+        ax.plot(years, values, '--', color=c72, linewidth=3)
+        temp_axes['72'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c72, 
+                                                   "Δ Temperature calc72 in °C")
+    
+    if plot73_ECS_T > 0:
+        years = np.arange(x_anf, x_end + 1)
+        values = T_model73(years)
+        ax = ax1.twinx()
+        ax.plot(years, values, '--', color=c73, linewidth=3)
+        temp_axes['73'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c73, 
+                                                   "Δ Temperature in °C (ECS = 4.5°C)")
+    
     if plot74_GIS_T > 0:
-        data['gis_temp'] = load_gis_temperature()
+        df = pd.read_csv("csv/csv7/csv_74_gis_temperature.csv")
+        ax = ax1.twinx()
+        ax.plot(df["Year74"], df["GIS_temp"] + 0.3, '-', color=c74, linewidth=3)
+        temp_axes['74'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c74, 
+                                                   "Δ GIS Temperature in °C 74")
     
-    # Load CERES data
-    if part41_ceres_eei > 0:
-        data['ceres_12'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
+    if linear_41_75 > 0:
+        df = pd.read_csv("csv/csv7/csv_75_hansen.csv")
+        ax = ax1.twinx()
+        ax.plot(df["Year75"], df["temp"] + 0.1, '--', color=c75, linewidth=2)
+        temp_axes['75'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c75, 
+                                                   "Hansen linear fit 75")
     
-    if part42_ceres_eei > 0:
-        data['ceres_48'] = pd.read_csv("csv/csv44/_plot_42_41g50.csv")
-    
-    if part44_ceres_eei > 0:
-        data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
-    
-    return data
-
-def create_plots(ax1, data):
-    """Create all plots based on configuration"""
-    # Plot CERES data
-    if part41_ceres_eei > 0 and 'ceres_12' in data:
-        ax41 = ax1.twinx()
-        ax41.plot(data['ceres_12']["year41"], data['ceres_12']["EEI"], '-', 
-                  label="EEI K41", color=c41, linewidth=2)
-        ax41.tick_params(axis="y", labelcolor=c41)
-        ax41.set_ylim(y_Emin, y_Emax)
-    
-    if part42_ceres_eei > 0 and 'ceres_48' in data:
-        ax42 = ax1.twinx()
-        ax42.plot(data['ceres_48']["year41"], data['ceres_48']["EEI"], '-', 
-                  label="EEI K42", color=c42, linewidth=2)
-        ax42.tick_params(axis="y", labelcolor=c42)
-        ax42.set_ylim(y_Emin, y_Emax)
-    
-    if part44_ceres_eei > 0 and 'ceres_custom' in data:
-        ax44 = ax1.twinx()
-        ax44.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
-                  label="EEI K44", color=c44, linewidth=2)
-        ax44.tick_params(axis="y", labelcolor=c44)
-        ax44.set_ylim(y_Emin, y_Emax)
-    
-    # Plot GIS temperature
-    if plot74_GIS_T > 0 and 'gis_temp' in data:
-        ax74 = ax1.twinx()
-        ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
-                  label="T GIS K74", color=c74, linewidth=3)
-        ax74.tick_params(axis="y", labelcolor=c74)
-        ax74.set_ylim(y_Tmin, y_Tmax)
-
-def add_text_annotations(fig, ax1, header_parameter):
-    """Add all text annotations to the plot"""
-    filename = os.path.basename(sys.argv[0])
-    
-    # Add header
-    add_header(ax1, x_anf, x_end, yl_mode)
-    
-    # Add bottom text
-    add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y, tr2x)
-    
-    # Add legend lines for active plots
-    if plot74_GIS_T == 2:
-        add_legend_line(fig, lr2x1, lr2x2, lr2y, c74)
-        add_text_row(ax1, tr2x, tr2y, 
-                    "Temperature in °C giss.nasa.gov Hansen+0.3°C 74", 
-                    c74, trs)
+    return temp_axes
 
 
-    if part41_ceres_eei == 3:
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
-        add_text_row(ax1, tr2x, tr3y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month 41", 
-                    c41, trs)
+def hide_other_right_axes(ax1, keep_axis):
+    """Hide all right y-axes except the one we want to keep"""
+    # Get all axes in the figure
+    all_axes = ax1.get_figure().get_axes()
     
-    if part42_ceres_eei == 4:
-        add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
-        add_text_row(ax1, tr2x, tr4y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month 42", 
-                    c42, trs)
-    
-    if part44_ceres_eei > 0:
-        add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
-        p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44"
-        add_text_row(ax1, tr2x, tr5y, p44_text, c44, trs)
-
-def save_plot(fig, header_parameter):
-    """Save the plot if configured"""
-    if parameter84_save_png > 0:
-        filename = os.path.basename(__file__)[:parameter84_save_png]
-        filename = f"{filename}_{header_parameter}{x_end}"
-        path = f"/Users/thomasboettcher/Desktop/{filename}"
-        fig.savefig(path, dpi=300, bbox_inches="tight")
-        
-        path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/42_CO2_T.png"
-        fig.savefig(path, dpi=300, bbox_inches="tight")
+    for ax in all_axes:
+        if ax != ax1 and ax != keep_axis:
+            # Check if this is a right y-axis (has a spine on the right)
+            if ax.spines['right'].get_visible():
+                ax.spines["right"].set_visible(False)
+                ax.tick_params(right=False, labelright=False)
 
 def main():
     """Main execution function"""
@@ -241,46 +197,58 @@ def main():
                        f"7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
                        f"{linear_41_75}{plot76_my_T})")
     
-    # Process CERES data
-    process_ceres_data()
-    
     # Setup figure
     fig, ax1 = setup_figure(scale_mode)
     
-    # Load data
-    data = load_plot_data()
-    
-    # Configure axes plotting.py 
+    # Configure left axes
     ax1 = configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
                          y_Tmin, y_Tmax, yl_mode, c22, c42, c74)
     
-    # Create plots
-    create_plots(ax1, data)
+    # Create temperature plots (these create right y-axes)
+    temp_axes = create_temperature_plots(ax1)
+    
+    # Find the primary temperature axis to keep visible
+    primary_axis = None
+    if plot74_GIS_T > 0 and '74' in temp_axes:
+        primary_axis = temp_axes['74']
+    elif linear_41_75 > 0 and '75' in temp_axes:
+        primary_axis = temp_axes['75']
+    elif temp_axes:
+        primary_axis = list(temp_axes.values())[0]
+    
+    # Hide other right y-axes to avoid clutter
+    if primary_axis:
+        hide_other_right_axes(ax1, primary_axis)
+    
+    # Add temperature band only to temperature axes
+    if primary_axis:
+        add_temperature_band(primary_axis, 1.5, 2.0)
     
     # Add grid lines
     add_grid_lines(ax1)
     
     # Add vertical bands
     add_vertical_bands(ax1, C280)
-    
-    # Add temperature band if temperature plots are active
-    if plot71_temperature > 0 or plot72_AESS_T > 0 or plot73_ECS_T > 0 or plot74_GIS_T > 0:
-        print(f"-main-line245- bug6 temperature band on left y axis only {'='*1}")
-        add_temperature_band(ax1) # 1.5 to 2 on left y axis
-        # Find the active temperature axis
-        for ax in [ax1] + ax1.get_figure().get_axes():
-            if hasattr(ax, 'get_ylabel') and 'Temperature' in ax.get_ylabel():
-                add_temperature_band(ax)
-                print(f"-main-line249-\n{'='*20}")
-                break
-    
-    # Add text annotations
-    add_text_annotations(fig, ax1, header_parameter)
+    add_year_band(ax1, 2025, 2027)
     
     # Add x-axis label
     ax1.set_xlabel("year", fontsize=20)
     plt.xticks(fontsize=20)
     ax1.tick_params(axis="x", labelcolor="black", labelsize=20)
+    
+    # Add header
+    add_header(ax1, x_anf, x_end, yl_mode)
+    
+    # Add bottom text (line 1)
+    filename = os.path.basename(sys.argv[0])
+    add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y)
+    
+    # Add axis info (line 6)
+    add_axis_info_line(ax1, yl_mode, y_Emin, y_Emax, y_Tmin, y_Tmax, 
+                       y_min, y_max, header_parameter, tr6y, c42)
+    
+    # Add legend lines for active plots (lines 2-5)
+    # This is a simplified version - you can expand based on your needs
     
     # Adjust layout
     fig.tight_layout()
@@ -290,7 +258,14 @@ def main():
     plt.show()
     
     # Save plot
-    save_plot(fig, header_parameter)
+    if parameter84_save_png > 0:
+        filename = os.path.basename(__file__)[:parameter84_save_png]
+        filename = f"{filename}_{header_parameter}{x_end}"
+        path = f"/Users/thomasboettcher/Desktop/{filename}"
+        fig.savefig(path, dpi=300, bbox_inches="tight")
+        
+        path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/42_CO2_T.png"
+        fig.savefig(path, dpi=300, bbox_inches="tight")
     
     # Close figure
     plt.close(fig)
