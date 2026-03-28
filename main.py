@@ -1,7 +1,7 @@
 # main.py
 # part 1 configure 
-v = "5a29" # bugs
-#  part43_ceres_eei = 3 EEI 12 month
+v = "5a30" # bugs 43 is too low
+#
 #  part42_ceres_eei
 # 
 # line 111 part44_ceres_eei = 47 makes 48m avg
@@ -196,7 +196,7 @@ def hide_other_right_axes(ax1, keep_axis):
                 ax.tick_params(right=False, labelright=False)
 
 
-def load_plot_data():
+def load_plot_data(): # not called
     """Load all data needed for plotting"""
     data = {}
     
@@ -215,14 +215,15 @@ def load_plot_data():
     if part42_ceres_eei > 0:
         data['ceres_48'] = pd.read_csv("csv/csv44/_plot_42_41g50.csv")
     
-    if part43_ceres_eei > 0:
-         data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
-    #    data['ceres_43'] = pd.read_csv("read_csv/c44d_ceres_12month_EEI.csv")
-
+    if part43_ceres_eei > 0: # 43.9 read made csv from 44 # not called
+         print(f"main_read_219: 43.9 ={part43_ceres_eei}")
+         data['ceres_43'] = pd.read_csv("read_csv/c44d_ceres_12month_EEI.csv")
+         # not called
     if part44_ceres_eei > 0:
         data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
     
     return data
+    # not called
 
 def create_plots(ax1, data):
     """Create all plots based on configuration"""
@@ -241,7 +242,9 @@ def create_plots(ax1, data):
         ax42.tick_params(axis="y", labelcolor=c42)
         ax42.set_ylim(y_Emin, y_Emax)
     
+    # 43.4 make axis ax43
     if part43_ceres_eei > 0 and 'ceres_43' in data:
+        print(f"main_ax43_246: 43.4 ={part43_ceres_eei}")
         ax43 = ax1.twinx()
         ax43.plot(data['ceres_43']["year41"], data['ceres_43']["EEI"], '-', 
                   label="EEI K43", color=c43, linewidth=2)
@@ -297,9 +300,11 @@ def load_plot_data():
     if part42_ceres_eei > 0:
         data['ceres_48'] = pd.read_csv("csv/csv44/_plot_42_41g50.csv")
     
-    if part43_ceres_eei > 0:
-        data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
-   
+    if part43_ceres_eei > 0: # 43.2 read1
+        print(f"main_read_301: 43.2 ={part43_ceres_eei}")
+        #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
+        data['ceres_43'] = pd.read_csv("read_csv/c44d_ceres_12month_EEI.csv")
+  
 
     if part44_ceres_eei > 0:
         data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
@@ -323,9 +328,10 @@ def create_plots(ax1, data):
         ax42.tick_params(axis="y", labelcolor=c42)
         ax42.set_ylim(y_Emin, y_Emax)
     
+
     if part43_ceres_eei > 0 and 'ceres_43' in data:
         ax43 = ax1.twinx()
-        ax43.plot(data['ceres_43']["year41"], data['ceres_43']["EEI"], '-', 
+        ax43.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
                   label="EEI K41", color=c43, linewidth=2)
         ax43.tick_params(axis="y", labelcolor=c43)
         ax43.set_ylim(y_Emin, y_Emax)
