@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a33" # bugs 43 is too low
+v = "5a36" # bugs 43 is too low
 #
 #  part42_ceres_eei
 # 
@@ -79,10 +79,6 @@ def get_active_temperature_axis(ax1):
     elif linear_41_75 > 0:
         return ax1.twinx()
     return None
-
-
-
-
 
 
 
@@ -196,49 +192,6 @@ def hide_other_right_axes(ax1, keep_axis):
                 ax.tick_params(right=False, labelright=False)
 
 
-def create_plots(ax1, data):
-    """Create all plots based on configuration"""
-    # Plot CERES data
-    if part41_ceres_eei > 0 and 'ceres_12' in data:
-        ax41 = ax1.twinx()
-        ax41.plot(data['ceres_12']["year41"], data['ceres_12']["EEI"], '-', 
-                  label="EEI K41", color=c41, linewidth=2)
-        ax41.tick_params(axis="y", labelcolor=c41)
-        ax41.set_ylim(y_Emin, y_Emax)
-    
-    if part42_ceres_eei > 0 and 'ceres_48' in data:
-        ax42 = ax1.twinx()
-        ax42.plot(data['ceres_48']["year41"], data['ceres_48']["EEI"], '-', 
-                  label="EEI K42", color=c42, linewidth=2)
-        ax42.tick_params(axis="y", labelcolor=c42)
-        ax42.set_ylim(y_Emin, y_Emax)
-    
-    # 43.4 make axis ax43
-    if part43_ceres_eei > 0 and 'ceres_43' in data:
-        print(f"main_ax43_246: 43.4 ={part43_ceres_eei}")
-        ax43 = ax1.twinx()
-        ax43.plot(data['ceres_43']["year41"], data['ceres_43']["EEI"], '-', 
-                  label="EEI K43", color=c43, linewidth=2)
-        ax43.tick_params(axis="y", labelcolor=c43)
-        ax43.set_ylim(y_Emin, y_Emax)
- 
-
-    if part44_ceres_eei > 0 and 'ceres_custom' in data:
-        ax44 = ax1.twinx()
-        ax44.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
-                  label="EEI K44", color=c44, linewidth=2)
-        ax44.tick_params(axis="y", labelcolor=c44)
-        ax44.set_ylim(y_Emin, y_Emax)
-    
-    # Plot GIS temperature
-    if plot74_GIS_T > 0 and 'gis_temp' in data:
-        ax74 = ax1.twinx()
-        ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
-                  label="T GIS K74", color=c74, linewidth=3)
-        ax74.tick_params(axis="y", labelcolor=c74)
-        ax74.set_ylim(y_Tmin, y_Tmax)
-
-
 def save_plot(fig, header_parameter):
     """Save the plot if configured"""
     if parameter84_save_png > 0:
@@ -272,7 +225,7 @@ def load_plot_data():
         data['ceres_48'] = pd.read_csv("csv/csv44/_plot_42_41g50.csv")
     
     if part43_ceres_eei > 0: # 43.2 read1
-        print(f"main_read_301: 43.2 ={part43_ceres_eei}")
+        print(f"main_read_275: 43.2 ={part43_ceres_eei}")
         #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
         data['ceres_43'] = pd.read_csv("read_csv/a44d_ceres_12month_EEI.csv")
   
@@ -301,6 +254,7 @@ def create_plots(ax1, data):
     
 
     if part43_ceres_eei > 0 and 'ceres_43' in data:
+        print(f"main_ax43_300: 43.4  called ={part43_ceres_eei}")
         ax43 = ax1.twinx()
         ax43.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
                   label="EEI K41", color=c43, linewidth=2)
