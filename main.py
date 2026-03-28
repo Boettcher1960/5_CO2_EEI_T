@@ -1,10 +1,12 @@
 # main.py 5a1
 # part 1 configure 
-v = "5a2" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
-# bug line linear_41_75 = 3 not displayed
+v = "5a3" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
+# bug line linear_41_75 = 3 is not displayed
 # bug left y axis
 # bug right y axis
-# bug line 6 not show
+# bug line 6 is not shown text6 = f"Left Y axis is the " # 
+#   text6 = text6 + f"EEI = {y_Emin}" # y_max number inside string
+#   text6 = text6 + f" ... {y_Emax} W/m²" # y_max number inside string
 # bug horizontal 1.8°C line is EEI value
 # ok EEI 11 is good
 # part 2.2 plot CO2 Mauna Loa

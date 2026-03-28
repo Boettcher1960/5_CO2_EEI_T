@@ -40,6 +40,24 @@ c75 = "#371EA484"
 c76 = "red"
 c71 = "red"
 
+# Text definitions (added missing print texts)
+blue22_text = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm) 22"
+text_plot23_Glen = "calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
+blue25_text = "green: CO2 NOAA 800_000 year ice data 25"
+print34_text = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode"
+p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
+p42_text = "Earth Energy Imbalance W/m² moving average 48 month 42"
+p43_text = "Earth Energy Imbalance W/m² moving average 84 month 43"
+p44_text = "Earth Energy Imbalance W/m² moving average 44"
+print74_text = "Temperature in °C giss.nasa.gov Hansen+0.3°C 74 n"
+print75_text = "Hansen linear fit from 2015 +0.41°C 75"  # Added for linear_41_75
+green55_text = "Green line: Earth Population in billion"
+red71_text = "red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71"
+red72_text = "AESS_T Apparent Earth System Sensitivity = 8°C * log2(CO2/C0) 72"
+my76_text = "guessed quadratic temperature my_T 76"
+
+
+
 # Axis ranges
 y_min = 250
 y_max = 500
