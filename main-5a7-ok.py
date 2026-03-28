@@ -1,6 +1,6 @@
 # main.py 5a1
 # part 1 configure 
-v = "5a8" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
+v = "5a7" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
 # bug EEI 11 is not shown
 
 # ok horizontal 1.8°C line is T value
