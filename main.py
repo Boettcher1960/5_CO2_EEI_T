@@ -1,9 +1,10 @@
 # main.py
 # part 1 configure 
-v = "5a16" # text 1 up
+v = "5a19" # 
 # run1 part41_ceres_eei = 12
 # run2 part41_ceres_eei = 48
 # run3 part41_ceres_eei = 50
+# line 111 part44_ceres_eei = 47
 # ok EEI 11 is not shown
 
 # ok horizontal 1.8°C line is T value
@@ -89,6 +90,9 @@ def process_ceres_data():
         df41a = convert_ceres_to_csv('csv/csv41/csv41a_in_CERES.txt', 
                                       'work/c41b_ceres.csv')
     
+    # run1 part41_ceres_eei = 12 c41d12_ceres
+    # run2 part41_ceres_eei = 48 c41d48_ceres
+    # run3 part41_ceres_eei = 50 c41d50_ceres
     if part41_ceres_eei == 12:
         df_with_12avg = create_running_average('work/c41b_ceres.csv', 
                                                'work/c41d12_ceres.csv',
@@ -105,18 +109,20 @@ def process_ceres_data():
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
-    if part44_ceres_eei > 13:
+    part44_ceres_eei = 47
+    if part44_ceres_eei > 3:
         out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
-        
+        df44 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES.txt', 
+                                    'work/c44_ceres.csv')
         if part44_ceres_eei % 2 == 0:
             use_center = True
             min_periods = part44_ceres_eei // 2
             avg_type = "CENTERED"
-        else:
+        else: # 47 make trailing 48 month runnin average
             use_center = False
             min_periods = part44_ceres_eei
             avg_type = "TRAILING"
-        
+            part44_ceres_eei = part44_ceres_eei + 1
         df_with_avg = create_running_average('csv/csv44/csv44b_ceres.csv', 
                                             "csv/csv44/csv44d_out.csv",
                                             window_months=part44_ceres_eei,

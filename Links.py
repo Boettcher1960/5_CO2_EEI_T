@@ -3107,5 +3107,8 @@ def main():
 if __name__ == "__main__":
     main()
 
-
+v = "5a17" # text 1 up
+# run1 part41_ceres_eei = 12
+# run2 part41_ceres_eei = 48
+# run3 part41_ceres_eei = 50
 
