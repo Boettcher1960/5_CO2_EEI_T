@@ -16,7 +16,7 @@ part42_ceres_eei = 4  # 3,4 print EEI 48 month running mean. Info in line 4 belo
 part43_ceres_eei = 3  # 43.1  3,4 print EEI 12 month running mean.
 
 part44_eei = 77
-part44_ceres_eei = 5 # is local 
+part44_ceres_eei = 11 # is local 
 
 plot52_delta_CO2_red_bars = 0
 plot53_CO2_orange2025 = 0

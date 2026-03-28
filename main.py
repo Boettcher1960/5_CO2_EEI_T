@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a38" # bugs 43 is too low
+v = "5a40" # bugs 43 is too low
 #
 #  part42_ceres_eei
 # 
@@ -107,7 +107,7 @@ def process_ceres_data():
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
-    part44_ceres_eei = 5 # makes 48month trailing plot
+    part44_ceres_eei = 11 # makes 48month trailing plot
     print(f"main_111: 44.3 local variable={part44_ceres_eei}")
 
     if part44_ceres_eei > 3:
@@ -134,7 +134,7 @@ def process_ceres_data():
                                             column_name='EEI')
         
         print(f"{avg_type} average for {part44_ceres_eei}-month window")
-
+        print(f"main_137: 44.5 variable={part44_ceres_eei}")
 
 
 def create_temperature_plots(ax1):
@@ -234,9 +234,10 @@ def load_plot_data():
   
 
     if part44_ceres_eei > 0:
-        print(f"main_read_234: 44.4 ={part44_ceres_eei} --- not called")
-        data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
-    
+        print(f"main custom-read_237: 44.4 ={part44_ceres_eei}")
+        data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
+        # data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
+        # data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
     return data
 
 def create_plots(ax1, data):
@@ -267,6 +268,7 @@ def create_plots(ax1, data):
 
 
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
+        print(f"main ax44 _270: 44.8 variable={part44_ceres_eei}")
         ax44 = ax1.twinx()
         ax44.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
                   label="EEI K44", color=c44, linewidth=2)
