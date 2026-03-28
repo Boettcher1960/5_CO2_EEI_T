@@ -1,9 +1,9 @@
 # main.py
 # part 1 configure 
-v = "5a26" # 41 42 EEI in row 3,4 is ok
-# run1 part41_ceres_eei = 12
-# run2 part41_ceres_eei = 48
-# run3 part41_ceres_eei = 50
+v = "5a28" # bugs
+#  part43_ceres_eei = 5 makes nothing
+#  part42_ceres_eei
+# 
 # line 111 part44_ceres_eei = 47 makes 48m avg
 # 
 
@@ -215,6 +215,9 @@ def load_plot_data():
     if part42_ceres_eei > 0:
         data['ceres_48'] = pd.read_csv("csv/csv44/_plot_42_41g50.csv")
     
+    if part43_ceres_eei > 0:
+        data['ceres_43'] = pd.read_csv("read_csv/c44d_ceres_12month_EEI.csv")
+
     if part44_ceres_eei > 0:
         data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
     
@@ -237,6 +240,14 @@ def create_plots(ax1, data):
         ax42.tick_params(axis="y", labelcolor=c42)
         ax42.set_ylim(y_Emin, y_Emax)
     
+    if part43_ceres_eei > 0 and 'ceres_43' in data:
+        ax43 = ax1.twinx()
+        ax43.plot(data['ceres_43']["year41"], data['ceres_43']["EEI"], '-', 
+                  label="EEI K43", color=c43, linewidth=2)
+        ax43.tick_params(axis="y", labelcolor=c43)
+        ax43.set_ylim(y_Emin, y_Emax)
+ 
+
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
         ax44 = ax1.twinx()
         ax44.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
@@ -355,10 +366,13 @@ def add_text_annotations(fig, ax1, header_parameter):
     elif part42_ceres_eei == 3:
         add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
         add_text_row(ax1, tr2x, tr3y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month -main358--42", 
+                    "Earth Energy Imbalance W/m² moving average 48 month -main369--42", 
                     c42, trs)
-
-
+    elif part43_ceres_eei == 3:
+        add_legend_line(fig, lr2x1, lr2x2, lr3y, c43)
+        add_text_row(ax1, tr2x, tr3y, 
+                    "Earth Energy Imbalance W/m² moving average 12 month -main374--43", 
+                    c43, trs)
 
     if part42_ceres_eei == 4:
         add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
