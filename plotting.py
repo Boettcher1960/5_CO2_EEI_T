@@ -16,6 +16,7 @@ def setup_figure(scale_mode=10):
     fig.subplots_adjust(bottom=0.30)
     return fig, ax1
 
+
 def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax, 
                    y_Tmin, y_Tmax, yl_mode, c22, c42):
     """Configure the axes based on selected mode"""

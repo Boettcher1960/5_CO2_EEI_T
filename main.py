@@ -1,6 +1,11 @@
 # main.py 5a1
 # part 1 configure 
-v = "5a1" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
+v = "5a2" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
+# bug line linear_41_75 = 3 not displayed
+# bug left y axis
+# bug right y axis
+# bug line 6 not show
+# ok EEI 11 is good
 # part 2.2 plot CO2 Mauna Loa
 # part 2.3 plot23_Glen_CO2 
 # part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
@@ -222,7 +227,7 @@ def main():
     # Load data
     data = load_plot_data()
     
-    # Configure axes
+    # Configure axes plotting.py 
     ax1 = configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
                          y_Tmin, y_Tmax, yl_mode, c22, c42)
     
@@ -237,10 +242,13 @@ def main():
     
     # Add temperature band if temperature plots are active
     if plot71_temperature > 0 or plot72_AESS_T > 0 or plot73_ECS_T > 0 or plot74_GIS_T > 0:
+        print(f"-main-line245- bug6 temperature band on left y axis only {'='*1}")
+        add_temperature_band(ax1) # 1.5 to 2 on left y axis
         # Find the active temperature axis
         for ax in [ax1] + ax1.get_figure().get_axes():
             if hasattr(ax, 'get_ylabel') and 'Temperature' in ax.get_ylabel():
                 add_temperature_band(ax)
+                print(f"-main-line249-\n{'='*20}")
                 break
     
     # Add text annotations
