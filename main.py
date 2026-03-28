@@ -5,6 +5,7 @@ v = "5a2" # based on /42_CO2_T.py  based on /42v1_CO2_T.py
 # bug left y axis
 # bug right y axis
 # bug line 6 not show
+# bug horizontal 1.8°C line is EEI value
 # ok EEI 11 is good
 # part 2.2 plot CO2 Mauna Loa
 # part 2.3 plot23_Glen_CO2 

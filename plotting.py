@@ -35,8 +35,9 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     return ax1
 
 def add_grid_lines(ax1):
-    """Add grid lines to the plot"""
+    # mayor grid lines vertical lines inside the plot to better read the y value
     for line in ax1.get_ygridlines():
+        # line.set_color('green')  # major lines
         line.set_color('blue')
         line.set_alpha(0.5)
         line.set_linestyle('-')
@@ -44,9 +45,9 @@ def add_grid_lines(ax1):
     
     ax1.grid(True, which="minor", axis="y", color="lightblue", alpha=0.94)
 
-def add_temperature_band(ax, y_min=1.5, y_max=2.0):
+def add_temperature_band(ax48, y_min=1.5, y_max=1.8):
     """Add temperature band to the plot"""
-    ax.axhspan(y_min, y_max, color="#B3D9FF", alpha=0.5, zorder=0)
+    ax48.axhspan(y_min, y_max, color="#B3D9FF", alpha=0.5, zorder=0)
 
 def add_vertical_bands(ax1, C280):
     """Add vertical bands for CO2 levels"""
