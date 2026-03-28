@@ -1,6 +1,9 @@
 # main.py
 # part 1 configure 
-v = "5a14" # text 1 up
+v = "5a16" # text 1 up
+# run1 part41_ceres_eei = 12
+# run2 part41_ceres_eei = 48
+# run3 part41_ceres_eei = 50
 # ok EEI 11 is not shown
 
 # ok horizontal 1.8°C line is T value
@@ -84,21 +87,21 @@ def process_ceres_data():
     """Process CERES data based on configuration"""
     if part41_ceres_eei > 10:
         df41a = convert_ceres_to_csv('csv/csv41/csv41a_in_CERES.txt', 
-                                      'csv/csv41/c41b_ceres.csv')
+                                      'work/c41b_ceres.csv')
     
     if part41_ceres_eei == 12:
-        df_with_12avg = create_running_average('csv/csv41/csv41b_ceres.csv', 
-                                               'csv/csv41/c41d12_ceres.csv',
+        df_with_12avg = create_running_average('work/c41b_ceres.csv', 
+                                               'work/c41d12_ceres.csv',
                                                window_months=12)
     
     elif part41_ceres_eei == 48:
-        df_with_48avg = create_running_average('csv/csv41/csv41b_ceres.csv', 
-                                               'csv/csv41/csv41d48_ceres.csv',
+        df_with_48avg = create_running_average('work/c41b_ceres.csv', 
+                                               'work/c41d48_ceres.csv',
                                                window_months=48)
     
     elif part41_ceres_eei == 50:
-        df_with_48avg = create_running_average('csv/csv41/csv41b_ceres.csv', 
-                                               'csv/csv41/csv41d50_ceres.csv',
+        df_with_48avg = create_running_average('work/c41b_ceres.csv', 
+                                               'work/c41d50_ceres.csv',
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
