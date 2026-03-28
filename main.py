@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a41" # bugs 43 is too low
+v = "5a42" # bugs 44 12month is 0.5 low
 #
 #  part42_ceres_eei
 # 
@@ -120,13 +120,15 @@ def process_ceres_data():
         if part44_ceres_eei % 2 == 0:
             use_center = True
             # min_periods = part44_ceres_eei // 2
-            min_periods = part44_ceres_eei // 2
+            min_periods = part44_ceres_eei 
             avg_type = "CENTERED"
+            print(f"main_125 centered : 44.5 variable={part44_ceres_eei}")
         else: # 47 make trailing 48 month runnin average
             use_center = False
             min_periods = part44_ceres_eei
             avg_type = "TRAILING"
             part44_ceres_eei = part44_ceres_eei + 1
+            print(f"main_131 trailing: 44.6 variable={part44_ceres_eei}")
         df_with_avg = create_running_average('work/c44b_ceres.csv', 
                                             "work/c44d_ceres.csv",
                                             window_months=part44_ceres_eei,
