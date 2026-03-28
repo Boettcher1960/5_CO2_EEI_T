@@ -2,7 +2,7 @@
 # Configuration parameters for the climate analysis tool
 
 # Version
-v = "42v3"
+# v = "42v3"based on v = "42v1" of /4_Python_CO2/
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0

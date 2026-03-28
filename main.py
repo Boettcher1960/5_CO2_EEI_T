@@ -1,5 +1,6 @@
-# main.py 42v2
+# main.py 5a1
 # part 1 configure 
+v = "5a1" # based on /42_CO2_T.py  based on /42v1_CO2_T.py 
 # part 2.2 plot CO2 Mauna Loa
 # part 2.3 plot23_Glen_CO2 
 # part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
