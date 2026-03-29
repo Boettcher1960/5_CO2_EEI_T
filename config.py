@@ -32,7 +32,7 @@ plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0
 
-play_61_CERES = 96     # 12 CERES EEI 12 month like part41_ceres_eei 
+play_61_CERES = 120     # 12 CERES EEI 12 month like part41_ceres_eei 
 
 plot71_temperature = 0
 plot72_AESS_T = 0
