@@ -85,7 +85,8 @@ def add_running_12month_average(df):
     df_with_avg = df_with_avg.sort_values('date')
     # 4.1.2.9 Calculate 12-month running average (centered)
     # Using rolling window with center=True gives centered average
-    if (part41_ceres_eei == 1): # end_no_good
+    play_61_CERES = 12
+    if (play_61_CERES == 1): # end_no_good
        df_with_avg['running_12month_avg'] = df_with_avg['toa_net_flux_w_m2'].rolling(
            window=12, 
            center=True,
