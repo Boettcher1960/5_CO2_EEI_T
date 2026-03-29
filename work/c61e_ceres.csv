@@ -1,4 +1,4 @@
-date,year,month,toa_net_flux_w_m2,decimal_year,running_12month_avg
+date,year,month,toa_net_flux_w_m2,decimal_year,EEI
 2000-03-01,2000,3,5.96,2000.2083333333333,
 2000-04-01,2000,4,1.93,2000.2916666666667,
 2000-05-01,2000,5,-5.93,2000.375,

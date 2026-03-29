@@ -93,8 +93,9 @@ def add_running_12month_average(df):
            min_periods=6  # Allow partial windows at the edges
        ).mean()
     else:  #  if (part41_ceres_eei == 2): # For trailing 12-month average (uncentered)
-       df_with_avg['running_12month_avg'] = df_with_avg['toa_net_flux_w_m2'].rolling(
+       df_with_avg['EEI'] = df_with_avg['toa_net_flux_w_m2'].rolling(
           window=12, 
+          #center=False
           min_periods=12
        ).mean()
     return df_with_avg
@@ -120,11 +121,11 @@ def save_with_12month_average(df, input_filename, output_filename):
     if print_debug_DP > 9:
         print(f"DataP122: Saved to {output_filename}  save_with_12month_average() ")
         print(f"DataP122: Total records: {len(df_with_avg)}")
-        print(f"DataP122: Records with valid 12-month average: {df_with_avg['running_12month_avg'].notna().sum()}")
+        #print(f"DataP122: Records with valid 12-month average: {df_with_avg['running_12month_avg'].notna().sum()}")
         print(f"DataP122: Running 12-month average statistics:")
-        print(f"DataP122: Min: {df_with_avg['running_12month_avg'].min():.2f} W/m²")
-        print(f"DataP122: Max: {df_with_avg['running_12month_avg'].max():.2f} W/m²")
-        print(f"DataP122: Mean: {df_with_avg['running_12month_avg'].mean():.2f} W/m²")
+        #print(f"DataP122: Min: {df_with_avg['running_12month_avg'].min():.2f} W/m²")
+        #print(f"DataP122: Max: {df_with_avg['running_12month_avg'].max():.2f} W/m²")
+        #print(f"DataP122: Mean: {df_with_avg['running_12month_avg'].mean():.2f} W/m²")
     return df_with_avg
     # end 4.1.3 CERES function 3
 
