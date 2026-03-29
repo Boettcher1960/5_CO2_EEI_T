@@ -1,14 +1,11 @@
 # main.py
 # part 1 configure 
-v = "5a59" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
-#  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
+v = "5a60" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+#  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
+#  bug 44  part44_ceres_eei is local main line 116
 #
-# version 5a45
-#  part42_ceres_eei
-# 
 # line 111 part44_ceres_eei = 5 makes 48m avg
 # 
-
 # ok horizontal 1.8°C line is T value
 
 # part 2.2 plot CO2 Mauna Loa
@@ -26,6 +23,8 @@ v = "5a59" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_ee
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
+#
+# play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #
 # part 71 plot quadratic temperature with right y axis
 # part 72 plot temperature ECS = 8°C with right y axis
@@ -67,8 +66,7 @@ from data_processing import *
 from text_annotations import *
 
 from config import play_61_CERES
-# from config import part44_ceres_eei
-part44_ceres_eei = 11 
+# bug from config import part44_ceres_eei
 
 def get_active_temperature_axis(ax1):
     """Find which temperature axis is active"""
@@ -114,7 +112,9 @@ def process_ceres_data():
     if print_debug > 19:
         print(f"main_115: local variable 44.3 ={part44_ceres_eei}")
 
+        # bug redifine part44_ceres_eei as local variable 
         part44_ceres_eei = 11 # UnboundLocalError: cannot access local variable 'part44_ceres_eei
+
         out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
         if print_debug > 9:
            print(f"main_120: local variable 44.4 ={part44_ceres_eei}")
@@ -312,7 +312,7 @@ def add_text_annotations(fig, ax1, header_parameter):
     if plot74_GIS_T == 2:
         add_legend_line(fig, lr2x1, lr2x2, lr2y, c74)
         add_text_row(ax1, tr2x, tr2y, 
-                    "Temperature in °C giss.nasa.gov Hansen+0.3°C 74 -main343", 
+                    "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
                     c74, trs)
 
 
@@ -324,30 +324,30 @@ def add_text_annotations(fig, ax1, header_parameter):
     elif part42_ceres_eei == 3:
         add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
         add_text_row(ax1, tr2x, tr3y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month -main369--42", 
+                    "Earth Energy Imbalance W/m² moving average 48 month  42", 
                     c42, trs)
     elif part43_ceres_eei == 3:
         add_legend_line(fig, lr2x1, lr2x2, lr3y, c43)
         add_text_row(ax1, tr2x, tr3y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month -main374--43", 
+                    "Earth Energy Imbalance W/m² moving average 12 month  43", 
                     c43, trs)
 
     if part42_ceres_eei == 4:
         add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
         add_text_row(ax1, tr2x, tr4y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month main366--42", 
+                    "Earth Energy Imbalance W/m² moving average 48 month  42", 
                     c42, trs)
     
     # in row 5 display part44_ceres_eei
     if part44_ceres_eei > 0:
         add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
-        p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44 main361"
+        p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44"
         add_text_row(ax1, tr2x, tr5y, p44_text, c44, trs) 
 
     # in row 6 display play_61_CERES
     if play_61_CERES > 0:
         add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
-        p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61"
+        p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61 - main - line 350."
         add_text_row(ax1, tr2x, tr6y, p61_text, c61, trs) 
 
 
