@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a79" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a80" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -150,7 +150,7 @@ def process_ceres_data():
         if print_debug > 9:
                print(f"main_150: created c44d_ceres.csv 44.7 ={part44_ceres_eei}")
     if play_61_CERES > 1: # part 6 
-       df61b = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
+       df61b = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES.txt', 
                                       'work/c61b_ceres.csv')
        if print_debug > 9:
           print(f"main_156: create work/c61b_ceres.csv  61.b ={play_61_CERES}")
