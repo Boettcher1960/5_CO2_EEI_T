@@ -1,5 +1,5 @@
 # data_processing.py
-# version 5a45
+# version 5a51
 import pandas as pd
 import numpy as np
 
@@ -62,9 +62,12 @@ def create_running_average(input_csv,
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
     
     valid_records = df_output[column_name].notna().sum()
-    print(f"{window_months}-month running average saved to {output_csv}")
-    print(f"Valid records: {valid_records} out of {len(df_output)}")
-    
+    #print(f"{window_months}-month running average saved to {output_csv}")
+    #print(f"Valid records: {valid_records} out of {len(df_output)}")
+    print_debug = 10
+    if print_debug > 9:
+        print(f"DataP_69: Valid records: {valid_records} out of {len(df_output)}")
+        print(f"DataP_70: {window_months}-month running average saved to {output_csv} ")
     return df_output
 
 def load_co2_mauna_loa(x_anf, x_end):
