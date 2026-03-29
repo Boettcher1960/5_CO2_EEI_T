@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a62" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a63" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -149,11 +149,26 @@ def process_ceres_data():
            print(f"main_148: {avg_type} average for {part44_ceres_eei}-month window 44.7")
         if print_debug > 9:
                print(f"main_150: created c44d_ceres.csv 44.7 ={part44_ceres_eei}")
-    if play_61_CERES > 1:
-       df61 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
+    if play_61_CERES > 1: # part 6 
+       df61b = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
                                       'work/c61b_ceres.csv')
        if print_debug > 9:
           print(f"main_156: create work/c61b_ceres.csv  61.b ={play_61_CERES}")
+       #df61c = create_running_average('work/c61b_ceres.csv', 
+       #                               'work/c61c_ceres.csv',
+       #                                        window_months=play_61_CERES)
+       min_periods=12
+       use_center=False
+       keep_original=True,
+       df61c = create_running_average( 'work/c61b_ceres.csv', 
+                                       'work/c61c_ceres.csv',
+                                            window_months=12,
+                                            min_periods=play_61_CERES,
+                                            center=use_center,
+                                            column_name='EEI')
+
+       if print_debug > 9:
+          print(f"main_161: create work/c61c_ceres.csv  61.c ={play_61_CERES}")
 
 
 
@@ -281,7 +296,7 @@ def create_plots(ax1, data):
 
 
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
-        if print_debug > 9:
+        if print_debug > 19:
            print(f"main_291: ax44 44.7 ={part44_ceres_eei}")
 
         ax44 = ax1.twinx()
@@ -360,9 +375,9 @@ def add_text_annotations(fig, ax1, header_parameter):
 
 def save_png(fig, header_parameter):
     """Save the plot if configured"""
-    if print_debug > 9:
+    if print_debug > 19:
            print(f"main_358 save png as file {fig}")
-    print(f"main_save_plot_389: {fig}")
+    # print(f"main_save_plot_389: {fig}")
     if parameter84_save_png > 0:
         filename = os.path.basename(__file__)[:parameter84_save_png]
         filename = f"{filename}_{header_parameter}{x_end}"
@@ -374,7 +389,7 @@ def save_png(fig, header_parameter):
         path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/5_CO2_EEI_T.png"
         fig.savefig(path, dpi=300, bbox_inches="tight")
         if print_debug > 9:
-           print(f"main_370 saved png as file {path}")
+           print(f"main_382 saved png as file {path}")
 
 # main program 
 def main():
@@ -412,13 +427,13 @@ def main():
     # Add temperature band if temperature plots are active
     if plot71_temperature > 0 or plot72_AESS_T > 0 or plot73_ECS_T > 0 or plot74_GIS_T > 0:
         if print_debug > 13:
-            print(f"main_403: bug6 temperature band on left y axis only plot74_GIS_T={plot74_GIS_T} {'='*5}")
+            print(f"main_420: bug6 temperature band on left y axis only plot74_GIS_T={plot74_GIS_T} {'='*5}")
         add_temperature_band(ax1) # 1.5 to 2 on left y axis
         # Find the active temperature axis
         for ax in [ax1] + ax1.get_figure().get_axes():
             if hasattr(ax, 'get_ylabel') and 'Temperature' in ax.get_ylabel():
                 add_temperature_band(ax)
-                print(f"-main-line249-\n{'='*20}")
+                print(f"-main-line426-\n{'='*20}")
                 break
     
     # Add text annotations
