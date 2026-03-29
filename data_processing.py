@@ -120,9 +120,9 @@ def save_with_12month_average(df, input_filename, output_filename):
     # 4.1.3.4 Print summary statistics
     if print_debug_DP > 9:
         print(f"DataP122: Saved to {output_filename}  save_with_12month_average() ")
-        print(f"DataP122: Total records: {len(df_with_avg)}")
-        #print(f"DataP122: Records with valid 12-month average: {df_with_avg['running_12month_avg'].notna().sum()}")
-        print(f"DataP122: Running 12-month average statistics:")
+        print(f"DataP123: Total records: {len(df_with_avg)}")
+        print(f"DataP124: Records with valid 12-month average: {df_with_avg['EEI'].notna().sum()}")
+        print(f"DataP125: Running 12-month average statistics:")
         #print(f"DataP122: Min: {df_with_avg['running_12month_avg'].min():.2f} W/m²")
         #print(f"DataP122: Max: {df_with_avg['running_12month_avg'].max():.2f} W/m²")
         #print(f"DataP122: Mean: {df_with_avg['running_12month_avg'].mean():.2f} W/m²")
