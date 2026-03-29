@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a86" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a87" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -327,11 +327,11 @@ def create_plots(ax1, data):
         ax44.tick_params(axis="y", labelcolor=c44)
         ax44.set_ylim(y_Emin, y_Emax)
     
-    if play_61_CERES > 0 and 'ceres_43' in data:
+    if play_61_CERES > 0 and 'ceres_61' in data:
         ax61 = ax1.twinx()
-        ax61.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
-                  label="EEI K41", color=c43, linewidth=2)
-        ax61.tick_params(axis="y", labelcolor=c43)
+        ax61.plot(data['ceres_61']["decimal_year"], data['ceres_61']["EEI"], '-', 
+                  label="EEI K61", color=c61, linewidth=2)
+        ax61.tick_params(axis="y", labelcolor=c61)
         ax61.set_ylim(y_Emin, y_Emax)
         if print_debug > 9:
            print(f"main_330: ax61 43.8 ={play_61_CERES}")
