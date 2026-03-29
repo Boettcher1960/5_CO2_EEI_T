@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a65" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a66" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -168,7 +168,7 @@ def process_ceres_data():
                                             column_name='EEI')
 
        if print_debug > 9:
-          print(f"main_161: create work/c61c_ceres.csv  61.c ={play_61_CERES}")
+          print(f"main_171: create work/c61c_ceres.csv  61.c ={play_61_CERES}")
 
 
 
@@ -326,8 +326,8 @@ def add_text_annotations(fig, ax1, header_parameter):
  
 
     # add_text_row(ax1, tr2x, tr5y, "--row5---main338--- tr5y", c43, trs)
-    add_text_row(ax1, 0.8, tr6y, 
-                    "-main339-row6-tr6y", 
+    add_text_row(ax1, 0.9, tr6y, 
+                    "-main330", 
                     c43, trs)
 
     # Add legend lines for active plots
