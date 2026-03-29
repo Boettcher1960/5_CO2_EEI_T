@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a87" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a88" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -281,14 +281,14 @@ def load_plot_data():
         data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
         # data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
         # data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
+
     if play_61_CERES > 0: # 61.9 read
         data['ceres_61'] = pd.read_csv("work/c61gut_ceres.csv")
         if print_debug > 9:
            print(f"main_287: 61.9 read ={play_61_CERES}")
            
-
-
     return data
+
 
 def create_plots(ax1, data):
     """Create all plots based on configuration"""
