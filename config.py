@@ -53,10 +53,13 @@ c41 = "#289C1684"
 c42 = "purple"
 c43 = "#13DF2F84"
 c44 = "blue"
+c61 = "#0D91A090"
+c71 = "red"
+c72 = "red"
 c74 = "red"
 c75 = "#371EA484"
 c76 = "red"
-c71 = "red"
+
 
 # Text definitions (added missing print texts)
 blue22_text = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm) 22"

@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a55" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a56" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #
 # version 5a45
@@ -216,7 +216,7 @@ def save_plot2(fig, header_parameter):
         filename = os.path.basename(__file__)[:parameter84_save_png]
         filename = f"{filename}_{header_parameter}{x_end}"
         path = f"/Users/thomasboettcher/Desktop/{filename}"
-        fig.savefig(path, dpi=300, bbox_inches="tight")
+        #fig.savefig(path, dpi=300, bbox_inches="tight")
         
         path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/42_CO2_T.png"
         fig.savefig(path, dpi=300, bbox_inches="tight")
@@ -358,11 +358,10 @@ def add_text_annotations(fig, ax1, header_parameter):
 
     # in row 6 display play_61_CERES
     if play_61_CERES > 0:
-        add_legend_line(fig, lr2x1, lr2x2, lr6y, c44)
+        add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
         p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61"
-        add_text_row(ax1, tr2x, tr5y, p61_text, c44, trs) 
+        add_text_row(ax1, tr2x, tr6y, p61_text, c61, trs) 
 
-play_61_CERES
 
 def save_plot3(fig, header_parameter):
     """Save the plot if configured"""
