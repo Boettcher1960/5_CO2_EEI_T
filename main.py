@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a58" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a59" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #
 # version 5a45
@@ -363,6 +363,7 @@ def save_png(fig, header_parameter):
         path2 = f"/Users/thomasboettcher/Desktop/{filename}"
         fig.savefig(path2, dpi=300, bbox_inches="tight")
         
+        # https://github.com/Boettcher1960/5_CO2_EEI_T
         path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/5_CO2_EEI_T.png"
         fig.savefig(path, dpi=300, bbox_inches="tight")
         if print_debug > 9:
