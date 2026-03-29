@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a47" # print_debug = 10
+v = "5a49" # print_debug = 10
 # plot_61_EEI = 12     # 12 EEI 12 month part41_ceres_eei = 50  
 #  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #
@@ -111,27 +111,32 @@ def process_ceres_data():
     
     # Process part44_ceres_eei
     part44_ceres_eei = 11 # 47 makes 48month trailing plot
-    print(f"main_111: 44.3 local variable={part44_ceres_eei}")
+    if print_debug > 19:
+        print(f"main_115: local variable 44.3 ={part44_ceres_eei}")
 
     if part44_ceres_eei > 3:
         out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
-        print(f"main_116: 44.4 variable={part44_ceres_eei}")
+        if print_debug > 9:
+           print(f"main_120: local variable 44.4 ={part44_ceres_eei}")
         # /Dokumente/Python/5_CO2_EEI_T/read_csv/2016_01_EEI_CERES_TOA Net Flux.txt
         df44 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
                                     'work/c44b_ceres.csv')
-        print(f"main_118: 44.5 variable={part44_ceres_eei}")
+        if print_debug > 9:
+           print(f"main_125: created c44b_ceres.csv 44.5 ={part44_ceres_eei}")
         if part44_ceres_eei % 2 == 0:
             use_center = True
             min_periods = part44_ceres_eei // 2 # deepseak
             # min_periods = part44_ceres_eei 
             avg_type = "CENTERED"
-            print(f"main_128 centered : 44.5 variable={part44_ceres_eei}")
+            if print_debug > 9:
+               print(f"main_132: centered: 44.5 ={part44_ceres_eei}")
         else: # 47 make trailing 48 month runnin average
             use_center = False
             min_periods = part44_ceres_eei
             avg_type = "TRAILING"
             part44_ceres_eei = part44_ceres_eei + 1
-            print(f"main_134 trailing: 44.6 variable={part44_ceres_eei}")
+            if print_debug > 9:
+               print(f"main_139: trailing: 44.6 ={part44_ceres_eei}")
         df_with_avg = create_running_average('work/c44b_ceres.csv', 
                                             "work/c44d_ceres.csv",
                                             window_months=part44_ceres_eei,
@@ -139,8 +144,10 @@ def process_ceres_data():
                                             center=use_center,
                                             column_name='EEI')
         
-        print(f"{avg_type} average for {part44_ceres_eei}-month window")
-        print(f"main_137: 44.5 variable={part44_ceres_eei}")
+        if print_debug > 9:
+           print(f"main_148: {avg_type} average for {part44_ceres_eei}-month window 44.7")
+        if print_debug > 9:
+               print(f"main_150: created c44d_ceres.csv 44.7 ={part44_ceres_eei}")
 
 
 def create_temperature_plots(ax1):
@@ -234,10 +241,10 @@ def load_plot_data():
         data['ceres_48'] = pd.read_csv("csv/csv44/_plot_42_41g50.csv")
     
     if part43_ceres_eei > 0: # 43.2 read1
-        print(f"main_read_228: 43.2 ={part43_ceres_eei}")
-        #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
         data['ceres_43'] = pd.read_csv("read_csv/a44d_ceres_12month_EEI.csv")
-  
+        if print_debug > 9:
+           print(f"main_239: 43.2 read ={part43_ceres_eei}")
+           #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
 
     if part44_ceres_eei > 0:
         print(f"main custom-read_240: 44.7 ={part44_ceres_eei}")
@@ -265,12 +272,14 @@ def create_plots(ax1, data):
     
 
     if part43_ceres_eei > 0 and 'ceres_43' in data:
-        print(f"main_ax43_300: 43.4  called ={part43_ceres_eei}")
         ax43 = ax1.twinx()
         ax43.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
                   label="EEI K41", color=c43, linewidth=2)
         ax43.tick_params(axis="y", labelcolor=c43)
         ax43.set_ylim(y_Emin, y_Emax)
+        if print_debug > 19:
+           print(f"main_274: ax43 43.4 ={part43_ceres_eei}")
+ 
 
 
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
@@ -390,7 +399,8 @@ def main():
     
     # Add temperature band if temperature plots are active
     if plot71_temperature > 0 or plot72_AESS_T > 0 or plot73_ECS_T > 0 or plot74_GIS_T > 0:
-        print(f"-main-line245- bug6 temperature band on left y axis only {'='*1}")
+        if print_debug > 13:
+            print(f"main_403: bug6 temperature band on left y axis only plot74_GIS_T={plot74_GIS_T} {'='*5}")
         add_temperature_band(ax1) # 1.5 to 2 on left y axis
         # Find the active temperature axis
         for ax in [ax1] + ax1.get_figure().get_axes():
