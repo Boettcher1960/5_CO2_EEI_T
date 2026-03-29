@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a78" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a79" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -161,14 +161,14 @@ def process_ceres_data():
        #'csv41a_in_CERES.txt', 
        #'csv/csv41/csv41d12_ceres.csv'
        # 
-       variable_only_12 = 12
+       variable_only_12 = 11
        if variable_only_12 == 12:
           df61b3 = save_with_12month_average(
                        df61b, 
                       'read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
                       'work/c61e_ceres.csv' )
           if print_debug > 9:
-             print(f"main_171: create work/c61e_ceres.csv  61.e ={play_61_CERES}")
+             print(f"main_171: create work/c61f_ceres.csv  61.f ={play_61_CERES}")
        else: # if variable_only_12 == 12:
           window_months=play_61_CERES
           min_periods=12
