@@ -195,7 +195,5 @@ print_debug = 10 # print some items
 #
 #
 #
-#
-#
-#
-#
+# make a function 
+# 
