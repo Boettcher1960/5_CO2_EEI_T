@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a88" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a89" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -154,35 +154,20 @@ def process_ceres_data():
                                       'work/c61b_ceres.csv')
        if print_debug > 9:
           print(f"main_156: create work/c61b_ceres.csv  61.b ={play_61_CERES}")
-       #df61c = create_running_average('work/c61b_ceres.csv', 
-       #                               'work/c61c_ceres.csv',
-       #  df_with_12avg = save_with_12month_average(
-       #df41a, 
-       #'csv41a_in_CERES.txt', 
-       #'csv/csv41/csv41d12_ceres.csv'
-       # 
-       variable_only_12 = 11
-       if variable_only_12 == 12:
-          df61b3 = save_with_12month_average(
-                       df61b, 
-                      'read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
-                      'work/c61e_ceres.csv' )
-          if print_debug > 9:
-             print(f"main_171: create work/c61f_ceres.csv  61.f ={play_61_CERES}")
-       else: # if variable_only_12 == 12:
-          window_months=play_61_CERES
-          min_periods=12
-          use_center=False
-          keep_original=True,
-          df61c = create_running_average( 'work/c61b_ceres.csv', 
+       
+       window_months=play_61_CERES
+       min_periods=12
+       use_center=False
+       keep_original=True,
+       df61c = create_running_average( 'work/c61b_ceres.csv', 
                                           'work/c61gut_ceres.csv',
                                             window_months=play_61_CERES,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='EEI')
 
-          if print_debug > 9:
-             print(f"main_185: create work/c61f_ceres.csv failure  61.gut ={play_61_CERES}")
+       if print_debug > 9:
+          print(f"main_170: create work/c61gut_ceres.csv  61.gut ={play_61_CERES}")
 
 
        # add_running_12month_average(df)
