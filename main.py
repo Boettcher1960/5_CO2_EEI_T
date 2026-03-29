@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a49" # print_debug = 10
+v = "5a50" # print_debug = 10
 # plot_61_EEI = 12     # 12 EEI 12 month part41_ceres_eei = 50  
 #  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #
@@ -208,8 +208,10 @@ def hide_other_right_axes(ax1, keep_axis):
                 ax.tick_params(right=False, labelright=False)
 
 
-def save_plot(fig, header_parameter):
+def save_plot2(fig, header_parameter):
     """Save the plot if configured"""
+    if print_debug > 9:
+           print(f"main_214 save png as file {fig}")
     if parameter84_save_png > 0:
         filename = os.path.basename(__file__)[:parameter84_save_png]
         filename = f"{filename}_{header_parameter}{x_end}"
@@ -247,7 +249,8 @@ def load_plot_data():
            #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
 
     if part44_ceres_eei > 0:
-        print(f"main custom-read_240: 44.7 ={part44_ceres_eei}")
+        if print_debug > 9:
+           print(f"main_253: custom-read 44.7 ={part44_ceres_eei}")
         data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
         # data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
         # data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
@@ -278,12 +281,14 @@ def create_plots(ax1, data):
         ax43.tick_params(axis="y", labelcolor=c43)
         ax43.set_ylim(y_Emin, y_Emax)
         if print_debug > 19:
-           print(f"main_274: ax43 43.4 ={part43_ceres_eei}")
+           print(f"main_284: ax43 43.4 ={part43_ceres_eei}")
  
 
 
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
-        print(f"main ax44 _274: 44.8 variable={part44_ceres_eei}")
+        if print_debug > 9:
+           print(f"main_291: ax44 44.7 ={part44_ceres_eei}")
+
         ax44 = ax1.twinx()
         ax44.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
                   label="EEI K44", color=c44, linewidth=2)
@@ -352,8 +357,10 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr5y, p44_text, c44, trs) 
 
 
-def save_plot(fig, header_parameter):
+def save_plot3(fig, header_parameter):
     """Save the plot if configured"""
+    if print_debug > 9:
+           print(f"main_358 save png as file {fig}")
     print(f"main_save_plot_389: {fig}")
     if parameter84_save_png > 0:
         filename = os.path.basename(__file__)[:parameter84_save_png]
@@ -363,7 +370,8 @@ def save_plot(fig, header_parameter):
         
         path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/5_CO2_EEI_T.png"
         fig.savefig(path, dpi=300, bbox_inches="tight")
-        print(f"main_save_plot_400: {path}")
+        if print_debug > 9:
+           print(f"main_367 saved png as file {path}")
 
 def main():
     """Main execution function"""
@@ -425,7 +433,7 @@ def main():
     plt.show()
     
     # Save plot
-    save_plot(fig, header_parameter)
+    save_plot2(fig, header_parameter)
     
     # Close figure
     plt.close(fig)
