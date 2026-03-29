@@ -30,8 +30,12 @@ def convert_ceres_to_csv(input_file, output_file):
     print(f"Successfully converted {len(df)} records to {output_file}")
     return df
 
-def create_running_average(input_csv, output_csv, window_months, 
-                          min_periods=None, center=True, keep_original=True,
+def create_running_average(input_csv, 
+                           output_csv, 
+                           window_months, 
+                          min_periods=None, 
+                          center=True, 
+                          keep_original=True,
                           column_name='EEI'):
     """Create running average for specified window size"""
     df = pd.read_csv(input_csv)
@@ -39,8 +43,9 @@ def create_running_average(input_csv, output_csv, window_months,
     df = df.sort_values('date').reset_index(drop=True)
     
     if min_periods is None:
-        min_periods = window_months // 2
-    
+        # min_periods = window_months // 2
+        min_periods = window_months
+   
     df[column_name] = df['toa_net_flux_w_m2'].rolling(
         window=window_months, 
         center=center,
@@ -80,4 +85,4 @@ def load_co2_mauna_loa(x_anf, x_end):
 
 def load_gis_temperature():
     """Load GIS temperature data"""
-    return pd.read_csv("csv/csv7/csv_74_gis_temperature.csv")
+    return pd.read_csv("read_csv/csv_74_gis_temperature.csv")

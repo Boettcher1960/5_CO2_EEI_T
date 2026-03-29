@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a43" # bugs 44 12month is 0.5 low   48month is 0.5 low
+v = "5a44" # bugs 44 12month is 0.5 low   48month is 0.5 low
 #
 #  part42_ceres_eei
 # 
