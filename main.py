@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a64" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a65" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -399,6 +399,7 @@ def main():
                        f"{plot34_CO2_emission} 4({part41_ceres_eei}{part42_ceres_eei}"
                        f"{part43_ceres_eei}{part44_ceres_eei}) 5({plot52_delta_CO2_red_bars}"
                        f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on})"
+                       f" 6({play_61_CERES}) "
                        f"7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
                        f"{linear_41_75}{plot76_my_T})")
     
