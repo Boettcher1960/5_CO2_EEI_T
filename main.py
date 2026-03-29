@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a80" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a82" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -175,14 +175,14 @@ def process_ceres_data():
           use_center=False
           keep_original=True,
           df61c = create_running_average( 'work/c61b_ceres.csv', 
-                                          'work/c61f_ceres.csv',
+                                          'work/c61gut_ceres.csv',
                                             window_months=12,
                                             min_periods=play_61_CERES,
                                             center=use_center,
                                             column_name='EEI')
 
           if print_debug > 9:
-             print(f"main_185: create work/c61f_ceres.csv failure  61.f ={play_61_CERES}")
+             print(f"main_185: create work/c61f_ceres.csv failure  61.gut ={play_61_CERES}")
 
 
        # add_running_12month_average(df)
