@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a60" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a62" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -89,7 +89,6 @@ def process_ceres_data():
     if part41_ceres_eei > 10:
         df41a = convert_ceres_to_csv('csv/csv41/csv41a_in_CERES.txt', 
                                       'work/c41b_ceres.csv')
-    
     # run1 part41_ceres_eei = 12 c41d12_ceres
     # run2 part41_ceres_eei = 48 c41d48_ceres
     # run3 part41_ceres_eei = 50 c41d50_ceres
@@ -108,6 +107,8 @@ def process_ceres_data():
                                                'work/c41d50_ceres.csv',
                                                window_months=48, center=False)
     
+
+
     # Process part44_ceres_eei
     if print_debug > 19:
         print(f"main_115: local variable 44.3 ={part44_ceres_eei}")
@@ -148,6 +149,12 @@ def process_ceres_data():
            print(f"main_148: {avg_type} average for {part44_ceres_eei}-month window 44.7")
         if print_debug > 9:
                print(f"main_150: created c44d_ceres.csv 44.7 ={part44_ceres_eei}")
+    if play_61_CERES > 1:
+       df61 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
+                                      'work/c61b_ceres.csv')
+       if print_debug > 9:
+          print(f"main_156: create work/c61b_ceres.csv  61.b ={play_61_CERES}")
+
 
 
 def create_temperature_plots(ax1):
@@ -232,12 +239,12 @@ def load_plot_data():
     
     if part43_ceres_eei > 0: # 43.2 read1
         data['ceres_43'] = pd.read_csv("read_csv/a44d_ceres_12month_EEI.csv")
-        if print_debug > 9:
-           print(f"main_239: 43.2 read ={part43_ceres_eei}")
+        if print_debug > 19:
+           print(f"main_236: 43.2 read ={part43_ceres_eei}")
            #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
 
     if part44_ceres_eei > 0:
-        if print_debug > 9:
+        if print_debug > 19:
            print(f"main_253: custom-read 44.7 ={part44_ceres_eei}")
         data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
         # data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
@@ -367,7 +374,7 @@ def save_png(fig, header_parameter):
         path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/5_CO2_EEI_T.png"
         fig.savefig(path, dpi=300, bbox_inches="tight")
         if print_debug > 9:
-           print(f"main_367 saved png as file {path}")
+           print(f"main_370 saved png as file {path}")
 
 # main program 
 def main():
