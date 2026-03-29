@@ -1,6 +1,8 @@
 # main.py
 # part 1 configure 
-v = "5a46" #  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
+v = "5a47" # print_debug = 10
+# plot_61_EEI = 12     # 12 EEI 12 month part41_ceres_eei = 50  
+#  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #
 # version 5a45
 #  part42_ceres_eei
@@ -108,7 +110,7 @@ def process_ceres_data():
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
-    part44_ceres_eei = 59 # 47 makes 48month trailing plot
+    part44_ceres_eei = 11 # 47 makes 48month trailing plot
     print(f"main_111: 44.3 local variable={part44_ceres_eei}")
 
     if part44_ceres_eei > 3:
@@ -120,16 +122,16 @@ def process_ceres_data():
         print(f"main_118: 44.5 variable={part44_ceres_eei}")
         if part44_ceres_eei % 2 == 0:
             use_center = True
-            # min_periods = part44_ceres_eei // 2
-            min_periods = part44_ceres_eei 
+            min_periods = part44_ceres_eei // 2 # deepseak
+            # min_periods = part44_ceres_eei 
             avg_type = "CENTERED"
-            print(f"main_125 centered : 44.5 variable={part44_ceres_eei}")
+            print(f"main_128 centered : 44.5 variable={part44_ceres_eei}")
         else: # 47 make trailing 48 month runnin average
             use_center = False
             min_periods = part44_ceres_eei
             avg_type = "TRAILING"
             part44_ceres_eei = part44_ceres_eei + 1
-            print(f"main_131 trailing: 44.6 variable={part44_ceres_eei}")
+            print(f"main_134 trailing: 44.6 variable={part44_ceres_eei}")
         df_with_avg = create_running_average('work/c44b_ceres.csv', 
                                             "work/c44d_ceres.csv",
                                             window_months=part44_ceres_eei,
