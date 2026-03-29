@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a66" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a67" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -156,7 +156,9 @@ def process_ceres_data():
           print(f"main_156: create work/c61b_ceres.csv  61.b ={play_61_CERES}")
        #df61c = create_running_average('work/c61b_ceres.csv', 
        #                               'work/c61c_ceres.csv',
-       #                                        window_months=play_61_CERES)
+       #  
+       # 
+       window_months=play_61_CERES
        min_periods=12
        use_center=False
        keep_original=True,
@@ -170,6 +172,8 @@ def process_ceres_data():
        if print_debug > 9:
           print(f"main_171: create work/c61c_ceres.csv  61.c ={play_61_CERES}")
 
+       # add_running_12month_average(df)
+       # 530   df_with_avg = add_running_12month_average(df)
 
 
 def create_temperature_plots(ax1):

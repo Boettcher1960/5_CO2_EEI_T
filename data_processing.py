@@ -70,6 +70,62 @@ def create_running_average(input_csv,
         print(f"DataP_72: {window_months}-month running average saved to {output_csv} ")
     return df_output
 
+# 4.1.2 CERES function 2 add_running_12month_average
+def add_running_12month_average(df):
+    """
+    Add a column with 12-month running average to the DataFrame
+    Parameters:
+    df (DataFrame): DataFrame with columns 'date' and 'toa_net_flux_w_m2'
+    Returns:
+    DataFrame: Original DataFrame with added 'running_12month_avg' column
+    """
+    # 4.1.2.7 Create a copy to avoid modifying the original
+    df_with_avg = df.copy()
+    # 4.1.2.8 Sort by date to ensure correct order
+    df_with_avg = df_with_avg.sort_values('date')
+    # 4.1.2.9 Calculate 12-month running average (centered)
+    # Using rolling window with center=True gives centered average
+    if (part41_ceres_eei == 1): # end_no_good
+       df_with_avg['running_12month_avg'] = df_with_avg['toa_net_flux_w_m2'].rolling(
+           window=12, 
+           center=True,
+           min_periods=6  # Allow partial windows at the edges
+       ).mean()
+    else:  #  if (part41_ceres_eei == 2): # For trailing 12-month average (uncentered)
+       df_with_avg['running_12month_avg'] = df_with_avg['toa_net_flux_w_m2'].rolling(
+          window=12, 
+          min_periods=12
+       ).mean()
+    return df_with_avg
+    # end 4.1.2 CERES function 2
+
+# 4.1.3 CERES function 3
+# save the CERES data to a csv file with running 12 month average
+def save_with_12month_average(df, input_filename, output_filename):
+    """
+    Save CERES data with 12-month running average to CSV
+    Parameters:
+    df (DataFrame): Original DataFrame
+    input_filename (str): Original input filename for reference
+    output_filename (str): Output CSV filename
+    """
+    # 4.1.3.2 Add running average
+    df_with_avg = add_running_12month_average(df)
+    
+    # 4.1.3.3 Save to CSV
+    df_with_avg.to_csv(output_filename, index=False)
+    
+    # 4.1.3.4 Print summary statistics
+    print(f"\n4.1.3.4 Saved to {output_filename}")
+    print(f"Total records: {len(df_with_avg)}")
+    print(f"Records with valid 12-month average: {df_with_avg['running_12month_avg'].notna().sum()}")
+    print(f"\nRunning 12-month average statistics:")
+    print(f"Min: {df_with_avg['running_12month_avg'].min():.2f} W/m²")
+    print(f"Max: {df_with_avg['running_12month_avg'].max():.2f} W/m²")
+    print(f"Mean: {df_with_avg['running_12month_avg'].mean():.2f} W/m²")
+    return df_with_avg
+    # end 4.1.3 CERES function 3
+
 def load_co2_mauna_loa(x_anf, x_end):
     """Load Mauna Loa CO2 data"""
     co2_values = [
