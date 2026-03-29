@@ -1,7 +1,6 @@
-# config.py
+# config.py 
+# version 5b1
 # Configuration parameters for the climate analysis tool
-
-# Version 5a55
 
 # part61_EEI # like part41_ceres_eei make EEI 120 month csv
 # 

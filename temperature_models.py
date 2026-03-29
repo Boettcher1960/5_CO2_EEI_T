@@ -1,5 +1,5 @@
 # temperature_models.py
-# version 5a45
+# version 5b1
 import numpy as np
 
 C280 = 280
