@@ -1,8 +1,7 @@
 # config.py
 # Configuration parameters for the climate analysis tool
 
-# Version
-# v = "42v3"based on v = "42v1" of /4_Python_CO2/
+# Version 5a55
 
 # part61_EEI # like part41_ceres_eei make EEI 120 month csv
 # 
@@ -34,7 +33,7 @@ plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0
 
-plot_61_EEI = 12     # 12 EEI 12 month part41_ceres_eei = 50  
+play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 
 plot71_temperature = 0
 plot72_AESS_T = 0

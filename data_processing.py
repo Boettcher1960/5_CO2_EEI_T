@@ -2,6 +2,7 @@
 # version 5a53
 import pandas as pd
 import numpy as np
+print_debug_DP = 10 # global variable print_debug = 10
 
 def convert_ceres_to_csv(input_file, output_file):
     """Convert CERES TOA flux ASCII file to CSV format"""
@@ -27,10 +28,8 @@ def convert_ceres_to_csv(input_file, output_file):
     df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
     df = df[['date', 'year', 'month', 'toa_net_flux_w_m2', 'decimal_year']]
     df.to_csv(output_file, index=False, float_format='%.6f')
-    print_debug = 10
-    if print_debug > 9:
+    if print_debug_DP > 9:
         print(f"DataP_32: Successfully converted {len(df)} records to {output_file}")
-    #print(f"Successfully converted {len(df)} records to {output_file}")
     return df
 
 def create_running_average(input_csv, 
@@ -66,10 +65,9 @@ def create_running_average(input_csv,
     valid_records = df_output[column_name].notna().sum()
     #print(f"{window_months}-month running average saved to {output_csv}")
     #print(f"Valid records: {valid_records} out of {len(df_output)}")
-    print_debug = 10
-    if print_debug > 9:
-        print(f"DataP_69: Valid records: {valid_records} out of {len(df_output)}")
-        print(f"DataP_70: {window_months}-month running average saved to {output_csv} ")
+    if print_debug_DP > 9:
+        print(f"DataP_71: Valid records: {valid_records} out of {len(df_output)}")
+        print(f"DataP_72: {window_months}-month running average saved to {output_csv} ")
     return df_output
 
 def load_co2_mauna_loa(x_anf, x_end):

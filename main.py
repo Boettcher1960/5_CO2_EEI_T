@@ -1,7 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a53" # print_debug = 10
-# plot_61_EEI = 12     # 12 EEI 12 month part41_ceres_eei = 50  
+v = "5a55" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #
 # version 5a45
@@ -67,7 +66,9 @@ from plotting import *
 from data_processing import *
 from text_annotations import *
 
-
+from config import play_61_CERES
+# from config import part44_ceres_eei
+part44_ceres_eei = 11 
 
 def get_active_temperature_axis(ax1):
     """Find which temperature axis is active"""
@@ -110,11 +111,10 @@ def process_ceres_data():
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
-    part44_ceres_eei = 11 # 47 makes 48month trailing plot
     if print_debug > 19:
         print(f"main_115: local variable 44.3 ={part44_ceres_eei}")
 
-    if part44_ceres_eei > 3:
+        part44_ceres_eei = 11 # UnboundLocalError: cannot access local variable 'part44_ceres_eei
         out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
         if print_debug > 9:
            print(f"main_120: local variable 44.4 ={part44_ceres_eei}")
@@ -356,6 +356,13 @@ def add_text_annotations(fig, ax1, header_parameter):
         p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44 main361"
         add_text_row(ax1, tr2x, tr5y, p44_text, c44, trs) 
 
+    # in row 6 display play_61_CERES
+    if play_61_CERES > 0:
+        add_legend_line(fig, lr2x1, lr2x2, lr6y, c44)
+        p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61"
+        add_text_row(ax1, tr2x, tr5y, p61_text, c44, trs) 
+
+play_61_CERES
 
 def save_plot3(fig, header_parameter):
     """Save the plot if configured"""
