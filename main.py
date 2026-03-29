@@ -281,6 +281,13 @@ def load_plot_data():
         data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
         # data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
         # data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
+    if play_61_CERES > 0: # 61.9 read
+        data['ceres_61'] = pd.read_csv("work/c61gut_ceres.csv")
+        if print_debug > 9:
+           print(f"main_287: 61.9 read ={play_61_CERES}")
+           
+
+
     return data
 
 def create_plots(ax1, data):
