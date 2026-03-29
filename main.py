@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a52" # print_debug = 10
+v = "5a53" # print_debug = 10
 # plot_61_EEI = 12     # 12 EEI 12 month part41_ceres_eei = 50  
 #  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #

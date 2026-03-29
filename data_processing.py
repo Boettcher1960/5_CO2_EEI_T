@@ -1,5 +1,5 @@
 # data_processing.py
-# version 5a51
+# version 5a53
 import pandas as pd
 import numpy as np
 
@@ -27,8 +27,10 @@ def convert_ceres_to_csv(input_file, output_file):
     df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
     df = df[['date', 'year', 'month', 'toa_net_flux_w_m2', 'decimal_year']]
     df.to_csv(output_file, index=False, float_format='%.6f')
-    
-    print(f"Successfully converted {len(df)} records to {output_file}")
+    print_debug = 10
+    if print_debug > 9:
+        print(f"DataP_32: Successfully converted {len(df)} records to {output_file}")
+    #print(f"Successfully converted {len(df)} records to {output_file}")
     return df
 
 def create_running_average(input_csv, 
