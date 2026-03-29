@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a56" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5a58" # play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #
 # version 5a45
@@ -208,18 +208,6 @@ def hide_other_right_axes(ax1, keep_axis):
                 ax.tick_params(right=False, labelright=False)
 
 
-def save_plot2(fig, header_parameter):
-    """Save the plot if configured"""
-    if print_debug > 9:
-           print(f"main_214 save png as file {fig}")
-    if parameter84_save_png > 0:
-        filename = os.path.basename(__file__)[:parameter84_save_png]
-        filename = f"{filename}_{header_parameter}{x_end}"
-        path = f"/Users/thomasboettcher/Desktop/{filename}"
-        #fig.savefig(path, dpi=300, bbox_inches="tight")
-        
-        path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/42_CO2_T.png"
-        fig.savefig(path, dpi=300, bbox_inches="tight")
 
 
 
@@ -363,7 +351,7 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr6y, p61_text, c61, trs) 
 
 
-def save_plot3(fig, header_parameter):
+def save_png(fig, header_parameter):
     """Save the plot if configured"""
     if print_debug > 9:
            print(f"main_358 save png as file {fig}")
@@ -371,14 +359,16 @@ def save_plot3(fig, header_parameter):
     if parameter84_save_png > 0:
         filename = os.path.basename(__file__)[:parameter84_save_png]
         filename = f"{filename}_{header_parameter}{x_end}"
-        # bug path = f"/Users/thomasboettcher/Desktop/{filename}"
-        #fig.savefig(path, dpi=300, bbox_inches="tight")
+        filename = "figure_5_EEI"
+        path2 = f"/Users/thomasboettcher/Desktop/{filename}"
+        fig.savefig(path2, dpi=300, bbox_inches="tight")
         
         path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/5_CO2_EEI_T.png"
         fig.savefig(path, dpi=300, bbox_inches="tight")
         if print_debug > 9:
            print(f"main_367 saved png as file {path}")
 
+# main program 
 def main():
     """Main execution function"""
     # Create header parameter string
@@ -439,7 +429,7 @@ def main():
     plt.show()
     
     # Save plot
-    save_plot2(fig, header_parameter)
+    save_png(fig, header_parameter)
     
     # Close figure
     plt.close(fig)
