@@ -41,7 +41,7 @@ plot74_GIS_T = 2
 linear_41_75 = 0
 plot76_my_T = 0
 plot_T_77 = 0
-parameter84_save_png = 0
+parameter84_save_png = 8
 
 # Colors
 c22 = "blue"
