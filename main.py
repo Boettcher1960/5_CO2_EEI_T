@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5a44" # bugs 44 12month is 0.5 low   48month is 0.5 low
+v = "5a45" #  44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #
 #  part42_ceres_eei
 # 
@@ -107,7 +107,7 @@ def process_ceres_data():
                                                window_months=48, center=False)
     
     # Process part44_ceres_eei
-    part44_ceres_eei = 47 # makes 48month trailing plot
+    part44_ceres_eei = 69 # 47 makes 48month trailing plot
     print(f"main_111: 44.3 local variable={part44_ceres_eei}")
 
     if part44_ceres_eei > 3:

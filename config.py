@@ -4,6 +4,20 @@
 # Version
 # v = "42v3"based on v = "42v1" of /4_Python_CO2/
 
+# part61_EEI # like part41_ceres_eei make EEI 120 month csv
+# 
+# line 2 defines the left Y axis. example
+# part43_ceres_eei = 2  #  0..2 W/m2    EEI 12 month running mean.
+#
+# line 3 defines the right Y axis. example
+# part43_ceres_eei = 3  # 43.1  3,4 print EEI 12 month running mean.
+
+# line 4 makes additional right y axis 20 to the right
+
+# line 5 makes additional right y axis 60 to the right
+
+# line 6 is developv part61_EEI 
+
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0
 plot23_Glen_CO2 = 0
@@ -16,7 +30,7 @@ part42_ceres_eei = 4  # 3,4 print EEI 48 month running mean. Info in line 4 belo
 part43_ceres_eei = 3  # 43.1  3,4 print EEI 12 month running mean.
 
 part44_eei = 77
-part44_ceres_eei = 47 # is local 
+part44_ceres_eei = 69 # 47 is local 
 
 plot52_delta_CO2_red_bars = 0
 plot53_CO2_orange2025 = 0
