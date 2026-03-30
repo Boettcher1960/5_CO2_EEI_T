@@ -447,7 +447,7 @@ def main():
     axT = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
     # axT is the temperature scaling
     label  ="EEI in W line 449"
-    axT = right_EEI_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
+    axT = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
     # main_484: Axis 2: yaxis side = right, label = 'EEI in W line 449'
     # Create plots
     create_plots(ax1, data)
