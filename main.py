@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b8" #  # 8.7 print the right y axis
+v = "5b9" #  # 8.7 print the right y axis
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -443,7 +443,7 @@ def main():
                          y_Tmin, y_Tmax, yl_mode, c22, c42, c74)
     
     # 8.7 print the right y axis
-    label  ="Temperature in °C giss.nasa.gov Hansen+0.3°C 74 n"
+    label  ="Temperature in °C "
     # def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
     ax2 = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
     
