@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b4" #  # part 9.2 print line 2 below the plot main_350
+v = "5b5" #  # part 9.2 print line 2 below the plot main_350
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #

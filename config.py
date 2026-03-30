@@ -43,6 +43,11 @@ plot76_my_T = 0
 plot_T_77 = 0
 parameter84_save_png = 8
 
+# 8.5 configure the right axis legend 
+if part43_ceres_eei == 2:  # line 2 selects EEI 0..2 W/m²
+   yl_mode = 4
+   color_left = "blue" # color of left yaxis for yl_mode == 4 EEI mode
+
 # Colors
 c22 = "blue"
 c23 = "#4554A8C6"
@@ -133,7 +138,7 @@ print_debug = 10 # print some items
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mhuowkhfq22h
 # save file as csv41_CERES_TOA_FluxtoJanuary-2026.txt
 # part44_ceres_eei = 47
-# 
+#         https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 1) goto https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 2) enter email + password
 # https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
@@ -185,12 +190,12 @@ print_debug = 10 # print some items
 #                      with 48 month trailing average in new column EEI
 # 35) copy /work/c44d_ceres.csv to /read_csv/c44d_ceres_12month_EEI.csv
 #
-#
+# with 5b2*pc set play_61_CERES = 48
 # # run1 part41_ceres_eei = 12
 # run2 part41_ceres_eei = 48
 # run3 part41_ceres_eei = 50
 #
-#
+# 
 #
 #
 #

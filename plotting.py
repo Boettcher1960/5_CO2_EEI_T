@@ -24,14 +24,26 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     plt.xlim(x_anf, x_end)
     ax1.grid(True)
     
+    # 8.5 configure the right y axis legend 
     if yl_mode == 4:  # EEI mode
+        c4l = "blue" # color of left yaxis for yl_mode == 4 EEI mode
         ax1.set_ylim(y_Emin, y_Emax)
-        ax1.set_ylabel("Earth Energy Imbalance in W/m²", color=c42, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=c42, labelsize=20)
+        ax1.set_ylabel("Earth Energy Imbalance in W/m²", color=c4l, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c4l, labelsize=20)
         
         # Set EEI tick spacing
-        y_Emayor_ticks = 0.5 if (y_Emax - y_Emin) > 2 else 0.2
-        y_Eminor_ticks = 0.1
+
+        #y_Emayor_ticks = 0.5 if (y_Emax - y_Emin) > 2 else 0.2
+       
+        if (y_Emax - y_Emin) < 1:
+            y_Emayor_ticks = 0.2 
+            y_Eminor_ticks = 0.1
+        elif (y_Emax - y_Emin) < 2.1:
+            y_Emayor_ticks = 0.5 
+            y_Eminor_ticks = 0.1
+        else:
+            y_Emayor_ticks = 1 
+            y_Eminor_ticks = 0.5
         ax1.yaxis.set_major_locator(MultipleLocator(y_Emayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Eminor_ticks))
         
