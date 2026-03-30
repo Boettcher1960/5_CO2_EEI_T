@@ -33,6 +33,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0
 
 play_61_CERES = 48     # 12 CERES EEI 12 month like part41_ceres_eei 
+play_62_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 
 plot71_temperature = 0
 plot72_AESS_T = 0
@@ -131,6 +132,13 @@ print_debug = 10 # print some items
 #########################################################
 # How to make EEI files #################################
 #########################################################
+# download
+# CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
+
+
+#########################################################
+# How to make EEI files #################################
+#########################################################
 #
 # download 2016_01_EEI_CERES.txt
 # rename      to 2016_01_EEI_CERES.txt
@@ -158,7 +166,7 @@ print_debug = 10 # print some items
 # 8) the TOA Net Flux gets yellow color
 #    click with left mouse button
 # 9) a new window "March -2000 TOA Net Flux" appears
-# 10) on the bottom right hit "Show Anomaly"
+#     not hit "Show Anomaly" gives low 
 # 11) the window changes -2 to +2 W/m2
 # 12) hit "Save Data as ASCII File" on the bottom
 # 13) the download starts

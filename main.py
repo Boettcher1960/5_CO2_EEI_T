@@ -1,10 +1,8 @@
 # main.py
 # part 1 configure 
-v = "5b16" #  # 8.7 print the right y axis
-#  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
+v = "5b17" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March
 #  bug 44  part44_ceres_eei is local main line 116
-#
-# line 111 part44_ceres_eei = 5 makes 48m avg
+# CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
 # 
 # ok horizontal 1.8°C line is T value
 
@@ -66,6 +64,7 @@ from data_processing import *
 from text_annotations import *
 
 from config import play_61_CERES
+from config import play_62_CERES
 # bug from config import part44_ceres_eei
 
 def get_active_temperature_axis(ax1):
@@ -170,8 +169,32 @@ def process_ceres_data():
           print(f"main_170: create work/c61gut_ceres.csv  61.gut ={play_61_CERES}")
 
 
-       # add_running_12month_average(df)
-       # 530   df_with_avg = add_running_12month_average(df)
+       
+# CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
+# 2016_01_TOA_Shortwave_Flux_-AllSky.txt
+if play_62_CERES > 1: # part 6 
+       df62b = convert_ceres_to_csv('read_csv/2016_01_TOA_Shortwave_Flux_-AllSky.txt', 
+                                      'work/c62b_ceres.csv')
+       if print_debug > 9:
+          print(f"main_179: create work/c62b_ceres.csv  62.b ={play_62_CERES}")
+       
+       window_months=play_62_CERES
+       min_periods=12
+       use_center=False
+       keep_original=True,
+       df61c = create_running_average( 'work/c62b_ceres.csv', 
+                                          'work/c62d_ceres.csv',
+                                            window_months=play_61_CERES,
+                                            min_periods=12,
+                                            center=use_center,
+                                            column_name='EEI')
+
+       if print_debug > 9:
+          print(f"main_193: create work/c62d_ceres.csv  62.gut ={play_61_CERES}")
+
+
+
+
 
 
 def create_temperature_plots(ax1):
