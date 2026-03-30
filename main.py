@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b13" #  # 8.7 print the right y axis
+v = "5b15" #  # 8.7 print the right y axis
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -446,8 +446,9 @@ def main():
     label  ="Temperature in °C"
     axT = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
     # axT is the temperature scaling
-
-
+    label  ="EEI in W line 449"
+    axT = right_EEI_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
+    # main_484: Axis 2: yaxis side = right, label = 'EEI in W line 449'
     # Create plots
     create_plots(ax1, data)
     

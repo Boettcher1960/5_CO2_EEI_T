@@ -88,6 +88,18 @@ def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
     ax2.set_ylabel(label, color=color, fontsize=20, labelpad=10)
     return ax2
 
+def right_EEI_y_axis(ax, y_Tmin, y_Tmax, color, label):
+    """Configure the first right y-axis for temperature"""
+    ax3 = ax.twinx()
+    ax3.tick_params(axis='y', labelcolor='r')
+    ax3.tick_params(axis="y", labelcolor=color, labelsize=20)
+    ax3.set_ylim(y_Tmin, y_Tmax)
+    ax3.yaxis.set_major_locator(MultipleLocator(0.5))
+    ax3.yaxis.set_minor_locator(MultipleLocator(0.1))
+    ax3.set_ylabel(label, color=color, fontsize=20, labelpad=10)
+    return ax3
+
+
 
 def add_grid_lines(ax1):
     # mayor grid lines vertical lines inside the plot to better read the y value
