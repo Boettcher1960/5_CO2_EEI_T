@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b2" # play_61_CERES = 48     # 12 CERES EEI 12 month like part41_ceres_eei 
+v = "5b3" # play_61_CERES = 48     # 12 CERES EEI 12 month like part41_ceres_eei 
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -369,6 +369,11 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month  43", 
                     c43, trs)
+    elif plot74_GIS_T == 3:
+        add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
+        add_text_row(ax1, tr2x, tr3y, 
+                    "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
+                    c74, trs)
 
     if part42_ceres_eei == 4:
         add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
