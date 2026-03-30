@@ -445,8 +445,8 @@ def main():
     # 8.7 print the right y axis
     label  ="Temperature in °C "
     # def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
-    ax2 = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
-    
+    axT = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
+    # axT is the temperature scaling
 
     # Create plots
     create_plots(ax1, data)
@@ -477,6 +477,24 @@ def main():
     plt.xticks(fontsize=20)
     ax1.tick_params(axis="x", labelcolor="black", labelsize=20)
     
+    # debug 
+    print("main_480: All axes in figure:")
+    for i, ax in enumerate(plt.gcf().get_axes()):
+        # Get the y-axis label if it exists
+        ylabel = ax.get_ylabel()
+        print(f"main_484: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
+    # main_484: Axis 0: yaxis side = left, label = 'Earth Energy Imbalance in W/m²'
+    # main_484: Axis 1: yaxis side = right, label = 'Temperature in °C '
+    # main_484: Axis 2: yaxis side = right, label = ''
+    axes = plt.gcf().get_axes()
+    if len(axes) > 4:
+        axes[4].yaxis.set_ticks([])  # Remove tick numbers
+        axes[4].set_yticklabels([])  # Remove tick labels
+        axes[4].spines['right'].set_visible(False)  # Optional: hide the spine
+        axes[4].set_ylabel('')  # Remove any label
+
+
+
     # Adjust layout
     fig.tight_layout()
     plt.tight_layout()
