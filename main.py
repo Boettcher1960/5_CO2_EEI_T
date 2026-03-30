@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b9" #  # 8.7 print the right y axis
+v = "5b10" #  # 8.7 print the right y axis
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -466,7 +466,7 @@ def main():
         for ax in [ax1] + ax1.get_figure().get_axes():
             if hasattr(ax, 'get_ylabel') and 'Temperature' in ax.get_ylabel():
                 add_temperature_band(ax)
-                print(f"-main-line426-\n{'='*20}")
+                print(f"main_469{'='*1} temperature_band")
                 break
     
     # Add text annotations
