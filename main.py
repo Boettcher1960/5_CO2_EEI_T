@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b10" #  # 8.7 print the right y axis
+v = "5b12" #  # 8.7 print the right y axis
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -487,14 +487,13 @@ def main():
     # main_484: Axis 1: yaxis side = right, label = 'Temperature in °C '
     # main_484: Axis 2: yaxis side = right, label = ''
     axes = plt.gcf().get_axes()
-    if len(axes) > 4:
-        axes[4].yaxis.set_ticks([])  # Remove tick numbers
-        axes[4].set_yticklabels([])  # Remove tick labels
-        axes[4].spines['right'].set_visible(False)  # Optional: hide the spine
-        axes[4].set_ylabel('')  # Remove any label
-
-
-
+    # Keep axes 0, 1, 2, hide all others
+    for i in range(2, len(axes)):
+        axes[i].yaxis.set_ticks([])  # Remove tick numbers
+        axes[i].set_yticklabels([])  # Remove tick labels
+        axes[i].spines['right'].set_visible(False)
+        axes[i].set_ylabel('') # Remove any label
+   
     # Adjust layout
     fig.tight_layout()
     plt.tight_layout()
