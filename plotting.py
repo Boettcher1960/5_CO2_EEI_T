@@ -42,9 +42,12 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
         elif (y_Emax - y_Emin) < 2.1:
             y_Emayor_ticks = 0.5 
             y_Eminor_ticks = 0.1
+        elif (y_Emax - y_Emin) < 21:
+            y_Emayor_ticks = 5 
+            y_Eminor_ticks = 1
         else:
-            y_Emayor_ticks = 1 
-            y_Eminor_ticks = 0.5
+            y_Emayor_ticks = 100 
+            y_Eminor_ticks = 20
         ax1.yaxis.set_major_locator(MultipleLocator(y_Emayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Eminor_ticks))
         

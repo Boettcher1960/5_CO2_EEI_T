@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b20" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March
+v = "5b22" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March
 #  bug 44  part44_ceres_eei is local main line 116
 # CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
 # 
@@ -293,8 +293,14 @@ def load_plot_data():
     if play_61_CERES > 0: # 61.9 read
         data['ceres_61'] = pd.read_csv("work/c61gut_ceres.csv")
         if print_debug > 9:
-           print(f"main_287: 61.9 read ={play_61_CERES}")
-           
+           print(f"main_296: 61.9 read ={play_61_CERES}")
+    if play_62_CERES > 0: # 62.9 read
+        data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
+        if print_debug > 9:
+           print(f"main_300: 62.9 read ={play_62_CERES}")
+       
+
+
     return data
 
 
