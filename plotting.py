@@ -1,7 +1,11 @@
 # plotting.py
-# version 5b1
+# version 5b13
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+import matplotlib.pyplot as plt
+
+
 color_left = "blue" # color of left y axis
 
 def setup_figure(scale_mode=10):
@@ -88,16 +92,22 @@ def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
     ax2.set_ylabel(label, color=color, fontsize=20, labelpad=10)
     return ax2
 
+# bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
 def right_EEI_y_axis(ax, y_Emin, y_Emax, color, label):
     """Configure the first right y-axis for temperature"""
-    ax3 = ax.twinx()
-    ax3.tick_params(axis='y', labelcolor='r')
-    ax3.tick_params(axis="y", labelcolor=color, labelsize=20)
-    ax3.set_ylim(y_Emin, y_Emax)
-    ax3.yaxis.set_major_locator(MultipleLocator(0.5))
-    ax3.yaxis.set_minor_locator(MultipleLocator(0.1))
-    ax3.set_ylabel(label, color=color, fontsize=20, labelpad=10)
+    ax2 = ax.twinx()
+
+    # Create a third y-axis offset by 60 points to the right
+    divider = make_axes_locatable(ax2)
+    # Create new axis with offset (60 points = 60/72 inches if using points)
+    ax3 = divider.append_axes("right", size="5%", pad=0.6)  # pad is in inches, 0.6 inches ≈ 43 points
+    # For exact 60 points: 60/72 = 0.8333 inches
+    ax3 = divider.append_axes("right", size="5%", pad=0.8333)
+
+    # Or use points directly
+    ax3 = divider.append_axes("right", size="5%", pad=60/72)  # 60 points in inches
     return ax3
+    # bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
 
 
 
