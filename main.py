@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b12" #  # 8.7 print the right y axis
+v = "5b13" #  # 8.7 print the right y axis
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -443,10 +443,10 @@ def main():
                          y_Tmin, y_Tmax, yl_mode, c22, c42, c74)
     
     # 8.7 print the right y axis
-    label  ="Temperature in °C "
-    # def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
+    label  ="Temperature in °C"
     axT = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
     # axT is the temperature scaling
+
 
     # Create plots
     create_plots(ax1, data)
@@ -488,7 +488,7 @@ def main():
     # main_484: Axis 2: yaxis side = right, label = ''
     axes = plt.gcf().get_axes()
     # Keep axes 0, 1, 2, hide all others
-    for i in range(2, len(axes)):
+    for i in range(2, len(axes)): # remove Axis 3, 4
         axes[i].yaxis.set_ticks([])  # Remove tick numbers
         axes[i].set_yticklabels([])  # Remove tick labels
         axes[i].spines['right'].set_visible(False)

@@ -6,14 +6,14 @@ color_left = "blue" # color of left y axis
 
 def setup_figure(scale_mode=10):
     """Setup the figure with appropriate size"""
-    if scale_mode == 7:
-        fig, ax1 = plt.subplots(figsize=(13, 7))
-    elif scale_mode == 8:
-        fig, ax1 = plt.subplots(figsize=(13, 8))
-    elif scale_mode == 10:
-        fig, ax1 = plt.subplots(figsize=(13, 10))
-    else:
-        fig, ax1 = plt.subplots(figsize=(13, 7))
+    #if scale_mode == 7:
+    #    fig, ax1 = plt.subplots(figsize=(13, 7))
+    #elif scale_mode == 8:
+    #    fig, ax1 = plt.subplots(figsize=(13, 8))
+    #elif scale_mode == 10:
+    fig, ax1 = plt.subplots(figsize=(13, 10))
+    #else:
+    #    fig, ax1 = plt.subplots(figsize=(13, 7))
     
     fig.subplots_adjust(bottom=0.30)
     return fig, ax1
@@ -80,15 +80,7 @@ def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
 def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
     """Configure the first right y-axis for temperature"""
     ax2 = ax.twinx()
-    # ax2.set_ylabel (
-    #         "Δ GIS Temperature in °C ",
-    #         color="red",
-    #         fontname="Arial",fontsize=20,
-    #         labelpad=1   # smaller = closer to y axis
-    #       )
-    # ax2.set_ylabel('Temperature (°C)', color='r')
     ax2.tick_params(axis='y', labelcolor='r')
-
     ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
     ax2.set_ylim(y_Tmin, y_Tmax)
     ax2.yaxis.set_major_locator(MultipleLocator(0.5))
