@@ -64,6 +64,8 @@ c42 = "purple"
 c43 = "#13DF2F84"
 c44 = "blue"
 c61 = "#0D91A090"
+c62 = "#9522AA90"
+
 c71 = "red"
 c72 = "red"
 c74 = "red"

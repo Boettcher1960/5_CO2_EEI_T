@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b17" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March
+v = "5b20" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March
 #  bug 44  part44_ceres_eei is local main line 116
 # CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
 # 
@@ -343,6 +343,16 @@ def create_plots(ax1, data):
         ax61.set_ylim(y_Emin, y_Emax)
         if print_debug > 9:
            print(f"main_330: ax61 43.8 ={play_61_CERES}")
+    if play_62_CERES > 0 and 'ceres_62' in data:
+        ax62 = ax1.twinx()
+        ax62.plot(data['ceres_62']["decimal_year"], data['ceres_62']["EEI"], '-', 
+                  label="EEI K62", color=c62, linewidth=2)
+        ax62.tick_params(axis="y", labelcolor=c62)
+        ax62.set_ylim(y_Emin, 200)
+        if print_debug > 9:
+           print(f"main_353: ax62 62.8 ={play_62_CERES}")
+
+
 
     # Plot GIS temperature
     if plot74_GIS_T > 0 and 'gis_temp' in data:
@@ -420,6 +430,11 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
         p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61 - main - line 350."
         add_text_row(ax1, tr2x, tr6y, p61_text, c61, trs) 
+    # in row 5 display play_62_CERES
+    if play_62_CERES > 0:
+        add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
+        p62_text = f"TOA Shortwave Flux - All-Sky {play_62_CERES}-month moving average 62 - main - line 350."
+        add_text_row(ax1, tr2x, tr5y, p62_text, c62, trs) 
 
 
 def save_png(fig, header_parameter):
