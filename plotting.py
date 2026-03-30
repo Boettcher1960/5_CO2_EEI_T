@@ -50,7 +50,29 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
             y_Eminor_ticks = 20
         ax1.yaxis.set_major_locator(MultipleLocator(y_Emayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Eminor_ticks))
-        
+    # yl_mode = 6 # TOA energy in W/m2 y axis left mode
+    elif yl_mode == 6:  # TOA energy in W/m2 y axis left mode
+        c6l = "green" # color of left yaxis for TOA energy in W/m2 y axis left mode
+        y_TOAmin = 94
+        y_TOAmax = 102
+        ax1.set_ylim(y_TOAmin, y_TOAmax)
+        ax1.set_ylabel("TOA Energy in W/m²", color=color_left, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=color_left, labelsize=20)
+        # Set EEI tick spacing   y_TOAmin    
+        if (y_TOAmax - y_TOAmin) < 5:
+            y_TEmayor_ticks = 2 
+            y_TEminor_ticks = 0.2
+        elif (y_TOAmax - y_TOAmin) < 10:
+            y_TEmayor_ticks = 2 
+            y_TEminor_ticks = 0.4
+        elif (y_TOAmax - y_TOAmin) < 30:
+            y_TEmayor_ticks = 2 
+            y_TEminor_ticks = 1
+        else:
+            y_TEmayor_ticks = 100 
+            y_TEminor_ticks = 20
+        ax1.yaxis.set_major_locator(MultipleLocator(y_TEmayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_TEminor_ticks))
     elif yl_mode == 7:  # Temperature mode
         ax1.set_ylim(y_Tmin, y_Tmax)
         ax1.set_ylabel("Temperature in °C", color=c74, fontsize=20)
