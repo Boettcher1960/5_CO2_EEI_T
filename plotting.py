@@ -79,11 +79,33 @@ def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
 
 def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
     """Configure a right y-axis for temperature"""
-    ax.tick_params(axis="y", labelcolor=color, labelsize=20)
-    ax.set_ylim(y_Tmin, y_Tmax)
-    ax.yaxis.set_major_locator(MultipleLocator(0.5))
-    ax.yaxis.set_minor_locator(MultipleLocator(0.1))
-    ax.set_ylabel(label, color=color, fontsize=20, labelpad=10)
+    ax2 = ax.twinx()
+    #y2 = np.linspace(20, 30, 100)
+    #ax2.plot(x, y2, 'r-')
+    ax2.set_ylabel('Temperature (°C)', color='r')
+    ax2.tick_params(axis='y', labelcolor='r')
+
+    plt.title('Plot with Right Y-Axis Temperature')
+    ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
+    ax2.set_ylim(y_Tmin, y_Tmax)
+    ax2.yaxis.set_major_locator(MultipleLocator(0.5))
+    ax2.yaxis.set_minor_locator(MultipleLocator(0.1))
+    ax2.set_ylabel(label, color=color, fontsize=20, labelpad=10)
+    """
+    if yr_mode == 7: # Temperature
+       ax1.tick_params(axis="y", labelcolor=c74)
+       ax1.set_ylim(y_Tmin, y_Tmax) # scale
+       if plot71_temperature < 1: # make y axis right only if not exist
+          ax1.yaxis.set_major_locator(MultipleLocator(0.5))   # Hauptstriche
+          ax1.yaxis.set_minor_locator(MultipleLocator(0.1))   # Nebenstriche
+          ax1.tick_params(axis='y', labelsize=20) # numbers on right y axis size 20
+          ax1.set_ylabel (
+             "Δ GIS Temperature in °C   74 ",
+             color=c74,
+             fontname="Arial",fontsize=20,
+             labelpad=10   # smaller = closer to y axis
+           )
+     """
     return ax
 
 

@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b7" #  # part 9.2 print line 2 below the plot main_350
+v = "5b8" #  # 8.7 print the right y axis
 #  bug 44  69month is 0.5 low  12month is 0.5 low   48month is 0.5 low
 #  bug 44  part44_ceres_eei is local main line 116
 #
@@ -443,22 +443,10 @@ def main():
                          y_Tmin, y_Tmax, yl_mode, c22, c42, c74)
     
     # 8.7 print the right y axis
+    label  ="Temperature in °C giss.nasa.gov Hansen+0.3°C 74 n"
     # def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
-    """
-    if yr_mode == 7: # Temperature
-       ax1.tick_params(axis="y", labelcolor=c74)
-       ax1.set_ylim(y_Tmin, y_Tmax) # scale
-       if plot71_temperature < 1: # make y axis right only if not exist
-          ax1.yaxis.set_major_locator(MultipleLocator(0.5))   # Hauptstriche
-          ax1.yaxis.set_minor_locator(MultipleLocator(0.1))   # Nebenstriche
-          ax1.tick_params(axis='y', labelsize=20) # numbers on right y axis size 20
-          ax1.set_ylabel (
-             "Δ GIS Temperature in °C   74 ",
-             color=c74,
-             fontname="Arial",fontsize=20,
-             labelpad=10   # smaller = closer to y axis
-           )
-     """
+    ax2 = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
+    
 
     # Create plots
     create_plots(ax1, data)
