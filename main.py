@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b25" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
+v = "5b26" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
 #  bug 44  part44_ceres_eei is local main line 116
 # CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
 # 
@@ -435,12 +435,12 @@ def add_text_annotations(fig, ax1, header_parameter):
     # in row 6 display play_61_CERES
     if play_61_CERES > 0:
         add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
-        p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61 - main - line 350."
+        p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61 - main - line 438."
         add_text_row(ax1, tr2x, tr6y, p61_text, c61, trs) 
     # in row 5 display play_62_CERES
     if play_62_CERES > 0:
         add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
-        p62_text = f"TOA Shortwave Flux - All-Sky {play_62_CERES}-month moving average 62 - main - line 350."
+        p62_text = f"TOA Shortwave Flux - All-Sky {play_62_CERES}-month moving average 62 - main - line 443."
         add_text_row(ax1, tr2x, tr5y, p62_text, c62, trs) 
 
 
