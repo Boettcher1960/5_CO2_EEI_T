@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b29" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
+v = "5b30" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
 #  bug 44  part44_ceres_eei is local main line 116
 # CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
 # 
@@ -534,11 +534,14 @@ def main():
     # main_484: Axis 2: yaxis side = right, label = ''
     axes = plt.gcf().get_axes()
     # Keep axes 0, 1, 2, hide all others
-    for i in range(2, len(axes)): # remove Axis 3, 4
-        axes[i].yaxis.set_ticks([])  # Remove tick numbers
-        axes[i].set_yticklabels([])  # Remove tick labels
-        axes[i].spines['right'].set_visible(False)
-        axes[i].set_ylabel('') # Remove any label
+    if yl_mode == 6:
+        print("main_538: print all right y axes in figure")
+    else:
+       for i in range(2, len(axes)): # remove Axis 3, 4
+           axes[i].yaxis.set_ticks([])  # Remove tick numbers
+           axes[i].set_yticklabels([])  # Remove tick labels
+           axes[i].spines['right'].set_visible(False)
+           axes[i].set_ylabel('') # Remove any label
    
     # Adjust layout
     fig.tight_layout()

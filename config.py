@@ -105,8 +105,8 @@ x_end = 2026
 C280 = 280
 
 # Axis modes
-yl_mode = 6 # TOA energy in W/m2 y axis left mode
-yr_mode = 7  # Temperature in °C y axis right mode
+yl_mode = 6  # 6 TOA energy in W/m2 y axis left mode
+yr_mode = 7  # 7 Temperature in °C y axis right mode
 
 # yl_mode = 2 ppm CO2 y axis left mode
 # yl_mode = 3 Gt CO2 y axis left mode
