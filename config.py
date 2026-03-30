@@ -43,10 +43,15 @@ plot76_my_T = 0
 plot_T_77 = 0
 parameter84_save_png = 8
 
-# 8.5 configure the right axis legend 
+# 8.3 print the left y axis 
 if part43_ceres_eei == 2:  # line 2 selects EEI 0..2 W/m²
-   yl_mode = 4
-   color_left = "blue" # color of left yaxis for yl_mode == 4 EEI mode
+   yl_mode = 4  # EEI
+
+# 8.5 configure the right axis legend 
+if plot74_GIS_T == 3:  # line 3 selects Temperature °C
+   yr_mode = 7  # Temperature °C
+
+
 
 # Colors
 c22 = "blue"

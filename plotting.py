@@ -2,7 +2,7 @@
 # version 5b1
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
-
+color_left = "blue" # color of left y axis
 
 def setup_figure(scale_mode=10):
     """Setup the figure with appropriate size"""
@@ -28,13 +28,10 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     if yl_mode == 4:  # EEI mode
         c4l = "blue" # color of left yaxis for yl_mode == 4 EEI mode
         ax1.set_ylim(y_Emin, y_Emax)
-        ax1.set_ylabel("Earth Energy Imbalance in W/m²", color=c4l, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=c4l, labelsize=20)
+        ax1.set_ylabel("Earth Energy Imbalance in W/m²", color=color_left, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=color_left, labelsize=20)
         
-        # Set EEI tick spacing
-
-        #y_Emayor_ticks = 0.5 if (y_Emax - y_Emin) > 2 else 0.2
-       
+        # Set EEI tick spacing       
         if (y_Emax - y_Emin) < 1:
             y_Emayor_ticks = 0.2 
             y_Eminor_ticks = 0.1
