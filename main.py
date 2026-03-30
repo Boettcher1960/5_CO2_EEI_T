@@ -184,13 +184,13 @@ if play_62_CERES > 1: # part 6
        keep_original=True,
        df61c = create_running_average( 'work/c62b_ceres.csv', 
                                           'work/c62d_ceres.csv',
-                                            window_months=play_61_CERES,
+                                            window_months=play_62_CERES,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='EEI')
 
        if print_debug > 9:
-          print(f"main_193: create work/c62d_ceres.csv  62.gut ={play_61_CERES}")
+          print(f"main_193: create work/c62d_ceres.csv  62.gut ={play_62_CERES}")
 
 
 
