@@ -77,6 +77,16 @@ def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
     ax.set_ylabel(label, color=color, fontsize=20, labelpad=10)
     return ax
 
+def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
+    """Configure a right y-axis for temperature"""
+    ax.tick_params(axis="y", labelcolor=color, labelsize=20)
+    ax.set_ylim(y_Tmin, y_Tmax)
+    ax.yaxis.set_major_locator(MultipleLocator(0.5))
+    ax.yaxis.set_minor_locator(MultipleLocator(0.1))
+    ax.set_ylabel(label, color=color, fontsize=20, labelpad=10)
+    return ax
+
+
 def add_grid_lines(ax1):
     # mayor grid lines vertical lines inside the plot to better read the y value
     for line in ax1.get_ygridlines():
