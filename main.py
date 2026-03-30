@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b22" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March
+v = "5b24" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
 #  bug 44  part44_ceres_eei is local main line 116
 # CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
 # 
@@ -354,7 +354,7 @@ def create_plots(ax1, data):
         ax62.plot(data['ceres_62']["decimal_year"], data['ceres_62']["EEI"], '-', 
                   label="EEI K62", color=c62, linewidth=2)
         ax62.tick_params(axis="y", labelcolor=c62)
-        ax62.set_ylim(y_Emin, 200)
+        ax62.set_ylim(y_TOAmin, y_TOAmax)
         if print_debug > 9:
            print(f"main_353: ax62 62.8 ={play_62_CERES}")
 
