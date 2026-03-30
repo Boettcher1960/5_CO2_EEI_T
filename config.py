@@ -45,8 +45,8 @@ plot_T_77 = 0
 parameter84_save_png = 8
 
 # 8.3 print the left y axis 
-if part43_ceres_eei == 2:  # line 2 selects EEI 0..2 W/m²
-   yl_mode = 4  # EEI
+# if part43_ceres_eei == 2:  # line 2 selects EEI 0..2 W/m²
+#   yl_mode = 4  # EEI
 
 # 8.5 configure the right axis legend 
 if plot74_GIS_T == 3:  # line 3 selects Temperature °C
@@ -92,12 +92,12 @@ my76_text = "guessed quadratic temperature my_T 76"
 
 
 # Axis ranges
-y_min = 250
-y_max = 500
+y_min = 250 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
+y_max = 500 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
 y_Tmin = 0
 y_Tmax = 2.5
-y_Emin = 0
-y_Emax = 2
+y_Emin = 0 # yl_mode = 4  EEI in W/m2 y axis left mode
+y_Emax = 2 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_TOAmin = 94
 y_TOAmax = 102
 x_anf = 2000
@@ -105,8 +105,17 @@ x_end = 2026
 C280 = 280
 
 # Axis modes
-yl_mode = 4  # EEI in W/m2 y axis left mode
+yl_mode = 7 # TOA energy in W/m2 y axis left mode
 yr_mode = 7  # Temperature in °C y axis right mode
+
+# yl_mode = 2 ppm CO2 y axis left mode
+# yl_mode = 3 Gt CO2 y axis left mode
+# yl_mode = 4 EEI in W/m2 y axis left mode
+# yl_mode = 5 delta ppm CO2 y axis left mode
+# yl_mode = 6 # TOA energy in W/m2 y axis left mode
+# yl_mode = 7 Temperature in °C y axis left mode
+
+
 
 # Text positioning
 tr1x = -0.09

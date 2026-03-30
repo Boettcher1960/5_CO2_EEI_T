@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b24" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
+v = "5b25" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
 #  bug 44  part44_ceres_eei is local main line 116
 # CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
 # 
@@ -46,6 +46,7 @@ v = "5b24" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
 # yl_mode = 3 Gt CO2 y axis left mode
 # yl_mode = 4 EEI in W/m2 y axis left mode
 # yl_mode = 5 delta ppm CO2 y axis left mode
+#           6   in W/m2 y axis left mode
 # yl_mode = 7 Temperature in °C y axis left mode
 
 # part 9 print line 1 to 5 below the figure 

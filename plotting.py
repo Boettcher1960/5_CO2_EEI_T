@@ -28,7 +28,7 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     plt.xlim(x_anf, x_end)
     ax1.grid(True)
     
-    # 8.5 configure the right y axis legend 
+    # 8.5 configure the left y axis legend 
     if yl_mode == 4:  # EEI mode
         c4l = "blue" # color of left yaxis for yl_mode == 4 EEI mode
         ax1.set_ylim(y_Emin, y_Emax)
