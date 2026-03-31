@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b30" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
+v = "5b32" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
 #  bug 44  part44_ceres_eei is local main line 116
 # CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
 # 

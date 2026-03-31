@@ -53,13 +53,25 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     # yl_mode = 6 # TOA energy in W/m2 y axis left mode
     elif yl_mode == 6:  # TOA energy in W/m2 y axis left mode
         c6l = "green" # color of left yaxis for TOA energy in W/m2 y axis left mode
-        y_TOAmin = 94
-        y_TOAmax = 102
+        y_TOAmin = 99.15   # bug the global config.py line 101 does not work
+        y_TOAmax = 99.3  # bug the global config.py line 102 does not work
         ax1.set_ylim(y_TOAmin, y_TOAmax)
         ax1.set_ylabel("TOA Energy in W/m²", color=color_left, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=color_left, labelsize=20)
         # Set EEI tick spacing   y_TOAmin    
-        if (y_TOAmax - y_TOAmin) < 5:
+        if (y_TOAmax - y_TOAmin) < 0.2:
+            y_TEmayor_ticks = 0.02
+            y_TEminor_ticks = 0.01
+        elif (y_TOAmax - y_TOAmin) < 0.5:
+            y_TEmayor_ticks = 0.1 
+            y_TEminor_ticks = 0.02
+        elif (y_TOAmax - y_TOAmin) < 1.1:
+            y_TEmayor_ticks = 0.1 
+            y_TEminor_ticks = 0.02
+        elif (y_TOAmax - y_TOAmin) < 2:
+            y_TEmayor_ticks = 2 
+            y_TEminor_ticks = 0.2
+        elif (y_TOAmax - y_TOAmin) < 5:
             y_TEmayor_ticks = 2 
             y_TEminor_ticks = 0.2
         elif (y_TOAmax - y_TOAmin) < 10:
