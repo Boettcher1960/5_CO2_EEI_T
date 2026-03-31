@@ -98,8 +98,8 @@ y_Tmin = 0
 y_Tmax = 2.5
 y_Emin = 0 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_Emax = 2 # yl_mode = 4  EEI in W/m2 y axis left mode
-y_TOAmin = 94  # bug is double set in plotting.py line 56
-y_TOAmax = 102 # bug is double set in plotting.py line 57
+y_TOAmin = 97  # bug is double set in plotting.py line 56
+y_TOAmax = 101 # bug is double set in plotting.py line 57
 x_anf = 2000
 x_end = 2026
 C280 = 280

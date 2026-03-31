@@ -5,6 +5,12 @@ from matplotlib.ticker import MultipleLocator
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 import matplotlib.pyplot as plt
 
+from config import y_TOAmin
+from config import y_TOAmax
+from config import play_61_CERES
+from config import play_62_CERES
+print("plotting: TOA", y_TOAmin, y_TOAmax, play_62_CERES, play_61_CERES)
+
 
 color_left = "blue" # color of left y axis
 
@@ -53,8 +59,8 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     # yl_mode = 6 # TOA energy in W/m2 y axis left mode
     elif yl_mode == 6:  # TOA energy in W/m2 y axis left mode
         c6l = "green" # color of left yaxis for TOA energy in W/m2 y axis left mode
-        y_TOAmin = 99.15   # bug the global config.py line 101 does not work
-        y_TOAmax = 99.3  # bug the global config.py line 102 does not work
+        #y_TOAmin = 99.15   # bug the global config.py line 101 does not work
+        #y_TOAmax = 99.3  # bug the global config.py line 102 does not work
         ax1.set_ylim(y_TOAmin, y_TOAmax)
         ax1.set_ylabel("TOA Energy in W/m²", color=color_left, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=color_left, labelsize=20)
@@ -72,8 +78,8 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
             y_TEmayor_ticks = 2 
             y_TEminor_ticks = 0.2
         elif (y_TOAmax - y_TOAmin) < 5:
-            y_TEmayor_ticks = 2 
-            y_TEminor_ticks = 0.2
+            y_TEmayor_ticks = 1 
+            y_TEminor_ticks = 0.1
         elif (y_TOAmax - y_TOAmin) < 10:
             y_TEmayor_ticks = 2 
             y_TEminor_ticks = 0.4
