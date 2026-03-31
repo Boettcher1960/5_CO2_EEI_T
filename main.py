@@ -1,11 +1,9 @@
 # main.py
 # part 1 configure 
-v = "5b34" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
+v = "5b35" #  # 62 TOA_Shortwave_Flux_-_All-Sky_March plot 94 to 102W/m/m
 #      63  TOA Longwave Flux - All-Sky
 #          CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJanuary-2026
 #          2026_01_TOA_Longwave_Flux_All-Sky.txt
-#  bug 44  part44_ceres_eei is local main line 116
-# CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
 # 
 # ok horizontal 1.8°C line is T value
 
@@ -69,9 +67,10 @@ from text_annotations import *
 
 from config import y_TOAmin
 from config import y_TOAmax
+from config import part44_ceres_eei
 from config import play_61_CERES
 from config import play_62_CERES
-print("main_074: TOA", y_TOAmin, y_TOAmax, play_62_CERES)
+print("main_074: TOA", y_TOAmin, y_TOAmax, play_62_CERES, part44_ceres_eei)
 
 
 # bug from config import part44_ceres_eei
@@ -120,10 +119,6 @@ def process_ceres_data():
     # Process part44_ceres_eei
     if print_debug > 19:
         print(f"main_115: local variable 44.3 ={part44_ceres_eei}")
-
-        # bug redifine part44_ceres_eei as local variable 
-        part44_ceres_eei = 11 # UnboundLocalError: cannot access local variable 'part44_ceres_eei
-
         out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
         if print_debug > 9:
            print(f"main_120: local variable 44.4 ={part44_ceres_eei}")
