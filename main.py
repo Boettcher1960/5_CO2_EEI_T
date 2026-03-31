@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b41" #  test old plots plot22_CO2_Mauna_Loa = 2 
+v = "5b42" #  test old plots plot22_CO2_Mauna_Loa = 2 
 #
 #
 
@@ -390,7 +390,12 @@ def add_text_annotations(fig, ax1, header_parameter):
 
     # Add legend lines for active plots 
     # part 9.2 print line 2 below the plot main_350
-    if part43_ceres_eei == 2:
+    if plot22_CO2_Mauna_Loa == 2: # 22.5 legend
+        add_legend_line(fig, lr2x1, lr2x2, lr2y, c22)
+        add_text_row(ax1, tr2x, tr2y, 
+                    blue22_text, 
+                    c22, trs)
+    elif part43_ceres_eei == 2:
         add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
         add_text_row(ax1, tr2x, tr2y, 
                     "Earth Energy Imbalance W/m² moving average 12 month  43", 
@@ -401,7 +406,12 @@ def add_text_annotations(fig, ax1, header_parameter):
                     "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
                     c74, trs)
     # print line 3 below the plot
-    if part41_ceres_eei == 3:
+    if plot22_CO2_Mauna_Loa == 3:
+        add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
+        add_text_row(ax1, tr2x, tr3y, 
+                    "plot22_CO2_Mauna_Loa   22", 
+                    c41, trs)
+    elif part41_ceres_eei == 3:
         add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
         add_text_row(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month 41", 
