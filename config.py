@@ -33,7 +33,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0
 
 play_61_CERES = 48     # 12 CERES EEI 12 month like part41_ceres_eei 
-play_62_CERES = 48     # 12 CERES EEI 12 month like part41_ceres_eei 
+play_62_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
 
 plot71_temperature = 0
 plot72_AESS_T = 0
@@ -142,15 +142,9 @@ lr6y = 0.034
 scale_mode = 10 # other values are not used
 print_debug = 10 # print some items 
 
-#########################################################
-# How to make EEI files #################################
-#########################################################
-# download
-# CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
-
 
 #########################################################
-# How to make EEI files #################################
+# 61 How to make EEI files ##############################
 #########################################################
 #
 # download 2016_01_EEI_CERES.txt
@@ -223,7 +217,18 @@ print_debug = 10 # print some items
 #
 # 
 #
-#
-#
-# make a function 
+#########################################################
+# 62 How to make TOA_Shortwave_Fluxfiles ################
+#########################################################
+# download https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
+
+#########################################################
+# 63 How to make TOA_Longwave Flux files ################
+#########################################################
+# download https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+#      63  TOA Longwave Flux - All-Sky
+#          CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJanuary-2026
+#          2026_01_TOA_Longwave_Flux_All-Sky.txt
+
 # 
