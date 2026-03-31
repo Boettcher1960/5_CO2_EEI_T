@@ -16,6 +16,23 @@
 
 # line 6 is developv part61_EEI 
 
+# 8.3 print the left y axis 
+# Axis mode y axis left
+yl_mode = 6  # 6 TOA energy in W/m2 y axis left mode
+# 8.5 configure the right axis legend 
+# Axis mode y axis right
+yr_mode = 7  # 7 Temperature in °C y axis right mode
+
+
+# yl_mode = 2 ppm CO2 y axis left mode
+# yl_mode = 3 Gt CO2 y axis left mode
+# yl_mode = 4 EEI in W/m2 y axis left mode
+# yl_mode = 5 delta ppm CO2 y axis left mode
+# yl_mode = 6 # TOA energy in W/m2 y axis left mode
+# yl_mode = 7 Temperature in °C y axis left mode
+
+
+
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0
 plot23_Glen_CO2 = 0
@@ -43,16 +60,6 @@ linear_41_75 = 0
 plot76_my_T = 0
 plot_T_77 = 0
 parameter84_save_png = 8
-
-# 8.3 print the left y axis 
-# if part43_ceres_eei == 2:  # line 2 selects EEI 0..2 W/m²
-#   yl_mode = 4  # EEI
-
-# 8.5 configure the right axis legend 
-if plot74_GIS_T == 3:  # line 3 selects Temperature °C
-   yr_mode = 7  # Temperature °C
-
-
 
 # Colors
 c22 = "blue"
@@ -102,20 +109,10 @@ y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
 x_anf = 2000
 x_end = 2026
+
+# constants
+# C280 =275 in Zack Labe plots.
 C280 = 280
-
-# Axis modes
-yl_mode = 6  # 6 TOA energy in W/m2 y axis left mode
-yr_mode = 7  # 7 Temperature in °C y axis right mode
-
-# yl_mode = 2 ppm CO2 y axis left mode
-# yl_mode = 3 Gt CO2 y axis left mode
-# yl_mode = 4 EEI in W/m2 y axis left mode
-# yl_mode = 5 delta ppm CO2 y axis left mode
-# yl_mode = 6 # TOA energy in W/m2 y axis left mode
-# yl_mode = 7 Temperature in °C y axis left mode
-
-
 
 # Text positioning
 tr1x = -0.09
@@ -148,11 +145,43 @@ print_debug = 10 # print some items
 #########################################################
 
 
- """
- easy text 
- gg
+"""
+
+-----------------------v = "5b40" #  test old plots
+# Plot configuration flags
+plot22_CO2_Mauna_Loa = 0
+plot23_Glen_CO2 = 0
+plot25_long_CO2 = 0
+plot34_CO2_emission = 0
+
+part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
+part42_ceres_eei = 0  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
+part43_ceres_eei = 2  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
+part44_ceres_eei = 0 # 47 is local 
+
+plot52_delta_CO2_red_bars = 0
+plot53_CO2_orange2025 = 0
+plot54_Glen_delta_on = 0
+plot55_population_on = 0
+
+play_61_CERES = 48     # 12 CERES EEI 12 month like part41_ceres_eei 
+play_62_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+
+plot71_temperature = 0
+plot72_AESS_T = 0
+plot73_ECS_T = 0
+plot74_GIS_T = 3 # 3=right y axis
+linear_41_75 = 0
+plot76_my_T = 0
+plot_T_77 = 0
+parameter84_save_png = 8
+
+
+
+
+
  
- """
+"""
 
 
 #########################################################
