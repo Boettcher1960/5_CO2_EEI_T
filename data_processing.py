@@ -71,7 +71,7 @@ def create_running_average(input_csv,
     return df_output
 
 
-def load_co2_mauna_loa(x_anf, x_end):
+def load_co2_mauna_loa(x_anf, x_end): # 22.4
     """Load Mauna Loa CO2 data"""
     co2_values = [
         316.91, 317.64, 318.45, 318.99, 319.62, 320.04, 321.38, 322.16, 323.04, 324.62,

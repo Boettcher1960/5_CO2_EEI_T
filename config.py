@@ -18,7 +18,7 @@
 
 # 8.3 print the left y axis 
 # Axis mode y axis left
-yl_mode = 6  # 6 TOA energy in W/m2 y axis left mode
+yl_mode = 2  # 6 TOA energy in W/m2 y axis left mode
 # 8.5 configure the right axis legend 
 # Axis mode y axis right
 yr_mode = 7  # 7 Temperature in °C y axis right mode
@@ -34,14 +34,14 @@ yr_mode = 7  # 7 Temperature in °C y axis right mode
 
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 0
+plot22_CO2_Mauna_Loa = 2
 plot23_Glen_CO2 = 0
 plot25_long_CO2 = 0
 plot34_CO2_emission = 0
 
 part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
 part42_ceres_eei = 0  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
-part43_ceres_eei = 2  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
+part43_ceres_eei = 0  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0 # 47 is local 
 
 plot52_delta_CO2_red_bars = 0
@@ -49,8 +49,8 @@ plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0
 
-play_61_CERES = 48     # 12 CERES EEI 12 month like part41_ceres_eei 
-play_62_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
+play_61_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
+play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 
 plot71_temperature = 0
 plot72_AESS_T = 0
@@ -147,6 +147,14 @@ print_debug = 10 # print some items
 
 """
 
+
+-----------------------v = "5b4
+
+
+-----------------------v = "5b41
+plot22_CO2_Mauna_Loa = 2 
+plot74_GIS_T = 3
+
 -----------------------v = "5b40" #  test old plots
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0
@@ -175,7 +183,7 @@ linear_41_75 = 0
 plot76_my_T = 0
 plot_T_77 = 0
 parameter84_save_png = 8
-
+-----------------------v = "5b40" #  test old plots
 
 
 
@@ -271,6 +279,13 @@ parameter84_save_png = 8
 #      63  TOA Longwave Flux - All-Sky
 #          CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJanuary-2026
 #          2026_01_TOA_Longwave_Flux_All-Sky.txt
+
+#      63  TOA Longwave Flux - All-Sky
+#          CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJanuary-2026
+#          2026_01_TOA_Longwave_Flux_All-Sky.txt
+# 
+# ok horizontal 1.8°C line is T value
+
 
 # 
 #1E318 

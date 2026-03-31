@@ -1,11 +1,8 @@
 # main.py
 # part 1 configure 
-v = "5b40" #  test old plots
-#      63  TOA Longwave Flux - All-Sky
-#          CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJanuary-2026
-#          2026_01_TOA_Longwave_Flux_All-Sky.txt
-# 
-# ok horizontal 1.8°C line is T value
+v = "5b41" #  test old plots plot22_CO2_Mauna_Loa = 2 
+#
+#
 
 # part 2.2 plot CO2 Mauna Loa
 # part 2.3 plot23_Glen_CO2 
@@ -84,7 +81,7 @@ def get_active_temperature_axis(ax1):
     elif plot73_ECS_T > 0:
         return ax1.twinx()
     elif plot74_GIS_T > 0:
-        return ax1.twinx()
+        return ax1.twinx() # 74.1 
     elif linear_41_75 > 0:
         return ax1.twinx()
     return None
@@ -229,7 +226,7 @@ def create_temperature_plots(ax1):
         temp_axes['73'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c73, 
                                                    "Δ Temperature in °C (ECS = 4.5°C)")
     
-    if plot74_GIS_T > 0:
+    if plot74_GIS_T > 0: # 74.2
         df = pd.read_csv("csv/csv7/csv_74_gis_temperature.csv")
         ax = ax1.twinx()
         ax.plot(df["Year74"], df["GIS_temp"] + 0.3, '-', color=c74, linewidth=3)
@@ -267,11 +264,13 @@ def load_plot_data():
     data = {}
     
     # Load CO2 data if needed
-    if plot22_CO2_Mauna_Loa > 0:
+    if plot22_CO2_Mauna_Loa > 0: # 22.2
         data['co2'] = load_co2_mauna_loa(x_anf, x_end)
-    
+        if print_debug > 9:
+           print(f"main_270: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
+           print(f"main_271: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
     # Load GIS temperature data
-    if plot74_GIS_T > 0:
+    if plot74_GIS_T > 0: # 74.3
         data['gis_temp'] = load_gis_temperature()
     
     # Load CERES data
@@ -365,7 +364,7 @@ def create_plots(ax1, data):
 
 
     # Plot GIS temperature
-    if plot74_GIS_T > 0 and 'gis_temp' in data:
+    if plot74_GIS_T > 0 and 'gis_temp' in data: # 74.4
         ax74 = ax1.twinx()
         ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
                   label="T GIS K74", color=c74, linewidth=3)
@@ -396,7 +395,7 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr2y, 
                     "Earth Energy Imbalance W/m² moving average 12 month  43", 
                     c43, trs)
-    elif plot74_GIS_T == 2:
+    elif plot74_GIS_T == 2: # 74.5 legend
         add_legend_line(fig, lr2x1, lr2x2, lr2y, c74)
         add_text_row(ax1, tr2x, tr2y, 
                     "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
@@ -417,7 +416,7 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month  43", 
                     c43, trs)
-    elif plot74_GIS_T == 3:
+    elif plot74_GIS_T == 3: # 74.6
         add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
         add_text_row(ax1, tr2x, tr3y, 
                     "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
@@ -506,7 +505,7 @@ def main():
     # Add vertical bands
     add_vertical_bands(ax1, C280)
     
-    # Add temperature band if temperature plots are active
+    # Add temperature band if temperature plots are active # 74.9
     if plot71_temperature > 0 or plot72_AESS_T > 0 or plot73_ECS_T > 0 or plot74_GIS_T > 0:
         if print_debug > 13:
             print(f"main_420: bug6 temperature band on left y axis only plot74_GIS_T={plot74_GIS_T} {'='*5}")
