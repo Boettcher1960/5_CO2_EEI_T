@@ -144,6 +144,18 @@ print_debug = 10 # print some items
 
 
 #########################################################
+# test CO2 plots  ##############################
+#########################################################
+
+
+ """
+ easy text 
+ gg
+ 
+ """
+
+
+#########################################################
 # 61 How to make EEI files ##############################
 #########################################################
 #
@@ -232,3 +244,12 @@ print_debug = 10 # print some items
 #          2026_01_TOA_Longwave_Flux_All-Sky.txt
 
 # 
+#1E318 
+# ASR 48 months 
+
+#The monthly climatology-corrected Earth's Energy Imbalance was record high in December 2025, at +2.57 W/m²!
+#https://bsky.app/profile/leonsimons.com/post/3mfchkvjyjs2k
+#https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mfcnnsfkgk2h
+# NASA CERES Earth's Energy Imbalance
+#—Absorbed Solar Radiation (ASR)
+#—Outgoing Longwave Radiation (OLR)
