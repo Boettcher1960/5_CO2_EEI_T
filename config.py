@@ -107,7 +107,7 @@ y_Emin = 0 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_Emax = 2 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
-x_anf = 2000
+x_anf = 1960
 x_end = 2026
 
 # constants
@@ -151,7 +151,7 @@ print_debug = 10 # print some items
 -----------------------v = "5b4
 
 
------------------------v = "5b41
+-----------------------v = "5b43
 plot22_CO2_Mauna_Loa = 2 
 plot74_GIS_T = 3
 

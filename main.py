@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b42" #  test old plots plot22_CO2_Mauna_Loa = 2 
+v = "5b32" #  test old plots ok plot22_CO2_Mauna_Loa = 2 
 #
 #
 
@@ -311,9 +311,12 @@ def create_plots(ax1, data):
     """Create all plots based on configuration"""
     
     # Plot plot22_CO2_Mauna_Loa
-    if plot22_CO2_Mauna_Loa > 0 and 'gis_temp' in data: # 22.4
+    if plot22_CO2_Mauna_Loa > 0: # 22.4
+        if print_debug > 9:
+          print(f"main_316: plot22_CO2_Mauna_Loa 22.4 ={plot22_CO2_Mauna_Loa}")
+          print(f"main_317: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
         ax22 = ax1.twinx()
-        ax22.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
+        ax22.plot(data['co2']["year"], data['co2']["co2_ppm"], '-', 
                   label="T GIS K22", color=c22, linewidth=3)
         ax22.tick_params(axis="y", labelcolor=c22)
         ax22.set_ylim(y_min, y_max)
