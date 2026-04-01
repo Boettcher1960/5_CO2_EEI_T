@@ -157,6 +157,17 @@ plot74_GIS_T = 3
 
 -----------------------v = "5b40" #  test old plots
 # Plot configuration flags
+
+make a struct/df with 6 columns and 88 rows.
+
+column 1 is integer 0 to 80
+column 2 are the names ASCII
+column 3 are integer 3 //  example plot and make legend in line 3
+column 4 are colors // example "red" 
+column 5 is the minimum // example 280
+column 6 is the maximum scaling // example 450 ppm
+
+below is column 2:
 plot22_CO2_Mauna_Loa = 0
 plot23_Glen_CO2 = 0
 plot25_long_CO2 = 0
@@ -182,6 +193,11 @@ plot74_GIS_T = 3 # 3=right y axis
 linear_41_75 = 0
 plot76_my_T = 0
 plot_T_77 = 0
+
+The struct/df (22.2) interfaces plot22_CO2_Mauna_Loa.
+The struct/df (22.4) interfaces the color plot22_CO2_Mauna_Loa.
+
+
 parameter84_save_png = 8
 -----------------------v = "5b40" #  test old plots
 
