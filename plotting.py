@@ -216,25 +216,26 @@ def create_plots(ax1, data):
         return 0.0132251 * t**2 - 51.0337 * t + 49536.7
 
     # 2.3.2 years as x values 1960 to 3000
-    years23 = np.arange(x_anf, x_end +1 )
-    co23_values = co3_ppm(years23)
-    # 2.3.3. Create DataFrame for convenience
-    df23 = pd.DataFrame({
+    if plot23_Glen_CO2 > 0: # 23.4 create the plot  ax22.set_ylim(y_min, y_max)
+       years23 = np.arange(x_anf, x_end +1 )
+       co23_values = co3_ppm(years23)
+       # 2.3.3. Create DataFrame for convenience
+       df23 = pd.DataFrame({
           "Year3": years23,
           "Modeled3": co23_values
            })
 
-    # 2.3.7
-    ax23 = ax1.twinx()
-    ax23.spines.right.set_position(("outward", 90))
-    ax23.spines["right"].set_visible(False) # remove right y-Achse
-    ax23.tick_params(right=False, labelright=False) # remove Zahlen
-    # 2.3.8
-    ax23.plot(df23["Year3"], df23["Modeled3"], '--', label="Glen formula CO2= 0.0132t² - 51t + 49,536 K6", color=c23, linewidth=3)
-    ax23.tick_params(axis="y", labelcolor="green")
-    ax23.set_ylim(y_min, y_max) # scale
-    ax23.spines.right.set_position(("outward", 60))
-    # end part 2.3 CO2
+       # 2.3.7
+       ax23 = ax1.twinx()
+       ax23.spines.right.set_position(("outward", 90))
+       ax23.spines["right"].set_visible(False) # remove right y-Achse
+       ax23.tick_params(right=False, labelright=False) # remove Zahlen
+       # 2.3.8
+       ax23.plot(df23["Year3"], df23["Modeled3"], '--', label="Glen formula CO2= 0.0132t² - 51t + 49,536 K6", color=c23, linewidth=3)
+       ax23.tick_params(axis="y", labelcolor="green")
+       ax23.set_ylim(y_min, y_max) # scale
+       ax23.spines.right.set_position(("outward", 60))
+       # end part 2.3 CO2
 
     # plot25_long_CO2 = 3 # 2, 3 print -800 000 years ppm CO2 file
     # https://ourworldindata.org/grapher/co2-long-term-concentration?overlay=download-data
