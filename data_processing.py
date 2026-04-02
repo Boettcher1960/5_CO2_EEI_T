@@ -1,5 +1,5 @@
 # data_processing.py
-# version 5b1
+# version 5b46
 import pandas as pd
 import numpy as np
 print_debug_DP = 10 # global variable print_debug = 10
@@ -71,7 +71,7 @@ def create_running_average(input_csv,
     return df_output
 
 
-def load_co2_mauna_loa(x_anf, x_end): # 22.4
+def load_co2_mauna_loa(x_anf, x_end): # 22.2 define the mauna loa CO2 data
     """Load Mauna Loa CO2 data"""
     co2_values = [
         316.91, 317.64, 318.45, 318.99, 319.62, 320.04, 321.38, 322.16, 323.04, 324.62,

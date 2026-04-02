@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b45" #  test old plots ok plot22_CO2_Mauna_Loa = 2 
+v = "5b46" #  test old plots ok plot22_CO2_Mauna_Loa = 2 
 #
 #
 
@@ -264,7 +264,7 @@ def load_plot_data():
     data = {}
     
     # Load CO2 data if needed
-    if plot22_CO2_Mauna_Loa > 0: # 22.2
+    if plot22_CO2_Mauna_Loa > 0:  # 22.3 load the mauna loa CO2 data
         data['co2'] = load_co2_mauna_loa(x_anf, x_end)
         if print_debug > 9:
            print(f"main_270: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
@@ -311,7 +311,7 @@ def create_plots(ax1, data):
     """Create all plots based on configuration"""
     
     # Plot plot22_CO2_Mauna_Loa
-    if plot22_CO2_Mauna_Loa > 0: # 22.4
+    if plot22_CO2_Mauna_Loa > 0: # 22.4 create the plot  ax22.set_ylim(y_min, y_max)
         if print_debug > 9:
           print(f"main_316: plot22_CO2_Mauna_Loa 22.4 ={plot22_CO2_Mauna_Loa}")
           print(f"main_317: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")

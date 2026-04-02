@@ -1,5 +1,5 @@
 # config.py 
-# version 5b1
+# version 5b46
 # Configuration parameters for the climate analysis tool
 
 # part61_EEI # like part41_ceres_eei make EEI 120 month csv
@@ -34,7 +34,7 @@ yr_mode = 7  # 7 Temperature in °C y axis right mode
 
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 2
+plot22_CO2_Mauna_Loa = 2 # 22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0
 plot25_long_CO2 = 0
 plot34_CO2_emission = 0
@@ -194,8 +194,8 @@ linear_41_75 = 0
 plot76_my_T = 0
 plot_T_77 = 0
 
-The struct/df (22.2) interfaces plot22_CO2_Mauna_Loa.
-The struct/df (22.4) interfaces the color plot22_CO2_Mauna_Loa.
+The struct/df (22) interfaces plot22_CO2_Mauna_Loa.
+The struct/df (22 ) interfaces the color plot22_CO2_Mauna_Loa.
 
 
 parameter84_save_png = 8
