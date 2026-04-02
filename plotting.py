@@ -1,5 +1,5 @@
 # plotting.py
-# version 5b13
+# version 5b51
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 from mpl_toolkits.axes_grid1 import make_axes_locatable
@@ -197,8 +197,8 @@ def create_plots(ax1, data):
     # Plot plot22_CO2_Mauna_Loa
     if plot22_CO2_Mauna_Loa > 0: # 22.4 create the plot  ax22.set_ylim(y_min, y_max)
         if print_debug > 9:
-          print(f"main_316: plot22_CO2_Mauna_Loa 22.4 ={plot22_CO2_Mauna_Loa}")
-          print(f"main_317: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
+          print(f"plot_200: plot22_CO2_Mauna_Loa 22.4 ={plot22_CO2_Mauna_Loa}")
+          print(f"plot_201: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
         ax22 = ax1.twinx()
         ax22.plot(data['co2']["year"], data['co2']["co2_ppm"], '-', 
                   label="T GIS K22", color=c22, linewidth=3)
@@ -228,11 +228,11 @@ def create_plots(ax1, data):
         ax43.tick_params(axis="y", labelcolor=c43)
         ax43.set_ylim(y_Emin, y_Emax)
         if print_debug > 19:
-           print(f"main_311: ax43 43.4 ={part43_ceres_eei}")
+           print(f"plot_231: ax43 43.4 ={part43_ceres_eei}")
  
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
         if print_debug > 19:
-           print(f"main_291: ax44 44.7 ={part44_ceres_eei}")
+           print(f"plot_235: ax44 44.7 ={part44_ceres_eei}")
 
         ax44 = ax1.twinx()
         ax44.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
@@ -247,7 +247,7 @@ def create_plots(ax1, data):
         ax61.tick_params(axis="y", labelcolor=c61)
         ax61.set_ylim(y_Emin, y_Emax)
         if print_debug > 9:
-           print(f"main_330: ax61 43.8 ={play_61_CERES}")
+           print(f"plot_250: ax61 43.8 ={play_61_CERES}")
     if play_62_CERES > 0 and 'ceres_62' in data:
         ax62 = ax1.twinx()
         ax62.plot(data['ceres_62']["decimal_year"], data['ceres_62']["EEI"], '-', 
@@ -255,7 +255,7 @@ def create_plots(ax1, data):
         ax62.tick_params(axis="y", labelcolor=c62)
         ax62.set_ylim(y_TOAmin, y_TOAmax)
         if print_debug > 9:
-           print(f"main_353: ax62 62.8 ={play_62_CERES}")
+           print(f"plot_258: ax62 62.8 ={play_62_CERES}")
 
     # Plot GIS temperature
     if plot74_GIS_T > 0 and 'gis_temp' in data: # 74.4
@@ -264,6 +264,6 @@ def create_plots(ax1, data):
                   label="T GIS K74", color=c74, linewidth=3)
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
-
+    # end create_plots(ax1, data):
 
 

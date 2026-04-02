@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b50" #  test old plots ok plot22_CO2_Mauna_Loa = 2 
+v = "5b51" #  test old plots ok plot22_CO2_Mauna_Loa = 2 
 #
 #
 
