@@ -82,6 +82,17 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr2y, 
                     blue22_text, 
                     c22, trs)
+    elif plot25_long_CO2 == 2: # 
+       line25 = Line2D([lr2x1, lr2x2], [lr2y, lr2y], # y from 0 to 1
+       transform=fig.transFigure,
+       marker="o", markersize=3, color=c25, linewidth=2)
+       fig.add_artist(line25)
+       plt.text(tr2x, tr2y, blue25_text, color=c25, fontname="Arial", fontsize=trs,
+       transform=plt.gca().transAxes)
+       fig.add_artist(line25)
+
+
+
     elif part43_ceres_eei == 2:
         add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
         add_text_row(ax1, tr2x, tr2y, 
