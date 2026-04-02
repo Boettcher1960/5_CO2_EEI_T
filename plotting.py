@@ -236,6 +236,34 @@ def create_plots(ax1, data):
     ax23.spines.right.set_position(("outward", 60))
     # end part 2.3 CO2
 
+    # plot25_long_CO2 = 3 # 2, 3 print -800 000 years ppm CO2 file
+    # https://ourworldindata.org/grapher/co2-long-term-concentration?overlay=download-data
+    # Data sources: NOAA Global Monitoring Laboratory - Trends in Atmospheric Carbon Dioxide (2026)EPA 
+    # based on various sources (2022) – with major processing by Our World in Data
+    # -----------------------------
+    #  part 2.5 plot CO2 Mauna Loa
+    blue25_text="green: CO2 NOAA 800_000 year ice data 25"
+    if plot25_long_CO2 > 0:
+      df25 = pd.read_csv("read_csv/csv_25_ppm_long.csv") # our world in data file
+      long_co25 = (
+         df25[df25["Entity"] == "World"][["Year25", "ppm25"]]
+         .query("-10 <= Year25 <= 2026")
+         .sort_values("Year25")
+         .reset_index(drop=True)
+         )
+      ax25 = ax1.twinx()
+      ax25.spines.right.set_position(("outward", 90))
+      ax25.spines["right"].set_visible(False) # remove right y-Achse
+      ax25.tick_params(right=False, labelright=False) # remove Zahlen
+
+      ax25.plot(df25["Year25"], df25["ppm25"], '--', label="Glen formula CO2= 0.0132t² - 51t + 49,536 K6", color=c25, linewidth=3)
+      ax25.tick_params(axis="y", labelcolor=c25)
+      ax25.set_ylim(y_min, y_max) # scale
+      ax25.spines.right.set_position(("outward", 60))
+      # print(long_co25.head(5))
+
+
+
 
 
     # Plot CERES data
