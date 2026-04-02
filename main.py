@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b63" #  plot34_CO2_emission = 4  # 34.1
+v = "5b65" #  plot34_CO2_emission = 4  # 34. mode 1
 #
 #
 
@@ -387,7 +387,7 @@ def main():
     ax1.tick_params(axis="x", labelcolor="black", labelsize=20)
     
     # debug 
-    print("main_480: All axes in figure:")
+    print("main_390: All axes in figure:")
     for i, ax in enumerate(plt.gcf().get_axes()):
         # Get the y-axis label if it exists
         ylabel = ax.get_ylabel()

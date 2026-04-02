@@ -146,7 +146,7 @@ def add_text_annotations(fig, ax1, header_parameter):
                     text_plot23_Glen, 
                     c23, trs)
     elif plot34_CO2_emission == 4: # 34.4
-       print("text_148: plot34_CO2_emission  = ", plot34_CO2_emission) # 34.9
+       print("text_148: plot34_CO2_emission  = ", plot34_CO2_emission, " mode ", plot34_CO2_emission_mode, " 34") # 34.9
        line34 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
        transform=fig.transFigure,
        marker="o", markersize=3, color=c34, linewidth=2)

@@ -304,7 +304,8 @@ def create_plots(ax1, data):
         # 3.4.mode 1 
         if plot34_CO2_emission_mode == 1:
            df34a = pd.read_csv("read_csv/csv_34a1_co2_world_generated.csv") # processed file
-        elif plot34_CO2_emission_mode == 2:   # 3.4.mode 2
+           print("plot_307: mode 1 plot34_CO2_emission = ", plot34_CO2_emission) # 34.3.1
+        elif plot34_CO2_emission_mode == 2:   # 3.4.2   mode 2
            df34b = pd.read_csv("read_csv/csv_34a2_co2_sum.csv") # our world in data file
            co2_sum_world = (
               df34b[df34b["Entity"] == "World"][["Year34", "Cumulat"]]
@@ -317,7 +318,7 @@ def create_plots(ax1, data):
            print("co2_cumul 2  df34b")
            print(co2_sum_world.head(2))
         elif plot34_CO2_emission_mode == 3:  # 3.4.mode 3
-           print("plot_303: mode 3 plot34_CO2_emission = ", plot34_CO2_emission) # 34.3
+           print("plot_303: mode 3 plot34_CO2_emission = ", plot34_CO2_emission) # 34.3.3
            df34b = pd.read_csv("read_csv/csv_34a3_cumulative-co-emissions.csv") # our world in data file
            co2_sum_world = (
               df34b[df34b["Entity"] == "World"][["Year", "Cumulat"]]
