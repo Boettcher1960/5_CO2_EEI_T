@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b62" #  plot34_CO2_emission = 4  # 34.1
+v = "5b63" #  plot34_CO2_emission = 4  # 34.1
 #
 #
 
@@ -67,7 +67,7 @@ from config import y_TOAmax
 from config import part44_ceres_eei
 from config import play_61_CERES
 from config import play_62_CERES
-from config import plot34_CO2_emission # = 2  # 34.1
+# from config import plot34_CO2_emission # = 2  # 34.1
 
 print("main_074: TOA", y_TOAmin, y_TOAmax, play_62_CERES, part44_ceres_eei)
 

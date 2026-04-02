@@ -110,7 +110,24 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
         y_Tminor_ticks = 0.1
         ax1.yaxis.set_major_locator(MultipleLocator(y_Tmayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Tminor_ticks))
+    elif yl_mode == 3:  #  Gt CO2 y axis left mode
+        ax1.set_ylim(y_Gmin, y_Gmax)
+        ax1.set_ylabel("CO₂ in Gt", color=c22, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c22, labelsize=20)
         
+        # Set CO2 tick spacing
+        if (y_Gmax - y_Gmin) < 200:
+            y_Gmayor_ticks = 50
+            y_Gminor_ticks = 10
+        elif (y_Gmax - y_Gmin) < 2000:
+            y_Gmayor_ticks = 500
+            y_Gminor_ticks = 100
+        else:
+            y_Gmayor_ticks = 500
+            y_Gminor_ticks = 200
+        ax1.yaxis.set_major_locator(MultipleLocator(y_Gmayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_Gminor_ticks))
+   
     else:  # CO2 mode (default)
         ax1.set_ylim(y_min, y_max)
         ax1.set_ylabel("CO₂ in ppm", color=c22, fontsize=20)
@@ -312,6 +329,8 @@ def create_plots(ax1, data):
            co2_sum_world["GCumulat"] = (co2_sum_world["Cumulat"] / 1e9).astype(int)
            x34years = df34b["Year"]
            cumulative_gt = co2_sum_world["GCumulat"]
+           print(co2_sum_world.tail(5))
+           print("plot_332: mode 3 plot34_CO2_emission = ", plot34_CO2_emission) # 34.3
         elif plot34_CO2_emission_mode == 4:  # 3.4.mode 5
            df34b = pd.read_csv("csv_34a3_cumulative-co-emissions.csv") # our world in data file
            co2_sum_world = (

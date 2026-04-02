@@ -38,7 +38,7 @@ plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in lin
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 plot34_CO2_emission =    4   # 34.1 row 4
-plot34_CO2_emission_mode = 3 # 34.1 mode 
+plot34_CO2_emission_mode = 1 # 34.1 mode 
 
 part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
 part42_ceres_eei = 0  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
@@ -56,7 +56,7 @@ play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 3 # 3=right y axis
+plot74_GIS_T = 0 # 3=right y axis
 linear_41_75 = 0
 plot76_my_T = 0
 plot_T_77 = 0
@@ -104,6 +104,9 @@ y_min = 250 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
 y_max = 500 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
 y_Tmin = 0
 y_Tmax = 2.5
+y_Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
+y_Gmax = 5000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
+
 y_Emin = 0 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_Emax = 2 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
