@@ -35,7 +35,7 @@ yr_mode = 7  # 7 Temperature in °C y axis right mode
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 2 # 22.1 declare global integer variable (2= print in line 2)
-plot23_Glen_CO2 = 0
+plot23_Glen_CO2 = 4      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0
 plot34_CO2_emission = 0
 
@@ -302,6 +302,8 @@ parameter84_save_png = 8
 # 
 # ok horizontal 1.8°C line is T value
 
+#  ceres olr csv download 
+# https://neo.gsfc.nasa.gov/view.php?datasetId=CERES_LWFLUX_M
 
 # 
 #1E318 

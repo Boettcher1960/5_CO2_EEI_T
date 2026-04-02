@@ -204,7 +204,40 @@ def create_plots(ax1, data):
                   label="T GIS K22", color=c22, linewidth=3)
         ax22.tick_params(axis="y", labelcolor=c22)
         ax22.set_ylim(y_min, y_max)
-    
+    # -----------------------------
+    # 2.3 plot23_Glen_CO2 = 0.013t² - 51t + 49,536 in dark blue 
+    # source a plot with the formula explained in a thread
+    # source https://x.com/Gergyl/status/1810632238230589564
+    # -----------------------------
+    text_plot23_Glen="calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
+    # CO₂ function CO2 = 0.013t² - 51t + 49,536
+    def co3_ppm(t): # 23.2
+        """Glen CO2 model"""
+        return 0.0132251 * t**2 - 51.0337 * t + 49536.7
+
+    # 2.3.2 years as x values 1960 to 3000
+    years23 = np.arange(x_anf, x_end +1 )
+    co23_values = co3_ppm(years23)
+    # 2.3.3. Create DataFrame for convenience
+    df23 = pd.DataFrame({
+          "Year3": years23,
+          "Modeled3": co23_values
+           })
+
+    # 2.3.7
+    ax23 = ax1.twinx()
+    ax23.spines.right.set_position(("outward", 90))
+    ax23.spines["right"].set_visible(False) # remove right y-Achse
+    ax23.tick_params(right=False, labelright=False) # remove Zahlen
+    # 2.3.8
+    ax23.plot(df23["Year3"], df23["Modeled3"], '--', label="Glen formula CO2= 0.0132t² - 51t + 49,536 K6", color=c23, linewidth=3)
+    ax23.tick_params(axis="y", labelcolor="green")
+    ax23.set_ylim(y_min, y_max) # scale
+    ax23.spines.right.set_position(("outward", 60))
+    # end part 2.3 CO2
+
+
+
     # Plot CERES data
     if part41_ceres_eei > 0 and 'ceres_12' in data:
         ax41 = ax1.twinx()

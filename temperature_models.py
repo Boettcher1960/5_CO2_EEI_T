@@ -27,9 +27,6 @@ def T_model76(t):
     x = t - 2000
     return 0.00034 * x**2 + 0.0238 * x + 0.74
 
-def co3_ppm(t):
-    """Glen CO2 model"""
-    return 0.0132251 * t**2 - 51.0337 * t + 49536.7
 
 # 7 part 1
 # red71_text="red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"
