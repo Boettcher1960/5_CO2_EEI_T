@@ -272,6 +272,7 @@ def create_plots(ax1, data):
     plot34_CO2_emission  = 33  # 34.9
 
     if plot34_CO2_emission > 0: # 34.2
+        ax34 = ax1.twinx()
         print34_text ="purple dots: cumulative CO2 emissions Carbon Brief 34 mode "
         # plot34_CO2_emission_mode = 1, read self made csv 2000 GtCO2
         # plot34_CO2_emission_mode = 2, read csv 2000 000 000 000 tCO2
