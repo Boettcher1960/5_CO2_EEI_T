@@ -367,7 +367,7 @@ def create_plots(ax1, data):
         if plot34_CO2_emission_mode == 1:       # df34a = pd.read_csv("co2_sum_world.csv")
               ax34.plot(df34a["Year34"], df34a["GCumulat"], marker="o",  color=c34, label="plot34_CO2_emission")
               ax34.tick_params(axis="y", labelcolor=c34)
-              ax34.set_ylim(0, 2000) # best scaling 2000 GtCO2
+              ax34.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
         elif plot34_CO2_emission_mode == 2:
               ax34.plot(df34b["Year34"], df34b["Cumulat"], marker="o",  color=c34, label="plot34_CO2_emission")
               ax34.tick_params(axis="y", labelcolor=c34)
