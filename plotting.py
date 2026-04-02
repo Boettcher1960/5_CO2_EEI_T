@@ -11,6 +11,7 @@ from data_processing import *
 from data_processing import *
 from text_annotations import *
 from config import play_62_CERES
+from config import plot34_CO2_emission
 print("plotting: TOA", y_TOAmin, y_TOAmax, plot34_CO2_emission, play_61_CERES)
 
 
@@ -282,7 +283,7 @@ def create_plots(ax1, data):
     # co2_cumul.csv
     # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
     # 3.4.0 Entity,Code,Year,Cumulat
-    print("plot_272: plot34_CO2_emission = ", plot34_CO2_emission) # 34.3
+    #print("plot_272: plot34_CO2_emission = ", plot34_CO2_emission) # 34.3
 
     if plot34_CO2_emission > 0: # 34.2
         ax34 = ax1.twinx()
@@ -296,7 +297,7 @@ def create_plots(ax1, data):
         #second_digit = int(str(plot34_CO2_emission)[1])
         #plot34_CO2_emission = first_digit
         #plot34_CO2_emission_mode = second_digit
-        #print34_text = print34_text + str(plot34_CO2_emission_mode)
+        print34_text = print34_text + str(plot34_CO2_emission_mode)
         # 3.4.mode 1 
         if plot34_CO2_emission_mode == 1:
            df34a = pd.read_csv("read_csv/csv_34a1_co2_world_generated.csv") # processed file
@@ -315,7 +316,7 @@ def create_plots(ax1, data):
            print(co2_sum_world.head(2))
         elif plot34_CO2_emission_mode == 3:  # 3.4.mode 3
            print("plot_303: mode 3 plot34_CO2_emission = ", plot34_CO2_emission) # 34.3.3
-           df34b = pd.read_csv("read_csv/csv_34a3_cumulative-co-emissions.csv") # our world in data file
+           df34b = pd.read_csv("read_csv/csv_34a3_cum_co2.csv") # our world in data file
            co2_sum_world = (
               df34b[df34b["Entity"] == "World"][["Year", "Cumulat"]]
               .query("1750 <= Year <= 2026")
@@ -329,7 +330,7 @@ def create_plots(ax1, data):
            print(co2_sum_world.tail(5))
            print("plot_332: mode 3 plot34_CO2_emission = ", plot34_CO2_emission) # 34.3
         elif plot34_CO2_emission_mode == 4:  # 3.4.mode 5
-           df34b = pd.read_csv("csv_34a3_cumulative-co-emissions.csv") # our world in data file
+           df34b = pd.read_csv("read_csv/csv_34a3_cum_co2.csv") # our world in data file
            co2_sum_world = (
               df34b[df34b["Entity"] == "World"][["Year", "Cumulat"]]
               .query("1750 <= Year <= 2026")
