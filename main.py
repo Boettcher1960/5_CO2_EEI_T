@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b52" #  test plot23_Glen_CO2 = 4 
+v = "5b53" #  test plot23_Glen_CO2 = 4 
 #
 #
 
@@ -396,14 +396,21 @@ def main():
     axes = plt.gcf().get_axes()
     # Keep axes 0, 1, 2, hide all others
     if yl_mode == 6:
-        print("main_538: print all right y axes in figure")
+        print("main_399: print all right y axes in figure")
+    elif yr_mode == 0:
+       print("main_401: print no right y axes in figure")
+       for i in range(1, len(axes)): # remove Axis 3, 4
+           axes[i].yaxis.set_ticks([])  # Remove tick numbers
+           axes[i].set_yticklabels([])  # Remove tick labels
+           axes[i].spines['right'].set_visible(False)
+           axes[i].set_ylabel('') # Remove any label
     else:
+       print("main_408: print one right y axes in figure")
        for i in range(2, len(axes)): # remove Axis 3, 4
            axes[i].yaxis.set_ticks([])  # Remove tick numbers
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
-   
     # Adjust layout
     fig.tight_layout()
     plt.tight_layout()

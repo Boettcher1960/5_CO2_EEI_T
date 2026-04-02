@@ -21,7 +21,7 @@
 yl_mode = 2  # 6 TOA energy in W/m2 y axis left mode
 # 8.5 configure the right axis legend 
 # Axis mode y axis right
-yr_mode = 7  # 7 Temperature in °C y axis right mode
+yr_mode = 0  # 7 Temperature in °C y axis right mode
 
 
 # yl_mode = 2 ppm CO2 y axis left mode
