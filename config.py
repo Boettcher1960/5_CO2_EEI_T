@@ -18,7 +18,7 @@
 
 # 8.3 print the left y axis 
 # Axis mode y axis left
-yl_mode = 2  # 6 TOA energy in W/m2 y axis left mode
+yl_mode = 3  # 6 TOA energy in W/m2 y axis left mode
 # 8.5 configure the right axis legend 
 # Axis mode y axis right
 yr_mode = 7  # (0=no yaxis) (7 one T °C y axis right mode)
@@ -107,8 +107,8 @@ y_Emin = 0 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_Emax = 2 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
-x_anf = 1000
-x_end = 2050
+x_anf = 1980
+x_end = 2030
 
 # constants
 # C280 =275 in Zack Labe plots.

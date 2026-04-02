@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b60" #  plot34_CO2_emission = 33  # 34.1
+v = "5b61" #  plot34_CO2_emission = 33  # 34.1
 #
 #
 
