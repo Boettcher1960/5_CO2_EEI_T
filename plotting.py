@@ -342,7 +342,34 @@ def create_plots(ax1, data):
            # how to save co2_sum_world with column GCumulat as csv file
            # save CSV
            # co2_sum_world.to_csv("co2_sum_world.csv", index=False)
-           #end 3.4
+        ax34 = ax1.twinx()
+        if plot34_CO2_emission_mode == 1:       # df34a = pd.read_csv("co2_sum_world.csv")
+              ax34.plot(df34a["Year34"], df34a["GCumulat"], marker="o",  color=c34, label="plot34_CO2_emission")
+              ax34.tick_params(axis="y", labelcolor=c34)
+              ax34.set_ylim(0, 2000) # best scaling 2000 GtCO2
+        elif plot34_CO2_emission_mode == 2:
+              ax34.plot(df34b["Year34"], df34b["Cumulat"], marker="o",  color=c34, label="plot34_CO2_emission")
+              ax34.tick_params(axis="y", labelcolor=c34)
+              ax34.set_ylim(0, 2000000000000) #8
+        elif plot34_CO2_emission_mode == 3:
+              ax34.plot(co2_sum_world["Year"], co2_sum_world["GCumulat"], marker="o",  color=c34, label="plot34_CO2_emission")
+              ax34.tick_params(axis="y", labelcolor=c34)
+              ax34.set_ylim(300, 800) # best scaling 2000 GtCO2
+        elif plot34_CO2_emission_mode == 4:
+              ax34.set_ylabel("cumulative emission in GtC  34 mode 4", color=c34,
+                   fontname="Arial",fontsize=20,
+                   labelpad=1   # smaller = closer to y axis
+                   )
+              ax34.plot(co2_sum_world["Year"], co2_sum_world["CCumulat"], marker="o",  color=c34, label="plot34_CO2_emission")
+              ax34.tick_params(axis="y", labelcolor=c34)
+              ax34.set_ylim(0, 800) # best scaling 500 GtC
+              ax34.set_ylim(0, 1000) # best scaling 500 GtC
+      
+        else:
+              ax34.plot(df34b["Year"], df34b["Cumulat"], marker="o",  color=c34, label="plot34_CO2_emission")
+              ax34.tick_params(axis="y", labelcolor=c34)
+              ax34.set_ylim(0, 2000000000000) #8
+        #end 3.4
 
 
 
