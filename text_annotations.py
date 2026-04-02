@@ -50,6 +50,8 @@ def add_text_row(ax, x, y, text, color, fontsize=20):
     ax.text(x, y, text, color=color, fontname="Arial", fontsize=fontsize,
            transform=ax.transAxes)
 
+blue22_text="blue dots: CO2 measured at Mauna Loa ( 2025 = 427.35 ppm ) 22"
+text_plot23_Glen="calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
 
 # 9.2 print line 2 blue Mauna Loa data below the figure
 # 9.2.2 print line 22 below the plot explainations
@@ -75,7 +77,7 @@ def add_text_annotations(fig, ax1, header_parameter):
 
     # Add legend lines for active plots 
     # part 9.2 print line 2 below the plot main_350
-    if plot22_CO2_Mauna_Loa == 2: # 22.5 legend
+    if plot22_CO2_Mauna_Loa == 2: # 22.5.2 legend row 2
         add_legend_line(fig, lr2x1, lr2x2, lr2y, c22)
         add_text_row(ax1, tr2x, tr2y, 
                     blue22_text, 
@@ -90,12 +92,13 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr2y, 
                     "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
                     c74, trs)
+    
     # print line 3 below the plot
-    if plot22_CO2_Mauna_Loa == 3:
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
+    if plot22_CO2_Mauna_Loa == 3: # 22.5.3 legend row 3
+        add_legend_line(fig, lr2x1, lr2x2, lr3y, c22)
         add_text_row(ax1, tr2x, tr3y, 
-                    "plot22_CO2_Mauna_Loa   22", 
-                    c41, trs)
+                    blue22_text, 
+                    c22, trs)
     elif part41_ceres_eei == 3:
         add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
         add_text_row(ax1, tr2x, tr3y, 
@@ -117,7 +120,21 @@ def add_text_annotations(fig, ax1, header_parameter):
                     "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
                     c74, trs)
 
-    if part42_ceres_eei == 4:
+    # print line 4 below the plot
+    if plot22_CO2_Mauna_Loa == 4: # 22.5.4 legend row 4
+        add_legend_line(fig, lr2x1, lr2x2, lr4y, c22)
+        add_text_row(ax1, tr2x, tr4y, 
+                    blue22_text, 
+                    c22, trs)
+    elif plot23_Glen_CO2 == 4: # 23.5.4 legend row 4
+        add_legend_line(fig, lr2x1, lr2x2, lr4y, c23)
+        add_text_row(ax1, tr2x, tr4y, 
+                    text_plot23_Glen, 
+                    c23, trs)
+
+
+
+    elif part42_ceres_eei == 4:
         add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
         add_text_row(ax1, tr2x, tr4y, 
                     "Earth Energy Imbalance W/m² moving average 48 month  42", 
