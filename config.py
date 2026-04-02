@@ -21,7 +21,7 @@
 yl_mode = 3  # 6 TOA energy in W/m2 y axis left mode
 # 8.5 configure the right axis legend 
 # Axis mode y axis right
-yr_mode = 7  # (0=no yaxis) (7 one T °C y axis right mode)
+yr_mode = 4  # (0=no yaxis) (7 one T °C y axis right mode)
 
 
 # yl_mode = 2 ppm CO2 y axis left mode
@@ -37,7 +37,8 @@ yr_mode = 7  # (0=no yaxis) (7 one T °C y axis right mode)
 plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
-plot34_CO2_emission = 33  # 34.1
+plot34_CO2_emission =    4   # 34.1 row 4
+plot34_CO2_emission_mode = 3 # 34.1 mode 
 
 part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
 part42_ceres_eei = 0  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot

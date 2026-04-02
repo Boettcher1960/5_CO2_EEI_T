@@ -269,7 +269,8 @@ def create_plots(ax1, data):
     # co2_cumul.csv
     # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
     # 3.4.0 Entity,Code,Year,Cumulat
-    plot34_CO2_emission  = 33  # 34.9
+    plot34_CO2_emission  = 43  # 34.9
+    print("plot_272: plot34_CO2_emission bug set = ", plot34_CO2_emission) # 34.7
 
     if plot34_CO2_emission > 0: # 34.2
         ax34 = ax1.twinx()
@@ -279,11 +280,11 @@ def create_plots(ax1, data):
         # plot34_CO2_emission_mode = 3, read csv 2000 GtCO2 csv_read/csv_34a3_cumulative-co-emissions.csv 1750 to 2024
         # plot34_CO2_emission_mode = 4, read csv 2000 GtCO2
         # plot34_CO2_emission_mode = 5
-        first_digit = int(str(plot34_CO2_emission)[0]) # print in row
-        second_digit = int(str(plot34_CO2_emission)[1])
-        plot34_CO2_emission = first_digit
-        plot34_CO2_emission_mode = second_digit
-        print34_text = print34_text + str(plot34_CO2_emission_mode)
+        #first_digit = int(str(plot34_CO2_emission)[0]) # print in row
+        #second_digit = int(str(plot34_CO2_emission)[1])
+        #plot34_CO2_emission = first_digit
+        #plot34_CO2_emission_mode = second_digit
+        #print34_text = print34_text + str(plot34_CO2_emission_mode)
         # 3.4.mode 1 
         if plot34_CO2_emission_mode == 1:
            df34a = pd.read_csv("read_csv/csv_34a1_co2_world_generated.csv") # processed file

@@ -110,6 +110,8 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr3y, 
                     blue22_text, 
                     c22, trs)
+        
+
     elif part41_ceres_eei == 3:
         add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
         add_text_row(ax1, tr2x, tr3y, 
@@ -132,6 +134,8 @@ def add_text_annotations(fig, ax1, header_parameter):
                     c74, trs)
 
     # print line 4 below the plot
+    plot34_CO2_emission  = 4
+    print("text_137: plot34_CO2_emission bug-set = ", plot34_CO2_emission) # 34.8
     if plot22_CO2_Mauna_Loa == 4: # 22.5.4 legend row 4
         add_legend_line(fig, lr2x1, lr2x2, lr4y, c22)
         add_text_row(ax1, tr2x, tr4y, 
@@ -142,7 +146,15 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr4y, 
                     text_plot23_Glen, 
                     c23, trs)
-
+    elif plot34_CO2_emission == 4: # 34.4
+       print("text_148: plot34_CO2_emission  = ", plot34_CO2_emission) # 34.9
+       line34 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
+       transform=fig.transFigure,
+       marker="o", markersize=3, color=c34, linewidth=2)
+       fig.add_artist(line34)
+       plt.text(tr2x, tr4y, print34_text, color=c34, fontname="Arial", fontsize=trs,
+       transform=plt.gca().transAxes)
+       fig.add_artist(line34)
 
 
     elif part42_ceres_eei == 4:
