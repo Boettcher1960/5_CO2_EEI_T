@@ -1,7 +1,7 @@
 # main.py
 # part 1 configure 
-v = "5b67" #  plot34_CO2_emission = 4  # 34. mode 1 1850Gt CO2 cumulative
-#
+v = "5b69" #  plot34_CO2_emission = 4  # 34. mode 1 1850Gt CO2 cumulative
+# 
 #
 
 # part 2.2 plot CO2 Mauna Loa
@@ -352,7 +352,12 @@ def main():
     
     # 8.7 print the right y axis
     label  ="Temperature in °C"
-    axT = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
+    print("main_355: print right_T_y_a",yr_mode, "-")
+    if yr_mode == 7:
+       # (0=no yaxis) (7 one T °C y axis right mode)
+       axT = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
+       print("main_356: right Y axis = Temp  riht_T_y_a")
+ 
     # axT is the temperature scaling
     # label  ="EEI in W line 449"
     # bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
@@ -369,13 +374,13 @@ def main():
     # Add temperature band if temperature plots are active # 74.9
     if plot71_temperature > 0 or plot72_AESS_T > 0 or plot73_ECS_T > 0 or plot74_GIS_T > 0:
         if print_debug > 13:
-            print(f"main_420: bug6 temperature band on left y axis only plot74_GIS_T={plot74_GIS_T} {'='*5}")
+            print(f"main_372: bug6 temperature band on left y axis only plot74_GIS_T={plot74_GIS_T} {'='*5}")
         add_temperature_band(ax1) # 1.5 to 2 on left y axis
         # Find the active temperature axis
         for ax in [ax1] + ax1.get_figure().get_axes():
             if hasattr(ax, 'get_ylabel') and 'Temperature' in ax.get_ylabel():
                 add_temperature_band(ax)
-                print(f"main_469{'='*1} temperature_band")
+                print(f"main_378{'='*1} temperature_band")
                 break
     
     # Add text annotations
@@ -391,7 +396,7 @@ def main():
     for i, ax in enumerate(plt.gcf().get_axes()):
         # Get the y-axis label if it exists
         ylabel = ax.get_ylabel()
-        print(f"main_484: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
+        print(f"main_394: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
     # main_484: Axis 0: yaxis side = left, label = 'Earth Energy Imbalance in W/m²'
     # main_484: Axis 1: yaxis side = right, label = 'Temperature in °C '
     # main_484: Axis 2: yaxis side = right, label = ''

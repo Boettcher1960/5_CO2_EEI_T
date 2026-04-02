@@ -411,7 +411,7 @@ def create_plots(ax1, data):
         ax42.set_ylim(y_Emin, y_Emax)
     
 
-    if part43_ceres_eei > 0 and 'ceres_43' in data:
+    if part43_ceres_eei > 0 and 'ceres_43' in data: # 43.2
         ax43 = ax1.twinx()
         ax43.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
                   label="EEI K41", color=c43, linewidth=2)
