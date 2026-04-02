@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b47" #  test old plots ok plot22_CO2_Mauna_Loa = 2 
+v = "5b48" #  test old plots ok plot22_CO2_Mauna_Loa = 2 
 #
 #
 
@@ -307,7 +307,7 @@ def load_plot_data():
     return data
 
 
-def create_plots(ax1, data):
+def create_plots_old(ax1, data):
     """Create all plots based on configuration"""
     
     # Plot plot22_CO2_Mauna_Loa
@@ -320,8 +320,6 @@ def create_plots(ax1, data):
                   label="T GIS K22", color=c22, linewidth=3)
         ax22.tick_params(axis="y", labelcolor=c22)
         ax22.set_ylim(y_min, y_max)
-    
-    
     
     # Plot CERES data
     if part41_ceres_eei > 0 and 'ceres_12' in data:
@@ -375,8 +373,6 @@ def create_plots(ax1, data):
         if print_debug > 9:
            print(f"main_353: ax62 62.8 ={play_62_CERES}")
 
-
-
     # Plot GIS temperature
     if plot74_GIS_T > 0 and 'gis_temp' in data: # 74.4
         ax74 = ax1.twinx()
@@ -385,89 +381,6 @@ def create_plots(ax1, data):
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
 
-def add_text_annotations_old(fig, ax1, header_parameter):
-    """Add all text annotations to the plot"""
-    filename = os.path.basename(sys.argv[0])
-    
-    # Add header
-    add_header(ax1, x_anf, x_end, yl_mode)
-    
-    # Add bottom text
-    add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y)
-    # def add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y):
- 
-
-    # add_text_row(ax1, tr2x, tr5y, "--row5---main338--- tr5y", c43, trs)
-    add_text_row(ax1, 0.9, tr6y, 
-                    "-main330", 
-                    c43, trs)
-
-    # Add legend lines for active plots 
-    # part 9.2 print line 2 below the plot main_350
-    if plot22_CO2_Mauna_Loa == 2: # 22.5 legend
-        add_legend_line(fig, lr2x1, lr2x2, lr2y, c22)
-        add_text_row(ax1, tr2x, tr2y, 
-                    blue22_text, 
-                    c22, trs)
-    elif part43_ceres_eei == 2:
-        add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
-        add_text_row(ax1, tr2x, tr2y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month  43", 
-                    c43, trs)
-    elif plot74_GIS_T == 2: # 74.5 legend
-        add_legend_line(fig, lr2x1, lr2x2, lr2y, c74)
-        add_text_row(ax1, tr2x, tr2y, 
-                    "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
-                    c74, trs)
-    # print line 3 below the plot
-    if plot22_CO2_Mauna_Loa == 3:
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
-        add_text_row(ax1, tr2x, tr3y, 
-                    "plot22_CO2_Mauna_Loa   22", 
-                    c41, trs)
-    elif part41_ceres_eei == 3:
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
-        add_text_row(ax1, tr2x, tr3y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month 41", 
-                    c41, trs)
-    elif part42_ceres_eei == 3:
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
-        add_text_row(ax1, tr2x, tr3y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month  42", 
-                    c42, trs)
-    elif part43_ceres_eei == 3:
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c43)
-        add_text_row(ax1, tr2x, tr3y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month  43", 
-                    c43, trs)
-    elif plot74_GIS_T == 3: # 74.6
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
-        add_text_row(ax1, tr2x, tr3y, 
-                    "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
-                    c74, trs)
-
-    if part42_ceres_eei == 4:
-        add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
-        add_text_row(ax1, tr2x, tr4y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month  42", 
-                    c42, trs)
-    
-    # in row 5 display part44_ceres_eei
-    if part44_ceres_eei > 0:
-        add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
-        p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44"
-        add_text_row(ax1, tr2x, tr5y, p44_text, c44, trs) 
-
-    # in row 6 display play_61_CERES
-    if play_61_CERES > 0:
-        add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
-        p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61 - main - line 438."
-        add_text_row(ax1, tr2x, tr6y, p61_text, c61, trs) 
-    # in row 5 display play_62_CERES
-    if play_62_CERES > 0:
-        add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
-        p62_text = f"TOA Shortwave Flux - All-Sky {play_62_CERES}-month moving average 62 - main - line 443."
-        add_text_row(ax1, tr2x, tr5y, p62_text, c62, trs) 
 
 
 def save_png(fig, header_parameter):

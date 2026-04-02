@@ -5,6 +5,13 @@ from matplotlib.ticker import MultipleLocator
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 import matplotlib.pyplot as plt
 
+# Import modules
+from config import *
+from data_processing import *
+from data_processing import *
+from text_annotations import *
+
+
 from config import y_TOAmin
 from config import y_TOAmax
 from config import play_61_CERES
@@ -183,3 +190,80 @@ def add_vertical_bands(ax1, C280):
 def add_year_band(ax1, year_start=2025, year_end=2027):
     """Add vertical band for current year"""
     ax1.axvspan(year_start, year_end, color="#B3D9FF", alpha=0.5, zorder=0)
+
+def create_plots(ax1, data):
+    """Create all plots based on configuration"""
+    
+    # Plot plot22_CO2_Mauna_Loa
+    if plot22_CO2_Mauna_Loa > 0: # 22.4 create the plot  ax22.set_ylim(y_min, y_max)
+        if print_debug > 9:
+          print(f"main_316: plot22_CO2_Mauna_Loa 22.4 ={plot22_CO2_Mauna_Loa}")
+          print(f"main_317: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
+        ax22 = ax1.twinx()
+        ax22.plot(data['co2']["year"], data['co2']["co2_ppm"], '-', 
+                  label="T GIS K22", color=c22, linewidth=3)
+        ax22.tick_params(axis="y", labelcolor=c22)
+        ax22.set_ylim(y_min, y_max)
+    
+    # Plot CERES data
+    if part41_ceres_eei > 0 and 'ceres_12' in data:
+        ax41 = ax1.twinx()
+        ax41.plot(data['ceres_12']["year41"], data['ceres_12']["EEI"], '-', 
+                  label="EEI K41", color=c41, linewidth=2)
+        ax41.tick_params(axis="y", labelcolor=c41)
+        ax41.set_ylim(y_Emin, y_Emax)
+    
+    if part42_ceres_eei > 0 and 'ceres_48' in data:
+        ax42 = ax1.twinx()
+        ax42.plot(data['ceres_48']["year41"], data['ceres_48']["EEI"], '-', 
+                  label="EEI K42", color=c42, linewidth=2)
+        ax42.tick_params(axis="y", labelcolor=c42)
+        ax42.set_ylim(y_Emin, y_Emax)
+    
+
+    if part43_ceres_eei > 0 and 'ceres_43' in data:
+        ax43 = ax1.twinx()
+        ax43.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
+                  label="EEI K41", color=c43, linewidth=2)
+        ax43.tick_params(axis="y", labelcolor=c43)
+        ax43.set_ylim(y_Emin, y_Emax)
+        if print_debug > 19:
+           print(f"main_311: ax43 43.4 ={part43_ceres_eei}")
+ 
+    if part44_ceres_eei > 0 and 'ceres_custom' in data:
+        if print_debug > 19:
+           print(f"main_291: ax44 44.7 ={part44_ceres_eei}")
+
+        ax44 = ax1.twinx()
+        ax44.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
+                  label="EEI K44", color=c44, linewidth=2)
+        ax44.tick_params(axis="y", labelcolor=c44)
+        ax44.set_ylim(y_Emin, y_Emax)
+    
+    if play_61_CERES > 0 and 'ceres_61' in data:
+        ax61 = ax1.twinx()
+        ax61.plot(data['ceres_61']["decimal_year"], data['ceres_61']["EEI"], '-', 
+                  label="EEI K61", color=c61, linewidth=2)
+        ax61.tick_params(axis="y", labelcolor=c61)
+        ax61.set_ylim(y_Emin, y_Emax)
+        if print_debug > 9:
+           print(f"main_330: ax61 43.8 ={play_61_CERES}")
+    if play_62_CERES > 0 and 'ceres_62' in data:
+        ax62 = ax1.twinx()
+        ax62.plot(data['ceres_62']["decimal_year"], data['ceres_62']["EEI"], '-', 
+                  label="EEI K62", color=c62, linewidth=2)
+        ax62.tick_params(axis="y", labelcolor=c62)
+        ax62.set_ylim(y_TOAmin, y_TOAmax)
+        if print_debug > 9:
+           print(f"main_353: ax62 62.8 ={play_62_CERES}")
+
+    # Plot GIS temperature
+    if plot74_GIS_T > 0 and 'gis_temp' in data: # 74.4
+        ax74 = ax1.twinx()
+        ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
+                  label="T GIS K74", color=c74, linewidth=3)
+        ax74.tick_params(axis="y", labelcolor=c74)
+        ax74.set_ylim(y_Tmin, y_Tmax)
+
+
+
