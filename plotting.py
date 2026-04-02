@@ -10,14 +10,7 @@ from config import *
 from data_processing import *
 from data_processing import *
 from text_annotations import *
-
-
-from config import y_TOAmin
-from config import y_TOAmax
-from config import play_61_CERES
 from config import play_62_CERES
-from config import plot34_CO2_emission # = 2  # 34.1
-
 print("plotting: TOA", y_TOAmin, y_TOAmax, plot34_CO2_emission, play_61_CERES)
 
 
@@ -112,14 +105,14 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Tminor_ticks))
     elif yl_mode == 3:  #  Gt CO2 y axis left mode
         ax1.set_ylim(y_Gmin, y_Gmax)
-        ax1.set_ylabel("CO₂ in Gt", color=c22, fontsize=20)
+        ax1.set_ylabel("cummulative CO₂ emissions in Gt", color=c22, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c22, labelsize=20)
         
         # Set CO2 tick spacing
         if (y_Gmax - y_Gmin) < 200:
             y_Gmayor_ticks = 50
             y_Gminor_ticks = 10
-        elif (y_Gmax - y_Gmin) < 2000:
+        elif (y_Gmax - y_Gmin) < 2002:
             y_Gmayor_ticks = 500
             y_Gminor_ticks = 100
         else:
@@ -143,11 +136,13 @@ def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
 
 def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
     """Configure a right y-axis for temperature"""
+
     ax.tick_params(axis="y", labelcolor=color, labelsize=20)
     ax.set_ylim(y_Tmin, y_Tmax)
     ax.yaxis.set_major_locator(MultipleLocator(0.5))
     ax.yaxis.set_minor_locator(MultipleLocator(0.1))
     ax.set_ylabel(label, color=color, fontsize=20, labelpad=10)
+    print("conf_152: right axis ",label, "-")
     return ax
 
 def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
@@ -159,6 +154,7 @@ def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
     ax2.yaxis.set_major_locator(MultipleLocator(0.5))
     ax2.yaxis.set_minor_locator(MultipleLocator(0.1))
     ax2.set_ylabel(label, color=color, fontsize=20, labelpad=10)
+    print("conf_164: right axis ",label, "-")
     return ax2
 
 # bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
