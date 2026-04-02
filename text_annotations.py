@@ -134,8 +134,7 @@ def add_text_annotations(fig, ax1, header_parameter):
                     c74, trs)
 
     # print line 4 below the plot
-    plot34_CO2_emission  = 4
-    print("text_137: plot34_CO2_emission bug-set = ", plot34_CO2_emission) # 34.8
+    print("text_137: plot34_CO2_emission = ", plot34_CO2_emission) # 34.8
     if plot22_CO2_Mauna_Loa == 4: # 22.5.4 legend row 4
         add_legend_line(fig, lr2x1, lr2x2, lr4y, c22)
         add_text_row(ax1, tr2x, tr4y, 
