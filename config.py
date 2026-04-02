@@ -1,5 +1,5 @@
 # config.py 
-# version 5b47
+# version 5b56
 # Configuration parameters for the climate analysis tool
 
 # part61_EEI # like part41_ceres_eei make EEI 120 month csv
@@ -35,7 +35,7 @@ yr_mode = 7  # (0=no yaxis) (7 one T °C y axis right mode)
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in line 2)
-plot23_Glen_CO2 = 4      # 23.1 declare global integer variable (4= print in line 4)
+plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 2      # 25.1 
 plot34_CO2_emission = 0
 
@@ -107,8 +107,8 @@ y_Emin = 0 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_Emax = 2 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
-x_anf = 1960
-x_end = 2026
+x_anf = 1000
+x_end = 2050
 
 # constants
 # C280 =275 in Zack Labe plots.
