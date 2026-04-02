@@ -82,7 +82,7 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr2y, 
                     blue22_text, 
                     c22, trs)
-    elif plot25_long_CO2 == 2: # 
+    elif plot25_long_CO2 == 2: # 25.3
        line25 = Line2D([lr2x1, lr2x2], [lr2y, lr2y], # y from 0 to 1
        transform=fig.transFigure,
        marker="o", markersize=3, color=c25, linewidth=2)
