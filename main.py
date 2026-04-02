@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b46" #  test old plots ok plot22_CO2_Mauna_Loa = 2 
+v = "5b47" #  test old plots ok plot22_CO2_Mauna_Loa = 2 
 #
 #
 
@@ -385,7 +385,7 @@ def create_plots(ax1, data):
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
 
-def add_text_annotations(fig, ax1, header_parameter):
+def add_text_annotations_old(fig, ax1, header_parameter):
     """Add all text annotations to the plot"""
     filename = os.path.basename(sys.argv[0])
     
