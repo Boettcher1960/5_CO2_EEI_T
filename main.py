@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c1" #  plot23_Glen_CO2 = 3  
+v = "5c2" #  plot23_Glen_CO2 = 3  
 #
 # part 3.4 plot34_CO2_emission summed
 #
