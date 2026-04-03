@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b95" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b96" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -423,8 +423,6 @@ def main():
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
-    
-
 
     elif yr_mode == 7:
        print("main_417: print one right y axes in figure")

@@ -167,6 +167,12 @@ print_debug = 10 # print some items
 """
 
 
+
+-----------------------v = "5b96
+yl_mode = 3  # 3 1850 Gt CO2 y axis left mode
+yr_mode = 3  # (0=no right yaxis) (7 one T °C y axis right mode)
+yr2_mode = 0  # (0=no second right yaxis) 
+plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 -----------------------v = "5b73
 v = "5b73" #  plot34_CO2_emission = 4  1850Gt CO2 cumulative plot34_CO2_emission_mode = 1 # 34.1 mode
 
