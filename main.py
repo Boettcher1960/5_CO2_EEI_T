@@ -1,9 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b74" #  plot34_CO2_emission = 4  1850Gt CO2 cumulative plot34_CO2_emission_mode = 1 # 34.1 mode
-# 
-#
-
+v = "5b75" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #

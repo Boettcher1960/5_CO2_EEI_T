@@ -240,7 +240,6 @@ def plot_create(ax1, data):
           "Year3": years23,
           "Modeled3": co23_values
            })
-
        # 2.3.7
        ax23 = ax1.twinx()
        ax23.spines.right.set_position(("outward", 90))
@@ -272,7 +271,6 @@ def plot_create(ax1, data):
       ax25.spines.right.set_position(("outward", 90))
       ax25.spines["right"].set_visible(False) # remove right y-Achse
       ax25.tick_params(right=False, labelright=False) # remove Zahlen
-
       ax25.plot(df25["Year25"], df25["ppm25"], '--', label="Glen formula CO2= 0.0132t² - 51t + 49,536 K6", color=c25, linewidth=3)
       ax25.tick_params(axis="y", labelcolor=c25)
       ax25.set_ylim(y_min, y_max) # scale
@@ -283,7 +281,13 @@ def plot_create(ax1, data):
     # co2_cumul.csv
     # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
     # 3.4.0 Entity,Code,Year,Cumulat
-    #print("plot_272: plot34_CO2_emission = ", plot34_CO2_emission) # 34.3
+    if plot31_CO2_emission > 0: # 31.2
+        ax31 = ax1.twinx()
+        print31_text ="purple dots: cumulative CO2 emissions Carbon Brief 31 "
+        df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv") # processed file
+        print("plot_288: mode 1 plot31_CO2_emission = ", plot31_CO2_emission) # 31.3
+
+
 
     if plot34_CO2_emission > 0: # 34.2
         ax34 = ax1.twinx()
