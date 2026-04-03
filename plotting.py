@@ -53,18 +53,37 @@ def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
 def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
     """Configure the first right y-axis for temperature"""
     
-
     ax2 = ax.twinx()
     if print_debug > 9:
           print(f"plot_ 57: right y axis mode ={yr_mode}")
-
-    ax2.tick_params(axis='y', labelcolor='r')
-    ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
-    ax2.set_ylim(y_Tmin, y_Tmax)
-    ax2.yaxis.set_major_locator(MultipleLocator(0.5))
-    ax2.yaxis.set_minor_locator(MultipleLocator(0.1))
-    ax2.set_ylabel(label, color=color, fontsize=20, labelpad=10)
-    print("conf_164: right axis ",label, "-")
+    elif yr_mode == 4:  # EEI mode
+         if print_debug > 9:
+             print(f"plot_ 61: right y axis mode ={yr_mode}")
+         ax2 = ax.twinx()
+    elif yr_mode == 7:  # temperature
+         if print_debug > 9:
+             print(f"plot_ 61: right y axis mode ={yr_mode}")
+         ax2 = ax.twinx()
+         ax2.tick_params(axis='y', labelcolor='r')
+         ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
+         ax2.set_ylim(y_Tmin, y_Tmax)
+         ax2.yaxis.set_major_locator(MultipleLocator(0.5))
+         ax2.yaxis.set_minor_locator(MultipleLocator(0.1))
+         ax2.set_ylabel(label, color=color, fontsize=20, labelpad=10)
+    elif yr_mode == 3:  # Gt CO2
+         if print_debug > 9:
+             print(f"plot_ 76: right y axis mode ={yr_mode}")
+         ax2 = ax.twinx()
+         ax2.tick_params(axis='y', labelcolor='r')
+         ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
+         ax2.set_ylim(y_Gmin, y_Gmax)
+         label = " Gt CO2 plot 80"
+         ax2.yaxis.set_major_locator(MultipleLocator(500))
+         ax2.yaxis.set_minor_locator(MultipleLocator(100))
+         ax2.set_ylabel(label, color=c31, fontsize=20, labelpad=10)
+    else:  # Gt CO2
+         if print_debug > 9:
+             print(f"plot_ 85: right y axis mode ={yr_mode}")
     return ax2
 
 # bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
