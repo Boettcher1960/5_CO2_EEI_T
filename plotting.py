@@ -31,7 +31,7 @@ def setup_figure(scale_mode=10):
     fig.subplots_adjust(bottom=0.30)
     return fig, ax1
 
-def configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax, 
+def plot_axes_y_left(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax, 
                    y_Tmin, y_Tmax, yl_mode, c22, c42, c74):
     """Configure the axes based on selected mode"""
     plt.xlim(x_anf, x_end)
@@ -207,7 +207,7 @@ def add_year_band(ax1, year_start=2025, year_end=2027):
     """Add vertical band for current year"""
     ax1.axvspan(year_start, year_end, color="#B3D9FF", alpha=0.5, zorder=0)
 
-def create_plots(ax1, data):
+def plot_create(ax1, data):
     """Create all plots based on configuration"""
     
     # Plot plot22_CO2_Mauna_Loa
@@ -299,10 +299,10 @@ def create_plots(ax1, data):
         #plot34_CO2_emission_mode = second_digit
         print34_text = print34_text + str(plot34_CO2_emission_mode)
         # 3.4.mode 1 
-        if plot34_CO2_emission_mode == 1:
+        if plot34_CO2_emission_mode == 1: # 34.2   mode 1
            df34a = pd.read_csv("read_csv/csv_34a1_co2_world_generated.csv") # processed file
-           print("plot_307: mode 1 plot34_CO2_emission = ", plot34_CO2_emission) # 34.3.1
-        elif plot34_CO2_emission_mode == 2:   # 3.4.2   mode 2
+           print("plot_304: mode 1 plot34_CO2_emission = ", plot34_CO2_emission) # 34.3.1
+        elif plot34_CO2_emission_mode == 2:   # 34.2   mode 2
            df34b = pd.read_csv("read_csv/csv_34a2_co2_sum.csv") # our world in data file
            co2_sum_world = (
               df34b[df34b["Entity"] == "World"][["Year34", "Cumulat"]]
@@ -314,8 +314,8 @@ def create_plots(ax1, data):
            co2_sum_world["GCumulat"] = co2_sum_world["Cumulat"] / 1e9
            print("co2_cumul 2  df34b")
            print(co2_sum_world.head(2))
-        elif plot34_CO2_emission_mode == 3:  # 3.4.mode 3
-           print("plot_303: mode 3 plot34_CO2_emission = ", plot34_CO2_emission) # 34.3.3
+        elif plot34_CO2_emission_mode == 3:  # 34.2 .mode 3
+           print("plot_318: mode 3 plot34_CO2_emission = ", plot34_CO2_emission) # 34.3.3
            df34b = pd.read_csv("read_csv/csv_34a3_cum_co2.csv") # our world in data file
            co2_sum_world = (
               df34b[df34b["Entity"] == "World"][["Year", "Cumulat"]]
@@ -451,6 +451,6 @@ def create_plots(ax1, data):
                   label="T GIS K74", color=c74, linewidth=3)
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
-    # end create_plots(ax1, data):
+    # end plot_create(ax1, data):
 
 

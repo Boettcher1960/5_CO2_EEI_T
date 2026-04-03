@@ -18,25 +18,28 @@
 
 # 8.3 print the left y axis 
 # Axis mode y axis left
-yl_mode = 3  # 6 TOA energy in W/m2 y axis left mode
+yl_mode = 3  # 3 1850 Gt CO2 y axis left mode
+# yl_mode = 1 GtC y axis left mode
+# yl_ mode = 2 ppm CO2 y axis left mode
+# yl_mode = 3 1850 Gt CO2 y axis left mode
+# yl_mode = 4 EEI in W/m2 y axis left mode
+# yl_mode = 5 delta ppm CO2 y axis left mode
+# yl_ mode = 6 # TOA energy in W/m2 y axis left mode
+# yl_ mode = 7 Temperature in °C y axis left mode
+
+
 # 8.5 configure the right axis legend 
 # Axis mode y axis right
 yr_mode = 4  # (0=no yaxis) (7 one T °C y axis right mode)
-
-# yl_mode = 1 GtC y axis left mode
-# yl_mode = 2 ppm CO2 y axis left mode
-# yl_mode = 3 Gt CO2 y axis left mode
-# yl_mode = 4 EEI in W/m2 y axis left mode
-# yl_mode = 5 delta ppm CO2 y axis left mode
-# yl_mode = 6 # TOA energy in W/m2 y axis left mode
-# yl_mode = 7 Temperature in °C y axis left mode
-
 
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
+
+plot31_CO2_emission =    4   # 31.1 row 4 # yl_mode = 4
+
 plot34_CO2_emission =    4   # 34.1 row 4 # yl_mode = 4
 plot34_CO2_emission_mode = 1 # 34.1 mode 
 # plot31__CO2_emission mode 1
@@ -150,15 +153,18 @@ print_debug = 10 # print some items
 
 
 #########################################################
-# test CO2 plots  ##############################
+# CO2 plots  ##############################
 #########################################################
+# part 2.2 plot CO2 Mauna Loa
+# part 2.3 plot23_Glen_CO2 
+# part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
 
 
 """
 
 
------------------------v = "5b4
-
+-----------------------v = "5b73
+v = "5b73" #  plot34_CO2_emission = 4  1850Gt CO2 cumulative plot34_CO2_emission_mode = 1 # 34.1 mode
 
 -----------------------v = "5b44
 plot22_CO2_Mauna_Loa = 2 

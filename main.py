@@ -1,12 +1,9 @@
 # main.py
 # part 1 configure 
-v = "5b73" #  plot34_CO2_emission = 4  1850Gt CO2 cumulative plot34_CO2_emission_mode = 1 # 34.1 mode
+v = "5b74" #  plot34_CO2_emission = 4  1850Gt CO2 cumulative plot34_CO2_emission_mode = 1 # 34.1 mode
 # 
 #
 
-# part 2.2 plot CO2 Mauna Loa
-# part 2.3 plot23_Glen_CO2 
-# part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -346,14 +343,14 @@ def main():
     data = load_plot_data()
     
     # 8.3 print the left y axis  # Configure axes plotting.py 
-    ax1 = configure_axes(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
-                         y_Tmin, y_Tmax, yl_mode, c22, c42, c74)
+    ax1 = plot_axes_y_left(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
+                         y_Tmin, y_Tmax, yl_mode, c25, c42, c74)
+    print("main_348: plot_axes_y_left",yr_mode, "-c22-c25")
     
     # 8.7 print the right y axis
-    label  ="Temperature in °C"
-    print("main_355: print right_T_y_a",yr_mode, "-")
     if yr_mode == 7:
        # (0=no yaxis) (7 one T °C y axis right mode)
+       label  ="Temperature in °C"
        axT = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
        print("main_356: right Y axis = Temp  riht_T_y_a")
  
@@ -362,7 +359,7 @@ def main():
     # bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
     # main_484: Axis 2: yaxis side = right, label = 'EEI in W line 449'
     # Create plots
-    create_plots(ax1, data)
+    plot_create(ax1, data)
     
     # Add grid lines
     add_grid_lines(ax1)
