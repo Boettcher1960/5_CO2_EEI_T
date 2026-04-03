@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b86" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b87" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -376,7 +376,7 @@ def main():
                 break
     
     # Add text annotations
-    text_print_6_lines(fig, ax1, header_parameter)
+    text_9_print_7_lines(fig, ax1, header_parameter)
     
     # Add x-axis label
     ax1.set_xlabel("year", fontsize=20)

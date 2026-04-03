@@ -1,7 +1,9 @@
 # text_annotations.py
 # version 5b85
 # text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y): line 15
-
+# text_2_print_head_line(ax1, x_anf, x_end, yl_mode): line 30
+# text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5): line48
+# text_9_print_7_lines line 117
 
 import os
 import sys
@@ -27,8 +29,8 @@ def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
 
 
 
-
-def add_header(ax1, x_anf, x_end, yl_mode):
+# text_2_print_head_line(ax1, x_anf, x_end, yl_mode): line 30
+def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
     """Add header text above the plot"""
     trs = 20
     if yl_mode == 4:
@@ -44,20 +46,19 @@ def add_header(ax1, x_anf, x_end, yl_mode):
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
 
-
-def add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5):
+# text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5): line48
+def text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5):
     """Add a legend line to the figure"""
     line = Line2D([x1, x2], [y, y], transform=fig.transFigure,
                   marker=marker, markersize=markersize, color=color, linewidth=linewidth)
     fig.add_artist(line)
     return line
 
-def add_text_row(ax, x, y, text, color, fontsize=20):
+def text_4_add_text(ax, x, y, text, color, fontsize=20):
     """Add a text row below the plot"""
     ax.text(x, y, text, color=color, fontname="Arial", fontsize=fontsize,
            transform=ax.transAxes)
 
-#blue22_text="blue dots: CO2 measured at Mauna Loa ( 2025 = 427.35 ppm ) 22"
 text_plot23_Glen="calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
 
 
@@ -109,34 +110,34 @@ def add_axis_info_line(ax, yl_mode, y_Emin, y_Emax, y_Tmin, y_Tmax,
 
 
 
-
+# text_9_print_7_lines line 117
 # 9.2 print line 2 blue Mauna Loa data below the figure
 # 9.2.2 print line 22 below the plot explainations
 # 9.3 print line 3 below the plot explainations
 # 9.4 print line 4 below the plot explainations
 # 9.5.2 print line 5 plot55_population_on marker="s"
-def text_print_6_lines(fig, ax1, header_parameter):
+def text_9_print_7_lines(fig, ax1, header_parameter):
     """Add all text annotations to the plot"""
     filename = os.path.basename(sys.argv[0])
     
     # Add header
-    add_header(ax1, x_anf, x_end, yl_mode)
+    text_2_print_head_line(ax1, x_anf, x_end, yl_mode)
     
     # Add bottom text
     text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y)
     # def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
  
 
-    # add_text_row(ax1, tr2x, tr5y, "--row5---main338--- tr5y", c43, trs)
-    add_text_row(ax1, 0.9, tr6y, 
+    # text_4_add_text(ax1, tr2x, tr5y, "--row5---main338--- tr5y", c43, trs)
+    text_4_add_text(ax1, 0.9, tr6y, 
                     "-main330", 
                     c43, 10)
 
     # Add legend lines for active plots 
     # part 9.2 print line 2 below the plot main_350
     if plot22_CO2_Mauna_Loa == 2: # 22.5.2 legend row 2
-        add_legend_line(fig, lr2x1, lr2x2, lr2y, c22)
-        add_text_row(ax1, tr2x, tr2y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c22)
+        text_4_add_text(ax1, tr2x, tr2y, 
                     blue22_text, 
                     c22, trs)
     elif plot25_long_CO2 == 2: # 25.9
@@ -160,55 +161,55 @@ def text_print_6_lines(fig, ax1, header_parameter):
 
 
     elif part43_ceres_eei == 2:
-        add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
-        add_text_row(ax1, tr2x, tr2y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
+        text_4_add_text(ax1, tr2x, tr2y, 
                     "Earth Energy Imbalance W/m² moving average 12 month  43", 
                     c43, trs)
     elif plot74_GIS_T == 2: # 74.5 legend
-        add_legend_line(fig, lr2x1, lr2x2, lr2y, c74)
-        add_text_row(ax1, tr2x, tr2y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c74)
+        text_4_add_text(ax1, tr2x, tr2y, 
                     "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
                     c74, trs)
     
     # print line 3 below the plot
     if plot22_CO2_Mauna_Loa == 3: # 22.5.3 legend row 3
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c22)
-        add_text_row(ax1, tr2x, tr3y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c22)
+        text_4_add_text(ax1, tr2x, tr3y, 
                     blue22_text, 
                     c22, trs)
         
 
     elif part41_ceres_eei == 3:
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
-        add_text_row(ax1, tr2x, tr3y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
+        text_4_add_text(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month 41", 
                     c41, trs)
     elif part42_ceres_eei == 3:
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
-        add_text_row(ax1, tr2x, tr3y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
+        text_4_add_text(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 48 month  42", 
                     c42, trs)
     elif part43_ceres_eei == 3:
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c43)
-        add_text_row(ax1, tr2x, tr3y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c43)
+        text_4_add_text(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month  43", 
                     c43, trs)
     elif plot74_GIS_T == 3: # 74.6
-        add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
-        add_text_row(ax1, tr2x, tr3y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
+        text_4_add_text(ax1, tr2x, tr3y, 
                     "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
                     c74, trs)
 
     # print line 4 below the plot
     print("text_137: plot34_CO2_emission = ", plot34_CO2_emission) # 34.8
     if plot22_CO2_Mauna_Loa == 4: # 22.5.4 legend row 4
-        add_legend_line(fig, lr2x1, lr2x2, lr4y, c22)
-        add_text_row(ax1, tr2x, tr4y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c22)
+        text_4_add_text(ax1, tr2x, tr4y, 
                     blue22_text, 
                     c22, trs)
     elif plot23_Glen_CO2 == 4: # 23.5.4 legend row 4
-        add_legend_line(fig, lr2x1, lr2x2, lr4y, c23)
-        add_text_row(ax1, tr2x, tr4y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c23)
+        text_4_add_text(ax1, tr2x, tr4y, 
                     text_plot23_Glen, 
                     c23, trs)
         
@@ -224,30 +225,30 @@ def text_print_6_lines(fig, ax1, header_parameter):
 
 
     elif part42_ceres_eei == 4:
-        add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
-        add_text_row(ax1, tr2x, tr4y, 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
+        text_4_add_text(ax1, tr2x, tr4y, 
                     "Earth Energy Imbalance W/m² moving average 48 month  42", 
                     c42, trs)
     
     # in row 5 display part44_ceres_eei
     if part44_ceres_eei > 0:
-        add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
         p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44"
-        add_text_row(ax1, tr2x, tr5y, p44_text, c44, trs) 
+        text_4_add_text(ax1, tr2x, tr5y, p44_text, c44, trs) 
 
     # in row 6 display play_61_CERES
     if play_61_CERES > 0:
-        add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
         p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61 - main - line 438."
-        add_text_row(ax1, tr2x, tr6y, p61_text, c61, trs) 
+        text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
     # in row 5 display play_62_CERES
     elif play_62_CERES > 0:
-        add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
         p62_text = f"TOA Shortwave Flux - All-Sky {play_62_CERES}-month moving average 62 - main - line 443."
-        add_text_row(ax1, tr2x, tr5y, p62_text, c62, trs) 
+        text_4_add_text(ax1, tr2x, tr5y, p62_text, c62, trs) 
     else:
         p62_text = f"Parameter {header_parameter}  Text 192:"
-        add_text_row(ax1, tr2x, tr6y, p62_text, "black", 16) 
+        text_4_add_text(ax1, tr2x, tr6y, p62_text, "black", 16) 
  
 
 
