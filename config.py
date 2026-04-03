@@ -71,6 +71,7 @@ plot_T_77 = 0
 parameter84_save_png = 8
 
 # Colors
+c21 = "blue"
 c22 = "blue"
 c23 = "#4554A8C6"
 c25 = "green"

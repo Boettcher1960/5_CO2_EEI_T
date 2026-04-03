@@ -77,7 +77,7 @@ def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
          ax2.tick_params(axis='y', labelcolor='r')
          ax2.tick_params(axis="y", labelcolor=color, labelsize=14)
          ax2.set_ylim(y_Gmin, y_Gmax)
-         ax2.set_ylabel(" CO₂in Gt  plot 80", color=c31, fontsize=12)
+         ax2.set_ylabel("cummulative CO₂  emissions in Gt  plot 80", color=c31, fontsize=12)
          ax2.yaxis.set_major_locator(MultipleLocator(400))
          ax2.yaxis.set_minor_locator(MultipleLocator(200))
          # ax2.set_ylabel(" Gt CO2 plot 83", color=c31, fontsize=20, labelpad=10)
@@ -230,8 +230,8 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Gminor_ticks))
     elif yl_mode == 2:  # CO2 mode (default)
         ax1.set_ylim(y_min, y_max)
-        ax1.set_ylabel("CO₂ in ppm  plot 233", color=c25, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=c25, labelsize=20)
+        ax1.set_ylabel("CO₂ in ppm  plot 233", color=c21, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c21, labelsize=20)
         
         # Set CO2 tick spacing
         y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
