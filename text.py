@@ -177,7 +177,15 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     blue22_text, 
                     c22, trs)
-        
+    elif plot25_long_CO2 == 3: # 25.9
+       line25 = Line2D([lr2x1, lr2x2], [lr3y, lr3y], # y from 0 to 1
+       transform=fig.transFigure,
+       marker="o", markersize=3, color=c25, linewidth=2)
+       fig.add_artist(line25)
+       plt.text(tr2x, tr3y, blue25_text, color=c25, fontname="Arial", fontsize=trs,
+       transform=plt.gca().transAxes)
+       fig.add_artist(line25)
+
 
     elif part41_ceres_eei == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)

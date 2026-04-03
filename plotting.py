@@ -228,7 +228,17 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
             y_Gminor_ticks = 200
         ax1.yaxis.set_major_locator(MultipleLocator(y_Gmayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Gminor_ticks))
-   
+    elif yl_mode == 2:  # CO2 mode (default)
+        ax1.set_ylim(y_min, y_max)
+        ax1.set_ylabel("CO₂ in ppm  plot 233", color=c25, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c25, labelsize=20)
+        
+        # Set CO2 tick spacing
+        y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
+        y_minor_ticks = 10
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+
     else:  # CO2 mode (default)
         ax1.set_ylim(y_min, y_max)
         ax1.set_ylabel("CO₂ in ppm", color=c22, fontsize=20)
