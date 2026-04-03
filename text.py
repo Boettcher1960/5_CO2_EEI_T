@@ -1,5 +1,7 @@
 # text_annotations.py
 # version 5b85
+# text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y): line 15
+
 
 import os
 import sys
@@ -11,6 +13,18 @@ from data_processing import *
 from plotting import *
 from data_processing import *
 from main import v
+
+# text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y): line 15
+def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
+    """Add text below the plot (line 1)"""
+    text_below = (f"Figure from  "
+                  f"https://github.com/Boettcher1960/5_CO2_EEI_T      "
+                  f" {filename} version {v} ")
+    
+    # f"https://github.com/Boettcher1960/co2_python       Parameter {header_parameter}")
+    ax1.text(-0.1, tr1y, text_below, color="black", fontname="Arial", fontsize=16,
+            transform=ax1.transAxes)
+
 
 
 
@@ -30,14 +44,6 @@ def add_header(ax1, x_anf, x_end, yl_mode):
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
 
-def add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y):
-    """Add text below the plot (line 1)"""
-    trs = 12
-    text_below = (f"Figure from {filename} v {v}  "
-                  f"https://github.com/Boettcher1960/5_CO2_EEI_T       Parameter {header_parameter}")
-                  # f"https://github.com/Boettcher1960/co2_python       Parameter {header_parameter}")
-    ax1.text(-0.1, tr1y, text_below, color="black", fontname="Arial", fontsize=trs,
-            transform=ax1.transAxes)
 
 def add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5):
     """Add a legend line to the figure"""
@@ -117,8 +123,8 @@ def text_print_6_lines(fig, ax1, header_parameter):
     add_header(ax1, x_anf, x_end, yl_mode)
     
     # Add bottom text
-    add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y)
-    # def add_bottom_text(fig, ax1, filename, v, header_parameter, tr1y):
+    text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y)
+    # def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
  
 
     # add_text_row(ax1, tr2x, tr5y, "--row5---main338--- tr5y", c43, trs)

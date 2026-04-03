@@ -30,7 +30,7 @@ yl_mode = 3  # 3 1850 Gt CO2 y axis left mode
 
 # 8.5 configure the right axis legend 
 # Axis mode y axis right
-yr_mode = 4  # (0=no right yaxis) (7 one T °C y axis right mode)
+yr_mode = 3  # (0=no right yaxis) (7 one T °C y axis right mode)
 yr2_mode = 0  # (0=no second right yaxis) 
 
 # Plot configuration flags

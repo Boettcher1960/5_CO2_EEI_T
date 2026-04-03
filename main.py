@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b85" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b86" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -343,9 +343,9 @@ def main():
     data = load_plot_data()
     
     # 8.3 print the left y axis  # Configure axes plotting.py 
-    ax1 = plot_axes_y_left(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
+    ax1 = plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
                          y_Tmin, y_Tmax, yl_mode, c31, c42, c74)
-    print("main_345: plot_axes_y_left",yr_mode, " color c31")
+    print("main_345: plot_5_left_y_axe",yr_mode, " color c31")
     
     # 8.7 print the right y axis
     if yr_mode == 7:

@@ -1,6 +1,7 @@
 # plotting.py
 # version 5b78
 # plot 1 
+# plot_8_
 # plot_9_create_all_plots(ax1, data): line 200 500
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
@@ -35,7 +36,84 @@ def setup_figure(scale_mode=10):
     fig.subplots_adjust(bottom=0.30)
     return fig, ax1
 
-def plot_axes_y_left(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax, 
+
+
+def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
+    """Configure a right y-axis for temperature"""
+
+    ax.tick_params(axis="y", labelcolor=color, labelsize=20)
+    ax.set_ylim(y_Tmin, y_Tmax)
+    ax.yaxis.set_major_locator(MultipleLocator(0.5))
+    ax.yaxis.set_minor_locator(MultipleLocator(0.1))
+    ax.set_ylabel(label, color=color, fontsize=20, labelpad=10)
+    print("plot_146: right axis ",label, "-")
+    return ax
+
+def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
+    """Configure the first right y-axis for temperature"""
+    ax2 = ax.twinx()
+    ax2.tick_params(axis='y', labelcolor='r')
+    ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
+    ax2.set_ylim(y_Tmin, y_Tmax)
+    ax2.yaxis.set_major_locator(MultipleLocator(0.5))
+    ax2.yaxis.set_minor_locator(MultipleLocator(0.1))
+    ax2.set_ylabel(label, color=color, fontsize=20, labelpad=10)
+    print("conf_164: right axis ",label, "-")
+    return ax2
+
+# bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
+def right_EEI_y_axis(ax, y_Emin, y_Emax, color, label):
+    """Configure the first right y-axis for temperature"""
+    ax2 = ax.twinx()
+
+    # Create a third y-axis offset by 60 points to the right
+    divider = make_axes_locatable(ax2)
+    # Create new axis with offset (60 points = 60/72 inches if using points)
+    ax3 = divider.append_axes("right", size="5%", pad=0.6)  # pad is in inches, 0.6 inches ≈ 43 points
+    # For exact 60 points: 60/72 = 0.8333 inches
+    ax3 = divider.append_axes("right", size="5%", pad=0.8333)
+
+    # Or use points directly
+    ax3 = divider.append_axes("right", size="5%", pad=60/72)  # 60 points in inches
+    return ax3
+    # bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
+
+
+
+def add_grid_lines(ax1):
+    # mayor grid lines vertical lines inside the plot to better read the y value
+    for line in ax1.get_ygridlines():
+        # line.set_color('green')  # major lines
+        line.set_color('blue')
+        line.set_alpha(0.5)
+        line.set_linestyle('-')
+        line.set_linewidth(1.1)
+    
+    ax1.grid(True, which="minor", axis="y", color="lightblue", alpha=0.94)
+
+#def add_temperature_band(ax48, y_min=1.5, y_max=1.8):
+#    ax48.axhspan(y_min, y_max, color="#B3D9FF", alpha=0.5, zorder=0)
+def add_temperature_band(ax, y_min=1.5, y_max=2.0):
+    """Add temperature band to the plot (for temperature axes only)"""
+    # Only add if this is a temperature axis (not EEI axis)
+    if hasattr(ax, 'get_ylabel'):
+        ylabel = ax.get_ylabel()
+        if 'Temperature' in ylabel or '°C' in ylabel:
+            ax.axhspan(y_min, y_max, color="#B3D9FF", alpha=0.5, zorder=0)
+
+def add_vertical_bands(ax1, C280):
+    """Add vertical bands for CO2 levels"""
+    ax1.axhspan(4 * C280 - 2, 4 * C280 + 2, color="#4554A8C6", alpha=0.25, zorder=0)
+    ax1.axhspan(2 * C280 - 2, 2 * C280 + 2, color="#4554A8C6", alpha=0.3, zorder=0)
+
+def add_year_band(ax1, year_start=2025, year_end=2027):
+    """Add vertical band for current year"""
+    ax1.axvspan(year_start, year_end, color="#B3D9FF", alpha=0.5, zorder=0)
+
+
+
+
+def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax, 
                    y_Tmin, y_Tmax, yl_mode, c22, c42, c74):
     """Configure the axes based on selected mode"""
     plt.xlim(x_anf, x_end)
@@ -139,77 +217,7 @@ def plot_axes_y_left(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     
     return ax1
 
-def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
-    """Configure a right y-axis for temperature"""
 
-    ax.tick_params(axis="y", labelcolor=color, labelsize=20)
-    ax.set_ylim(y_Tmin, y_Tmax)
-    ax.yaxis.set_major_locator(MultipleLocator(0.5))
-    ax.yaxis.set_minor_locator(MultipleLocator(0.1))
-    ax.set_ylabel(label, color=color, fontsize=20, labelpad=10)
-    print("plot_146: right axis ",label, "-")
-    return ax
-
-def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
-    """Configure the first right y-axis for temperature"""
-    ax2 = ax.twinx()
-    ax2.tick_params(axis='y', labelcolor='r')
-    ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
-    ax2.set_ylim(y_Tmin, y_Tmax)
-    ax2.yaxis.set_major_locator(MultipleLocator(0.5))
-    ax2.yaxis.set_minor_locator(MultipleLocator(0.1))
-    ax2.set_ylabel(label, color=color, fontsize=20, labelpad=10)
-    print("conf_164: right axis ",label, "-")
-    return ax2
-
-# bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
-def right_EEI_y_axis(ax, y_Emin, y_Emax, color, label):
-    """Configure the first right y-axis for temperature"""
-    ax2 = ax.twinx()
-
-    # Create a third y-axis offset by 60 points to the right
-    divider = make_axes_locatable(ax2)
-    # Create new axis with offset (60 points = 60/72 inches if using points)
-    ax3 = divider.append_axes("right", size="5%", pad=0.6)  # pad is in inches, 0.6 inches ≈ 43 points
-    # For exact 60 points: 60/72 = 0.8333 inches
-    ax3 = divider.append_axes("right", size="5%", pad=0.8333)
-
-    # Or use points directly
-    ax3 = divider.append_axes("right", size="5%", pad=60/72)  # 60 points in inches
-    return ax3
-    # bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
-
-
-
-def add_grid_lines(ax1):
-    # mayor grid lines vertical lines inside the plot to better read the y value
-    for line in ax1.get_ygridlines():
-        # line.set_color('green')  # major lines
-        line.set_color('blue')
-        line.set_alpha(0.5)
-        line.set_linestyle('-')
-        line.set_linewidth(1.1)
-    
-    ax1.grid(True, which="minor", axis="y", color="lightblue", alpha=0.94)
-
-#def add_temperature_band(ax48, y_min=1.5, y_max=1.8):
-#    ax48.axhspan(y_min, y_max, color="#B3D9FF", alpha=0.5, zorder=0)
-def add_temperature_band(ax, y_min=1.5, y_max=2.0):
-    """Add temperature band to the plot (for temperature axes only)"""
-    # Only add if this is a temperature axis (not EEI axis)
-    if hasattr(ax, 'get_ylabel'):
-        ylabel = ax.get_ylabel()
-        if 'Temperature' in ylabel or '°C' in ylabel:
-            ax.axhspan(y_min, y_max, color="#B3D9FF", alpha=0.5, zorder=0)
-
-def add_vertical_bands(ax1, C280):
-    """Add vertical bands for CO2 levels"""
-    ax1.axhspan(4 * C280 - 2, 4 * C280 + 2, color="#4554A8C6", alpha=0.25, zorder=0)
-    ax1.axhspan(2 * C280 - 2, 2 * C280 + 2, color="#4554A8C6", alpha=0.3, zorder=0)
-
-def add_year_band(ax1, year_start=2025, year_end=2027):
-    """Add vertical band for current year"""
-    ax1.axvspan(year_start, year_end, color="#B3D9FF", alpha=0.5, zorder=0)
 
 # Create all plots    plot_9_create_all_plots
 def plot_9_create_all_plots(ax1, data):
