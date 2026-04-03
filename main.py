@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b81" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b82" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -55,11 +55,13 @@ from data_processing import *
 from plotting import *
 from data_processing import *
 from text_annotations import *
+from models import *
 
 from config import y_TOAmin
 from config import part44_ceres_eei
 from config import play_61_CERES
 from config import play_62_CERES
+
 
 if print_debug > 12:
    print("main_074: TOA", y_TOAmin, y_TOAmax, play_62_CERES, part44_ceres_eei)

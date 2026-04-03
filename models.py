@@ -1,6 +1,9 @@
-# temperature_models.py
-# version 5b1
+# models.py
+# version 5b81
 import numpy as np
+
+from config import *
+
 
 C280 = 280
 
@@ -40,7 +43,7 @@ def T_model71(t):
 years71 = np.arange(x_anf, x_end + 1 )
 T_71values = T_model71(years71)
 # 7.1.3. Create DataFrame for convenience
-df7 = pd.DataFrame({
-      "Year71": years71,
-      "Modeled71": T_71values })
+# df7 = pd.DataFrame({
+#      "Year71": years71,
+#      "Modeled71": T_71values })
 
