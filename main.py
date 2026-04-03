@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b94" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b95" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -410,13 +410,15 @@ def main():
        #i=3
        print("main_410: remove right axes ", i, len(axes),i2)
        for i in range(1, len(axes)): # remove Axis 3, 4
-           print("main_413: remove ", i, len(axes))
+           #print("main_413: remove ", i, len(axes))
            i = 1
+           print("main_415: remove ", i, len(axes))
            axes[i].yaxis.set_ticks([])  # Remove tick numbers
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
-           i = 1
+           i = 3
+           print("main_421: remove ", i, len(axes))
            axes[i].yaxis.set_ticks([])  # Remove tick numbers
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
