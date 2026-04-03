@@ -1,5 +1,6 @@
 # text_annotations.py
-# version 5b56
+# version 5b85
+
 import os
 import sys
 from matplotlib.lines import Line2D
@@ -50,15 +51,65 @@ def add_text_row(ax, x, y, text, color, fontsize=20):
     ax.text(x, y, text, color=color, fontname="Arial", fontsize=fontsize,
            transform=ax.transAxes)
 
-blue22_text="blue dots: CO2 measured at Mauna Loa ( 2025 = 427.35 ppm ) 22"
+#blue22_text="blue dots: CO2 measured at Mauna Loa ( 2025 = 427.35 ppm ) 22"
 text_plot23_Glen="calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
+
+
+
+
+
+# 9.6 not called print line 6 below the plot explainations
+def add_axis_info_line(ax, yl_mode, y_Emin, y_Emax, y_Tmin, y_Tmax, 
+                       y_min, y_max, header_parameter, tr6y, c42):
+    """Add line 6 with axis information"""
+    trs = 20
+    
+    if yl_mode == 4:  # EEI mode
+        # Left Y-axis info
+        text6_left = f"Left Y axis: EEI = {y_Emin:.1f} ... {y_Emax:.1f} W/m²"
+        ax.text(-0.12, tr5y, text6_left, color=c42, fontname="Arial", fontsize=trs,
+                transform=ax.transAxes)
+        
+        # Right Y-axis info (Temperature)
+        text6_right = f"Right Y axis: Temperature = {y_Tmin:.1f} ... {y_Tmax:.1f} °C"
+        ax.text(0.42, tr5y, text6_right, color="red", fontname="Arial", fontsize=trs,
+                transform=ax.transAxes)
+    
+    elif yl_mode == 2:  # CO2 mode
+        text6_left = f"CO₂: {y_min} ... {y_max} ppm"
+        ax.text(-0.12, tr6y, text6_left, color="blue", fontname="Arial", fontsize=trs,
+                transform=ax.transAxes)
+        
+        text6_right = f"Temperature: {y_Tmin} ... {y_Tmax} °C"
+        ax.text(0.42, tr6y, text6_right, color="red", fontname="Arial", fontsize=trs,
+                transform=ax.transAxes)
+    
+    elif yl_mode == 7:  # Temperature mode
+        text6_left = f"Temperature: {y_Tmin} ... {y_Tmax} °C"
+        ax.text(-0.12, tr6y, text6_left, color="red", fontname="Arial", fontsize=trs,
+                transform=ax.transAxes)
+    else:
+        text6_left = f"Left axis: EEI = {y_Emin:.1f} ... {y_Emax:.1f} W/m²"
+        ax.text(-0.12, tr5y, text6_left, color=c42, fontname="Arial", fontsize=trs,
+                transform=ax.transAxes)
+
+    # Add parameter line (second line at bottom)
+    text_params = f"Parameter code: {header_parameter}"
+    ax.text(-0.12, tr6y - 0.07, text_params, color="black", fontname="Arial", fontsize=12,
+            transform=ax.transAxes)
+    # end 9.6 not called print line 6 below the plot explainations
+
+
+
+
+
 
 # 9.2 print line 2 blue Mauna Loa data below the figure
 # 9.2.2 print line 22 below the plot explainations
 # 9.3 print line 3 below the plot explainations
 # 9.4 print line 4 below the plot explainations
 # 9.5.2 print line 5 plot55_population_on marker="s"
-def add_text_annotations(fig, ax1, header_parameter):
+def text_print_6_lines(fig, ax1, header_parameter):
     """Add all text annotations to the plot"""
     filename = os.path.basename(sys.argv[0])
     
@@ -194,43 +245,3 @@ def add_text_annotations(fig, ax1, header_parameter):
  
 
 
-# 9.6 print line 6 below the plot explainations
-
-def add_axis_info_line(ax, yl_mode, y_Emin, y_Emax, y_Tmin, y_Tmax, 
-                       y_min, y_max, header_parameter, tr6y, c42):
-    """Add line 6 with axis information"""
-    trs = 20
-    
-    if yl_mode == 4:  # EEI mode
-        # Left Y-axis info
-        text6_left = f"Left Y axis: EEI = {y_Emin:.1f} ... {y_Emax:.1f} W/m²"
-        ax.text(-0.12, tr5y, text6_left, color=c42, fontname="Arial", fontsize=trs,
-                transform=ax.transAxes)
-        
-        # Right Y-axis info (Temperature)
-        text6_right = f"Right Y axis: Temperature = {y_Tmin:.1f} ... {y_Tmax:.1f} °C"
-        ax.text(0.42, tr5y, text6_right, color="red", fontname="Arial", fontsize=trs,
-                transform=ax.transAxes)
-    
-    elif yl_mode == 2:  # CO2 mode
-        text6_left = f"CO₂: {y_min} ... {y_max} ppm"
-        ax.text(-0.12, tr6y, text6_left, color="blue", fontname="Arial", fontsize=trs,
-                transform=ax.transAxes)
-        
-        text6_right = f"Temperature: {y_Tmin} ... {y_Tmax} °C"
-        ax.text(0.42, tr6y, text6_right, color="red", fontname="Arial", fontsize=trs,
-                transform=ax.transAxes)
-    
-    elif yl_mode == 7:  # Temperature mode
-        text6_left = f"Temperature: {y_Tmin} ... {y_Tmax} °C"
-        ax.text(-0.12, tr6y, text6_left, color="red", fontname="Arial", fontsize=trs,
-                transform=ax.transAxes)
-    else:
-        text6_left = f"Left axis: EEI = {y_Emin:.1f} ... {y_Emax:.1f} W/m²"
-        ax.text(-0.12, tr5y, text6_left, color=c42, fontname="Arial", fontsize=trs,
-                transform=ax.transAxes)
-
-    # Add parameter line (second line at bottom)
-    text_params = f"Parameter code: {header_parameter}"
-    ax.text(-0.12, tr6y - 0.07, text_params, color="black", fontname="Arial", fontsize=12,
-            transform=ax.transAxes)

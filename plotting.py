@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from config import *
 from data_processing import *
 from data_processing import *
-from text_annotations import *
+from text import *
 from config import play_62_CERES
 from config import plot34_CO2_emission
 

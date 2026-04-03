@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b84" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b85" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -54,7 +54,7 @@ from config import *
 from data_processing import *
 from plotting import *
 from data_processing import *
-from text_annotations import *
+from text import *
 from models import *
 
 from config import y_TOAmin
@@ -376,7 +376,7 @@ def main():
                 break
     
     # Add text annotations
-    add_text_annotations(fig, ax1, header_parameter)
+    text_print_6_lines(fig, ax1, header_parameter)
     
     # Add x-axis label
     ax1.set_xlabel("year", fontsize=20)
