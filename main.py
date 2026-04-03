@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b90" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b92" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -354,7 +354,7 @@ def main():
        # (0=no yaxis) (7 one T °C y axis right mode)
        label  ="Temperature in °C 355"
        axT = plot_6_right_y_axe(ax1, y_Tmin, y_Tmax, c74, label)
-       print("main_357: right Y axis  mode = ", yr_mode ," .")
+       print("main_357: right Y axis  mode =", yr_mode ," .")
  
     # call plotting.py line 200 to line 500
     plot_9_create_all_plots(ax1, data)
@@ -404,8 +404,28 @@ def main():
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
+    elif yr_mode == 3:
+       print("main_408: print one right y axes in figure")
+       i2 = len(axes)
+       #i=3
+       print("main_410: remove ", i, len(axes),i2)
+       for i in range(1, len(axes)): # remove Axis 3, 4
+           print("main_413: remove ", i, len(axes))
+           i = 1
+           axes[i].yaxis.set_ticks([])  # Remove tick numbers
+           axes[i].set_yticklabels([])  # Remove tick labels
+           axes[i].spines['right'].set_visible(False)
+           axes[i].set_ylabel('') # Remove any label
+           i = 1
+           axes[i].yaxis.set_ticks([])  # Remove tick numbers
+           axes[i].set_yticklabels([])  # Remove tick labels
+           axes[i].spines['right'].set_visible(False)
+           axes[i].set_ylabel('') # Remove any label
+    
+
+
     elif yr_mode == 7:
-       print("main_407: print one right y axes in figure")
+       print("main_417: print one right y axes in figure")
        for i in range(2, len(axes)): # remove Axis 3, 4
            axes[i].yaxis.set_ticks([])  # Remove tick numbers
            axes[i].set_yticklabels([])  # Remove tick labels

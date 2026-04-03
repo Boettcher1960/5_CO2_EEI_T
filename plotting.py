@@ -55,7 +55,7 @@ def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
     
     ax2 = ax.twinx()
     if print_debug > 9:
-          print(f"plot_ 57: right y axis mode ={yr_mode}")
+          print(f"plot_ 57: right y axis  mode = {yr_mode}")
     elif yr_mode == 4:  # EEI mode
          if print_debug > 9:
              print(f"plot_ 61: right y axis mode ={yr_mode}")
@@ -73,14 +73,16 @@ def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
     elif yr_mode == 3:  # Gt CO2
          if print_debug > 9:
              print(f"plot_ 76: right y axis mode ={yr_mode}")
-         ax2 = ax.twinx()
+         # ax2 = ax.twinx()
          ax2.tick_params(axis='y', labelcolor='r')
-         ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
+         ax2.tick_params(axis="y", labelcolor=color, labelsize=14)
          ax2.set_ylim(y_Gmin, y_Gmax)
-         label = " Gt CO2 plot 80"
+         ax2.set_ylabel(" CO₂in Gt  plot 80", color=c22, fontsize=20)
+         # ax2.set_ylim(y_Gmax, y_Gmax)
+         #label = " Gt CO2 plot 80"
          ax2.yaxis.set_major_locator(MultipleLocator(500))
          ax2.yaxis.set_minor_locator(MultipleLocator(100))
-         ax2.set_ylabel(label, color=c31, fontsize=20, labelpad=10)
+         # ax2.set_ylabel(" Gt CO2 plot 83", color=c31, fontsize=20, labelpad=10)
     else:  # Gt CO2
          if print_debug > 9:
              print(f"plot_ 85: right y axis mode ={yr_mode}")
@@ -213,7 +215,7 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Tminor_ticks))
     elif yl_mode == 3:  #  Gt CO2 y axis left mode
         ax1.set_ylim(y_Gmin, y_Gmax)
-        ax1.set_ylabel("cummulative CO₂ emissions in Gt  plot 197", color=c22, fontsize=20)
+        ax1.set_ylabel("cummulative CO₂ emissions in Gt  plot 216", color=c22, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c22, labelsize=20)
         
         # Set CO2 tick spacing
