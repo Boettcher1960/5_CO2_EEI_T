@@ -1,5 +1,5 @@
 # config.py 
-# version 5b78
+# version 5b81
 # Configuration parameters for the climate analysis tool
 
 # part61_EEI # like part41_ceres_eei make EEI 120 month csv
@@ -30,8 +30,8 @@ yl_mode = 3  # 3 1850 Gt CO2 y axis left mode
 
 # 8.5 configure the right axis legend 
 # Axis mode y axis right
-yr_mode = 4  # (0=no yaxis) (7 one T °C y axis right mode)
-
+yr_mode = 4  # (0=no right yaxis) (7 one T °C y axis right mode)
+yr2_mode = 0  # (0=no second right yaxis) 
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in line 2)

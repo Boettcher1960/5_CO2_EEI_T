@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b80" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b81" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -322,13 +322,14 @@ def save_png(fig, header_parameter):
 def main():
     """Main execution function"""
     # Create header parameter string
-    header_parameter = (f"{plot22_CO2_Mauna_Loa}{plot23_Glen_CO2}{plot25_long_CO2}"
-                       f"{plot34_CO2_emission} 4({part41_ceres_eei}{part42_ceres_eei}"
-                       f"{part43_ceres_eei}{part44_ceres_eei}) 5({plot52_delta_CO2_red_bars}"
-                       f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on})"
-                       f" 6({play_61_CERES}) "
-                       f"7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
-                       f"{linear_41_75}{plot76_my_T})")
+    header_parameter = (f"{yl_mode}{yr_mode}{yr2_mode}"
+                       f" 2({plot22_CO2_Mauna_Loa}{plot23_Glen_CO2}{plot25_long_CO2}" 
+                       f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({part41_ceres_eei}{part42_ceres_eei}"
+                       f"{part43_ceres_eei}{part44_ceres_eei} 5({plot52_delta_CO2_red_bars}"
+                       f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on}"
+                       f" 6({play_61_CERES}"
+                       f" 7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
+                       f"{linear_41_75}{plot76_my_T}")
     
     # Process CERES data
     process_ceres_data()
