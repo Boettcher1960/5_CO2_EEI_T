@@ -73,7 +73,7 @@ def add_text_annotations(fig, ax1, header_parameter):
     # add_text_row(ax1, tr2x, tr5y, "--row5---main338--- tr5y", c43, trs)
     add_text_row(ax1, 0.9, tr6y, 
                     "-main330", 
-                    c43, trs)
+                    c43, 10)
 
     # Add legend lines for active plots 
     # part 9.2 print line 2 below the plot main_350
@@ -184,11 +184,14 @@ def add_text_annotations(fig, ax1, header_parameter):
         p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61 - main - line 438."
         add_text_row(ax1, tr2x, tr6y, p61_text, c61, trs) 
     # in row 5 display play_62_CERES
-    if play_62_CERES > 0:
+    elif play_62_CERES > 0:
         add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
         p62_text = f"TOA Shortwave Flux - All-Sky {play_62_CERES}-month moving average 62 - main - line 443."
         add_text_row(ax1, tr2x, tr5y, p62_text, c62, trs) 
-
+    else:
+        p62_text = f"Parameter {header_parameter}  Text 192:"
+        add_text_row(ax1, tr2x, tr6y, p62_text, "black", 16) 
+ 
 
 
 # 9.6 print line 6 below the plot explainations
@@ -222,7 +225,11 @@ def add_axis_info_line(ax, yl_mode, y_Emin, y_Emax, y_Tmin, y_Tmax,
         text6_left = f"Temperature: {y_Tmin} ... {y_Tmax} °C"
         ax.text(-0.12, tr6y, text6_left, color="red", fontname="Arial", fontsize=trs,
                 transform=ax.transAxes)
-    
+    else:
+        text6_left = f"Left axis: EEI = {y_Emin:.1f} ... {y_Emax:.1f} W/m²"
+        ax.text(-0.12, tr5y, text6_left, color=c42, fontname="Arial", fontsize=trs,
+                transform=ax.transAxes)
+
     # Add parameter line (second line at bottom)
     text_params = f"Parameter code: {header_parameter}"
     ax.text(-0.12, tr6y - 0.07, text_params, color="black", fontname="Arial", fontsize=12,

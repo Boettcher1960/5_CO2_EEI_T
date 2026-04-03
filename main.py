@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b82" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b84" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
