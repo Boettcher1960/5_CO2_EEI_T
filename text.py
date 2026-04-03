@@ -177,6 +177,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     blue22_text, 
                     c22, trs)
+    elif plot23_Glen_CO2 == 3: # 23.5.4 legend row 4
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c23)
+        text_4_add_text(ax1, tr2x, tr3y, 
+                    text_plot23_Glen, 
+                    c23, trs)
+
     elif plot25_long_CO2 == 3: # 25.9
        line25 = Line2D([lr2x1, lr2x2], [lr3y, lr3y], # y from 0 to 1
        transform=fig.transFigure,
