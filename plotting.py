@@ -78,10 +78,8 @@ def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
          ax2.tick_params(axis="y", labelcolor=color, labelsize=14)
          ax2.set_ylim(y_Gmin, y_Gmax)
          ax2.set_ylabel(" CO₂in Gt  plot 80", color=c31, fontsize=12)
-         # ax2.set_ylim(y_Gmax, y_Gmax)
-         #label = " Gt CO2 plot 80"
-         ax2.yaxis.set_major_locator(MultipleLocator(500))
-         ax2.yaxis.set_minor_locator(MultipleLocator(100))
+         ax2.yaxis.set_major_locator(MultipleLocator(400))
+         ax2.yaxis.set_minor_locator(MultipleLocator(200))
          # ax2.set_ylabel(" Gt CO2 plot 83", color=c31, fontsize=20, labelpad=10)
     else:  # Gt CO2
          if print_debug > 9:
