@@ -283,9 +283,12 @@ def plot_create(ax1, data):
     # 3.4.0 Entity,Code,Year,Cumulat
     if plot31_CO2_emission > 0: # 31.2
         ax31 = ax1.twinx()
-        print31_text ="purple dots: cumulative CO2 emissions Carbon Brief 31 "
+        print31_text ="red dots: cumulative CO2 emissions Carbon Brief 31 "
         df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv") # processed file
-        print("plot_288: mode 1 plot31_CO2_emission = ", plot31_CO2_emission) # 31.3
+        print("plot_288: plot31_CO2_emission = ", plot31_CO2_emission) # 31.3
+        ax31.plot(df31["Year34"], df31["GCumulat"], marker="o",  color=c31, label="plot31_CO2_emission")
+        ax31.tick_params(axis="y", labelcolor=c34)
+        ax31.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
 
 
 
