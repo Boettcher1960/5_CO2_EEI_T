@@ -52,7 +52,12 @@ def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
 
 def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
     """Configure the first right y-axis for temperature"""
+    
+
     ax2 = ax.twinx()
+    if print_debug > 9:
+          print(f"plot_ 57: right y axis mode ={yr_mode}")
+
     ax2.tick_params(axis='y', labelcolor='r')
     ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
     ax2.set_ylim(y_Tmin, y_Tmax)
@@ -189,7 +194,7 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Tminor_ticks))
     elif yl_mode == 3:  #  Gt CO2 y axis left mode
         ax1.set_ylim(y_Gmin, y_Gmax)
-        ax1.set_ylabel("cummulative CO₂ emissions in Gt", color=c22, fontsize=20)
+        ax1.set_ylabel("cummulative CO₂ emissions in Gt  plot 197", color=c22, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c22, labelsize=20)
         
         # Set CO2 tick spacing

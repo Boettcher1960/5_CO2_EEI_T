@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b88" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b89" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -349,10 +349,12 @@ def main():
     
     # 8.7 print the right y axis
     if yr_mode == 7:
+       print("main_352: right Y axis  mode = ", yr_mode ," .")
+    else:   
        # (0=no yaxis) (7 one T °C y axis right mode)
-       label  ="Temperature in °C"
+       label  ="Temperature in °C 355"
        axT = plot_6_right_y_axe(ax1, y_Tmin, y_Tmax, c74, label)
-       print("main_352: right Y axis = Temp  riht_T_y_a")
+       print("main_357: right Y axis  mode = ", yr_mode ," .")
  
     # call plotting.py line 200 to line 500
     plot_9_create_all_plots(ax1, data)
