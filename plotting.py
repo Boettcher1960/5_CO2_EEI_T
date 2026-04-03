@@ -1,5 +1,5 @@
 # plotting.py
-# version 5b56
+# version 5b78
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 from mpl_toolkits.axes_grid1 import make_axes_locatable
@@ -143,7 +143,7 @@ def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
     ax.yaxis.set_major_locator(MultipleLocator(0.5))
     ax.yaxis.set_minor_locator(MultipleLocator(0.1))
     ax.set_ylabel(label, color=color, fontsize=20, labelpad=10)
-    print("conf_152: right axis ",label, "-")
+    print("plot_146: right axis ",label, "-")
     return ax
 
 def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
@@ -207,7 +207,8 @@ def add_year_band(ax1, year_start=2025, year_end=2027):
     """Add vertical band for current year"""
     ax1.axvspan(year_start, year_end, color="#B3D9FF", alpha=0.5, zorder=0)
 
-def plot_create(ax1, data):
+# Create all plots    plot_9_create_all_plots
+def plot_9_create_all_plots(ax1, data):
     """Create all plots based on configuration"""
     
     # Plot plot22_CO2_Mauna_Loa
@@ -285,9 +286,9 @@ def plot_create(ax1, data):
         ax31 = ax1.twinx()
         print31_text ="red dots: cumulative CO2 emissions Carbon Brief 31 "
         df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv") # processed file
-        print("plot_288: plot31_CO2_emission = ", plot31_CO2_emission) # 31.3
-        ax31.plot(df31["Year34"], df31["GCumulat"], marker="o",  color=c31, label="plot31_CO2_emission")
-        ax31.tick_params(axis="y", labelcolor=c34)
+        print("plot_290: plot31_CO2_emission = ", plot31_CO2_emission) # 31.4 plot 31
+        ax31.plot(df31["Year31"], df31["GCumulat"], marker="o",  color=c31, label="plot31_CO2_emission")
+        ax31.tick_params(axis="y", labelcolor=c31)
         ax31.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
 
 
@@ -458,6 +459,6 @@ def plot_create(ax1, data):
                   label="T GIS K74", color=c74, linewidth=3)
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
-    # end plot_create(ax1, data):
+    # end plot_9_create_all_plots(ax1, data):
 
 

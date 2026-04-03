@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b76" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b78" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -351,12 +351,8 @@ def main():
        axT = right_T_y_axis(ax1, y_Tmin, y_Tmax, c74, label)
        print("main_356: right Y axis = Temp  riht_T_y_a")
  
-    # axT is the temperature scaling
-    # label  ="EEI in W line 449"
-    # bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
-    # main_484: Axis 2: yaxis side = right, label = 'EEI in W line 449'
-    # Create plots
-    plot_create(ax1, data)
+    # call plotting.py line 200 to line 500
+    plot_9_create_all_plots(ax1, data)
     
     # Add grid lines
     add_grid_lines(ax1)

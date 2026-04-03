@@ -1,5 +1,5 @@
 # config.py 
-# version 5b56
+# version 5b78
 # Configuration parameters for the climate analysis tool
 
 # part61_EEI # like part41_ceres_eei make EEI 120 month csv
@@ -94,7 +94,8 @@ c76 = "red"
 blue22_text = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm) 22"
 text_plot23_Glen = "calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
 blue25_text = "green: CO2 NOAA 800_000 year ice data 25"
-print31_text = "purple dots: cumulative CO2 emissions Carbon Brief 31"
+print31_text = "dots: cumulative CO2 emissions in Gt Carbon Brief  31"
+
 print34_text = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode"
 p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
 p42_text = "Earth Energy Imbalance W/m² moving average 48 month 42"
