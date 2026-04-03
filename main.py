@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5b92" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
+v = "5b93" #  plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -408,7 +408,7 @@ def main():
        print("main_408: print one right y axes in figure")
        i2 = len(axes)
        #i=3
-       print("main_410: remove ", i, len(axes),i2)
+       print("main_410: remove right axes ", i, len(axes),i2)
        for i in range(1, len(axes)): # remove Axis 3, 4
            print("main_413: remove ", i, len(axes))
            i = 1
