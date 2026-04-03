@@ -82,7 +82,7 @@ def add_text_annotations(fig, ax1, header_parameter):
         add_text_row(ax1, tr2x, tr2y, 
                     blue22_text, 
                     c22, trs)
-    elif plot25_long_CO2 == 2: # 25.3
+    elif plot25_long_CO2 == 2: # 25.9
        line25 = Line2D([lr2x1, lr2x2], [lr2y, lr2y], # y from 0 to 1
        transform=fig.transFigure,
        marker="o", markersize=3, color=c25, linewidth=2)
@@ -90,8 +90,8 @@ def add_text_annotations(fig, ax1, header_parameter):
        plt.text(tr2x, tr2y, blue25_text, color=c25, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
        fig.add_artist(line25)
-    elif plot31_CO2_emission == 2: # 31.4
-       print("text_094: plot31_CO2_emission  = ", plot31_CO2_emission, " mode ", plot34_CO2_emission_mode, " 34") # 34.9
+    elif plot31_CO2_emission == 2: # 31.8
+       print("text_094: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
        line31 = Line2D([lr2x1, lr2x2], [lr2y, lr2y], # y from 0 to 1
        transform=fig.transFigure,
        marker="o", markersize=3, color=c31, linewidth=2)

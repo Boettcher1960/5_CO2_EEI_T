@@ -1,5 +1,7 @@
 # plotting.py
 # version 5b78
+# plot 1 
+# plot_9_create_all_plots(ax1, data): line 200 500
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 from mpl_toolkits.axes_grid1 import make_axes_locatable
@@ -12,7 +14,9 @@ from data_processing import *
 from text_annotations import *
 from config import play_62_CERES
 from config import plot34_CO2_emission
-print("plotting: TOA", y_TOAmin, y_TOAmax, plot34_CO2_emission, play_61_CERES)
+
+if print_debug > 12:
+   print("plotting: TOA", y_TOAmin, y_TOAmax, plot34_CO2_emission, play_61_CERES)
 
 
 color_left = "blue" # color of left y axis
@@ -282,11 +286,10 @@ def plot_9_create_all_plots(ax1, data):
     # co2_cumul.csv
     # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
     # 3.4.0 Entity,Code,Year,Cumulat
-    if plot31_CO2_emission > 0: # 31.2
+    if plot31_CO2_emission > 0: # 31.7
         ax31 = ax1.twinx()
-        print31_text ="red dots: cumulative CO2 emissions Carbon Brief 31 "
         df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv") # processed file
-        print("plot_290: plot31_CO2_emission = ", plot31_CO2_emission) # 31.4 plot 31
+        print("plot_290: plot31_CO2_emission = ", plot31_CO2_emission) # 31.7 plot 31
         ax31.plot(df31["Year31"], df31["GCumulat"], marker="o",  color=c31, label="plot31_CO2_emission")
         ax31.tick_params(axis="y", labelcolor=c31)
         ax31.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
