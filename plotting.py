@@ -1,7 +1,8 @@
 # plotting.py
 # version 5b78
 # plot 1 
-# plot_8_
+# plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
+# plot_6_right_y_axe
 # plot_9_create_all_plots(ax1, data): line 200 500
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
@@ -46,10 +47,10 @@ def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
     ax.yaxis.set_major_locator(MultipleLocator(0.5))
     ax.yaxis.set_minor_locator(MultipleLocator(0.1))
     ax.set_ylabel(label, color=color, fontsize=20, labelpad=10)
-    print("plot_146: right axis ",label, "-")
+    print("plot_ 50: right axis ",label, "-")
     return ax
 
-def right_T_y_axis(ax, y_Tmin, y_Tmax, color, label):
+def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
     """Configure the first right y-axis for temperature"""
     ax2 = ax.twinx()
     ax2.tick_params(axis='y', labelcolor='r')
@@ -112,7 +113,7 @@ def add_year_band(ax1, year_start=2025, year_end=2027):
 
 
 
-
+# plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax, 
                    y_Tmin, y_Tmax, yl_mode, c22, c42, c74):
     """Configure the axes based on selected mode"""
@@ -216,10 +217,10 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     
     return ax1
+    # end plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 
 
-
-# Create all plots    plot_9_create_all_plots
+# plot_9_create_all_plots(ax1, data): line 223
 def plot_9_create_all_plots(ax1, data):
     """Create all plots based on configuration"""
     
@@ -238,7 +239,6 @@ def plot_9_create_all_plots(ax1, data):
     # source a plot with the formula explained in a thread
     # source https://x.com/Gergyl/status/1810632238230589564
     # -----------------------------
-    text_plot23_Glen="calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
     # CO₂ function CO2 = 0.013t² - 51t + 49,536
     def co3_ppm(t): # 23.2
         """Glen CO2 model"""
