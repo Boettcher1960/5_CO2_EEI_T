@@ -56,7 +56,7 @@ part44_ceres_eei = 0 # 47 is local
 plot52_delta_CO2_red_bars = 3 # (print numbers)
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
-plot55_population_on = 0
+plot55_population_on = 5
 
 play_61_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
