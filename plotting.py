@@ -632,11 +632,11 @@ def plot_9_create_all_plots(ax1, data):
        ax52.spines.right.set_position(("outward", 20))
        bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
        ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
-       ax52.set_ylabel("red bars Mauna Loa CO2 increase in ppm", color="red", fontname="Arial",fontsize=16) # fontweight="bold"
+       ax52.set_ylabel("red bars Mauna Loa CO2 increase in ppm (plot635)", color="red", fontname="Arial",fontsize=16) # fontweight="bold"
        ax52.tick_params(axis="y", labelcolor="red", labelsize=16)
        ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
        # 5.2.8 Add numbers on top of delta CO2 bars
-       if plot52_delta_CO2_red_bars > 6:
+       if plot52_delta_CO2_red_bars == 3:
           ax52.bar_label(bars, fontsize=8, fontname="Arial",padding=1, color="black")
 
 

@@ -53,7 +53,7 @@ part42_ceres_eei = 0  # 3,4 print EEI 48 month running mean. Info in line 4 belo
 part43_ceres_eei = 0  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0 # 47 is local 
 
-plot52_delta_CO2_red_bars = 4
+plot52_delta_CO2_red_bars = 3 # (print numbers)
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0
@@ -119,7 +119,7 @@ y_max = 500 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
 y_Tmin = 0
 y_Tmax = 2.5
 y_52min = 0 # plot52_delta_CO2_red_bars
-y_52max = 4.5 # plot52_delta_CO2_red_bars
+y_52max = 4 # plot52_delta_CO2_red_bars
 
 
 y_Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
