@@ -404,7 +404,7 @@ def main():
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
-    elif yr_mode == 3:
+    elif yr_mode == 13:
        print("main_408: print one right y axes in figure")
        i2 = len(axes)
        #i=3
@@ -432,10 +432,24 @@ def main():
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
     else:
-        print("main_414: print all y axes in figure")
+        print("main_435: keep print all y axes in figure")
  
-    i = 5
-    print("main_438: remove ", i, len(axes))
+    i = len(axes) -1
+    print("main_438: remove  len(axes) -1  ", i, len(axes))
+    axes[i].yaxis.set_ticks([])  # Remove tick numbers
+    axes[i].set_yticklabels([])  # Remove tick labels
+    axes[i].spines['right'].set_visible(False)
+    axes[i].set_ylabel('') # Remove any label
+
+    i = len(axes) -3
+    print("main_445: remove  len(axes) -3  ", i, len(axes))
+    axes[i].yaxis.set_ticks([])  # Remove tick numbers
+    axes[i].set_yticklabels([])  # Remove tick labels
+    axes[i].spines['right'].set_visible(False)
+    axes[i].set_ylabel('') # Remove any label
+
+    i = len(axes) -5
+    print("main_452: remove  len(axes) -5  ", i, len(axes))
     axes[i].yaxis.set_ticks([])  # Remove tick numbers
     axes[i].set_yticklabels([])  # Remove tick labels
     axes[i].spines['right'].set_visible(False)
