@@ -355,12 +355,12 @@ def plot_8_second_right_y_axe_52(ax52, df52,bars): # 52.4
 
 # plot_8_third_right_y_axe_55(ax55,pop_world): # 55 line 358
 def plot_8_third_right_y_axe_55(ax55,pop_world): # 55.4 line 356
-    ax55.spines.right.set_position(("outward", 110))
+    ax55.spines.right.set_position(("outward", 160))
     ax55.set_ylabel("Earth Population in Billion", color="green")
     ax55.plot(pop_world["Year"], pop_world["Population_Mrd"], marker="s", color="green", label="Earth Population in Billion K2")
     ax55.set_ylabel("Earth Population in Billion", color="green")
     ax55.tick_params(axis="y", labelcolor="green")
-    ax55.set_ylim(1, 9) #8
+    ax55.set_ylim(y_55min, y_55max) #8
     # ax55.set_ylim(4, 9)
     #end print_y2=1 - print population
 
