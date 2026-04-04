@@ -119,6 +119,9 @@ y_min = 250 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
 y_max = 500 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
 y_Tmin = 0
 y_Tmax = 2.5
+y_74min = 0
+y_74max = 2.5
+
 
 y_Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
 y_Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode

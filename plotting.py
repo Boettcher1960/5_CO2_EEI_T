@@ -4,6 +4,7 @@
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_right_y_axe  line 226
 # plot_7_right_y_axe_remove(axes): line 263
+# plot8_50_right_y_axe_74 line 345
 # plot8_100_right_y_axe_52 line 345
 # plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
 # plot_9_create_all_plots(ax1, data): line 360 600
@@ -342,6 +343,17 @@ def plot_7_right_y_axe_remove(axes):
  
         # end plot_7_right_y_axe_remove(axes)
 
+# plot8_50_right_y_axe_74 line 345
+def plot8_50_right_y_axe_74(ax74): # 74.4 line 356
+    ax74.spines.right.set_position(("outward", 50))
+    # #ax74.plot(pop_world["Year"], pop_world["GISS T"], marker="s", color=c55, label="Earth Population in Billion K2")
+    ax74.set_ylabel("Earth Population in Billion  (plot359)   74", color=c55)
+    ax74.tick_params(axis="y", labelcolor=c74)
+    ax74.set_ylim(y_74min, y_74max) #8
+    # ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
+    # 720                    label="T GIS K74", color=c74, linewidth=3)
+
+
 # plot8_100_right_y_axe_52 line 345
 def plot8_100_right_y_axe_52(ax52, df52,bars): # 52.4
     # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
@@ -357,7 +369,6 @@ def plot8_100_right_y_axe_52(ax52, df52,bars): # 52.4
 def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     ax55.spines.right.set_position(("outward", 160))
     ax55.plot(pop_world["Year"], pop_world["Population_Mrd"], marker="s", color=c55, label="Earth Population in Billion K2")
-    ax55.set_ylabel("Earth Population in Billion", color=c55)
     ax55.set_ylabel("Earth Population in Billion  (plot359)   55", color=c55)
     ax55.tick_params(axis="y", labelcolor="green")
     ax55.set_ylim(y_55min, y_55max) #8
@@ -687,10 +698,6 @@ def plot_9_create_all_plots(ax1, data):
        plot8_160_right_y_axe_55(ax55,pop_world)    # 55.4 line 358
        # end part 5.5 plot55_population_on human earth population  
 
-
-# no part 6
-
-
     if play_61_CERES > 0 and 'ceres_61' in data:
         ax61 = ax1.twinx()
         ax61.plot(data['ceres_61']["decimal_year"], data['ceres_61']["EEI"], '-', 
@@ -715,6 +722,9 @@ def plot_9_create_all_plots(ax1, data):
                   label="T GIS K74", color=c74, linewidth=3)
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
+        # plot8_50_right_y_axe_74 line 345
+        plot8_50_right_y_axe_74(ax74) # 74.4 line 356
+
     # end plot_9_create_all_plots(ax1, data):
 
 
