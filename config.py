@@ -49,7 +49,7 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 plot34_CO2 = 0
 
 part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
-part42_ceres_eei = 0  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
+part42_ceres_eei = 5  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
 part43_ceres_eei = 0  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0 # 47 is local 
 

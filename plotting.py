@@ -297,7 +297,7 @@ def plot_7_right_y_axe_remove(axes):
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)
        axes[i].set_ylabel('') # Remove any label
-       i = 1
+       i = 2
        print("plot_301: remove ", i, len(axes))
        axes[i].yaxis.set_ticks([])  # Remove tick numbers
        axes[i].set_yticklabels([])  # Remove tick labels
