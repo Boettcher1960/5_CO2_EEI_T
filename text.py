@@ -265,7 +265,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr4y, 
                     "plot52_delta_CO2_red_bars  (text259)  52", 
                     c52, trs)
-
+    elif plot74_GIS_T == 4: # 74.6
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c74)
+        text_4_add_text(ax1, tr2x, tr4y, 
+                    "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
+                    c74, trs)
 
     ########################## row 5 ################################
     if plot23_Glen_CO2 == 5: # 23.5.5 legend row 5

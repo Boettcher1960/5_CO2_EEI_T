@@ -31,7 +31,7 @@ yl_mode = 2  #
 # 8.5 configure the right axis legend 
 # Axis mode y axis right
 yr_mode = 2  # (0=no right yaxis) (7 one T °C y axis right mode)
-yr2_mode = 0  # (0=no second right yaxis) 
+yr2_mode = 55  # (0=no second right yaxis) 
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 2 # 22.1 declare global integer variable (2= print in line 2)
@@ -64,7 +64,7 @@ play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 0 # 3=right y axis
+plot74_GIS_T = 4 # 3=right y axis
 linear_41_75 = 0
 plot76_my_T = 0
 plot_T_77 = 0
