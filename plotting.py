@@ -591,7 +591,7 @@ def plot_9_create_all_plots(ax1, data):
     # 5.2.2 ΔCO₂ berechnen (per pandas) Balken
     # df52["CO2"].diff() Calculates the difference between consecutive CO₂ values
     # -----------------------------
-    if plot52_delta_CO2_red_bars > 0:
+    if plot52_delta_CO2_red_bars > 0: # 52.3
        
        # 2.2.1 years 1960–2025 x_years_52_list = [1960, 1961, 1962, ..., x_end - 1]
        if x_end > 1961:
@@ -653,8 +653,39 @@ def plot_9_create_all_plots(ax1, data):
        # 5.2.8 Add numbers on top of delta CO2 bars
        if plot52_delta_CO2_red_bars == 3:
           ax52.bar_label(bars, fontsize=8, fontname="Arial",padding=1, color="black")
+          # end part 5.2 plot52_delta_CO2_red_bars
 
 
+    # part 5.5 plot55_population_on human earth population 
+    # part 5.5 plot55_population_on human earth population 
+    # 5.5.1 population up to 2023 (UN WPP 2024 via OWID)
+    # url = "https://ourworldindata.org/grapher/population.csv"
+    # population4.csv
+    # -----------------------------
+        # 5.5.2 population 2023 to 2026 
+    # https://www.worldometers.info/world-population/world-population-by-year/
+    # 2026	8,300,678,395	0.84%	69,065,325	56
+    # 2025	8,231,613,070	0.85%	69,640,498	55
+    # 2024	8,161,972,572	0.87%	70,237,642	55
+    # 2023	8,091,734,930	0.88%	70,327,738	54
+    # 5.5.3 read csv_55_population.csv
+    if plot55_population_on > 0:
+       green55_text="Green line: Earth Population in billion"
+       df55 = pd.read_csv("read_csv/_55_population.csv")
+       pop_world = (
+             df55[df55["Entity"] == "World"][["Year", "Population"]]
+             .query("1960 <= Year <= 2026")
+             .sort_values("Year")
+             .reset_index(drop=True)
+          )
+       # 5.5.4 in Milliarden
+       pop_world["Population_Mrd"] = pop_world["Population"] / 1e9
+    # 5.5.5 plot55_population_on=1
+    if plot55_population_on > 0:
+       ax55 = ax1.twinx()
+       #end 5.5. plot55_population_on
+
+# no part 6
 
 
     if play_61_CERES > 0 and 'ceres_61' in data:
