@@ -570,6 +570,78 @@ def plot_9_create_all_plots(ax1, data):
         ax44.tick_params(axis="y", labelcolor=c44)
         ax44.set_ylim(y_Emin, y_Emax)
     
+    # part 5.2 plot52_delta_CO2_red_bars
+    # part 5.3 plot53_CO2_orange2025
+    # part 5.4 plot54_Glen_delta_on
+    # part 5.5 plot55_population_on human earth population 
+    # -----------------------------
+    # part 5.2 plot52_delta_CO2_red_bars
+    # 5.2.2 ΔCO₂ berechnen (per pandas) Balken
+    # df52["CO2"].diff() Calculates the difference between consecutive CO₂ values
+    # -----------------------------
+    if plot52_delta_CO2_red_bars > 0:
+       
+       # 2.2.1 years 1960–2025 x_years_52_list = [1960, 1961, 1962, ..., x_end - 1]
+       if x_end > 1961:
+          x_years_52_list = list(range(1960, x_end+1)) # list of years 1960...
+       else:
+          x_years_52_list = list(range(1960, 2026)) # list of years 1960...
+       # 2.2.2 Select only 2018–2025
+       if x_anf < 1960:
+          start_of_x_index = x_years_52_list.index(1960)
+       else:
+          start_of_x_index = x_years_52_list.index(x_anf)    
+       if x_end > 2026:
+          end_of_x_index = x_years_52_list.index(2025)
+       elif x_end < 1960:
+          end_of_x_index = 1
+       else:
+          end_of_x_index = x_years_52_list.index(x_end)
+
+       x_years_52_list_subset = x_years_52_list[start_of_x_index:end_of_x_index]
+
+
+       # -----------------------------
+       # 2.2.3 Kurve1 CO₂ Daten https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt
+       # https://gml.noaa.gov/ccgg/trends/mlo.html
+       # https://gml.noaa.gov/ccgg/trends/global.html
+       # -----------------------------
+       co2_values52 = [
+       316.91, 317.64, 318.45, 318.99, 319.62, 320.04, 321.38, 322.16, 323.04, 324.62, # 1960–1969
+       325.68, 326.32, 327.46, 329.68, 330.19, 331.13, 332.03, 333.84, 335.41, 336.84, # 1970–1979
+       338.76, 340.12, 341.48, 343.15, 344.87, 346.35, 347.61, 349.31, 351.69, 353.20, # 1980–1989
+       354.45, 355.70, 356.54, 357.21, 358.96, 360.97, 362.74, 363.88, 366.84, 368.54, # 1990–1999
+       369.71, 371.32, 373.45, 375.98, 377.70, 379.98, 382.09, 384.02, 385.83, 387.64, # 2000–2009
+       390.10, 391.85, 394.06, 396.74, 398.81, 401.01, 404.41, 406.76, 408.72, 411.66, # 2010–2019
+       414.24, # 2020
+       416.41, # 2021
+       418.53, # 2022
+       421.08, # 2023
+       424.61, # 2024
+       427.35  # 2025 = 427.35  ppm
+       ]
+       co2_values52_subset = co2_values52[start_of_x_index:end_of_x_index]
+       df52 = pd.DataFrame({  # make a DataFrame with two columns:"x_52_years" → years (x-axis) "y_52_CO2_ppm" → CO₂ values (y-axis)
+            "x_52_years": x_years_52_list_subset,
+            "y_52_CO2_ppm": co2_values52_subset })
+
+       df52["Delta_CO2"] = df52["y_52_CO2_ppm"].diff().fillna(0)  
+       # This line creates a new column in your DataFrame called Delta_CO2.
+       ax52 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+       # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
+       ax52.spines.right.set_position(("outward", 20))
+       bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
+       ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
+       ax52.set_ylabel("red bars Mauna Loa CO2 increase in ppm", color="red", fontname="Arial",fontsize=16) # fontweight="bold"
+       ax52.tick_params(axis="y", labelcolor="red", labelsize=16)
+       ax52.set_ylim(y_Tmin, y_Tmax) # scale y axis3 right red   
+       # 5.2.8 Add numbers on top of delta CO2 bars
+       if plot52_delta_CO2_red_bars > 6:
+          ax52.bar_label(bars, fontsize=8, fontname="Arial",padding=1, color="black")
+
+
+
+
     if play_61_CERES > 0 and 'ceres_61' in data:
         ax61 = ax1.twinx()
         ax61.plot(data['ceres_61']["decimal_year"], data['ceres_61']["EEI"], '-', 

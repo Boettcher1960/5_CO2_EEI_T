@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c10" # # part41_ceres_eei = 2 # print EEI 12 month running mean. Info in line 3 below the plot
+v = "5c12" # # part41_ceres_eei = 2 # print EEI 12 month running mean. Info in line 3 below the plot
 # part42_ceres_eei = 3 # print EEI 48 month running mean. Info in line 4 below the plot
 # part44_ceres_eei = 11 #  print EEI 77 month running mean. Info in line 5 below the plot
 #
@@ -261,6 +261,26 @@ def load_plot_data():
         if print_debug > 9:
            print(f"main_270: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
            print(f"main_271: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
+    
+    
+    # part 5.2 plot52_delta_CO2_red_bars
+    # part 5.3 plot53_CO2_orange2025
+    # part 5.4 plot54_Glen_delta_on
+    # part 5.5 plot55_population_on human earth population 
+    # -----------------------------
+    # part 5.2 plot52_delta_CO2_red_bars
+    # 5.2.2 ΔCO₂ berechnen (per pandas) Balken
+    # df52["CO2"].diff() Calculates the difference between consecutive CO₂ values
+    # -----------------------------
+    if plot52_delta_CO2_red_bars > 0: # 52.3
+        if print_debug > 9:
+           print(f"main_277: plot52_delta_CO2_red_bars # 52.3 ={plot52_delta_CO2_red_bars}")
+
+
+    
+    
+    
+    
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.3
         data['gis_temp'] = load_gis_temperature()
