@@ -282,6 +282,7 @@ def plot_7_right_y_axe_remove(axes):
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
+        # return
     elif yr_mode == 13:
        print("plot_408: print one right y axes in figure")
        i2 = len(axes)
@@ -309,30 +310,35 @@ def plot_7_right_y_axe_remove(axes):
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
+    elif yr_mode == 3:
+       print("plot_314: print one right y axes in figure")
+       i = len(axes) -1
+       print("plot_316: remove  len(axes) -1  ", i, len(axes))
+       axes[i].yaxis.set_ticks([])  # Remove tick numbers
+       axes[i].set_yticklabels([])  # Remove tick labels
+       axes[i].spines['right'].set_visible(False)
+       axes[i].set_ylabel('') # Remove any label
+
+       i = len(axes) -3
+       print("plot_323: remove  len(axes) -3  ", i, len(axes))
+       axes[i].yaxis.set_ticks([])  # Remove tick numbers
+       axes[i].set_yticklabels([])  # Remove tick labels
+       axes[i].spines['right'].set_visible(False)
+       axes[i].set_ylabel('') # Remove any label
+
+       i = len(axes) -5
+       print("plot_330: remove  len(axes) -5  ", i, len(axes))
+       axes[i].yaxis.set_ticks([])  # Remove tick numbers
+       axes[i].set_yticklabels([])  # Remove tick labels
+       axes[i].spines['right'].set_visible(False)
+       axes[i].set_ylabel('') # Remove any label
+
+    
+    
     else:
         print("plot_313: keep print all y axes in figure")
  
-    i = len(axes) -1
-    print("plot_316: remove  len(axes) -1  ", i, len(axes))
-    axes[i].yaxis.set_ticks([])  # Remove tick numbers
-    axes[i].set_yticklabels([])  # Remove tick labels
-    axes[i].spines['right'].set_visible(False)
-    axes[i].set_ylabel('') # Remove any label
-
-    i = len(axes) -3
-    print("plot_323: remove  len(axes) -3  ", i, len(axes))
-    axes[i].yaxis.set_ticks([])  # Remove tick numbers
-    axes[i].set_yticklabels([])  # Remove tick labels
-    axes[i].spines['right'].set_visible(False)
-    axes[i].set_ylabel('') # Remove any label
-
-    i = len(axes) -5
-    print("plot_330: remove  len(axes) -5  ", i, len(axes))
-    axes[i].yaxis.set_ticks([])  # Remove tick numbers
-    axes[i].set_yticklabels([])  # Remove tick labels
-    axes[i].spines['right'].set_visible(False)
-    axes[i].set_ylabel('') # Remove any label
-    # end plot_7_right_y_axe_remove(axes)
+        # end plot_7_right_y_axe_remove(axes)
 
 
 

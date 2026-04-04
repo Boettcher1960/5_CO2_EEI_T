@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c7" # # part41_ceres_eei = 2 # print EEI 12 month running mean. Info in line 3 below the plot
+v = "5c8" # # part41_ceres_eei = 2 # print EEI 12 month running mean. Info in line 3 below the plot
 # part42_ceres_eei = 3 # print EEI 48 month running mean. Info in line 4 below the plot
 # part44_ceres_eei = 11 #  print EEI 77 month running mean. Info in line 5 below the plot
 #

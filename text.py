@@ -157,7 +157,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        plt.text(tr2x, tr2y, print31_text, color=c31, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
        fig.add_artist(line31)
-
+    elif part41_ceres_eei == 2:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c41)
+        text_4_add_text(ax1, tr2x, tr2y, 
+                    "Earth Energy Imbalance W/m² moving average 12 month  41", 
+                    c41, trs)
+ 
 
 
     elif part43_ceres_eei == 2:
@@ -245,14 +250,20 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        plt.text(tr2x, tr4y, print34_text, color=c34, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
        fig.add_artist(line34)
-
-
     elif part42_ceres_eei == 4:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Earth Energy Imbalance W/m² moving average 48 month  42", 
                     c42, trs)
     
+    if plot23_Glen_CO2 == 5: # 23.5.5 legend row 5
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c23)
+        text_4_add_text(ax1, tr2x, tr5y, 
+                    text_plot23_Glen, 
+                    c23, trs)
+
+
+
     # in row 5 display part44_ceres_eei
     if part44_ceres_eei > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
