@@ -280,11 +280,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot55_population_on == 5: # 55.4 row 5 legende world data plot22_CO2_Mauna_Loa
        line55 = Line2D([lr2x1, lr2x2], [lr5y, lr5y], # x coords in figure space (0–1)
        transform=fig.transFigure,
-       marker="s", markersize=5, color="green", linewidth=2)
+       marker="s", markersize=5, color=c55, linewidth=2)
        # 9.5.2 draw bue line as legend
        fig.add_artist(line55)
        # 9.5.4 write green text
-       plt.text(tr2x, tr5y, green55_text, color="green", fontname="Arial", fontsize=trs,
+       plt.text(tr2x, tr5y, green55_text, color=c55, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
 
 

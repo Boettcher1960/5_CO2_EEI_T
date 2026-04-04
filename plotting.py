@@ -1,5 +1,5 @@
 # plotting.py
-# version 5b78
+# version 5c31
 # plot 1 
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_right_y_axe  line 226
@@ -356,9 +356,9 @@ def plot8_100_right_y_axe_52(ax52, df52,bars): # 52.4
 # plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
 def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     ax55.spines.right.set_position(("outward", 160))
-    ax55.set_ylabel("Earth Population in Billion", color="green")
-    ax55.plot(pop_world["Year"], pop_world["Population_Mrd"], marker="s", color="green", label="Earth Population in Billion K2")
-    ax55.set_ylabel("Earth Population in Billion", color="green")
+    ax55.plot(pop_world["Year"], pop_world["Population_Mrd"], marker="s", color=c55, label="Earth Population in Billion K2")
+    ax55.set_ylabel("Earth Population in Billion", color=c55)
+    ax55.set_ylabel("Earth Population in Billion  (plot359)   55", color=c55)
     ax55.tick_params(axis="y", labelcolor="green")
     ax55.set_ylim(y_55min, y_55max) #8
     # ax55.set_ylim(4, 9)
@@ -672,7 +672,7 @@ def plot_9_create_all_plots(ax1, data):
     # 2023	8,091,734,930	0.88%	70,327,738	54
     # 5.5.3 read csv_55_population.csv
     if plot55_population_on > 0:
-       green55_text="Green line: Earth Population in billion"
+       green55_text="Green line: Earth Population in billion (plot675) 55"
        df55 = pd.read_csv("read_csv/_55_population.csv")
        pop_world = (
              df55[df55["Entity"] == "World"][["Year", "Population"]]
