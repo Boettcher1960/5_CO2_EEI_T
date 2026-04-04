@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c3" #  plot23_Glen_CO2 = 3  
+v = "5c4" #  plot23_Glen_CO2 = 3  
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -434,6 +434,12 @@ def main():
     else:
         print("main_414: print all y axes in figure")
  
+    i = 5
+    print("main_438: remove ", i, len(axes))
+    axes[i].yaxis.set_ticks([])  # Remove tick numbers
+    axes[i].set_yticklabels([])  # Remove tick labels
+    axes[i].spines['right'].set_visible(False)
+    axes[i].set_ylabel('') # Remove any label
 
 
     # Adjust layout
