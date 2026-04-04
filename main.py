@@ -272,10 +272,10 @@ def load_plot_data():
     
     # Load CERES data
     if part41_ceres_eei > 0:
-        data['ceres_12'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
+        data['ceres_12'] = pd.read_csv("read_csv/_41_EEI_41g12.csv")
     
     if part42_ceres_eei > 0:
-        data['ceres_48'] = pd.read_csv("csv/csv44/_plot_42_41g50.csv")
+        data['ceres_48'] = pd.read_csv("read_csv/_plot_42_41g50.csv")
     
     if part43_ceres_eei > 0: # 43.2 read1
         data['ceres_43'] = pd.read_csv("read_csv/a44d_ceres_12month_EEI.csv")
