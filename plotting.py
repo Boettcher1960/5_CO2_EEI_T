@@ -2,7 +2,8 @@
 # version 5b78
 # plot 1 
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
-# plot_6_right_y_axe
+# plot_6_right_y_axe  line 53
+# plot_7_right_y_axe_remove  line 53
 # plot_9_create_all_plots(ax1, data): line 200 500
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
@@ -85,6 +86,21 @@ def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
          if print_debug > 9:
              print(f"plot_ 85: right y axis mode ={yr_mode}")
     return ax2
+
+def plot_7_right_y_axe_remove():
+    """Configure the first right y-axis for temperature"""
+    for i, ax in enumerate(plt.gcf().get_axes()):
+        # Get the y-axis label if it exists
+        ylabel = ax.get_ylabel()
+        print(f"plot_ 94: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
+    # main_484: Axis 0: yaxis side = left, label = 'Earth Energy Imbalance in W/m²'
+    # main_484: Axis 1: yaxis side = right, label = 'Temperature in °C '
+    # main_484: Axis 2: yaxis side = right, label = ''
+    # axes = plt.gcf().get_axes()
+    # Keep axes 0, 1, 2, hide all others
+
+
+
 
 # bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
 def right_EEI_y_axis(ax, y_Emin, y_Emax, color, label):

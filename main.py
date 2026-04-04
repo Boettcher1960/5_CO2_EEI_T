@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c4" #  plot23_Glen_CO2 = 3  
+v = "5c5" #  plot23_Glen_CO2 = 3  
 #
 # part 3.4 plot34_CO2_emission summed
 #
@@ -387,6 +387,7 @@ def main():
     
     # debug 
     print("main_390: All axes in figure:")
+    plot_7_right_y_axe_remove()
     for i, ax in enumerate(plt.gcf().get_axes()):
         # Get the y-axis label if it exists
         ylabel = ax.get_ylabel()
