@@ -1,10 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c12" # # part41_ceres_eei = 2 # print EEI 12 month running mean. Info in line 3 below the plot
-# part42_ceres_eei = 3 # print EEI 48 month running mean. Info in line 4 below the plot
-# part44_ceres_eei = 11 #  print EEI 77 month running mean. Info in line 5 below the plot
-#
-# part 5.2 plot52_delta_CO2_red_bars
+v = "5c14" # 3 y axis red 52 dppm part 5.2 plot52_delta_CO2_red_bars
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
