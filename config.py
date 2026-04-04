@@ -18,7 +18,7 @@
 
 # 8.3 print the left y axis 
 # Axis mode y axis left
-yl_mode = 2  # 3 1850 Gt CO2 y axis left mode
+yl_mode = 4  #
 # yl_mode = 1 GtC y axis left mode
 # yl_ mode = 2 ppm CO2 y axis left mode
 # yl_mode = 3 1850 Gt CO2 y axis left mode
@@ -35,7 +35,7 @@ yr2_mode = 0  # (0=no second right yaxis)
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in line 2)
-plot23_Glen_CO2 = 3      # 23.1 declare global integer variable (4= print in line 4)
+plot23_Glen_CO2 = 5      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
 plot31_CO2_emission =    4   # 31.1 CO2_emission Carbon Brief
@@ -124,8 +124,8 @@ y_Emin = 0 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_Emax = 2 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
-x_anf = 1980
-x_end = 2030
+x_anf = 2006
+x_end = 2026
 
 # constants
 # C280 =275 in Zack Labe plots.
