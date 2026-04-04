@@ -1,9 +1,14 @@
 # text_annotations.py
 # version 5b85
+# row 1  ,    print line 1 below the plot ,     text_1_print_line() ,              line  21
+# row 0  ,    print line 0 above the plot ,     text_2_print_head_line() ,         line  40
 # text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y): line 15
 # text_2_print_head_line(ax1, x_anf, x_end, yl_mode): line 30
 # text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5): line48
 # text_9_print_7_lines line 117
+# row 1  ,    print line 1 below the plot ,     text_1_print_line() ,              line  21
+# row 4,      print line 4 below the plot ,     text_9_print_7_lines() ,           line 229
+# row 6,      print line 6 below the plot ,     text_9_print_7_lines() ,           line 308    
 
 import os
 import sys
@@ -16,7 +21,7 @@ from plotting import *
 from data_processing import *
 from main import v
 
-# text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y): line 15
+# row 1  ,    print line 1 below the plot ,     text_1_print_line() ,              line  21
 def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
     """Add text below the plot (line 1)"""
     #text_below = (f"Figure from  "
@@ -31,7 +36,7 @@ def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
             transform=ax1.transAxes)
 
 
-
+# row 0  ,    print line 0 above the plot ,     text_2_print_head_line() ,         line  40
 # text_2_print_head_line(ax1, x_anf, x_end, yl_mode): line 30
 def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
     """Add header text above the plot"""
@@ -108,8 +113,6 @@ def add_axis_info_line(ax, yl_mode, y_Emin, y_Emax, y_Tmin, y_Tmax,
     ax.text(-0.12, tr6y - 0.07, text_params, color="black", fontname="Arial", fontsize=12,
             transform=ax.transAxes)
     # end 9.6 not called print line 6 below the plot explainations
-
-
 
 
 
@@ -226,6 +229,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
                     c74, trs)
 
+    # row 4,      print line 4 below the plot ,     text_9_print_7_lines() ,           line 229
     ########################## row 4 ################################
     # print line 4 below the plot
     print("text_218: plot34_CO2_emission = ", plot34_CO2_emission) # 34.8
@@ -304,7 +308,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44"
         text_4_add_text(ax1, tr2x, tr5y, p44_text, c44, trs) 
 
-
+    # row 6,      print line 6 below the plot ,     text_9_print_7_lines() ,           line 308
     ########################## row 6 ################################
     # in row 6 display play_61_CERES
     if play_61_CERES > 0:

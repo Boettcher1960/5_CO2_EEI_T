@@ -1,13 +1,17 @@
 # plotting.py
 # version 5c31
-# plot 1 
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_right_y_axe  line 226
-# plot_7_right_y_axe_remove(axes): line 263
-# plot8_50_right_y_axe_74 line 345
+# plot_7_right_y_axe_remove(axes): line 270
+# plot8_50_right_y_axe_74 line 365
 # plot8_100_right_y_axe_52 line 345
 # plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
-# plot_9_create_all_plots(ax1, data): line 360 600
+# plot_9_create_all_plots(ax1, data): line 400 600
+# plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,   line 447
+# part42_ceres_eei, running average over 48 months,  plot_9_create_all_plots() ,   line 601
+# plot52_delta_CO2_red_bars,   Mauna Loa delta    ,  plot_9_create_all_plots() ,   line 630
+# plot74_GIS_T,  GIS temperature add 0.3°C Hansen ,  plot_9_create_all_plots() ,   line 750
+
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 from mpl_toolkits.axes_grid1 import make_axes_locatable
@@ -266,7 +270,7 @@ def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
 
 
 
-# plot_7_right_y_axe_remove(axes): line 263
+# plot_7_right_y_axe_remove(axes): line 270
 def plot_7_right_y_axe_remove(axes):
     """Configure the first right y-axis for temperature"""
     for i, ax in enumerate(plt.gcf().get_axes()):
@@ -362,7 +366,7 @@ def plot_7_right_y_axe_remove(axes):
  
         # end plot_7_right_y_axe_remove(axes)
 
-# plot8_50_right_y_axe_74 line 346
+# plot8_50_right_y_axe_74 line 365
 def plot8_50_right_y_axe_74(ax74): # 74.4 line 356
     ax74.spines.right.set_position(("outward", 50))
     ax74.set_ylabel("Temperature in °C giss.nasa.  (plot349)   74", color=c74)
@@ -394,7 +398,10 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
 
 
 
-# plot_9_create_all_plots(ax1, data): line 360 600
+
+
+
+# plot_9_create_all_plots(ax1, data): line 400 600
 def plot_9_create_all_plots(ax1, data):
     """Create all plots based on configuration"""
     
@@ -439,12 +446,13 @@ def plot_9_create_all_plots(ax1, data):
        ax23.spines.right.set_position(("outward", 60))
        # end part 2.3 CO2
 
+    # plot25_long_CO2, NOAA 800_000 year ice data,  plot_9_create_all_plots() ,   line 447 
     # plot25_long_CO2 = 3 # 2, 3 print -800 000 years ppm CO2 file
     # https://ourworldindata.org/grapher/co2-long-term-concentration?overlay=download-data
     # Data sources: NOAA Global Monitoring Laboratory - Trends in Atmospheric Carbon Dioxide (2026)EPA 
     # based on various sources (2022) – with major processing by Our World in Data
     # -----------------------------
-    #  part 2.5 plot CO2 Mauna Loa
+    # part 2.5 plot CO2 # plot_9 line 453
     blue25_text="green: CO2 NOAA 800_000 year ice data 25"
     if plot25_long_CO2 > 0: # 25.2 plot
       df25 = pd.read_csv("read_csv/csv_25_ppm_long.csv") # our world in data file
@@ -584,7 +592,6 @@ def plot_9_create_all_plots(ax1, data):
 
 
 
-
     # Plot CERES data
     if part41_ceres_eei > 0 and 'ceres_12' in data:
         ax41 = ax1.twinx()
@@ -593,6 +600,7 @@ def plot_9_create_all_plots(ax1, data):
         ax41.tick_params(axis="y", labelcolor=c41)
         ax41.set_ylim(y_Emin, y_Emax)
     
+    # part42_ceres_eei, running average over 48 months,  plot_9_create_all_plots() ,   line 601
     if part42_ceres_eei > 0 and 'ceres_48' in data:
         ax42 = ax1.twinx()
         ax42.plot(data['ceres_48']["year41"], data['ceres_48']["EEI"], '-', 
@@ -620,6 +628,8 @@ def plot_9_create_all_plots(ax1, data):
         ax44.tick_params(axis="y", labelcolor=c44)
         ax44.set_ylim(y_Emin, y_Emax)
     
+    # plot52_delta_CO2_red_bars, Mauna Loa delta ,  plot_9_create_all_plots() ,   line 630
+
     # part 5.2 plot52_delta_CO2_red_bars
     # part 5.3 plot53_CO2_orange2025
     # part 5.4 plot54_Glen_delta_on
@@ -731,6 +741,13 @@ def plot_9_create_all_plots(ax1, data):
         if print_debug > 9:
            print(f"plot_258: ax62 62.8 ={play_62_CERES}")
 
+
+
+
+
+
+
+    # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots() ,   line 750
     # Plot GIS temperature
     if plot74_GIS_T > 0 and 'gis_temp' in data: # 74.4
         ax74 = ax1.twinx()
