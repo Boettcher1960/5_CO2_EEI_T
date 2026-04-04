@@ -202,7 +202,7 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Gminor_ticks))
     elif yl_mode == 2:  # CO2 mode (default)
         ax1.set_ylim(y_min, y_max)
-        ax1.set_ylabel("CO₂ in ppm  plot 233", color=c21, fontsize=20)
+        ax1.set_ylabel("Mauna Loa CO₂ in ppm  (plot233) ", color=c21, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c21, labelsize=20)
         
         # Set CO2 tick spacing
@@ -297,7 +297,7 @@ def plot_7_right_y_axe_remove(axes):
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)
        axes[i].set_ylabel('') # Remove any label
-       i = 2
+       i = 1
        print("plot_301: remove ", i, len(axes))
        axes[i].yaxis.set_ticks([])  # Remove tick numbers
        axes[i].set_yticklabels([])  # Remove tick labels
