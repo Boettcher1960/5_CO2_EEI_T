@@ -1,5 +1,5 @@
 # config.py 
-# version 5b81
+# version 5c4
 # Configuration parameters for the climate analysis tool
 
 # part61_EEI # like part41_ceres_eei make EEI 120 month csv
@@ -41,7 +41,7 @@ plot25_long_CO2 = 0      # 25.1
 plot31_CO2_emission =    4   # 31.1 CO2_emission Carbon Brief
 
 plot34_CO2_emission =    0   # 34.1 row 4 # yl_mode = 4
-plot34_CO2_emission_mode = 1 # 34.1 mode 
+plot34_CO2_emission_mode = 0 # 34.1 mode 
 # plot31__CO2_emission mode 1
 # plot32__CO2_emission mode 2
 # plot33__CO2_emission mode 3
@@ -49,7 +49,7 @@ plot34_CO2_emission_mode = 1 # 34.1 mode
 plot34_CO2 = 4
 
 part41_ceres_eei = 2  # print EEI 12 month running mean. Info in line 3 below the plot
-part42_ceres_eei = 0  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
+part42_ceres_eei = 3  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
 part43_ceres_eei = 0  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0 # 47 is local 
 

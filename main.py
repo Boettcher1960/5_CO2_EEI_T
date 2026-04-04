@@ -1,12 +1,7 @@
 # main.py
 # part 1 configure 
-v = "5c6" #  plot23_Glen_CO2 = 3  
-#
-# part 3.4 plot34_CO2_emission summed
-#
-# part 4 EEI CERES data
-# part41_ceres_eei = 3 # print EEI 12 month running mean. Info in line 3 below the plot
-# part42_ceres_eei = 4 # print EEI 48 month running mean. Info in line 4 below the plot
+v = "5c6" # # part41_ceres_eei = 2 # print EEI 12 month running mean. Info in line 3 below the plot
+# part42_ceres_eei = 3 # print EEI 48 month running mean. Info in line 4 below the plot
 # part44_ceres_eei = 11 #  print EEI 77 month running mean. Info in line 5 below the plot
 #
 # part 5.2 plot52_delta_CO2_red_bars
