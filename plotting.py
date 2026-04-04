@@ -343,16 +343,13 @@ def plot_7_right_y_axe_remove(axes):
  
         # end plot_7_right_y_axe_remove(axes)
 
-# plot8_50_right_y_axe_74 line 345
+# plot8_50_right_y_axe_74 line 346
 def plot8_50_right_y_axe_74(ax74): # 74.4 line 356
     ax74.spines.right.set_position(("outward", 50))
-    # #ax74.plot(pop_world["Year"], pop_world["GISS T"], marker="s", color=c55, label="Earth Population in Billion K2")
-    ax74.set_ylabel("Earth Population in Billion  (plot359)   74", color=c55)
+    ax74.set_ylabel("Temperature in °C giss.nasa.  (plot349)   74", color=c74)
     ax74.tick_params(axis="y", labelcolor=c74)
     ax74.set_ylim(y_74min, y_74max) #8
-    # ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
-    # 720                    label="T GIS K74", color=c74, linewidth=3)
-
+   
 
 # plot8_100_right_y_axe_52 line 345
 def plot8_100_right_y_axe_52(ax52, df52,bars): # 52.4
