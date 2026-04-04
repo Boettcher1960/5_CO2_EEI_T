@@ -353,8 +353,18 @@ def plot_8_second_right_y_axe_52(ax52, df52,bars): # 52.4
     ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
     # end plot_8_second_right_y_axe_52
 
+# def plot_8_third_right_y_axe_55(ax55): # 55.4 line 358
+def plot_8_third_right_y_axe_55(ax55,pop_world): # 55.4 line 356
+    ax55.spines.right.set_position(("outward", 110))
+    ax55.set_ylabel("Earth Population in Billion", color="green")
+    ax55.plot(pop_world["Year"], pop_world["Population_Mrd"], marker="s", color="green", label="Earth Population in Billion K2")
+    ax55.set_ylabel("Earth Population in Billion", color="green")
+    ax55.tick_params(axis="y", labelcolor="green")
+    ax55.set_ylim(1, 9) #8
+    # ax55.set_ylim(4, 9)
+    #end print_y2=1 - print population
 
-# def plot_8_third_right_y_axe_55(ax55, df55): # 55.4 line 356
+
 
 
 # plot_9_create_all_plots(ax1, data): line 360 600
@@ -686,14 +696,15 @@ def plot_9_create_all_plots(ax1, data):
        ax55 = ax1.twinx()
        #end 5.5. plot55_population_on
 
-    if plot55_population_on > 0:
+    # def plot_8_third_right_y_axe_55(ax55): # 55.4 line 358
+    plot_8_third_right_y_axe_55(ax55,pop_world) # 55.4 line 358
        # def plot_8_third_right_y_axe_55(ax55, df55): # 55.4 line 356
-       ax55.spines.right.set_position(("outward", 110))
-       ax55.set_ylabel("Earth Population in Billion", color="green")
-       ax55.plot(pop_world["Year"], pop_world["Population_Mrd"], marker="s", color="green", label="Earth Population in Billion K2")
-       ax55.set_ylabel("Earth Population in Billion", color="green")
-       ax55.tick_params(axis="y", labelcolor="green")
-       ax55.set_ylim(1, 9) #8
+       #ax55.spines.right.set_position(("outward", 110))
+       #ax55.set_ylabel("Earth Population in Billion", color="green")
+       #ax55.plot(pop_world["Year"], pop_world["Population_Mrd"], marker="s", color="green", label="Earth Population in Billion K2")
+       #ax55.set_ylabel("Earth Population in Billion", color="green")
+       #ax55.tick_params(axis="y", labelcolor="green")
+       #ax55.set_ylim(1, 9) #8
        # ax55.set_ylim(4, 9)
        #end print_y2=1 - print population
 
