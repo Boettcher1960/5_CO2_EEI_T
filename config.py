@@ -115,8 +115,8 @@ my76_text = "guessed quadratic temperature my_T 76"
 
 
 # Axis ranges
-y_min = 250 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
-y_max = 500 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
+y_min = 350 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
+y_max = 430 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
 y_Tmin = 0
 y_Tmax = 2.5
 y_74min = 0
@@ -136,7 +136,7 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-x_anf = 2006
+x_anf = 1990
 x_end = 2026
 
 # constants
