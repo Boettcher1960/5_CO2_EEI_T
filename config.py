@@ -81,7 +81,8 @@ c41 = "#289C1684"
 c42 = "purple"
 c43 = "#13DF2F84"
 c44 = "blue"
-c52 = "#34D48FC7"
+c52 = "#7C8825FA"
+c52bar = "#C1D43408"
 c55 = "#34D48FC7"
 c61 = "#0D91A090"
 c62 = "#9522AA90"
@@ -120,7 +121,7 @@ y_max = 430 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
 y_Tmin = 0.4
 y_Tmax = 1.8
 y_74min = 0.4
-y_74max = 1.8
+y_74max = 1.6
 
 
 y_Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode

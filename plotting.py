@@ -685,13 +685,13 @@ def plot_9_create_all_plots(ax1, data):
        ax52 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
        # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
        ax52.spines.right.set_position(("outward", 20))
-       bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color=c52)
+       bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color=c52bar)
        # plot8_100_right_y_axe_52
        plot8_100_right_y_axe_52(ax52, df52,bars)
 
        # 5.2.8 Add numbers on top of delta CO2 bars
        if plot52_delta_CO2_red_bars == 3:
-          ax52.bar_label(bars, fontsize=8, fontname="Arial",padding=1, color="black")
+          ax52.bar_label(bars, fontsize=12, fontname="Arial",padding=1, color="black")
           # end part 5.2 plot52_delta_CO2_red_bars
 
 
