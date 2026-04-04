@@ -4,7 +4,8 @@
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_right_y_axe  line 226
 # plot_7_right_y_axe_remove(axes): line 263
-# plot_8_second_right_y_axe line 345
+# plot_8_second_right_y_axe_52 line 345
+# def plot_8_third_right_y_axe_55(ax55, df55): # 55.4 line 356
 # plot_9_create_all_plots(ax1, data): line 360 600
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
@@ -341,8 +342,8 @@ def plot_7_right_y_axe_remove(axes):
  
         # end plot_7_right_y_axe_remove(axes)
 
-# plot_8_second_right_y_axe line 345
-def plot_8_second_right_y_axe(ax52, df52,bars):
+# plot_8_second_right_y_axe_52 line 345
+def plot_8_second_right_y_axe_52(ax52, df52,bars): # 52.4
     # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
     #ax52.spines.right.set_position(("outward", 20))
     #bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
@@ -350,10 +351,10 @@ def plot_8_second_right_y_axe(ax52, df52,bars):
     ax52.set_ylabel("red bars Mauna Loa CO2 increase in ppm (plot350)", color="red", fontname="Arial",fontsize=16) # fontweight="bold"
     ax52.tick_params(axis="y", labelcolor="red", labelsize=16)
     ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
-    # end plot_8_second_right_y_axe
+    # end plot_8_second_right_y_axe_52
 
 
-
+# def plot_8_third_right_y_axe_55(ax55, df55): # 55.4 line 356
 
 
 # plot_9_create_all_plots(ax1, data): line 360 600
@@ -647,8 +648,8 @@ def plot_9_create_all_plots(ax1, data):
        #ax52.set_ylabel("red bars Mauna Loa CO2 increase in ppm (plot635)", color="red", fontname="Arial",fontsize=16) # fontweight="bold"
        #ax52.tick_params(axis="y", labelcolor="red", labelsize=16)
        #ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
-       # plot_8_second_right_y_axe
-       plot_8_second_right_y_axe(ax52, df52,bars)
+       # plot_8_second_right_y_axe_52
+       plot_8_second_right_y_axe_52(ax52, df52,bars)
 
        # 5.2.8 Add numbers on top of delta CO2 bars
        if plot52_delta_CO2_red_bars == 3:
@@ -684,8 +685,10 @@ def plot_9_create_all_plots(ax1, data):
     if plot55_population_on > 0:
        ax55 = ax1.twinx()
        #end 5.5. plot55_population_on
+
     if plot55_population_on > 0:
-       ax55.spines.right.set_position(("outward", 80))
+       # def plot_8_third_right_y_axe_55(ax55, df55): # 55.4 line 356
+       ax55.spines.right.set_position(("outward", 110))
        ax55.set_ylabel("Earth Population in Billion", color="green")
        ax55.plot(pop_world["Year"], pop_world["Population_Mrd"], marker="s", color="green", label="Earth Population in Billion K2")
        ax55.set_ylabel("Earth Population in Billion", color="green")
