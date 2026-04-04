@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c17" # plot55_population_on = 5
+v = "5c18" # plot55_population_on = 5
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
@@ -254,7 +254,7 @@ def load_plot_data():
     # Load CO2 data if needed
     if plot22_CO2_Mauna_Loa > 0:  # 22.3 load the mauna loa CO2 data
         data['co2'] = load_co2_mauna_loa(x_anf, x_end)
-        if print_debug > 9:
+        if print_debug > 19:
            print(f"main_270: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
            print(f"main_271: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
     

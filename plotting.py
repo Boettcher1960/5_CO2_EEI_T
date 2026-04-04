@@ -256,8 +256,8 @@ def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
          ax2.yaxis.set_minor_locator(MultipleLocator(200))
          # ax2.set_ylabel(" Gt CO2 plot 83", color=c31, fontsize=20, labelpad=10)
     else:  # Gt CO2
-         if print_debug > 9:
-             print(f"plot_ 85: right y axis mode ={yr_mode}")
+         if print_debug > 19:
+             print(f"plot_260: right y axis mode ={yr_mode}")
     return ax2
     # end plot_6_right_y_axe
 
@@ -362,9 +362,9 @@ def plot_9_create_all_plots(ax1, data):
     
     # Plot plot22_CO2_Mauna_Loa
     if plot22_CO2_Mauna_Loa > 0: # 22.4 create the plot  ax22.set_ylim(y_min, y_max)
-        if print_debug > 9:
-          print(f"plot_200: plot22_CO2_Mauna_Loa 22.4 ={plot22_CO2_Mauna_Loa}")
-          print(f"plot_201: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
+        if print_debug > 19:
+          print(f"plot_366: plot22_CO2_Mauna_Loa 22.4 ={plot22_CO2_Mauna_Loa}")
+          print(f"plot_367: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
         ax22 = ax1.twinx()
         ax22.plot(data['co2']["year"], data['co2']["co2_ppm"], '-', 
                   label="T GIS K22", color=c22, linewidth=3)
