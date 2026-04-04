@@ -18,7 +18,7 @@
 
 # 8.3 print the left y axis 
 # Axis mode y axis left
-yl_mode = 4  #
+yl_mode = 2  #
 # yl_mode = 1 GtC y axis left mode
 # yl_ mode = 2 ppm CO2 y axis left mode
 # yl_mode = 3 1850 Gt CO2 y axis left mode
@@ -34,7 +34,7 @@ yr_mode = 2  # (0=no right yaxis) (7 one T °C y axis right mode)
 yr2_mode = 0  # (0=no second right yaxis) 
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in line 2)
+plot22_CO2_Mauna_Loa = 2 # 22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
@@ -46,14 +46,14 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 # plot32__CO2_emission mode 2
 # plot33__CO2_emission mode 3
 # plot34_CO2_emission mode 4
-plot34_CO2 = 4
+plot34_CO2 = 0
 
-part41_ceres_eei = 2  # print EEI 12 month running mean. Info in line 3 below the plot
-part42_ceres_eei = 3  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
+part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
+part42_ceres_eei = 0  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
 part43_ceres_eei = 0  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0 # 47 is local 
 
-plot52_delta_CO2_red_bars = 0
+plot52_delta_CO2_red_bars = 4
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0
@@ -81,6 +81,7 @@ c41 = "#289C1684"
 c42 = "purple"
 c43 = "#13DF2F84"
 c44 = "blue"
+c52 = "red"
 c61 = "#0D91A090"
 c62 = "#9522AA90"
 

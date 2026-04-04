@@ -135,6 +135,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
 
     # Add legend lines for active plots 
     # part 9.2 print line 2 below the plot main_350
+    ########################## row 2 ################################
     if plot22_CO2_Mauna_Loa == 2: # 22.5.2 legend row 2
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c22)
         text_4_add_text(ax1, tr2x, tr2y, 
@@ -162,9 +163,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Earth Energy Imbalance W/m² moving average 12 month  41", 
                     c41, trs)
- 
-
-
     elif part43_ceres_eei == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
         text_4_add_text(ax1, tr2x, tr2y, 
@@ -176,6 +174,8 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
                     c74, trs)
     
+
+    ########################## row 3 ################################
     # print line 3 below the plot
     if plot22_CO2_Mauna_Loa == 3: # 22.5.3 legend row 3
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c22)
@@ -187,7 +187,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     text_plot23_Glen, 
                     c23, trs)
-
     elif plot25_long_CO2 == 3: # 25.9
        line25 = Line2D([lr2x1, lr2x2], [lr3y, lr3y], # y from 0 to 1
        transform=fig.transFigure,
@@ -196,8 +195,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        plt.text(tr2x, tr3y, blue25_text, color=c25, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
        fig.add_artist(line25)
-
-
     elif part41_ceres_eei == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
         text_4_add_text(ax1, tr2x, tr3y, 
@@ -219,6 +216,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "Temperature in °C giss.nasa.gov Hansen+0.3°C   74", 
                     c74, trs)
 
+    ########################## row 4 ################################
     # print line 4 below the plot
     print("text_218: plot34_CO2_emission = ", plot34_CO2_emission) # 34.8
     if plot22_CO2_Mauna_Loa == 4: # 22.5.4 legend row 4
@@ -240,7 +238,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        plt.text(tr2x, tr4y, print31_text, color=c31, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
        fig.add_artist(line31)
-
     elif plot34_CO2_emission == 4: # 34.4
        print("text_149: plot34_CO2_emission  = ", plot34_CO2_emission, " mode ", plot34_CO2_emission_mode, " 34") # 34.9
        line34 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
@@ -255,7 +252,15 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Earth Energy Imbalance W/m² moving average 48 month  42", 
                     c42, trs)
-    
+    # part 5.2 plot52_delta_CO2_red_bars
+    elif plot52_delta_CO2_red_bars == 4: # 52.4 row 4
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c52)
+        text_4_add_text(ax1, tr2x, tr4y, 
+                    "plot52_delta_CO2_red_bars  (text259)  52", 
+                    c52, trs)
+
+
+    ########################## row 5 ################################
     if plot23_Glen_CO2 == 5: # 23.5.5 legend row 5
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c23)
         text_4_add_text(ax1, tr2x, tr5y, 
@@ -270,6 +275,8 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44"
         text_4_add_text(ax1, tr2x, tr5y, p44_text, c44, trs) 
 
+
+    ########################## row 6 ################################
     # in row 6 display play_61_CERES
     if play_61_CERES > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
