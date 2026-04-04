@@ -272,11 +272,11 @@ def plot_7_right_y_axe_remove(axes):
     for i, ax in enumerate(plt.gcf().get_axes()):
         # Get the y-axis label if it exists
         ylabel = ax.get_ylabel()
-        print(f"plot_272: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
+        print(f"plot_275: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
     # main_484: Axis 0: yaxis side = left, label = 'Earth Energy Imbalance in W/m²'
     # main_484: Axis 1: yaxis side = right, label = 'Temperature in °C '
     # main_484: Axis 2: yaxis side = right, label = ''
-    # axes = plt.gcf().get_axes()
+    # axes = plt.gcf().get_axes()   yr2_mode = 55
     # Keep axes 0, 1, 2, hide all others
     if yr_mode == 0:
        print("plot_102: print no right y axes in figure")
@@ -286,11 +286,28 @@ def plot_7_right_y_axe_remove(axes):
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
         # return
-    elif yr_mode == 13:
+    elif yr2_mode == 55:
        print("plot_408: print one right y axes in figure")
        i2 = len(axes)
        #i=3
        print("plot_289: remove right axes ", i, len(axes),i2)
+       i = 1
+       print("plot_293: remove ", i, len(axes))
+       axes[i].yaxis.set_ticks([])  # Remove tick numbers
+       axes[i].set_yticklabels([])  # Remove tick labels
+       axes[i].spines['right'].set_visible(False)
+       axes[i].set_ylabel('') # Remove any label
+       i = 2
+       print("plot_301: remove ", i, len(axes))
+       axes[i].yaxis.set_ticks([])  # Remove tick numbers
+       axes[i].set_yticklabels([])  # Remove tick labels
+       axes[i].spines['right'].set_visible(False)
+       axes[i].set_ylabel('') # Remove any label
+    elif yr_mode == 13:
+       print("plot_309: print one right y axes in figure")
+       i2 = len(axes)
+       #i=3
+       print("plot_312: remove right axes ", i, len(axes),i2)
        for i in range(1, len(axes)): # remove Axis 3, 4
            #print("main_413: remove ", i, len(axes))
            i = 1
@@ -305,6 +322,8 @@ def plot_7_right_y_axe_remove(axes):
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
+
+
 
     elif yr_mode == 7:
        print("plot_306: print one right y axes in figure")
