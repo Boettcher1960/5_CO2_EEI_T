@@ -100,7 +100,7 @@ def add_temperature_band(ax, y_min=1.5, y_max=2.0):
     if hasattr(ax, 'get_ylabel'):
         ylabel = ax.get_ylabel()
         if 'Temperature' in ylabel or '°C' in ylabel:
-            ax.axhspan(y_min, y_max, color="#B3D9FF", alpha=0.5, zorder=0)
+            ax.axhspan(y_min, y_max, color="#B3D9FF87", alpha=0.2, zorder=0)
 
 def add_vertical_bands(ax1, C280):
     """Add vertical bands for CO2 levels"""
@@ -368,8 +368,8 @@ def plot_7_right_y_axe_remove(axes):
 
 # plot8_50_right_y_axe_74 line 365
 def plot8_50_right_y_axe_74(ax74): # 74.4 line 356
-    ax74.spines.right.set_position(("outward", 50))
-    ax74.set_ylabel("Temperature in °C giss.nasa.  (plot349)   74", color=c74)
+    ax74.spines.right.set_position(("outward", 150))
+    ax74.set_ylabel("Temperature in °C giss.nasa.  (plot372)   74", color=c74, fontname="Arial",fontsize=20)
     ax74.tick_params(axis="y", labelcolor=c74)
     ax74.set_ylim(y_74min, y_74max) #8
    
@@ -377,10 +377,10 @@ def plot8_50_right_y_axe_74(ax74): # 74.4 line 356
 # plot8_100_right_y_axe_52 line 345
 def plot8_100_right_y_axe_52(ax52, df52,bars): # 52.4
     # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
-    ax52.spines.right.set_position(("outward", 100))
+    ax52.spines.right.set_position(("outward", 60))
     #bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
-    ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color=c52)
-    ax52.set_ylabel("red bars Mauna Loa CO2 increase in ppm (plot350) 52", color=c52, fontname="Arial",fontsize=12) # fontweight="bold"
+    ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.6, alpha=0.01, color=c52)
+    ax52.set_ylabel("green bars Mauna Loa CO2 increase in ppm (plot384) 52", color=c52, fontname="Arial",fontsize=16) # fontweight="bold"
     ax52.tick_params(axis="y", labelcolor=c52, labelsize=12)
     ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
     # end plot8_100_right_y_axe_52
@@ -604,7 +604,7 @@ def plot_9_create_all_plots(ax1, data):
     if part42_ceres_eei > 0 and 'ceres_48' in data:
         ax42 = ax1.twinx()
         ax42.plot(data['ceres_48']["year41"], data['ceres_48']["EEI"], '-', 
-                  label="EEI K42", color=c42, linewidth=2)
+                  label="EEI K42", color=c42, linewidth=4)
         ax42.tick_params(axis="y", labelcolor=c42)
         ax42.set_ylim(y_Emin, y_Emax)
     
@@ -752,7 +752,7 @@ def plot_9_create_all_plots(ax1, data):
     if plot74_GIS_T > 0 and 'gis_temp' in data: # 74.4
         ax74 = ax1.twinx()
         ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
-                  label="T GIS K74", color=c74, linewidth=3)
+                  label="T GIS K74", color=c74, linewidth=5)
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
         # plot8_50_right_y_axe_74 line 345

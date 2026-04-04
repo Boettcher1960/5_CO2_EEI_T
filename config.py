@@ -56,7 +56,7 @@ part44_ceres_eei = 0 # 47 is local
 plot52_delta_CO2_red_bars = 3 # (print numbers)
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
-plot55_population_on = 5
+plot55_population_on = 0
 
 play_61_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
@@ -81,7 +81,7 @@ c41 = "#289C1684"
 c42 = "purple"
 c43 = "#13DF2F84"
 c44 = "blue"
-c52 = "#853DB9C8"
+c52 = "#34D48FC7"
 c55 = "#34D48FC7"
 c61 = "#0D91A090"
 c62 = "#9522AA90"
@@ -117,17 +117,17 @@ my76_text = "guessed quadratic temperature my_T 76"
 # Axis ranges
 y_min = 350 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
 y_max = 430 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
-y_Tmin = 0
-y_Tmax = 2.5
-y_74min = 0
-y_74max = 2.5
+y_Tmin = 0.4
+y_Tmax = 1.8
+y_74min = 0.4
+y_74max = 1.8
 
 
 y_Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
 y_Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
 
-y_Emin = 0 # yl_mode = 4  EEI in W/m2 y axis left mode
-y_Emax = 2 # yl_mode = 4  EEI in W/m2 y axis left mode
+y_Emin = 0.4 # yl_mode = 4  EEI in W/m2 y axis left mode
+y_Emax = 1.6 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
 
