@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c25" # plot55_population_on = 5
+v = "5c27" # plot55_population_on = 5
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 

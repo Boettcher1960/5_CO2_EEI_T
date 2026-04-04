@@ -347,9 +347,9 @@ def plot_8_second_right_y_axe_52(ax52, df52,bars): # 52.4
     # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
     #ax52.spines.right.set_position(("outward", 20))
     #bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
-    ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
-    ax52.set_ylabel("red bars Mauna Loa CO2 increase in ppm (plot350)", color="red", fontname="Arial",fontsize=16) # fontweight="bold"
-    ax52.tick_params(axis="y", labelcolor="red", labelsize=16)
+    ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color=c52)
+    ax52.set_ylabel("red bars Mauna Loa CO2 increase in ppm (plot350)", color=c52, fontname="Arial",fontsize=16) # fontweight="bold"
+    ax52.tick_params(axis="y", labelcolor=c52, labelsize=16)
     ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
     # end plot_8_second_right_y_axe_52
 
@@ -596,14 +596,12 @@ def plot_9_create_all_plots(ax1, data):
     # part 5.2 plot52_delta_CO2_red_bars
     # part 5.3 plot53_CO2_orange2025
     # part 5.4 plot54_Glen_delta_on
-    # part 5.5 plot55_population_on human earth population 
     # -----------------------------
     # part 5.2 plot52_delta_CO2_red_bars
     # 5.2.2 ΔCO₂ berechnen (per pandas) Balken
     # df52["CO2"].diff() Calculates the difference between consecutive CO₂ values
     # -----------------------------
-    if plot52_delta_CO2_red_bars > 0: # 52.3
-       
+    if plot52_delta_CO2_red_bars > 0: # 52.3    
        # 2.2.1 years 1960–2025 x_years_52_list = [1960, 1961, 1962, ..., x_end - 1]
        if x_end > 1961:
           x_years_52_list = list(range(1960, x_end+1)) # list of years 1960...
@@ -620,10 +618,7 @@ def plot_9_create_all_plots(ax1, data):
           end_of_x_index = 1
        else:
           end_of_x_index = x_years_52_list.index(x_end)
-
        x_years_52_list_subset = x_years_52_list[start_of_x_index:end_of_x_index]
-
-
        # -----------------------------
        # 2.2.3 Kurve1 CO₂ Daten https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt
        # https://gml.noaa.gov/ccgg/trends/mlo.html
@@ -653,11 +648,7 @@ def plot_9_create_all_plots(ax1, data):
        ax52 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
        # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
        ax52.spines.right.set_position(("outward", 20))
-       bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
-       #ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
-       #ax52.set_ylabel("red bars Mauna Loa CO2 increase in ppm (plot635)", color="red", fontname="Arial",fontsize=16) # fontweight="bold"
-       #ax52.tick_params(axis="y", labelcolor="red", labelsize=16)
-       #ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
+       bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color=c52)
        # plot_8_second_right_y_axe_52
        plot_8_second_right_y_axe_52(ax52, df52,bars)
 
