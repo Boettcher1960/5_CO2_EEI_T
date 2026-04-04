@@ -387,16 +387,12 @@ def main():
     
     # debug 
     print("main_390: All axes in figure:")
-    plot_7_right_y_axe_remove()
-    for i, ax in enumerate(plt.gcf().get_axes()):
-        # Get the y-axis label if it exists
-        ylabel = ax.get_ylabel()
-        print(f"main_394: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
-    # main_484: Axis 0: yaxis side = left, label = 'Earth Energy Imbalance in W/m²'
-    # main_484: Axis 1: yaxis side = right, label = 'Temperature in °C '
-    # main_484: Axis 2: yaxis side = right, label = ''
+    #plot_7_right_y_axe_remove()
+    #for i, ax in enumerate(plt.gcf().get_axes()):
+    #    ylabel = ax.get_ylabel()
     axes = plt.gcf().get_axes()
     # Keep axes 0, 1, 2, hide all others
+    plot_7_right_y_axe_remove(axes)
     
     if yr_mode == 0:
        print("main_400: print no right y axes in figure")
