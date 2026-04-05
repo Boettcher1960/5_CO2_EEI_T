@@ -149,6 +149,8 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
 
+    
+
     return ax1 
     # end plot_1_axe
 
@@ -343,8 +345,8 @@ def plot_7_right_y_axe_remove(axes):
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)
        axes[i].set_ylabel('') # Remove any label
-       i = 2
-       print("plot_301: remove ", i, len(axes))
+       i = 1
+       print("plot_349: remove ", i, len(axes))
        axes[i].yaxis.set_ticks([])  # Remove tick numbers
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)
@@ -410,11 +412,18 @@ def plot_7_right_y_axe_remove(axes):
 
 
 
-# plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
-def plot8_right_y_axe_for_ppm_22(ax22,rightv): # 22.4 line 375
-    outward_right =  ( plot22_CO2_Mauna_Loa * 60 ) - 170
+# plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  415
+def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
+    if print_debug > 9:
+          print(f"plot_418: plot8_right_y_axe_for_ppm_22  22.3 ={plot22_CO2_Mauna_Loa} parameter 2 {right22}")
+    if right22 > 0:
+        outward_right = right22
+    else:
+        outward_right =  ( plot22_CO2_Mauna_Loa * 60 ) - 170
+    if print_debug > 9:
+          print(f"plot_425: plot8_right_y_axe_for_ppm_22  22.3 ={plot22_CO2_Mauna_Loa} parameter 2 {outward_right}")
     ax22.spines.right.set_position(("outward", outward_right))
-    ax22.set_ylabel("CO2_Mauna_Loa in ppm                              74", color=c74, fontname="Arial",fontsize=18)
+    ax22.set_ylabel("CO2_Mauna_Loa in ppm                              74", color=c22, fontname="Arial",fontsize=16)
     ax22.tick_params(axis="y", labelcolor=c22)
     ax22.set_ylim(y_min, y_max) #8
 
@@ -455,7 +464,7 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     ax55.tick_params(axis="y", labelcolor="green")
     ax55.set_ylim(y_55min, y_55max) #8
     # ax55.set_ylim(4, 9)
-    #end print_y2=1 - print population
+    #end plot8_160_right_y_axe_55  
 
 # plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
 def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6 
@@ -487,6 +496,11 @@ def plot_9_create_all_plots(ax1, data):
                   label="T GIS K22", color=c22, linewidth=3)
         ax22.tick_params(axis="y", labelcolor=c22)
         ax22.set_ylim(y_min, y_max)
+        # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  415
+        plot8_right_y_axe_for_ppm_22( ax22 , 0 ) # 22.4
+
+
+
     # -----------------------------
     # 2.3 plot23_Glen_CO2 = 0.013t² - 51t + 49,536 in dark blue 
     # source a plot with the formula explained in a thread
