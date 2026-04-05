@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c50" #  plot8_right_y_axe_for_T_74 GISS Temperature line  390
+v = "5c51" #  plot8_right_y_axe_for_T_74 GISS Temperature line  390
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
