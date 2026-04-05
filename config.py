@@ -29,8 +29,8 @@ yr_mode = 2  # (0=no right yaxis) (7 one T °C y axis right mode)
 yr2_mode = 55  # (0=no second right yaxis) 
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 2 # 22.1 declare global integer variable (2= print in line 2)
-plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
+plot22_CO2_Mauna_Loa = 3 # 22.1 declare global integer variable (2= print in line 2)
+plot23_Glen_CO2 = 2      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
 plot31_CO2_emission =    0   # 31.1 CO2_emission Carbon Brief
