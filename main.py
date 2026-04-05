@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c58" #  # plot_1_axe line 119
+v = "5c60" #  # plot_1_axe line 119
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
@@ -357,8 +357,7 @@ def main():
     #ax1 = plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     #                     y_Tmin, y_Tmax, yl_mode, c31, c42, c74)
     # plot_1_axe line 119
-    ax1 = plot_1_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
-                         y_Tmin, y_Tmax, yl_mode, c31, c42, c74)
+    ax1 = plot_1_axe(ax1)
 
 
     print("main_345: plot_5_left_y_axe",yr_mode, " color c31")

@@ -1,7 +1,7 @@
 # plotting.py
 # version 5c31
 
-# plot_2_y_axe
+# plot_1_axe ,  for: 22  plot22_CO2_Mauna_Loa = 2                             ,  line  121
 
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_right_y_axe  line 226
@@ -116,25 +116,43 @@ def add_year_band(ax1, year_start=2025, year_end=2027):
     """Add vertical band for current year"""
     ax1.axvspan(year_start, year_end, color="#B3D9FF", alpha=0.5, zorder=0)
 
-# plot_1_axe line 119
-def plot_1_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax, 
-                   y_Tmin, y_Tmax, yl_mode, c22, c42, c74):
+
+# plot_1_axe ,  for: 22  plot22_CO2_Mauna_Loa = 2                             ,  line  121
+def plot_1_axe(ax1):
     """Configure the axes based on selected mode"""
     plt.xlim(x_anf, x_end)
     ax1.grid(True)
 
-    if plot22_CO2_Mauna_Loa == 2:  # 
+    if plot22_CO2_Mauna_Loa == 2:  # 22.5 y axe left 
         ax1.set_ylim(y_min, y_max)
-        ax1.set_ylabel("Mauna Loa CO₂ in ppm  (plot128) ", color=c21, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=c21, labelsize=20)
-        
-        # Set CO2 tick spacing
+        ax1.set_ylabel("Mauna Loa CO₂ in ppm  (plot128) ", color=c22, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c22, labelsize=20)
         y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
         y_minor_ticks = 10
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif plot23_Glen_CO2 == 2:  # 23.5 y axe left 
+        ax1.set_ylim(y_min, y_max)
+        ax1.set_ylabel(" CO₂ in ppm  (plot137) ", color=c22, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c23, labelsize=20)
+        y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
+        y_minor_ticks = 10
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    else:    
+        ax1.set_ylim(y_min, y_max)
+        ax1.set_ylabel(" else generic y axe CO₂ in ppm  (plot146) ", color=c22, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c23, labelsize=20)
+        y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
+        y_minor_ticks = 10
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+
+
     return ax1 
     # end plot_1_axe
+
+
 
 
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
