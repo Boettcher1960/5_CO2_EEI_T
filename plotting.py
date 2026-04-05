@@ -3,6 +3,8 @@
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_right_y_axe  line 226
 # plot_7_right_y_axe_remove(axes): line 270
+# plot8_right_y_axe_for_ppm_22        plot22_CO2_Mauna_Loa                   ,   line  372
+# plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
 # plot8_right_y_axe_for_delta_ppm_increase_52 line 377
 # plot8_right_y_axe_for_T_74 GISS Temperature line  390
 # plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
@@ -369,6 +371,21 @@ def plot_7_right_y_axe_remove(axes):
 
 
 
+#   plot8_right_y_axe_for_ppm_22   plot22_CO2_Mauna_Loa                    372
+def plot8_right_y_axe_for_ppm_22(ax22,rightv): # 22.4 line 375
+    ax22.spines.right.set_position(("outward", rightv))
+    ax22.set_ylabel("CO2_Mauna_Loa in ppm                              74", color=c74, fontname="Arial",fontsize=18)
+    ax22.tick_params(axis="y", labelcolor=c22)
+    ax22.set_ylim(y_min, y_max) #8
+
+# part42_ceres_eei = 5  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
+# Earth Energy Imbalance W/m² moving average 48 month 
+# plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
+def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.4 line 382 
+    ax42.spines.right.set_position(("outward", rightv))
+    ax42.set_ylabel("Earth Energy Imbalance  in W/m²                      42", color=c42, fontname="Arial",fontsize=18)
+    ax42.tick_params(axis="y", labelcolor=c42)
+    ax42.set_ylim(y_Emin, y_Emax) #
 
 
 
@@ -383,16 +400,7 @@ def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right55): # 52.4
     ax52.tick_params(axis="y", labelcolor=c52, labelsize=12)
     ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
     # end plot8_right_y_axe_for_delta_ppm_increase_52
-
-
-
-# plot8_right_y_axe_for_T_74 GISS Temperature line  390
-def plot8_right_y_axe_for_T_74(ax74,rightv): # 74.4 line 356
-    ax74.spines.right.set_position(("outward", rightv))
-    ax74.set_ylabel("Temperature in °C                               74", color=c74, fontname="Arial",fontsize=18)
-    ax74.tick_params(axis="y", labelcolor=c74)
-    ax74.set_ylim(y_74min, y_74max) #8
-   
+  
 
 # plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
 def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
@@ -405,7 +413,13 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     #end print_y2=1 - print population
 
 
-
+# plot8_right_y_axe_for_T_74 GISS Temperature line  390
+def plot8_right_y_axe_for_T_74(ax74,rightv): # 74.4 line 356
+    ax74.spines.right.set_position(("outward", rightv))
+    ax74.set_ylabel("Temperature in °C                               74", color=c74, fontname="Arial",fontsize=18)
+    ax74.tick_params(axis="y", labelcolor=c74)
+    ax74.set_ylim(y_74min, y_74max) #8
+ 
 
 
 
@@ -610,13 +624,17 @@ def plot_9_create_all_plots(ax1, data):
         ax41.set_ylim(y_Emin, y_Emax)
     
     # part42_ceres_eei, running average over 48 months,  plot_9_create_all_plots() ,   line 601
+    # Earth Energy Imbalance W/m² moving average 48 month 
     if part42_ceres_eei > 0 and 'ceres_48' in data:
         ax42 = ax1.twinx()
         ax42.plot(data['ceres_48']["year41"], data['ceres_48']["EEI"], '-', 
                   label="EEI K42", color=c42, linewidth=4)
         ax42.tick_params(axis="y", labelcolor=c42)
         ax42.set_ylim(y_Emin, y_Emax)
-    
+        # plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
+        plot8_right_y_axe_for_eei_42(ax42,10) # 42.4 line 356
+
+
 
     if part43_ceres_eei > 0 and 'ceres_43' in data: # 43.2
         ax43 = ax1.twinx()
