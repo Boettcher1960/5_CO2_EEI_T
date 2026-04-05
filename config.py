@@ -48,7 +48,7 @@ part42_ceres_eei = 5  # 5,3,4 print EEI 48 month running mean. Info in line 4 be
 part43_ceres_eei = 0  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0 # 47 is local 
 
-plot52_delta_CO2_red_bars = 3 # (print numbers)
+plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
