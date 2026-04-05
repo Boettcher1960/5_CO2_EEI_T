@@ -3,16 +3,16 @@
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_right_y_axe  line 226
 # plot_7_right_y_axe_remove(axes): line 270
-# plot8_right_y_axe_for_ppm_22        plot22_CO2_Mauna_Loa                   ,   line  372
-# plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
-# plot8_right_y_axe_for_delta_ppm_increase_52 line 377
-# plot8_right_y_axe_for_T_74 GISS Temperature line  390
-# plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
+# plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
+# plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
+# plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
+# plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
+# plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
 # plot_9_create_all_plots(ax1, data): line 400 600
-# plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,   line 447
-# part42_ceres_eei, running average over 48 months,  plot_9_create_all_plots() ,   line 601
-# plot52_delta_CO2_red_bars,   Mauna Loa delta    ,  plot_9_create_all_plots() ,   line 630
-# plot74_GIS_T,  GIS temperature add 0.3°C Hansen ,  plot_9_create_all_plots() ,   line 750
+# plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,  line 447
+# part42_ceres_eei, running average over 48 months,  plot_9_create_all_plots() ,  line 601
+# plot52_delta_CO2_red_bars,   Mauna Loa delta    ,  plot_9_create_all_plots() ,  line 630
+# plot74_GIS_T,  GIS temperature add 0.3°C Hansen ,  plot_9_create_all_plots() ,  line 750
 
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
@@ -370,17 +370,16 @@ def plot_7_right_y_axe_remove(axes):
 
 
 
-
-#   plot8_right_y_axe_for_ppm_22   plot22_CO2_Mauna_Loa                    372
+# plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
 def plot8_right_y_axe_for_ppm_22(ax22,rightv): # 22.4 line 375
-    ax22.spines.right.set_position(("outward", rightv))
+    outward_right =  ( plot22_CO2_Mauna_Loa * 60 ) - 170
+    ax22.spines.right.set_position(("outward", outward_right))
     ax22.set_ylabel("CO2_Mauna_Loa in ppm                              74", color=c74, fontname="Arial",fontsize=18)
     ax22.tick_params(axis="y", labelcolor=c22)
     ax22.set_ylim(y_min, y_max) #8
 
-# part42_ceres_eei = 5  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
 # Earth Energy Imbalance W/m² moving average 48 month 
-# plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
+# plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
 def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
     outward_right =  ( part42_ceres_eei * 60 ) - 170
     ax42.spines.right.set_position(("outward", outward_right))
@@ -391,11 +390,15 @@ def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
 
 
 
-
-# plot8_right_y_axe_for_delta_ppm_increase_52 line 377
-def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right55): # 52.4
+# plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
+# plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
+def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right52): # 52.4
     # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
-    ax52.spines.right.set_position(("outward", 10))
+    if right52 > 0:
+        outward_right = right52
+    else:
+        outward_right =  ( plot52_delta_CO2_red_bars * 60 ) - 170
+    ax52.spines.right.set_position(("outward", outward_right))
     # ax52.spines.right.set_position(("outward", right55))
     # bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
     ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.6, alpha=0.01, color=c52)
@@ -404,10 +407,9 @@ def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right55): # 52.4
     ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
     # end plot8_right_y_axe_for_delta_ppm_increase_52
   
-
-# plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
+# plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
 def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
-    ax55.spines.right.set_position(("outward", 160))
+    ax55.spines.right.set_position(("outward", 210))
     ax55.plot(pop_world["Year"], pop_world["Population_Mrd"], marker="s", color=c55, label="Earth Population in Billion K2")
     ax55.set_ylabel("Earth Population in Billion  (plot359)   55", color=c55)
     ax55.tick_params(axis="y", labelcolor="green")
@@ -415,11 +417,14 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     # ax55.set_ylim(4, 9)
     #end print_y2=1 - print population
 
-
-# plot8_right_y_axe_for_T_74 GISS Temperature line  390
-def plot8_right_y_axe_for_T_74(ax74,rightv): # 74.4 line 356
+# plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
+def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6 
     # ax74.spines.right.set_position(("outward", rightv))
-    ax74.spines.right.set_position(("outward", 70))
+    if right52 > 0:
+        outward_right = right52
+    else:
+        outward_right =  ( plot74_GIS_T * 60 ) - 170
+    ax74.spines.right.set_position(("outward", outward_right))
     ax74.set_ylabel("Temperature in °C                               74", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
     ax74.set_ylim(y_74min, y_74max) #8
@@ -717,9 +722,7 @@ def plot_9_create_all_plots(ax1, data):
        # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
        ax52.spines.right.set_position(("outward", 20))
        bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color=c52bar)
-       # plot8_right_y_axe_for_delta_ppm_increase_52
-       plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,90)
-
+       plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52, 0)
        # 5.2.8 Add numbers on top of delta CO2 bars
        if plot52_delta_CO2_red_bars == 3:
           ax52.bar_label(bars, fontsize=12, fontname="Arial",padding=1, color="black")
@@ -786,8 +789,7 @@ def plot_9_create_all_plots(ax1, data):
                   label="T GIS K74", color=c74, linewidth=5)
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
-        # plot8_right_y_axe_for_T_74 line 345
-        plot8_right_y_axe_for_T_74(ax74,150) # 74.4 line 356
+        plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 356
 
     # end plot_9_create_all_plots(ax1, data):
 
