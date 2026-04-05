@@ -145,7 +145,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     if plot22_CO2_Mauna_Loa == 2: # 22.5.2 legend row 2
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c22)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    blue22_text, 
+                    "blue: CO2 measured at Mauna Loa (2025 = 427.35 ppm) 22", 
                     c22, trs)
     elif plot25_long_CO2 == 2: # 25.9
        line25 = Line2D([lr2x1, lr2x2], [lr2y, lr2y], # y from 0 to 1
@@ -221,7 +221,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot52_delta_CO2_red_bars == 3: # 52.4 row 3
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c52)
         text_4_add_text(ax1, tr2x, tr3y, 
-                    "plot52_delta_CO2_red_bars  (text218) with black delta values printed 52", 
+                    "CO2_delta_green_bars, the yearly CO2 Mauna Loa increase  (text224) 52", 
                     c52, trs)    
     elif plot74_GIS_T == 3: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)

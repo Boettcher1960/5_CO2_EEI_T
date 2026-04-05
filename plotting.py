@@ -367,8 +367,8 @@ def plot_7_right_y_axe_remove(axes):
         # end plot_7_right_y_axe_remove(axes)
 
 # plot8_50_right_y_axe_74 line 365
-def plot8_50_right_y_axe_74(ax74): # 74.4 line 356
-    ax74.spines.right.set_position(("outward", 150))
+def plot8_50_right_y_axe_74(ax74,rightv): # 74.4 line 356
+    ax74.spines.right.set_position(("outward", rightv))
     ax74.set_ylabel("Temperature in °C giss.nasa.  (plot372)   74", color=c74, fontname="Arial",fontsize=20)
     ax74.tick_params(axis="y", labelcolor=c74)
     ax74.set_ylim(y_74min, y_74max) #8
@@ -756,7 +756,7 @@ def plot_9_create_all_plots(ax1, data):
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
         # plot8_50_right_y_axe_74 line 345
-        plot8_50_right_y_axe_74(ax74) # 74.4 line 356
+        plot8_50_right_y_axe_74(ax74,150) # 74.4 line 356
 
     # end plot_9_create_all_plots(ax1, data):
 

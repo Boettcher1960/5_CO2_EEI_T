@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c48" # 74 plot Hansen GIS temperature 1880 2027
+v = "5c49" #  plot8_50_right_y_axe_74
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
