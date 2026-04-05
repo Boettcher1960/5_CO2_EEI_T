@@ -3,7 +3,7 @@
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_right_y_axe  line 226
 # plot_7_right_y_axe_remove(axes): line 270
-# plot8_50_right_y_axe_74 line 365
+# plot8_right_y_axe_for_T_74 line 365
 # plot8_100_right_y_axe_52 line 345
 # plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
 # plot_9_create_all_plots(ax1, data): line 400 600
@@ -366,8 +366,8 @@ def plot_7_right_y_axe_remove(axes):
  
         # end plot_7_right_y_axe_remove(axes)
 
-# plot8_50_right_y_axe_74 line 365
-def plot8_50_right_y_axe_74(ax74,rightv): # 74.4 line 356
+# plot8_right_y_axe_for_T_74 line 365
+def plot8_right_y_axe_for_T_74(ax74,rightv): # 74.4 line 356
     ax74.spines.right.set_position(("outward", rightv))
     ax74.set_ylabel("Temperature in °C giss.nasa.  (plot372)   74", color=c74, fontname="Arial",fontsize=20)
     ax74.tick_params(axis="y", labelcolor=c74)
@@ -755,8 +755,8 @@ def plot_9_create_all_plots(ax1, data):
                   label="T GIS K74", color=c74, linewidth=5)
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
-        # plot8_50_right_y_axe_74 line 345
-        plot8_50_right_y_axe_74(ax74,150) # 74.4 line 356
+        # plot8_right_y_axe_for_T_74 line 345
+        plot8_right_y_axe_for_T_74(ax74,150) # 74.4 line 356
 
     # end plot_9_create_all_plots(ax1, data):
 
