@@ -381,9 +381,10 @@ def plot8_right_y_axe_for_ppm_22(ax22,rightv): # 22.4 line 375
 # part42_ceres_eei = 5  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
 # Earth Energy Imbalance W/m² moving average 48 month 
 # plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
-def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.4 line 382 
-    # ax42.spines.right.set_position(("outward", rightv))
-    ax42.spines.right.set_position(("outward", 120))
+def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
+    outward_right =  ( part42_ceres_eei * 60 ) - 170
+    ax42.spines.right.set_position(("outward", outward_right))
+    #ax42.spines.right.set_position(("outward", 120))
     ax42.set_ylabel("Earth Energy Imbalance  in W/m²                      42", color=c42, fontname="Arial",fontsize=18)
     ax42.tick_params(axis="y", labelcolor=c42)
     ax42.set_ylim(y_Emin, y_Emax) #
@@ -635,7 +636,7 @@ def plot_9_create_all_plots(ax1, data):
         ax42.tick_params(axis="y", labelcolor=c42)
         ax42.set_ylim(y_Emin, y_Emax)
         # plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
-        plot8_right_y_axe_for_eei_42(ax42,10) # 42.4 line 356
+        plot8_right_y_axe_for_eei_42(ax42,r4pos) # 42.4 line 356
 
 
 

@@ -165,6 +165,12 @@ lr4y = 0.129
 lr5y = 0.095
 lr6y = 0.034
 
+# right y positions
+r2pos = 10 # the second y axe is 10 items right of the plot area
+r3pos = 60 # the third y axe is 60 items right of the plot area
+r4pos = 120 # the fourth y axe is 120 items right of the plot area
+r5pos = 180 # the fifth y axe is 180 items right of the plot area
+
 # Figure size
 scale_mode = 10 # other values are not used
 print_debug = 10 # print some items 
