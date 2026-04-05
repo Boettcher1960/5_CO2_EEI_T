@@ -382,7 +382,8 @@ def plot8_right_y_axe_for_ppm_22(ax22,rightv): # 22.4 line 375
 # Earth Energy Imbalance W/m² moving average 48 month 
 # plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
 def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.4 line 382 
-    ax42.spines.right.set_position(("outward", rightv))
+    # ax42.spines.right.set_position(("outward", rightv))
+    ax42.spines.right.set_position(("outward", 120))
     ax42.set_ylabel("Earth Energy Imbalance  in W/m²                      42", color=c42, fontname="Arial",fontsize=18)
     ax42.tick_params(axis="y", labelcolor=c42)
     ax42.set_ylim(y_Emin, y_Emax) #
@@ -393,8 +394,9 @@ def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.4 line 382
 # plot8_right_y_axe_for_delta_ppm_increase_52 line 377
 def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right55): # 52.4
     # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
-    ax52.spines.right.set_position(("outward", right55))
-    #bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
+    ax52.spines.right.set_position(("outward", 10))
+    # ax52.spines.right.set_position(("outward", right55))
+    # bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
     ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.6, alpha=0.01, color=c52)
     ax52.set_ylabel("green bars: CO2 increase in ppm         ", color=c52, fontname="Arial",fontsize=18) # fontweight="bold"
     ax52.tick_params(axis="y", labelcolor=c52, labelsize=12)
@@ -415,7 +417,8 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
 
 # plot8_right_y_axe_for_T_74 GISS Temperature line  390
 def plot8_right_y_axe_for_T_74(ax74,rightv): # 74.4 line 356
-    ax74.spines.right.set_position(("outward", rightv))
+    # ax74.spines.right.set_position(("outward", rightv))
+    ax74.spines.right.set_position(("outward", 70))
     ax74.set_ylabel("Temperature in °C                               74", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
     ax74.set_ylim(y_74min, y_74max) #8
