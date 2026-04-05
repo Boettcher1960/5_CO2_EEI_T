@@ -3,8 +3,8 @@
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_right_y_axe  line 226
 # plot_7_right_y_axe_remove(axes): line 270
-# plot8_right_y_axe_for_T_74 line 365
-# plot8_100_right_y_axe_52 line 345
+# plot8_right_y_axe_for_delta_ppm_increase_52 line 377
+# plot8_right_y_axe_for_T_74 GISS Temperature line  390
 # plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
 # plot_9_create_all_plots(ax1, data): line 400 600
 # plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,   line 447
@@ -366,24 +366,33 @@ def plot_7_right_y_axe_remove(axes):
  
         # end plot_7_right_y_axe_remove(axes)
 
-# plot8_right_y_axe_for_T_74 line 365
+
+
+
+
+
+
+
+# plot8_right_y_axe_for_delta_ppm_increase_52 line 377
+def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right55): # 52.4
+    # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
+    ax52.spines.right.set_position(("outward", right55))
+    #bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
+    ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.6, alpha=0.01, color=c52)
+    ax52.set_ylabel("green bars: CO2 increase in ppm         ", color=c52, fontname="Arial",fontsize=18) # fontweight="bold"
+    ax52.tick_params(axis="y", labelcolor=c52, labelsize=12)
+    ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
+    # end plot8_right_y_axe_for_delta_ppm_increase_52
+
+
+
+# plot8_right_y_axe_for_T_74 GISS Temperature line  390
 def plot8_right_y_axe_for_T_74(ax74,rightv): # 74.4 line 356
     ax74.spines.right.set_position(("outward", rightv))
-    ax74.set_ylabel("Temperature in °C giss.nasa.  (plot372)   74", color=c74, fontname="Arial",fontsize=20)
+    ax74.set_ylabel("Temperature in °C                               74", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
     ax74.set_ylim(y_74min, y_74max) #8
    
-
-# plot8_100_right_y_axe_52 line 345
-def plot8_100_right_y_axe_52(ax52, df52,bars): # 52.4
-    # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
-    ax52.spines.right.set_position(("outward", 60))
-    #bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
-    ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.6, alpha=0.01, color=c52)
-    ax52.set_ylabel("green bars Mauna Loa CO2 increase in ppm (plot384) 52", color=c52, fontname="Arial",fontsize=16) # fontweight="bold"
-    ax52.tick_params(axis="y", labelcolor=c52, labelsize=12)
-    ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
-    # end plot8_100_right_y_axe_52
 
 # plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
 def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
@@ -686,8 +695,8 @@ def plot_9_create_all_plots(ax1, data):
        # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
        ax52.spines.right.set_position(("outward", 20))
        bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color=c52bar)
-       # plot8_100_right_y_axe_52
-       plot8_100_right_y_axe_52(ax52, df52,bars)
+       # plot8_right_y_axe_for_delta_ppm_increase_52
+       plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,90)
 
        # 5.2.8 Add numbers on top of delta CO2 bars
        if plot52_delta_CO2_red_bars == 3:
