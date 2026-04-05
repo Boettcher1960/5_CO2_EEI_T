@@ -5,22 +5,17 @@
 # part61_EEI # like part41_ceres_eei make EEI 120 month csv
 # 
 # line 2 defines the left Y axis. example
-# part43_ceres_eei = 2  #  0..2 W/m2    EEI 12 month running mean.
-#
-# line 3 defines the right Y axis. example
-# part43_ceres_eei = 3  # 43.1  3,4 print EEI 12 month running mean.
-
-# line 4 makes additional right y axis 20 to the right
-
-# line 5 makes additional right y axis 60 to the right
-
+# line 3 defines the right Y axis with 10 pixel to the right of plot area
+# line 4 defines the right Y axis with 70 pixel to the right of plot area
+# line 5 defines the right Y axis with 130 pixel to the right of plot area
 # line 6 is developv part61_EEI 
 
 # 8.3 print the left y axis 
 # Axis mode y axis left
 yl_mode = 2  #
+# line 2 defines the left Y axis. example
 # yl_mode = 1 GtC y axis left mode
-# yl_ mode = 2 ppm CO2 y axis left mode
+# yl_mode = 2 ppm CO2 y axis left mode
 # yl_mode = 3 1850 Gt CO2 y axis left mode
 # yl_mode = 4 EEI in W/m2 y axis left mode
 # yl_mode = 5 delta ppm CO2 y axis left mode
@@ -164,12 +159,6 @@ lr3y = 0.168
 lr4y = 0.129
 lr5y = 0.095
 lr6y = 0.034
-
-# right y positions
-r2pos = 10 # the second y axe is 10 items right of the plot area
-r3pos = 60 # the third y axe is 60 items right of the plot area
-r4pos = 120 # the fourth y axe is 120 items right of the plot area
-r5pos = 180 # the fifth y axe is 180 items right of the plot area
 
 # Figure size
 scale_mode = 10 # other values are not used

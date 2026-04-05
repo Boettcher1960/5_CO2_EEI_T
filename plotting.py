@@ -1,5 +1,8 @@
 # plotting.py
 # version 5c31
+
+# plot_2_y_axe
+
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_right_y_axe  line 226
 # plot_7_right_y_axe_remove(axes): line 270
@@ -113,6 +116,25 @@ def add_year_band(ax1, year_start=2025, year_end=2027):
     """Add vertical band for current year"""
     ax1.axvspan(year_start, year_end, color="#B3D9FF", alpha=0.5, zorder=0)
 
+# plot_1_axe line 119
+def plot_1_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax, 
+                   y_Tmin, y_Tmax, yl_mode, c22, c42, c74):
+    """Configure the axes based on selected mode"""
+    plt.xlim(x_anf, x_end)
+    ax1.grid(True)
+
+    if plot22_CO2_Mauna_Loa == 2:  # 
+        ax1.set_ylim(y_min, y_max)
+        ax1.set_ylabel("Mauna Loa CO₂ in ppm  (plot128) ", color=c21, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c21, labelsize=20)
+        
+        # Set CO2 tick spacing
+        y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
+        y_minor_ticks = 10
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    return ax1 
+    # end plot_1_axe
 
 
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
@@ -433,7 +455,7 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
 
 
 
-# plot_9_create_all_plots(ax1, data): line 400 600
+# plot_9_create_all_plots(ax1, data): line 436 600
 def plot_9_create_all_plots(ax1, data):
     """Create all plots based on configuration"""
     
@@ -641,7 +663,7 @@ def plot_9_create_all_plots(ax1, data):
         ax42.tick_params(axis="y", labelcolor=c42)
         ax42.set_ylim(y_Emin, y_Emax)
         # plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
-        plot8_right_y_axe_for_eei_42(ax42,r4pos) # 42.4 line 356
+        plot8_right_y_axe_for_eei_42( ax42 , 0 ) # 42.4 line 356
 
 
 
