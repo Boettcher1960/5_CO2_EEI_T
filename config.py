@@ -113,7 +113,7 @@ my76_text = "guessed quadratic temperature my_T 76"
 
 
 # Axis ranges
-y_min = 250 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
+y_min = 350 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
 y_max = 430 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
 
 y_25min = 250 # nok   only for y axis 
@@ -131,8 +131,8 @@ y_31Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
 y_31Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
 
 
-y_Emin = 0.4 # yl_mode = 4  EEI in W/m2 y axis left mode
-y_Emax = 1.6 # yl_mode = 4  EEI in W/m2 y axis left mode
+y_Emin = 0 # yl_mode = 4  EEI in W/m2 y axis left mode
+y_Emax = 2 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
 
@@ -141,8 +141,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-x_anf = 2010
-x_end = 2030
+x_anf = 2006
+x_end = 2026
 
 # constants
 # C280 =275 in Zack Labe plots.
