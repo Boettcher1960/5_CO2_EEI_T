@@ -212,6 +212,16 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.1
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif plot76_my_T == 2:  # 76.5 y axe left  red 
+        # my76_text="guessed quadratic temperature  my_T   76 "
+        ax1.spines.left.set_position(("outward", 3))
+        ax1.set_ylim(y_Tmin, y_Tmax)
+        ax1.set_ylabel(" Temperatur in °C  myguess  76  ", color=c76, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c76, labelsize=20)
+        y_mayor_ticks = 0.5 
+        y_minor_ticks = 0.1
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
 
 
