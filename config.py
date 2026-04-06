@@ -23,9 +23,6 @@ yl_mode = 0  #
 
 
 # 8.5 configure the right axis legend 
-# Axis mode y axis right
-yr_mode = 0  # (0=no right yaxis) (7 one T °C y axis right mode)
-
 yr_60  = 60  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
 yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_74
 
@@ -183,65 +180,6 @@ print_debug = 10 # print some items
 """
 
 -----------------------v = "5c90
-
-
-
------------------------v = "5b96
-plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
------------------------v = "5b73
-v = "5b73" #  plot34_CO2_emission = 4  1850Gt CO2 cumulative plot34_CO2_emission_mode = 1 # 34.1 mode
-
------------------------v = "5b44
-plot22_CO2_Mauna_Loa = 2 
-plot74_GIS_T = 3
-
------------------------v = "5b40" #  test old plots
-# Plot configuration flags
-
-make a struct/df with 6 columns and 88 rows.
-
-column 1 is integer 0 to 80
-column 2 are the names ASCII
-column 3 are integer 3 //  example plot and make legend in line 3
-column 4 are colors // example "red" 
-column 5 is the minimum // example 280
-column 6 is the maximum scaling // example 450 ppm
-
-below is column 2:
-plot22_CO2_Mauna_Loa = 0
-plot23_Glen_CO2 = 0
-plot25_long_CO2 = 0
-plot34_CO2_emission = 0
-
-part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
-part42_ceres_eei = 0  # 3,4 print EEI 48 month running mean. Info in line 4 below the plot
-part43_ceres_eei = 2  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
-part44_ceres_eei = 0 # 47 is local 
-
-plot52_delta_CO2_red_bars = 0
-plot53_CO2_orange2025 = 0
-plot54_Glen_delta_on = 0
-plot55_population_on = 0
-
-play_61_CERES = 48     # 12 CERES EEI 12 month like part41_ceres_eei 
-play_62_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
-
-plot71_temperature = 0
-plot72_AESS_T = 0
-plot73_ECS_T = 0
-plot74_GIS_T = 3 # 3=right y axis
-linear_41_75 = 0
-plot76_my_T = 0
-plot_T_77 = 0
-
-The struct/df (22) interfaces plot22_CO2_Mauna_Loa.
-The struct/df (22 ) interfaces the color plot22_CO2_Mauna_Loa.
-
-
-parameter84_save_png = 8
------------------------v = "5b40" #  test old plots
-
-
 
 
  

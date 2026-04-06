@@ -365,14 +365,14 @@ def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
     """Configure the first right y-axis for temperature"""
     ax2 = ax.twinx()
     if print_debug > 9:
-          print(f"plot_ 57: right y axis  mode = {yr_mode}")
-    if yr_mode == 4:  # EEI mode
+          print(f"plot_ 57: right y axis  mode ")
+    if print_debug == 4:  # EEI mode
          if print_debug > 9:
-             print(f"plot_ 61: right y axis mode ={yr_mode}")
+             print(f"plot_ 61: right y axis mode ")
          ax2 = ax.twinx()
-    elif yr_mode == 7:  # temperature
+    elif print_debug == 7:  # temperature
          if print_debug > 9:
-             print(f"plot_ 61: right y axis mode ={yr_mode}")
+             print(f"plot_ 61: right y axis mode ")
          ax2 = ax.twinx()
          ax2.tick_params(axis='y', labelcolor='r')
          ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
@@ -380,9 +380,9 @@ def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
          ax2.yaxis.set_major_locator(MultipleLocator(0.5))
          ax2.yaxis.set_minor_locator(MultipleLocator(0.1))
          ax2.set_ylabel(label, color=color, fontsize=20, labelpad=10)
-    elif yr_mode == 3:  # Gt CO2
+    elif print_debug == 3:  # Gt CO2
          if print_debug > 9:
-             print(f"plot_ 76: right y axis mode ={yr_mode}")
+             print(f"plot_ 76: right y axis mode ")
          ax2 = ax.twinx()
          ax2.tick_params(axis='y', labelcolor='r')
          ax2.tick_params(axis="y", labelcolor=color, labelsize=14)
@@ -393,7 +393,7 @@ def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
          # ax2.set_ylabel(" Gt CO2 plot 83", color=c31, fontsize=20, labelpad=10)
     else:  # Gt CO2
          if print_debug > 19:
-             print(f"plot_260: right y axis mode ={yr_mode}")
+             print(f"plot_260: right y axis mode ")
     return ax2
     # end plot_6_right_y_axe
 
