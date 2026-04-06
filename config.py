@@ -135,8 +135,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-x_anf = -1900
-x_end = 2026
+x_anf = 2010
+x_end = 2030
 
 # constants
 # C280 =275 in Zack Labe plots.

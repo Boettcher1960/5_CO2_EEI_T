@@ -556,7 +556,8 @@ def plot_9_create_all_plots(ax1, data):
     # part 2.5 plot CO2 # plot_9 line 453
     blue25_text="green: CO2 NOAA 800_000 year ice data 25"
     if plot25_long_CO2 > 0: # 25.2 plot
-      df25 = pd.read_csv("read_csv/csv_25_ppm_long.csv") # our world in data file
+      #df25 = pd.read_csv("read_csv/csv_25_ppm_long.csv") # our world in data file
+      df25 = pd.read_csv("read_csv/_25_ppm_long.csv") # our world in data file
       long_co25 = (
          df25[df25["Entity"] == "World"][["Year25", "ppm25"]]
          .query("-10 <= Year25 <= 2026")
