@@ -31,7 +31,7 @@ yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_7
 
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 3 # 22.1 declare global integer variable (2= print in line 2)
+plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
@@ -46,7 +46,7 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 plot34_CO2 = 0
 
 part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
-part42_ceres_eei = 5  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
+part42_ceres_eei = 0  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
 part43_ceres_eei = 0  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 
@@ -58,8 +58,8 @@ plot55_population_on = 0 # 5 word with y axis right
 play_61_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 
-plot71_temperature = 2
-plot72_AESS_T = 0
+plot71_temperature = 0
+plot72_AESS_T = 2
 plot73_ECS_T = 0
 plot74_GIS_T = 4 # 3=right y axis
 linear_41_75 = 0
@@ -141,8 +141,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-x_anf = 1900
-x_end = 2070
+x_anf = 2010
+x_end = 2030
 
 # constants
 # C280 =275 in Zack Labe plots.

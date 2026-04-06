@@ -161,7 +161,7 @@ def plot_1_axe(ax1):
         y_minor_ticks = 100
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-    elif part43_ceres_eei == 2:  # 31.5 y axe left 
+    elif part43_ceres_eei == 2:  # 43.5 y axe left 
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 3))
         ax1.set_ylim(y_Emin, y_Emax)
@@ -171,11 +171,21 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.100
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-    elif plot71_temperature == 2:  # 31.5 y axe left  red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71
+    elif plot71_temperature == 2:  # 71.5 y axe left  red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 3))
         ax1.set_ylim(y_Tmin, y_Tmax)
         ax1.set_ylabel("quadratic Temperatur in °C      71  (plot178)  ", color=c71, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c71, labelsize=20)
+        y_mayor_ticks = 0.500 
+        y_minor_ticks = 0.100
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif plot72_AESS_T == 2:  # 72.5 y axe left  red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71
+        # ax42.spines.right.set_position(("outward", outward_right))
+        ax1.spines.left.set_position(("outward", 3))
+        ax1.set_ylim(y_Tmin, y_Tmax)
+        ax1.set_ylabel(" Temperatur in °C      72  (plot188)  ", color=c71, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c71, labelsize=20)
         y_mayor_ticks = 0.500 
         y_minor_ticks = 0.100
@@ -876,7 +886,7 @@ def plot_9_create_all_plots(ax1, data):
 
 
 
-    if plot71_temperature > 0 and 'gis_temp' in data: # 71.4
+    if plot71_temperature > 0 : # 71.4
         # red71_text="red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"
         red71_text="red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C  71"
         # 7.1 plot71_temperature @reescatophuls.bsky.social
@@ -897,7 +907,37 @@ def plot_9_create_all_plots(ax1, data):
         ax71.set_ylim(y_Tmin, y_Tmax) # scale
         # end 7.1 
 
-    
+    if plot72_AESS_T > 0 : # 71.4
+        # plot72_AESS_T= 4 # apparent Earth system sensitivity (AESS=7.7°C)
+        red72_text="AESS_T Apparent Earth System Sensitivity = 8°C * log2(CO2/C0) 72"
+        # 7.2 plot72_AESS_T # dT=ECS*log2(C/C0) # T560ppm=AESS*log2(560/280) 
+        # AESS=7.7°C  # (Judd 2024)
+        # https://www.science.org/doi/10.1126/science.adk3705) 
+        # 2025
+        # https://www.annualreviews.org/content/journals/10.1146/annurev-earth-032320-064209
+        #
+        def T_model72(t):
+          CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
+          log2_value = np.log2(CO2/C280)
+          AESS=8 # apparent Earth system sensitivity (AESS=7.7°C)
+          temp72=AESS * log2_value
+          return temp72
+        # 7.2.2 years scale x axis
+        years72 = np.arange(x_anf, x_end + 1 )
+        T_72values = T_model72(years72)
+        # 7.2.3. Create DataFrame for convenience
+        df72 = pd.DataFrame({
+               "Year72":      years72,
+               "Modeled72": T_72values })
+        # 7.2.4 plot72_temperature
+        ax72 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+        ax72.plot(df72["Year72"], df72["Modeled72"], '--', label="T formula CO2=  K72", color=c72, linewidth=3)
+        ax72.tick_params(axis="y", labelcolor=c72)
+        ax72.set_ylim(y_Tmin, y_Tmax) # scale
+        # end 7.2 plot72_AESS_T
+
+        
+
 
     # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots() ,   line 750
     # Plot GIS temperature

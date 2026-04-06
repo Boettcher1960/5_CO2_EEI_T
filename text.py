@@ -179,10 +179,15 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Earth Energy Imbalance W/m² moving average 12 month  43", 
                     c43, trs)
-    elif plot71_temperature == 2: # 74.5 legend
+    elif plot71_temperature == 2: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Temperature in °C 0.000618t² - 2.459 t + 2446.0579   71", 
+                    c71, trs)
+    elif plot72_AESS_T == 2: # 72.5 legend
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)
+        text_4_add_text(ax1, tr2x, tr2y, 
+                    "Temperature in °C plot72_AESS_T   72", 
                     c71, trs)
 
 
