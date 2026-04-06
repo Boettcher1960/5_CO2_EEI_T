@@ -434,7 +434,7 @@ def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
     if right22 > 0:
         outward_right = right22
     else:
-        outward_right =  ( plot22_CO2_Mauna_Loa * 60 ) - 170
+        outward_right =  ( plot22_CO2_Mauna_Loa * 60 ) - 150
     if print_debug > 9:
           print(f"plot_425: plot8_right_y_axe_for_ppm_22  22.3 ={plot22_CO2_Mauna_Loa} parameter 2 {outward_right}")
     ax22.spines.right.set_position(("outward", outward_right))
@@ -445,7 +445,7 @@ def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
 # Earth Energy Imbalance W/m² moving average 48 month 
 # plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
 def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
-    outward_right =  ( part42_ceres_eei * 60 ) - 170
+    outward_right =  ( part42_ceres_eei * 60 ) - 150
     ax42.spines.right.set_position(("outward", outward_right))
     #ax42.spines.right.set_position(("outward", 120))
     ax42.set_ylabel("Earth Energy Imbalance  in W/m²     plot436            42", color=c42, fontname="Arial",fontsize=18)
@@ -461,7 +461,7 @@ def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right52): # 52.4
     if right52 > 0:
         outward_right = right52
     else:
-        outward_right =  ( plot52_delta_CO2_red_bars * 60 ) - 170
+        outward_right =  ( plot52_delta_CO2_red_bars * 60 ) - 150
     ax52.spines.right.set_position(("outward", outward_right))
     # ax52.spines.right.set_position(("outward", right55))
     # bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
@@ -487,7 +487,7 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
     if right52 > 0:
         outward_right = right52
     else:
-        outward_right =  ( plot74_GIS_T * 60 ) - 170
+        outward_right =  ( plot74_GIS_T * yr_60 ) - yr_150
     ax74.spines.right.set_position(("outward", outward_right))
     ax74.set_ylabel("Temperature in °C                               74", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)

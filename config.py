@@ -25,8 +25,11 @@ yl_mode = 0  #
 
 # 8.5 configure the right axis legend 
 # Axis mode y axis right
-yr_mode = 0  # (0=no right yaxis) (7 one T °C y axis right mode)
+yr_mode = 1  # (0=no right yaxis) (7 one T °C y axis right mode)
 yr2_mode = 0  # (0=no second right yaxis) 
+yr_60  = 60  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
+yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_74
+
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 3 # 22.1 declare global integer variable (2= print in line 2)
