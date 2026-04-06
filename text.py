@@ -27,7 +27,7 @@ def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
     #text_below = (f"Figure from  "
     #              f"https://github.com/Boettcher1960/5_CO2_EEI_T      "
     #              f" {filename} version {v} ")
-    text_below = (f"https://github.com/Boettcher1960    "
+    text_below = (f"  "
                   f"https://github.com/Boettcher1960/5_CO2_EEI_T"
                   f" {filename} version {v} ")
    

@@ -60,8 +60,8 @@ play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei
 
 plot71_temperature = 0
 plot72_AESS_T = 0
-plot73_ECS_T = 2
-plot74_GIS_T = 3 # 3=right y axis
+plot73_ECS_T = 0
+plot74_GIS_T = 2 # 3=right y axis
 linear_41_75 = 4
 plot76_my_T = 0
 plot_T_77 = 0
@@ -135,12 +135,12 @@ y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
 y_Tmin = 0
-y_Tmax = 8
+y_Tmax = 2
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 1950
-x_end = 2060
+x_anf = 2006
+x_end = 2036
 
 # constants
 # C280 =275 in Zack Labe plots.

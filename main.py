@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c85" # linear_41_75 = 4 Hansen 2015 .41°C linear fit
+v = "5c86" # plot76_my_T   plot74_GIS_T = 2
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 

@@ -196,10 +196,20 @@ def plot_1_axe(ax1):
         # a
         ax1.spines.left.set_position(("outward", 3))
         ax1.set_ylim(y_Tmin, y_Tmax)
-        ax1.set_ylabel(" Temperatur in °C      77  (plot200)  ", color=c73, fontsize=20)
+        ax1.set_ylabel(" Temperatur in °C      73  (plot200)  ", color=c73, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c73, labelsize=20)
         y_mayor_ticks = 1 
         y_minor_ticks = 0.5
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif plot74_GIS_T == 2:  # 74.5 y axe left  red 
+        # a Temperature in °C giss.nasa.gov Hansen+0.3°C 74 
+        ax1.spines.left.set_position(("outward", 3))
+        ax1.set_ylim(y_Tmin, y_Tmax)
+        ax1.set_ylabel(" Temperatur in °C  giss  74  ", color=c74, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c74, labelsize=20)
+        y_mayor_ticks = 0.5 
+        y_minor_ticks = 0.1
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
@@ -552,7 +562,7 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
     else:
         outward_right =  ( plot74_GIS_T * yr_60 ) - yr_150
     ax74.spines.right.set_position(("outward", outward_right))
-    ax74.set_ylabel("Temperature in °C           plot511               74", color=c74, fontname="Arial",fontsize=18)
+    ax74.set_ylabel("Temperature in °C           plot565               74", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
     ax74.set_ylim(y_74min, y_74max) #8
  
@@ -989,13 +999,14 @@ def plot_9_create_all_plots(ax1, data):
 
     # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots() ,   line 750
     # Plot GIS temperature
-    if plot74_GIS_T > 0 and 'gis_temp' in data: # 74.4
+    if plot74_GIS_T > 0 : # 74.4
         ax74 = ax1.twinx()
         ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
                   label="T GIS K74", color=c74, linewidth=5)
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
-        plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 356
+        if plot74_GIS_T > 2:
+            plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 356
 
     # part 75 plot 2015 .41°C linear fit
     # linear_41_75  = 4 # part 75    Hansen 2015 .41°C linear fit
