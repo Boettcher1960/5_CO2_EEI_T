@@ -58,7 +58,7 @@ plot55_population_on = 0 # 5 word with y axis right
 play_61_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 
-plot71_temperature = 0
+plot71_temperature = 4
 plot72_AESS_T = 2
 plot73_ECS_T = 0
 plot74_GIS_T = 3 # 3=right y axis
@@ -118,15 +118,8 @@ y_max = 430 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
 
 y_25min = 250 # nok   only for y axis 
 y_25max = 430 # only for y axis
-
-y_Tmin = 0
-y_Tmax = 8
-y_74min = 0
-y_74max = 2
-
 y_Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
 y_Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
-
 y_31Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
 y_31Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
 
@@ -140,6 +133,11 @@ y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
+
+y_Tmin = 0
+y_Tmax = 8
+y_74min = y_Tmin # for GIS Temperature only 
+y_74max = y_Tmax # for GIS Temperature only 
 
 x_anf = 1950
 x_end = 2060

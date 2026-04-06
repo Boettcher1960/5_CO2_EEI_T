@@ -10,6 +10,7 @@
 # plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 # plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
+# plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
 # plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
 # plot_9_create_all_plots(ax1, data): line 400 600
 # plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,  line 447
@@ -520,6 +521,19 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     # ax55.set_ylim(4, 9)
     #end plot8_160_right_y_axe_55  
 
+
+# plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
+def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
+    # ax74.spines.right.set_position(("outward", rightv))
+    if right52 > 0:
+        outward_right = right52
+    else:
+        outward_right =  ( plot71_temperature * yr_60 ) - yr_150
+    ax71.spines.right.set_position(("outward", outward_right))
+    ax71.set_ylabel("Temperature in °C           plot532               71", color=c71, fontname="Arial",fontsize=18)
+    ax71.tick_params(axis="y", labelcolor=c71)
+    ax71.set_ylim(y_Tmin, y_Tmax) #8
+
 # plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
 def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6 
     # ax74.spines.right.set_position(("outward", rightv))
@@ -905,6 +919,8 @@ def plot_9_create_all_plots(ax1, data):
         ax71.plot(df7["Year71"], df7["Modeled71"], '--', label="T formula CO2=  K6", color=c71, linewidth=3)
         ax71.tick_params(axis="y", labelcolor=c71)
         ax71.set_ylim(y_Tmin, y_Tmax) # scale
+        # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
+        plot8_right_y_axe_for_T_71(ax71,0) # 71.5 line 35
         # end 7.1 
 
     if plot72_AESS_T > 0 : # 72.4
