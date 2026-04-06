@@ -24,14 +24,6 @@ v = "5c91" # plot76_my_T
 # 8.7 print the right y axis
 # 8.8 print the x axis 
 # 8.9 print the horizontal lines year 2026
-
-# yl_mode = 2 ppm CO2 y axis left mode
-# yl_mode = 3 Gt CO2 y axis left mode
-# yl_mode = 4 EEI in W/m2 y axis left mode
-# yl_mode = 5 delta ppm CO2 y axis left mode
-#           6   in W/m2 y axis left mode
-# yl_mode = 7 Temperature in °C y axis left mode
-
 # part 9 print line 1 to 5 below the figure 
 
 import matplotlib.pyplot as plt

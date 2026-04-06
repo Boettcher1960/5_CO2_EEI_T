@@ -245,14 +245,14 @@ def plot_1_axe(ax1):
 
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax, 
-                   y_Tmin, y_Tmax, yl_mode, c22, c42, c74):
+                   y_Tmin, y_Tmax, print_debug, c22, c42, c74):
     """Configure the axes based on selected mode"""
     plt.xlim(x_anf, x_end)
     ax1.grid(True)
     
     # 8.5 configure the left y axis legend 
-    if yl_mode == 4:  # EEI mode
-        c4l = "blue" # color of left yaxis for yl_mode == 4 EEI mode
+    if print_debug == 4:  # EEI mode
+        c4l = "blue" # color of left yaxis for print_debug == 4 EEI mode
         ax1.set_ylim(y_Emin, y_Emax)
         ax1.set_ylabel("Earth Energy Imbalance in W/m²", color=color_left, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=color_left, labelsize=20)
@@ -272,8 +272,8 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
             y_Eminor_ticks = 20
         ax1.yaxis.set_major_locator(MultipleLocator(y_Emayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Eminor_ticks))
-    # yl_mode = 6 # TOA energy in W/m2 y axis left mode
-    elif yl_mode == 6:  # TOA energy in W/m2 y axis left mode
+    # print_debug = 6 # TOA energy in W/m2 y axis left mode
+    elif print_debug == 6:  # TOA energy in W/m2 y axis left mode
         c6l = "green" # color of left yaxis for TOA energy in W/m2 y axis left mode
         #y_TOAmin = 99.15   # bug the global config.py line 101 does not work
         #y_TOAmax = 99.3  # bug the global config.py line 102 does not work
@@ -307,7 +307,7 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
             y_TEminor_ticks = 20
         ax1.yaxis.set_major_locator(MultipleLocator(y_TEmayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_TEminor_ticks))
-    elif yl_mode == 7:  # Temperature mode
+    elif print_debug == 7:  # Temperature mode
         ax1.set_ylim(y_Tmin, y_Tmax)
         ax1.set_ylabel("Temperature in °C", color=c74, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c74, labelsize=20)
@@ -317,7 +317,7 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
         y_Tminor_ticks = 0.1
         ax1.yaxis.set_major_locator(MultipleLocator(y_Tmayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Tminor_ticks))
-    elif yl_mode == 3:  #  Gt CO2 y axis left mode
+    elif print_debug == 3:  #  Gt CO2 y axis left mode
         ax1.set_ylim(y_Gmin, y_Gmax)
         ax1.set_ylabel("cummulative CO₂ emissions in Gt  plot 218", color=c22, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c22, labelsize=20)
@@ -334,7 +334,7 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
             y_Gminor_ticks = 200
         ax1.yaxis.set_major_locator(MultipleLocator(y_Gmayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_Gminor_ticks))
-    elif yl_mode == 2:  # CO2 mode (default)
+    elif print_debug == 2:  # CO2 mode (default)
         ax1.set_ylim(y_min, y_max)
         ax1.set_ylabel("Mauna Loa CO₂ in ppm  (plot233) ", color=c21, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c21, labelsize=20)

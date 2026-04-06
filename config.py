@@ -10,17 +10,7 @@
 # line 6 is developv part61_EEI 
 
 # 8.3 print the left y axis 
-# Axis mode y axis left
-yl_mode = 0  #
 # line 2 defines the left Y axis. example
-# yl_mode = 1 GtC y axis left mode
-# yl_mode = 2 ppm CO2 y axis left mode
-# yl_mode = 3 1850 Gt CO2 y axis left mode
-# yl_mode = 4 EEI in W/m2 y axis left mode
-# yl_mode = 5 delta ppm CO2 y axis left mode
-# yl_ mode = 6 # TOA energy in W/m2 y axis left mode
-# yl_ mode = 7 Temperature in °C y axis left mode
-
 
 # 8.5 configure the right axis legend 
 yr_60  = 60  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
@@ -34,7 +24,7 @@ plot25_long_CO2 = 0      # 25.1
 
 plot31_CO2_emission =    0   # 31.1 CO2_emission Carbon Brief
 
-plot34_CO2_emission =    0   # 34.1 row 4 # yl_mode = 4
+plot34_CO2_emission =    0   # 34.1 row 4 
 plot34_CO2_emission_mode = 0 # 34.1 mode 
 # plot31__CO2_emission mode 1
 # plot32__CO2_emission mode 2
@@ -110,19 +100,19 @@ my76_text = "guessed quadratic temperature my_T 76"
 
 
 # Axis ranges
-y_min = 350 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
-y_max = 430 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
+y_min = 350 # 250 ppm CO2 
+y_max = 430 # 500 ppm CO2  
 
 y_25min = 250 # nok   only for y axis 
 y_25max = 430 # only for y axis
-y_Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
-y_Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
-y_31Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
-y_31Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
+y_Gmin = 0 # 250 ppm CO2 
+y_Gmax = 2000 # 2500 Gt CO2  
+y_31Gmin = 0 # 250 ppm CO2  
+y_31Gmax = 2000 # 2500 Gt CO2  
 
 
-y_Emin = 0 # yl_mode = 4  EEI in W/m2 y axis left mode
-y_Emax = 2 # yl_mode = 4  EEI in W/m2 y axis left mode
+y_Emin = 0 #   EEI in W/m2 y axis left mode
+y_Emax = 2 #   EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
 

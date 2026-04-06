@@ -127,7 +127,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     filename = os.path.basename(sys.argv[0])
     
     # Add header
-    text_2_print_head_line(ax1, x_anf, x_end, yl_mode)
+    text_2_print_head_line(ax1, x_anf, x_end, 8)
     
     # Add bottom text
     text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y)
