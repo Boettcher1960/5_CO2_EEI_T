@@ -30,8 +30,8 @@ yr2_mode = 55  # (0=no second right yaxis)
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 3 # 22.1 declare global integer variable (2= print in line 2)
-plot23_Glen_CO2 = 2      # 23.1 declare global integer variable (4= print in line 4)
-plot25_long_CO2 = 0      # 25.1 
+plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
+plot25_long_CO2 = 2      # 25.1 
 
 plot31_CO2_emission =    0   # 31.1 CO2_emission Carbon Brief
 
@@ -111,13 +111,16 @@ my76_text = "guessed quadratic temperature my_T 76"
 
 
 # Axis ranges
-y_min = 350 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
+y_min = 250 # 250 ppm CO2  yl_mode == 2:  # CO2 mode
 y_max = 430 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
+
+y_25min = 250 # nok   only for y axis 
+y_25max = 430 # only for y axis
+
 y_Tmin = 0.4
 y_Tmax = 1.8
 y_74min = 0.4
 y_74max = 1.6
-
 
 y_Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
 y_Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
@@ -132,7 +135,7 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-x_anf = 2006
+x_anf = -1900
 x_end = 2026
 
 # constants

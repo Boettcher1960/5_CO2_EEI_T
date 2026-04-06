@@ -141,6 +141,19 @@ def plot_1_axe(ax1):
         y_minor_ticks = 10
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif plot25_long_CO2 == 2:  # 23.5 y axe left 
+        # ax42.spines.right.set_position(("outward", outward_right))
+        ax1.spines.left.set_position(("outward", 3))
+        ax1.set_ylim(y_min, y_max)
+        ax1.set_ylabel(" CO₂ in ppm  (plot149) ", color=c25, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c25, labelsize=20)
+        y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
+        y_minor_ticks = 10
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+
+
+
     else:    
         ax1.set_ylim(y_min, y_max)
         ax1.set_ylabel(" else generic y axe CO₂ in ppm  (plot146) ", color=c22, fontsize=20)
