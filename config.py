@@ -119,8 +119,8 @@ y_max = 430 # 500 ppm CO2  yl_mode == 2:  # CO2 mode
 y_25min = 250 # nok   only for y axis 
 y_25max = 430 # only for y axis
 
-y_Tmin = 0.4
-y_Tmax = 1.8
+y_Tmin = 0
+y_Tmax = 4
 y_74min = 0.4
 y_74max = 1.6
 
@@ -141,8 +141,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-x_anf = 2006
-x_end = 2026
+x_anf = 1900
+x_end = 2070
 
 # constants
 # C280 =275 in Zack Labe plots.

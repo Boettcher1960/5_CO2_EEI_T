@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c78" # y_31Gmax = 2000 # 2500 Gt CO2 
+v = "5c79" # y_31Gmax = 2000 # 2500 Gt CO2 
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
