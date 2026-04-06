@@ -339,7 +339,6 @@ def plot_7_right_y_axe_remove(axes):
     # main_484: Axis 0: yaxis side = left, label = 'Earth Energy Imbalance in W/m²'
     # main_484: Axis 1: yaxis side = right, label = 'Temperature in °C '
     # main_484: Axis 2: yaxis side = right, label = ''
-    # axes = plt.gcf().get_axes()   yr2_mode = 55
     # Keep axes 0, 1, 2, hide all others
     if yr_60 == 0:
        print("plot_344: print no right y axes in figure")
@@ -349,7 +348,7 @@ def plot_7_right_y_axe_remove(axes):
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
         # return
-    elif yr2_mode == 55:
+    elif yr_60 == 55:
        print("plot_408: print one right y axes in figure")
        i2 = len(axes)
        #i=3
@@ -366,7 +365,7 @@ def plot_7_right_y_axe_remove(axes):
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)
        axes[i].set_ylabel('') # Remove any label
-    elif yr_mode == 13:
+    elif yr_60 == 13:
        print("plot_309: print one right y axes in figure")
        i2 = len(axes)
        #i=3
@@ -388,14 +387,14 @@ def plot_7_right_y_axe_remove(axes):
 
 
 
-    elif yr_mode == 7:
+    elif yr_60 == 7:
        print("plot_306: print one right y axes in figure")
        for i in range(2, len(axes)): # remove Axis 3, 4
            axes[i].yaxis.set_ticks([])  # Remove tick numbers
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
-    elif yr_mode == 3:
+    elif yr_60 == 3:
        print("plot_314: print one right y axes in figure")
        i = len(axes) -1
        print("plot_316: remove  len(axes) -1  ", i, len(axes))

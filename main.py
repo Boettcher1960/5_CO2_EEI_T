@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c70" # yr_60  = 0  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
+v = "5c72" # yr_60  = 0  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
@@ -335,8 +335,8 @@ def save_png(fig, header_parameter):
 def main():
     """Main execution function"""
     # Create header parameter string
-    header_parameter = (f"{yl_mode}{yr_mode}{yr2_mode}"
-                       f" 2({plot22_CO2_Mauna_Loa}{plot23_Glen_CO2}{plot25_long_CO2}" 
+    header_parameter = (f" "
+                       f"2({plot22_CO2_Mauna_Loa}{plot23_Glen_CO2}{plot25_long_CO2}" 
                        f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({part41_ceres_eei}{part42_ceres_eei}"
                        f"{part43_ceres_eei}{part44_ceres_eei} 5({plot52_delta_CO2_red_bars}"
                        f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on}"
