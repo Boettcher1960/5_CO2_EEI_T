@@ -12,7 +12,7 @@
 
 # 8.3 print the left y axis 
 # Axis mode y axis left
-yl_mode = 2  #
+yl_mode = 0  #
 # line 2 defines the left Y axis. example
 # yl_mode = 1 GtC y axis left mode
 # yl_mode = 2 ppm CO2 y axis left mode
@@ -25,8 +25,8 @@ yl_mode = 2  #
 
 # 8.5 configure the right axis legend 
 # Axis mode y axis right
-yr_mode = 2  # (0=no right yaxis) (7 one T °C y axis right mode)
-yr2_mode = 55  # (0=no second right yaxis) 
+yr_mode = 0  # (0=no right yaxis) (7 one T °C y axis right mode)
+yr2_mode = 0  # (0=no second right yaxis) 
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 3 # 22.1 declare global integer variable (2= print in line 2)
