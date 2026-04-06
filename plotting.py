@@ -132,6 +132,8 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot23_Glen_CO2 == 2:  # 23.5 y axe left 
+        # ax42.spines.right.set_position(("outward", outward_right))
+        ax1.spines.left.set_position(("outward", 10))
         ax1.set_ylim(y_min, y_max)
         ax1.set_ylabel(" CO₂ in ppm  (plot137) ", color=c22, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c23, labelsize=20)
@@ -433,7 +435,7 @@ def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
     outward_right =  ( part42_ceres_eei * 60 ) - 170
     ax42.spines.right.set_position(("outward", outward_right))
     #ax42.spines.right.set_position(("outward", 120))
-    ax42.set_ylabel("Earth Energy Imbalance  in W/m²                      42", color=c42, fontname="Arial",fontsize=18)
+    ax42.set_ylabel("Earth Energy Imbalance  in W/m²     plot436            42", color=c42, fontname="Arial",fontsize=18)
     ax42.tick_params(axis="y", labelcolor=c42)
     ax42.set_ylim(y_Emin, y_Emax) #
 
