@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c72" # yr_60  = 0  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
+v = "5c73" # yr_60  = 0  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
@@ -358,19 +358,12 @@ def main():
     #                     y_Tmin, y_Tmax, yl_mode, c31, c42, c74)
     # plot_1_axe line 119
     ax1 = plot_1_axe(ax1)
-
-
-    print("main_345: plot_5_left_y_axe",yr_mode, " color c31")
     
     # 8.7 print the right y axis
-    if yr_mode == 7:
-       print("main_352: right Y axis  mode = ", yr_mode ," .")
-    else:   
-       # (0=no yaxis) (7 one T °C y axis right mode)
-       label  ="Temperature in °C 355"
-       axT = plot_6_right_y_axe(ax1, y_Tmin, y_Tmax, c74, label)
-       print("main_357: right Y axis  mode =", yr_mode ," .")
- 
+    print("main_363: right Y axis  .")
+    label  ="  main_364  "
+    axT = plot_6_right_y_axe(ax1, y_Tmin, y_Tmax, c74, label)
+    
     # call plotting.py line 200 to line 500
     plot_9_create_all_plots(ax1, data)
     
