@@ -449,7 +449,7 @@ def plot_7_right_y_axe_remove(axes):
 # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  415
 def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
     if print_debug > 9:
-          print(f"plot_418: plot8_right_y_axe_for_ppm_22  22.3 ={plot22_CO2_Mauna_Loa} parameter 2 {right22}")
+          print(f"plot_452: plot8_right_y_axe_for_ppm_22  22.3 ={plot22_CO2_Mauna_Loa} parameter 2 {right22}")
     if right22 > 0:
         outward_right = right22
     else:
@@ -457,7 +457,7 @@ def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
     if print_debug > 9:
           print(f"plot_425: plot8_right_y_axe_for_ppm_22  22.3 ={plot22_CO2_Mauna_Loa} parameter 2 {outward_right}")
     ax22.spines.right.set_position(("outward", outward_right))
-    ax22.set_ylabel("CO2_Mauna_Loa in ppm                              74", color=c22, fontname="Arial",fontsize=16)
+    ax22.set_ylabel("CO2_Mauna_Loa in ppm             plot460                  22", color=c22, fontname="Arial",fontsize=16)
     ax22.tick_params(axis="y", labelcolor=c22)
     ax22.set_ylim(y_min, y_max) #8
 
@@ -467,7 +467,7 @@ def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
     outward_right =  ( part42_ceres_eei *  yr_60 ) - yr_150
     ax42.spines.right.set_position(("outward", outward_right))
     #ax42.spines.right.set_position(("outward", 120))
-    ax42.set_ylabel("Earth Energy Imbalance  in W/m²     plot436            42", color=c42, fontname="Arial",fontsize=18)
+    ax42.set_ylabel("Earth Energy Imbalance  in W/m²     plot470            42", color=c42, fontname="Arial",fontsize=18)
     ax42.tick_params(axis="y", labelcolor=c42)
     ax42.set_ylim(y_Emin, y_Emax) #
 
@@ -485,7 +485,7 @@ def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right52): # 52.4
     # ax52.spines.right.set_position(("outward", right55))
     # bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
     ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.6, alpha=0.01, color=c52)
-    ax52.set_ylabel("green bars: CO2 increase in ppm         ", color=c52, fontname="Arial",fontsize=18) # fontweight="bold"
+    ax52.set_ylabel("green bars: CO2 increase in ppm   p488      ", color=c52, fontname="Arial",fontsize=18) # fontweight="bold"
     ax52.tick_params(axis="y", labelcolor=c52, labelsize=12)
     ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
     # end plot8_right_y_axe_for_delta_ppm_increase_52
@@ -508,7 +508,7 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
     else:
         outward_right =  ( plot74_GIS_T * yr_60 ) - yr_150
     ax74.spines.right.set_position(("outward", outward_right))
-    ax74.set_ylabel("Temperature in °C                               74", color=c74, fontname="Arial",fontsize=18)
+    ax74.set_ylabel("Temperature in °C           plot511               74", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
     ax74.set_ylim(y_74min, y_74max) #8
  
