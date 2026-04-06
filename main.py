@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c88" # plot76_my_T   
+v = "5c90" # plot76_my_T   
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
@@ -183,52 +183,6 @@ if play_62_CERES > 1: # part 6
 
 
 
-
-
-
-def create_temperature_plots(ax1):
-    """Create temperature plots based on configuration"""
-    temp_axes = {}
-    
-    if plot71_temperature > 0:
-        years = np.arange(x_anf, x_end + 1)
-        values = T_model71(years)
-        ax = ax1.twinx()
-        ax.plot(years, values, '--', color=c71, linewidth=3)
-        temp_axes['71'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c71, 
-                                                   "Δ Temperature in °C 71")
-    
-    if plot72_AESS_T > 0:
-        years = np.arange(x_anf, x_end + 1)
-        values = T_model72(years)
-        ax = ax1.twinx()
-        ax.plot(years, values, '--', color=c72, linewidth=3)
-        temp_axes['72'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c72, 
-                                                   "Δ Temperature calc72 in °C")
-    
-    if plot73_ECS_T > 0:
-        years = np.arange(x_anf, x_end + 1)
-        values = T_model73(years)
-        ax = ax1.twinx()
-        ax.plot(years, values, '--', color=c73, linewidth=3)
-        temp_axes['73'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c73, 
-                                                   "Δ Temperature in °C (ECS = 4.5°C)")
-    
-    if plot74_GIS_T > 0: # 74.2
-        df = pd.read_csv("read_csv/_74_gis_temperature.csv")
-        ax = ax1.twinx()
-        ax.plot(df["Year74"], df["GIS_temp"] + 0.3, '-', color=c74, linewidth=3)
-        temp_axes['74'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c74, 
-                                                   "Δ GIS Temperature in °C 74")
-    
-    if linear_41_75 > 0: # 75.2
-        df = pd.read_csv("read_csv/_75_hansen_41C.csv")
-        ax = ax1.twinx()
-        ax.plot(df["Year75"], df["temp"] + 0.1, '--', color=c75, linewidth=2)
-        temp_axes['75'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c75, 
-                                                   "Hansen linear fit 75")
-    
-    return temp_axes
 
 
 def hide_other_right_axes(ax1, keep_axis):

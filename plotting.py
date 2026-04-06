@@ -572,7 +572,7 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
     else:
         outward_right =  ( plot74_GIS_T * yr_60 ) - yr_150
     ax74.spines.right.set_position(("outward", outward_right))
-    ax74.set_ylabel("Temperature in °C           plot565               74", color=c74, fontname="Arial",fontsize=18)
+    ax74.set_ylabel("Temperature in °C        plot575          74", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
     ax74.set_ylim(y_74min, y_74max) #8
  
