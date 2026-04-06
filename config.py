@@ -47,7 +47,7 @@ plot34_CO2 = 0
 
 part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
 part42_ceres_eei = 5  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
-part43_ceres_eei = 2  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
+part43_ceres_eei = 0  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
@@ -58,7 +58,7 @@ plot55_population_on = 0 # 5 word with y axis right
 play_61_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 
-plot71_temperature = 0
+plot71_temperature = 2
 plot72_AESS_T = 0
 plot73_ECS_T = 0
 plot74_GIS_T = 4 # 3=right y axis

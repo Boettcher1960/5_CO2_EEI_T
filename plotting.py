@@ -171,6 +171,16 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.100
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif plot71_temperature == 2:  # 31.5 y axe left  red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71
+        # ax42.spines.right.set_position(("outward", outward_right))
+        ax1.spines.left.set_position(("outward", 3))
+        ax1.set_ylim(y_Tmin, y_Tmax)
+        ax1.set_ylabel("quadratic Temperatur in °C      71  (plot178)  ", color=c71, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c71, labelsize=20)
+        y_mayor_ticks = 0.500 
+        y_minor_ticks = 0.100
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
 
 
@@ -866,9 +876,28 @@ def plot_9_create_all_plots(ax1, data):
 
 
 
+    if plot71_temperature > 0 and 'gis_temp' in data: # 71.4
+        # red71_text="red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"
+        red71_text="red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C  71"
+        # 7.1 plot71_temperature @reescatophuls.bsky.social
+        # https://parisagreementtemperatureindex.com/gwfs-2-quadratic/
+        # (0.000617965091650558 * date*date) – (2.45858656778789*date) + 2446.05792853123
+        def T_model71(t):
+            return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+        # 7.1.2 years scale x axis
+        years71 = np.arange(x_anf, x_end + 1 )
+        T_71values = T_model71(years71)
+        # 7.1.3. Create DataFrame for convenience
+        df7 = pd.DataFrame({
+              "Year71": years71,
+              "Modeled71": T_71values })
+        ax71 = ax1.twinx()
+        ax71.plot(df7["Year71"], df7["Modeled71"], '--', label="T formula CO2=  K6", color=c71, linewidth=3)
+        ax71.tick_params(axis="y", labelcolor=c71)
+        ax71.set_ylim(y_Tmin, y_Tmax) # scale
+        # end 7.1 
 
-
-
+    
 
     # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots() ,   line 750
     # Plot GIS temperature
