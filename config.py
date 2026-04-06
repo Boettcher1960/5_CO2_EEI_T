@@ -61,7 +61,7 @@ play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei
 plot71_temperature = 0
 plot72_AESS_T = 2
 plot73_ECS_T = 0
-plot74_GIS_T = 4 # 3=right y axis
+plot74_GIS_T = 3 # 3=right y axis
 linear_41_75 = 0
 plot76_my_T = 0
 plot_T_77 = 0
@@ -85,7 +85,7 @@ c61 = "#0D91A090"
 c62 = "#9522AA90"
 
 c71 = "red"
-c72 = "red"
+c72 =  "#BD316990"
 c73 = "red"
 c74 = "red"
 c75 = "#371EA484"
@@ -120,9 +120,9 @@ y_25min = 250 # nok   only for y axis
 y_25max = 430 # only for y axis
 
 y_Tmin = 0
-y_Tmax = 4
-y_74min = 0.4
-y_74max = 1.6
+y_Tmax = 8
+y_74min = 0
+y_74max = 2
 
 y_Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
 y_Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
@@ -141,8 +141,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-x_anf = 2010
-x_end = 2030
+x_anf = 1950
+x_end = 2060
 
 # constants
 # C280 =275 in Zack Labe plots.

@@ -185,10 +185,10 @@ def plot_1_axe(ax1):
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 3))
         ax1.set_ylim(y_Tmin, y_Tmax)
-        ax1.set_ylabel(" Temperatur in °C      72  (plot188)  ", color=c71, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=c71, labelsize=20)
-        y_mayor_ticks = 0.500 
-        y_minor_ticks = 0.100
+        ax1.set_ylabel(" Temperatur in °C      72  (plot188)  ", color=c72, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c72, labelsize=20)
+        y_mayor_ticks = 1 
+        y_minor_ticks = 0.5
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
@@ -907,7 +907,7 @@ def plot_9_create_all_plots(ax1, data):
         ax71.set_ylim(y_Tmin, y_Tmax) # scale
         # end 7.1 
 
-    if plot72_AESS_T > 0 : # 71.4
+    if plot72_AESS_T > 0 : # 72.4
         # plot72_AESS_T= 4 # apparent Earth system sensitivity (AESS=7.7°C)
         red72_text="AESS_T Apparent Earth System Sensitivity = 8°C * log2(CO2/C0) 72"
         # 7.2 plot72_AESS_T # dT=ECS*log2(C/C0) # T560ppm=AESS*log2(560/280) 
