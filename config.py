@@ -1,9 +1,8 @@
 # config.py 
-# version 5c40
+# version 5c80
 # Configuration parameters for the climate analysis tool
 
 # part61_EEI # like part41_ceres_eei make EEI 120 month csv
-# 
 # line 2 defines the left Y axis. example
 # line 3 defines the right Y axis with 10 pixel to the right of plot area
 # line 4 defines the right Y axis with 70 pixel to the right of plot area
@@ -34,9 +33,9 @@ yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_7
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 3 # 22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
-plot25_long_CO2 = 2      # 25.1 
+plot25_long_CO2 = 0      # 25.1 
 
-plot31_CO2_emission =    0   # 31.1 CO2_emission Carbon Brief
+plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 
 plot34_CO2_emission =    0   # 34.1 row 4 # yl_mode = 4
 plot34_CO2_emission_mode = 0 # 34.1 mode 
@@ -127,6 +126,10 @@ y_74max = 1.6
 
 y_Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
 y_Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
+
+y_31Gmin = 0 # 250 ppm CO2  yl_mode == 3:  # CO2 mode
+y_31Gmax = 2000 # 2500 Gt CO2  yl_mode == 3:  # CO2 mode
+
 
 y_Emin = 0.4 # yl_mode = 4  EEI in W/m2 y axis left mode
 y_Emax = 1.6 # yl_mode = 4  EEI in W/m2 y axis left mode

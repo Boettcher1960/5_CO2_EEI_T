@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c73" # yr_60  = 0  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
+v = "5c74" # y_31Gmax = 2000 # 2500 Gt CO2 
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
