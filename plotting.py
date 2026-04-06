@@ -341,8 +341,8 @@ def plot_7_right_y_axe_remove(axes):
     # main_484: Axis 2: yaxis side = right, label = ''
     # axes = plt.gcf().get_axes()   yr2_mode = 55
     # Keep axes 0, 1, 2, hide all others
-    if yr_mode == 0:
-       print("plot_102: print no right y axes in figure")
+    if yr_60 == 0:
+       print("plot_344: print no right y axes in figure")
        for i in range(1, len(axes)): # remove Axis 3, 4
            axes[i].yaxis.set_ticks([])  # Remove tick numbers
            axes[i].set_yticklabels([])  # Remove tick labels
@@ -434,7 +434,7 @@ def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
     if right22 > 0:
         outward_right = right22
     else:
-        outward_right =  ( plot22_CO2_Mauna_Loa * 60 ) - 150
+        outward_right =  ( plot22_CO2_Mauna_Loa * yr_60 ) - yr_150
     if print_debug > 9:
           print(f"plot_425: plot8_right_y_axe_for_ppm_22  22.3 ={plot22_CO2_Mauna_Loa} parameter 2 {outward_right}")
     ax22.spines.right.set_position(("outward", outward_right))
@@ -445,7 +445,7 @@ def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
 # Earth Energy Imbalance W/m² moving average 48 month 
 # plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
 def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
-    outward_right =  ( part42_ceres_eei * 60 ) - 150
+    outward_right =  ( part42_ceres_eei *  yr_60 ) - yr_150
     ax42.spines.right.set_position(("outward", outward_right))
     #ax42.spines.right.set_position(("outward", 120))
     ax42.set_ylabel("Earth Energy Imbalance  in W/m²     plot436            42", color=c42, fontname="Arial",fontsize=18)
@@ -461,7 +461,7 @@ def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right52): # 52.4
     if right52 > 0:
         outward_right = right52
     else:
-        outward_right =  ( plot52_delta_CO2_red_bars * 60 ) - 150
+        outward_right =  ( plot52_delta_CO2_red_bars * yr_60 ) - yr_150
     ax52.spines.right.set_position(("outward", outward_right))
     # ax52.spines.right.set_position(("outward", right55))
     # bars = ax52.bar(df52["x_52_years"], df52["Delta_CO2"], width=0.7, alpha=0.5, color="red")
