@@ -59,10 +59,10 @@ play_61_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 
 plot71_temperature = 4
-plot72_AESS_T = 2
-plot73_ECS_T = 0
+plot72_AESS_T = 0
+plot73_ECS_T = 2
 plot74_GIS_T = 3 # 3=right y axis
-linear_41_75 = 0
+linear_41_75 = 3
 plot76_my_T = 0
 plot_T_77 = 0
 parameter84_save_png = 8
@@ -86,7 +86,7 @@ c62 = "#9522AA90"
 
 c71 = "red"
 c72 =  "#BD316990"
-c73 = "red"
+c73 =  "#13DF2F84"
 c74 = "red"
 c75 = "#371EA484"
 c76 = "red"

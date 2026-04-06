@@ -192,6 +192,16 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.5
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif plot73_ECS_T == 2:  # 73.5 y axe left  red 
+        # a
+        ax1.spines.left.set_position(("outward", 3))
+        ax1.set_ylim(y_Tmin, y_Tmax)
+        ax1.set_ylabel(" Temperatur in °C      77  (plot200)  ", color=c73, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c73, labelsize=20)
+        y_mayor_ticks = 1 
+        y_minor_ticks = 0.5
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
 
 
@@ -952,7 +962,33 @@ def plot_9_create_all_plots(ax1, data):
         ax72.set_ylim(y_Tmin, y_Tmax) # scale
         # end 7.2 plot72_AESS_T
 
-        
+
+    if plot73_ECS_T > 0 : # 73.4
+        # plot73_ECS_T Earth Climate sensitivity 
+        # 7.3  dT=ECS*log2(C/C0) # T560ppm=ECS*log2(560/280) 
+        def T_model73(t):
+           CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
+           log2_value = np.log2(CO2/C280)
+           ECS = 4.5
+           temp73 = ECS * log2_value
+           return temp73
+        # 7.3.2 years scale x axis
+        years73 = np.arange(x_anf, x_end + 1 )
+        T_73values = T_model73(years73)
+        # 7.3.4. Create DataFrame for convenience
+        df73 = pd.DataFrame({
+               "Year73": years73,
+               "Modeled73": T_73values })
+        # 7.3.6 plot_ax73_temperature
+        ax73 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+        ax73.plot(df73["Year73"], df73["Modeled73"], '--', label="T formula CO2=  K73", color=c73, linewidth=3)
+        ax73.tick_params(axis="y", labelcolor=c73)
+        ax73.set_ylim(y_Tmin, y_Tmax) # scale
+        # end 7.3
+        # plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 356
+
+
+
 
 
     # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots() ,   line 750
