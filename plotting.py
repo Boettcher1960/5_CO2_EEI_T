@@ -161,6 +161,16 @@ def plot_1_axe(ax1):
         y_minor_ticks = 100
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif part43_ceres_eei == 2:  # 31.5 y axe left 
+        # ax42.spines.right.set_position(("outward", outward_right))
+        ax1.spines.left.set_position(("outward", 3))
+        ax1.set_ylim(y_Emin, y_Emax)
+        ax1.set_ylabel("Earth energy Imbalance EEI in W (plot168)  ", color=c43, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c43, labelsize=20)
+        y_mayor_ticks = 0.500 
+        y_minor_ticks = 0.100
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
 
 
