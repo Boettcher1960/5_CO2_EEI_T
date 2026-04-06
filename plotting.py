@@ -1033,6 +1033,51 @@ def plot_9_create_all_plots(ax1, data):
        ax75.set_ylim(y_Tmin, y_Tmax) # scale
        # end 7.5
 
+    # plot76_my_T
+    my76_text="guessed quadratic temperature  my_T   76 "
+    # 7.6.1 0.3999999999999999   1950
+    # 1.10686   2013
+    # 1.46726   2023
+    # 1.58864   2026
+    # 1.6729600000000002   2028
+    def T_model76(t): # my best try
+        x = t - 2000
+        return 0.00034 * x**2 + 0.0238 * x + 0.74
+
+    def T_model77(t):
+        # https://chat.deepseek.com/a/chat/s/d9a11bdb-f2ce-4c34-b14e-492b673e0a4e
+        # Define the three points
+        #t1, y1 = 1980, 0.5  # 
+        t1, y1 = 1950, 0.2 
+        t2, y2 = 2013, 1.0
+        t3, y3 = 2023, 1.5
+        # Lagrange interpolation
+        term1 = y1 * ((t - t2) * (t - t3)) / ((t1 - t2) * (t1 - t3))
+        term2 = y2 * ((t - t1) * (t - t3)) / ((t2 - t1) * (t2 - t3))
+        term3 = y3 * ((t - t1) * (t - t2)) / ((t3 - t1) * (t3 - t2))
+        return term1 + term2 + term3
+
+    if plot76_my_T > 0:
+       # 7.6.2 years scale x axis
+       years76 = np.arange(x_anf, x_end + 1 )
+       T_76values = T_model76(years76)
+       #print(T_76values)
+       # 7.6.3. Create DataFrame for convenience
+       df76 = pd.DataFrame({
+             "Year76":      years76,
+             "Modeled76": T_76values })
+       # 7.6.4 plot76_temperature
+       # print(df76.head(2))
+       #print(T_model76(1950) ,"  1950")  # 0.2
+       #print(T_model76(2013) ,"  2013")  # 1.0
+       #print(T_model76(2023) ,"  2023")
+       #print(T_model76(2026) ,"  2026")  # 1.5
+       #print(T_model76(2028) ,"  2028")  # 1.5
+       ax76 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+       ax76.plot(df76["Year76"], df76["Modeled76"], '--', label="T formula CO2=  K76", color=c76, linewidth=3)
+       ax76.tick_params(axis="y", labelcolor=c76)
+       ax76.set_ylim(y_Tmin, y_Tmax) # scale
+       # end 7.6 plot76_my_T
 
 
 

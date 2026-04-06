@@ -89,7 +89,7 @@ c72 =  "#BD316990"
 c73 =  "#13DF2F84"
 c74 = "red"
 c75 = "#371EA484"
-c76 = "#8718AC90"
+c76 = "#13DF2F84"
 
 
 # Text definitions (added missing print texts)

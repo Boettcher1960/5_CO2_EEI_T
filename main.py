@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c87" # plot76_my_T   
+v = "5c88" # plot76_my_T   
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
@@ -215,14 +215,14 @@ def create_temperature_plots(ax1):
                                                    "Δ Temperature in °C (ECS = 4.5°C)")
     
     if plot74_GIS_T > 0: # 74.2
-        df = pd.read_csv("csv/csv7/csv_74_gis_temperature.csv")
+        df = pd.read_csv("read_csv/_74_gis_temperature.csv")
         ax = ax1.twinx()
         ax.plot(df["Year74"], df["GIS_temp"] + 0.3, '-', color=c74, linewidth=3)
         temp_axes['74'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c74, 
                                                    "Δ GIS Temperature in °C 74")
     
-    if linear_41_75 > 0:
-        df = pd.read_csv("csv/csv7/csv_75_hansen.csv")
+    if linear_41_75 > 0: # 75.2
+        df = pd.read_csv("read_csv/_75_hansen_41C.csv")
         ax = ax1.twinx()
         ax.plot(df["Year75"], df["temp"] + 0.1, '--', color=c75, linewidth=2)
         temp_axes['75'] = configure_right_y_axis(ax, y_Tmin, y_Tmax, c75, 
