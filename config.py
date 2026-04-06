@@ -58,11 +58,11 @@ plot55_population_on = 0 # 5 word with y axis right
 play_61_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 
-plot71_temperature = 4
+plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 2
 plot74_GIS_T = 3 # 3=right y axis
-linear_41_75 = 3
+linear_41_75 = 4
 plot76_my_T = 0
 plot_T_77 = 0
 parameter84_save_png = 8

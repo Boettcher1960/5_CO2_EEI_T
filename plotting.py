@@ -448,21 +448,21 @@ def plot_7_right_y_axe_remove(axes):
     elif yr_60 == 3:
        print("plot_314: print one right y axes in figure")
        i = len(axes) -1
-       print("plot_316: remove  len(axes) -1  ", i, len(axes))
+       print("plot_451: remove  len(axes) -1  ", i, len(axes))
        axes[i].yaxis.set_ticks([])  # Remove tick numbers
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)
        axes[i].set_ylabel('') # Remove any label
 
        i = len(axes) -3
-       print("plot_323: remove  len(axes) -3  ", i, len(axes))
+       print("plot_458: remove  len(axes) -3  ", i, len(axes))
        axes[i].yaxis.set_ticks([])  # Remove tick numbers
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)
        axes[i].set_ylabel('') # Remove any label
 
        i = len(axes) -5
-       print("plot_330: remove  len(axes) -5  ", i, len(axes))
+       print("plot_465: remove  len(axes) -5  ", i, len(axes))
        axes[i].yaxis.set_ticks([])  # Remove tick numbers
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)
@@ -471,7 +471,7 @@ def plot_7_right_y_axe_remove(axes):
     
     
     else:
-        print("plot_313: keep print all y axes in figure")
+        print("plot_474: keep print all y axes in figure")
  
         # end plot_7_right_y_axe_remove(axes)
 
@@ -987,10 +987,6 @@ def plot_9_create_all_plots(ax1, data):
         # end 7.3
         # plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 356
 
-
-
-
-
     # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots() ,   line 750
     # Plot GIS temperature
     if plot74_GIS_T > 0 and 'gis_temp' in data: # 74.4
@@ -1000,6 +996,27 @@ def plot_9_create_all_plots(ax1, data):
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
         plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 356
+
+    # part 75 plot 2015 .41°C linear fit
+    # linear_41_75  = 4 # part 75    Hansen 2015 .41°C linear fit
+    # https://www.columbia.edu/~jeh1/mailings/2026/ElNino.2026.02.06.pdf
+    # 7.5.2 Year75,GIS_temp
+    if linear_41_75 > 0:
+       print75_text ="Hansen linear fit from 2015 +0.41°C     75"
+       df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
+       #print(df75.head(2))
+       ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+       # part 7.4.6 add 0.3°C same as Hansen to GIS
+       ax75.plot(df75["Year75"], df75["temp"]+0.1, '--', label="T GIS  K75", color=c75, linewidth=2)
+       ax75.tick_params(axis="y", labelcolor=c75)
+       ax75.set_ylim(y_Tmin, y_Tmax) # scale
+       # end 7.5
+
+
+
+
+
+
 
     # end plot_9_create_all_plots(ax1, data):
 
