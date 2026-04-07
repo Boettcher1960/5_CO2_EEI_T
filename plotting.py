@@ -487,15 +487,24 @@ def plot8_right_y_axe_for_T_76(ax76,right52): # 76.6
     
 # plot8_right_y_axe_for_T_77 ,     plot_T_77    ,   my quadratic   ,  line  604
 def plot8_right_y_axe_for_T_77(ax77,right52): # 77.6 
-    # ax77.spines.right.set_position(("outward", rightv))
     if right52 > 0:
         outward_right = right52
     else:
         outward_right =  ( plot_T_77 * yr_60 ) - yr_150
     ax77.spines.right.set_position(("outward", outward_right))
-    ax77.set_ylabel("Temperature in °C        plot570          77", color=c77, fontname="Arial",fontsize=18)
-    ax77.tick_params(axis="y", labelcolor=c77)
-
+    if plot74_GIS_T == 2: # T axis already on the left
+        print(f"plot 498: no need for second T axis on the right ax77 ={plot_T_77} {'='*2}")
+        i = 3
+        ax77.yaxis.set_ticks([])
+        ax77.spines['right'].set_visible(False)
+        #axes[i].yaxis.set_ticks([])  # Remove tick numbers
+        #axes[i].set_yticklabels([])  # Remove tick labels
+        #axes[i].spines['right'].set_visible(False)
+        #axes[i].set_ylabel('') # Remove any label
+    else:    
+       ax77.set_ylabel("Temperature in °C        plot570          77", color=c77, fontname="Arial",fontsize=18)
+       ax77.tick_params(axis="y", labelcolor=c77)
+       
 
 
 # plot_9_create_all_plots(ax1, data): line 436 600
