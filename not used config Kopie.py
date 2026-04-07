@@ -404,3 +404,13 @@ parameter84_save_png = 8
 # NASA CERES Earth's Energy Imbalance
 #—Absorbed Solar Radiation (ASR)
 #—Outgoing Longwave Radiation (OLR)
+
+
+if plot74_GIS_T == 2: # T axis already on the left
+       if print_debug > 9:
+            print(f"plot1143: no need for second T axis on the right ax77 ={plot_T_77} {'='*2}")
+    else:  # no T axis on the left
+       if plot_T_77 > 2:
+            plot8_right_y_axe_for_T_77(ax77,0) # 77.5 line 540
+
+

@@ -1039,11 +1039,10 @@ def plot_9_create_all_plots(ax1, data):
        ax77.tick_params(axis="y", labelcolor=c77)
        ax77.set_ylim(y_Tmin, y_Tmax) # scale
        if print_debug > 9:
-            print(f"plot1159: ax77 ={plot_T_77} {'='*2}")
-
+            print(f"plot1143: no need for second T axis on the right ax77 ={plot_T_77} {'='*2}")
        if plot_T_77 > 2:
             plot8_right_y_axe_for_T_77(ax77,0) # 77.5 line 540
-       # end 7.6 plot_T_77
+       # end 7.7 plot_T_77
 
 
 
