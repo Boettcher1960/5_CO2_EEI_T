@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c94" # plot76_my_T   
+v = "5c95" # plot_T_77   
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
@@ -13,7 +13,7 @@ v = "5c94" # plot76_my_T
 # part 74 plot Hansen GIS temperature 1880 2027
 # part 75      Hansen 2015 .41°C linear fit
 # part 76  my  T 
-# part 77 deepseek.com 
+# part 77 T with 2 values
 #
 # part 8 print headline, axis numbers. around figue
 # 8.2 print the headline above the plot

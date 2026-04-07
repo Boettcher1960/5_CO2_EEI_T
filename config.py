@@ -50,8 +50,8 @@ plot72_AESS_T = 0
 plot73_ECS_T = 0
 plot74_GIS_T = 2 # 3=right y axis
 linear_41_75 = 4
-plot76_my_T = 3
-plot_T_77 = 0
+plot76_my_T = 0
+plot_T_77 = 3
 parameter84_save_png = 8
 
 # Colors
@@ -77,7 +77,7 @@ c73 =  "#13DF2F84"
 c74 = "red"
 c75 = "#371EA484"
 c76 = "#13DF2F84"
-
+c77 = "#34753D84"
 
 # Text definitions (added missing print texts)
 blue22_text = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm) 22"
