@@ -15,7 +15,7 @@
 # 8.5 configure the right axis legend 
 yr_60  = 60  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
 yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_74
-
+yr_delete = 4 # delete axe 4
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in line 2)
@@ -48,9 +48,9 @@ play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 3 # 3=right y axis
+plot74_GIS_T = 2 # 3=right y axis
 linear_41_75 = 4
-plot76_my_T = 2
+plot76_my_T = 3
 plot_T_77 = 0
 parameter84_save_png = 8
 

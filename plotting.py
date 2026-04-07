@@ -176,7 +176,7 @@ def plot_1_axe(ax1):
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 3))
         ax1.set_ylim(y_Tmin, y_Tmax)
-        ax1.set_ylabel("quadratic Temperatur in °C      71  (plot178)  ", color=c71, fontsize=20)
+        ax1.set_ylabel("quadratic Temperature in °C      71  (plot178)  ", color=c71, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c71, labelsize=20)
         y_mayor_ticks = 0.500 
         y_minor_ticks = 0.100
@@ -186,7 +186,7 @@ def plot_1_axe(ax1):
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 3))
         ax1.set_ylim(y_Tmin, y_Tmax)
-        ax1.set_ylabel(" Temperatur in °C      72  (plot188)  ", color=c72, fontsize=20)
+        ax1.set_ylabel(" Temperature in °C      72  (plot188)  ", color=c72, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c72, labelsize=20)
         y_mayor_ticks = 1 
         y_minor_ticks = 0.5
@@ -196,7 +196,7 @@ def plot_1_axe(ax1):
         # a
         ax1.spines.left.set_position(("outward", 3))
         ax1.set_ylim(y_Tmin, y_Tmax)
-        ax1.set_ylabel(" Temperatur in °C      73  (plot200)  ", color=c73, fontsize=20)
+        ax1.set_ylabel(" Temperature in °C      73  (plot200)  ", color=c73, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c73, labelsize=20)
         y_mayor_ticks = 1 
         y_minor_ticks = 0.5
@@ -204,9 +204,9 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot74_GIS_T == 2:  # 74.5 y axe left  red 
         # a Temperature in °C giss.nasa.gov Hansen+0.3°C 74 
-        ax1.spines.left.set_position(("outward", 3))
+        ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_Tmin, y_Tmax)
-        ax1.set_ylabel(" Temperatur in °C  giss  74  ", color=c74, fontsize=20)
+        ax1.set_ylabel(" Temperature in °C  giss  74  ", color=c74, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c74, labelsize=20)
         y_mayor_ticks = 0.5 
         y_minor_ticks = 0.1
@@ -216,7 +216,7 @@ def plot_1_axe(ax1):
         # my76_text="guessed quadratic temperature  my_T   76 "
         ax1.spines.left.set_position(("outward", 3))
         ax1.set_ylim(y_Tmin, y_Tmax)
-        ax1.set_ylabel(" Temperatur in °C  myguess  76  ", color=c76, fontsize=20)
+        ax1.set_ylabel(" Temperature in °C  myguess  76  ", color=c76, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c76, labelsize=20)
         y_mayor_ticks = 0.5 
         y_minor_ticks = 0.1
@@ -251,7 +251,10 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     ax1.grid(True)
     
     # 8.5 configure the left y axis legend 
-    if print_debug == 4:  # EEI mode
+    #if print_debug == 10:  # EEI mode
+      
+
+    if print_debug == 4:  # 
         c4l = "blue" # color of left yaxis for print_debug == 4 EEI mode
         ax1.set_ylim(y_Emin, y_Emax)
         ax1.set_ylabel("Earth Energy Imbalance in W/m²", color=color_left, fontsize=20)
@@ -344,7 +347,6 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
         y_minor_ticks = 10
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-
     else:  # CO2 mode (default)
         ax1.set_ylim(y_min, y_max)
         ax1.set_ylabel("CO₂ in ppm", color=c22, fontsize=20)
