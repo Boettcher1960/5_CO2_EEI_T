@@ -2,7 +2,7 @@
 # version 5c99
 # plot_1_axe ,  for: 22  plot22_CO2_Mauna_Loa = 2                             ,  line  121
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
-# plot_7_right_y_axe_remove(axes): line 270
+# plot_6_remove_axe1(axes,yr6_delete): line 365
 # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
 # plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
@@ -362,7 +362,7 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
 
 
 
-# plot_6_remove_axe1(axes): line 365
+# plot_6_remove_axe1(axes,yr6_delete): line 365
 def plot_6_remove_axe1(axes,yr6_delete):
     for i, ax in enumerate(plt.gcf().get_axes()):
         ylabel = ax.get_ylabel()
@@ -382,102 +382,6 @@ def plot_6_remove_axe1(axes,yr6_delete):
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)
        axes[i].set_ylabel('') # Remove any label
-
-
-
-
-# plot_7_right_y_axe_remove(axes): line 270
-def plot_7_right_y_axe_remove(axes):
-    """Configure the first right y-axis for temperature"""
-    for i, ax in enumerate(plt.gcf().get_axes()):
-        # Get the y-axis label if it exists
-        ylabel = ax.get_ylabel()
-        print(f"plot_411: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
-    # main_484: Axis 0: yaxis side = left, label = 'Earth Energy Imbalance in W/m²'
-    # main_484: Axis 1: yaxis side = right, label = 'Temperature in °C '
-    # main_484: Axis 2: yaxis side = right, label = ''
-    # Keep axes 0, 1, 2, hide all others
-    if yr_60 == 0:
-       print("plot_344: print no right y axes in figure")
-       for i in range(1, len(axes)): # remove Axis 3, 4
-           axes[i].yaxis.set_ticks([])  # Remove tick numbers
-           axes[i].set_yticklabels([])  # Remove tick labels
-           axes[i].spines['right'].set_visible(False)
-           axes[i].set_ylabel('') # Remove any label
-        # return
-    elif yr_60 == 55:
-       print("plot_408: print one right y axes in figure")
-       i2 = len(axes)
-       #i=3
-       print("plot_289: remove right axes ", i, len(axes),i2)
-       i = 1
-       print("plot_293: remove ", i, len(axes))
-       axes[i].yaxis.set_ticks([])  # Remove tick numbers
-       axes[i].set_yticklabels([])  # Remove tick labels
-       axes[i].spines['right'].set_visible(False)
-       axes[i].set_ylabel('') # Remove any label
-       i = 1
-       print("plot_349: remove ", i, len(axes))
-       axes[i].yaxis.set_ticks([])  # Remove tick numbers
-       axes[i].set_yticklabels([])  # Remove tick labels
-       axes[i].spines['right'].set_visible(False)
-       axes[i].set_ylabel('') # Remove any label
-    elif yr_60 == 13:
-       print("plot_309: print one right y axes in figure")
-       i2 = len(axes)
-       #i=3
-       print("plot_312: remove right axes ", i, len(axes),i2)
-       for i in range(1, len(axes)): # remove Axis 3, 4
-           #print("main_413: remove ", i, len(axes))
-           i = 1
-           print("plot_293: remove ", i, len(axes))
-           axes[i].yaxis.set_ticks([])  # Remove tick numbers
-           axes[i].set_yticklabels([])  # Remove tick labels
-           axes[i].spines['right'].set_visible(False)
-           axes[i].set_ylabel('') # Remove any label
-           i = 3
-           print("plot_421: remove ", i, len(axes))
-           axes[i].yaxis.set_ticks([])  # Remove tick numbers
-           axes[i].set_yticklabels([])  # Remove tick labels
-           axes[i].spines['right'].set_visible(False)
-           axes[i].set_ylabel('') # Remove any label
-    elif yr_60 == 7:
-       print("plot_306: print one right y axes in figure")
-       for i in range(2, len(axes)): # remove Axis 3, 4
-           axes[i].yaxis.set_ticks([])  # Remove tick numbers
-           axes[i].set_yticklabels([])  # Remove tick labels
-           axes[i].spines['right'].set_visible(False)
-           axes[i].set_ylabel('') # Remove any label
-    elif yr_60 == 3:
-       print("plot_314: print one right y axes in figure")
-       i = len(axes) -1
-       print("plot_451: remove  len(axes) -1  ", i, len(axes))
-       axes[i].yaxis.set_ticks([])  # Remove tick numbers
-       axes[i].set_yticklabels([])  # Remove tick labels
-       axes[i].spines['right'].set_visible(False)
-       axes[i].set_ylabel('') # Remove any label
-
-       i = len(axes) -3
-       print("plot_458: remove  len(axes) -3  ", i, len(axes))
-       axes[i].yaxis.set_ticks([])  # Remove tick numbers
-       axes[i].set_yticklabels([])  # Remove tick labels
-       axes[i].spines['right'].set_visible(False)
-       axes[i].set_ylabel('') # Remove any label
-
-       i = len(axes) -5
-       print("plot_465: remove  len(axes) -5  ", i, len(axes))
-       axes[i].yaxis.set_ticks([])  # Remove tick numbers
-       axes[i].set_yticklabels([])  # Remove tick labels
-       axes[i].spines['right'].set_visible(False)
-       axes[i].set_ylabel('') # Remove any label
-
-    
-    
-    else:
-        print("plot_494: keep print all y axes in figure")
- 
-        # end plot_7_right_y_axe_remove(axes)
-
 
 
 # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  415
