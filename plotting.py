@@ -470,8 +470,13 @@ def plot8_right_y_axe_for_T_75(ax75,right52): # 75.6
     else:
         outward_right =  ( linear_41_75 * yr_60 ) - yr_150
     ax75.spines.right.set_position(("outward", outward_right))
-    ax75.set_ylabel("Temperature in °C        plot589          75", color=c75, fontname="Arial",fontsize=18)
-    ax75.tick_params(axis="y", labelcolor=c75)
+    if plot74_GIS_T == 2: # T axis already on the left
+        print(f"plot 474: no need for second T axis linear_41_75 ={linear_41_75} ")
+        ax75.yaxis.set_ticks([])
+        ax75.spines['right'].set_visible(False)
+    else:    
+       ax75.set_ylabel("Temperature in °C        plot589          75", color=c75, fontname="Arial",fontsize=18)
+       ax75.tick_params(axis="y", labelcolor=c75)
    
 
 # plot8_right_y_axe_for_T_76 ,     plot76_my_T  ,   my quadratic   ,  line  584
@@ -493,14 +498,9 @@ def plot8_right_y_axe_for_T_77(ax77,right52): # 77.6
         outward_right =  ( plot_T_77 * yr_60 ) - yr_150
     ax77.spines.right.set_position(("outward", outward_right))
     if plot74_GIS_T == 2: # T axis already on the left
-        print(f"plot 498: no need for second T axis on the right ax77 ={plot_T_77} {'='*2}")
-        i = 3
+        print(f"plot 496: no need for second T axis on the right ax77 ={plot_T_77} {'='*2}")
         ax77.yaxis.set_ticks([])
         ax77.spines['right'].set_visible(False)
-        #axes[i].yaxis.set_ticks([])  # Remove tick numbers
-        #axes[i].set_yticklabels([])  # Remove tick labels
-        #axes[i].spines['right'].set_visible(False)
-        #axes[i].set_ylabel('') # Remove any label
     else:    
        ax77.set_ylabel("Temperature in °C        plot570          77", color=c77, fontname="Arial",fontsize=18)
        ax77.tick_params(axis="y", labelcolor=c77)
