@@ -1,10 +1,7 @@
 # plotting.py
-# version 5c31
-
+# version 5c99
 # plot_1_axe ,  for: 22  plot22_CO2_Mauna_Loa = 2                             ,  line  121
-
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
-# plot_6_right_y_axe  line 226
 # plot_7_right_y_axe_remove(axes): line 270
 # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
 # plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
@@ -362,46 +359,6 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     
     return ax1
     # end plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
-
-#
-# plot_6_right_y_axe  line 226
-def plot_6_right_y_axe(ax, y_Tmin, y_Tmax, color, label):
-    """Configure the first right y-axis for temperature"""
-    ax2 = ax.twinx()
-    if print_debug > 9:
-          print(f"plot_ 57: right y axis  mode ")
-    if print_debug == 4:  # EEI mode
-         if print_debug > 9:
-             print(f"plot_ 61: right y axis mode ")
-         ax2 = ax.twinx()
-    elif print_debug == 7:  # temperature
-         if print_debug > 9:
-             print(f"plot_ 61: right y axis mode ")
-         ax2 = ax.twinx()
-         ax2.tick_params(axis='y', labelcolor='r')
-         ax2.tick_params(axis="y", labelcolor=color, labelsize=20)
-         ax2.set_ylim(y_Tmin, y_Tmax)
-         ax2.yaxis.set_major_locator(MultipleLocator(0.5))
-         ax2.yaxis.set_minor_locator(MultipleLocator(0.1))
-         ax2.set_ylabel(label, color=color, fontsize=20, labelpad=10)
-    elif print_debug == 3:  # Gt CO2
-         if print_debug > 9:
-             print(f"plot_ 76: right y axis mode ")
-         ax2 = ax.twinx()
-         ax2.tick_params(axis='y', labelcolor='r')
-         ax2.tick_params(axis="y", labelcolor=color, labelsize=14)
-         ax2.set_ylim(y_Gmin, y_Gmax)
-         ax2.set_ylabel("cummulative CO₂  emissions in Gt  plot 80", color=c31, fontsize=12)
-         ax2.yaxis.set_major_locator(MultipleLocator(400))
-         ax2.yaxis.set_minor_locator(MultipleLocator(200))
-         # ax2.set_ylabel(" Gt CO2 plot 83", color=c31, fontsize=20, labelpad=10)
-    else:  # Gt CO2
-         if print_debug > 19:
-             print(f"plot_260: right y axis mode ")
-    return ax2
-    # end plot_6_right_y_axe
-
-
 
 
 # plot_7_right_y_axe_remove(axes): line 270
