@@ -361,6 +361,31 @@ def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax,
     # end plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 
 
+
+# plot_6_remove_axe1(axes): line 365
+def plot_6_remove_axe1(axes,yr6_delete):
+    for i, ax in enumerate(plt.gcf().get_axes()):
+        ylabel = ax.get_ylabel()
+        print(f"plot_369: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
+    if yr6_delete == 9:
+       print("plot_371: no right y axes in figure")
+       for i in range(1, len(axes)): # remove Axis 3, 4
+           axes[i].yaxis.set_ticks([])  # Remove tick numbers
+           axes[i].set_yticklabels([])  # Remove tick labels
+           axes[i].spines['right'].set_visible(False)
+           axes[i].set_ylabel('') # Remove any label
+        # return
+    elif yr6_delete == 1:
+       i = yr6_delete
+       print("plot_380: remove ", i, len(axes))
+       axes[i].yaxis.set_ticks([])  # Remove tick numbers
+       axes[i].set_yticklabels([])  # Remove tick labels
+       axes[i].spines['right'].set_visible(False)
+       axes[i].set_ylabel('') # Remove any label
+
+
+
+
 # plot_7_right_y_axe_remove(axes): line 270
 def plot_7_right_y_axe_remove(axes):
     """Configure the first right y-axis for temperature"""
@@ -416,9 +441,6 @@ def plot_7_right_y_axe_remove(axes):
            axes[i].set_yticklabels([])  # Remove tick labels
            axes[i].spines['right'].set_visible(False)
            axes[i].set_ylabel('') # Remove any label
-
-
-
     elif yr_60 == 7:
        print("plot_306: print one right y axes in figure")
        for i in range(2, len(axes)): # remove Axis 3, 4

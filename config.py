@@ -15,7 +15,7 @@
 # 8.5 configure the right axis legend 
 yr_60  = 60  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
 yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_74
-yr_delete = 4 # delete axe 4
+yr_delete = 1 # 9 = delete all axes delete axe 4
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in line 2)
