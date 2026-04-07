@@ -556,7 +556,7 @@ def plot8_right_y_axe_for_T_76(ax76,right52): # 76.6
     else:
         outward_right =  ( plot76_my_T * yr_60 ) - yr_150
     ax76.spines.right.set_position(("outward", outward_right))
-    ax76.set_ylabel("Temperature in °C        plot602          76", color=c76, fontname="Arial",fontsize=18)
+    ax76.set_ylabel("Temperature in °C        plot559          76", color=c76, fontname="Arial",fontsize=18)
     ax76.tick_params(axis="y", labelcolor=c76)
     
 # plot8_right_y_axe_for_T_77 ,     plot_T_77    ,   my quadratic   ,  line  604
@@ -567,8 +567,8 @@ def plot8_right_y_axe_for_T_77(ax77,right52): # 77.6
     else:
         outward_right =  ( plot_T_77 * yr_60 ) - yr_150
     ax77.spines.right.set_position(("outward", outward_right))
-    ax77.set_ylabel("Temperature in °C        plot602          77", color=c77, fontname="Arial",fontsize=18)
-    ax77.tick_params(axis="y", labelcolor=c76)
+    ax77.set_ylabel("Temperature in °C        plot570          77", color=c77, fontname="Arial",fontsize=18)
+    ax77.tick_params(axis="y", labelcolor=c77)
 
 
 
