@@ -11,7 +11,8 @@
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 # plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
-# plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
+# plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  571
+# plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C            ,  line  581
 # plot_9_create_all_plots(ax1, data): line 400 600
 # plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,  line 447
 # part42_ceres_eei, running average over 48 months,  plot_9_create_all_plots() ,  line 601
@@ -408,7 +409,7 @@ def plot_7_right_y_axe_remove(axes):
     for i, ax in enumerate(plt.gcf().get_axes()):
         # Get the y-axis label if it exists
         ylabel = ax.get_ylabel()
-        print(f"plot_275: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
+        print(f"plot_411: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
     # main_484: Axis 0: yaxis side = left, label = 'Earth Energy Imbalance in W/m²'
     # main_484: Axis 1: yaxis side = right, label = 'Temperature in °C '
     # main_484: Axis 2: yaxis side = right, label = ''
@@ -493,7 +494,7 @@ def plot_7_right_y_axe_remove(axes):
     
     
     else:
-        print("plot_474: keep print all y axes in figure")
+        print("plot_494: keep print all y axes in figure")
  
         # end plot_7_right_y_axe_remove(axes)
 
@@ -564,7 +565,7 @@ def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
     ax71.spines.right.set_position(("outward", outward_right))
     ax71.set_ylabel("Temperature in °C           plot532               71", color=c71, fontname="Arial",fontsize=18)
     ax71.tick_params(axis="y", labelcolor=c71)
-    ax71.set_ylim(y_Tmin, y_Tmax) #8
+    # ax71.set_ylim(y_Tmin, y_Tmax) #8
 
 # plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
 def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6 
@@ -576,9 +577,30 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
     ax74.spines.right.set_position(("outward", outward_right))
     ax74.set_ylabel("Temperature in °C        plot575          74", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
-    ax74.set_ylim(y_74min, y_74max) #8
  
+# plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C         ,  line  581
+def plot8_right_y_axe_for_T_75(ax75,right52): # 75.6 
+    # ax75.spines.right.set_position(("outward", rightv))
+    if right52 > 0:
+        outward_right = right52
+    else:
+        outward_right =  ( linear_41_75 * yr_60 ) - yr_150
+    ax75.spines.right.set_position(("outward", outward_right))
+    ax75.set_ylabel("Temperature in °C        plot589          75", color=c75, fontname="Arial",fontsize=18)
+    ax75.tick_params(axis="y", labelcolor=c75)
+   
 
+# plot8_right_y_axe_for_T_76 ,     plot76_my_T  ,   my quadratic   ,  line  584
+def plot8_right_y_axe_for_T_76(ax76,right52): # 76.6 
+    # ax76.spines.right.set_position(("outward", rightv))
+    if right52 > 0:
+        outward_right = right52
+    else:
+        outward_right =  ( plot76_my_T * yr_60 ) - yr_150
+    ax76.spines.right.set_position(("outward", outward_right))
+    ax76.set_ylabel("Temperature in °C        plot602          76", color=c76, fontname="Arial",fontsize=18)
+    ax76.tick_params(axis="y", labelcolor=c76)
+    
 
 
 
@@ -1018,7 +1040,7 @@ def plot_9_create_all_plots(ax1, data):
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
         if plot74_GIS_T > 2:
-            plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 356
+            plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 500
 
     # part 75 plot 2015 .41°C linear fit
     # linear_41_75  = 4 # part 75    Hansen 2015 .41°C linear fit
@@ -1033,6 +1055,8 @@ def plot_9_create_all_plots(ax1, data):
        ax75.plot(df75["Year75"], df75["temp"]+0.1, '--', label="T GIS  K75", color=c75, linewidth=2)
        ax75.tick_params(axis="y", labelcolor=c75)
        ax75.set_ylim(y_Tmin, y_Tmax) # scale
+       if linear_41_75 > 2:
+            plot8_right_y_axe_for_T_75(ax75,0) # 75.5 line 530
        # end 7.5
 
     # plot76_my_T
@@ -1079,6 +1103,11 @@ def plot_9_create_all_plots(ax1, data):
        ax76.plot(df76["Year76"], df76["Modeled76"], '--', label="T formula CO2=  K76", color=c76, linewidth=3)
        ax76.tick_params(axis="y", labelcolor=c76)
        ax76.set_ylim(y_Tmin, y_Tmax) # scale
+       if print_debug > 9:
+            print(f"plot1108: ax76 ={plot76_my_T} {'='*2}")
+
+       if plot76_my_T > 2:
+            plot8_right_y_axe_for_T_76(ax76,0) # 76.5 line 540
        # end 7.6 plot76_my_T
 
 

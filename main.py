@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5c93" # plot76_my_T   
+v = "5c94" # plot76_my_T   
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
@@ -341,7 +341,7 @@ def main():
     
     axes = plt.gcf().get_axes()
     # Keep axes 0, 1, 2, hide all others
-    print("main_390: call plot_7_right_y_axe_remove.")
+    print("main_344: call plot_7_right_y_axe_remove.")
     plot_7_right_y_axe_remove(axes)
     
     # Adjust layout
