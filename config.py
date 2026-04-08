@@ -123,12 +123,12 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_Tmin = 0.4
-y_Tmax = 1.7
+y_Tmin = 0
+y_Tmax = 1.8
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 1990
+x_anf = 1890
 x_end = 2026
 
 # constants
@@ -137,7 +137,8 @@ C280 = 280
 
 # Text positioning
 tr1x = -0.09
-tr2x = 0.01
+tr2x = 0.03 # 0.01
+tr3x = 0.03 # only 63 row 5
 tr1y = -.19
 tr2y = -.26
 tr3y = -.33

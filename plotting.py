@@ -465,7 +465,7 @@ def plot8_right_y_axe_for_C_63(ax63,right52):
         outward_right =  ( play_63_CB * yr_60 ) - yr_150
     ax63.spines.right.set_position(("outward", outward_right))
     ax63.set_ylabel("carbon brief CO2 values   plot467               63", color=c63, fontname="Arial",fontsize=18)
-    ax63.tick_params(axis="y", labelcolor=c71)
+    ax63.tick_params(axis="y", labelcolor=c63)
 
 
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
@@ -898,7 +898,7 @@ def plot_9_create_all_plots(ax1, data):
            print(f"plot_888: ax63 63.4 ={play_63_CB}")
         world63 = (
              df63[df63["Entity"] == "World"][["Year", "Cumulative CO₂ emissions"]]
-             .query("1960 <= Year <= 2026")    # .query("1750 <= Year <= 2026")
+             .query("1750 <= Year <= 2026")    # .query("1750 <= Year <= 2026")
              .sort_values("Year")
              .reset_index(drop=True)
           )

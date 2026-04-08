@@ -367,7 +367,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        # 9.5.2 draw bue line as legend
        fig.add_artist(line63)
        # 9.5.4 write green text
-       plt.text(tr2x, tr5y, "carbon brief CO2 values     63", color=c63, fontname="Arial", fontsize=trs,
+       plt.text(tr2x, tr5y, "carbon brief cummulative CO2 values in Gt CO2 since 1750     63", color=c63, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
 
 
