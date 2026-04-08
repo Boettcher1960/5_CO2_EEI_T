@@ -24,6 +24,7 @@ from main import v
 # row 1  ,    print line 1 below the plot ,     text_1_print_line() ,              line  21
 def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
     """Add text below the plot (line 1)"""
+
     #text_below = (f"Figure from  "
     #              f"https://github.com/Boettcher1960/5_CO2_EEI_T      "
     #              f" {filename} version {v} ")
@@ -36,12 +37,20 @@ def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
             transform=ax1.transAxes)
 
 
+
+
 # row 0  ,    print line 0 above the plot ,     text_2_print_head_line() ,         line  40
 # text_2_print_head_line(ax1, x_anf, x_end, yl_mode): line 30
 def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
     """Add header text above the plot"""
     trs = 20
-    if yl_mode == 4:
+    
+    if plot31_CO2_emission == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
+        header = f"cumulative CO2 emissions in GtCO2 from Carbon Brief {x_anf} to {x_end}."
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
+                transform=ax1.transAxes)
+
+    elif yl_mode == 4:
         header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Jan. 2026 data. Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
