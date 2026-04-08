@@ -85,7 +85,7 @@ c77 = "#34753D84"
 blue22_text = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm) 22"
 text_plot23_Glen = "calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
 blue25_text = "green: CO2 NOAA 800_000 year ice data 25"
-print31_text = "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data               31"
+print31_text = "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data             31"
 
 print34_text = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode"
 p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
