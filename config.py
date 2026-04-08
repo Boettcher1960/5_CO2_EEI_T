@@ -22,7 +22,7 @@ plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in lin
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
-plot31_CO2_emission =    0   # 31.1 CO2_emission Carbon Brief
+plot31_CO2_emission =    4   # 31.1 CO2_emission Carbon Brief
 
 plot34_CO2_emission =    0   # 34.1 row 4 
 plot34_CO2_emission_mode = 0 # 34.1 mode 
@@ -51,7 +51,7 @@ plot73_ECS_T = 0
 plot74_GIS_T = 2 # 3=right y axis
 linear_41_75 = 4
 plot76_my_T = 0
-plot_T_77 = 3
+plot_T_77 = 0
 parameter84_save_png = 8
 
 # Colors
