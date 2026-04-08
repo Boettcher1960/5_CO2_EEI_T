@@ -892,6 +892,7 @@ def plot_9_create_all_plots(ax1, data):
 # work/_63a_cumulative-co-emissions.csv with columns  Entity,Code,Year,Cumulative CO₂ emissions
 
     if play_63_CB > 0: # 63.4
+        ax63 = ax1.twinx()
         df63 = pd.read_csv("work/_63a_cumulative-co-emissions.csv")
         if print_debug > 9:
            print(f"plot_888: ax63 63.4 ={play_63_CB}")
@@ -911,14 +912,21 @@ def plot_9_create_all_plots(ax1, data):
         print(world63.head(3))
         world63.to_csv("work/_63b.csv", index=False, float_format='%.6f')
         # "work/_63b.csv has 5 columns Year,Cumulative CO₂ emissions, GtCO2 and GtC
-        ax63 = ax1.twinx()
         df63b = pd.read_csv("work/_63b.csv") # processed file
         print("plot_906: play_63_CB = ", play_63_CB) # 63.7 
-        #df63b.plot(df63b["Year63"], df63b["GtCO2"], marker="o",  color=c63, label="play_63_CB")
-        #df63.tick_params(axis="y", labelcolor=c63)
-        # df63b.set_ylim(y_Gmin+20, y_Gmax+20) # best scaling 2000 GtCO2
+        ax63.plot(world63["Year"], world63["GtCO2"], marker="o",  color=c63, label="play_63_CB")
+
+        ax63.tick_params(axis="y", labelcolor=c63)
+        ax63.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
         if play_63_CB > 2:
             plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 500
+
+        #ax31 = ax1.twinx()
+        # df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv") # processed file
+        # print("plot_610: plot31_CO2_emission = ", plot31_CO2_emission) # 31.7 plot 31
+        #ax31.plot(df31["Year31"], df31["GCumulat"], marker="o",  color=c31, label="plot31_CO2_emission")
+        #ax31.tick_params(axis="y", labelcolor=c31)
+        #ax31.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
 
 
     if plot71_temperature > 0 : # 71.4
