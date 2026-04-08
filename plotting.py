@@ -163,6 +163,16 @@ def plot_1_axe(ax1):
         y_minor_ticks = 100
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif plot32_CO2_emission == 2:  # 32.5 y axe left 
+        # ax42.spines.right.set_position(("outward", outward_right))
+        ax1.spines.left.set_position(("outward", 0))
+        ax1.set_ylim(y_32min, y_32max)
+        ax1.set_ylabel("cumulative CO₂ in GtCO₂   (plot160)  ", color=c32, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c32, labelsize=20)
+        y_mayor_ticks = 100 
+        y_minor_ticks = 50
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
 
     elif part43_ceres_eei == 2:  # 43.5 y axe left 
@@ -650,7 +660,7 @@ def plot_9_create_all_plots(ax1, data):
         print("plot_650: plot32_CO2_emission = ", plot32_CO2_emission) # 32.7 plot 32
         ax32.plot(df32["Year"], df32["GtC"], marker="o",  color=c32, label="plot32_CO2_emission")
         ax32.tick_params(axis="y", labelcolor=c32)
-        ax32.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
+        ax32.set_ylim(y_32min, y_32max) # best scaling 2000 GtC
         if plot32_CO2_emission > 2:
             plot8_right_y_axe_for_C_32(ax32,0) # 32.5 line 500
             # plot8_right_y_axe_for_C_32 ,  plot32_CO2_emission , cumulative CO2 emissions , line  402
