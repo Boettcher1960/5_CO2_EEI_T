@@ -360,6 +360,15 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        # 9.5.4 write green text
        plt.text(tr2x, tr5y, green55_text, color=c55, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
+    elif play_63_CB == 5: # 55.4 row 5 legende 
+       line63 = Line2D([lr2x1, lr2x2], [lr5y, lr5y], # x coords in figure space (0–1)
+       transform=fig.transFigure,
+       marker="s", markersize=5, color=c63, linewidth=2)
+       # 9.5.2 draw bue line as legend
+       fig.add_artist(line63)
+       # 9.5.4 write green text
+       plt.text(tr2x, tr5y, "carbon brief CO2 values     63", color=c63, fontname="Arial", fontsize=trs,
+       transform=plt.gca().transAxes)
 
 
 

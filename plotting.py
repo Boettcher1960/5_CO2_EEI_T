@@ -888,12 +888,13 @@ def plot_9_create_all_plots(ax1, data):
            print(f"plot_888: ax63 63.4 ={play_63_CB}")
         world63 = (
              df63[df63["Entity"] == "World"][["Year", "Cumulative CO₂ emissions"]]
-             .query("1750 <= Year <= 2026")
+             .query("1960 <= Year <= 2026")    # .query("1750 <= Year <= 2026")
              .sort_values("Year")
              .reset_index(drop=True)
           )
         # in Gt CO2
         world63["GtCO2"] = world63["Cumulative CO₂ emissions"] / 1e9
+        world63["Year63"] = world63["Year"] *1.0001
         # in GtC
         world63["GtC"] = world63["Cumulative CO₂ emissions"] *12 / ( 1e9 * 44 )
         print(df63.head(3))
@@ -902,7 +903,16 @@ def plot_9_create_all_plots(ax1, data):
         world63.to_csv("work/_63b.csv", index=False, float_format='%.6f')
         # "work/_63b.csv has 5 columns Year,Cumulative CO₂ emissions, GtCO2 and GtC
         ax63 = ax1.twinx()
-        # plot8_160_right_y_axe_55(ax55,pop_world):   # 55 line 358
+        df63b = pd.read_csv("work/_63b.csv") # processed file
+        print("plot_906: play_63_CB = ", play_63_CB) # 63.7 
+        #df63b.plot(df63b["Year63"], df63b["GtCO2"], marker="o",  color=c63, label="play_63_CB")
+        #df63.tick_params(axis="y", labelcolor=c63)
+        # df63b.set_ylim(y_Gmin+20, y_Gmax+20) # best scaling 2000 GtCO2
+        #if play_63_CB > 2:
+            # plot8_right_y_axe_for_C_31(ax63,0) # 31.5 line 500
+
+
+
         # plot8_160_right_y_axe_55(ax55,pop_world)    # 55.4 line 358
 
 

@@ -24,8 +24,8 @@ plot25_long_CO2 = 0      # 25.1
 
 plot31_CO2_emission =    2   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief
 
-plot34_CO2_emission =    4   # 34.1 row 4 
-plot34_CO2_emission_mode = 1 # 34.1 mode 
+plot34_CO2_emission =    0   # 34.1 row 4 
+plot34_CO2_emission_mode = 0 # 34.1 mode 
 # plot31__CO2_emission mode 1
 # plot32__CO2_emission mode 2
 # plot33__CO2_emission mode 3
@@ -44,7 +44,7 @@ plot55_population_on = 0 # 5 word with y axis right
 
 play_61_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
-play_63_CB    = 3 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
+play_63_CB    = 5 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
 plot71_temperature = 0
 plot72_AESS_T = 0
@@ -71,6 +71,7 @@ c52bar = "#C1D43408"
 c55 = "#34D48FC7"
 c61 = "#0D91A090"
 c62 = "#9522AA90"
+c63 = "#AF36C290"
 
 c71 = "red"
 c72 =  "#BD316990"
