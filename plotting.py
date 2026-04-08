@@ -885,7 +885,7 @@ def plot_9_create_all_plots(ax1, data):
     if play_63_CB > 0: # 63.4
         df63 = pd.read_csv("work/_63a_cumulative-co-emissions.csv")
         if print_debug > 9:
-           print(f"plot_889: ax63 63.4 ={play_63_CB}")
+           print(f"plot_888: ax63 63.4 ={play_63_CB}")
         # 4.1.1.6 Save to CSV
         # df.to_csv(output_file, index=False, float_format='%.6f')
         # print(df.head(3))
@@ -897,6 +897,9 @@ def plot_9_create_all_plots(ax1, data):
           )
         # 5.5.4 in Milliarden
         world63["CO2Gt"] = world63["Cumulative CO₂ emissions"] / 1e9
+        print(df63.head(3))
+        print(f"plot_901: ax63 63.4 ={play_63_CB}")
+        print(world63.head(3))
         ax63 = ax1.twinx()
         # plot8_160_right_y_axe_55(ax55,pop_world): # 55 line 358
         # plot8_160_right_y_axe_55(ax55,pop_world)    # 55.4 line 358
