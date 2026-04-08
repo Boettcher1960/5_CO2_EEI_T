@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d26" # play_63_CB
+v = "5d28" # play_63_CB
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
@@ -336,7 +336,8 @@ def main():
     print("main_344: call plot_6_remove_axe1.")
     #plot_6_remove_axe1(axes,yr_delete)
     #plot_6_remove_axe1(axes,1) # works 
-    #plot_6_remove_axe1(axes,2)
+    plot_6_remove_axe1(axes,2)
+    #plot_6_remove_axe1(axes,-1) # -1= no delete, print only
     # Adjust layout
     fig.tight_layout()
     plt.tight_layout()
