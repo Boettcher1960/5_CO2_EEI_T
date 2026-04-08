@@ -116,7 +116,7 @@ y_Gmax = 2000 # 2500 Gt CO2
 y_31Gmin = 0 # 250 ppm CO2  
 y_31Gmax = 2000 # 2500 Gt CO2  
 y_32min = 0   #   0 GtC
-y_32max = 600 # 800 GtC
+y_32max = 800 # 800 GtC
 
 y_Emin = 0 #   EEI in W/m2 y axis left mode
 y_Emax = 2 #   EEI in W/m2 y axis left mode
@@ -129,7 +129,7 @@ y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
 y_Tmin = 0
-y_Tmax = 1.8
+y_Tmax = 2.6
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
