@@ -625,8 +625,11 @@ def plot_9_create_all_plots(ax1, data):
     # 3.4.0 Entity,Code,Year,Cumulat
     if plot31_CO2_emission > 0: # 31.7
         ax31 = ax1.twinx()
-        df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv") # processed file
-        print("plot_610: plot31_CO2_emission = ", plot31_CO2_emission) # 31.7 plot 31
+        # df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv")      # processed file from 42_CO2_T.py
+        # line 923  world63.to_csv("work/_63b.csv", index=False, float_format='%.6f')
+        df31 = pd.read_csv("read_csv/_31_co2_cummulative_GtCO2.csv") 
+        # processed file from 5_CO2_EEI_T/main 63play_63_CB=5 cumulative 1750 to 2024 word of data
+        print("plot_630: plot31_CO2_emission = ", plot31_CO2_emission) # 31.7 plot 31
         ax31.plot(df31["Year31"], df31["GCumulat"], marker="o",  color=c31, label="plot31_CO2_emission")
         ax31.tick_params(axis="y", labelcolor=c31)
         ax31.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2

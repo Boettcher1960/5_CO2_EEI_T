@@ -22,7 +22,7 @@ plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in lin
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
-plot31_CO2_emission =    0   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief
+plot31_CO2_emission =    2   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief
 
 plot34_CO2_emission =    0   # 34.1 row 4 
 plot34_CO2_emission_mode = 0 # 34.1 mode 
@@ -44,12 +44,12 @@ plot55_population_on = 0 # 5 word with y axis right
 
 play_61_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
-play_63_CB    = 5 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
+play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 2 # 3=right y axis
+plot74_GIS_T = 4 # 3=right y axis
 linear_41_75 = 0 # 4
 plot76_my_T = 0
 plot_T_77 = 0
@@ -71,7 +71,7 @@ c52bar = "#C1D43408"
 c55 = "#34D48FC7"
 c61 = "#0D91A090"
 c62 = "#9522AA90"
-c63 = "#AF36C290"
+c63 = "#1652D490"
 
 c71 = "red"
 c72 =  "#BD316990"
