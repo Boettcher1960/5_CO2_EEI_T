@@ -4,6 +4,7 @@
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_remove_axe1(axes,yr6_delete): line 365
 # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
+# plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
 # plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 # plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
@@ -13,6 +14,7 @@
 # plot8_right_y_axe_for_T_77 ,     plot_T_77    ,   my quadratic              ,  line  604
 # plot_9_create_all_plots(ax1, data): line 400 600
 # plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,  line 447
+# plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603
 # part42_ceres_eei, running average over 48 months,  plot_9_create_all_plots() ,  line 601
 # plot52_delta_CO2_red_bars,   Mauna Loa delta    ,  plot_9_create_all_plots() ,  line 630
 # plot74_GIS_T,  GIS temperature add 0.3°C Hansen ,  plot_9_create_all_plots() ,  line 750
@@ -399,6 +401,21 @@ def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
     ax22.tick_params(axis="y", labelcolor=c22)
     ax22.set_ylim(y_min, y_max) #8
 
+# plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
+def plot8_right_y_axe_for_C_31(ax31,right52): # 31.6 
+    if right52 > 0:
+        outward_right = right52
+    else:
+        outward_right =  ( plot31_CO2_emission * yr_60 ) - yr_150
+    ax31.spines.right.set_position(("outward", outward_right))
+    ax31.set_ylabel("cumulative CO2 emissions in Gt  plot410     31", color=c31, fontname="Arial",fontsize=18)
+    ax31.tick_params(axis="y", labelcolor=c31)
+
+
+
+
+
+
 # Earth Energy Imbalance W/m² moving average 48 month 
 # plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
 def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
@@ -584,19 +601,19 @@ def plot_9_create_all_plots(ax1, data):
       ax25.spines.right.set_position(("outward", 60))
       # print(long_co25.head(5))
 
-    # part 3.4 plot34_CO2_emission summed
-    # co2_cumul.csv
+    # plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603
     # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
     # 3.4.0 Entity,Code,Year,Cumulat
     if plot31_CO2_emission > 0: # 31.7
         ax31 = ax1.twinx()
         df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv") # processed file
-        print("plot_290: plot31_CO2_emission = ", plot31_CO2_emission) # 31.7 plot 31
+        print("plot_610: plot31_CO2_emission = ", plot31_CO2_emission) # 31.7 plot 31
         ax31.plot(df31["Year31"], df31["GCumulat"], marker="o",  color=c31, label="plot31_CO2_emission")
         ax31.tick_params(axis="y", labelcolor=c31)
         ax31.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
-
-
+        if plot31_CO2_emission > 2:
+            plot8_right_y_axe_for_C_31(ax31,0) # 31.5 line 500
+            # plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
 
     if plot34_CO2_emission > 0: # 34.2
         ax34 = ax1.twinx()
