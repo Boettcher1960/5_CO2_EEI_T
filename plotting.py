@@ -638,6 +638,22 @@ def plot_9_create_all_plots(ax1, data):
             plot8_right_y_axe_for_C_31(ax31,0) # 31.5 line 500
             # plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
 
+    # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
+    # 3.4.0 Entity,Code,Year,Cumulat
+    if plot32_CO2_emission > 0: # 32.7
+        ax32 = ax1.twinx()
+        # df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv")      # processed file from 42_CO2_T.py
+        # line 923  world63.to_csv("work/_63b.csv", index=False, float_format='%.6f')
+        df32 = pd.read_csv("read_csv/_31_co2_cummulative_GtCO2.csv") 
+        # processed file from 5_CO2_EEI_T/main 63play_63_CB=5 cumulative 1750 to 2024 word of data
+        # "work/_63b.csv has 5 columns Year,Cumulative CO₂ emissions, GtCO2 and GtC
+        print("plot_650: plot32_CO2_emission = ", plot32_CO2_emission) # 32.7 plot 32
+        ax32.plot(df32["Year"], df32["GtCO2"], marker="o",  color=c32, label="plot32_CO2_emission")
+        ax32.tick_params(axis="y", labelcolor=c32)
+        ax32.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
+        if plot32_CO2_emission > 2:
+            plot8_right_y_axe_for_C_32(ax32,0) # 32.5 line 500
+            # plot8_right_y_axe_for_C_32 ,  plot32_CO2_emission , cumulative CO2 emissions , line  402
 
 
 

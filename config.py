@@ -22,7 +22,9 @@ plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in lin
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
-plot31_CO2_emission =    2   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief
+plot31_CO2_emission =    0   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
+plot32_CO2_emission =    2   # 32.1 CO2_emission 600 GtC Carbon Brief made with play_63_CB 
+
 
 plot34_CO2_emission =    0   # 34.1 row 4 
 plot34_CO2_emission_mode = 0 # 34.1 mode 
@@ -61,6 +63,7 @@ c22 = "blue"
 c23 = "#4554A8C6"
 c25 = "green"
 c31 = "#9B107F90"
+c32 = "#10929B90"
 c34 = "#942296C5"
 c41 = "#289C1684"
 c42 = "purple"
@@ -86,6 +89,7 @@ blue22_text = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm) 22"
 text_plot23_Glen = "calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
 blue25_text = "green: CO2 NOAA 800_000 year ice data 25"
 print31_text = "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data             31"
+print32_text = "dots: cumulative CO2 emissions in GtC     Carbon Brief / Our World in Data            32"
 
 print34_text = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode"
 p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
