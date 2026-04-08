@@ -466,14 +466,14 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     #end plot8_160_right_y_axe_55  
 
 # plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 460
-def plot8_right_y_axe_for_C_63(ax63,right52):
-    if right52 > 0:
+def plot8_right_y_axe_for_C_63(ax63,right52): # 63.5
+     if right52 > 0:
         outward_right = right52
-    else:
+     else:
         outward_right =  ( play_63_CB * yr_60 ) - yr_150
-    ax63.spines.right.set_position(("outward", outward_right))
-    ax63.set_ylabel("carbon brief CO2 values   plot467               63", color=c63, fontname="Arial",fontsize=18)
-    ax63.tick_params(axis="y", labelcolor=c63)
+     ax63.spines.right.set_position(("outward", outward_right))
+     ax63.set_ylabel("cummulative CO2 values   plot475     63", color=c63, fontname="Arial",fontsize=18)
+     ax63.tick_params(axis="y", labelcolor=c63)
 
 
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
@@ -927,14 +927,7 @@ def plot_9_create_all_plots(ax1, data):
         ax63.tick_params(axis="y", labelcolor=c63)
         ax63.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
         if play_63_CB > 2:
-            plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 500
-
-        #ax31 = ax1.twinx()
-        # df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv") # processed file
-        # print("plot_610: plot31_CO2_emission = ", plot31_CO2_emission) # 31.7 plot 31
-        #ax31.plot(df31["Year31"], df31["GCumulat"], marker="o",  color=c31, label="plot31_CO2_emission")
-        #ax31.tick_params(axis="y", labelcolor=c31)
-        #ax31.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
+            plot8_right_y_axe_for_C_63(ax63,1) # 63.5 line 500
 
 
     if plot71_temperature > 0 : # 71.4
