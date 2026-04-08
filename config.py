@@ -115,7 +115,8 @@ y_Gmin = 0 # 250 ppm CO2
 y_Gmax = 2000 # 2500 Gt CO2  
 y_31Gmin = 0 # 250 ppm CO2  
 y_31Gmax = 2000 # 2500 Gt CO2  
-
+y_32Gmin = 0   #   0 GtC
+y_32Gmax = 800 # 800 GtC
 
 y_Emin = 0 #   EEI in W/m2 y axis left mode
 y_Emax = 2 #   EEI in W/m2 y axis left mode

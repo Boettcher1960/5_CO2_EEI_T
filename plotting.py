@@ -648,7 +648,7 @@ def plot_9_create_all_plots(ax1, data):
         # processed file from 5_CO2_EEI_T/main 63play_63_CB=5 cumulative 1750 to 2024 word of data
         # "work/_63b.csv has 5 columns Year,Cumulative CO₂ emissions, GtCO2 and GtC
         print("plot_650: plot32_CO2_emission = ", plot32_CO2_emission) # 32.7 plot 32
-        ax32.plot(df32["Year"], df32["GtCO2"], marker="o",  color=c32, label="plot32_CO2_emission")
+        ax32.plot(df32["Year"], df32["GtC"], marker="o",  color=c32, label="plot32_CO2_emission")
         ax32.tick_params(axis="y", labelcolor=c32)
         ax32.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
         if plot32_CO2_emission > 2:
