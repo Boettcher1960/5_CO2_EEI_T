@@ -224,6 +224,16 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        plt.text(tr2x, tr3y, blue25_text, color=c25, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
        fig.add_artist(line25)
+    elif plot31_CO2_emission == 3: # 31.8
+       print("text_228: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
+       line31 = Line2D([lr2x1, lr2x2], [lr3y, lr3y], # y from 0 to 1
+       transform=fig.transFigure,
+       marker="o", markersize=3, color=c31, linewidth=2)
+       fig.add_artist(line31)
+       plt.text(tr2x, tr3y, print31_text, color=c31, fontname="Arial", fontsize=trs,
+       transform=plt.gca().transAxes)
+       fig.add_artist(line31)
+
     elif part41_ceres_eei == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
         text_4_add_text(ax1, tr2x, tr3y, 

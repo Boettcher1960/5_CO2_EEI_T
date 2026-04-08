@@ -22,7 +22,7 @@ plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in lin
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
-plot31_CO2_emission =    4   # 31.1 CO2_emission Carbon Brief
+plot31_CO2_emission =    3   # 31.1 CO2_emission Carbon Brief
 
 plot34_CO2_emission =    0   # 34.1 row 4 
 plot34_CO2_emission_mode = 0 # 34.1 mode 
@@ -49,7 +49,7 @@ plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
 plot74_GIS_T = 2 # 3=right y axis
-linear_41_75 = 4
+linear_41_75 = 0 # 4
 plot76_my_T = 0
 plot_T_77 = 0
 parameter84_save_png = 8
@@ -59,7 +59,7 @@ c21 = "blue"
 c22 = "blue"
 c23 = "#4554A8C6"
 c25 = "green"
-c31 = "red"
+c31 = "#9B107F90"
 c34 = "#942296C5"
 c41 = "#289C1684"
 c42 = "purple"
@@ -83,7 +83,7 @@ c77 = "#34753D84"
 blue22_text = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm) 22"
 text_plot23_Glen = "calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
 blue25_text = "green: CO2 NOAA 800_000 year ice data 25"
-print31_text = "dots: cumulative CO2 emissions in Gt Carbon Brief  31"
+print31_text = "dots: cumulative CO2 emissions in Gt from Carbon Brief                         31"
 
 print34_text = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode"
 p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
@@ -121,8 +121,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_Tmin = 0
-y_Tmax = 2
+y_Tmin = 0.4
+y_Tmax = 1.7
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
