@@ -1,6 +1,12 @@
 # main.py
 # part 1 configure 
-v = "5d36" # play_63_CB
+v = "5d38" # play_63_CB
+# "AMOC collapse leads 153GtC to 275GtC in atm..
+# as the compensating land carbon sink is absent (Fig. 3c)."
+# So far men emitted 500GtC reaching 1.5°C
+# AMOC_780GtC may reach 2.5°C
+# https://www.nature.com/articles/s43247-026-03427-w#
+# https://bsky.app/profile/thomas-boettcher.bsky.social/post/3miz5mmll3k2z
 # part 5.3 plot53_CO2_orange2025
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 

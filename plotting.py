@@ -157,7 +157,7 @@ def plot_1_axe(ax1):
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_31Gmin, y_31Gmax)
-        ax1.set_ylabel("cumulative CO₂ in GtCO₂   (plot160)  ", color=c31, fontsize=20)
+        ax1.set_ylabel("cumulative CO₂ emission in GtCO₂ ", color=c31, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c31, labelsize=20)
         y_mayor_ticks = 500 
         y_minor_ticks = 100
@@ -167,7 +167,7 @@ def plot_1_axe(ax1):
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_32min, y_32max)
-        ax1.set_ylabel("cumulative CO₂ in GtCO₂   (plot160)  ", color=c32, fontsize=20)
+        ax1.set_ylabel("cumulative CO₂ emissions in GtC    ", color=c32, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c32, labelsize=20)
         y_mayor_ticks = 100 
         y_minor_ticks = 50
@@ -505,7 +505,7 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
     else:
         outward_right =  ( plot74_GIS_T * yr_60 ) - yr_150
     ax74.spines.right.set_position(("outward", outward_right))
-    ax74.set_ylabel("Temperature in °C        plot575          74", color=c74, fontname="Arial",fontsize=18)
+    ax74.set_ylabel("Temperature in °C     GISS Hansen+0,3°C    74", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
  
 # plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C         ,  line  581
@@ -658,7 +658,7 @@ def plot_9_create_all_plots(ax1, data):
         # processed file from 5_CO2_EEI_T/main 63play_63_CB=5 cumulative 1750 to 2024 word of data
         # "work/_63b.csv has 5 columns Year,Cumulative CO₂ emissions, GtCO2 and GtC
         print("plot_650: plot32_CO2_emission = ", plot32_CO2_emission) # 32.7 plot 32
-        ax32.plot(df32["Year"], df32["GtC"], marker="o",  color=c32, label="plot32_CO2_emission")
+        ax32.plot(df32["Year"], df32["GtC"], marker="o",  color=c32, linewidth=3, label="plot32_CO2_emission")
         ax32.tick_params(axis="y", labelcolor=c32)
         ax32.set_ylim(y_32min, y_32max) # best scaling 2000 GtC
         if plot32_CO2_emission > 2:

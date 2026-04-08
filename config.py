@@ -64,6 +64,7 @@ c23 = "#4554A8C6"
 c25 = "green"
 c31 = "#9B107F90"
 c32 = "#10929B90"
+c32 = "red"
 c34 = "#942296C5"
 c41 = "#289C1684"
 c42 = "purple"
@@ -80,6 +81,7 @@ c71 = "red"
 c72 =  "#BD316990"
 c73 =  "#13DF2F84"
 c74 = "red"
+c74 = "#9522AA90"
 c75 = "#371EA484"
 c76 = "#13DF2F84"
 c77 = "#34753D84"
@@ -133,8 +135,8 @@ y_Tmax = 2.6
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 1890
-x_end = 2026
+x_anf = 1900
+x_end = 2060
 
 # constants
 # C280 =275 in Zack Labe plots.
