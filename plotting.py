@@ -155,9 +155,9 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot31_CO2_emission == 2:  # 31.5 y axe left 
         # ax42.spines.right.set_position(("outward", outward_right))
-        ax1.spines.left.set_position(("outward", 3))
+        ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_31Gmin, y_31Gmax)
-        ax1.set_ylabel(" CO₂ in Gt  (plot158) y_31Gmax ", color=c31, fontsize=20)
+        ax1.set_ylabel(" CO₂ in Gt  (plot160) y_31Gmax ", color=c31, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c31, labelsize=20)
         y_mayor_ticks = 500 
         y_minor_ticks = 100

@@ -22,7 +22,7 @@ plot22_CO2_Mauna_Loa = 0 # 22.1 declare global integer variable (2= print in lin
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
-plot31_CO2_emission =    3   # 31.1 CO2_emission Carbon Brief
+plot31_CO2_emission =    2   # 31.1 CO2_emission Carbon Brief
 
 plot34_CO2_emission =    0   # 34.1 row 4 
 plot34_CO2_emission_mode = 0 # 34.1 mode 
@@ -48,7 +48,7 @@ play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 2 # 3=right y axis
+plot74_GIS_T = 3 # 3=right y axis
 linear_41_75 = 0 # 4
 plot76_my_T = 0
 plot_T_77 = 0
@@ -83,7 +83,7 @@ c77 = "#34753D84"
 blue22_text = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm) 22"
 text_plot23_Glen = "calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
 blue25_text = "green: CO2 NOAA 800_000 year ice data 25"
-print31_text = "dots: cumulative CO2 emissions in Gt from Carbon Brief                         31"
+print31_text = "dots: cumulative CO2 emissions in Gt    Carbon Brief / Our World in Data               31"
 
 print34_text = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode"
 p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
@@ -126,8 +126,8 @@ y_Tmax = 1.7
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 2006
-x_end = 2036
+x_anf = 1990
+x_end = 2026
 
 # constants
 # C280 =275 in Zack Labe plots.
