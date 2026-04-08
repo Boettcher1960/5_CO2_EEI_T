@@ -457,10 +457,19 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     # ax55.set_ylim(4, 9)
     #end plot8_160_right_y_axe_55  
 
+# plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 460
+def plot8_right_y_axe_for_C_63(ax63,right52):
+    if right52 > 0:
+        outward_right = right52
+    else:
+        outward_right =  ( play_63_CB * yr_60 ) - yr_150
+    ax63.spines.right.set_position(("outward", outward_right))
+    ax63.set_ylabel("carbon brief CO2 values   plot467               63", color=c63, fontname="Arial",fontsize=18)
+    ax63.tick_params(axis="y", labelcolor=c71)
+
 
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
 def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
-    # ax74.spines.right.set_position(("outward", rightv))
     if right52 > 0:
         outward_right = right52
     else:
@@ -894,7 +903,7 @@ def plot_9_create_all_plots(ax1, data):
           )
         # in Gt CO2
         world63["GtCO2"] = world63["Cumulative CO₂ emissions"] / 1e9
-        world63["Year63"] = world63["Year"] *1.0001
+        world63["Year63"] = world63["Year"] +0.1
         # in GtC
         world63["GtC"] = world63["Cumulative CO₂ emissions"] *12 / ( 1e9 * 44 )
         print(df63.head(3))
@@ -908,14 +917,8 @@ def plot_9_create_all_plots(ax1, data):
         #df63b.plot(df63b["Year63"], df63b["GtCO2"], marker="o",  color=c63, label="play_63_CB")
         #df63.tick_params(axis="y", labelcolor=c63)
         # df63b.set_ylim(y_Gmin+20, y_Gmax+20) # best scaling 2000 GtCO2
-        #if play_63_CB > 2:
-            # plot8_right_y_axe_for_C_31(ax63,0) # 31.5 line 500
-
-
-
-        # plot8_160_right_y_axe_55(ax55,pop_world)    # 55.4 line 358
-
-
+        if play_63_CB > 2:
+            plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 500
 
 
     if plot71_temperature > 0 : # 71.4
