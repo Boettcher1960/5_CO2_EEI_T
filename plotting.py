@@ -886,22 +886,21 @@ def plot_9_create_all_plots(ax1, data):
         df63 = pd.read_csv("work/_63a_cumulative-co-emissions.csv")
         if print_debug > 9:
            print(f"plot_888: ax63 63.4 ={play_63_CB}")
-        # 4.1.1.6 Save to CSV
-        # df.to_csv(output_file, index=False, float_format='%.6f')
-        # print(df.head(3))
         world63 = (
              df63[df63["Entity"] == "World"][["Year", "Cumulative CO₂ emissions"]]
              .query("1750 <= Year <= 2026")
              .sort_values("Year")
              .reset_index(drop=True)
           )
-        # 5.5.4 in Milliarden
+        # in Gt CO2
         world63["GtCO2"] = world63["Cumulative CO₂ emissions"] / 1e9
+        # in GtC
         world63["GtC"] = world63["Cumulative CO₂ emissions"] *12 / ( 1e9 * 44 )
         print(df63.head(3))
         print(f"plot_901: ax63 63.4 ={play_63_CB}")
         print(world63.head(3))
-        world63.to_csv("work/_63b.csv", index=False, float_format='%.6f')
+        world63.to_csv(""work/_63b.csv", index=False, float_format='%.6f')
+        # "work/_63b.csv has 5 columns Year,Cumulative CO₂ emissions, GtCO2 and GtC
         ax63 = ax1.twinx()
         # plot8_160_right_y_axe_55(ax55,pop_world):   # 55 line 358
         # plot8_160_right_y_axe_55(ax55,pop_world)    # 55.4 line 358
