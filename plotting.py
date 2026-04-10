@@ -9,7 +9,7 @@
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 # plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
-# plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  571
+# plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  501
 # plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C            ,  line  581
 # plot8_right_y_axe_for_T_77 ,     plot_T_77    ,   my quadratic              ,  line  604
 # plot_9_create_all_plots(ax1, data): line 400 600
@@ -505,7 +505,7 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
     else:
         outward_right =  ( plot74_GIS_T * yr_60 ) - yr_150
     ax74.spines.right.set_position(("outward", outward_right))
-    ax74.set_ylabel("Temperature in °C     GISS Hansen+0,3°C    74", color=c74, fontname="Arial",fontsize=18)
+    ax74.set_ylabel("Temperature in °C        74 ", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
  
 # plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C         ,  line  581

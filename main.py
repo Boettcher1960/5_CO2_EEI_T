@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d39" # play_63_CB
+v = "5d40" # play_63_CB
 # "AMOC collapse leads 153GtC to 275GtC in atm..
 # as the compensating land carbon sink is absent (Fig. 3c)."
 # So far men emitted 500GtC reaching 1.5°C
