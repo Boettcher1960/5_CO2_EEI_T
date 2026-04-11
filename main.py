@@ -5,6 +5,12 @@ v = "5d40" # play_63_CB
 # as the compensating land carbon sink is absent (Fig. 3c)."
 # So far men emitted 500GtC reaching 1.5°C
 # AMOC_780GtC may reach 2.5°C
+#
+# plan txt to csv to png play 64 
+# ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
+# https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
+# http://www.ocean.iap.ac.cn/ftp/images_files/Stratification_global_time_series.txt
+#
 # https://www.nature.com/articles/s43247-026-03427-w#
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3miz5mmll3k2z
 # part 5.3 plot53_CO2_orange2025
