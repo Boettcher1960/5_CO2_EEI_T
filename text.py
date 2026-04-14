@@ -198,22 +198,22 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif part41_ceres_eei == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c41)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month  41", 
+                    "Earth Energy Imbalance W/m² moving average 12 month                                         41", 
                     c41, trs)
     elif part42_ceres_eei == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c42)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month  42", 
+                    "Earth Energy Imbalance W/m² moving average 48 month                                         42", 
                     c42, trs)
     elif part43_ceres_eei == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month  43", 
+                    "Earth Energy Imbalance W/m² moving average 12 month                                         43", 
                     c43, trs)
     elif plot71_temperature == 2: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "Temperature in °C 0.000618t² - 2.459 t + 2446.0579   71", 
+                    "Temperature in °C 0.000618t² - 2.459 t + 2446.0579                                          71", 
                     c71, trs)
     elif plot72_AESS_T == 2: # 72.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c72)
@@ -337,12 +337,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif part42_ceres_eei == 4:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
         text_4_add_text(ax1, tr2x, tr4y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month  42", 
+                    "Earth Energy Imbalance W/m² moving average 48 month                                         42", 
                     c42, trs)
     elif part43_ceres_eei == 4:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c43)
         text_4_add_text(ax1, tr2x, tr4y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month  43", 
+                    "Earth Energy Imbalance W/m² moving average 12 month                                         43", 
                     c43, trs)
     # part 5.2 plot52_delta_CO2_red_bars
     elif plot52_delta_CO2_red_bars == 4: # 52.4 row 4
