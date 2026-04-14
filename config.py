@@ -44,7 +44,7 @@ plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 
-play_61_CERES = 0     # 72 ...12 CERES EEI 12 month like part41_ceres_eei 
+play_61_CERES = 13     # 72 ...12 CERES EEI 12 month like part41_ceres_eei 
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
@@ -184,6 +184,20 @@ print_debug = 10 # print some items
 
  
 """
+
+# plan txt to csv to png play 64 
+# ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
+# https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
+# http://www.ocean.iap.ac.cn/ftp/images_files/Stratification_global_time_series.txt
+#
+# https://www.nature.com/articles/s43247-026-03427-w#
+# https://bsky.app/profile/thomas-boettcher.bsky.social/post/3miz5mmll3k2z
+# part 5.3 plot53_CO2_orange2025
+# part 5.4 plot54_Glen_delta_on
+# part 5.5 plot55_population_on human earth population 
+
+
+
 
 
 #########################################################

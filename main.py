@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d46" # # plot8_right_y_axe_for_eei_43  part43_ceres_eei   Earth Energy Imbalance     ,  line  460
+v = "5d48" # # plot8_right_y_axe_for_eei_43  part43_ceres_eei   Earth Energy Imbalance     ,  line  460
 # 
 #
 # plan txt to csv to png play 64 
