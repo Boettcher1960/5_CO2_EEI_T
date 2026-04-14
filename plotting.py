@@ -173,7 +173,16 @@ def plot_1_axe(ax1):
         y_minor_ticks = 50
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-
+    elif part42_ceres_eei == 2:  # 43.5 y axe left 
+        # ax42.spines.right.set_position(("outward", outward_right))
+        ax1.spines.left.set_position(("outward", 0))
+        ax1.set_ylim(y_Emin, y_Emax)
+        ax1.set_ylabel("Earth energy Imbalance EEI in W (plot180)  ", color=c42, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c42, labelsize=20)
+        y_mayor_ticks = 0.500 
+        y_minor_ticks = 0.100
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
     elif part43_ceres_eei == 2:  # 43.5 y axe left 
         # ax42.spines.right.set_position(("outward", outward_right))
@@ -790,7 +799,8 @@ def plot_9_create_all_plots(ax1, data):
         ax42.tick_params(axis="y", labelcolor=c42)
         ax42.set_ylim(y_Emin, y_Emax)
         # plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
-        plot8_right_y_axe_for_eei_42( ax42 , 0 ) # 42.4 line 356
+        if part42_ceres_eei > 2:
+           plot8_right_y_axe_for_eei_42( ax42 , 0 ) # 42.4 line 356
 
 
 

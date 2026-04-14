@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d42" # EEI
+v = "5d43" # EEI
 # 
 #
 # plan txt to csv to png play 64 

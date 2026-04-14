@@ -196,6 +196,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Earth Energy Imbalance W/m² moving average 12 month  41", 
                     c41, trs)
+    elif part42_ceres_eei == 2:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c42)
+        text_4_add_text(ax1, tr2x, tr2y, 
+                    "Earth Energy Imbalance W/m² moving average 48 month  42", 
+                    c42, trs)
     elif part43_ceres_eei == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
         text_4_add_text(ax1, tr2x, tr2y, 
