@@ -1,7 +1,7 @@
 # main.py
 # part 1 configure 
 v = "5d48" # # plot8_right_y_axe_for_eei_43  part43_ceres_eei   Earth Energy Imbalance     ,  line  460
-# 
+# not work play_61_CERES = 1 
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
