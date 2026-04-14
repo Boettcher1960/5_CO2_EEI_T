@@ -23,7 +23,7 @@ plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in lin
 plot25_long_CO2 = 0      # 25.1 
 
 plot31_CO2_emission =    0   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
-plot32_CO2_emission =    2   # 32.1 CO2_emission 600 GtC Carbon Brief made with play_63_CB 
+plot32_CO2_emission =    0   # 32.1 CO2_emission 600 GtC Carbon Brief made with play_63_CB 
 
 
 plot34_CO2_emission =    0   # 34.1 row 4 
@@ -35,8 +35,8 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 plot34_CO2 = 0
 
 part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
-part42_ceres_eei = 0  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
-part43_ceres_eei = 0  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
+part42_ceres_eei = 3  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
+part43_ceres_eei = 2  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
@@ -81,7 +81,7 @@ c71 = "red"
 c72 =  "#BD316990"
 c73 =  "#13DF2F84"
 c74 = "red"
-c74 = "#9522AA90"
+#c74 = "#9522AA90"
 c75 = "#371EA484"
 c76 = "#13DF2F84"
 c77 = "#34753D84"
@@ -135,8 +135,8 @@ y_Tmax = 2.6
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 1900
-x_end = 2060
+x_anf = 2005
+x_end = 2027
 
 # constants
 # C280 =275 in Zack Labe plots.

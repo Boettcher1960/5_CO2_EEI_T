@@ -1,10 +1,7 @@
 # main.py
 # part 1 configure 
-v = "5d40" # play_63_CB
-# "AMOC collapse leads 153GtC to 275GtC in atm..
-# as the compensating land carbon sink is absent (Fig. 3c)."
-# So far men emitted 500GtC reaching 1.5°C
-# AMOC_780GtC may reach 2.5°C
+v = "5d41" # play_63_CB
+# 
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
