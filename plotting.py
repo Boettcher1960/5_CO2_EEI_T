@@ -5,7 +5,8 @@
 # plot_6_remove_axe1(axes,yr6_delete): line 365
 # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
 # plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
-# plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
+# plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  450
+# plot8_right_y_axe_for_eei_43  part43_ceres_eei   Earth Energy Imbalance     ,  line  460
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 # plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
@@ -455,6 +456,16 @@ def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
     ax42.tick_params(axis="y", labelcolor=c42)
     ax42.set_ylim(y_Emin, y_Emax) #
 
+# Earth Energy Imbalance W/m² moving average 12 month 
+# plot8_right_y_axe_for_eei_43  part43_ceres_eei   Earth Energy Imbalance     ,  line  460
+def plot8_right_y_axe_for_eei_43(ax43,rightv): # 43.5
+    outward_right =  ( part43_ceres_eei *  yr_60 ) - yr_150
+    ax43.spines.right.set_position(("outward", outward_right))
+    #ax43.spines.right.set_position(("outward", 120))
+    ax43.set_ylabel("Earth Energy Imbalance  in W/m²     plot470            43", color=c43, fontname="Arial",fontsize=18)
+    ax43.tick_params(axis="y", labelcolor=c43)
+    ax43.set_ylim(y_Emin, y_Emax) #
+
 
 
 # plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
@@ -800,7 +811,7 @@ def plot_9_create_all_plots(ax1, data):
         ax42.set_ylim(y_Emin, y_Emax)
         # plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
         if part42_ceres_eei > 2:
-           plot8_right_y_axe_for_eei_42( ax42 , 0 ) # 42.4 line 356
+           plot8_right_y_axe_for_eei_42( ax42 , 0 ) # 42.4 line 450
 
 
 
@@ -812,7 +823,13 @@ def plot_9_create_all_plots(ax1, data):
         ax43.set_ylim(y_Emin, y_Emax)
         if print_debug > 19:
            print(f"plot_231: ax43 43.4 ={part43_ceres_eei}")
- 
+        # plot8_right_y_axe_for_eei_43  part43_ceres_eei   Earth Energy Imbalance     ,  line  460
+        if part43_ceres_eei > 2:
+           plot8_right_y_axe_for_eei_43( ax43 , 0 ) # 43.4 line 460
+
+
+
+
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
         if print_debug > 19:
            print(f"plot_235: ax44 44.7 ={part44_ceres_eei}")
