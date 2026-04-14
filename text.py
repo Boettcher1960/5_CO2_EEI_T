@@ -53,7 +53,11 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"! cumulative CO2 emissions in GtC. Carbon_Brief_2024=500GtC + 275GtC from AMOC = 780 GtC !!"
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
-
+    elif part42_ceres_eei == 2:
+        header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Jan. 2026 data. Plot {x_anf} to {x_end}."
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
+                transform=ax1.transAxes)
+   
     elif yl_mode == 4:
         header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Jan. 2026 data. Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
@@ -335,6 +339,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Earth Energy Imbalance W/m² moving average 48 month  42", 
                     c42, trs)
+    elif part43_ceres_eei == 4:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c43)
+        text_4_add_text(ax1, tr2x, tr4y, 
+                    "Earth Energy Imbalance W/m² moving average 12 month  43", 
+                    c43, trs)
     # part 5.2 plot52_delta_CO2_red_bars
     elif plot52_delta_CO2_red_bars == 4: # 52.4 row 4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c52)

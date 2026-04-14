@@ -36,7 +36,7 @@ plot34_CO2 = 0
 
 part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
 part42_ceres_eei = 2  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
-part43_ceres_eei = 3  # 43.1 2=left y axis 3,4 print EEI 12 month running mean.
+part43_ceres_eei = 4  # 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
@@ -44,14 +44,14 @@ plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 
-play_61_CERES = 72     # 12 CERES EEI 12 month like part41_ceres_eei 
+play_61_CERES = 0     # 72 ...12 CERES EEI 12 month like part41_ceres_eei 
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 4 # 3=right y axis
+plot74_GIS_T = 3 # 3=right y axis
 linear_41_75 = 0 # 4
 plot76_my_T = 0
 plot_T_77 = 0
@@ -135,8 +135,8 @@ y_Tmax = 2.6
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 2005
-x_end = 2027
+x_anf = 2000
+x_end = 2026
 
 # constants
 # C280 =275 in Zack Labe plots.

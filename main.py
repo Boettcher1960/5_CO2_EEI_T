@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d43" # EEI
+v = "5d44" # EEI
 # 
 #
 # plan txt to csv to png play 64 
@@ -344,8 +344,8 @@ def main():
     # Keep axes 0, 1, 2, hide all others
     print("main_344: call plot_6_remove_axe1.")
     #plot_6_remove_axe1(axes,yr_delete)
-    plot_6_remove_axe1(axes,-1) # -1= no delete, print only
-    #plot_6_remove_axe1(axes,1) # delete axe 1, not axe 0
+    #plot_6_remove_axe1(axes,-1) # -1= no delete, print only
+    plot_6_remove_axe1(axes,1) # delete axe 1, not axe 0
     #plot_6_remove_axe1(axes,2)  # delete axe 2
     
     # Adjust layout

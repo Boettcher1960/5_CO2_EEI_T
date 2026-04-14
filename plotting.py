@@ -177,7 +177,7 @@ def plot_1_axe(ax1):
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_Emin, y_Emax)
-        ax1.set_ylabel("Earth energy Imbalance EEI in W (plot180)  ", color=c42, fontsize=20)
+        ax1.set_ylabel("Earth energy Imbalance EEI in W/m² (plot180)  ", color=c42, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c42, labelsize=20)
         y_mayor_ticks = 0.500 
         y_minor_ticks = 0.100
@@ -514,7 +514,7 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
     else:
         outward_right =  ( plot74_GIS_T * yr_60 ) - yr_150
     ax74.spines.right.set_position(("outward", outward_right))
-    ax74.set_ylabel("Temperature in °C        74 ", color=c74, fontname="Arial",fontsize=18)
+    ax74.set_ylabel("Temperature in °C   GISS     74 ", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
  
 # plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C         ,  line  581
