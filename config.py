@@ -120,8 +120,8 @@ y_31Gmax = 2000 # 2500 Gt CO2
 y_32min = 0   #   0 GtC
 y_32max = 800 # 800 GtC
 
-y_Emin = 0 #   EEI in W/m2 y axis left mode
-y_Emax = 10 #   EEI in W/m2 y axis left mode
+y_Emin = -5 #   EEI in W/m2 y axis left mode
+y_Emax = 6 #   EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
 

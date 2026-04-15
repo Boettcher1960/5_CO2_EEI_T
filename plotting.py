@@ -182,6 +182,9 @@ def plot_1_axe(ax1):
         ax1.tick_params(axis="y", labelcolor=c42, labelsize=20)
         y_mayor_ticks = 0.500 
         y_minor_ticks = 0.100
+        if (y_Emax - y_Emin) > 5:
+           y_mayor_ticks = 5
+           y_minor_ticks = 1
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
