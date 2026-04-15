@@ -145,16 +145,21 @@ def process_ceres_data():
           print(f"main_156: create work/c61b_ceres.csv  61.b ={play_61_CERES}")
        
        window_months=play_61_CERES
-       min_periods=12
+
+       if play_61_CERES > 11:
+          min1_periods=12
+       else:
+          min1_periods=play_61_CERES -1
        use_center=False
        keep_original=True,
+       
        df61c = create_running_average( 'work/c61b_ceres.csv', 
                                           'work/c61gut_ceres.csv',
                                             window_months=play_61_CERES,
-                                            min_periods=12,
+                                            min_periods=min1_periods,
                                             center=use_center,
                                             column_name='EEI')
-
+        
        if print_debug > 9:
           print(f"main_170: create work/c61gut_ceres.csv  61.gut ={play_61_CERES}")
 
