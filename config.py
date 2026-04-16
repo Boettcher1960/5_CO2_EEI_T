@@ -44,7 +44,7 @@ plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 
-play_61_CERES = 1     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_CERES = 12     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
@@ -120,8 +120,8 @@ y_31Gmax = 2000 # 2500 Gt CO2
 y_32min = 0   #   0 GtC
 y_32max = 800 # 800 GtC
 
-y_Emin = -15 #   EEI in W/m2 y axis left mode
-y_Emax = 16 #   EEI in W/m2 y axis left mode
+y_Emin = 0 #   EEI in W/m2 y axis left mode
+y_Emax = 2 #   EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
 
@@ -272,7 +272,7 @@ print_debug = 10 # print some items
 # run2 part41_ceres_eei = 48
 # run3 part41_ceres_eei = 50
 #
-# # play_61_CERES = 1     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+# # play_61_CERES = 12     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # work/c61b_ceres.csv   read_csv/_c61b_out_ceres.csv
 #########################################################
 # 62 How to make TOA_Shortwave_Fluxfiles ################
