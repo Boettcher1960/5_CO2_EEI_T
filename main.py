@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d57" # read_csv/_61c_out_ceres.csv
+v = "5d58" # read_csv/_61c_out_ceres.csv
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

@@ -244,6 +244,13 @@ print_debug = 10 # print some items
 #     to
 #     /Dokumente/Python/5_CO2_EEI_T/read_csv/_61_in__2016_01_EEI_CERES.txt
 # 
+# 18) in config.py set play_61_CERES = 12 
+# 19) read_csv/_61b_out_in_ceres.csv is created from read_csv/_61_in__2016_01_EEI_CERES.txt
+# 19) read_csv/_61c_out_ceres.csv is created from read_csv/_61b_out_in_ceres.csv
+# 19) _61c_out_ceres.csv is plotted as documented in line 5
+#
+# 20) copy  _61c_out_ceres.csv to  _43in_EEI12month_made_by_61c.csv
+
 #            read_csv/_61c_out_ceres.csv
 # 21)  set part44_ceres_eei = 47
 # 22) /Dokumente/Python/5_CO2_EEI_T/main.py reads 
