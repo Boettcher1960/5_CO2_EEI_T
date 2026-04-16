@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d52" # play_61_CERES = 1     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+v = "5d53" # play_61_CERES = 1     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -138,7 +138,7 @@ def process_ceres_data():
         if print_debug > 9:
                print(f"main_150: created c44d_ceres.csv 44.7 ={part44_ceres_eei}")
     if play_61_CERES > 0: # part 6 
-       df61b = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES.txt', 
+       df61b = convert_ceres_to_csv('read_csv/_61_in__2016_01_EEI_CERES.txt', 
                                       'work/c61b_ceres.csv')
        if print_debug > 9:
           print(f"main_156: create work/c61b_ceres.csv  61.b ={play_61_CERES}")

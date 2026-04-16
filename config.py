@@ -237,12 +237,12 @@ print_debug = 10 # print some items
 # 14) open the download folder
 # 15) CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Net_Flux_-_All-Sky_March-2000toJanuary-2026 (2).txt
 # 16) copy CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Net_Flux_-_All-Sky_March-2000toJanuary-2026 (2).txt
-#     to the
+#     to the 
 #     /read_csv/ folder
 #     /Dokumente/Python/5_CO2_EEI_T/read_csv/
 # 17) rename CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Net_Flux_-_All-Sky_March-2000toJanuary-2026 (2).txt
 #     to
-#     /Dokumente/Python/5_CO2_EEI_T/read_csv/2016_01_EEI_CERES_TOA Net Flux.txt
+#     /Dokumente/Python/5_CO2_EEI_T/read_csv/_61_in__2016_01_EEI_CERES.txt
 # 
 # 21)  set part44_ceres_eei = 47
 # 22) /Dokumente/Python/5_CO2_EEI_T/main.py reads 
@@ -272,7 +272,7 @@ print_debug = 10 # print some items
 # run2 part41_ceres_eei = 48
 # run3 part41_ceres_eei = 50
 #
-# 
+# # play_61_CERES = 1     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 #
 #########################################################
 # 62 How to make TOA_Shortwave_Fluxfiles ################
