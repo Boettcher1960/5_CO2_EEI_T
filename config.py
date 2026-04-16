@@ -36,7 +36,7 @@ plot34_CO2 = 0
 
 part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
 part42_ceres_eei = 2  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
-part43_ceres_eei = 4  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
+plot43_eei_12month = 4  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
@@ -251,7 +251,7 @@ print_debug = 10 # print some items
 #
 # 20) copy  _61c_out_ceres.csv to  _43_EEI12month_made_by_61c.csv
 #     note: _61c_out_ceres.csv is same as a44d_ceres_12month_EEI.csv made by 41 chain
-# 21) plot _43_EEI12month_made_by_61c.csv using part43_ceres_eei = 4
+# 21) plot _43_EEI12month_made_by_61c.csv using plot43_eei_12month = 4
 #
 #            read_csv/_61c_out_ceres.csv
 # 21)  set part44_ceres_eei = 47

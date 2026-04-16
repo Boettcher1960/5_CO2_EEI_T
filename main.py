@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d60" # read_csv/_61c_out_ceres.csv
+v = "5d61" # plot43_eei_12month
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -247,10 +247,10 @@ def load_plot_data():
     if part42_ceres_eei > 0:
         data['ceres_48'] = pd.read_csv("read_csv/_plot_42_41g50.csv")
     
-    if part43_ceres_eei > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
+    if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
         data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_made_by_61c.csv")
         if print_debug > 19:
-           print(f"main_253: 43.2 read ={part43_ceres_eei}")
+           print(f"main_253: 43.2 read ={plot43_eei_12month}")
            #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
 
     if part44_ceres_eei > 0:
@@ -297,7 +297,7 @@ def main():
     header_parameter = (f" "
                        f"2({plot22_CO2_Mauna_Loa}{plot23_Glen_CO2}{plot25_long_CO2}" 
                        f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({part41_ceres_eei}{part42_ceres_eei}"
-                       f"{part43_ceres_eei}{part44_ceres_eei} 5({plot52_delta_CO2_red_bars}"
+                       f"{plot43_eei_12month}{part44_ceres_eei} 5({plot52_delta_CO2_red_bars}"
                        f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on}"
                        f" 6({play_61_CERES}"
                        f" 7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
