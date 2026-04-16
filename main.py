@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d58" # read_csv/_61c_out_ceres.csv
+v = "5d60" # read_csv/_61c_out_ceres.csv
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -247,10 +247,10 @@ def load_plot_data():
     if part42_ceres_eei > 0:
         data['ceres_48'] = pd.read_csv("read_csv/_plot_42_41g50.csv")
     
-    if part43_ceres_eei > 0: # 43.2 read1
-        data['ceres_43'] = pd.read_csv("read_csv/a44d_ceres_12month_EEI.csv")
+    if part43_ceres_eei > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
+        data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_made_by_61c.csv")
         if print_debug > 19:
-           print(f"main_236: 43.2 read ={part43_ceres_eei}")
+           print(f"main_253: 43.2 read ={part43_ceres_eei}")
            #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
 
     if part44_ceres_eei > 0:
