@@ -260,9 +260,9 @@ print_debug = 10 # print some items
 # 24) copy  _61c_out_ceres.csv to  _42_EEI48month_made_by_61c.csv
 #     note: _61c_out_ceres.csv is same as a44d_ceres_12month_EEI.csv made by 41 chain
 # 25) plot _43_EEI12month_made_by_61c.csv using plot43_eei_12month = 4
+#
+#
 
-
-# c44d_ceres_48month_EEI.csv
 
 #            read_csv/_61c_out_ceres.csv
 # 21)  set part44_ceres_eei = 47
