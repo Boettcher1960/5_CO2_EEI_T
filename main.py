@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d56" # play_61_CERES = 1     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+v = "5d57" # read_csv/_61c_out_ceres.csv
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -139,9 +139,9 @@ def process_ceres_data():
                print(f"main_150: created c44d_ceres.csv 44.7 ={part44_ceres_eei}")
     if play_61_CERES > 0: # part 6 
        df61b = convert_ceres_to_csv('read_csv/_61_in__2016_01_EEI_CERES.txt', 
-                                      'read_csv/_c61b_out_in_ceres.csv')
+                                    'read_csv/_61b_out_in_ceres.csv')
        if print_debug > 9:
-          print(f"main_156: create read_csv/_c61b_out_in_ceres.csv  61.b ={play_61_CERES}")
+          print(f"main_156: create read_csv/_61b_out_in_ceres.csv  61.b ={play_61_CERES}")
        
        window_months=play_61_CERES
 
@@ -152,15 +152,15 @@ def process_ceres_data():
        use_center=False
        keep_original=True,
        
-       df61c = create_running_average( 'read_csv/_c61b_out_in_ceres.csv', 
-                                          'work/c61gut_ceres.csv',
+       df61c = create_running_average( 'read_csv/_61b_out_in_ceres.csv', 
+                                       'read_csv/_61c_out_ceres.csv',
                                             window_months=play_61_CERES,
                                             min_periods=min1_periods,
                                             center=use_center,
                                             column_name='EEI')
         
        if print_debug > 9:
-          print(f"main_170: create work/c61gut_ceres.csv  61.gut ={play_61_CERES}")
+          print(f"main_170: create read_csv/_61c_out_ceres.csv  61.gut ={play_61_CERES}")
 
 
        
@@ -261,7 +261,7 @@ def load_plot_data():
         # data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
 
     if play_61_CERES > 0: # 61.9 read
-        data['ceres_61'] = pd.read_csv("work/c61gut_ceres.csv")
+        data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
         if print_debug > 9:
            print(f"main_296: 61.9 read ={play_61_CERES}")
     if play_62_CERES > 0: # 62.9 read

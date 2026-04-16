@@ -244,6 +244,7 @@ print_debug = 10 # print some items
 #     to
 #     /Dokumente/Python/5_CO2_EEI_T/read_csv/_61_in__2016_01_EEI_CERES.txt
 # 
+#            read_csv/_61c_out_ceres.csv
 # 21)  set part44_ceres_eei = 47
 # 22) /Dokumente/Python/5_CO2_EEI_T/main.py reads 
 #     /Dokumente/Python/5_CO2_EEI_T/read_csv/2016_01_EEI_CERES_TOA Net Flux.txt
