@@ -1,7 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d51" # # plot8_right_y_axe_for_eei_43  part43_ceres_eei   Earth Energy Imbalance     ,  line  460
-# not work play_61_CERES = 1 
+v = "5d52" # play_61_CERES = 1     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -138,7 +137,7 @@ def process_ceres_data():
            print(f"main_148: {avg_type} average for {part44_ceres_eei}-month window 44.7")
         if print_debug > 9:
                print(f"main_150: created c44d_ceres.csv 44.7 ={part44_ceres_eei}")
-    if play_61_CERES > 1: # part 6 
+    if play_61_CERES > 0: # part 6 
        df61b = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES.txt', 
                                       'work/c61b_ceres.csv')
        if print_debug > 9:
@@ -149,7 +148,7 @@ def process_ceres_data():
        if play_61_CERES > 11:
           min1_periods=12
        else:
-          min1_periods=play_61_CERES -1
+          min1_periods=play_61_CERES
        use_center=False
        keep_original=True,
        
