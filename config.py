@@ -273,7 +273,7 @@ print_debug = 10 # print some items
 # run3 part41_ceres_eei = 50
 #
 # # play_61_CERES = 1     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-#
+# work/c61b_ceres.csv   read_csv/_c61b_out_ceres.csv
 #########################################################
 # 62 How to make TOA_Shortwave_Fluxfiles ################
 #########################################################
