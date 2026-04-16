@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d61" # plot43_eei_12month
+v = "5d62" # plot42_eei_48month
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

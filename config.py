@@ -44,7 +44,7 @@ plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 
-play_61_CERES = 12     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_CERES = 48     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
@@ -253,6 +253,17 @@ print_debug = 10 # print some items
 #     note: _61c_out_ceres.csv is same as a44d_ceres_12month_EEI.csv made by 41 chain
 # 21) plot _43_EEI12month_made_by_61c.csv using plot43_eei_12month = 4
 #
+# 22) in config.py set play_61_CERES = 48 
+# 23) read_csv/_61b_out_in_ceres.csv is created from read_csv/_61_in__2016_01_EEI_CERES.txt
+# 23) read_csv/_61c_out_ceres.csv is created from read_csv/_61b_out_in_ceres.csv
+# 23) _61c_out_ceres.csv is plotted as documented in line 5
+# 24) copy  _61c_out_ceres.csv to  _42_EEI48month_made_by_61c.csv
+#     note: _61c_out_ceres.csv is same as a44d_ceres_12month_EEI.csv made by 41 chain
+# 25) plot _43_EEI12month_made_by_61c.csv using plot43_eei_12month = 4
+
+
+# c44d_ceres_48month_EEI.csv
+
 #            read_csv/_61c_out_ceres.csv
 # 21)  set part44_ceres_eei = 47
 # 22) /Dokumente/Python/5_CO2_EEI_T/main.py reads 
