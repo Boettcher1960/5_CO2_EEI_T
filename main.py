@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d63" # plot42_eei_48month
+v = "5d65" # plot42_EEI_48month
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -242,11 +242,12 @@ def load_plot_data():
     
     # Load CERES data
     if part41_ceres_eei > 0:
-        data['ceres_12'] = pd.read_csv("read_csv/_41_EEI_41g12.csv")
+        data['ceres_12'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
     
-    if part42_ceres_eei > 0: # _plot_42_41g50.csv"
-        data['ceres_48'] = pd.read_csv("read_csv/_plot_42_41g50.csv")
-    
+    if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
+        data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
+        # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
+
     if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
         data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_made_by_61c.csv")
         if print_debug > 19:
@@ -257,8 +258,6 @@ def load_plot_data():
         if print_debug > 19:
            print(f"main_253: custom-read 44.7 ={part44_ceres_eei}")
         data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
-        # data['ceres_custom'] = pd.read_csv("csv/csv44/csv44d_out.csv")
-        # data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
 
     if play_61_CERES > 0: # 61.9 read
         data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
@@ -296,7 +295,7 @@ def main():
     # Create header parameter string
     header_parameter = (f" "
                        f"2({plot22_CO2_Mauna_Loa}{plot23_Glen_CO2}{plot25_long_CO2}" 
-                       f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({part41_ceres_eei}{part42_ceres_eei}"
+                       f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({part41_ceres_eei}{plot42_EEI_48month}"
                        f"{plot43_eei_12month}{part44_ceres_eei} 5({plot52_delta_CO2_red_bars}"
                        f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on}"
                        f" 6({play_61_CERES}"

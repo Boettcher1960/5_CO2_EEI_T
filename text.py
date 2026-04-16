@@ -53,7 +53,7 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"! cumulative CO2 emissions in GtC. Carbon_Brief_2024=500GtC + 275GtC from AMOC = 780 GtC !!"
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
-    elif part42_ceres_eei == 2:
+    elif plot42_EEI_48month == 2:
         header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Jan. 2026 data. Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
@@ -200,7 +200,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Earth Energy Imbalance W/m² moving average 12 month                                         41", 
                     c41, trs)
-    elif part42_ceres_eei == 2:
+    elif plot42_EEI_48month == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c42)
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Earth Energy Imbalance W/m² moving average 48 month                                         42", 
@@ -270,7 +270,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month 41", 
                     c41, trs)
-    elif part42_ceres_eei == 3:
+    elif plot42_EEI_48month == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
         text_4_add_text(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 48 month  42", 
@@ -334,7 +334,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        plt.text(tr2x, tr4y, print34_text, color=c34, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
        fig.add_artist(line34)
-    elif part42_ceres_eei == 4:
+    elif plot42_EEI_48month == 4:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Earth Energy Imbalance W/m² moving average 48 month                                         42", 
@@ -372,7 +372,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr5y, 
                     text_plot23_Glen, 
                     c23, trs)
-    elif part42_ceres_eei == 5:
+    elif plot42_EEI_48month == 5:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c42)
         text_4_add_text(ax1, tr2x, tr5y, 
                     "Earth Energy Imbalance W/m² moving average 48 month  42", 

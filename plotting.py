@@ -5,7 +5,7 @@
 # plot_6_remove_axe1(axes,yr6_delete): line 365
 # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
 # plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
-# plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  450
+# plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance     ,  line  450
 # plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance     ,  line  460
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 # plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
@@ -16,7 +16,7 @@
 # plot_9_create_all_plots(ax1, data): line 400 600
 # plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,  line 447
 # plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603
-# part42_ceres_eei, running average over 48 months,  plot_9_create_all_plots() ,  line 601
+# plot42_EEI_48month, running average over 48 months,  plot_9_create_all_plots() ,  line 601
 # plot52_delta_CO2_red_bars,   Mauna Loa delta    ,  plot_9_create_all_plots() ,  line 630
 # plot74_GIS_T,  GIS temperature add 0.3°C Hansen ,  plot_9_create_all_plots() ,  line 750
 
@@ -174,7 +174,7 @@ def plot_1_axe(ax1):
         y_minor_ticks = 50
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-    elif part42_ceres_eei == 2:  # 43.5 y axe left 
+    elif plot42_EEI_48month == 2:  # 43.5 y axe left 
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_Emin, y_Emax)
@@ -450,9 +450,9 @@ def plot8_right_y_axe_for_C_31(ax31,right52): # 31.6
 
 
 # Earth Energy Imbalance W/m² moving average 48 month 
-# plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
+# plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance     ,  line  383
 def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
-    outward_right =  ( part42_ceres_eei *  yr_60 ) - yr_150
+    outward_right =  ( plot42_EEI_48month *  yr_60 ) - yr_150
     ax42.spines.right.set_position(("outward", outward_right))
     #ax42.spines.right.set_position(("outward", 120))
     ax42.set_ylabel("Earth Energy Imbalance  in W/m²     plot470            42", color=c42, fontname="Arial",fontsize=18)
@@ -471,7 +471,7 @@ def plot8_right_y_axe_for_eei_43(ax43,rightv): # 43.5
 
 
 
-# plot8_right_y_axe_for_eei_42  part42_ceres_eei   Earth Energy Imbalance     ,  line  383
+# plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance     ,  line  383
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right52): # 52.4
     # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
@@ -804,16 +804,16 @@ def plot_9_create_all_plots(ax1, data):
         ax41.tick_params(axis="y", labelcolor=c41)
         ax41.set_ylim(y_Emin, y_Emax)
     
-    # part42_ceres_eei, running average over 48 months,  plot_9_create_all_plots() ,   line 601
+    # plot42_EEI_48month, running average over 48 months,  plot_9_create_all_plots() ,   line 601
     # Earth Energy Imbalance W/m² moving average 48 month 
-    if part42_ceres_eei > 0 and 'ceres_48' in data:
+    if plot42_EEI_48month > 0:
         ax42 = ax1.twinx()
-        ax42.plot(data['ceres_48']["year41"], data['ceres_48']["EEI"], '-', 
+        ax42.plot(data['ceres_42']["decimal_year"], data['ceres_42']["EEI"], '-', 
                   label="EEI K42", color=c42, linewidth=4)
         ax42.tick_params(axis="y", labelcolor=c42)
         ax42.set_ylim(y_Emin, y_Emax)
-        # plot8_right_y_axe_for_eei_42        part42_ceres_eei                       ,   line  381
-        if part42_ceres_eei > 2:
+        # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
+        if plot42_EEI_48month > 2:
            plot8_right_y_axe_for_eei_42( ax42 , 0 ) # 42.4 line 450
 
 
