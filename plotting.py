@@ -404,14 +404,14 @@ def plot_6_remove_axe1(axes,yr6_delete):
         # return
     elif yr6_delete == 1:
        i = yr6_delete
-       print("plot_380: remove ", i, len(axes))
+       print("plot_407: remove ", i, len(axes))
        axes[i].yaxis.set_ticks([])  # Remove tick numbers
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)
        axes[i].set_ylabel('') # Remove any label
     elif yr6_delete == 2:
        i = yr6_delete
-       print("plot_391: remove ", i, len(axes))
+       print("plot_415: remove ", i, len(axes))
        axes[i].yaxis.set_ticks([])  # Remove tick numbers
        axes[i].set_yticklabels([])  # Remove tick labels
        axes[i].spines['right'].set_visible(False)

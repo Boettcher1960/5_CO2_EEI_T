@@ -263,12 +263,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot42_EEI_48month == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
         text_4_add_text(ax1, tr2x, tr3y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month  42", 
+                    "Earth Energy Imbalance W/m² moving average 48 month                                        42", 
                     c42, trs)
     elif plot43_eei_12month == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c43)
         text_4_add_text(ax1, tr2x, tr3y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month  43", 
+                    "Earth Energy Imbalance W/m² moving average 12 month                                        43", 
                     c43, trs)
         
     # part 5.2 plot52_delta_CO2_red_bars
