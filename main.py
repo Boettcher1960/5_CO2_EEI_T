@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d66" # plot42_EEI_48month
+v = "5d67" # delete 41
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -78,29 +78,7 @@ def get_active_temperature_axis(ax1):
 
 def process_ceres_data():
     """Process CERES data based on configuration"""
-    if part41_ceres_eei > 10:
-        df41a = convert_ceres_to_csv('csv/csv41/csv41a_in_CERES.txt', 
-                                      'work/c41b_ceres.csv')
-    # run1 part41_ceres_eei = 12 c41d12_ceres
-    # run2 part41_ceres_eei = 48 c41d48_ceres
-    # run3 part41_ceres_eei = 50 c41d50_ceres
-    if part41_ceres_eei == 12:
-        df_with_12avg = create_running_average('work/c41b_ceres.csv', 
-                                               'work/c41d12_ceres.csv',
-                                               window_months=12)
-    
-    elif part41_ceres_eei == 48:
-        df_with_48avg = create_running_average('work/c41b_ceres.csv', 
-                                               'work/c41d48_ceres.csv',
-                                               window_months=48)
-    
-    elif part41_ceres_eei == 50:
-        df_with_48avg = create_running_average('work/c41b_ceres.csv', 
-                                               'work/c41d50_ceres.csv',
-                                               window_months=48, center=False)
-    
-
-
+       
     # Process part44_ceres_eei
     if print_debug > 19:
         print(f"main_115: local variable 44.3 ={part44_ceres_eei}")
@@ -240,10 +218,7 @@ def load_plot_data():
     if plot74_GIS_T > 0: # 74.3
         data['gis_temp'] = load_gis_temperature()
     
-    # Load CERES data
-    if part41_ceres_eei > 0:
-        data['ceres_12'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
-    
+        
     if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
         data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
@@ -295,7 +270,7 @@ def main():
     # Create header parameter string
     header_parameter = (f" "
                        f"2({plot22_CO2_Mauna_Loa}{plot23_Glen_CO2}{plot25_long_CO2}" 
-                       f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({part41_ceres_eei}{plot42_EEI_48month}"
+                       f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({plot42_EEI_48month}"
                        f"{plot43_eei_12month}{part44_ceres_eei} 5({plot52_delta_CO2_red_bars}"
                        f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on}"
                        f" 6({play_61_CERES}"

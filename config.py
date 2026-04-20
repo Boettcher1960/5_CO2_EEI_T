@@ -34,7 +34,6 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 # plot34_CO2_emission mode 4
 plot34_CO2 = 0
 
-part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
 plot42_EEI_48month = 2  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 4  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
@@ -176,8 +175,64 @@ print_debug = 10 # print some items
 # part 2.3 plot23_Glen_CO2 
 # part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
 
-
+# with 5b2*pc set play_61_CERES = 48
+# # run1 part41_ceres_eei = 12
+# run2 part41_ceres_eei = 48
+# run3 part41_ceres_eei = 50
 """
+part41_ceres_eei = 0  # print EEI 12 month running mean. Info in line 3 below the plot
+
+# main 80
+if part41_ceres_eei > 10:
+        df41a = convert_ceres_to_csv('csv/csv41/csv41a_in_CERES.txt', 
+                                      'work/c41b_ceres.csv')
+    # run1 part41_ceres_eei = 12 c41d12_ceres
+    # run2 part41_ceres_eei = 48 c41d48_ceres
+    # run3 part41_ceres_eei = 50 c41d50_ceres
+    if part41_ceres_eei == 12:
+        df_with_12avg = create_running_average('work/c41b_ceres.csv', 
+                                               'work/c41d12_ceres.csv',
+                                               window_months=12)
+    
+    elif part41_ceres_eei == 48:
+        df_with_48avg = create_running_average('work/c41b_ceres.csv', 
+                                               'work/c41d48_ceres.csv',
+                                               window_months=48)
+    
+    elif part41_ceres_eei == 50:
+        df_with_48avg = create_running_average('work/c41b_ceres.csv', 
+                                               'work/c41d50_ceres.csv',
+                                               window_months=48, center=False)
+ 
+
+
+# main 243 Load CERES data
+    if part41_ceres_eei > 0:
+        data['ceres_12'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
+
+# Plot 800  CERES data
+    if part41_ceres_eei > 0 and 'ceres_12' in data:
+        ax41 = ax1.twinx()
+        ax41.plot(data['ceres_12']["year41"], data['ceres_12']["EEI"], '-', 
+                  label="EEI K41", color=c41, linewidth=2)
+        ax41.tick_params(axis="y", labelcolor=c41)
+        ax41.set_ylim(y_Emin, y_Emax)
+
+ text 198  
+ elif part41_ceres_eei == 2:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c41)
+        text_4_add_text(ax1, tr2x, tr2y, 
+                    "Earth Energy Imbalance W/m² moving average 12 month                                         41", 
+                    c41, trs)
+text 263
+  elif part41_ceres_eei == 3:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
+        text_4_add_text(ax1, tr2x, tr3y, 
+                    "Earth Energy Imbalance W/m² moving average 12 month 41", 
+                    c41, trs)
+        
+
+
 
 -----------------------v = "5c90
 
@@ -288,10 +343,7 @@ print_debug = 10 # print some items
 #                      with 48 month trailing average in new column EEI
 # 35) copy /work/c44d_ceres.csv to /read_csv/c44d_ceres_12month_EEI.csv
 #
-# with 5b2*pc set play_61_CERES = 48
-# # run1 part41_ceres_eei = 12
-# run2 part41_ceres_eei = 48
-# run3 part41_ceres_eei = 50
+
 #
 # # play_61_CERES = 12     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # work/c61b_ceres.csv   read_csv/_c61b_out_ceres.csv

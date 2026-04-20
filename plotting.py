@@ -178,7 +178,7 @@ def plot_1_axe(ax1):
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_Emin, y_Emax)
-        ax1.set_ylabel("Earth energy Imbalance EEI in W/m² (plot180)  ", color=c42, fontsize=20)
+        ax1.set_ylabel("Earth Energy Imbalance EEI in W/m² (plot180)  ", color=c42, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c42, labelsize=20)
         y_mayor_ticks = 0.500 
         y_minor_ticks = 0.100
@@ -796,14 +796,7 @@ def plot_9_create_all_plots(ax1, data):
 
 
 
-    # Plot CERES data
-    if part41_ceres_eei > 0 and 'ceres_12' in data:
-        ax41 = ax1.twinx()
-        ax41.plot(data['ceres_12']["year41"], data['ceres_12']["EEI"], '-', 
-                  label="EEI K41", color=c41, linewidth=2)
-        ax41.tick_params(axis="y", labelcolor=c41)
-        ax41.set_ylim(y_Emin, y_Emax)
-    
+      
     # plot42_EEI_48month, running average over 48 months,  plot_9_create_all_plots() ,   line 601
     # Earth Energy Imbalance W/m² moving average 48 month 
     if plot42_EEI_48month > 0:

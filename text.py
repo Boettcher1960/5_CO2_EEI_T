@@ -195,11 +195,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        plt.text(tr2x, tr2y, print32_text, color=c32, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
        fig.add_artist(line32)
-    elif part41_ceres_eei == 2:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c41)
-        text_4_add_text(ax1, tr2x, tr2y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month                                         41", 
-                    c41, trs)
     elif plot42_EEI_48month == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c42)
         text_4_add_text(ax1, tr2x, tr2y, 
@@ -265,11 +260,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        transform=plt.gca().transAxes)
        fig.add_artist(line31)
 
-    elif part41_ceres_eei == 3:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
-        text_4_add_text(ax1, tr2x, tr3y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month 41", 
-                    c41, trs)
     elif plot42_EEI_48month == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
         text_4_add_text(ax1, tr2x, tr3y, 
