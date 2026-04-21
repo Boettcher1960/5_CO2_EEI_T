@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d81" # plot22_CO2_Mauna_Loa + 25
+v = "5d82" # plot22_CO2_Mauna_Loa + 25
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -192,9 +192,19 @@ def load_plot_data():
         data['co2'] = load_co2_mauna_loa(x_anf, x_end)
         if print_debug > 19:
            print(f"main_270: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
-           print(f"main_271: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
-    
-    
+           print(f"main_271: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")        
+    if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
+        data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
+        # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
+    if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
+        data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_made_by_61c.csv")
+        if print_debug > 19:
+           print(f"main_253: 43.2 read ={plot43_eei_12month}")
+           #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
+    if part44_ceres_eei > 0:
+        if print_debug > 19:
+           print(f"main_253: custom-read 44.7 ={part44_ceres_eei}")
+        data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
     # part 5.2 plot52_delta_CO2_red_bars
     # part 5.3 plot53_CO2_orange2025
     # part 5.4 plot54_Glen_delta_on
@@ -207,32 +217,6 @@ def load_plot_data():
     if plot52_delta_CO2_red_bars > 0: # 52.3
         if print_debug > 9:
            print(f"main_277: plot52_delta_CO2_red_bars # 52.3 ={plot52_delta_CO2_red_bars}")
-
-
-    
-    
-    
-    
-    # Load GIS temperature data
-    if plot74_GIS_T > 0: # 74.3
-        data['gis_temp'] = load_gis_temperature()
-    
-        
-    if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
-        data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
-        # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
-
-    if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
-        data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_made_by_61c.csv")
-        if print_debug > 19:
-           print(f"main_253: 43.2 read ={plot43_eei_12month}")
-           #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
-
-    if part44_ceres_eei > 0:
-        if print_debug > 19:
-           print(f"main_253: custom-read 44.7 ={part44_ceres_eei}")
-        data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
-
     if play_61_CERES > 0: # 61.9 read
         data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
         if print_debug > 9:
@@ -240,7 +224,10 @@ def load_plot_data():
     if play_62_CERES > 0: # 62.9 read
         data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
-           print(f"main_300: 62.9 read ={play_62_CERES}")
+           print(f"main_300: 62.9 read ={play_62_CERES}")    
+    # Load GIS temperature data
+    if plot74_GIS_T > 0: # 74.3
+        data['gis_temp'] = load_gis_temperature()
     return data
     # end load_plot_data():
 
@@ -323,7 +310,7 @@ def main():
     #plot_6_remove_axe1(axes,yr_delete)
     #plot_6_remove_axe1(axes,-1) # -1= no delete, print only
     #plot_6_remove_axe1(axes,2) # delete axe 
-    #plot_6_remove_axe1(axes,3) # delete axe 
+    plot_6_remove_axe1(axes,3) # delete axe 
     #plot_6_remove_axe1(axes,4) # delete axe 
     #plot_6_remove_axe1(axes,1) # delete axe 1, not axe 0
     #plot_6_remove_axe1(axes,2)  # delete axe 2

@@ -18,7 +18,7 @@ yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_7
 yr_delete = 1 # 9 = delete all axes delete axe 4
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 3 # 22.1 declare global integer variable (2= print in line 2)
+plot22_CO2_Mauna_Loa = 3 # 3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 4      # 25.1 
 
@@ -135,7 +135,7 @@ y_Tmax = 1.7
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 1935
+x_anf = 1970
 x_end = 2025
 
 # constants

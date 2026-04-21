@@ -431,7 +431,7 @@ def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
     if print_debug > 9:
           print(f"plot_431: plot8_right_y_axe_for_ppm_22  22.3 ={plot22_CO2_Mauna_Loa} parameter 2 {outward_right}")
     ax22.spines.right.set_position(("outward", outward_right))
-    ax22.set_ylabel("CO2_Mauna_Loa in ppm             plot460                  22", color=c22, fontname="Arial",fontsize=16)
+    ax22.set_ylabel("CO2_Mauna_Loa in ppm             plot434                  22", color=c22, fontname="Arial",fontsize=16)
     ax22.tick_params(axis="y", labelcolor=c22)
     ax22.set_ylim(y_min, y_max) #8
 
@@ -664,8 +664,8 @@ def plot_9_create_all_plots(ax1, data):
          )
       ax25 = ax1.twinx()
       ax25.spines.right.set_position(("outward", 90))
-      ax25.spines["right"].set_visible(False) # remove right y-Achse
-      ax25.tick_params(right=False, labelright=False) # remove Zahlen
+      # ax25.spines["right"].set_visible(False) # remove right y-Achse
+      # ax25.tick_params(right=False, labelright=False) # remove Zahlen
       ax25.plot(df25["Year25"], df25["ppm25"], '--', label="plot25_long_CO2", color=c25, linewidth=3)
       ax25.tick_params(axis="y", labelcolor=c25)
       ax25.set_ylim(y_min, y_max) # scale
