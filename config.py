@@ -47,13 +47,13 @@ play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv //
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
-plot71_temperature = 3
+plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
 plot74_GIS_T = 2 # 3=right y axis
 linear_41_75 = 5 # 4
 plot76_my_T = 0
-plot_T_77 = 4
+plot_T_77 = 3
 parameter84_save_png = 8
 
 # Colors
