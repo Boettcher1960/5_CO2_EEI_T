@@ -1099,7 +1099,7 @@ def plot_9_create_all_plots(ax1, data):
         x = t - 2000
         return 0.00034 * x**2 + 0.0238 * x + 0.74
 
-    def T_model77(t):
+    def T_model77_old(t):
         # https://chat.deepseek.com/a/chat/s/d9a11bdb-f2ce-4c34-b14e-492b673e0a4e
         # Define the three points
         #t1, y1 = 1980, 0.5  # 
