@@ -130,8 +130,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_Tmin = -0.2
-y_Tmax = 2
+y_Tmin = -0.3
+y_Tmax = 1.7
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
