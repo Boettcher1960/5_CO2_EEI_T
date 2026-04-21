@@ -277,6 +277,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "CO2_delta_green_bars, the yearly CO2 Mauna Loa increase  (text224) 52", 
                     c52, trs)    
+    elif plot71_temperature == 3: # 71.5 legend
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c71)
+        text_4_add_text(ax1, tr2x, tr3y, 
+                    "Temperature in °C 0.000618t² - 2.459 t + 2446.0579                                                 71", 
+                    c71, trs)
+ 
     elif plot74_GIS_T == 3: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
         text_4_add_text(ax1, tr2x, tr3y, 
