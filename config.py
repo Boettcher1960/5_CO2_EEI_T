@@ -51,7 +51,7 @@ plot71_temperature = 3
 plot72_AESS_T = 0
 plot73_ECS_T = 0
 plot74_GIS_T = 2 # 3=right y axis
-linear_41_75 = 4 # 4
+linear_41_75 = 5 # 4
 plot76_my_T = 0
 plot_T_77 = 4
 parameter84_save_png = 8

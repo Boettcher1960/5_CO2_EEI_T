@@ -361,6 +361,13 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c75)
         text_4_add_text(ax1, tr2x, tr4y, 
                    "Hansen: Temperature increase 0.041°C since 2015                                                  75", c75, trs)
+    elif plot_T_77 == 4: # 77.5.3 legend
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c77)
+        text_4_add_text(ax1, tr2x, tr4y, 
+                    "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2023=1.5°C         77", c77, trs)
+
+
+
 
     ########################## row 5 ################################
     if plot23_Glen_CO2 == 5: # 23.5.5 legend row 5
