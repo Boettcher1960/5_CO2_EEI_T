@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d74" # 77 74  temperatures
+v = "5d75" # 77  temperatures t3, y3 = 2022, 1.5
 #
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

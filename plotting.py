@@ -1146,7 +1146,7 @@ def plot_9_create_all_plots(ax1, data):
         #t1, y1 = 1980, 0.5  # 
         t1, y1 = 1950, 0.2 
         t2, y2 = 2013, 1.0
-        t3, y3 = 2023, 1.5
+        t3, y3 = 2022, 1.5
         # Lagrange interpolation
         term1 = y1 * ((t - t2) * (t - t3)) / ((t1 - t2) * (t1 - t3))
         term2 = y2 * ((t - t1) * (t - t3)) / ((t2 - t1) * (t2 - t3))
