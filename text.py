@@ -259,7 +259,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        plt.text(tr2x, tr3y, print31_text, color=c31, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
        fig.add_artist(line31)
-
     elif plot42_EEI_48month == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
         text_4_add_text(ax1, tr2x, tr3y, 
@@ -270,7 +269,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month                                        43", 
                     c43, trs)
-        
     # part 5.2 plot52_delta_CO2_red_bars
     elif plot52_delta_CO2_red_bars == 3: # 52.4 row 3
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c52)
@@ -282,7 +280,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "Temperature in °C 0.000618t² - 2.459 t + 2446.0579                                                 71", 
                     c71, trs)
- 
     elif plot74_GIS_T == 3: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
         text_4_add_text(ax1, tr2x, tr3y, 
@@ -294,7 +291,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot_T_77 == 3: # 77.5.3 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c77)
         text_4_add_text(ax1, tr2x, tr3y, 
-                    "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2023=1.5°C         77", c77, trs)
+                    "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2022=1.5°C         77", c77, trs)
 
 
 
