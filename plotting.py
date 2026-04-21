@@ -590,8 +590,9 @@ def plot_9_create_all_plots(ax1, data):
                   label="T GIS K22", color=c22, linewidth=3)
         ax22.tick_params(axis="y", labelcolor=c22)
         ax22.set_ylim(y_min, y_max)
-        # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  415
-        plot8_right_y_axe_for_ppm_22( ax22 , 0 ) # 22.4
+        if plot22_CO2_Mauna_Loa > 2:
+           # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  415
+           plot8_right_y_axe_for_ppm_22( ax22 , 0 ) # 22.4
 
 
 
