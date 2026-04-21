@@ -20,7 +20,7 @@ yr_delete = 1 # 9 = delete all axes delete axe 4
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 3 # 22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
-plot25_long_CO2 = 0      # 25.1 
+plot25_long_CO2 = 4      # 25.1 
 
 plot31_CO2_emission =    0   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission =    0   # 32.1 CO2_emission 600 GtC Carbon Brief made with play_63_CB 
@@ -87,9 +87,9 @@ c76 = "#13DF2F84"
 c77 = "#34753D84"
 
 # Text definitions (added missing print texts)
-blue22_text = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm)                               22"
+blue22_text = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm)                                 22"
 text_plot23_Glen = "calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
-blue25_text = "green: CO2 NOAA 800_000 year ice data 25"
+blue25_text = "green: CO2 NOAA     800_000 year ice data                                                             25"
 print31_text = "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data             31"
 print32_text = "dots: cumulative CO2 emissions in GtC     Carbon Brief / Our World in Data            32"
 

@@ -309,6 +309,15 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr4y, 
                     text_plot23_Glen, 
                     c23, trs)
+    elif plot25_long_CO2 == 4: # 25.9.4
+       line25 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
+       transform=fig.transFigure,
+       marker="o", markersize=3, color=c25, linewidth=2)
+       fig.add_artist(line25)
+       plt.text(tr2x, tr4y, blue25_text, color=c25, fontname="Arial", fontsize=trs,
+       transform=plt.gca().transAxes)
+       fig.add_artist(line25)
+
     elif plot31_CO2_emission == 4: # 31.8
        print("text_230: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
        line31 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
