@@ -1,7 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d76" # 77  temperatures t3, y3 = 2022, 1.5
-#
+v = "5d77" # plot22_CO2_Mauna_Loa
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
