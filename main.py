@@ -322,8 +322,8 @@ def main():
     print("main_323: call plot_6_remove_axe1.")
     #plot_6_remove_axe1(axes,yr_delete)
     #plot_6_remove_axe1(axes,-1) # -1= no delete, print only
-    plot_6_remove_axe1(axes,2) # delete axe 
-    plot_6_remove_axe1(axes,3) # delete axe 
+    #plot_6_remove_axe1(axes,2) # delete axe 
+    #plot_6_remove_axe1(axes,3) # delete axe 
     #plot_6_remove_axe1(axes,4) # delete axe 
     #plot_6_remove_axe1(axes,1) # delete axe 1, not axe 0
     #plot_6_remove_axe1(axes,2)  # delete axe 2

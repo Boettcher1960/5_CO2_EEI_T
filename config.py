@@ -135,7 +135,7 @@ y_Tmax = 1.7
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 1850
+x_anf = 1935
 x_end = 2025
 
 # constants

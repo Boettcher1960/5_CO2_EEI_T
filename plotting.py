@@ -4,6 +4,7 @@
 # plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_remove_axe1(axes,yr6_delete): line 365
 # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
+# plot8_right_y_axe_for_ppm_25       plot25_long_CO2                         ,   line  437
 # plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
 # plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance     ,  line  450
 # plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance     ,  line  460
@@ -428,11 +429,28 @@ def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
     else:
         outward_right =  ( plot22_CO2_Mauna_Loa * yr_60 ) - yr_150
     if print_debug > 9:
-          print(f"plot_425: plot8_right_y_axe_for_ppm_22  22.3 ={plot22_CO2_Mauna_Loa} parameter 2 {outward_right}")
+          print(f"plot_431: plot8_right_y_axe_for_ppm_22  22.3 ={plot22_CO2_Mauna_Loa} parameter 2 {outward_right}")
     ax22.spines.right.set_position(("outward", outward_right))
     ax22.set_ylabel("CO2_Mauna_Loa in ppm             plot460                  22", color=c22, fontname="Arial",fontsize=16)
     ax22.tick_params(axis="y", labelcolor=c22)
     ax22.set_ylim(y_min, y_max) #8
+
+# plot8_right_y_axe_for_ppm_25       plot25_long_CO2                 ,   line  437
+def plot8_right_y_axe_for_ppm_25(ax25,right22): # 22.4 line 375
+    if print_debug > 9:
+          print(f"plot_439: plot8_right_y_axe_for_ppm_25  25.3 ={plot25_long_CO2} parameter 2 {right22}")
+    if right22 > 0:
+        outward_right = right22
+    else:
+        outward_right =  ( plot25_long_CO2 * yr_60 ) - yr_150
+    if print_debug > 9:
+          print(f"plot_445: plot8_right_y_plot25_long_CO2  22.3 ={plot25_long_CO2} parameter 2 {outward_right}")
+    ax25.spines.right.set_position(("outward", outward_right))
+    ax25.set_ylabel("CO2_plot25_long_CO2   plot450                  25", color=c25, fontname="Arial",fontsize=16)
+    ax25.tick_params(axis="y", labelcolor=c25)
+    ax25.set_ylim(y_min, y_max) #8
+
+
 
 # plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
 def plot8_right_y_axe_for_C_31(ax31,right52): # 31.6 
@@ -648,10 +666,12 @@ def plot_9_create_all_plots(ax1, data):
       ax25.spines.right.set_position(("outward", 90))
       ax25.spines["right"].set_visible(False) # remove right y-Achse
       ax25.tick_params(right=False, labelright=False) # remove Zahlen
-      ax25.plot(df25["Year25"], df25["ppm25"], '--', label="Glen formula CO2= 0.0132t² - 51t + 49,536 K6", color=c25, linewidth=3)
+      ax25.plot(df25["Year25"], df25["ppm25"], '--', label="plot25_long_CO2", color=c25, linewidth=3)
       ax25.tick_params(axis="y", labelcolor=c25)
       ax25.set_ylim(y_min, y_max) # scale
       ax25.spines.right.set_position(("outward", 60))
+      if plot25_long_CO2 > 2:
+           plot8_right_y_axe_for_ppm_25( ax25 , 0 ) # 22.4
       # print(long_co25.head(5))
 
     # plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603
