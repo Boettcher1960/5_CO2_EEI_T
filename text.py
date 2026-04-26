@@ -273,7 +273,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot52_delta_CO2_red_bars == 3: # 52.4 row 3
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c52)
         text_4_add_text(ax1, tr2x, tr3y, 
-                    "CO2_delta_green_bars, the yearly CO2 Mauna Loa increase  (text224) 52", 
+                    "CO2_delta_green_bars, the yearly CO2 Mauna Loa increase  (text224)                   52", 
                     c52, trs)    
     elif plot71_temperature == 3: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c71)

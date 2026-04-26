@@ -18,9 +18,9 @@ yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_7
 yr_delete = 1 # 9 = delete all axes delete axe 4
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 3 # 3    22.1 declare global integer variable (2= print in line 2)
+plot22_CO2_Mauna_Loa = 4 # 3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
-plot25_long_CO2 = 4      # 25.1 
+plot25_long_CO2 = 0      # 25.1 
 
 plot31_CO2_emission =    0   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission =    0   # 32.1 CO2_emission 600 GtC Carbon Brief made with play_63_CB 
@@ -38,7 +38,7 @@ plot42_EEI_48month = 0  # 5,3,4 print EEI 48 month running mean. Info in line 4 
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 
-plot52_delta_CO2_red_bars = 0 # (3=print numbers)
+plot52_delta_CO2_red_bars = 3 # (3=print numbers)
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
@@ -136,7 +136,7 @@ y_74min = y_Tmin # for GIS Temperature only
 y_74max = y_Tmax # for GIS Temperature only 
 
 x_anf = 1970
-x_end = 2025
+x_end = 2027
 
 # constants
 # C280 =275 in Zack Labe plots.
