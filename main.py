@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d83" # plot52_delta_CO2_red_bars = 3 # (3=print numbers)
+v = "5d84" # plot52_delta_CO2_red_bars = 3 # (3=print numbers)
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
