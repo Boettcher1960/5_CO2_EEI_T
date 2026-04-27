@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d84" # plot52_delta_CO2_red_bars = 3 # (3=print numbers)
+v = "5d85" # plot52_delta_CO2_red_bars = 3 # (3=print numbers)
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -216,15 +216,15 @@ def load_plot_data():
     # -----------------------------
     if plot52_delta_CO2_red_bars > 0: # 52.3
         if print_debug > 9:
-           print(f"main_277: plot52_delta_CO2_red_bars # 52.3 ={plot52_delta_CO2_red_bars}")
+           print(f"main_219: plot52_delta_CO2_red_bars # 52.3 ={plot52_delta_CO2_red_bars}")
     if play_61_CERES > 0: # 61.9 read
         data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
         if print_debug > 9:
-           print(f"main_296: 61.9 read ={play_61_CERES}")
+           print(f"main_223: 61.9 read ={play_61_CERES}")
     if play_62_CERES > 0: # 62.9 read
         data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
-           print(f"main_300: 62.9 read ={play_62_CERES}")    
+           print(f"main_227: 62.9 read ={play_62_CERES}")    
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.3
         data['gis_temp'] = load_gis_temperature()

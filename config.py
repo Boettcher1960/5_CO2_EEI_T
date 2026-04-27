@@ -135,7 +135,7 @@ y_Tmax = 1.7
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 1970
+x_anf = 2015
 x_end = 2027
 
 # constants
@@ -175,6 +175,17 @@ print_debug = 10 # print some items
 # part 2.2 plot CO2 Mauna Loa
 # part 2.3 plot23_Glen_CO2 
 # part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
+
+# part 2.2 plot CO2 Mauna Loa  CO₂ Data 
+# https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt
+#                           2023   421.08     0.12
+#                           2024   424.61     0.12    add+3.53
+#                           2025   427.35     0.12    add+2.74
+#                           https://gml.noaa.gov/ccgg/trends/mlo.html
+#                           https://gml.noaa.gov/ccgg/trends/global.html
+#
+#
+
 
 # with 5b2*pc set play_61_CERES = 48
 # # run1 part41_ceres_eei = 12

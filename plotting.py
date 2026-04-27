@@ -879,7 +879,7 @@ def plot_9_create_all_plots(ax1, data):
        else:
           start_of_x_index = x_years_52_list.index(x_anf)    
        if x_end > 2026:
-          end_of_x_index = x_years_52_list.index(2025)
+          end_of_x_index = x_years_52_list.index(2026)
        elif x_end < 1960:
           end_of_x_index = 1
        else:
