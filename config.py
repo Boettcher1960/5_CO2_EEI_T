@@ -108,8 +108,8 @@ my76_text = "guessed quadratic temperature my_T 76"
 
 
 # Axis ranges
-y_min = 400 # 250 ppm CO2 
-y_max = 440 # 500 ppm CO2  
+y_min = 390 # 250 ppm CO2 
+y_max = 430 # 500 ppm CO2  
 
 y_25min = 250 # nok   only for y axis 
 y_25max = 430 # only for y axis
@@ -136,7 +136,7 @@ y_74min = y_Tmin # for GIS Temperature only
 y_74max = y_Tmax # for GIS Temperature only 
 
 x_anf = 2015
-x_end = 2027
+x_end = 2026
 
 # constants
 # C280 =275 in Zack Labe plots.
