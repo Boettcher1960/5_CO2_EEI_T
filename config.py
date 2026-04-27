@@ -108,8 +108,8 @@ my76_text = "guessed quadratic temperature my_T 76"
 
 
 # Axis ranges
-y_min = 280 # 250 ppm CO2 
-y_max = 450 # 500 ppm CO2  
+y_min = 400 # 250 ppm CO2 
+y_max = 440 # 500 ppm CO2  
 
 y_25min = 250 # nok   only for y axis 
 y_25max = 430 # only for y axis
@@ -130,8 +130,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_Tmin = -0.3
-y_Tmax = 1.7
+y_Tmin = 0
+y_Tmax = 2
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
