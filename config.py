@@ -256,14 +256,12 @@ text 263
 # 41 How to make EEI files ##############################
 #########################################################
 #
-# download 2016_01_EEI_CERES.txt
-# rename      to 2016_01_EEI_CERES.txt
 # 1 open
 # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 2 select first item
 # 3 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
 # 4 six small curves are shown
-# 5 select item 3 LabelTOA Net Flus All Sky -10 to +10 W/m/m monthly values
+# 5 select item 3 Label TOA Net Flux All Sky -10 to +10 W/m/m monthly values
 # 6 big window appears with one curve only
 # 7 left mouse select save Data as ASCII File
 # 8 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
@@ -277,6 +275,41 @@ text 263
 # 14 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
 #       dokumente/5_CO2_EEI_T/read_csv/_43_EEI12month_2026_02.csv
 # 15 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
+
+
+# play_62_CERES = 12 
+# 21 open
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 22 select first item
+# 23 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+# 24 six small curves are shown
+# 25 select item 2 Label TOA Long Wave Flux All Sky 235 to 245 W/m/m monthly values
+# 26 big window appears with one curve only
+# 27 left mouse select save Data as ASCII File
+# 28 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 29 rename      to _62_in__2026_02_Longwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+#  run with play_61_CERES = 48 
+#  copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
+#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
+#  run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
+
+# play_63_CERES = 12 
+# 41 open
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 42 select first item
+# 43 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+# 44 six small curves are shown
+# 45 select item 1 Label TOA Short Wave Flux All Sky 90 to 110 W/m/m monthly values
+# 46 big window appears with one curve only
+# 47 left mouse select save Data as ASCII File
+# 48 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 49 rename      to _63_in__2026_02_Shortwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+#  run with play_61_CERES = 48 
+#  copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
+#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
+#  run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
+
+
 
 
 
