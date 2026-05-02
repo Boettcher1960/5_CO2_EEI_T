@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d92" #  plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
+v = "5d94" #  plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -197,7 +197,7 @@ def load_plot_data():
         data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_02.csv")
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
     if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
-        data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_made_by_61c.csv")
+        data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_02.csv")
         if print_debug > 19:
            print(f"main_253: 43.2 read ={plot43_eei_12month}")
            #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")

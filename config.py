@@ -43,7 +43,7 @@ plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 
-play_61_CERES = 48     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_CERES = 12     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
@@ -273,6 +273,12 @@ text 263
 #       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
 # 12 run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
 # 
+# 13 run with play_61_CERES = 12 
+# 14 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
+#       dokumente/5_CO2_EEI_T/read_csv/_43_EEI12month_2026_02.csv
+# 15 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
+
+
 
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
