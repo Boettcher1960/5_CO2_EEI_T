@@ -43,7 +43,7 @@ plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 
-play_61_CERES = 36     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_CERES = 48     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0     # 12 CERES EEI 12 month like part41_ceres_eei 
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
@@ -251,6 +251,25 @@ text 263
 
  
 """
+
+#########################################################
+# 41 How to make EEI files ##############################
+#########################################################
+#
+# download 2016_01_EEI_CERES.txt
+# rename      to 2016_01_EEI_CERES.txt
+# 1 open
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 2 select first item
+# 3 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+# 4 six small curves are shown
+# 5 select item 3 LabelTOA Net Flus All Sky -10 to +10 W/m/m monthly values
+# 6 big window appears with one curve only
+# 7 left mouse select save Data as ASCII File
+# 8 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 9 rename      to _61_in__2016_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 10 
+
 
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
