@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d94" #  plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
+v = "5d95" #  plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
