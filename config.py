@@ -267,9 +267,12 @@ text 263
 # 6 big window appears with one curve only
 # 7 left mouse select save Data as ASCII File
 # 8 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-# 9 rename      to _61_in__2016_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-# 10 
-
+# 9 rename      to _61_in__2026_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 10 run with play_61_CERES = 48 
+# 11 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
+#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
+# 12 run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
+# 
 
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
