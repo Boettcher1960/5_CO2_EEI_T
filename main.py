@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E06" #  play_62_CERES = 48
+v = "5E08" #  play_62_CERES = 48
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -41,16 +41,12 @@ import sys
 
 # Import modules
 from config import *
-from data_processing import *
 from plotting import *
 from data_processing import *
 from text import *
 from models import *
 
-from config import y_TOAmin
-from config import part44_ceres_eei
-from config import play_61_CERES
-from config import play_62_CERES
+#from config import play_62_CERES
 
 
 if print_debug > 9:
@@ -59,7 +55,6 @@ if print_debug > 9:
 
 def process_ceres_data():
     """Process CERES data based on configuration"""
-       
     # Process part44_ceres_eei
     if print_debug > 19:
         print(f"main_115: local variable 44.3 ={part44_ceres_eei}")
@@ -238,6 +233,10 @@ def main():
                        f" 7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
                        f"{linear_41_75}{plot76_my_T}")
     
+    if print_debug > 9:
+       print("main_237: begin ", header_parameter)
+
+
     # Process CERES data
     process_ceres_data()
     
