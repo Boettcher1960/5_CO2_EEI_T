@@ -522,7 +522,7 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
 def plot8_right_y_axe_for_C_62(ax62,right62): # 62.5
     outward_right =  ( 5 *  yr_60 ) - yr_150
     ax62.spines.right.set_position(("outward", outward_right))
-    ax62.set_ylabel("Long Wave Radiation  in W/m²     plot524            62", color=c62, fontname="Arial",fontsize=18)
+    ax62.set_ylabel("Outgoing Longwave Radiation OLR in W/m²       62", color=c62, fontname="Arial",fontsize=18)
     ax62.tick_params(axis="y", labelcolor=c62)
     ax62.set_ylim(y_62min, y_62max) #
 

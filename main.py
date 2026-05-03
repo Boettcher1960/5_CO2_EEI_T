@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d103" #  play_62_CERES = 48
+v = "5e02" #  play_62_CERES = 48
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -55,24 +55,6 @@ from config import play_62_CERES
 
 if print_debug > 12:
    print("main_074: TOA", y_TOAmin, y_TOAmax, play_62_CERES, part44_ceres_eei)
-
-
-# bug from config import part44_ceres_eei
-
-def get_active_temperature_axis(ax1):
-    """Find which temperature axis is active"""
-    if plot71_temperature > 0:
-        return ax1.twinx()
-    elif plot72_AESS_T > 0:
-        return ax1.twinx()
-    elif plot73_ECS_T > 0:
-        return ax1.twinx()
-    elif plot74_GIS_T > 0:
-        return ax1.twinx() # 74.1 
-    elif linear_41_75 > 0:
-        return ax1.twinx()
-    return None
-
 
 
 def process_ceres_data():
