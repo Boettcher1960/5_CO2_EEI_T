@@ -174,14 +174,10 @@ scale_mode = 10 # other values are not used
 print_debug = 10 # print some items 
 
 
-#########################################################
-# CO2 plots  ##############################
-#########################################################
-# part 2.2 plot CO2 Mauna Loa
-# part 2.3 plot23_Glen_CO2 
-# part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
 
-# part 2.2 plot CO2 Mauna Loa  CO₂ Data 
+#########################################################
+# plot22_CO2_Mauna_Loa  ##############################
+#########################################################
 # https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt
 #                           2023   421.08     0.12
 #                           2024   424.61     0.12    add+3.53
@@ -189,7 +185,59 @@ print_debug = 10 # print some items
 #                           https://gml.noaa.gov/ccgg/trends/mlo.html
 #                           https://gml.noaa.gov/ccgg/trends/global.html
 #
-#
+# part 2.3 plot23_Glen_CO2 
+# part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
+
+
+
+
+
+#########################################################
+# 61 How to make EEI files ##############################
+#########################################################
+# 1 open
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 2 select first item
+# 3 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+# 4 six small curves are shown
+# 5 select item 3 Label TOA Net Flux All Sky -10 to +10 W/m/m monthly values
+# 6 big window appears with one curve only
+# 7 left mouse select save Data as ASCII File
+# 8 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 9 rename      to _61_in__2026_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 10 run with play_61_CERES = 48 
+# 11 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
+#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
+# 12 run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
+# 
+# 13 run with play_61_CERES = 12 
+# 14 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
+#       dokumente/5_CO2_EEI_T/read_csv/_43_EEI12month_2026_02.csv
+# 15 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
+
+
+#########################################################
+# 62 How to make CERES Outgoing Longwave Radiation OLR files ##############################
+#########################################################
+# play_62_CERES = 48 
+# 21 open
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 22 select first item
+# 23 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+# 24 six small curves are shown
+# 25 select item 2 Label TOA Long Wave Flux All Sky 235 to 245 W/m/m monthly values
+# 26 big window appears with one curve only
+# 27 left mouse select save Data as ASCII File
+# 28 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 29 rename      to _62_in__2026_02_Longwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+#  run with play_61_CERES = 48 
+#  copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
+#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
+#  run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
+
+
+
+
 
 
 # with 5b2*pc set play_61_CERES = 48
@@ -220,13 +268,9 @@ if part41_ceres_eei > 10:
         df_with_48avg = create_running_average('work/c41b_ceres.csv', 
                                                'work/c41d50_ceres.csv',
                                                window_months=48, center=False)
- 
-
-
 # main 243 Load CERES data
     if part41_ceres_eei > 0:
         data['ceres_12'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
-
 # Plot 800  CERES data
     if part41_ceres_eei > 0 and 'ceres_12' in data:
         ax41 = ax1.twinx()
@@ -234,69 +278,21 @@ if part41_ceres_eei > 10:
                   label="EEI K41", color=c41, linewidth=2)
         ax41.tick_params(axis="y", labelcolor=c41)
         ax41.set_ylim(y_Emin, y_Emax)
-
  text 198  
  elif part41_ceres_eei == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c41)
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Earth Energy Imbalance W/m² moving average 12 month                                         41", 
                     c41, trs)
-text 263
+ text 263
   elif part41_ceres_eei == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c41)
         text_4_add_text(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month 41", 
                     c41, trs)
-        
-
-
-
 -----------------------v = "5c90
-
-
- 
 """
 
-#########################################################
-# 41 How to make EEI files ##############################
-#########################################################
-#
-# 1 open
-# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 2 select first item
-# 3 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
-# 4 six small curves are shown
-# 5 select item 3 Label TOA Net Flux All Sky -10 to +10 W/m/m monthly values
-# 6 big window appears with one curve only
-# 7 left mouse select save Data as ASCII File
-# 8 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-# 9 rename      to _61_in__2026_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-# 10 run with play_61_CERES = 48 
-# 11 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
-#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
-# 12 run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
-# 
-# 13 run with play_61_CERES = 12 
-# 14 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
-#       dokumente/5_CO2_EEI_T/read_csv/_43_EEI12month_2026_02.csv
-# 15 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
-
-
-# play_62_CERES = 12 
-# 21 open
-# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 22 select first item
-# 23 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
-# 24 six small curves are shown
-# 25 select item 2 Label TOA Long Wave Flux All Sky 235 to 245 W/m/m monthly values
-# 26 big window appears with one curve only
-# 27 left mouse select save Data as ASCII File
-# 28 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-# 29 rename      to _62_in__2026_02_Longwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-#  run with play_61_CERES = 48 
-#  copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
-#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
-#  run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
 
 # play_63_CERES = 12 
 # 41 open
@@ -330,11 +326,8 @@ text 263
 # part 5.5 plot55_population_on human earth population 
 
 
-
-
-
 #########################################################
-# 61 How to make EEI files ##############################
+# 161 How to make EEI files ##############################
 #########################################################
 #
 # download 2016_01_EEI_CERES.txt
@@ -395,8 +388,6 @@ text 263
 # 25) plot _43_EEI12month_made_by_61c.csv using plot43_eei_12month = 4
 #
 #
-
-
 #            read_csv/_61c_out_ceres.csv
 # 21)  set part44_ceres_eei = 47
 # 22) /Dokumente/Python/5_CO2_EEI_T/main.py reads 
@@ -421,18 +412,8 @@ text 263
 #                      with 48 month trailing average in new column EEI
 # 35) copy /work/c44d_ceres.csv to /read_csv/c44d_ceres_12month_EEI.csv
 #
-
-#
-# # play_61_CERES = 12     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-# work/c61b_ceres.csv   read_csv/_c61b_out_ceres.csv
 #########################################################
-# 62 How to make TOA_Shortwave_Fluxfiles ################
-#########################################################
-# download https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
-
-#########################################################
-# 63 How to make TOA_Longwave Flux files ################
+# 163 How to make TOA_Shortwave_Fluxfiles ################
 #########################################################
 # download https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 #      63  TOA Longwave Flux - All-Sky
@@ -443,15 +424,8 @@ text 263
 #          CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJanuary-2026
 #          2026_01_TOA_Longwave_Flux_All-Sky.txt
 # 
-# ok horizontal 1.8°C line is T value
-
 #  ceres olr csv download 
 # https://neo.gsfc.nasa.gov/view.php?datasetId=CERES_LWFLUX_M
-
-# 
-#1E318 
-# ASR 48 months 
-
 #The monthly climatology-corrected Earth's Energy Imbalance was record high in December 2025, at +2.57 W/m²!
 #https://bsky.app/profile/leonsimons.com/post/3mfchkvjyjs2k
 #https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mfcnnsfkgk2h

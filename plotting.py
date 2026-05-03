@@ -1,7 +1,6 @@
 # plotting.py
 # version 5c99
 # plot_1_axe ,  for: 22  plot22_CO2_Mauna_Loa = 2                             ,  line  121
-# plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 # plot_6_remove_axe1(axes,yr6_delete): line 365
 # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
 # plot8_right_y_axe_for_ppm_25       plot25_long_CO2                         ,   line  437
@@ -240,6 +239,8 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.1
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+        #ax1.yaxis.set_ticks([])
+        #ax1.spines['right'].set_visible(False)
     elif plot76_my_T == 2:  # 76.5 y axe left  red 
         # my76_text="guessed quadratic temperature  my_T   76 "
         ax1.spines.left.set_position(("outward", 3))
@@ -250,9 +251,6 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.1
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-
-
-
     else:    
         ax1.set_ylim(y_min, y_max)
         ax1.set_ylabel(" else generic y axe CO₂ in ppm  (plot146) ", color=c22, fontsize=20)
@@ -261,133 +259,10 @@ def plot_1_axe(ax1):
         y_minor_ticks = 10
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-
-
-    
-
     return ax1 
     # end plot_1_axe
 
 
-
-
-# plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
-def plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max, y_Emin, y_Emax, 
-                   y_Tmin, y_Tmax, print_debug, c22, c42, c74):
-    """Configure the axes based on selected mode"""
-    plt.xlim(x_anf, x_end)
-    ax1.grid(True)
-    
-    # 8.5 configure the left y axis legend 
-    #if print_debug == 10:  # EEI mode
-      
-
-    if print_debug == 4:  # 
-        c4l = "blue" # color of left yaxis for print_debug == 4 EEI mode
-        ax1.set_ylim(y_Emin, y_Emax)
-        ax1.set_ylabel("Earth Energy Imbalance in W/m²", color=color_left, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=color_left, labelsize=20)
-        
-        # Set EEI tick spacing       
-        if (y_Emax - y_Emin) < 1:
-            y_Emayor_ticks = 0.2 
-            y_Eminor_ticks = 0.1
-        elif (y_Emax - y_Emin) < 2.1:
-            y_Emayor_ticks = 0.5 
-            y_Eminor_ticks = 0.1
-        elif (y_Emax - y_Emin) < 21:
-            y_Emayor_ticks = 5 
-            y_Eminor_ticks = 1
-        else:
-            y_Emayor_ticks = 100 
-            y_Eminor_ticks = 20
-        ax1.yaxis.set_major_locator(MultipleLocator(y_Emayor_ticks))
-        ax1.yaxis.set_minor_locator(MultipleLocator(y_Eminor_ticks))
-    # print_debug = 6 # TOA energy in W/m2 y axis left mode
-    elif print_debug == 6:  # TOA energy in W/m2 y axis left mode
-        c6l = "green" # color of left yaxis for TOA energy in W/m2 y axis left mode
-        #y_TOAmin = 99.15   # bug the global config.py line 101 does not work
-        #y_TOAmax = 99.3  # bug the global config.py line 102 does not work
-        ax1.set_ylim(y_TOAmin, y_TOAmax)
-        ax1.set_ylabel("TOA Energy in W/m²", color=color_left, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=color_left, labelsize=20)
-        # Set EEI tick spacing   y_TOAmin    
-        if (y_TOAmax - y_TOAmin) < 0.2:
-            y_TEmayor_ticks = 0.02
-            y_TEminor_ticks = 0.01
-        elif (y_TOAmax - y_TOAmin) < 0.5:
-            y_TEmayor_ticks = 0.1 
-            y_TEminor_ticks = 0.02
-        elif (y_TOAmax - y_TOAmin) < 1.1:
-            y_TEmayor_ticks = 0.1 
-            y_TEminor_ticks = 0.02
-        elif (y_TOAmax - y_TOAmin) < 2:
-            y_TEmayor_ticks = 2 
-            y_TEminor_ticks = 0.2
-        elif (y_TOAmax - y_TOAmin) < 5:
-            y_TEmayor_ticks = 1 
-            y_TEminor_ticks = 0.1
-        elif (y_TOAmax - y_TOAmin) < 10:
-            y_TEmayor_ticks = 2 
-            y_TEminor_ticks = 0.4
-        elif (y_TOAmax - y_TOAmin) < 30:
-            y_TEmayor_ticks = 2 
-            y_TEminor_ticks = 1
-        else:
-            y_TEmayor_ticks = 100 
-            y_TEminor_ticks = 20
-        ax1.yaxis.set_major_locator(MultipleLocator(y_TEmayor_ticks))
-        ax1.yaxis.set_minor_locator(MultipleLocator(y_TEminor_ticks))
-    elif print_debug == 7:  # Temperature mode
-        ax1.set_ylim(y_Tmin, y_Tmax)
-        ax1.set_ylabel("Temperature in °C", color=c74, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=c74, labelsize=20)
-        
-        # Set temperature tick spacing
-        y_Tmayor_ticks = 0.5 if (y_Tmax - y_Tmin) > 2 else 0.2
-        y_Tminor_ticks = 0.1
-        ax1.yaxis.set_major_locator(MultipleLocator(y_Tmayor_ticks))
-        ax1.yaxis.set_minor_locator(MultipleLocator(y_Tminor_ticks))
-    elif print_debug == 3:  #  Gt CO2 y axis left mode
-        ax1.set_ylim(y_Gmin, y_Gmax)
-        ax1.set_ylabel("cummulative CO₂ emissions in Gt  plot 218", color=c22, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=c22, labelsize=20)
-        
-        # Set CO2 tick spacing
-        if (y_Gmax - y_Gmin) < 200:
-            y_Gmayor_ticks = 50
-            y_Gminor_ticks = 10
-        elif (y_Gmax - y_Gmin) < 2002:
-            y_Gmayor_ticks = 500
-            y_Gminor_ticks = 100
-        else:
-            y_Gmayor_ticks = 500
-            y_Gminor_ticks = 200
-        ax1.yaxis.set_major_locator(MultipleLocator(y_Gmayor_ticks))
-        ax1.yaxis.set_minor_locator(MultipleLocator(y_Gminor_ticks))
-    elif print_debug == 2:  # CO2 mode (default)
-        ax1.set_ylim(y_min, y_max)
-        ax1.set_ylabel("Mauna Loa CO₂ in ppm  (plot233) ", color=c21, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=c21, labelsize=20)
-        
-        # Set CO2 tick spacing
-        y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
-        y_minor_ticks = 10
-        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
-        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-    else:  # CO2 mode (default)
-        ax1.set_ylim(y_min, y_max)
-        ax1.set_ylabel("CO₂ in ppm", color=c22, fontsize=20)
-        ax1.tick_params(axis="y", labelcolor=c22, labelsize=20)
-        
-        # Set CO2 tick spacing
-        y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
-        y_minor_ticks = 10
-        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
-        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-    
-    return ax1
-    # end plot_5_left_y_axe(ax1, x_anf, x_end, y_min, y_max  line 115
 
 
 
@@ -1111,7 +986,7 @@ def plot_9_create_all_plots(ax1, data):
         ax74.tick_params(axis="y", labelcolor=c74)
         ax74.set_ylim(y_Tmin, y_Tmax)
         if plot74_GIS_T > 2:
-            plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 500
+           plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 500
 
     # part 75 plot 2015 .41°C linear fit
     # linear_41_75  = 4 # part 75    Hansen 2015 .41°C linear fit
