@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5e02" #  play_62_CERES = 48
+v = "5E03" #  play_62_CERES = 48
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -146,24 +146,16 @@ if play_62_CERES > 1: # part 6
           print(f"main_164: create read_csv/_62c_LongWave.csv 62    ={play_62_CERES}")
 
 
-
-
-
 def hide_other_right_axes(ax1, keep_axis):
     """Hide all right y-axes except the one we want to keep"""
     # Get all axes in the figure
     all_axes = ax1.get_figure().get_axes()
-    
     for ax in all_axes:
         if ax != ax1 and ax != keep_axis:
             # Check if this is a right y-axis (has a spine on the right)
             if ax.spines['right'].get_visible():
                 ax.spines["right"].set_visible(False)
                 ax.tick_params(right=False, labelright=False)
-
-
-
-
 
 def load_plot_data():
     """Load all data needed for plotting"""
@@ -181,7 +173,7 @@ def load_plot_data():
     if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
         data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_02.csv")
         if print_debug > 19:
-           print(f"main_253: 43.2 read ={plot43_eei_12month}")
+           print(f"main_176: 43.2 read ={plot43_eei_12month}")
            #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
     if part44_ceres_eei > 0:
         if print_debug > 19:
@@ -204,9 +196,10 @@ def load_plot_data():
         if print_debug > 9:
            print(f"main_223: 61.9 read ={play_61_CERES}")
     if play_62_CERES > 0: # 62.9 read
-        data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
+        data['ceres_62'] = pd.read_csv("read_csv/_62c_LongWave.csv")
+        # data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
-           print(f"main_227: 62.9 read ={play_62_CERES}")    
+           print(f"main_201: 62.9 read ={play_62_CERES}")    
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.3
         data['gis_temp'] = load_gis_temperature()

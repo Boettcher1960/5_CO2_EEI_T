@@ -978,7 +978,7 @@ def plot_9_create_all_plots(ax1, data):
            print(f"plot_947: ax61 61.8 ={play_61_CERES}")
     if play_62_CERES > 0:
         ax62 = ax1.twinx()
-        ax62.plot(data['ceres_62']["decimal_year"], data['ceres_62']["EEI"], '-', 
+        ax62.plot(data['ceres_62']["decimal_year"], data['ceres_62']["LongWave"], '-', 
                   label="EEI K62", color=c62, linewidth=2)
         ax62.tick_params(axis="y", labelcolor=c62)
         ax62.set_ylim(y_62min, y_62max)
