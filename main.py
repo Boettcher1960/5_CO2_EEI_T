@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d95" #  plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
+v = "5d97" #  play_62_CERES = 48
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -144,7 +144,7 @@ def process_ceres_data():
 # CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
 # 2016_01_TOA_Shortwave_Flux_-AllSky.txt
 if play_62_CERES > 1: # part 6 
-       df62b = convert_ceres_to_csv('read_csv/2016_01_TOA_Shortwave_Flux_-AllSky.txt', 
+       df62b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
                                       'work/c62b_ceres.csv')
        if print_debug > 9:
           print(f"main_179: create work/c62b_ceres.csv  62.b ={play_62_CERES}")

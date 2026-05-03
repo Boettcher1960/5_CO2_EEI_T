@@ -423,9 +423,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
     # in row 5 display play_62_CERES
     elif play_62_CERES > 0:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
-        p62_text = f"TOA Shortwave Flux - All-Sky {play_62_CERES}-month moving average 62 - main - line 443."
-        text_4_add_text(ax1, tr2x, tr5y, p62_text, c62, trs) 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c62)
+        p62_text = f"TOA Longwave Flux - All-Sky {play_62_CERES}-month moving average  - text    443.          62"
+        text_4_add_text(ax1, tr2x, tr6y, p62_text, c62, trs) 
     else:
         p62_text = f"Parameter {header_parameter}  Text 192:"
         text_4_add_text(ax1, tr2x, tr6y, p62_text, "black", 16) 
