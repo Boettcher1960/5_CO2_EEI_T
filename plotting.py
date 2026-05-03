@@ -10,6 +10,7 @@
 # plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance     ,  line  460
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 # plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
+# plot8_right_y_axe_for_C_63                                                  ,  line  520
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
 # plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  501
 # plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C            ,  line  581
@@ -516,6 +517,17 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     # ax55.set_ylim(4, 9)
     #end plot8_160_right_y_axe_55  
 
+#  Energy W/m² moving average 48 month 
+# plot8_right_y_axe_for_C_62                     ,  line  520
+def plot8_right_y_axe_for_C_62(ax62,right62): # 62.5
+    outward_right =  ( 5 *  yr_60 ) - yr_150
+    ax62.spines.right.set_position(("outward", outward_right))
+    ax62.set_ylabel("Long Wave Radiation  in W/m²     plot524            62", color=c62, fontname="Arial",fontsize=18)
+    ax62.tick_params(axis="y", labelcolor=c62)
+    ax62.set_ylim(y_62min, y_62max) #
+
+
+
 # plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 460
 def plot8_right_y_axe_for_C_63(ax63,right52): # 63.5
      if right52 > 0:
@@ -967,6 +979,10 @@ def plot_9_create_all_plots(ax1, data):
         ax62.set_ylim(y_62min, y_62max)
         if print_debug > 9:
            print(f"plot_969: ax62 62.8 ={play_62_CERES}")
+        if play_62_CERES > 2:
+           plot8_right_y_axe_for_C_62( ax62 , 0 ) # 42.4 line 450
+
+
 
 # play_63_CB    = 3 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL

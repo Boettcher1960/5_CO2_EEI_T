@@ -44,7 +44,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-play_62_CERES = 48    # 12 CERES EEI 12 month like part41_ceres_eei 
+play_62_CERES = 48    # 12 CERES longwave output
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
 plot71_temperature = 0
