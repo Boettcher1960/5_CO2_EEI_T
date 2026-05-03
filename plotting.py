@@ -964,9 +964,9 @@ def plot_9_create_all_plots(ax1, data):
         ax62.plot(data['ceres_62']["decimal_year"], data['ceres_62']["EEI"], '-', 
                   label="EEI K62", color=c62, linewidth=2)
         ax62.tick_params(axis="y", labelcolor=c62)
-        ax62.set_ylim(y_TOAmin, y_TOAmax)
+        ax62.set_ylim(y_62min, y_62max)
         if print_debug > 9:
-           print(f"plot_258: ax62 62.8 ={play_62_CERES}")
+           print(f"plot_969: ax62 62.8 ={play_62_CERES}")
 
 # play_63_CB    = 3 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL

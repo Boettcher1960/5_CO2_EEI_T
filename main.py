@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d97" #  play_62_CERES = 48
+v = "5d99" #  play_62_CERES = 48
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -145,23 +145,23 @@ def process_ceres_data():
 # 2016_01_TOA_Shortwave_Flux_-AllSky.txt
 if play_62_CERES > 1: # part 6 
        df62b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
-                                      'work/c62b_ceres.csv')
+                                    'read_csv/_62b_LongWave.csv')
        if print_debug > 9:
-          print(f"main_179: create work/c62b_ceres.csv  62.b ={play_62_CERES}")
+          print(f"main_150: create read_csv/_62b_LongWave.csv  62.b ={play_62_CERES}")
        
        window_months=play_62_CERES
        min_periods=12
        use_center=False
        keep_original=True,
-       df61c = create_running_average( 'work/c62b_ceres.csv', 
-                                          'work/c62d_ceres.csv',
+       df61c = create_running_average( 'read_csv/_62b_LongWave.csv', 
+                                       'read_csv/_62c_LongWave.csv',
                                             window_months=play_62_CERES,
                                             min_periods=12,
                                             center=use_center,
-                                            column_name='EEI')
+                                            column_name='LongWave')
 
        if print_debug > 9:
-          print(f"main_193: create work/c62d_ceres.csv  62.gut ={play_62_CERES}")
+          print(f"main_164: create read_csv/_62c_LongWave.csv 62    ={play_62_CERES}")
 
 
 
@@ -309,11 +309,13 @@ def main():
     print("main_323: call plot_6_remove_axe1.")
     #plot_6_remove_axe1(axes,yr_delete)
     #plot_6_remove_axe1(axes,-1) # -1= no delete, print only
+    plot_6_remove_axe1(axes,0) # delete axe 
+    #plot_6_remove_axe1(axes,1) # delete axe 
     #plot_6_remove_axe1(axes,2) # delete axe 
     #plot_6_remove_axe1(axes,3) # delete axe 
     #plot_6_remove_axe1(axes,4) # delete axe 
-    #plot_6_remove_axe1(axes,1) # delete axe 1, not axe 0
-    #plot_6_remove_axe1(axes,2)  # delete axe 2
+    #plot_6_remove_axe1(axes,5) # delete axe 5, not axe 0
+    #plot_6_remove_axe1(axes,6)  # delete axe 6
     
     # Adjust layout
     fig.tight_layout()
