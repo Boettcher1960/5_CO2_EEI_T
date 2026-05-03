@@ -1,15 +1,15 @@
 # plotting.py
 # version 5c99
 # plot_1_axe ,  for: 22  plot22_CO2_Mauna_Loa = 2                             ,  line  121
-# plot_6_remove_axe1(axes,yr6_delete): line 365
-# plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  374
-# plot8_right_y_axe_for_ppm_25       plot25_long_CO2                         ,   line  437
-# plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
-# plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance     ,  line  450
-# plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance     ,  line  460
+# plot_6_remove_axe1(axes,yr6_delete):                                            line 365
+# plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                          ,  line  374
+# plot8_right_y_axe_for_ppm_25       plot25_long_CO2                          ,  line  437
+# plot8_right_y_axe_for_C_31 , plot31_CO2_emission , cumulative CO2 emissions ,  line  402
+# plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance   ,  line  450
+# plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance   ,  line  460
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 # plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
-# plot8_right_y_axe_for_C_63                                                  ,  line  520
+# plot8_right_y_axe_for_C_62                                                  ,  line  520
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
 # plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  501
 # plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C            ,  line  581

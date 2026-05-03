@@ -53,8 +53,8 @@ from config import play_61_CERES
 from config import play_62_CERES
 
 
-if print_debug > 12:
-   print("main_074: TOA", y_TOAmin, y_TOAmax, play_62_CERES, part44_ceres_eei)
+if print_debug > 9:
+   print("main_057: TOA", y_TOAmin, y_TOAmax, play_62_CERES, part44_ceres_eei)
 
 
 def process_ceres_data():
