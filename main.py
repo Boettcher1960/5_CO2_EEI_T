@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E03" #  play_62_CERES = 48
+v = "5E04" #  play_62_CERES = 48
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -119,17 +119,17 @@ def process_ceres_data():
                                             column_name='EEI')
         
        if print_debug > 9:
-          print(f"main_170: create read_csv/_61c_out_ceres.csv  61.gut ={play_61_CERES}")
+          print(f"main_122: create read_csv/_61c_out_ceres.csv  61.gut ={play_61_CERES}")
 
 
        
-# CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJanuary-2026.txt
-# 2016_01_TOA_Shortwave_Flux_-AllSky.txt
-if play_62_CERES > 1: # part 6 
+    # CERES Outgoing Longwave Radiation OLR
+    # _62_in__2026_02_Longwave.txt
+    if play_62_CERES > 1: # part 6 
        df62b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
                                     'read_csv/_62b_LongWave.csv')
        if print_debug > 9:
-          print(f"main_150: create read_csv/_62b_LongWave.csv  62.b ={play_62_CERES}")
+          print(f"main_132: create read_csv/_62b_LongWave.csv  62.b ={play_62_CERES}")
        
        window_months=play_62_CERES
        min_periods=12
@@ -143,7 +143,7 @@ if play_62_CERES > 1: # part 6
                                             column_name='LongWave')
 
        if print_debug > 9:
-          print(f"main_164: create read_csv/_62c_LongWave.csv 62    ={play_62_CERES}")
+          print(f"main_146: create read_csv/_62c_LongWave.csv 62    ={play_62_CERES}")
 
 
 def hide_other_right_axes(ax1, keep_axis):
@@ -165,8 +165,8 @@ def load_plot_data():
     if plot22_CO2_Mauna_Loa > 0:  # 22.3 load the mauna loa CO2 data
         data['co2'] = load_co2_mauna_loa(x_anf, x_end)
         if print_debug > 19:
-           print(f"main_270: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
-           print(f"main_271: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")        
+           print(f"main_168: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
+           print(f"main_169: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")        
     if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
         data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_02.csv")
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
@@ -177,7 +177,7 @@ def load_plot_data():
            #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
     if part44_ceres_eei > 0:
         if print_debug > 19:
-           print(f"main_253: custom-read 44.7 ={part44_ceres_eei}")
+           print(f"main_180: custom-read 44.7 ={part44_ceres_eei}")
         data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
     # part 5.2 plot52_delta_CO2_red_bars
     # part 5.3 plot53_CO2_orange2025
@@ -190,11 +190,11 @@ def load_plot_data():
     # -----------------------------
     if plot52_delta_CO2_red_bars > 0: # 52.3
         if print_debug > 9:
-           print(f"main_219: plot52_delta_CO2_red_bars # 52.3 ={plot52_delta_CO2_red_bars}")
+           print(f"main_193: plot52_delta_CO2_red_bars # 52.3 ={plot52_delta_CO2_red_bars}")
     if play_61_CERES > 0: # 61.9 read
         data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
         if print_debug > 9:
-           print(f"main_223: 61.9 read ={play_61_CERES}")
+           print(f"main_197: 61.9 read ={play_61_CERES}")
     if play_62_CERES > 0: # 62.9 read
         data['ceres_62'] = pd.read_csv("read_csv/_62c_LongWave.csv")
         # data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
@@ -210,7 +210,7 @@ def load_plot_data():
 def save_png(fig, header_parameter):
     """Save the plot if configured"""
     if print_debug > 19:
-           print(f"main_358 save png as file {fig}")
+           print(f"main_213 save png as file {fig}")
     # print(f"main_save_plot_389: {fig}")
     if parameter84_save_png > 0:
         filename = os.path.basename(__file__)[:parameter84_save_png]
@@ -234,7 +234,7 @@ def main():
                        f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({plot42_EEI_48month}"
                        f"{plot43_eei_12month}{part44_ceres_eei} 5({plot52_delta_CO2_red_bars}"
                        f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on}"
-                       f" 6({play_61_CERES}"
+                       f" 6({play_61_CERES}{play_62_CERES}{play_63_CB}"
                        f" 7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
                        f"{linear_41_75}{plot76_my_T}")
     
@@ -283,11 +283,11 @@ def main():
     # Keep axes 0, 1, 2, hide all others
     print("main_323: call plot_6_remove_axe1.")
     #plot_6_remove_axe1(axes,yr_delete)
-    plot_6_remove_axe1(axes,-1) # -1= no delete, print only
+    #plot_6_remove_axe1(axes,-1) # -1= no delete, print only
     #plot_6_remove_axe1(axes,0) # delete axe 
     #plot_6_remove_axe1(axes,1) # delete axe 
     #plot_6_remove_axe1(axes,2) # delete axe 
-    plot_6_remove_axe1(axes,3) # delete axe 
+    #plot_6_remove_axe1(axes,3) # delete axe 
     #plot_6_remove_axe1(axes,4) # delete axe 
     #plot_6_remove_axe1(axes,5) # delete axe 5, not axe 0
     #plot_6_remove_axe1(axes,6)  # delete axe 6
