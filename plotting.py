@@ -560,7 +560,12 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
     ax74.spines.right.set_position(("outward", outward_right))
     ax74.set_ylabel("Temperature in °C   GISS     74 ", color=c74, fontname="Arial",fontsize=18)
     ax74.tick_params(axis="y", labelcolor=c74)
- 
+    if plot74_GIS_T == 2: # T axis already on the left
+        print(f"plot 564: no need for second T axis  ={plot74_GIS_T} ")
+        ax74.yaxis.set_ticks([])
+        ax74.spines['right'].set_visible(False)
+
+
 # plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C         ,  line  581
 def plot8_right_y_axe_for_T_75(ax75,right52): # 75.6 
     # ax75.spines.right.set_position(("outward", rightv))

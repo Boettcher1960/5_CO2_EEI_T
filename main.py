@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5d101" #  play_62_CERES = 48
+v = "5d102" #  play_62_CERES = 48
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -309,8 +309,8 @@ def main():
     print("main_323: call plot_6_remove_axe1.")
     #plot_6_remove_axe1(axes,yr_delete)
     #plot_6_remove_axe1(axes,-1) # -1= no delete, print only
-    plot_6_remove_axe1(axes,0) # delete axe 
-    #plot_6_remove_axe1(axes,1) # delete axe 
+    #plot_6_remove_axe1(axes,0) # delete axe 
+    plot_6_remove_axe1(axes,1) # delete axe 
     #plot_6_remove_axe1(axes,2) # delete axe 
     #plot_6_remove_axe1(axes,3) # delete axe 
     #plot_6_remove_axe1(axes,4) # delete axe 
