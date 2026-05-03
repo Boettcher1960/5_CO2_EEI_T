@@ -34,7 +34,7 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 # plot34_CO2_emission mode 4
 plot34_CO2 = 0
 
-plot42_EEI_48month = 0  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
+plot42_EEI_48month = 3  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 
@@ -44,7 +44,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-play_62_CERES = 0    # 48 CERES longwave output
+play_62_CERES = 48    # 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 
 plot71_temperature = 0
