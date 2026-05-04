@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E15" # plot44_ceres_eei = 47  # 47 is local part44_ceres_eei = 47  # 47 is local 
+v = "5E16" # plot45_OLR = 4 
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -184,6 +184,13 @@ def load_plot_data():
         if print_debug > 19:
            print(f"main_180: custom-read 44.7 ={part44_ceres_eei}")
         data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
+    if plot45_OLR > 0: # Outgoing Longwave Radiation OLR
+        data['ceres_45'] = pd.read_csv("read_csv/_62e_LongWave.csv")
+        if print_debug > 9:
+           print(f"main_190: OLR read 45.1 ={plot45_OLR}")
+
+
+
     # part 5.2 plot52_delta_CO2_red_bars
     # part 5.3 plot53_CO2_orange2025
     # part 5.4 plot54_Glen_delta_on
@@ -237,7 +244,7 @@ def main():
     header_parameter = (f" "
                        f"2({plot22_CO2_Mauna_Loa}{plot23_Glen_CO2}{plot25_long_CO2}" 
                        f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({plot42_EEI_48month}"
-                       f"{plot43_eei_12month}{part44_ceres_eei} 5({plot52_delta_CO2_red_bars}"
+                       f"{plot43_eei_12month}{plot45_OLR} 5({plot52_delta_CO2_red_bars}"
                        f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on}"
                        f" 6({play_61_CERES}{play_62_CERES}{play_63_CB}"
                        f" 7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
