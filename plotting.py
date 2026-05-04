@@ -7,6 +7,7 @@
 # plot8_right_y_axe_for_C_31 , plot31_CO2_emission , cumulative CO2 emissions ,  line  402
 # plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance   ,  line  450
 # plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance   ,  line  460
+# plot8_right_y_axe_for_OLR_45                                                ,  line  367
 # plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 # plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
 # plot8_right_y_axe_for_C_62                                                  ,  line  520
@@ -364,7 +365,7 @@ def plot8_right_y_axe_for_eei_43(ax43,rightv): # 43.5
     ax43.set_ylim(y_Emin, y_Emax) #
 
 #  OLR  W/m² moving average 48 month 
-# plot8_right_y_axe_for_C_62                     ,  line  520
+# plot8_right_y_axe_for_OLR_45                    ,  line  367
 def plot8_right_y_axe_for_OLR_45(ax45,right62): # 62.5
     outward_right =  ( plot45_OLR *  yr_60 ) - yr_150
     ax45.spines.right.set_position(("outward", outward_right))
@@ -731,9 +732,6 @@ def plot_9_create_all_plots(ax1, data):
         # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
         if plot42_EEI_48month > 2:
            plot8_right_y_axe_for_eei_42( ax42 , 0 ) # 42.4 line 450
-
-
-
     if plot43_eei_12month > 0 and 'ceres_43' in data: # 43.2
         ax43 = ax1.twinx()
         ax43.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
@@ -745,10 +743,6 @@ def plot_9_create_all_plots(ax1, data):
         # plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance     ,  line  460
         if plot43_eei_12month > 2:
            plot8_right_y_axe_for_eei_43( ax43 , 0 ) # 43.4 line 460
-
-
-
-
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
         if print_debug > 19:
            print(f"plot_235: ax44 44.7 ={part44_ceres_eei}")
@@ -758,7 +752,18 @@ def plot_9_create_all_plots(ax1, data):
                   label="EEI K44", color=c44, linewidth=2)
         ax44.tick_params(axis="y", labelcolor=c44)
         ax44.set_ylim(y_Emin, y_Emax)
-    
+    if plot45_OLR > 0:
+        ax45 = ax1.twinx()
+        ax45.plot(data['ceres_45']["decimal_year"], data['ceres_45']["LongWave"], '-', 
+                  label="OLR K45", color=c45, linewidth=4)
+        ax45.tick_params(axis="y", labelcolor=c42)
+        ax45.set_ylim(y_62min, y_62max)
+        # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
+        if plot45_OLR > 2:
+           plot8_right_y_axe_for_OLR_45( ax45 , 0 ) # 45.4 line 450
+
+
+
     # plot52_delta_CO2_red_bars, Mauna Loa delta ,  plot_9_create_all_plots() ,   line 630
 
     # part 5.2 plot52_delta_CO2_red_bars
