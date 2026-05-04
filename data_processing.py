@@ -93,3 +93,50 @@ def load_gis_temperature():
     """Load GIS temperature data"""
     return pd.read_csv("read_csv/csv_74_gis_temperature.csv")
 
+# line 97
+def add_62_csv_column(input_csv, 
+                      input_EEI_csv, 
+                      output_csv, 
+                      window_months, 
+                      min_periods=None, 
+                      center=True, 
+                      keep_original=True,
+                      column_name='EEI'):
+    """Create running average for specified window size"""
+    df = pd.read_csv(input_csv)
+    df['date'] = pd.to_datetime(df['date'])
+    df = df.sort_values('date').reset_index(drop=True)
+    
+    df2 = pd.read_csv(input_EEI_csv)
+    df2['date'] = pd.to_datetime(df['date'])
+    df2 = df2.sort_values('date').reset_index(drop=True)
+
+
+    if min_periods is None:
+        # min_periods = window_months // 2
+        min_periods = window_months
+   
+    df[column_name] = df['toa_net_flux_w_m2'].rolling(
+        window=window_months, 
+        center=center,
+        min_periods=min_periods
+    ).mean()
+    
+    output_columns = ['date', 'year', 'month', 'decimal_year']
+    if keep_original:
+        output_columns.append('toa_net_flux_w_m2')
+    output_columns.append(column_name)
+    
+    df_output = df[output_columns].copy()
+    df_output.to_csv(output_csv, index=False, float_format='%.6f')
+    
+    valid_records = df_output[column_name].notna().sum()
+    #print(f"{window_months}-month running average saved to {output_csv}")
+    #print(f"Valid records: {valid_records} out of {len(df_output)}")
+    if print_debug_DP > 9:
+        print(f"DataP_130: Valid records: {valid_records} out of {len(df_output)}")
+        print(f"DataP_131: {window_months}-month running average saved to {output_csv} ")
+    return df_output
+
+
+

@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E08" #  play_62_CERES = 48
+v = "5E09" #  play_62_CERES = 48
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -49,7 +49,7 @@ from models import *
 #from config import play_62_CERES
 
 
-if print_debug > 9:
+if print_debug > 19:
    print("main_057: TOA", y_TOAmin, y_TOAmax, play_62_CERES, part44_ceres_eei)
 
 
@@ -124,21 +124,32 @@ def process_ceres_data():
        df62b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
                                     'read_csv/_62b_LongWave.csv')
        if print_debug > 9:
-          print(f"main_132: create read_csv/_62b_LongWave.csv  62.b ={play_62_CERES}")
+          print(f"main_127: create read_csv/_62b_LongWave.csv  62.b ={play_62_CERES}")
        
        window_months=play_62_CERES
        min_periods=12
        use_center=False
        keep_original=True,
-       df61c = create_running_average( 'read_csv/_62b_LongWave.csv', 
+       df62c = create_running_average( 'read_csv/_62b_LongWave.csv', 
                                        'read_csv/_62c_LongWave.csv',
                                             window_months=play_62_CERES,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='LongWave')
 
+       df62e = add_62_csv_column( 'read_csv/_62b_LongWave.csv', 
+                                  'read_csv/_42_EEI48month_2026_02.csv', 
+                                  'read_csv/_62e_LongWave.csv',
+                                            window_months=play_62_CERES,
+                                            min_periods=12,
+                                            center=use_center,
+                                            column_name='LongWave')
+
+
+
+
        if print_debug > 9:
-          print(f"main_146: create read_csv/_62c_LongWave.csv 62    ={play_62_CERES}")
+          print(f"main_141: create read_csv/_62c_LongWave.csv 62    ={play_62_CERES}")
 
 
 def hide_other_right_axes(ax1, keep_axis):
