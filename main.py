@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E13" #  play_62_CERES = 48
+v = "5E15" # plot44_ceres_eei = 47  # 47 is local part44_ceres_eei = 47  # 47 is local 
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification

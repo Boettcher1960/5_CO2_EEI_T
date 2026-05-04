@@ -91,7 +91,7 @@ def load_co2_mauna_loa(x_anf, x_end): # 22.2 define the mauna loa CO2 data
 
 def load_gis_temperature():
     """Load GIS temperature data"""
-    return pd.read_csv("read_csv/csv_74_gis_temperature.csv")
+    return pd.read_csv("read_csv/_74_gis_temperature.csv")
 
 # line 97
 def add_62_csv_column(input_csv, 

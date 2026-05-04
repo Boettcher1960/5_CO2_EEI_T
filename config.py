@@ -25,14 +25,10 @@ plot25_long_CO2 = 0      # 25.1
 plot31_CO2_emission =    0   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission =    0   # 32.1 CO2_emission 600 GtC Carbon Brief made with play_63_CB 
 
-
 plot34_CO2_emission =    0   # 34.1 row 4 
 plot34_CO2_emission_mode = 0 # 34.1 mode 
-# plot31__CO2_emission mode 1
-# plot32__CO2_emission mode 2
-# plot33__CO2_emission mode 3
-# plot34_CO2_emission mode 4
-plot34_CO2 = 0
+# plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
+plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
 plot42_EEI_48month = 0  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
@@ -230,14 +226,22 @@ print_debug = 10 # print some items
 # 27 left mouse select save Data as ASCII File
 # 28 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
 # 29 rename      to _62_in__2026_02_Longwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-#  run with play_61_CERES = 48 
-#  copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
-#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
-#  run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
-
-
-
-
+# 30 run with play_62_CERES = 48
+#    read read_csv/_62_in__2026_02_Longwave.txt main 124
+#    output1 read_csv/_62b_LongWave.csv'
+# 31 run with play_62_CERES = 48
+#    input1  read_csv/_62_in__2026_02_Longwave.txt main 124
+#    input2  read_csv/_42_EEI48month_2026_02.csv   main 141
+#    output2 read_csv/_62c_LongWave.csv with column LongWave for  48 month running average 
+#    output3.1 read_csv/_62e_LongWave.csv with column EEI copy from input2 for  48 month running average 
+#    output3.2 read_csv/_62e_LongWave.csv with column LongWave for  48 month running average 
+#    output3.3 read_csv/_62e_LongWave.csv with column OLR_EEI = LongWave + EEI   48 month running average 
+# 32 copy dokumente/5_CO2_EEI_T/read_csv/_62e_LongWave.csv to
+#         dokumente/5_CO2_EEI_T/read_csv/_45_OLR_EEI_48month_2026_02.csv
+#
+# 33 run   plot45_OLR_48month=2 reading new _45_OLR_EEI_48month_2026_02.csv file
+#
+#
 
 
 # with 5b2*pc set play_61_CERES = 48
