@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E09" #  play_62_CERES = 48
+v = "5E11" #  play_62_CERES = 48
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -147,9 +147,8 @@ def process_ceres_data():
 
 
 
-
        if print_debug > 9:
-          print(f"main_141: create read_csv/_62c_LongWave.csv 62    ={play_62_CERES}")
+          print(f"main_151: create read_csv/_62e_LongWave.csv 62    ={play_62_CERES}")
 
 
 def hide_other_right_axes(ax1, keep_axis):

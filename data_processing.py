@@ -108,7 +108,7 @@ def add_62_csv_column(input_csv,
     df = df.sort_values('date').reset_index(drop=True)
     
     df2 = pd.read_csv(input_EEI_csv)
-    df2['date'] = pd.to_datetime(df['date'])
+    df2['date'] = pd.to_datetime(df2['date'])
     df2 = df2.sort_values('date').reset_index(drop=True)
 
 
@@ -126,7 +126,9 @@ def add_62_csv_column(input_csv,
     if keep_original:
         output_columns.append('toa_net_flux_w_m2')
     output_columns.append(column_name)
-    
+    #output_columns.append('EEI')
+    #output_columns.append('OLR_EEI')
+
     df_output = df[output_columns].copy()
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
     
