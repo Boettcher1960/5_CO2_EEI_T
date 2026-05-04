@@ -47,7 +47,7 @@ play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 4 # 2, 3=right y axis
+plot74_GIS_T = 5 # 2, 3=right y axis
 linear_41_75 = 0 # 5,4
 plot76_my_T = 0
 plot_T_77 = 0 # 3, 4
@@ -66,7 +66,7 @@ c41 = "#289C1684"
 c42 = "purple"
 c43 = "#13DF2F84"
 c44 = "blue"
-c45 = "#DF761384"
+c45 = "#B31743DC"
 
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"

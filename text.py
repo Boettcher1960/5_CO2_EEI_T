@@ -57,7 +57,10 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Feb. 2026 data. Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
-   
+    elif plot45_OLR == 2:
+        header = f"Outgoing Longwave Radiation OLR in   W/m²  Plot {x_anf} to {x_end}."
+        ax1.text(-0.1, 1.05, header, color=c45, fontname="Arial", fontsize=trs,
+                transform=ax1.transAxes)
     elif yl_mode == 4:
         header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Feb. 2026 data. Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
@@ -417,7 +420,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        # 9.5.4 write green text
        plt.text(tr2x, tr5y, "carbon brief cummulative CO2 values in Gt CO2 since 1750     63", color=c63, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
-
+    elif plot74_GIS_T == 5: # 74.6
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c74)
+        text_4_add_text(ax1, tr2x, tr5y, 
+                   "Temperature in °C giss.nasa.gov Hansen+0.3°C                                                       74", c74, trs)
 
 
     # in row 5 display part44_ceres_eei
