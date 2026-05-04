@@ -205,6 +205,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Earth Energy Imbalance W/m² moving average 12 month                                         43", 
                     c43, trs)
+    elif plot45_OLR == 2: # plot45_OLR = 4 # Outgoing Longwave Radiation OLR
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c45)
+        text_4_add_text(ax1, tr2x, tr2y, 
+                    "Outgoing Longwave Radiation OLR  W/m² moving average 48 month                      45", 
+                    c45, trs)
+
     elif plot71_temperature == 2: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)
         text_4_add_text(ax1, tr2x, tr2y, 

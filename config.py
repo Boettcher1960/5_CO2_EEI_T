@@ -33,7 +33,7 @@ plot34_CO2 = 0 # plot34_CO2_emission mode 4
 plot42_EEI_48month = 3  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
-plot45_OLR = 4 # Outgoing Longwave Radiation OLR
+plot45_OLR = 2 # Outgoing Longwave Radiation OLR
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
@@ -47,7 +47,7 @@ play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 2 # 2, 3=right y axis
+plot74_GIS_T = 4 # 2, 3=right y axis
 linear_41_75 = 0 # 5,4
 plot76_my_T = 0
 plot_T_77 = 0 # 3, 4
