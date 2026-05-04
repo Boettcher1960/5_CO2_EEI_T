@@ -385,6 +385,12 @@ def plot8_right_y_axe_for_OLR_45(ax45,right62): # 62.5
     ax45.tick_params(axis="y", labelcolor=c45)
     ax45.set_ylim(y_62min, y_62max) #
 
+def plot8_right_y_axe_for_OLR_46(ax46,right62): # 62.5
+    outward_right =  ( plot46_OLR_EEI *  yr_60 ) - yr_150
+    ax46.spines.right.set_position(("outward", outward_right))
+    ax46.set_ylabel("Outgoing Longwave Radiation OLR+EEI in W/m²       46", color=c46, fontname="Arial",fontsize=18)
+    ax46.tick_params(axis="y", labelcolor=c46)
+    ax46.set_ylim(y_62min, y_62max) #
 
 
 
@@ -768,12 +774,20 @@ def plot_9_create_all_plots(ax1, data):
         ax45 = ax1.twinx()
         ax45.plot(data['ceres_45']["decimal_year"], data['ceres_45']["LongWave"], '-', 
                   label="OLR K45", color=c45, linewidth=4)
-        ax45.tick_params(axis="y", labelcolor=c42)
+        ax45.tick_params(axis="y", labelcolor=c45)
         ax45.set_ylim(y_62min, y_62max)
         # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
         if plot45_OLR > 2:
            plot8_right_y_axe_for_OLR_45( ax45 , 0 ) # 45.4 line 450
-
+    if plot46_OLR_EEI > 0:
+        ax46 = ax1.twinx()
+        ax46.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR_EEI"], '-', 
+                  label="OLR K45", color=c46, linewidth=4)
+        ax46.tick_params(axis="y", labelcolor=c46)
+        ax46.set_ylim(y_62min, y_62max)
+        # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
+        if plot46_OLR_EEI > 2:
+           plot8_right_y_axe_for_OLR_46( ax46 , 0 ) # 45.4 line 450
 
 
     # plot52_delta_CO2_red_bars, Mauna Loa delta ,  plot_9_create_all_plots() ,   line 630

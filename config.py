@@ -68,7 +68,8 @@ c42 = "purple"
 c43 = "#13DF2F84"
 c44 = "blue"
 c45 = "#B31743DC"
-
+# c46 = "#481725DC"
+c46 = "#13DF2F84"
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"
@@ -133,7 +134,7 @@ y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
 y_62min = 240  # in W/m2
-y_62max = 242  # in W/m2
+y_62max = 243  # in W/m2
 
 y_Tmin = 0
 y_Tmax = 2

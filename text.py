@@ -278,6 +278,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month                                         43", 
                     c43, trs)
+    elif plot46_OLR_EEI == 3:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c46)
+        text_4_add_text(ax1, tr2x, tr3y, 
+                    "Absorbed Solar Radiation ASR = OLR+EEI  W/m² moving average 48 month                         46", 
+                    c43, trs)
+
     # part 5.2 plot52_delta_CO2_red_bars
     elif plot52_delta_CO2_red_bars == 3: # 52.4 row 3
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c52)
