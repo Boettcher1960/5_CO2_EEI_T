@@ -200,6 +200,18 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.100
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif plot45_OLR  == 2:  # 43.5 y axe left 
+        ax1.spines.left.set_position(("outward", 3))
+        ax1.set_ylim(y_62min, y_62max)
+        ax1.set_ylabel("Outgoing Longwave Radiation OLR in W (plot168)  ", color=c45, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c45, labelsize=20)
+        y_mayor_ticks = 0.500 
+        y_minor_ticks = 0.100
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+
+
+
     elif plot71_temperature == 2:  # 71.5 y axe left  red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 3))
