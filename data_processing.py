@@ -111,8 +111,11 @@ def add_62_csv_column(input_csv,
     df2['date'] = pd.to_datetime(df2['date'])
     df2 = df2.sort_values('date').reset_index(drop=True)
 
-    # Merge on 'date' column
     df = df.merge(df2[['date', 'EEI']], on='date', how='left')
+    # Merge on 'date' column df = df.merge(df2[['date', 'EEI']], on='date', how='left')
+
+    # Create OLR_EEI column (fill NaN with 0 before addition)
+    # df['OLR_EEI'] = df['EEI'].fillna(0) + df['LongWave'].fillna(0)
 
 
     if min_periods is None:
@@ -124,13 +127,19 @@ def add_62_csv_column(input_csv,
         center=center,
         min_periods=min_periods
     ).mean()
-    
+
+    # Merge on 'date' column
+    #df = df.merge(df2[['date', 'EEI']], on='date', how='right')
+
     output_columns = ['date', 'year', 'month', 'decimal_year', 'EEI']
     if keep_original:
         output_columns.append('toa_net_flux_w_m2')
     output_columns.append(column_name)
-    #output_columns.append('EEI')
+   
     #output_columns.append('OLR_EEI')
+    # Create OLR_EEI column (fill NaN with 0 before addition)
+    df['OLR_EEI'] = df['EEI'].fillna(0) + df['LongWave'].fillna(0)
+    output_columns.append('OLR_EEI')
 
     df_output = df[output_columns].copy()
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
