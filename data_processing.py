@@ -111,6 +111,9 @@ def add_62_csv_column(input_csv,
     df2['date'] = pd.to_datetime(df2['date'])
     df2 = df2.sort_values('date').reset_index(drop=True)
 
+    # Merge on 'date' column
+    df = df.merge(df2[['date', 'EEI']], on='date', how='left')
+
 
     if min_periods is None:
         # min_periods = window_months // 2
@@ -122,7 +125,7 @@ def add_62_csv_column(input_csv,
         min_periods=min_periods
     ).mean()
     
-    output_columns = ['date', 'year', 'month', 'decimal_year']
+    output_columns = ['date', 'year', 'month', 'decimal_year', 'EEI']
     if keep_original:
         output_columns.append('toa_net_flux_w_m2')
     output_columns.append(column_name)
