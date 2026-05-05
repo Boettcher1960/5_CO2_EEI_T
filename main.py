@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E28" # plot46_OLR_EEI = 3
+v = "5E30" # plot46_OLR_EEI = 2
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -302,7 +302,7 @@ def main():
     plot_6_remove_axe1(axes,-1) # -1= no delete, print only
     #plot_6_remove_axe1(axes,0) # delete axe 
     #plot_6_remove_axe1(axes,1) # delete axe 
-    plot_6_remove_axe1(axes,2) # delete axe 
+    #plot_6_remove_axe1(axes,2) # delete axe 
     #plot_6_remove_axe1(axes,3) # delete axe 
     #plot_6_remove_axe1(axes,4) # delete axe 
     #plot_6_remove_axe1(axes,5) # delete axe 5, not axe 0

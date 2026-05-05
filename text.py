@@ -61,6 +61,11 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"Outgoing Longwave Radiation OLR in   W/m²  Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color=c45, fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
+    # ax1.set_ylabel("NASA CERES Earth Energy: ASR = OLR + EEI in W/m²  ", color=c46, fontsize=20)
+    elif plot46_OLR_EEI == 2:
+        header = f"NASA CERES Earth Energy: ASR=OLR+EEI in W/m² (Feb. 2026) Plot {x_anf} to {x_end}."
+        ax1.text(-0.1, 1.05, header, color=c46, fontname="Arial", fontsize=trs,
+                transform=ax1.transAxes)
     elif yl_mode == 4:
         header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Feb. 2026 data. Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
@@ -213,7 +218,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Outgoing Longwave Radiation OLR  W/m² moving average 48 month                      45", 
                     c45, trs)
-
+    elif plot46_OLR_EEI == 2:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c46)
+        text_4_add_text(ax1, tr2x, tr2y, 
+                    "Absorbed Solar Radiation ASR = OLR+EEI  W/m² moving average 48 month          46", 
+                    c46, trs)
     elif plot71_temperature == 2: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)
         text_4_add_text(ax1, tr2x, tr2y, 
@@ -278,6 +287,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "Earth Energy Imbalance W/m² moving average 12 month                                         43", 
                     c43, trs)
+    elif plot45_OLR == 3: # plot45_OLR = 4 # Outgoing Longwave Radiation OLR
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c45)
+        text_4_add_text(ax1, tr2x, tr3y, 
+                    "Outgoing Longwave Radiation OLR  W/m² moving average 48 month                      45", 
+                    c45, trs)
     elif plot46_OLR_EEI == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c46)
         text_4_add_text(ax1, tr2x, tr3y, 
@@ -354,12 +368,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot42_EEI_48month == 4:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c42)
         text_4_add_text(ax1, tr2x, tr4y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month                                         42", 
+                    "Earth Energy Imbalance EEI in W/m² moving average 48 month                              42", 
                     c42, trs)
     elif plot43_eei_12month == 4:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c43)
         text_4_add_text(ax1, tr2x, tr4y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month                                         43", 
+                    "Earth Energy Imbalance W/m² moving average 12 month                                     43", 
                     c43, trs)
     elif plot45_OLR == 4: # plot45_OLR = 4 # Outgoing Longwave Radiation OLR
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c45)

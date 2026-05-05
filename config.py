@@ -33,8 +33,8 @@ plot34_CO2 = 0 # plot34_CO2_emission mode 4
 plot42_EEI_48month = 4  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
-plot45_OLR = 2 # Outgoing Longwave Radiation OLR
-plot46_OLR_EEI = 3 # Outgoing Longwave Radiation OLR
+plot45_OLR = 3 # Outgoing Longwave Radiation OLR
+plot46_OLR_EEI = 2 # Outgoing Longwave Radiation OLR
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
@@ -134,7 +134,7 @@ y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
 y_62min = 240  # in W/m2
-y_62max = 243  # in W/m2
+y_62max = 242.8  # in W/m2
 
 y_Tmin = 0
 y_Tmax = 2
