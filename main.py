@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E31" # plot42_EEI_48month = 2
+v = "5E32" # plot42_EEI_48month = 2
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -23,9 +23,7 @@ v = "5E31" # plot42_EEI_48month = 2
 # part 77 T with 2 values
 #
 # part 8 print headline, axis numbers. around figue
-# 8.2 print the headline above the plot
 # 8.3 print the left y axis 
-# 8.4 
 # 8.5 configure the right y axis legend  
 # 8.6 print the vertical lines CO2=constant
 # 8.7 print the right y axis
