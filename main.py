@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E30" # plot46_OLR_EEI = 2
+v = "5E31" # plot42_EEI_48month = 2
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification

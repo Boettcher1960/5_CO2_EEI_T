@@ -30,11 +30,11 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
-plot42_EEI_48month = 4  # 5,3,4 print EEI 48 month running mean. Info in line 4 below the plot
+plot42_EEI_48month = 2  # 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
-plot45_OLR = 3 # Outgoing Longwave Radiation OLR
-plot46_OLR_EEI = 2 # Outgoing Longwave Radiation OLR
+plot45_OLR = 4 # Outgoing Longwave Radiation OLR
+plot46_OLR_EEI = 3 # Outgoing Longwave Radiation OLR
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
@@ -122,7 +122,7 @@ y_32min = 0   #   0 GtC
 y_32max = 800 # 800 GtC
 
 y_Emin = 0 #   EEI in W/m2 y axis left mode
-y_Emax = 3 #   EEI in W/m2 y axis left mode
+y_Emax = 1.5 #   EEI in W/m2 y axis left mode
 
 
 y_TOAmin = 97  # bug is double set in plotting.py line 56
@@ -134,7 +134,7 @@ y_55min = 6 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
 y_62min = 240  # in W/m2
-y_62max = 242.8  # in W/m2
+y_62max = 243  # in W/m2
 
 y_Tmin = 0
 y_Tmax = 2

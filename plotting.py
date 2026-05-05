@@ -397,7 +397,7 @@ def plot8_right_y_axe_for_OLR_45(ax45,right62): # 62.5
 def plot8_right_y_axe_for_OLR_46(ax46,right62): # 62.5
     outward_right =  ( plot46_OLR_EEI *  yr_60 ) - yr_150
     ax46.spines.right.set_position(("outward", outward_right))
-    ax46.set_ylabel("Outgoing Longwave Radiation OLR+EEI in W/m²       46", color=c46, fontname="Arial",fontsize=18)
+    ax46.set_ylabel("ASR=OLR+EEI AbsorbedSolarRadiation in W/m²  46", color=c46, fontname="Arial",fontsize=18)
     ax46.tick_params(axis="y", labelcolor=c46)
     ax46.set_ylim(y_62min, y_62max) #
 
