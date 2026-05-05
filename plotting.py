@@ -18,7 +18,8 @@
 # plot_9_create_all_plots(ax1, data): line 400 600
 # plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,  line 447
 # plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603
-# plot42_EEI_48month  Earth Energy Imbalance W/m² running average over 48 months   ok   line 748
+# plot42_EEI_48month  Earth Energy Imbalance W/m² running average over 48 months   ok     line 748
+# plot46_OLR_EEI  ASR=OLR+EEI AbsorbedSolar Radiation W/m² running average over 48 months line 793
 # plot52_delta_CO2_red_bars,   Mauna Loa delta    ,  plot_9_create_all_plots() ,  line 630
 # plot74_GIS_T,  GIS temperature add 0.3°C Hansen ,  plot_9_create_all_plots() ,  line 750
 
@@ -790,15 +791,22 @@ def plot_9_create_all_plots(ax1, data):
         # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
         if plot45_OLR > 2:
            plot8_right_y_axe_for_OLR_45( ax45 , 0 ) # 45.4 line 450
+    # plot46_OLR_EEI  ASR=OLR+EEI AbsorbedSolar Radiation W/m² running average over 48 months line 793
     if plot46_OLR_EEI > 0:
-        ax46 = ax1.twinx()
-        ax46.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR_EEI"], '-', 
+        if plot46_OLR_EEI == 2:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR_EEI"], '-', 
                   label="OLR K45", color=c46, linewidth=4)
-        ax46.tick_params(axis="y", labelcolor=c46)
-        ax46.set_ylim(y_62min, y_62max)
-        # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
-        if plot46_OLR_EEI > 2:
-           plot8_right_y_axe_for_OLR_46( ax46 , 0 ) # 45.4 line 450
+           # The left axis is already configured in plot_1_axe
+        else:
+           ax46 = ax1.twinx()
+           ax46.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR_EEI"], '-', 
+                  label="OLR K45", color=c46, linewidth=4)
+           ax46.tick_params(axis="y", labelcolor=c46)
+           ax46.set_ylim(y_62min, y_62max)
+           # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
+           if plot46_OLR_EEI > 2:
+              plot8_right_y_axe_for_OLR_46( ax46 , 0 ) # 45.4 line 450
 
 
     # plot52_delta_CO2_red_bars, Mauna Loa delta ,  plot_9_create_all_plots() ,   line 630
