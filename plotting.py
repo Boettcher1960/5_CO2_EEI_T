@@ -16,6 +16,7 @@
 # plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C            ,  line  581
 # plot8_right_y_axe_for_T_77 ,     plot_T_77    ,   my quadratic              ,  line  604
 # plot_9_create_all_plots(ax1, data): line 400 600
+# plot22_CO2_Mauna_Loa                                                                   line 530
 # plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,  line 447
 # plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603
 # plot42_EEI_48month  Earth Energy Imbalance W/m² running average over 48 months   ok     line 748
@@ -522,29 +523,27 @@ def plot8_right_y_axe_for_T_77(ax77,right52): # 77.6
     else:    
        ax77.set_ylabel("Temperature in °C        plot570          77", color=c77, fontname="Arial",fontsize=18)
        ax77.tick_params(axis="y", labelcolor=c77)
-       
-
-
+      
 # plot_9_create_all_plots(ax1, data): line 436 600
 def plot_9_create_all_plots(ax1, data):
     """Create all plots based on configuration"""
-    
-    # Plot plot22_CO2_Mauna_Loa
-    if plot22_CO2_Mauna_Loa > 0: # 22.4 create the plot  ax22.set_ylim(y_min, y_max)
-        if print_debug > 19:
-          print(f"plot_366: plot22_CO2_Mauna_Loa 22.4 ={plot22_CO2_Mauna_Loa}")
-          print(f"plot_367: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
-        ax22 = ax1.twinx()
-        ax22.plot(data['co2']["year"], data['co2']["co2_ppm"], 'o', 
+    # plot22_CO2_Mauna_Loa                       line 530
+    if plot22_CO2_Mauna_Loa > 0:
+        if plot22_CO2_Mauna_Loa == 2:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['co2']["year"], data['co2']["co2_ppm"], 'o', 
+                  label="CO2 K22", color=c22, linewidth=3)
+        else:
+           ax22 = ax1.twinx()
+           if print_debug > 19:
+              print(f"plot_366: plot22_CO2_Mauna_Loa 22.4 ={plot22_CO2_Mauna_Loa}")
+              print(f"plot_367: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")
+           ax22.plot(data['co2']["year"], data['co2']["co2_ppm"], 'o', 
                   label="T GIS K22", color=c22, linewidth=3)
-        ax22.tick_params(axis="y", labelcolor=c22)
-        ax22.set_ylim(y_min, y_max)
-        if plot22_CO2_Mauna_Loa > 2:
-           # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  415
-           plot8_right_y_axe_for_ppm_22( ax22 , 0 ) # 22.4
-
-
-
+           ax22.tick_params(axis="y", labelcolor=c22)
+           ax22.set_ylim(y_min, y_max)
+           if plot22_CO2_Mauna_Loa > 2:
+              plot8_right_y_axe_for_ppm_22( ax22 , 0 ) # 22.4
     # -----------------------------
     # 2.3 plot23_Glen_CO2 = 0.013t² - 51t + 49,536 in dark blue 
     # source a plot with the formula explained in a thread

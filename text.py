@@ -170,7 +170,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     if plot22_CO2_Mauna_Loa == 2: # 22.5.2 legend row 2
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c22)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm) 22", 
+            "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm)                                 22", 
                     c22, trs)
     elif plot23_Glen_CO2 == 2: # 23.5.4 legend row 4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c23)

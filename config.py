@@ -18,7 +18,7 @@ yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_7
 yr_delete = 1 # 9 = delete all axes delete axe 4
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 0 # 3    22.1 declare global integer variable (2= print in line 2)
+plot22_CO2_Mauna_Loa = 2 # 3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
@@ -48,7 +48,7 @@ play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 2 # 2, 3,4,5 =right y axis
+plot74_GIS_T = 0 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 5,4
 plot76_my_T = 0
 plot_T_77 = 0 # 3, 4
