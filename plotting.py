@@ -21,7 +21,7 @@
 # plot42_EEI_48month  Earth Energy Imbalance W/m² running average over 48 months   ok     line 748
 # plot46_OLR_EEI  ASR=OLR+EEI AbsorbedSolar Radiation W/m² running average over 48 months line 793
 # plot52_delta_CO2_red_bars,   Mauna Loa delta    ,  plot_9_create_all_plots() ,  line 630
-# plot74_GIS_T,  GIS temperature add 0.3°C Hansen ,  plot_9_create_all_plots() ,  line 750
+# plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots()   line 1040
 
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
@@ -1037,16 +1037,21 @@ def plot_9_create_all_plots(ax1, data):
         # end 7.3
         # plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 356
 
-    # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots() ,   line 750
-    # Plot GIS temperature
+    # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots() ,   line 1040
     if plot74_GIS_T > 0 : # 74.4
-        ax74 = ax1.twinx()
-        ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
+        if plot74_GIS_T == 2:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
                   label="T GIS K74", color=c74, linewidth=5)
-        ax74.tick_params(axis="y", labelcolor=c74)
-        ax74.set_ylim(y_Tmin, y_Tmax)
-        if plot74_GIS_T > 2:
-           plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 500
+           # The left axis is already configured in plot_1_axe
+        else:
+           ax74 = ax1.twinx()
+           ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
+                  label="T GIS K74", color=c74, linewidth=5)
+           ax74.tick_params(axis="y", labelcolor=c74)
+           ax74.set_ylim(y_Tmin, y_Tmax)
+           if plot74_GIS_T > 2:
+              plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 500
 
     # part 75 plot 2015 .41°C linear fit
     # linear_41_75  = 4 # part 75    Hansen 2015 .41°C linear fit

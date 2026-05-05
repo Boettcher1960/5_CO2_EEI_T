@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E34" # plot46_OLR_EEI  ASR=OLR+EEI AbsorbedSolar Radiation W/m² running average over 48 months line 793
+v = "5E36" # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots()   line 1040
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
