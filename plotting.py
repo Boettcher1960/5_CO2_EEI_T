@@ -18,7 +18,7 @@
 # plot_9_create_all_plots(ax1, data): line 400 600
 # plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,  line 447
 # plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603
-# plot42_EEI_48month, running average over 48 months,  plot_9_create_all_plots() ,  line 601
+# plot42_EEI_48month  Earth Energy Imbalance W/m² running average over 48 months   ok   line 748
 # plot52_delta_CO2_red_bars,   Mauna Loa delta    ,  plot_9_create_all_plots() ,  line 630
 # plot74_GIS_T,  GIS temperature add 0.3°C Hansen ,  plot_9_create_all_plots() ,  line 750
 
@@ -745,20 +745,22 @@ def plot_9_create_all_plots(ax1, data):
               ax34.set_ylim(0, 2000000000000) #8
         #end 3.4
 
-
-
-      
-    # plot42_EEI_48month, running average over 48 months,  plot_9_create_all_plots() ,   line 601
-    # Earth Energy Imbalance W/m² moving average 48 month 
+    # plot42_EEI_48month  Earth Energy Imbalance W/m² running average over 48 months line 748
     if plot42_EEI_48month > 0:
-        ax42 = ax1.twinx()
-        ax42.plot(data['ceres_42']["decimal_year"], data['ceres_42']["EEI"], '-', 
+        if plot42_EEI_48month == 2:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['ceres_42']["decimal_year"], data['ceres_42']["EEI"], '-', 
+                   label="EEI K42", color=c42, linewidth=4)
+           # The left axis is already configured in plot_1_axe
+        else:
+           ax42 = ax1.twinx()
+           ax42.plot(data['ceres_42']["decimal_year"], data['ceres_42']["EEI"], '-', 
                   label="EEI K42", color=c42, linewidth=4)
-        ax42.tick_params(axis="y", labelcolor=c42)
-        ax42.set_ylim(y_Emin, y_Emax)
-        # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
-        if plot42_EEI_48month > 2:
-           plot8_right_y_axe_for_eei_42( ax42 , 0 ) # 42.4 line 450
+           ax42.tick_params(axis="y", labelcolor=c42)
+           ax42.set_ylim(y_Emin, y_Emax)
+           if plot42_EEI_48month > 2:
+              plot8_right_y_axe_for_eei_42( ax42 , 0 )
+   
     if plot43_eei_12month > 0 and 'ceres_43' in data: # 43.2
         ax43 = ax1.twinx()
         ax43.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
