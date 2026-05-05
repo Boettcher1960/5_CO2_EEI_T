@@ -71,29 +71,7 @@ def configure_right_y_axis(ax, y_Tmin, y_Tmax, color, label):
     return ax
     # end 
 
-
-
-
-# bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
-def right_EEI_y_axis(ax, y_Emin, y_Emax, color, label):
-    """Configure the first right y-axis for temperature"""
-    ax2 = ax.twinx()
-
-    # Create a third y-axis offset by 60 points to the right
-    divider = make_axes_locatable(ax2)
-    # Create new axis with offset (60 points = 60/72 inches if using points)
-    ax3 = divider.append_axes("right", size="5%", pad=0.6)  # pad is in inches, 0.6 inches ≈ 43 points
-    # For exact 60 points: 60/72 = 0.8333 inches
-    ax3 = divider.append_axes("right", size="5%", pad=0.8333)
-
-    # Or use points directly
-    ax3 = divider.append_axes("right", size="5%", pad=60/72)  # 60 points in inches
-    return ax3
-    # bug ax6 = right_EEI_y_axis(ax1, y_Emin, y_Emax, c74, label)
-
-
-
-def add_grid_lines(ax1):
+def add_grid_lines(ax1): # called from main(271)
     # mayor grid lines vertical lines inside the plot to better read the y value
     for line in ax1.get_ygridlines():
         # line.set_color('green')  # major lines
@@ -124,7 +102,7 @@ def add_year_band(ax1, year_start=2025, year_end=2027):
     ax1.axvspan(year_start, year_end, color="#B3D9FF", alpha=0.5, zorder=0)
 
 
-# plot_1_axe ,  for: 22  plot22_CO2_Mauna_Loa = 2                             ,  line  121
+# plot_1_axe ,  for: 22  plot22_CO2_Mauna_Loa = 2                             ,  line  105
 def plot_1_axe(ax1):
     """Configure the axes based on selected mode"""
     plt.xlim(x_anf, x_end)
@@ -139,10 +117,9 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot23_Glen_CO2 == 2:  # 23.5 y axe left 
-        # ax42.spines.right.set_position(("outward", outward_right))
-        ax1.spines.left.set_position(("outward", 10))
+        ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_min, y_max)
-        ax1.set_ylabel(" CO₂ in ppm  (plot137) ", color=c22, fontsize=20)
+        ax1.set_ylabel(" CO₂ in ppm  (atmosphere) ", color=c22, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c23, labelsize=20)
         y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
         y_minor_ticks = 10
@@ -150,7 +127,7 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot25_long_CO2 == 2:  # 23.5 y axe left 
         # ax42.spines.right.set_position(("outward", outward_right))
-        ax1.spines.left.set_position(("outward", 3))
+        ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_min, y_max)
         ax1.set_ylabel(" CO₂ in ppm  (plot149) ", color=c25, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c25, labelsize=20)

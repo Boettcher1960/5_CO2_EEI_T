@@ -44,12 +44,16 @@ def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
 def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
     """Add header text above the plot"""
     trs = 20
-    
-    if plot31_CO2_emission == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
+    # "CO2 concentration in ppm   CO2= 0.0132t² - 51t + 49,536   (CO2 emission linear)  23", 
+    if plot23_Glen_CO2 == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
+        header = f"CO2 concentration in ppm calculated   {x_anf} to {x_end}."
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
+                transform=ax1.transAxes)
+    elif plot31_CO2_emission == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
         header = f"cumulative CO2 emissions in GtCO2 from Carbon Brief {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
-    if plot32_CO2_emission == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
+    elif plot32_CO2_emission == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
         header = f"! cumulative CO2 emissions in GtC. Carbon_Brief_2024=500GtC + 275GtC from AMOC = 780 GtC !!"
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
@@ -175,8 +179,8 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot23_Glen_CO2 == 2: # 23.5.4 legend row 4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c23)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    text_plot23_Glen, 
-                    c23, trs)
+             "CO2 concentration in ppm   CO2= 0.0132t² - 51t + 49,536   (CO2 emission linear)  23", 
+            c23, trs)
     elif plot25_long_CO2 == 2: # 25.9
        line25 = Line2D([lr2x1, lr2x2], [lr2y, lr2y], # y from 0 to 1
        transform=fig.transFigure,
