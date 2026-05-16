@@ -77,6 +77,7 @@ c55 = "#34D48FC7"
 c61 = "#0D91A090"
 c62 = "#9522AA90"
 c63 = "#1652D490"
+c64 = "#9522AA90"
 
 c71 = "red"
 c71 =  "#AB263590"
@@ -136,6 +137,10 @@ y_55max = 9 # plot55_population_on = 5
 
 y_62min = 240  # in W/m2
 y_62max = 243  # in W/m2
+
+y_64min = -3  # in W/m2
+y_64max = 3  # in W/m2
+
 
 y_Tmin = 0
 y_Tmax = 2

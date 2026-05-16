@@ -472,6 +472,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         # Outgoing Longwave Radiation OLR
         p62_text = f"TOA Longwave Flux - All-Sky {play_62_CERES}-month moving average  - text    443.                     62"
         text_4_add_text(ax1, tr2x, tr5y, p62_text, c62, trs) 
-    
+    # in row 5 display play_62_CERES
+    if play_64_ASR > 0:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
+        # Outgoing Longwave Radiation OLR
+        p64_text = f"TOA ASR absorbed solar radiation anomaly  {play_64_ASR}-month moving average                  64"
+        text_4_add_text(ax1, tr2x, tr5y, p64_text, c64, trs) 
+   
 
 
