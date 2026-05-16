@@ -44,6 +44,7 @@ plot55_population_on = 0 # 5 word with y axis right
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
+play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
 
 plot71_temperature = 0
 plot72_AESS_T = 0
@@ -247,6 +248,25 @@ print_debug = 10 # print some items
 # 33 run   plot45_OLR_48month=2 reading new _45_OLR_EEI_48month_2026_02.csv file
 #
 #
+
+# play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
+# 41 open
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 42 select first item
+# 43 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+# 44 six small curves are shown
+# 45 select item 1 Label TOA ShortWave Flux All Sky 90 to 110 W/m/m monthly values
+# 46 big window appears with one curve only
+# 47 left mouse select Show Anomaly
+# 48 TOA ShortWave Flux All Sky -3 to 3 W/m/m monthly values shows
+# 49 left mouse select save Data as ASCII File
+# 50 CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Shortwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 51 rename      to _64_in__2026_02_ASR_anomaly.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 52 run with play_64_ASR = 12
+#    read read_csv/_62_in__2026_02_Longwave.txt main 124
+#    output1 read_csv/_62b_LongWave.csv'
+
+
 
 
 # with 5b2*pc set play_61_CERES = 48
