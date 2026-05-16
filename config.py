@@ -44,7 +44,7 @@ plot55_population_on = 0 # 5 word with y axis right
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
-play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
+play_64_ASR = 48 # absorbed solar radiation ASR = 1.48 W/m² 
 
 plot71_temperature = 0
 plot72_AESS_T = 0

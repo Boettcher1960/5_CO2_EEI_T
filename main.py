@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E38" # play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
+v = "5E39" # play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -118,7 +118,7 @@ def process_ceres_data():
        
     # CERES Outgoing Longwave Radiation OLR
     # _62_in__2026_02_Longwave.txt
-    if play_62_CERES > 1: # part 6 
+    if play_62_CERES > 1: #  
        df62b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
                                     'read_csv/_62b_LongWave.csv')
        if print_debug > 9:
@@ -142,11 +142,29 @@ def process_ceres_data():
                                             min_periods=12,
                                             center=use_center,
                                             column_name='LongWave')
-
-
-
        if print_debug > 9:
           print(f"main_151: create read_csv/_62e_LongWave.csv 62    ={play_62_CERES}")
+
+if play_64_ASR > 1: #  
+       df64b = convert_ceres_to_csv('read_csv/_64_in__2026_02_ASR_anomaly.txt', 
+                                    'read_csv/_64b_ASR.csv')
+       if print_debug > 9:
+          print(f"main_152: create read_csv/_64b_ASR.csv  64.b ={play_64_ASR}")
+       
+       window_months=play_64_ASR
+       min_periods=12
+       use_center=False
+       keep_original=True,
+       df62c = create_running_average( 'read_csv/_64b_ASR.csv', 
+                                       'read_csv/_64c_ASR.csv',
+                                            window_months=play_64_ASR,
+                                            min_periods=12,
+                                            center=use_center,
+                                            column_name='ASR')
+       if print_debug > 9:
+          print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR}")
+
+
 
 
 def hide_other_right_axes(ax1, keep_axis):
