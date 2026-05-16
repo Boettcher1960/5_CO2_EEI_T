@@ -430,6 +430,14 @@ def plot8_right_y_axe_for_C_63(ax63,right52): # 63.5
      ax63.set_ylabel("cummulative CO2 values   plot475     63", color=c63, fontname="Arial",fontsize=18)
      ax63.tick_params(axis="y", labelcolor=c63)
 
+def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
+    outward_right =  ( 5 *  yr_60 ) - yr_150
+    ax64.spines.right.set_position(("outward", outward_right))
+    ax64.set_ylabel("ASR  in W/m²       64", color=c64, fontname="Arial",fontsize=18)
+    ax64.tick_params(axis="y", labelcolor=c64)
+    ax64.set_ylim(y_64min, y_64max) #
+
+
 
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
 def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
@@ -897,6 +905,16 @@ def plot_9_create_all_plots(ax1, data):
            print(f"plot_969: ax62 62.8 ={play_62_CERES}")
         if play_62_CERES > 2:
            plot8_right_y_axe_for_C_62( ax62 , 0 ) # 42.4 line 450
+    if play_64_ASR > 0:
+        ax64 = ax1.twinx()
+        ax64.plot(data['ceres_64']["decimal_year"], data['ceres_64']["ASR"], '-', 
+                  label="EEI K62", color=c62, linewidth=2)
+        ax64.tick_params(axis="y", labelcolor=c62)
+        ax64.set_ylim(y_64min, y_64max)
+        if print_debug > 9:
+           print(f"plot_969:  64.8 ={play_64_ASR}")
+        if play_64_ASR > 2:
+           plot8_right_y_axe_for_C_64( ax64 , 0 ) # 64.4 
 
 
 

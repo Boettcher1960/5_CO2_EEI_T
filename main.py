@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E41" # play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
+v = "5E42" # play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -155,7 +155,7 @@ if play_64_ASR > 1: #
        min_periods=12
        use_center=False
        keep_original=True,
-       df62c = create_running_average( 'read_csv/_64b_ASR.csv', 
+       df64c = create_running_average( 'read_csv/_64b_ASR.csv', 
                                        'read_csv/_64c_ASR.csv',
                                             window_months=play_64_ASR,
                                             min_periods=12,
@@ -228,6 +228,11 @@ def load_plot_data():
         # data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
            print(f"main_201: 62.9 read ={play_62_CERES}")    
+    if play_64_ASR > 0: # 62.9 read
+        data['ceres_64'] = pd.read_csv("read_csv/_64c_ASR.csv")
+        # data['ceres_64'] = pd.read_csv("work/c62d_ceres.csv")
+        if print_debug > 9:
+           print(f"main_235: 64.9 read ={play_64_ASR}") 
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.3
         data['gis_temp'] = load_gis_temperature()
