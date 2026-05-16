@@ -776,7 +776,7 @@ def plot_9_create_all_plots(ax1, data):
            # The left axis is already configured in plot_1_axe
         else:
            ax46 = ax1.twinx()
-           ax46.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR_EEI"], '-', 
+           ax46.plot(data['ceres_46']["decimal_year"], data['ceres_46']["OLR_EEI"], '-', 
                   label="OLR K45", color=c46, linewidth=4)
            ax46.tick_params(axis="y", labelcolor=c46)
            ax46.set_ylim(y_62min, y_62max)
