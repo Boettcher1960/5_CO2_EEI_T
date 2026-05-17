@@ -31,9 +31,9 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
 plot42_EEI_48month = 2  # 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
-plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
+plot43_eei_12month = 3  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
-plot45_OLR = 3 # Outgoing Longwave Radiation OLR
+plot45_OLR = 0 # Outgoing Longwave Radiation OLR
 plot46_OLR_EEI = 0 # ASR=OLR+EEI Absorbed Solar radiation
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
@@ -67,7 +67,7 @@ c34 = "#942296C5"
 c41 = "#289C1684"
 c42 = "purple"
 c42 = "#13DF2F84"
-c43 = "#13DF2F84"
+c43 = "#23442884"
 c44 = "blue"
 c45 = "#B31743DC"
 c46 = "#481725DC"
@@ -123,8 +123,8 @@ y_31Gmax = 2000 # 2500 Gt CO2
 y_32min = 0   #   0 GtC
 y_32max = 800 # 800 GtC
 
-y_Emin = 0 #   EEI in W/m2 y axis left mode
-y_Emax = 1.5 #   EEI in W/m2 y axis left mode
+y_Emin = -0.5 #   EEI in W/m2 y axis left mode
+y_Emax = 2.5 #   EEI in W/m2 y axis left mode
 
 
 y_TOAmin = 97  # bug is double set in plotting.py line 56
@@ -138,7 +138,7 @@ y_55max = 9 # plot55_population_on = 5
 y_62min = 240  # in W/m2
 y_62max = 243  # in W/m2
 
-y_64min = 1  # in W/m2
+y_64min = 2  # in W/m2
 y_64max = -2  # in W/m2
 
 
@@ -147,8 +147,8 @@ y_Tmax = 2
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 2004
-x_end = 2028
+x_anf = 2000
+x_end = 2026
 
 # constants
 # C280 =275 in Zack Labe plots.
