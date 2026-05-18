@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E46" # play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
+v = "5E48" # plot47_ASR_12month absorbed solar radiation ASR = 1.48 W/m² 
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -204,6 +204,10 @@ def load_plot_data():
         data['ceres_45'] = pd.read_csv("read_csv/_62e_LongWave.csv")
         if print_debug > 9:
            print(f"main_190: OLR read 45.1 ={plot45_OLR}")
+    if plot47_ASR_12month > 0: # _64c_ASR.csv read_csv/_47_ASR_12month_2026_02.csv
+        data['ceres_47'] = pd.read_csv("read_csv/_47_ASR_12month_2026_02.csv")
+        if print_debug > 9:
+           print(f"main_210: 47.2 read ={plot47_ASR_12month}")
 
 
 

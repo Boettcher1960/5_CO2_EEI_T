@@ -31,11 +31,11 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
 plot42_EEI_48month = 2  # 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
-plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
+plot43_eei_12month = 3  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # Outgoing Longwave Radiation OLR
 plot46_OLR_EEI = 0 # ASR=OLR+EEI Absorbed Solar radiation
-
+plot47_ASR_12month = 4  #  _47_ASR_12month_2026_02.csv
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
