@@ -31,7 +31,7 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
 plot42_EEI_48month = 2  # 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
-plot43_eei_12month = 3  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
+plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # Outgoing Longwave Radiation OLR
 plot46_OLR_EEI = 0 # ASR=OLR+EEI Absorbed Solar Radiation
@@ -140,8 +140,8 @@ y_55max = 9 # plot55_population_on = 5
 y_62min = 240  # in W/m2
 y_62max = 243  # in W/m2
 
-y_64min = 2  # in W/m2
-y_64max = -2  # in W/m2
+y_64min = 1.1  # in W/m2
+y_64max = -0.1  # in W/m2
 
 
 y_Tmin = 0
@@ -150,7 +150,7 @@ y_74min = y_Tmin # for GIS Temperature only
 y_74max = y_Tmax # for GIS Temperature only 
 
 x_anf = 2000
-x_end = 2026
+x_end = 2012
 
 # constants
 # C280 =275 in Zack Labe plots.
@@ -198,6 +198,16 @@ print_debug = 10 # print some items
 # part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
 
 
+#########################################################
+# 47_ASR_12month_2026_02.csv ############################
+#########################################################
+# 52 run with play_64_ASR = 12
+# 53 copy dokumente/5_CO2_EEI_T/read_csv/_64c_ASR.csv to
+#         dokumente/5_CO2_EEI_T/read_csv/_47_ASR_12month_2026_02.csv
+# https://jimehansen.substack.com/p/2026-on-track-for-warmest-year
+# Fig. 2. Earth’s satellite-observed ab# sorbed solar radiation (ASR) and 
+# longwave (thermal) emission to space (LW),[7] 
+# both relative to their 2000-2010 averages
 
 
 
