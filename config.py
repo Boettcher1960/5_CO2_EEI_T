@@ -140,8 +140,8 @@ y_55max = 9 # plot55_population_on = 5
 y_62min = 240  # in W/m2
 y_62max = 243  # in W/m2
 
-y_64min = 1.1  # in W/m2
-y_64max = -0.1  # in W/m2
+y_64min = 0.6  # in W/m2
+y_64max = -0.6  # in W/m2
 
 
 y_Tmin = 0
