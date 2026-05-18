@@ -1036,12 +1036,12 @@ def plot_9_create_all_plots(ax1, data):
         if plot74_GIS_T == 2:
            # Plot on the left axis (ax1) instead of creating a right axis
            ax1.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
-                  label="T GIS K74", color=c74, linewidth=5)
+                  label="T GIS K74", color=c74, linewidth=3)
            # The left axis is already configured in plot_1_axe
         else:
            ax74 = ax1.twinx()
            ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
-                  label="T GIS K74", color=c74, linewidth=5)
+                  label="T GIS K74", color=c74, linewidth=3)
            ax74.tick_params(axis="y", labelcolor=c74)
            ax74.set_ylim(y_Tmin, y_Tmax)
            if plot74_GIS_T > 2:

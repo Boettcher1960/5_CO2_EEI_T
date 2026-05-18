@@ -31,10 +31,11 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
 plot42_EEI_48month = 2  # 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
-plot43_eei_12month = 3  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
+plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # Outgoing Longwave Radiation OLR
 plot46_OLR_EEI = 0 # ASR=OLR+EEI Absorbed Solar radiation
+
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
@@ -44,7 +45,7 @@ plot55_population_on = 0 # 5 word with y axis right
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
-play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
+play_64_ASR = 12 # 12, 48 # absorbed solar radiation ASR = 1.48 W/m² 
 
 plot71_temperature = 0
 plot72_AESS_T = 0
@@ -268,8 +269,11 @@ print_debug = 10 # print some items
 # 50 CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Shortwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
 # 51 rename      to _64_in__2026_02_ASR_anomaly.txt and save to dokumente/5_CO2_EEI_T/read_csv/
 # 52 run with play_64_ASR = 12
-#    read read_csv/_62_in__2026_02_Longwave.txt main 124
-#    output1 read_csv/_62b_LongWave.csv'
+#    read read_csv/_64_in__2026_02_ASR_anomaly.txt   main.py 
+#    output1 read_csv/_64b_ASR.csv')
+#    output2 read_csv/_64c_ASR.csv'
+# 53 copy dokumente/5_CO2_EEI_T/read_csv/_64c_ASR.csv to
+#         dokumente/5_CO2_EEI_T/read_csv/_47_ASR_12month_2026_02.csv
 
 
 

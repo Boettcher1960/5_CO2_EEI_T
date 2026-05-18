@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E44" # play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
+v = "5E45" # play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
