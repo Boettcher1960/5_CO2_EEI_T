@@ -208,8 +208,7 @@ print_debug = 10 # print some items
 # Fig. 2. Earth’s satellite-observed ab# sorbed solar radiation (ASR) and 
 # longwave (thermal) emission to space (LW),[7] 
 # both relative to their 2000-2010 averages
-# plotting line 813 ["ASR"]-0.5  add 0.5 W/m/m to ASR CERES data
-
+# plotting line 813 ["ASR"]-0.8 Hansen  add 0.8 W/m/m to ASR CERES data
 
 #########################################################
 # 61 How to make EEI files ##############################

@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5E52" # plot47_ASR_12month absorbed solar radiation ASR = 1.48 W/m² 
+v = "5E53" # plot47_ASR_12month absorbed solar radiation ASR = 1.48 W/m² +0.8 like Hansen
 # plan txt to csv to png play 64 
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
