@@ -140,8 +140,8 @@ y_55max = 9 # plot55_population_on = 5
 y_62min = 240  # in W/m2
 y_62max = 243  # in W/m2
 
-y_64min = 0.6  # in W/m2
-y_64max = -0.6  # in W/m2
+y_64min = 0.4  # in W/m2
+y_64max = -2.3  # in W/m2
 
 
 y_Tmin = 0
@@ -150,7 +150,7 @@ y_74min = y_Tmin # for GIS Temperature only
 y_74max = y_Tmax # for GIS Temperature only 
 
 x_anf = 2000
-x_end = 2012
+x_end = 2027
 
 # constants
 # C280 =275 in Zack Labe plots.
@@ -208,7 +208,7 @@ print_debug = 10 # print some items
 # Fig. 2. Earth’s satellite-observed ab# sorbed solar radiation (ASR) and 
 # longwave (thermal) emission to space (LW),[7] 
 # both relative to their 2000-2010 averages
-
+# plotting line 813 ["ASR"]-0.5  add 0.5 W/m/m to ASR CERES data
 
 
 #########################################################

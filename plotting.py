@@ -809,8 +809,8 @@ def plot_9_create_all_plots(ax1, data):
            # https://jimehansen.substack.com/p/2026-on-track-for-warmest-year
            # Fig. 2. Earth’s satellite-observed ab# sorbed solar radiation (ASR) and 
            # relative to their 2000-2010 averages
-           # ["ASR"]-0.5  add 0,5 W to ASR CERES data
-           ax47.plot(data['ceres_47']["decimal_year"], data['ceres_47']["ASR"]-0.5, '-', 
+           # plotting line 813 ["ASR"]-0.5  add 0,5 W to ASR CERES data
+           ax47.plot(data['ceres_47']["decimal_year"], data['ceres_47']["ASR"]-0.8, '-', 
                   label="ASR K47", color=c47, linewidth=4)
            ax47.tick_params(axis="y", labelcolor=c47)
            ax47.set_ylim(y_64min, y_64max)
