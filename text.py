@@ -382,8 +382,13 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot45_OLR == 4: # plot45_OLR = 4 # Outgoing Longwave Radiation OLR
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c45)
         text_4_add_text(ax1, tr2x, tr4y, 
-                    "Outgoing Longwave Radiation OLR  W/m² moving average 48 month                      45", 
+            "Outgoing Longwave Radiation OLR  W/m² moving average 48 month                          45", 
                     c45, trs)
+    elif plot47_ASR_12month == 4: # plot47_ASR_12month = 4 # 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c47)
+        text_4_add_text(ax1, tr2x, tr4y, 
+            "Absorbed Solar Radiation ASR  W/m² moving average 12 month                             47", 
+                    c47, trs)
 
     # part 5.2 plot52_delta_CO2_red_bars
     elif plot52_delta_CO2_red_bars == 4: # 52.4 row 4

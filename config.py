@@ -34,8 +34,8 @@ plot42_EEI_48month = 2  # 5,4,3,2 print EEI 48 month running mean. Info in line 
 plot43_eei_12month = 3  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # Outgoing Longwave Radiation OLR
-plot46_OLR_EEI = 0 # ASR=OLR+EEI Absorbed Solar radiation
-plot47_ASR_12month = 4  #  _47_ASR_12month_2026_02.csv
+plot46_OLR_EEI = 0 # ASR=OLR+EEI Absorbed Solar Radiation
+plot47_ASR_12month = 4  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
@@ -72,6 +72,7 @@ c43 = "#23442884"
 c44 = "blue"
 c45 = "#B31743DC"
 c46 = "#481725DC"
+c47 = "#481725DC"
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"

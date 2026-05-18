@@ -380,6 +380,12 @@ def plot8_right_y_axe_for_OLR_46(ax46,right62): # 62.5
     ax46.tick_params(axis="y", labelcolor=c46)
     ax46.set_ylim(y_62min, y_62max) #
 
+def plot8_right_y_axe_for_47(ax47,right62): # 62.5
+    outward_right =  ( plot47_ASR_12month *  yr_60 ) - yr_150
+    ax47.spines.right.set_position(("outward", outward_right))
+    ax47.set_ylabel("ASR  Absorbed Solar Radiation in W/m²  47", color=c47, fontname="Arial",fontsize=18)
+    ax47.tick_params(axis="y", labelcolor=c47)
+    ax47.set_ylim(y_64min, y_64max) #
 
 
 # plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance     ,  line  383
@@ -791,7 +797,21 @@ def plot_9_create_all_plots(ax1, data):
            # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
            if plot46_OLR_EEI > 2:
               plot8_right_y_axe_for_OLR_46( ax46 , 0 ) # 45.4 line 450
-
+    if plot47_ASR_12month > 0:
+        if plot47_ASR_12month == 2:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['ceres_47']["decimal_year"], data['ceres_47']["ASR"], '-', 
+                  label="ASR K47", color=c47, linewidth=4)
+           # The left axis is already configured in plot_1_axe
+        else:
+           ax47 = ax1.twinx()
+           ax47.plot(data['ceres_47']["decimal_year"], data['ceres_47']["ASR"], '-', 
+                  label="ASR K47", color=c47, linewidth=4)
+           ax47.tick_params(axis="y", labelcolor=c47)
+           ax47.set_ylim(y_64min, y_64max)
+           # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
+           if plot47_ASR_12month > 2:
+              plot8_right_y_axe_for_47( ax47 , 0 ) # 45.4 line 450
 
     # plot52_delta_CO2_red_bars, Mauna Loa delta ,  plot_9_create_all_plots() ,   line 630
 
