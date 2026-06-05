@@ -18,7 +18,7 @@ yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_7
 yr_delete = 1 # 9 = delete all axes delete axe 4
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 0 # 3    22.1 declare global integer variable (2= print in line 2)
+plot22_CO2_Mauna_Loa = 2 # 3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
@@ -30,14 +30,14 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
-plot42_EEI_48month = 2  # 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
+plot42_EEI_48month = 0  # 2 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # Outgoing Longwave Radiation OLR
 plot46_OLR_EEI = 0 # ASR=OLR+EEI Absorbed Solar Radiation
-plot47_ASR_12month = 4  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
+plot47_ASR_12month = 0  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
 
-plot52_delta_CO2_red_bars = 0 # (3=print numbers)
+plot52_delta_CO2_red_bars = 3 # (3=print numbers)
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
@@ -45,7 +45,7 @@ plot55_population_on = 0 # 5 word with y axis right
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
-play_64_ASR = 12 # 12, 48 # absorbed solar radiation ASR = 1.48 W/m² 
+play_64_ASR = 0 # 12 # 12, 48 # absorbed solar radiation ASR = 1.48 W/m² 
 
 plot71_temperature = 0
 plot72_AESS_T = 0
@@ -113,7 +113,7 @@ my76_text = "guessed quadratic temperature my_T 76"
 
 
 # Axis ranges
-y_min = 390 # 250 ppm CO2 
+y_min = 310 # 250 ppm CO2 
 y_max = 430 # 500 ppm CO2  
 
 y_25min = 250 # nok   only for y axis 
@@ -149,7 +149,7 @@ y_Tmax = 2
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 2000
+x_anf = 1964
 x_end = 2027
 
 # constants
