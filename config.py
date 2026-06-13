@@ -50,8 +50,8 @@ play_64_ASR = 0 # 12 # 12, 48 # absorbed solar radiation ASR = 1.48 W/m²
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 0 # 2, 3,4,5 =right y axis
-linear_41_75 = 0 # 5,4
+plot74_GIS_T = 4 # 2, 3,4,5 =right y axis
+linear_41_75 = 5 # 5,4
 plot76_my_T = 0
 plot_T_77 = 0 # 3, 4
 parameter84_save_png = 8
