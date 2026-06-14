@@ -18,7 +18,7 @@ yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_7
 yr_delete = 1 # 9 = delete all axes delete axe 4
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 2 # 3    22.1 declare global integer variable (2= print in line 2)
+plot22_CO2_Mauna_Loa = 0 # 3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
@@ -37,7 +37,7 @@ plot45_OLR = 0 # Outgoing Longwave Radiation OLR
 plot46_OLR_EEI = 0 # ASR=OLR+EEI Absorbed Solar Radiation
 plot47_ASR_12month = 0  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
 
-plot52_delta_CO2_red_bars = 3 # (3=print numbers)
+plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
@@ -50,8 +50,8 @@ play_64_ASR = 0 # 12 # 12, 48 # absorbed solar radiation ASR = 1.48 W/m²
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 4 # 2, 3,4,5 =right y axis
-linear_41_75 = 5 # 5,4
+plot74_GIS_T = 2 # 2, 3,4,5 =right y axis
+linear_41_75 = 3 # 5,4
 plot76_my_T = 0
 plot_T_77 = 0 # 3, 4
 parameter84_save_png = 8
@@ -145,11 +145,11 @@ y_64max = -2.3  # in W/m2
 
 
 y_Tmin = 0
-y_Tmax = 2
+y_Tmax = 1.7
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 1964
+x_anf = 1950
 x_end = 2027
 
 # constants
