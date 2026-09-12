@@ -22,7 +22,7 @@ plot22_CO2_Mauna_Loa = 0 # 3    22.1 declare global integer variable (2= print i
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0      # 25.1 
 
-plot31_CO2_emission =    0   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
+plot31_CO2_emission =    3   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission =    0   # 32.1 CO2_emission 600 GtC Carbon Brief made with play_63_CB 
 
 plot34_CO2_emission =    0   # 34.1 row 4 
@@ -40,7 +40,8 @@ plot47_ASR_12month = 0  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
-plot55_population_on = 0 # 5 word with y axis right
+plot55_population_on = 5 # 5 word with y axis right
+plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 48 CERES Outgoing Longwave Radiation OLR
@@ -134,7 +135,7 @@ y_TOAmax = 100 # bug is double set in plotting.py line 57
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars
-y_55min = 6 # plot55_population_on = 5
+y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
 y_62min = 240  # in W/m2
