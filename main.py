@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F2" # temperature vs population
+v = "5F4" # temperature vs population
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -91,7 +91,7 @@ def process_ceres_data():
         if print_debug > 9:
                print(f"main_150: created c44d_ceres.csv 44.7 ={part44_ceres_eei}")
     if play_61_CERES > 0: # part 6 
-       df61b = convert_ceres_to_csv('read_csv/_61_in__2026_02_EEI_CERES.txt', 
+       df61b = convert_ceres_to_csv('read_csv/_61_in__2026_07_EEI_CERES.txt', 
                                     'read_csv/_61b_out_in_ceres.csv')
        if print_debug > 9:
           print(f"main_156: create read_csv/_61b_out_in_ceres.csv  61.b ={play_61_CERES}")
