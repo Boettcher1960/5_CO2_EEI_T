@@ -43,7 +43,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 5 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_CERES = 48     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR = 0 # 12 # 12, 48 # absorbed solar radiation ASR = 1.48 W/m² 
@@ -213,8 +213,13 @@ print_debug = 10 # print some items
 
 #########################################################
 # 61 How to make EEI files ##############################
+# https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
+# t.boettcher@directbox.com enter email adress
+# global mean https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026 is downloaded
+# rename      to _61_in__2026_07_EEI_CERES.txt
 #########################################################
-# 1 open
+# 1 open 
 # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 2 select first item
 # 3 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
