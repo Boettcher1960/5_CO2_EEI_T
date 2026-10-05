@@ -917,7 +917,7 @@ def plot_9_create_all_plots(ax1, data):
         ax61.plot(data['ceres_61']["decimal_year"], data['ceres_61']["EEI"], '-', 
                   label="EEI K61", color=c61, linewidth=2)
         ax61.tick_params(axis="y", labelcolor=c61)
-        ax61.set_ylim(y_Emin, y_Emax)
+        ax61.set_ylim(y_61Emin, y_61Emax)
         if print_debug > 9:
            print(f"plot_947: ax61 61.8 ={play_61_CERES}")
     if play_62_CERES > 0:
