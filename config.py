@@ -43,7 +43,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_CERES = 48     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_CERES = 12     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR = 0 # 12 # 12, 48 # absorbed solar radiation ASR = 1.48 W/m² 
@@ -126,11 +126,11 @@ y_31Gmax = 2000 # 2500 Gt CO2
 y_32min = 0   #   0 GtC
 y_32max = 800 # 800 GtC
 
-y_Emin = 0.6 #   EEI in W/m2 y axis left mode
-y_Emax = 2.6 #   EEI in W/m2 y axis left mode
+y_Emin = 0.0 #   EEI in W/m2 y axis left mode
+y_Emax = 2 #   EEI in W/m2 y axis left mode
 
-y_61Emin = 0.5 #   EEI in W/m2 y axis left mode
-y_61Emax = 2.5 #   EEI in W/m2 y axis left mode
+y_61Emin = 0 #   EEI in W/m2 y axis left mode
+y_61Emax = 2 #   EEI in W/m2 y axis left mode
 
 
 y_TOAmin = 97  # bug is double set in plotting.py line 56
@@ -149,12 +149,12 @@ y_64max = -2.3  # in W/m2
 
 
 y_Tmin = 0
-y_Tmax = 1.7
+y_Tmax = 2 # 1.7
 y_74min = y_Tmin # for GIS Temperature only 
 y_74max = y_Tmax # for GIS Temperature only 
 
-x_anf = 2024
-x_end = 2027
+x_anf = 2006
+x_end = 2026
 
 # constants
 # C280 =275 in Zack Labe plots.
