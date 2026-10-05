@@ -43,7 +43,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_CERES = 12     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_CERES = 48     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR = 0 # 12 # 12, 48 # absorbed solar radiation ASR = 1.48 W/m² 
@@ -129,8 +129,8 @@ y_32max = 800 # 800 GtC
 y_Emin = 0.0 #   EEI in W/m2 y axis left mode
 y_Emax = 2 #   EEI in W/m2 y axis left mode
 
-y_61Emin = 0 #   EEI in W/m2 y axis left mode
-y_61Emax = 2 #   EEI in W/m2 y axis left mode
+y_61Emin = 0.1 #   EEI in W/m2 y axis left mode
+y_61Emax = 2.1 #   EEI in W/m2 y axis left mode
 
 
 y_TOAmin = 97  # bug is double set in plotting.py line 56
@@ -216,25 +216,26 @@ print_debug = 10 # print some items
 
 #########################################################
 # 61 How to make EEI files ##############################
-# https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
-# t.boettcher@directbox.com enter email adress
-# global mean https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026 is downloaded
-# rename      to _61_in__2026_07_EEI_CERES.txt
 #########################################################
 # 1 open 
 # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 1.1 https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
+# 1.2 t.boettcher@directbox.com enter email adress
+# 1.3 global mean https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 2 select first item
 # 3 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
 # 4 six small curves are shown
 # 5 select item 3 Label TOA Net Flux All Sky -10 to +10 W/m/m monthly values
 # 6 big window appears with one curve only
 # 7 left mouse select save Data as ASCII File
-# 8 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-# 9 rename      to _61_in__2026_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 8.1 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 8.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
+# 9.1 rename      to _61_in__2026_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 9.2 rename      to _61_in__2026_07_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
 # 10 run with play_61_CERES = 48 
-# 11 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
-#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
+# 11 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv to
+# 11.1      dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
+# 11.2                           'read_csv/_42_EEI48month_2026_07.csv', 
 # 12 run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
 # 
 # 13 run with play_61_CERES = 12 

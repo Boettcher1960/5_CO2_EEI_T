@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F4" # temperature vs population
+v = "5F5" # CERES EEI 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -137,7 +137,7 @@ def process_ceres_data():
                                             column_name='LongWave')
 
        df62e = add_62_csv_column( 'read_csv/_62b_LongWave.csv', 
-                                  'read_csv/_42_EEI48month_2026_02.csv', 
+                                  'read_csv/_42_EEI48month_2026_07.csv', 
                                   'read_csv/_62e_LongWave.csv',
                                             window_months=play_62_CERES,
                                             min_periods=12,
@@ -190,7 +190,7 @@ def load_plot_data():
            print(f"main_168: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
            print(f"main_169: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")        
     if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
-        data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_02.csv")
+        data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_07.csv")
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
     if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
         data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_02.csv")
