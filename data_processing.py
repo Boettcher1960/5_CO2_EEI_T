@@ -32,6 +32,36 @@ def convert_ceres_to_csv(input_file, output_file):
         print(f"DataP_32: Successfully converted {len(df)} records to {output_file}")
     return df
 
+def albedo_to_csv(input_file1, input_file2 ,output_file):
+    """Convert CERES TOA flux ASCII file to CSV format"""
+    data = []
+    with open(input_file1, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('#') or line.startswith('CERES'):
+                continue
+            parts = line.split()
+            if len(parts) >= 3:
+                try:
+                    year = int(parts[0])
+                    month = int(parts[1])
+                    flux = float(parts[2])
+                    data.append([year, month, flux])
+                except ValueError:
+                    continue
+    
+    df = pd.DataFrame(data, columns=['year', 'month', 'toa_net_flux_w_m2'])
+    df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
+    df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
+    df = df[['date', 'year', 'month', 'toa_net_flux_w_m2', 'decimal_year']]
+    df.to_csv(output_file, index=False, float_format='%.6f')
+    if print_debug_DP > 9:
+        print(f"DataP_60: Successfully converted {len(df)} records to {output_file}")
+    return df
+
+
+
 def create_running_average(input_csv, 
                            output_csv, 
                            window_months, 

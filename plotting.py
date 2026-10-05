@@ -339,6 +339,14 @@ def plot8_right_y_axe_for_C_31(ax31,right52): # 31.6
     ax31.set_ylabel("cumulative CO2 emissions in Gt  plot410     31", color=c31, fontname="Arial",fontsize=18)
     ax31.tick_params(axis="y", labelcolor=c31)
 
+def plot8_right_y_axe_for_C_32(ax32,right52): # 32.6 
+    if right52 > 0:
+        outward_right = right52
+    else:
+        outward_right =  ( plot31_CO2_emission * yr_60 ) - yr_150
+    ax32.spines.right.set_position(("outward", outward_right))
+    ax32.set_ylabel("cumulative CO2 emissions in Gt  plot410     32", color=c32, fontname="Arial",fontsize=18)
+    ax32.tick_params(axis="y", labelcolor=c31)
 
 
 

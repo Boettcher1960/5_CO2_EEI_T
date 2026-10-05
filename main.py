@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F8" # work 66 albedo CERES 07_2026
+v = "5F9" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -166,7 +166,8 @@ if play_64_ASR > 1: #
           print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR}")
 
 if play_67_albedo > 0: # 
-       df61b = convert_ceres_to_csv('read_csv/_66_albedo_toa_sw_all_2026_07.txt', 
+       df66b = albedo_to_csv('read_csv/_66_albedo_toa_sw_all_2026_07.txt', 
+                                    'read_csv/_67_albedo_solar_mon_2026_07.txt', 
                                     'read_csv/_66b_out_in_ceres.csv')
        if print_debug > 9:
           print(f"main_172: play_67_albedo  66.b ={play_67_albedo}")
@@ -180,7 +181,7 @@ if play_67_albedo > 0: #
        use_center=False
        keep_original=True,
        
-       df61c = create_running_average( 'read_csv/_66b_out_in_ceres.csv', 
+       df66c = create_running_average( 'read_csv/_66b_out_in_ceres.csv', 
                                        'read_csv/_66c_out_ceres.csv',
                                             window_months=play_67_albedo,
                                             min_periods=min1_periods,
@@ -188,7 +189,7 @@ if play_67_albedo > 0: #
                                             column_name='albedo')
         
        if print_debug > 9:
-          print(f"main_191: cplay_67_albedo  66.d ={play_67_albedo}")
+          print(f"main_191: play_67_albedo  66.d ={play_67_albedo}")
 
 
 
