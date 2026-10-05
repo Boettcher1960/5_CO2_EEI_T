@@ -51,10 +51,10 @@ def albedo_to_csv(input_file1, input_file2 ,output_file):
                 except ValueError:
                     continue
     
-    df = pd.DataFrame(data, columns=['year', 'month', 'toa_net_flux_w_m2'])
+    df = pd.DataFrame(data, columns=['year', 'month', 'sw_out'])
     df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
     df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
-    df = df[['date', 'year', 'month', 'toa_net_flux_w_m2', 'decimal_year']]
+    df = df[['date', 'year', 'month', 'sw_out', 'decimal_year']]
     df.to_csv(output_file, index=False, float_format='%.6f')
     if print_debug_DP > 9:
         print(f"DataP_60: Successfully converted {len(df)} records to {output_file}")
