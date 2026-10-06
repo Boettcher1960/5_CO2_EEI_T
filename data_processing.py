@@ -39,8 +39,11 @@ def ceres_to_csv(input_file1, input_file2 ,output_file1,output_file2):
     # 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
     # 17.2 rename   to _66_TOA_Shortwave_Flux_All_Sky2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
     # input_file1 = 'read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
-    # with open(input_file1, 'r') as f:
-    with open(input_file1, 'r') as f:
+    # df66b = ceres_to_csv('read_csv/_66_Shortwave_All_2026_07.txt', 
+    # with open('read_csv/_66_Shortwave_All_2026_07.txt', 'r') as f:
+    #with open(input_file1, 'r') as f:
+    with open('read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt', 'r') as f:
+     
         lines = f.readlines()
         for line in lines:
             line = line.strip()
