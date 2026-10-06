@@ -81,12 +81,12 @@ def albedo_to_csv(input_file1, input_file2 ,output_file1,output_file2):
         print(f"DataP_80: file2 read {len(df)} records to {output_file2}")
 
     
-    df2 = pd.DataFrame(data2, columns=['year2', 'month2', 'sw_in2'])
-    df2['date2'] = pd.to_datetime(df2['year2'].astype(str) + '-' + df2['month2'].astype(str) + '-01')
-    df2['decimal_year2'] = df2['year2'] + (df2['month2'] - 0.5) / 12
+    df2 = pd.DataFrame(data2, columns=['year', 'month', 'sw_in'])
+    df2['date'] = pd.to_datetime(df2['year'].astype(str) + '-' + df2['month'].astype(str) + '-01')
+    df2['decimal_year'] = df2['year'] + (df2['month'] - 0.5) / 12
 
-    df2 = df2[['date2', 'year2', 'month2', 'decimal_year2', 'sw_in2']]
-    df2['sw_out2'] = df[['sw_out']]
+    df2 = df2[['date', 'year', 'month', 'decimal_year', 'sw_in']]
+    df2['sw_out'] = df[['sw_out']]
 
     df2.to_csv(output_file2, index=False, float_format='%.6f')
     if print_debug_DP > 9:
@@ -94,7 +94,7 @@ def albedo_to_csv(input_file1, input_file2 ,output_file1,output_file2):
 
 
 
-    return df
+    return df2
 
 
 
