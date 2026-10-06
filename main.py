@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F18" # work 66 albedo CERES 07_2026
+v = "5F19" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -166,8 +166,8 @@ if play_64_ASR > 1: #
           print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR}")
 
 if play_67_albedo > 0: # 
+       df66b = ceres_to_csv('read_csv/_66_Shortwave_All_2026_07.txt', 
        # df66b = ceres_to_csv('read_csv/_66_albedo_toa_sw_all_2026_07.txt', 
-       df66b = ceres_to_csv('read_csv/_66_albedo_toa_sw_all_2026_07.txt', 
                                     'read_csv/_67_albedo_solar_mon_2026_07.txt', 
                                     'read_csv/_66b1_albedo.csv',
                                     'read_csv/_67_CERES.csv')
