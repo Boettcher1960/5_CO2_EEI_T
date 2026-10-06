@@ -82,6 +82,7 @@ c61 = "#0D91A090"
 c62 = "#9522AA90"
 c63 = "#1652D490"
 c64 = "#9522AA90"
+c67 = "#E1980F90"
 
 c71 = "red"
 c71 =  "#AB263590"
@@ -147,6 +148,10 @@ y_62max = 243  # in W/m2
 
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
+
+y_67min = 0.2  # albedo in %
+y_67max = 0.4  # albedo in %
+
 
 
 y_Tmin = 0
@@ -273,7 +278,9 @@ print_debug = 10 # print some items
 # 14 big window appears with one curve only
 # 15 left mouse select save Data as ASCII File
 # 16.1 CERES_EBAF_Ed4.2.1_Surface_Net_Total_Flux_-_All-Sky_March-2000toMay-2026.txt is downloaded
-# 17.1 rename      to _66_albedo_toa_sw_all_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
+#      TOA Shortwave Flux - All-Sky (W m-2)
+# 17.2 rename   to _66_TOA_Shortwave_Flux_All_Sky2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
 #
 # 18 select Parameter Solar Flux
 # 19 global mean

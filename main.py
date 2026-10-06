@@ -166,10 +166,10 @@ if play_64_ASR > 1: #
           print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR}")
 
 if play_67_albedo > 0: # 
-       df66b = albedo_to_csv('read_csv/_66_albedo_toa_sw_all_2026_07.txt', 
+       df67 = ceres_to_csv('read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt', 
                                     'read_csv/_67_albedo_solar_mon_2026_07.txt', 
                                     'read_csv/_66b1_albedo.csv',
-                                    'read_csv/_67_CERES.csv')
+                                    'read_csv/_66_CERES.csv')
        if print_debug > 9:
           print(f"main_172: play_67_albedo  66.b ={play_67_albedo}")
        
