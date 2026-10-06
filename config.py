@@ -289,7 +289,7 @@ print_debug = 10 # print some items
 # 22 left mouse click window gets big 328 to 352 W/m2
 # 23 left mouse select save Data as ASCII File
 # 24 CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026.txt is downloaded
-#    CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026(1).txt edit 2026 07 333.01
+#    CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026(1).txt cheat 2026 07+06 333.01
 # 25 rename      to _66_TOA_Incoming_Solar_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
 #
 
