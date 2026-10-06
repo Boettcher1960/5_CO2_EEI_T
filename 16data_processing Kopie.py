@@ -32,14 +32,10 @@ def convert_ceres_to_csv(input_file, output_file):
         print(f"DataP_32: Successfully converted {len(df)} records to {output_file}")
     return df
 
-def ceres_to_csv(input_file1, input_file2 ,output_file1,output_file2):
+def albedo_to_csv(input_file1, input_file2 ,output_file1,output_file2):
     """Convert CERES TOA flux ASCII file to CSV format"""
-    data  = [] # 
+    data  = []
     data2 = []
-    # 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
-    # 17.2 rename   to _66_TOA_Shortwave_Flux_All_Sky2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-    # input_file1 = 'read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
-    # with open(input_file1, 'r') as f:
     with open(input_file1, 'r') as f:
         lines = f.readlines()
         for line in lines:
@@ -92,9 +88,6 @@ def ceres_to_csv(input_file1, input_file2 ,output_file1,output_file2):
     df2 = df2[['date', 'year', 'month', 'decimal_year', 'sw_in']]
     df2['sw_out'] = df[['sw_out']]
     df2['albedo'] = df2['sw_out'] / df2['sw_in']
-    df2['EEI2'] = df2['sw_in'] - df2['sw_out']
-    df2['EEI3'] = df2['sw_in'] - df2['sw_out']
-    df2['EEI4'] = df2['sw_in'] - df2['sw_out']
 
     df2.to_csv(output_file2, index=False, float_format='%.6f')
     if print_debug_DP > 9:
