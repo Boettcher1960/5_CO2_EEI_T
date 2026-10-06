@@ -37,9 +37,8 @@ def ceres_to_csv(input_file2 ,output_file1,output_file2):
     data  = [] # 
     data2 = []
     # 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
-    # 17.2 rename   to _66_TOA_Shortwave_Flux_All_Sky2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+    # 17.2 rename   to  _66_TOA_Shortwave_Flux_All_Sky2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
     with open('read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt', 'r') as f:
-     
         lines = f.readlines()
         for line in lines:
             line = line.strip()
@@ -63,8 +62,10 @@ def ceres_to_csv(input_file2 ,output_file1,output_file2):
     if print_debug_DP > 9:
         print(f"DataP_60: Successfully converted {len(df)} records to {output_file1}")
 
-
-    with open(input_file2, 'r') as f:
+    # 25 rename      to _66_TOA_Incoming_Solar_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+    #         'read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
+    #  with open(input_file2, 'r') as f: 
+    with open('read_csv/_66_TOA_Incoming_Solar_2026_07.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
             line = line.strip()
