@@ -34,7 +34,8 @@ def convert_ceres_to_csv(input_file, output_file):
 
 def albedo_to_csv(input_file1, input_file2 ,output_file1,output_file2):
     """Convert CERES TOA flux ASCII file to CSV format"""
-    data = []
+    data  = []
+    data2 = []
     with open(input_file1, 'r') as f:
         lines = f.readlines()
         for line in lines:
@@ -72,7 +73,7 @@ def albedo_to_csv(input_file1, input_file2 ,output_file1,output_file2):
                     year2 = int(parts[0])
                     month2 = int(parts[1])
                     flux2 = float(parts[2])
-                    data.append([year2, month2, flux2])
+                    data2.append([year2, month2, flux2])
                 except ValueError:
                     continue
 
@@ -80,11 +81,11 @@ def albedo_to_csv(input_file1, input_file2 ,output_file1,output_file2):
         print(f"DataP_79: Successfully converted {len(df)} records to {output_file2}")
 
     
-    df = pd.DataFrame(data, columns=['year', 'month', 'sw_out'])
-    df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
-    df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
-    df = df[['date', 'year', 'month', 'decimal_year', 'sw_out']]
-    df.to_csv(output_file2, index=False, float_format='%.6f')
+    df2 = pd.DataFrame(data2, columns=['year2', 'month2', 'sw_out'])
+    df2['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
+    df2['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
+    df2 = df[['date', 'year', 'month', 'decimal_year', 'sw_out']]
+    df2.to_csv(output_file2, index=False, float_format='%.6f')
     if print_debug_DP > 9:
         print(f"DataP_90: Successfully converted {len(df)} records to {output_file2}")
 
