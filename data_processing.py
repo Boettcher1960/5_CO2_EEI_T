@@ -87,6 +87,7 @@ def albedo_to_csv(input_file1, input_file2 ,output_file1,output_file2):
 
     df2 = df2[['date', 'year', 'month', 'decimal_year', 'sw_in']]
     df2['sw_out'] = df[['sw_out']]
+    df2['albedo'] = df2['sw_out'] / df2['sw_in']
 
     df2.to_csv(output_file2, index=False, float_format='%.6f')
     if print_debug_DP > 9:
