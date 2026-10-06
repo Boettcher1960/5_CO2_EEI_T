@@ -78,13 +78,13 @@ def albedo_to_csv(input_file1, input_file2 ,output_file1,output_file2):
                     continue
 
     if print_debug_DP > 9:
-        print(f"DataP_79: Successfully converted {len(df)} records to {output_file2}")
+        print(f"DataP_80: file2 read {len(df)} records to {output_file2}")
 
     
-    df2 = pd.DataFrame(data2, columns=['year2', 'month2', 'sw_out'])
-    df2['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
-    df2['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
-    df2 = df[['date', 'year', 'month', 'decimal_year', 'sw_out']]
+    df2 = pd.DataFrame(data2, columns=['year2', 'month2', 'sw_out2'])
+    df2['date2'] = pd.to_datetime(df2['year2'].astype(str) + '-' + df2['month2'].astype(str) + '-01')
+    df2['decimal_year2'] = df2['year2'] + (df2['month2'] - 0.5) / 12
+    df2 = df2[['date2', 'year2', 'month2', 'decimal_year2', 'sw_out2']]
     df2.to_csv(output_file2, index=False, float_format='%.6f')
     if print_debug_DP > 9:
         print(f"DataP_90: Successfully converted {len(df)} records to {output_file2}")
