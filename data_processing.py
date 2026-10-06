@@ -32,7 +32,7 @@ def convert_ceres_to_csv(input_file, output_file):
         print(f"DataP_32: Successfully converted {len(df)} records to {output_file}")
     return df
 
-def albedo_to_csv(input_file1, input_file2 ,output_file):
+def albedo_to_csv(input_file1, input_file2 ,output_file1,output_file2):
     """Convert CERES TOA flux ASCII file to CSV format"""
     data = []
     with open(input_file1, 'r') as f:
@@ -55,9 +55,41 @@ def albedo_to_csv(input_file1, input_file2 ,output_file):
     df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
     df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
     df = df[['date', 'year', 'month', 'decimal_year', 'sw_out']]
-    df.to_csv(output_file, index=False, float_format='%.6f')
+    df.to_csv(output_file1, index=False, float_format='%.6f')
     if print_debug_DP > 9:
-        print(f"DataP_60: Successfully converted {len(df)} records to {output_file}")
+        print(f"DataP_60: Successfully converted {len(df)} records to {output_file1}")
+
+
+    with open(input_file2, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('#') or line.startswith('CERES'):
+                continue
+            parts = line.split()
+            if len(parts) >= 3:
+                try:
+                    year2 = int(parts[0])
+                    month2 = int(parts[1])
+                    flux2 = float(parts[2])
+                    data.append([year2, month2, flux2])
+                except ValueError:
+                    continue
+
+    if print_debug_DP > 9:
+        print(f"DataP_79: Successfully converted {len(df)} records to {output_file2}")
+
+    
+    df = pd.DataFrame(data, columns=['year', 'month', 'sw_out'])
+    df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
+    df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
+    df = df[['date', 'year', 'month', 'decimal_year', 'sw_out']]
+    df.to_csv(output_file2, index=False, float_format='%.6f')
+    if print_debug_DP > 9:
+        print(f"DataP_90: Successfully converted {len(df)} records to {output_file2}")
+
+
+
     return df
 
 
