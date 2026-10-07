@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F28" # work 66 albedo CERES 07_2026
+v = "5F30" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -167,7 +167,7 @@ if play_64_ASR_anomaly > 1: #
 
 if play_67_albedo > 0: # 
        df66b = ceres_to_csv(        'read_csv/_66b1_albedo.csv',
-                                    'read_csv/_67_CERES.csv')
+                                    'read_csv/_CERES.csv')
        if print_debug > 9:
           print(f"main_172: play_67_albedo  66.b ={play_67_albedo}")
        
@@ -179,9 +179,9 @@ if play_67_albedo > 0: #
           min1_periods=play_67_albedo
        use_center=False
        keep_original=True,
-       # error df66c = create_running_average( 'read_csv/_67_CERES.csv', 
+       # error df66c = create_running_average( 'read_csv/_CERES.csv', 
        # df66c = create_running_average( 'read_csv/_66b_out_in_ceres.csv', 
-       df66c = create_running_average( 'read_csv/_67_CERES.csv', 
+       df66c = create_running_average( 'read_csv/_CERES.csv', 
                                        'read_csv/_66c_out_ceres.csv',
                                             window_months=play_67_albedo,
                                             min_periods=min1_periods,

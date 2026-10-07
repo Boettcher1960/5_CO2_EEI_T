@@ -32,6 +32,9 @@ def convert_ceres_to_csv(input_file, output_file):
         print(f"DataP_32: Successfully converted {len(df)} records to {output_file}")
     return df
 
+
+
+
 def ceres_to_csv(output_file1,output_file2):
     """Convert CERES TOA flux ASCII file to CSV format"""
     data  = [] # 
