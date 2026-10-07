@@ -94,7 +94,7 @@ def ceres_to_csv(output_file1,output_file2):
     df2['albedo'] = df2['sw_out'] / df2['sw_in']
     df2['EEI2'] = df2['sw_in'] - df2['sw_out']
     df2['EEI3'] = df2['sw_in'] - df2['sw_out']
-    df2['EEI4'] = df2['sw_in'] - df2['sw_out']
+    df2['toa_net_flux_w_m2'] = df2['sw_out']
 
     df2.to_csv(output_file2, index=False, float_format='%.6f')
     if print_debug_DP > 9:
