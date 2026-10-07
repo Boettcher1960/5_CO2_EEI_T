@@ -180,7 +180,8 @@ if play_67_albedo > 0: #
        use_center=False
        keep_original=True,
        # error df66c = create_running_average( 'read_csv/_67_CERES.csv', 
-       df66c = create_running_average( 'read_csv/_66b_out_in_ceres.csv', 
+       # df66c = create_running_average( 'read_csv/_66b_out_in_ceres.csv', 
+       df66c = create_running_average( 'read_csv/_67_CERES.csv', 
                                        'read_csv/_66c_out_ceres.csv',
                                             window_months=play_67_albedo,
                                             min_periods=min1_periods,
