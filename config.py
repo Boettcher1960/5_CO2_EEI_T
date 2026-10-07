@@ -33,8 +33,8 @@ plot34_CO2 = 0 # plot34_CO2_emission mode 4
 plot42_EEI_48month = 2  # 2 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
-plot45_OLR = 0 # Outgoing Longwave Radiation OLR
-plot46_OLR_EEI = 0 # ASR=OLR+EEI Absorbed Solar Radiation
+plot45_OLR = 0 # 4 looks like simons 48 months. Outgoing Longwave Radiation OLR
+plot46_OLR_EEI = 0 # error ASR=OLR+EEI Absorbed Solar Radiation 4 error 3 error
 plot47_ASR_12month = 0  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
@@ -44,10 +44,13 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-play_62_CERES = 0    # 48 CERES Outgoing Longwave Radiation OLR
+play_62_CERES = 48    # ? 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
-play_64_ASR_anomaly = 12 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
+play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
+play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
+play_66_OLR = 0 # newoutgoing solar radiation OLR = = 240 W/m²
 play_67_albedo = 12   # create 1..12..48..99 CERES
+play_68_EEI = 0 # new
 
 plot71_temperature = 0
 plot72_AESS_T = 0
@@ -288,8 +291,8 @@ print_debug = 10 # print some items
 # 21 big window appears with one curve only 325 to 360 W/m2
 # 22 left mouse click window gets big 328 to 352 W/m2
 # 23 left mouse select save Data as ASCII File
-# 24 CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026.txt is downloaded
-#    CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026(1).txt cheat 2026 07+06 333.01
+# 24.1 CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026.txt is downloaded
+# 24.2 CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt is downloaded
 # 25 rename      to _66_TOA_Incoming_Solar_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
 #
 

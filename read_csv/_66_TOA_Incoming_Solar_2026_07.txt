@@ -1,6 +1,6 @@
-CERES - EBAF421 Data
+CERES - EBAFTOA421 Data
 Parameter: Incoming Solar Flux (W m-2)
-Time Range: March - 2000 to May - 2026
+Time Range: March - 2000 to July - 2026
 Time Resolution: MON
 Valid Range: 0 - 800
 Satellite: -
@@ -321,5 +321,5 @@ year month   data
 2026 03 343.77
 2026 04 337.95
 2026 05 333.01
-2026 06 333.01
-2026 07 333.01
+2026 06 329.98
+2026 07 329.58
