@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F25" # work 66 albedo CERES 07_2026
+v = "5F26" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -146,24 +146,24 @@ def process_ceres_data():
        if print_debug > 9:
           print(f"main_151: create read_csv/_62e_LongWave.csv 62    ={play_62_CERES}")
 
-if play_64_ASR > 1: #  
+if play_64_ASR_anomaly > 1: #  
        df64b = convert_ceres_to_csv('read_csv/_64_in__2026_02_ASR_anomaly.txt', 
                                     'read_csv/_64b_ASR.csv')
        if print_debug > 9:
-          print(f"main_152: create read_csv/_64b_ASR.csv  64.b ={play_64_ASR}")
+          print(f"main_152: create read_csv/_64b_ASR.csv  64.b ={play_64_ASR_anomaly}")
        
-       window_months=play_64_ASR
+       window_months=play_64_ASR_anomaly
        min_periods=12
        use_center=False
        keep_original=True,
        df64c = create_running_average( 'read_csv/_64b_ASR.csv', 
                                        'read_csv/_64c_ASR.csv',
-                                            window_months=play_64_ASR,
+                                            window_months=play_64_ASR_anomaly,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='ASR')
        if print_debug > 9:
-          print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR}")
+          print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
 
 if play_67_albedo > 0: # 
        df66b = ceres_to_csv(        'read_csv/_66b1_albedo.csv',
@@ -258,11 +258,11 @@ def load_plot_data():
         # data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
            print(f"main_201: 62.9 read ={play_62_CERES}")    
-    if play_64_ASR > 0: # 62.9 read
+    if play_64_ASR_anomaly > 0: # 62.9 read
         data['ceres_64'] = pd.read_csv("read_csv/_64c_ASR.csv")
         # data['ceres_64'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
-           print(f"main_235: 64.9 read ={play_64_ASR}") 
+           print(f"main_235: 64.9 read ={play_64_ASR_anomaly}") 
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.3
         data['gis_temp'] = load_gis_temperature()

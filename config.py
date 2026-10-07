@@ -46,7 +46,7 @@ plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.soc
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
-play_64_ASR = 12 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
+play_64_ASR_anomaly = 12 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_67_albedo = 12   # create 1..12..48..99 CERES
 
 plot71_temperature = 0
@@ -211,7 +211,7 @@ print_debug = 10 # print some items
 #########################################################
 # 47_ASR_12month_2026_02.csv ############################
 #########################################################
-# 52 run with play_64_ASR = 12
+# 52 run with play_64_ASR_anomaly = 12
 # 53 copy dokumente/5_CO2_EEI_T/read_csv/_64c_ASR.csv to
 #         dokumente/5_CO2_EEI_T/read_csv/_47_ASR_12month_2026_02.csv
 # https://jimehansen.substack.com/p/2026-on-track-for-warmest-year
@@ -326,7 +326,7 @@ print_debug = 10 # print some items
 #
 #
 
-# play_64_ASR = 12 # absorbed solar radiation ASR = 1.48 W/m² 
+# play_64_ASR_anomaly = 12 # absorbed solar radiation ASR = 1.48 W/m² 
 # 41 open
 # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 42 select first item
@@ -339,13 +339,13 @@ print_debug = 10 # print some items
 # 49 left mouse select save Data as ASCII File
 # 50 CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Shortwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
 # 51 rename      to _64_in__2026_02_ASR_anomaly.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-# 52 run with play_64_ASR = 12
+# 52 run with play_64_ASR_anomaly = 12
 #    read read_csv/_64_in__2026_02_ASR_anomaly.txt   main.py 
 #    output1 read_csv/_64b_ASR.csv')
 #    output2 read_csv/_64c_ASR.csv'
 # 53 copy dokumente/5_CO2_EEI_T/read_csv/_64c_ASR.csv to
 #         dokumente/5_CO2_EEI_T/read_csv/_47_ASR_12month_2026_02.csv
-# 54 run with play_64_ASR = 48
+# 54 run with play_64_ASR_anomaly = 48
 #    read read_csv/_64_in__2026_02_ASR_anomaly.txt   main.py 
 #    output1 read_csv/_64b_ASR.csv')
 #    output2 read_csv/_64c_ASR.csv'

@@ -938,15 +938,15 @@ def plot_9_create_all_plots(ax1, data):
            print(f"plot_969: ax62 62.8 ={play_62_CERES}")
         if play_62_CERES > 2:
            plot8_right_y_axe_for_C_62( ax62 , 0 ) # 42.4 line 450
-    if play_64_ASR > 0:
+    if play_64_ASR_anomaly > 0:
         ax64 = ax1.twinx()
         ax64.plot(data['ceres_64']["decimal_year"], data['ceres_64']["ASR"], '-', 
                   label="EEI K62", color=c62, linewidth=2)
         ax64.tick_params(axis="y", labelcolor=c62)
         ax64.set_ylim(y_64min, y_64max)
         if print_debug > 9:
-           print(f"plot_969:  64.8 ={play_64_ASR}")
-        if play_64_ASR > 2:
+           print(f"plot_969:  64.8 ={play_64_ASR_anomaly}")
+        if play_64_ASR_anomaly > 2:
            plot8_right_y_axe_for_C_64( ax64 , 0 ) # 64.4 
 
 
