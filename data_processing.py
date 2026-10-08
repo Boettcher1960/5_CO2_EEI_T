@@ -182,8 +182,9 @@ def convert66_txt_to_csv(input_file,
 # part 66.c line172 create66_running_average (input_csv, output_csv, 
 def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
                              output_csv, # 'work/_66c_OLR.csv',
-                             column_read,             #  column_name='OLR')
+                             column_read,             #  column_name='OLR', 'SW_in'
                              column_average,          #  column_name='OLR48')
+                             columnname,
                              window_months, 
                              min_periods=None, 
                              center=True, 
@@ -192,7 +193,7 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
     """Create running average for specified window size"""
 
     # part 66.c.2 read csv with raw ceres data into data-frame
-    df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv'
+    df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv' # 'work/_65b_SW_in_raw.csv'
 
     # part 66.c.3 sort the data-frame
     df['date'] = pd.to_datetime(df['date'])
@@ -228,6 +229,7 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
     valid_records = df_output[column_name].notna().sum()    
     return df_output
     # end part 66.c  CERES.csv (perform averaging)
+
 
 """
 # part 66.e not used line 216 add_66_csv_column   (add averaging column to plotable-csv)

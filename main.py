@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F64" # play_65_ASR = 48 albedo CERES 07_2026
+v = "5F65" # play_65_ASR = 48 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -162,11 +162,12 @@ if play_65_ASR > 1: #
        columnname ='SW_in'
        column_read    ='SW_in'
        column_average ='SW_in48'
-       # part 66.c  CERES.csv (perform averaging)
-       df66c = create66_running_average( 'work/_65b_SW_in_raw.csv', 
+       # part 65.c  CERES.csv (perform averaging)
+       df65c = create66_running_average( 'work/_65b_SW_in_raw.csv', 
                                          'work/_65c_SW_in.csv',
-                                          column_read,             #  column_name='OLR')
-                                          column_average,          #  column_name='OLR48')
+                                          column_read,             #  column_name='SW_in')
+                                          column_average,          #  column_name='SW_in48')
+                                          columnname,
                                             window_months=play_65_ASR,
                                             min_periods=12,
                                             center=use_center,
@@ -185,7 +186,7 @@ if play_66_OLR > 1: #
                                     'OLR'
                                     )
        if print_debug > 9:
-          print(f"main_154: created.  work/_66b_OLR.csv  66.b ={play_66_OLR}")
+          print(f"main_188: created.  work/_66b_OLR.csv  66.b ={play_66_OLR}")
        
        window_months=play_66_OLR
        min_periods=12
@@ -207,7 +208,7 @@ if play_66_OLR > 1: #
                                             center=use_center,
                                             column_name=columnname)
        if print_debug > 9:
-          print(f"main_168: created. OLR48 work/_66c_OLR.csv  66.c ={play_66_OLR}")
+          print(f"main_210: created. OLR48 work/_66c_OLR.csv  66.c ={play_66_OLR}")
 
 
        
