@@ -45,11 +45,9 @@ plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.soc
 
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 12, 48 CERES Outgoing Longwave Radiation OLR
-                      # 12 works
-                      # 48 works
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
-play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
+play_65_ASR = 48 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
 play_66_OLR = 0 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
 play_67_albedo = 12   # create 1..12..48..99 CERES
@@ -224,6 +222,18 @@ print_debug = 10 # print some items
 # part 2.3 plot23_Glen_CO2 
 # part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
 
+#########################################################
+# 45_OLR_48month_2026_07.csv ############################
+#########################################################
+# 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026(2).txt
+# 3 copy txt to work/_66_TOA_OLR_all_sky_2026_07.txt
+# 4 run with play_66_OLR = 48
+# 5 copy dokumente/5_CO2_EEI_T/work/_66c_OLR.csv to
+#        dokumente/5_CO2_EEI_T/read_csv/_45_OLR_48month_2026_07.csv
+# looks like https://bsky.app/profile/leonsimons.com/post/3mwy3xgypts2y
+# 
+
 
 #########################################################
 # 47_ASR_12month_2026_02.csv ############################
@@ -240,7 +250,7 @@ print_debug = 10 # print some items
 #########################################################
 # 61 How to make EEI files ##############################
 #########################################################
-# 1 open 
+# 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 2  https://ceres.larc.nasa.gov/data/
 # 3 https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
@@ -313,7 +323,9 @@ print_debug = 10 # print some items
 
 
 #########################################################
-# 62 How to make CERES Outgoing Longwave Radiation OLR files ##############################
+# 62 How to make CERES Outgoing Longwave Radiation OLR files
+# 66 play_66_OLR = 48
+# 45 plot45_OLR
 #########################################################
 # play_62_CERES = 48 
 # 21 open
@@ -324,24 +336,28 @@ print_debug = 10 # print some items
 # 25 select item 2 Label TOA Long Wave Flux All Sky 235 to 245 W/m/m monthly values
 # 26 big window appears with one curve only
 # 27 left mouse select save Data as ASCII File
-# 28 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-# 29 rename      to _62_in__2026_02_Longwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-# 30 run with play_62_CERES = 48
+# 28.1 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 28.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
+# 29.1 rename      to _62_in__2026_02_Longwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 29.2 rename      to _66_TOA_OLR_all_sky_2026_07.txt and save to dokumente/5_CO2_EEI_T/work/
+# 30.1 run with play_62_CERES = 48
 #    read read_csv/_62_in__2026_02_Longwave.txt main 124
 #    output1 read_csv/_62b_LongWave.csv'
-# 31 run with play_62_CERES = 48
+# 30.2 run with play_66_OLR = 48
+# 31.1 run with play_62_CERES = 48
 #    input1  read_csv/_62_in__2026_02_Longwave.txt main 124
 #    input2  read_csv/_42_EEI48month_2026_02.csv   main 141
 #    output2 read_csv/_62c_LongWave.csv with column LongWave for  48 month running average 
 #    output3.1 read_csv/_62e_LongWave.csv with column EEI copy from input2 for  48 month running average 
 #    output3.2 read_csv/_62e_LongWave.csv with column LongWave for  48 month running average 
 #    output3.3 read_csv/_62e_LongWave.csv with column OLR_EEI = LongWave + EEI   48 month running average 
-# 32 copy dokumente/5_CO2_EEI_T/read_csv/_62e_LongWave.csv to
+# 32.1 copy dokumente/5_CO2_EEI_T/read_csv/_62e_LongWave.csv to
 #         dokumente/5_CO2_EEI_T/read_csv/_45_OLR_EEI_48month_2026_02.csv
-#
-# 33 run   plot45_OLR_48month=2 reading new _45_OLR_EEI_48month_2026_02.csv file
-#
-#
+# 32.2 copy dokumente/5_CO2_EEI_T/work/_66c_OLR.csv to
+#           dokumente/5_CO2_EEI_T/read_csv/_45_OLR_48month_2026_07.csv file, column OLR48 
+# 33.1 run   plot45_OLR_48month=2 reading new _45_OLR_EEI_48month_2026_02.csv file
+# 33.2 run   plot45_OLR = 3 reading new _45_OLR_48month_2026_07.csv file, column OLR48 
+# 
 
 # play_64_ASR_anomaly = 12 # absorbed solar radiation ASR = 1.48 W/m² 
 # 41 open

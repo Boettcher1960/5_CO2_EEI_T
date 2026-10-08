@@ -370,7 +370,7 @@ def plot8_right_y_axe_for_eei_43(ax43,rightv): # 43.5
     #ax43.spines.right.set_position(("outward", 120))
     ax43.set_ylabel("Earth Energy Imbalance  in W/m²     plot470            43", color=c43, fontname="Arial",fontsize=18)
     ax43.tick_params(axis="y", labelcolor=c43)
-    ax43.set_ylim(y_Emin, y_Emax) #
+    ax43.set_ylim(y_45min, y_45max) #
 
 #  OLR  W/m² moving average 48 month 
 # plot8_right_y_axe_for_OLR_45                    ,  line  367
@@ -379,7 +379,7 @@ def plot8_right_y_axe_for_OLR_45(ax45,right62): # 62.5
     ax45.spines.right.set_position(("outward", outward_right))
     ax45.set_ylabel("Outgoing Longwave Radiation OLR in W/m²       45", color=c45, fontname="Arial",fontsize=18)
     ax45.tick_params(axis="y", labelcolor=c45)
-    ax45.set_ylim(y_62min, y_62max) #
+    ax45.set_ylim(y_45min, y_45max) #
 
 def plot8_right_y_axe_for_OLR_46(ax46,right62): # 62.5
     outward_right =  ( plot46_OLR_EEI *  yr_60 ) - yr_150
