@@ -157,13 +157,22 @@ if play_66_OLR > 1: #
        min_periods=12
        use_center=False
        keep_original=True
+       if play_66_OLR < 47:
+           columnname='OLR12'
+       else:
+           columnname='OLR48'
        # part 66.c  CERES.csv (perform averaging)
        df66c = create66_running_average( 'work/_66b_OLR_raw.csv', 
                                          'work/_66c_OLR.csv',
                                             window_months=play_66_OLR,
                                             min_periods=12,
                                             center=use_center,
-                                            column_name='OLR')
+                                            column_name=columnname)
+       if print_debug > 9:
+          print(f"main_168: created. OLR48 work/_66c_OLR.csv  66.c ={play_66_OLR}")
+
+
+       
        # part 66.e  CERES.csv (add averaging column to plotable-csv)
        df66e = add_66_csv_column( 'work/_66b_OLR_raw.csv', 
                                   'work/_42_EEI48month_2026_07.csv', 

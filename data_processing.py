@@ -182,20 +182,26 @@ def convert66_txt_to_csv(input_file,
 # part 66.c line172 create66_running_average (input_csv, output_csv, 
 def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
                              output_csv, # 'work/_66c_OLR.csv',
+                                         #  column_name='OLR48')
                              window_months, 
                              min_periods=None, 
-                          center=True, 
-                          keep_original=True,
-                          column_name='EEI48'):
+                             center=True, 
+                             keep_original=True,
+                             column_name='EEI48'): # not used if main has different parameter
     """Create running average for specified window size"""
 
+    # part 66.c.2 read csv with raw ceres data into data-frame
     df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv'
+
+    # part 66.c.3 sort the data-frame
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values('date').reset_index(drop=True)
-    
+
+    # part 66.c.4 check the parameters 
     if min_periods is None:
         min_periods = window_months
-   
+
+     # part 66.c.5 mean value (read column OLR)(store in ?)
     df[column_name] = df['OLR'].rolling(
         window=window_months, 
         center=center,
