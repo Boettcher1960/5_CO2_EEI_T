@@ -228,10 +228,10 @@ if play_66_OLR > 1: #
 
 # main.play_67_albedo line 176
 if play_67_albedo > 0: # 
-       df66b = ceres_to_csv(        'read_csv/_66b1_albedo.csv',
-                                    'read_csv/_CERES.csv')
+       df66b = ceres67_to_csv(      'read_csv/_66b1_albedo.csv',
+                                    'work/_CERES.csv')
        if print_debug > 9:
-          print(f"main_172: play_67_albedo  66.b ={play_67_albedo}")
+          print(f"main_234: play_67_albedo  66.b ={play_67_albedo}")
        
        window_months=play_67_albedo
 
@@ -243,8 +243,8 @@ if play_67_albedo > 0: #
        keep_original=True,
        # error df66c = create_running_average( 'read_csv/_CERES.csv', 
        # df66c = create_running_average( 'read_csv/_66b_out_in_ceres.csv', 
-       df66c = create_running_average( 'read_csv/_CERES.csv', 
-                                       'read_csv/_66c_out_ceres.csv',
+       df66c = create_running_average( 'work/_CERES.csv', 
+                                       'work/_67c_out_ceres.csv',
                                             window_months=play_67_albedo,
                                             min_periods=min1_periods,
                                             center=use_center,

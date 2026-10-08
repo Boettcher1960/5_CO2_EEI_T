@@ -288,7 +288,7 @@ def add_66_csv_column(input_csv,
     # end part 66.e  CERES.csv (add averaging column to plotable-csv)
     """
 
-def ceres_to_csv(output_file1,output_file2):
+def ceres67_to_csv(output_file1,output_file2):
     """Convert CERES TOA flux ASCII file to CSV format"""
     data  = [] # 
     data2 = []
