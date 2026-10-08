@@ -66,7 +66,7 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         ax1.text(-0.1, 1.05, header, color=c45, fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     # ax1.set_ylabel("NASA CERES Earth Energy: ASR = OLR + EEI in W/m²  ", color=c46, fontsize=20)
-    elif plot46_OLR_EEI == 2:
+    elif plot46_ASR == 2:
         header = f"NASA CERES Earth Energy: ASR=OLR+EEI in W/m² (Feb. 2026) Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color=c46, fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
@@ -222,7 +222,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Outgoing Longwave Radiation OLR  W/m² moving average 48 month                      45", 
                     c45, trs)
-    elif plot46_OLR_EEI == 2:
+    elif plot46_ASR == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c46)
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Absorbed Solar Radiation ASR = OLR+EEI  W/m² moving average 48 month          46", 
