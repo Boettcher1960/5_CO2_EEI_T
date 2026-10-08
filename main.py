@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F46" # work 66 albedo CERES 07_2026
+v = "5F47" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -146,17 +146,17 @@ if play_66_OLR > 1: #
        # part 62.b convert download.txt to CERES.csv (no averaging)
        # CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt downloaded
        # copy to 'work/_66_TOA_OLR_all_sky_2026_07.txt'
-       df66b = convert66_ceres_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
+       df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
                                     'work/_66b_OLR_raw.csv',
                                     'OLR'
                                     )
        if print_debug > 9:
-          print(f"main_154: created  work/_66b_OLR.csv  66.b ={play_66_OLR}")
+          print(f"main_154: created.  work/_66b_OLR.csv  66.b ={play_66_OLR}")
        
        window_months=play_66_OLR
        min_periods=12
        use_center=False
-       keep_original=True,
+       keep_original=True
        # part 66.c  CERES.csv (perform averaging)
        df66c = create66_running_average( 'work/_66b_OLR_raw.csv', 
                                          'work/_66c_OLR.csv',

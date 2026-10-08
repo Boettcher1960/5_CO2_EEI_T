@@ -142,31 +142,38 @@ def add_62_csv_column(input_csv,
     # end part 62.e  CERES.csv (add averaging column to plotable-csv)
 
 # part 66.b convert download.txt to CERES.csv (no averaging) convert66_ceres_to_csv(input_file, output_file)
-def convert66_ceres_to_csv(input_file, output_file, column_name):
+def convert66_txt_to_csv(input_file, 
+                           output_file,  #  'work/_66b_OLR_raw.csv',
+                           column_name): #  'OLR'
     """Convert CERES TOA flux ASCII file to CSV format"""
     data = []
+    # part 66.b.2 open txt file
     with open(input_file, 'r') as f:
         lines = f.readlines()
         for line in lines:
             line = line.strip()
             if not line or line.startswith('#') or line.startswith('CERES'):
                 continue
+            # part 66.b.3 read one line of the txt file
             parts = line.split()
             if len(parts) >= 3:
                 try:
                     year = int(parts[0])
                     month = int(parts[1])
                     flux = float(parts[2])
+                    # part 66.b.4 store values into the data field
                     data.append([year, month, flux])
                 except ValueError:
                     continue
-    
+
+    # part 66.b.5 store values into the df field
     df = pd.DataFrame(data, columns=['year', 'month', column_name])
     df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
     df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
     df = df[['date', 'year', 'month', 'decimal_year', column_name]]
 
     df.to_csv(output_file, index=False, float_format='%.6f')
+
     if print_debug_DP > 9:
         print(f"DataP_168: convert66_ceres_to_csv {len(df)} records to {output_file}")
     return df
@@ -203,12 +210,7 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
     df_output = df[output_columns].copy()
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
     
-    valid_records = df_output[column_name].notna().sum()
-    #print(f"{window_months}-month running average saved to {output_csv}")
-    #print(f"Valid records: {valid_records} out of {len(df_output)}")
-    if print_debug_DP > 9:
-        print(f"DataP_71: Valid records: {valid_records} out of {len(df_output)}")
-        print(f"DataP_72: {window_months}-month running average saved to {output_csv} ")
+    valid_records = df_output[column_name].notna().sum()    
     return df_output
     # end part 66.c  CERES.csv (perform averaging)
 
@@ -265,11 +267,6 @@ def add_66_csv_column(input_csv,
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
     
     valid_records = df_output[column_name].notna().sum()
-    #print(f"{window_months}-month running average saved to {output_csv}")
-    #print(f"Valid records: {valid_records} out of {len(df_output)}")
-    if print_debug_DP > 9:
-        print(f"DataP_271: Valid records: {valid_records} out of {len(df_output)}")
-        print(f"DataP_272: {window_months}-month running average saved to {output_csv} ")
     return df_output
     # end part 66.e  CERES.csv (add averaging column to plotable-csv)
 
