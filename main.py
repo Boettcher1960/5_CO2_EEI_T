@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F63" # play_65_ASR = 48 albedo CERES 07_2026
+v = "5F64" # play_65_ASR = 48 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -17,9 +17,9 @@ v = "5F63" # play_65_ASR = 48 albedo CERES 07_2026
 #         main.play_61_CERES line 65
 #         main.play_62_CERES line 92
 #         main.play_64_ASR_anomaly line 124
+#         main.play_65_ASR line 141
 #         main.play_66_OLR line 144
 #         main.play_67_albedo line 176
-
 
 # part 71 plot quadratic temperature with right y axis
 # part 72 plot temperature ECS = 8°C with right y axis
@@ -88,9 +88,8 @@ def process_ceres_data():
           print(f"main_122: create read_csv/_61c_out_ceres.csv  61.gut ={play_61_CERES}")
 
 
-    # main.play_62_CERES line 92
-    # CERES Outgoing Longwave Radiation OLR
-    # _62_in__2026_02_Longwave.txt
+    # main.play_62_CERES line 90 
+    # CERES Outgoing Longwave Radiation OLR     # _62_in__2026_02_Longwave.txt
     if play_62_CERES > 1: #  
        # part 62.b convert download.txt to CERES.csv (no averaging)
        df62b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
@@ -139,6 +138,41 @@ if play_64_ASR_anomaly > 1: #
                                             column_name='ASR')
        if print_debug > 9:
           print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
+
+# main.play_65_ASR line 141
+# CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
+if play_65_ASR > 1: #  
+       # part 65.b convert download.txt to CERES.csv (no averaging)
+       # CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt downloaded
+       # copy to 'work/_65_TOA_sw_in_all_sky_2026_07.txt'
+       df65b = convert66_txt_to_csv('work/_65_TOA_sw_in_all_sky_2026_07.txt', 
+                                    'work/_65b_SW_in_raw.csv',
+                                    'SW_in'
+                                    )
+       if print_debug > 9:
+          print(f"main_154: created.  work/_65b_SW_in_raw  65.b ={play_65_ASR}")
+       
+       window_months=play_65_ASR
+       min_periods=12
+       use_center=False
+       keep_original=True
+       #if play_66_OLR < 47:
+           # columnname ='OLR12'
+       #else:
+       columnname ='SW_in'
+       column_read    ='SW_in'
+       column_average ='SW_in48'
+       # part 66.c  CERES.csv (perform averaging)
+       df66c = create66_running_average( 'work/_65b_SW_in_raw.csv', 
+                                         'work/_65c_SW_in.csv',
+                                          column_read,             #  column_name='OLR')
+                                          column_average,          #  column_name='OLR48')
+                                            window_months=play_65_ASR,
+                                            min_periods=12,
+                                            center=use_center,
+                                            column_name=columnname)
+
+
 
 # main.play_66_OLR line 144
 # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
