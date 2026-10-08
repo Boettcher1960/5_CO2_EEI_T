@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F47" # work 66 albedo CERES 07_2026
+v = "5F48" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -158,12 +158,16 @@ if play_66_OLR > 1: #
        use_center=False
        keep_original=True
        if play_66_OLR < 47:
-           columnname='OLR12'
+           columnname ='OLR12'
        else:
-           columnname='OLR48'
+           columnname ='OLR48'
+       column_read    ='OLR'
+       column_average ='OLR48'
        # part 66.c  CERES.csv (perform averaging)
        df66c = create66_running_average( 'work/_66b_OLR_raw.csv', 
                                          'work/_66c_OLR.csv',
+                                          column_read,             #  column_name='OLR')
+                                          column_average,          #  column_name='OLR48')
                                             window_months=play_66_OLR,
                                             min_periods=12,
                                             center=use_center,

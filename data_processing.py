@@ -182,7 +182,8 @@ def convert66_txt_to_csv(input_file,
 # part 66.c line172 create66_running_average (input_csv, output_csv, 
 def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
                              output_csv, # 'work/_66c_OLR.csv',
-                                         #  column_name='OLR48')
+                             column_read,             #  column_name='OLR')
+                             column_average,          #  column_name='OLR48')
                              window_months, 
                              min_periods=None, 
                              center=True, 
@@ -202,7 +203,7 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
         min_periods = window_months
 
      # part 66.c.5 mean value (read column OLR)(store in ?)
-    df[column_name] = df['OLR'].rolling(
+    df[column_name] = df[column_read].rolling(
         window=window_months, 
         center=center,
         min_periods=min_periods
