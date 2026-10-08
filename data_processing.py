@@ -173,20 +173,20 @@ def convert66_ceres_to_csv(input_file, output_file, column_name):
     # end part 66.b convert download.txt to CERES.csv (no averaging)
 
 # part 66.c line172 create66_running_average (input_csv, output_csv, 
-def create66_running_average(input_csv, 
-                           output_csv, 
-                           window_months, 
-                          min_periods=None, 
+def create66_running_average(input_csv, # 'work/_66b_OLR_raw.csv'
+                             output_csv, 
+                             window_months, 
+                             min_periods=None, 
                           center=True, 
                           keep_original=True,
                           column_name='EEI'):
     """Create running average for specified window size"""
-    df = pd.read_csv(input_csv)
+
+    df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv'
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values('date').reset_index(drop=True)
     
     if min_periods is None:
-        # min_periods = window_months // 2
         min_periods = window_months
    
     df[column_name] = df['OLR'].rolling(
@@ -221,7 +221,7 @@ def add_66_csv_column(input_csv,
                       min_periods=None, 
                       center=True, 
                       keep_original=True,
-                      column_name='EEI'):
+                      column_name='OLR48'):
     """Create running average for specified window size"""
     df = pd.read_csv(input_csv)
     df['date'] = pd.to_datetime(df['date'])
@@ -268,8 +268,8 @@ def add_66_csv_column(input_csv,
     #print(f"{window_months}-month running average saved to {output_csv}")
     #print(f"Valid records: {valid_records} out of {len(df_output)}")
     if print_debug_DP > 9:
-        print(f"DataP_130: Valid records: {valid_records} out of {len(df_output)}")
-        print(f"DataP_131: {window_months}-month running average saved to {output_csv} ")
+        print(f"DataP_271: Valid records: {valid_records} out of {len(df_output)}")
+        print(f"DataP_272: {window_months}-month running average saved to {output_csv} ")
     return df_output
     # end part 66.e  CERES.csv (add averaging column to plotable-csv)
 
