@@ -33,7 +33,7 @@ plot34_CO2 = 0 # plot34_CO2_emission mode 4
 plot42_EEI_48month = 2  # 2 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
-plot45_OLR = 0 # 4 looks like simons 48 months. Outgoing Longwave Radiation OLR
+plot45_OLR = 3 # 4 looks like simons 48 months. Outgoing Longwave Radiation OLR
 plot46_OLR_EEI = 0 # error ASR=OLR+EEI Absorbed Solar Radiation 4 error 3 error
 plot47_ASR_12month = 0  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
 
@@ -44,7 +44,7 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
 play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-play_62_CERES = 48    # 12, 48 CERES Outgoing Longwave Radiation OLR
+play_62_CERES = 0    # 12, 48 CERES Outgoing Longwave Radiation OLR
                       # 12 works
                       # 48 works
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
@@ -155,14 +155,14 @@ y_55max = 9 # plot55_population_on = 5
 y_61Emin = 0 #   EEI in W/m2 y axis left mode
 y_61Emax = 2 #   EEI in W/m2 y axis left mode
 
-y_62min = 240    # OLR in W/m2
-y_62max = 242.8  # OLR in W/m2
+y_62min = 239.8  # OLR in W/m2
+y_62max = 242.6  # OLR in W/m2
 
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
 
-y_66min = 240.1  # OLR in W/m2
-y_66max = 242.7  # OLR in W/m2
+y_66min = 240  # OLR in W/m2
+y_66max = 242.8  # OLR in W/m2
 
 y_67min = 0.2  # albedo in %
 y_67max = 0.4  # albedo in %
