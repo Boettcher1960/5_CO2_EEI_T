@@ -3,10 +3,10 @@
 import pandas as pd
 import numpy as np
 print_debug_DP = 10 # global variable print_debug = 10
-# part 62.b convert download.txt to CERES.csv (no averaging) convert_ceres_to_csv(input_file, output_file)
+# part 62.b  line 12 convert download.txt to CERES.csv (no averaging) convert_ceres_to_csv(input_file, output_file)
 # part 62.c  CERES.csv (perform averaging) create_running_average(input_csv, output_csv, 
 # part 62.e  line 82 CERES.csv (add averaging column to plotable-csv)
-
+# part 66.b  line 141 convert download.txt to CERES.csv (no averaging) convert66_ceres_to_csv(input_file, output_file)
 
 # part 62.b convert download.txt to CERES.csv (no averaging) convert_ceres_to_csv(input_file, output_file)
 def convert_ceres_to_csv(input_file, output_file):
@@ -138,6 +138,35 @@ def add_62_csv_column(input_csv,
     return df_output
     # end part 62.e  CERES.csv (add averaging column to plotable-csv)
 
+# part 66.b convert download.txt to CERES.csv (no averaging) convert66_ceres_to_csv(input_file, output_file)
+def convert66_ceres_to_csv(input_file, output_file, column_name):
+    """Convert CERES TOA flux ASCII file to CSV format"""
+    data = []
+    with open(input_file, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('#') or line.startswith('CERES'):
+                continue
+            parts = line.split()
+            if len(parts) >= 3:
+                try:
+                    year = int(parts[0])
+                    month = int(parts[1])
+                    flux = float(parts[2])
+                    data.append([year, month, flux])
+                except ValueError:
+                    continue
+    
+    df = pd.DataFrame(data, columns=['year', 'month', 'toa_net_flux_w_m2'])
+    df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
+    df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
+    df = df[['date', 'year', 'month', 'toa_net_flux_w_m2', 'decimal_year']]
+    df.to_csv(output_file, index=False, float_format='%.6f')
+    if print_debug_DP > 9:
+        print(f"DataP_167: Successfully converted {len(df)} records to {output_file}")
+    return df
+    # end part 66.b convert download.txt to CERES.csv (no averaging)
 
 
 
@@ -209,6 +238,9 @@ def ceres_to_csv(output_file1,output_file2):
     if print_debug_DP > 9:
         print(f"DataP_90: Successfully converted {len(df)} records to {output_file2}")
     return df2
+
+
+
 
 
 

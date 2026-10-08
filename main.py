@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F36" # work 66 albedo CERES 07_2026
+v = "5F37" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -141,13 +141,15 @@ if play_64_ASR_anomaly > 1: #
           print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
 
 # main.play_66_OLR line 144
-# CERES Outgoing Longwave Radiation OLR  # _62_in__2026_02_Longwave.txt
+# CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
 if play_66_OLR > 1: #  
        # part 62.b convert download.txt to CERES.csv (no averaging)
        # CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt downloaded
        # copy to 'work/_66_TOA_OLR_all_sky_2026_07.txt'
-       df66b = convert_ceres_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
-                                    'work/_66b_OLR.csv')
+       df66b = convert66_ceres_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
+                                    'work/_66b_OLR.csv',
+                                    'OLR'
+                                    )
        if print_debug > 9:
           print(f"main_150: create work/_66b_OLR.csv  66.b ={play_66_OLR}")
        
