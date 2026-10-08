@@ -288,10 +288,14 @@ def add_66_csv_column(input_csv,
     # end part 66.e  CERES.csv (add averaging column to plotable-csv)
     """
 
-def ceres67_to_csv(output_file1,output_file2):
-    """Convert CERES TOA flux ASCII file to CSV format"""
+ # part 67.d create work/_CERES.csv with 10 columns
+def ceres67_to_csv(
+        output_file1,  # work/_67b_sw_out.csv
+        output_file2): # work/_CERES.csv'
+    
     data  = [] # 
     data2 = []
+    # part 67.d.2 read txt
     # 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
     # 17.2 rename   to  _66_TOA_Shortwave_Flux_All_Sky2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
     with open('read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt', 'r') as f:
@@ -314,9 +318,12 @@ def ceres67_to_csv(output_file1,output_file2):
     df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
     df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
     df = df[['date', 'year', 'month', 'decimal_year', 'sw_out']]
+
+    # part 67.d.7 write df to  work/_67b_sw_out.csv
     df.to_csv(output_file1, index=False, float_format='%.6f')
+
     if print_debug_DP > 9:
-        print(f"DataP319: Successfully converted {len(df)} records to {output_file1}")
+        print(f"DataP326: Successfully converted {len(df)} records to {output_file1}")
 
     # 25 rename      to _66_TOA_Incoming_Solar_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
     #         'read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
@@ -344,17 +351,24 @@ def ceres67_to_csv(output_file1,output_file2):
     df2 = pd.DataFrame(data2, columns=['year', 'month', 'sw_in'])
     df2['date'] = pd.to_datetime(df2['year'].astype(str) + '-' + df2['month'].astype(str) + '-01')
     df2['decimal_year'] = df2['year'] + (df2['month'] - 0.5) / 12
-
+    # part 67.d.7 
     df2 = df2[['date', 'year', 'month', 'decimal_year', 'sw_in']]
+    # part 67.d.7 add a new column 6
     df2['sw_out'] = df[['sw_out']]
+    # part 67.d.7 add a new column 7
     df2['albedo'] = df2['sw_out'] / df2['sw_in']
-    df2['EEI2'] = df2['sw_in'] - df2['sw_out']
+    # part 67.d.7 add a new column 8
+    df2['ASR'] = df2['sw_in'] - df2['sw_out']
+    # part 67.d.7 add a new column 9
     df2['EEI3'] = df2['sw_in'] - df2['sw_out']
+    # part 67.d.7 add a new column 10
     df2['toa_net_flux_w_m2'] = df2['sw_out']
 
+    # part 67.d.12 write df2 to  work/_CERES.csv'
     df2.to_csv(output_file2, index=False, float_format='%.6f')
+
     if print_debug_DP > 9:
-        print(f"DataP_90: Successfully converted {len(df)} records to {output_file2}")
+        print(f"DataP361: Successfully converted {len(df)} records to {output_file2}")
     return df2
 
 
