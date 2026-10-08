@@ -190,8 +190,8 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot46_ASR  == 2:  # 43.5 y axe left 
         ax1.spines.left.set_position(("outward", 0))
-        ax1.set_ylim(y_62min, y_62max)
-        ax1.set_ylabel("Earth Energy: ASR = OLR + EEI in W/m² ", color=c46, fontsize=20)
+        ax1.set_ylim(y_46min, y_46max)
+        ax1.set_ylabel("ASR absorbed solar radiation in W/m² ", color=c46, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c46, labelsize=20)
         y_mayor_ticks = 0.500 
         y_minor_ticks = 0.100
