@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F32" # work 66 albedo CERES 07_2026
+v = "5F36" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -13,8 +13,14 @@ v = "5F32" # work 66 albedo CERES 07_2026
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
 #
-# play_61_CERES = 12     # 12 CERES EEI 12 month like part41_ceres_eei 
-#
+# line 60 process_ceres_data():
+#         main.play_61_CERES line 65
+#         main.play_62_CERES line 92
+#         main.play_64_ASR_anomaly line 124
+#         main.play_66_OLR line 144
+#         main.play_67_albedo line 176
+
+
 # part 71 plot quadratic temperature with right y axis
 # part 72 plot temperature ECS = 8°C with right y axis
 # part 73 plot temperature ECS = 4.5°C with right y axis
@@ -45,6 +51,7 @@ from data_processing import *
 from text import *
 from models import *
 
+
 #from config import play_62_CERES
 
 
@@ -54,44 +61,7 @@ if print_debug > 19:
 
 def process_ceres_data():
     """Process CERES data based on configuration"""
-    # Process part44_ceres_eei
-    if print_debug > 19:
-        print(f"main_115: local variable 44.3 ={part44_ceres_eei}")
-        out = f"csv/csv44/csv44d_EEI_{part44_ceres_eei}_month.csv"
-        if print_debug > 9:
-           print(f"main_120: local variable 44.4 ={part44_ceres_eei}")
-        # /Dokumente/Python/5_CO2_EEI_T/read_csv/2016_01_EEI_CERES_TOA Net Flux.txt
-        df44 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
-                                    'work/c44b_ceres.csv')
-        if print_debug > 9:
-           print(f"main_125: created c44b_ceres.csv 44.5 ={part44_ceres_eei}")
-        if part44_ceres_eei % 2 == 0:
-            use_center = True
-            min_periods = part44_ceres_eei // 2 # deepseak
-            # min_periods = part44_ceres_eei 
-            avg_type = "CENTERED"
-            if print_debug > 9:
-               print(f"main_132: centered: 44.5 ={part44_ceres_eei}")
-        else: # 47 make trailing 48 month runnin average
-            use_center = False
-            min_periods = part44_ceres_eei
-            avg_type = "TRAILING"
-            part44_ceres_eei = part44_ceres_eei + 1
-            if print_debug > 9:
-               print(f"main_139: trailing: 44.6 ={part44_ceres_eei}")
-        df_with_avg = create_running_average('work/c44b_ceres.csv', 
-                                            "work/c44d_ceres.csv",
-                                            window_months=part44_ceres_eei,
-                                            min_periods=min_periods,
-                                            center=use_center,
-                                            column_name='EEI')
-        
-        if print_debug > 9:
-           print(f"main_148: {avg_type} average for {part44_ceres_eei}-month window 44.7")
-        if print_debug > 9:
-               print(f"main_150: created c44d_ceres.csv 44.7 ={part44_ceres_eei}")
-
-               
+    # main.play_61_CERES line 65
     if play_61_CERES > 0: # part 6 
        df61b = convert_ceres_to_csv('read_csv/_61_in__2026_07_EEI_CERES.txt', 
                                     'read_csv/_61b_out_in_ceres.csv')
@@ -118,7 +88,7 @@ def process_ceres_data():
           print(f"main_122: create read_csv/_61c_out_ceres.csv  61.gut ={play_61_CERES}")
 
 
-       
+    # main.play_62_CERES line 92
     # CERES Outgoing Longwave Radiation OLR
     # _62_in__2026_02_Longwave.txt
     if play_62_CERES > 1: #  
@@ -150,6 +120,7 @@ def process_ceres_data():
        if print_debug > 9:
           print(f"main_151: create read_csv/_62e_LongWave.csv 62    ={play_62_CERES}")
 
+# main.play_64_ASR_anomaly line 124
 if play_64_ASR_anomaly > 1: #  
        df64b = convert_ceres_to_csv('read_csv/_64_in__2026_02_ASR_anomaly.txt', 
                                     'read_csv/_64b_ASR.csv')
@@ -169,40 +140,40 @@ if play_64_ASR_anomaly > 1: #
        if print_debug > 9:
           print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
 
-# CERES Outgoing Longwave Radiation OLR
-# _62_in__2026_02_Longwave.txt
+# main.play_66_OLR line 144
+# CERES Outgoing Longwave Radiation OLR  # _62_in__2026_02_Longwave.txt
 if play_66_OLR > 1: #  
        # part 62.b convert download.txt to CERES.csv (no averaging)
        df66b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
-                                    'work/_66b_LongWave.csv')
+                                    'work/_66b_OLR.csv')
        if print_debug > 9:
-          print(f"main_177: create work/_66b_LongWave.csv  66.b ={play_66_OLR}")
+          print(f"main_150: create work/_66b_OLR.csv  66.b ={play_66_OLR}")
        
        window_months=play_66_OLR
        min_periods=12
        use_center=False
        keep_original=True,
-       # part 62.c  CERES.csv (perform averaging)
-       df62c = create_running_average( 'work/_66b_LongWave.csv', 
-                                       'work/_66c_LongWave.csv',
+       # part 66.c  CERES.csv (perform averaging)
+       df66c = create_running_average( 'work/_66b_OLR.csv', 
+                                       'work/_66c_OLR.csv',
                                             window_months=play_66_OLR,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='LongWave')
-       # part 62.e  CERES.csv (add averaging column to plotable-csv)
-       df62e = add_62_csv_column( 'work/_66b_LongWave.csv', 
+       # part 66.e  CERES.csv (add averaging column to plotable-csv)
+       df66e = add_62_csv_column( 'work/_66b_OLR.csv', 
                                   'work/_42_EEI48month_2026_07.csv', 
-                                  'work/_66e_LongWave.csv',
+                                  'work/_66e_OLR.csv',
                                             window_months=play_66_OLR,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='LongWave')
        if print_debug > 9:
-          print(f"main_199: create work/_66e_LongWave.csv 66    ={play_66_OLR}")
+          print(f"main_172: create work/_66e_OLR.csv 66    ={play_66_OLR}")
 
 
 
-
+# main.play_67_albedo line 176
 if play_67_albedo > 0: # 
        df66b = ceres_to_csv(        'read_csv/_66b1_albedo.csv',
                                     'read_csv/_CERES.csv')

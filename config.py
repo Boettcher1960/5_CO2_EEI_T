@@ -92,6 +92,7 @@ c61 = "#0D91A090"
 c62 = "#9522AA90"
 c63 = "#1652D490"
 c64 = "#9522AA90"
+c66 = "#AB263590"
 c67 = "#E1980F90"
 
 c71 = "red"
@@ -141,8 +142,6 @@ y_32max = 800 # 800 GtC
 y_Emin = 0.0 #   EEI in W/m2 y axis left mode
 y_Emax = 2 #   EEI in W/m2 y axis left mode
 
-y_61Emin = 0 #   EEI in W/m2 y axis left mode
-y_61Emax = 2 #   EEI in W/m2 y axis left mode
 
 
 y_TOAmin = 97  # bug is double set in plotting.py line 56
@@ -153,11 +152,17 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_62min = 240  # in W/m2
-y_62max = 242.8  # in W/m2
+y_61Emin = 0 #   EEI in W/m2 y axis left mode
+y_61Emax = 2 #   EEI in W/m2 y axis left mode
+
+y_62min = 240    # OLR in W/m2
+y_62max = 242.8  # OLR in W/m2
 
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
+
+y_66min = 240.1  # OLR in W/m2
+y_66max = 242.7  # OLR in W/m2
 
 y_67min = 0.2  # albedo in %
 y_67max = 0.4  # albedo in %
