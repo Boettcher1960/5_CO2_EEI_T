@@ -179,7 +179,7 @@ def convert66_txt_to_csv(input_file,
     return df
     # end part 66.b convert download.txt to CERES.csv (no averaging)
 
-# part 66.c line172 create66_running_average (input_csv, output_csv, 
+# part 66.c line182 create66_running_average (input_csv, output_csv, 
 def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
                              output_csv, # 'work/_66c_OLR.csv',
                              column_read,             #  column_name='OLR', 'SW_in'
@@ -229,6 +229,57 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
     valid_records = df_output[column_name].notna().sum()    
     return df_output
     # end part 66.c  CERES.csv (perform averaging)
+
+
+# part 67.c line182 create66_running_average (input_csv, output_csv, 
+def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
+                             output_csv, # 'work/_66c_OLR.csv',
+                             column_read,             #  column_name='OLR', 'SW_in'
+                             column_average,          #  column_name='OLR48')
+                             window_months, 
+                             min_periods=None, 
+                             center=True, 
+                             keep_original=True,
+                             column_name='EEI48'): # not used if main has different parameter
+    # part 67.c.2 read csv with raw ceres data into data-frame
+    df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv' # 'work/_65b_SW_in_raw.csv'
+
+    # part 67.c.3 sort the data-frame
+    df['date'] = pd.to_datetime(df['date'])
+    df = df.sort_values('date').reset_index(drop=True)
+
+    # part 67.c.4 check the parameters 
+    if min_periods is None:
+        min_periods = window_months
+
+     # part 67.c.5 mean value (read column OLR)(store in ?)
+    df[column_name] = df[column_read].rolling(
+        window=window_months, 
+        center=center,
+        min_periods=min_periods
+    ).mean()
+
+    # part 67.c.6 first 4 columns are the date
+    output_columns = ['date', 'year', 'month', 'decimal_year']
+
+    # part 67.c.7 columns 5 is ceres txt read value, no average
+    if keep_original:
+        output_columns.append(column_read)
+    # part 67.c.8 columns 6 is the default column_name average
+    output_columns.append(column_name)
+    # part 67.c.9 columns 7 is the parameter column_average average
+    # output_columns.append(column_average)
+
+     # part 67.c.10 copy
+    df_output = df[output_columns].copy()
+    # part 67.c.11 copy to csv
+    df_output.to_csv(output_csv, index=False, float_format='%.6f')
+    
+    
+    return df_output
+    # end part 67.c  CERES.csv (perform averaging)
+
+
 
 
 """

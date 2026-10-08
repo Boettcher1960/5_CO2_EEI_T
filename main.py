@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure
-v = "5F74" # play_67_albedo = 48 CERES 07_2026 
+v = "5F75" # play_67_albedo = 48 CERES 07_2026 
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -232,7 +232,7 @@ if play_67_albedo > 0: #
        
        # part 67.2  read _67_sw_out.csv column sw_out
        df67b = ceres67_to_csv(      'work/_67b_sw_out.csv',
-                                    'work/_CERES.csv')
+                                    'work/_CERES_raw.csv')
        if print_debug > 9:
           print(f"main_237: play_67_albedo  67.b ={play_67_albedo}")
 
@@ -245,14 +245,18 @@ if play_67_albedo > 0: #
           min1_periods=play_67_albedo
        use_center=False
        keep_original=True,
-       # error df66c = create_running_average( 'read_csv/_CERES.csv', 
-       # df66c = create_running_average( 'read_csv/_66b_out_in_ceres.csv', 
-       df67c = create_running_average( 'work/_CERES.csv', 
-                                       'work/_67c_out_ceres.csv',
+       column_read    ='ASR'
+       column_average ='ASR48'
+       # part 66.c  CERES.csv (perform averaging)
+       df67c = create67_running_average( 'work/_CERES_raw.csv', 
+                                         'work/_CERES_1.csv',
+                                          column_read,             #  column_name='OLR')
+                                          column_average,          #  column_name='OLR48')
                                             window_months=play_67_albedo,
-                                            min_periods=min1_periods,
-                                            center=use_center,
-                                            column_name='albedo')
+                                            min_periods=12,
+                                            center=use_center)
+
+
         
        if print_debug > 9:
           print(f"main_255: play_67_albedo  67.d ={play_67_albedo}")
