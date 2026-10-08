@@ -234,13 +234,13 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
 # part 67.c line182 create66_running_average (input_csv, output_csv, 
 def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
                              output_csv, # 'work/_66c_OLR.csv',
-                             column_read,             #  column_name='OLR', 'SW_in'
-                             column_average,          #  column_name='OLR48')
+                             column_read,             #  column_name='ASR'
+                             column_average,          #  column_name='ASR48')
                              window_months, 
                              min_periods=None, 
                              center=True, 
                              keep_original=True,
-                             column_name='EEI48'): # not used if main has different parameter
+                             column_name='ASR48'): # not used if main has different parameter
     # part 67.c.2 read csv with raw ceres data into data-frame
     df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv' # 'work/_65b_SW_in_raw.csv'
 

@@ -247,11 +247,11 @@ if play_67_albedo > 0: #
        keep_original=True,
        column_read    ='ASR'
        column_average ='ASR48'
-       # part 66.c  CERES.csv (perform averaging)
+       # part 66.c  CERES.csv (perform averaging for ASR)
        df67c = create67_running_average( 'work/_CERES_raw.csv', 
-                                         'work/_CERES_1.csv',
-                                          column_read,             #  column_name='OLR')
-                                          column_average,          #  column_name='OLR48')
+                                         'work/_CERES_ASR.csv',
+                                          column_read,             #  column_name='ASR')
+                                          column_average,          #  column_name='ASR48')
                                             window_months=play_67_albedo,
                                             min_periods=12,
                                             center=use_center)
