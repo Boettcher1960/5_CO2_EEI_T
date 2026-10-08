@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F37" # work 66 albedo CERES 07_2026
+v = "5F38" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -148,7 +148,7 @@ if play_66_OLR > 1: #
        # copy to 'work/_66_TOA_OLR_all_sky_2026_07.txt'
        df66b = convert66_ceres_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
                                     'work/_66b_OLR.csv',
-                                    'OLR'
+                                    'toa_net_flux_w_m2'
                                     )
        if print_debug > 9:
           print(f"main_150: create work/_66b_OLR.csv  66.b ={play_66_OLR}")
@@ -163,7 +163,7 @@ if play_66_OLR > 1: #
                                             window_months=play_66_OLR,
                                             min_periods=12,
                                             center=use_center,
-                                            column_name='LongWave')
+                                            column_name='toa_net_flux_w_m2')
        # part 66.e  CERES.csv (add averaging column to plotable-csv)
        df66e = add_62_csv_column( 'work/_66b_OLR.csv', 
                                   'work/_42_EEI48month_2026_07.csv', 
