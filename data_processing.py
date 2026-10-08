@@ -76,8 +76,8 @@ def create_running_average(input_csv,
     #print(f"{window_months}-month running average saved to {output_csv}")
     #print(f"Valid records: {valid_records} out of {len(df_output)}")
     if print_debug_DP > 9:
-        print(f"DataP_71: Valid records: {valid_records} out of {len(df_output)}")
-        print(f"DataP_72: {window_months}-month running average saved to {output_csv} ")
+        print(f"DataP_79: Valid records: {valid_records} out of {len(df_output)}")
+        print(f"DataP_80: {window_months}-month running average saved to {output_csv} ")
     return df_output
     # end part 62.c  CERES.csv (perform averaging)
 
@@ -173,13 +173,13 @@ def convert66_ceres_to_csv(input_file, output_file, column_name):
     # end part 66.b convert download.txt to CERES.csv (no averaging)
 
 # part 66.c line172 create66_running_average (input_csv, output_csv, 
-def create66_running_average(input_csv, # 'work/_66b_OLR_raw.csv'
-                             output_csv, 
+def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
+                             output_csv, # 'work/_66c_OLR.csv',
                              window_months, 
                              min_periods=None, 
                           center=True, 
                           keep_original=True,
-                          column_name='EEI'):
+                          column_name='EEI48'):
     """Create running average for specified window size"""
 
     df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv'
@@ -242,7 +242,7 @@ def add_66_csv_column(input_csv,
         # min_periods = window_months // 2
         min_periods = window_months
    
-    df[column_name] = df['toa_net_flux_w_m2'].rolling(
+    df[column_name] = df['OLR'].rolling(
         window=window_months, 
         center=center,
         min_periods=min_periods
@@ -253,12 +253,12 @@ def add_66_csv_column(input_csv,
 
     output_columns = ['date', 'year', 'month', 'decimal_year', 'EEI']
     if keep_original:
-        output_columns.append('toa_net_flux_w_m2')
+        output_columns.append('OLR')
     output_columns.append(column_name)
    
     #output_columns.append('OLR_EEI')
     # Create OLR_EEI column (fill NaN with 0 before addition)
-    df['OLR_EEI'] = df['EEI'].fillna(0) + df['LongWave'].fillna(0)
+    df['OLR_EEI'] = df['EEI'].fillna(0) + df['OLR'].fillna(0)
     output_columns.append('OLR_EEI')
 
     df_output = df[output_columns].copy()
