@@ -415,7 +415,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c77)
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2023=1.5°C         77", c77, trs)
-
+    elif play_66_OLR > 0:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c66)
+        # Outgoing Longwave Radiation OLR
+        p66_text = f"OLR Outgoing Longwave Radiation - All-Sky  {play_66_OLR}-month moving average                 66"
+        text_4_add_text(ax1, tr2x, tr4y, p66_text, c66, trs) 
 
 
 
