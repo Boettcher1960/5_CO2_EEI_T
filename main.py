@@ -167,6 +167,40 @@ if play_64_ASR_anomaly > 1: #
        if print_debug > 9:
           print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
 
+# CERES Outgoing Longwave Radiation OLR
+# _62_in__2026_02_Longwave.txt
+if play_66_OLR > 1: #  
+       # part 62.b convert download.txt to CERES.csv (no averaging)
+       df66b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
+                                    'work/_66b_LongWave.csv')
+       if print_debug > 9:
+          print(f"main_177: create work/_66b_LongWave.csv  66.b ={play_66_OLR}")
+       
+       window_months=play_66_OLR
+       min_periods=12
+       use_center=False
+       keep_original=True,
+       # part 62.c  CERES.csv (perform averaging)
+       df62c = create_running_average( 'work/_66b_LongWave.csv', 
+                                       'work/_66c_LongWave.csv',
+                                            window_months=play_66_OLR,
+                                            min_periods=12,
+                                            center=use_center,
+                                            column_name='LongWave')
+       # part 62.e  CERES.csv (add averaging column to plotable-csv)
+       df62e = add_62_csv_column( 'work/_66b_LongWave.csv', 
+                                  'work/_42_EEI48month_2026_07.csv', 
+                                  'work/_66e_LongWave.csv',
+                                            window_months=play_66_OLR,
+                                            min_periods=12,
+                                            center=use_center,
+                                            column_name='LongWave')
+       if print_debug > 9:
+          print(f"main_199: create work/_66e_LongWave.csv 66    ={play_66_OLR}")
+
+
+
+
 if play_67_albedo > 0: # 
        df66b = ceres_to_csv(        'read_csv/_66b1_albedo.csv',
                                     'read_csv/_CERES.csv')
