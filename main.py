@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F30" # work 66 albedo CERES 07_2026
+v = "5F31" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -120,6 +120,7 @@ def process_ceres_data():
     # CERES Outgoing Longwave Radiation OLR
     # _62_in__2026_02_Longwave.txt
     if play_62_CERES > 1: #  
+       # part 62.b convert download.txt to CERES.csv (no averaging)
        df62b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
                                     'read_csv/_62b_LongWave.csv')
        if print_debug > 9:
@@ -129,13 +130,14 @@ def process_ceres_data():
        min_periods=12
        use_center=False
        keep_original=True,
+       # part 62.c  CERES.csv (perform averaging)
        df62c = create_running_average( 'read_csv/_62b_LongWave.csv', 
                                        'read_csv/_62c_LongWave.csv',
                                             window_months=play_62_CERES,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='LongWave')
-
+       # part 62.e  CERES.csv (add averaging column to plotable-csv)
        df62e = add_62_csv_column( 'read_csv/_62b_LongWave.csv', 
                                   'read_csv/_42_EEI48month_2026_07.csv', 
                                   'read_csv/_62e_LongWave.csv',

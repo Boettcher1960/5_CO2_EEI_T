@@ -1,9 +1,14 @@
 # data_processing.py
-# version 5b46
+# version 5f33
 import pandas as pd
 import numpy as np
 print_debug_DP = 10 # global variable print_debug = 10
+# part 62.b convert download.txt to CERES.csv (no averaging) convert_ceres_to_csv(input_file, output_file)
+# part 62.c  CERES.csv (perform averaging) create_running_average(input_csv, output_csv, 
+# part 62.e  line 82 CERES.csv (add averaging column to plotable-csv)
 
+
+# part 62.b convert download.txt to CERES.csv (no averaging) convert_ceres_to_csv(input_file, output_file)
 def convert_ceres_to_csv(input_file, output_file):
     """Convert CERES TOA flux ASCII file to CSV format"""
     data = []
@@ -31,6 +36,107 @@ def convert_ceres_to_csv(input_file, output_file):
     if print_debug_DP > 9:
         print(f"DataP_32: Successfully converted {len(df)} records to {output_file}")
     return df
+    # end part 62.b convert download.txt to CERES.csv (no averaging)
+
+# part 62.c  CERES.csv (perform averaging) create_running_average(input_csv, output_csv, 
+def create_running_average(input_csv, 
+                           output_csv, 
+                           window_months, 
+                          min_periods=None, 
+                          center=True, 
+                          keep_original=True,
+                          column_name='EEI'):
+    """Create running average for specified window size"""
+    df = pd.read_csv(input_csv)
+    df['date'] = pd.to_datetime(df['date'])
+    df = df.sort_values('date').reset_index(drop=True)
+    
+    if min_periods is None:
+        # min_periods = window_months // 2
+        min_periods = window_months
+   
+    df[column_name] = df['toa_net_flux_w_m2'].rolling(
+        window=window_months, 
+        center=center,
+        min_periods=min_periods
+    ).mean()
+    
+    output_columns = ['date', 'year', 'month', 'decimal_year']
+    if keep_original:
+        output_columns.append('toa_net_flux_w_m2')
+    output_columns.append(column_name)
+    
+    df_output = df[output_columns].copy()
+    df_output.to_csv(output_csv, index=False, float_format='%.6f')
+    
+    valid_records = df_output[column_name].notna().sum()
+    #print(f"{window_months}-month running average saved to {output_csv}")
+    #print(f"Valid records: {valid_records} out of {len(df_output)}")
+    if print_debug_DP > 9:
+        print(f"DataP_71: Valid records: {valid_records} out of {len(df_output)}")
+        print(f"DataP_72: {window_months}-month running average saved to {output_csv} ")
+    return df_output
+    # end part 62.c  CERES.csv (perform averaging)
+
+# part 62.e  CERES.csv (add averaging column to plotable-csv)
+def add_62_csv_column(input_csv, 
+                      input_EEI_csv, 
+                      output_csv, 
+                      window_months, 
+                      min_periods=None, 
+                      center=True, 
+                      keep_original=True,
+                      column_name='EEI'):
+    """Create running average for specified window size"""
+    df = pd.read_csv(input_csv)
+    df['date'] = pd.to_datetime(df['date'])
+    df = df.sort_values('date').reset_index(drop=True)
+    
+    df2 = pd.read_csv(input_EEI_csv)
+    df2['date'] = pd.to_datetime(df2['date'])
+    df2 = df2.sort_values('date').reset_index(drop=True)
+
+    df = df.merge(df2[['date', 'EEI']], on='date', how='left')
+    # Merge on 'date' column df = df.merge(df2[['date', 'EEI']], on='date', how='left')
+
+    # Create OLR_EEI column (fill NaN with 0 before addition)
+    # df['OLR_EEI'] = df['EEI'].fillna(0) + df['LongWave'].fillna(0)
+
+
+    if min_periods is None:
+        # min_periods = window_months // 2
+        min_periods = window_months
+   
+    df[column_name] = df['toa_net_flux_w_m2'].rolling(
+        window=window_months, 
+        center=center,
+        min_periods=min_periods
+    ).mean()
+
+    # Merge on 'date' column
+    #df = df.merge(df2[['date', 'EEI']], on='date', how='right')
+
+    output_columns = ['date', 'year', 'month', 'decimal_year', 'EEI']
+    if keep_original:
+        output_columns.append('toa_net_flux_w_m2')
+    output_columns.append(column_name)
+   
+    #output_columns.append('OLR_EEI')
+    # Create OLR_EEI column (fill NaN with 0 before addition)
+    df['OLR_EEI'] = df['EEI'].fillna(0) + df['LongWave'].fillna(0)
+    output_columns.append('OLR_EEI')
+
+    df_output = df[output_columns].copy()
+    df_output.to_csv(output_csv, index=False, float_format='%.6f')
+    
+    valid_records = df_output[column_name].notna().sum()
+    #print(f"{window_months}-month running average saved to {output_csv}")
+    #print(f"Valid records: {valid_records} out of {len(df_output)}")
+    if print_debug_DP > 9:
+        print(f"DataP_130: Valid records: {valid_records} out of {len(df_output)}")
+        print(f"DataP_131: {window_months}-month running average saved to {output_csv} ")
+    return df_output
+    # end part 62.e  CERES.csv (add averaging column to plotable-csv)
 
 
 
@@ -109,45 +215,6 @@ def ceres_to_csv(output_file1,output_file2):
 
 
 
-def create_running_average(input_csv, 
-                           output_csv, 
-                           window_months, 
-                          min_periods=None, 
-                          center=True, 
-                          keep_original=True,
-                          column_name='EEI'):
-    """Create running average for specified window size"""
-    df = pd.read_csv(input_csv)
-    df['date'] = pd.to_datetime(df['date'])
-    df = df.sort_values('date').reset_index(drop=True)
-    
-    if min_periods is None:
-        # min_periods = window_months // 2
-        min_periods = window_months
-   
-    df[column_name] = df['toa_net_flux_w_m2'].rolling(
-        window=window_months, 
-        center=center,
-        min_periods=min_periods
-    ).mean()
-    
-    output_columns = ['date', 'year', 'month', 'decimal_year']
-    if keep_original:
-        output_columns.append('toa_net_flux_w_m2')
-    output_columns.append(column_name)
-    
-    df_output = df[output_columns].copy()
-    df_output.to_csv(output_csv, index=False, float_format='%.6f')
-    
-    valid_records = df_output[column_name].notna().sum()
-    #print(f"{window_months}-month running average saved to {output_csv}")
-    #print(f"Valid records: {valid_records} out of {len(df_output)}")
-    if print_debug_DP > 9:
-        print(f"DataP_71: Valid records: {valid_records} out of {len(df_output)}")
-        print(f"DataP_72: {window_months}-month running average saved to {output_csv} ")
-    return df_output
-
-
 def load_co2_mauna_loa(x_anf, x_end): # 22.2 define the mauna loa CO2 data
     """Load Mauna Loa CO2 data"""
     co2_values = [
@@ -169,65 +236,6 @@ def load_co2_mauna_loa(x_anf, x_end): # 22.2 define the mauna loa CO2 data
 def load_gis_temperature():
     """Load GIS temperature data"""
     return pd.read_csv("read_csv/_74_gis_temperature.csv")
-
-# line 97
-def add_62_csv_column(input_csv, 
-                      input_EEI_csv, 
-                      output_csv, 
-                      window_months, 
-                      min_periods=None, 
-                      center=True, 
-                      keep_original=True,
-                      column_name='EEI'):
-    """Create running average for specified window size"""
-    df = pd.read_csv(input_csv)
-    df['date'] = pd.to_datetime(df['date'])
-    df = df.sort_values('date').reset_index(drop=True)
-    
-    df2 = pd.read_csv(input_EEI_csv)
-    df2['date'] = pd.to_datetime(df2['date'])
-    df2 = df2.sort_values('date').reset_index(drop=True)
-
-    df = df.merge(df2[['date', 'EEI']], on='date', how='left')
-    # Merge on 'date' column df = df.merge(df2[['date', 'EEI']], on='date', how='left')
-
-    # Create OLR_EEI column (fill NaN with 0 before addition)
-    # df['OLR_EEI'] = df['EEI'].fillna(0) + df['LongWave'].fillna(0)
-
-
-    if min_periods is None:
-        # min_periods = window_months // 2
-        min_periods = window_months
-   
-    df[column_name] = df['toa_net_flux_w_m2'].rolling(
-        window=window_months, 
-        center=center,
-        min_periods=min_periods
-    ).mean()
-
-    # Merge on 'date' column
-    #df = df.merge(df2[['date', 'EEI']], on='date', how='right')
-
-    output_columns = ['date', 'year', 'month', 'decimal_year', 'EEI']
-    if keep_original:
-        output_columns.append('toa_net_flux_w_m2')
-    output_columns.append(column_name)
-   
-    #output_columns.append('OLR_EEI')
-    # Create OLR_EEI column (fill NaN with 0 before addition)
-    df['OLR_EEI'] = df['EEI'].fillna(0) + df['LongWave'].fillna(0)
-    output_columns.append('OLR_EEI')
-
-    df_output = df[output_columns].copy()
-    df_output.to_csv(output_csv, index=False, float_format='%.6f')
-    
-    valid_records = df_output[column_name].notna().sum()
-    #print(f"{window_months}-month running average saved to {output_csv}")
-    #print(f"Valid records: {valid_records} out of {len(df_output)}")
-    if print_debug_DP > 9:
-        print(f"DataP_130: Valid records: {valid_records} out of {len(df_output)}")
-        print(f"DataP_131: {window_months}-month running average saved to {output_csv} ")
-    return df_output
 
 
 
