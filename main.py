@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F40" # work 66 albedo CERES 07_2026
+v = "5F41" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -147,25 +147,25 @@ if play_66_OLR > 1: #
        # CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt downloaded
        # copy to 'work/_66_TOA_OLR_all_sky_2026_07.txt'
        df66b = convert66_ceres_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
-                                    'work/_66b_OLR.csv',
-                                    'toa_net_flux_w_m2'
+                                    'work/_66b_OLR_raw.csv',
+                                    'OLR'
                                     )
        if print_debug > 9:
-          print(f"main_150: create work/_66b_OLR.csv  66.b ={play_66_OLR}")
+          print(f"main_154: created  work/_66b_OLR.csv  66.b ={play_66_OLR}")
        
        window_months=play_66_OLR
        min_periods=12
        use_center=False
        keep_original=True,
        # part 66.c  CERES.csv (perform averaging)
-       df66c = create66_running_average( 'work/_66b_OLR.csv', 
-                                       'work/_66c_OLR.csv',
+       df66c = create66_running_average( 'work/_66b_OLR_raw.csv', 
+                                         'work/_66c_OLR.csv',
                                             window_months=play_66_OLR,
                                             min_periods=12,
                                             center=use_center,
-                                            column_name='toa_net_flux_w_m2')
+                                            column_name='OLR')
        # part 66.e  CERES.csv (add averaging column to plotable-csv)
-       df66e = add_62_csv_column( 'work/_66b_OLR.csv', 
+       df66e = add_66_csv_column( 'work/_66b_OLR.csv', 
                                   'work/_42_EEI48month_2026_07.csv', 
                                   'work/_66e_OLR.csv',
                                             window_months=play_66_OLR,

@@ -1,4 +1,4 @@
-date,year,month,decimal_year,toa_net_flux_w_m2,toa_net_flux_w_m2
+date,year,month,decimal_year,OLR,OLR
 2000-03-01,2000,3,2000.208333,,
 2000-04-01,2000,4,2000.291667,,
 2000-05-01,2000,5,2000.375000,,
