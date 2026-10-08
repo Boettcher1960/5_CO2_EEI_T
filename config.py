@@ -34,7 +34,7 @@ plot42_EEI_48month = 2  # 2 5,4,3,2 print EEI 48 month running mean. Info in lin
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 3 # 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
-plot46_OLR_EEI = 0 # error ASR=OLR+EEI Absorbed Solar Radiation 4 error 3 error
+plot46_ASR = 4 # ASR Absorbed Solar Radiation from _CERES_ASR 48 months average
 plot47_ASR_12month = 0  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)

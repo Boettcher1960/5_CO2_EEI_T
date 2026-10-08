@@ -20,7 +20,7 @@
 # plot25_long_CO2,  NOAA 800_000 year ice data,      plot_9_create_all_plots() ,  line 447
 # plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603
 # plot42_EEI_48month  Earth Energy Imbalance W/m² running average over 48 months   ok     line 748
-# plot46_OLR_EEI  ASR=OLR+EEI AbsorbedSolar Radiation W/m² running average over 48 months line 793
+# plot46_ASR  ASR=OLR+EEI AbsorbedSolar Radiation W/m² running average over 48 months line 793
 # plot52_delta_CO2_red_bars,   Mauna Loa delta    ,  plot_9_create_all_plots() ,  line 630
 # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots()   line 1040
 
@@ -188,7 +188,7 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.100
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-    elif plot46_OLR_EEI  == 2:  # 43.5 y axe left 
+    elif plot46_ASR  == 2:  # 43.5 y axe left 
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_62min, y_62max)
         ax1.set_ylabel("Earth Energy: ASR = OLR + EEI in W/m² ", color=c46, fontsize=20)
@@ -382,7 +382,7 @@ def plot8_right_y_axe_for_OLR_45(ax45,right62): # 62.5
     ax45.set_ylim(y_45min, y_45max) #
 
 def plot8_right_y_axe_for_OLR_46(ax46,right62): # 62.5
-    outward_right =  ( plot46_OLR_EEI *  yr_60 ) - yr_150
+    outward_right =  ( plot46_ASR *  yr_60 ) - yr_150
     ax46.spines.right.set_position(("outward", outward_right))
     ax46.set_ylabel("ASR=OLR+EEI AbsorbedSolarRadiation in W/m²  46", color=c46, fontname="Arial",fontsize=18)
     ax46.tick_params(axis="y", labelcolor=c46)
@@ -796,21 +796,21 @@ def plot_9_create_all_plots(ax1, data):
         # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
         if plot45_OLR > 2:
            plot8_right_y_axe_for_OLR_45( ax45 , 0 ) # 45.4 line 450
-    # plot46_OLR_EEI  ASR=OLR+EEI AbsorbedSolar Radiation W/m² running average over 48 months line 793
-    if plot46_OLR_EEI > 0:
-        if plot46_OLR_EEI == 2:
+    # plot46_ASR  ASR=OLR+EEI AbsorbedSolar Radiation W/m² running average over 48 months line 793
+    if plot46_ASR > 0:
+        if plot46_ASR == 2:
            # Plot on the left axis (ax1) instead of creating a right axis
-           ax1.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR_EEI"], '-', 
-                  label="OLR K45", color=c46, linewidth=4)
+           ax1.plot(data['ceres_46']["decimal_year"], data['ceres_46']["ASR48"], '-', 
+                  label="OLR K46", color=c46, linewidth=4)
            # The left axis is already configured in plot_1_axe
         else:
            ax46 = ax1.twinx()
-           ax46.plot(data['ceres_46']["decimal_year"], data['ceres_46']["OLR_EEI"], '-', 
-                  label="OLR K45", color=c46, linewidth=4)
+           ax46.plot(data['ceres_46']["decimal_year"], data['ceres_46']["ASR48"], '-', 
+                  label="OLR K46", color=c46, linewidth=4)
            ax46.tick_params(axis="y", labelcolor=c46)
            ax46.set_ylim(y_62min, y_62max)
            # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
-           if plot46_OLR_EEI > 2:
+           if plot46_ASR > 2:
               plot8_right_y_axe_for_OLR_46( ax46 , 0 ) # 45.4 line 450
     if plot47_ASR_12month > 0:
         if plot47_ASR_12month == 2:
