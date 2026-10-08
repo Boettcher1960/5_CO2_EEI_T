@@ -452,7 +452,6 @@ def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
     ax64.set_ylim(y_64min, y_64max) #
 
 #  OLR  W/m² moving average 48 month 
-# plot8_right_y_axe_for_C_66                     ,  line  520
 def plot8_right_y_axe_for_C_66(ax66,right62): # 62.5
     outward_right =  ( 3 *  yr_60 ) - yr_150
     ax66.spines.right.set_position(("outward", outward_right))
@@ -995,7 +994,7 @@ def plot_9_create_all_plots(ax1, data):
             plot8_right_y_axe_for_C_63(ax63,1) # 63.5 line 500
     if play_66_OLR > 0:
         ax66 = ax1.twinx()
-        ax66.plot(data['ceres_66']["decimal_year"], data['ceres_66']["OLR"], '-', 
+        ax66.plot(data['ceres_66']["decimal_year"], data['ceres_66']["OLR48"], '-', 
                   label="OLR K66", color=c66, linewidth=2)
         ax66.tick_params(axis="y", labelcolor=c66)
         ax66.set_ylim(y_66min, y_66max)
