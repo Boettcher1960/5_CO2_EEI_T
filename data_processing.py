@@ -208,13 +208,21 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
         center=center,
         min_periods=min_periods
     ).mean()
-    
+
+    # part 66.c.6 first 4 columns are the date
     output_columns = ['date', 'year', 'month', 'decimal_year']
+
+    # part 66.c.7 columns 5 is ceres txt read value, no average
     if keep_original:
-        output_columns.append('OLR')
+        output_columns.append(column_read)
+    # part 66.c.8 columns 6 is the default column_name average
     output_columns.append(column_name)
-    
+    # part 66.c.9 columns 7 is the parameter column_average average
+    # output_columns.append(column_average)
+
+     # part 66.c.10 copy
     df_output = df[output_columns].copy()
+    # part 66.c.11 copy to csv
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
     
     valid_records = df_output[column_name].notna().sum()    
