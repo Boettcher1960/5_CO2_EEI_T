@@ -316,7 +316,7 @@ def ceres_to_csv(output_file1,output_file2):
     df = df[['date', 'year', 'month', 'decimal_year', 'sw_out']]
     df.to_csv(output_file1, index=False, float_format='%.6f')
     if print_debug_DP > 9:
-        print(f"DataP_60: Successfully converted {len(df)} records to {output_file1}")
+        print(f"DataP319: Successfully converted {len(df)} records to {output_file1}")
 
     # 25 rename      to _66_TOA_Incoming_Solar_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
     #         'read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
@@ -338,7 +338,7 @@ def ceres_to_csv(output_file1,output_file2):
                     continue
 
     if print_debug_DP > 9:
-        print(f"DataP_80: file2 read {len(df)} records to {output_file2}")
+        print(f"DataP341: file2 read {len(df)} records to {output_file2}")
 
     
     df2 = pd.DataFrame(data2, columns=['year', 'month', 'sw_in'])
