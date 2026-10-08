@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F31" # work 66 albedo CERES 07_2026
+v = "5F32" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -49,7 +49,7 @@ from models import *
 
 
 if print_debug > 19:
-   print("main_057: TOA", y_TOAmin, y_TOAmax, play_62_CERES, part44_ceres_eei)
+   print("main_052: start main ", y_TOAmin, y_TOAmax, play_62_CERES, part44_ceres_eei)
 
 
 def process_ceres_data():
@@ -90,6 +90,8 @@ def process_ceres_data():
            print(f"main_148: {avg_type} average for {part44_ceres_eei}-month window 44.7")
         if print_debug > 9:
                print(f"main_150: created c44d_ceres.csv 44.7 ={part44_ceres_eei}")
+
+               
     if play_61_CERES > 0: # part 6 
        df61b = convert_ceres_to_csv('read_csv/_61_in__2026_07_EEI_CERES.txt', 
                                     'read_csv/_61b_out_in_ceres.csv')
