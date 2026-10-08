@@ -144,7 +144,9 @@ if play_64_ASR_anomaly > 1: #
 # CERES Outgoing Longwave Radiation OLR  # _62_in__2026_02_Longwave.txt
 if play_66_OLR > 1: #  
        # part 62.b convert download.txt to CERES.csv (no averaging)
-       df66b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
+       # CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt downloaded
+       # copy to 'work/_66_TOA_OLR_all_sky_2026_07.txt'
+       df66b = convert_ceres_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
                                     'work/_66b_OLR.csv')
        if print_debug > 9:
           print(f"main_150: create work/_66b_OLR.csv  66.b ={play_66_OLR}")

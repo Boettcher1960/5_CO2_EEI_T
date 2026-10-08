@@ -208,9 +208,6 @@ def ceres_to_csv(output_file1,output_file2):
     df2.to_csv(output_file2, index=False, float_format='%.6f')
     if print_debug_DP > 9:
         print(f"DataP_90: Successfully converted {len(df)} records to {output_file2}")
-
-
-
     return df2
 
 
