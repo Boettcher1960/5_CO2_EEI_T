@@ -184,7 +184,7 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
                              output_csv, # 'work/_66c_OLR.csv',
                              column_read,             #  column_name='OLR', 'SW_in'
                              column_average,          #  column_name='OLR48')
-                             columnname,
+                             columnname,              #  column_name='SW_in')
                              window_months, 
                              min_periods=None, 
                              center=True, 
