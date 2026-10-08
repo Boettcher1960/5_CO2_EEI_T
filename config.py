@@ -33,7 +33,7 @@ plot34_CO2 = 0 # plot34_CO2_emission mode 4
 plot42_EEI_48month = 2  # 2 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
-plot45_OLR = 3 # 4 looks like simons 48 months. Outgoing Longwave Radiation OLR
+plot45_OLR = 3 # 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_OLR_EEI = 0 # error ASR=OLR+EEI Absorbed Solar Radiation 4 error 3 error
 plot47_ASR_12month = 0  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
 
@@ -51,14 +51,12 @@ play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
-play_66_OLR = 48 # new outgoing longwave radiation OLR = 240 W/m²
-                # todo average 48 same like play_67_albedo
+play_66_OLR = 0 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
 play_67_albedo = 12   # create 1..12..48..99 CERES
                       # todo average 48
                       # todo plot play_67_albedo
 play_68_EEI = 0 # new
                 # todo average 48
-
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
@@ -82,7 +80,7 @@ c42 = "purple"
 c42 = "#13DF2F84"
 c43 = "#23442884"
 c44 = "blue"
-c45 = "#B31743DC"
+c45 = "#DE2B1ACC"
 c46 = "#481725DC"
 c47 = "#481725DC"
 c52 = "#7C8825FA"
@@ -146,6 +144,10 @@ y_Emax = 2 #   EEI in W/m2 y axis left mode
 
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
+
+y_45min = 240    # OLR in W/m2
+y_45max = 242.8  # OLR in W/m2
+
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars
