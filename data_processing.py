@@ -229,8 +229,8 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
     return df_output
     # end part 66.c  CERES.csv (perform averaging)
 
-
-# part 66.e line 216 add_66_csv_column   (add averaging column to plotable-csv)
+"""
+# part 66.e not used line 216 add_66_csv_column   (add averaging column to plotable-csv)
 def add_66_csv_column(input_csv, 
                       input_EEI_csv, 
                       output_csv, 
@@ -239,7 +239,7 @@ def add_66_csv_column(input_csv,
                       center=True, 
                       keep_original=True,
                       column_name='OLR48'):
-    """Create running average for specified window size"""
+    
     df = pd.read_csv(input_csv)
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values('date').reset_index(drop=True)
@@ -284,7 +284,7 @@ def add_66_csv_column(input_csv,
     valid_records = df_output[column_name].notna().sum()
     return df_output
     # end part 66.e  CERES.csv (add averaging column to plotable-csv)
-
+    """
 
 def ceres_to_csv(output_file1,output_file2):
     """Convert CERES TOA flux ASCII file to CSV format"""

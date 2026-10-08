@@ -453,7 +453,7 @@ def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
 
 #  OLR  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_66(ax66,right62): # 62.5
-    outward_right =  ( 3 *  yr_60 ) - yr_150
+    outward_right =  ( 4 *  yr_60 ) - yr_150
     ax66.spines.right.set_position(("outward", outward_right))
     ax66.set_ylabel("Outgoing Longwave Radiation OLR in W/m²       66", color=c66, fontname="Arial",fontsize=18)
     ax66.tick_params(axis="y", labelcolor=c66)
