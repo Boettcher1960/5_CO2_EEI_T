@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F68" # play_65_ASR = 48 albedo CERES 07_2026
+v = "5F71" # play_67_albedo = 48 CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -178,7 +178,7 @@ if play_65_ASR > 1: #
 # main.play_66_OLR line 144
 # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
 if play_66_OLR > 1: #  
-       # part 62.b convert download.txt to CERES.csv (no averaging)
+       # part 66.b convert download.txt to CERES.csv (no averaging)
        # CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt downloaded
        # copy to 'work/_66_TOA_OLR_all_sky_2026_07.txt'
        df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
@@ -228,11 +228,15 @@ if play_66_OLR > 1: #
 
 # main.play_67_albedo line 176
 if play_67_albedo > 0: # 
-       df66b = ceres67_to_csv(      'read_csv/_66b1_albedo.csv',
+       # part 67.1 txt to _67_sw_out.csv
+       
+       # part 67.2  read _67_sw_out.csv column sw_out
+       df67b = ceres67_to_csv(      'work/_67b_sw_out.csv',
                                     'work/_CERES.csv')
        if print_debug > 9:
-          print(f"main_234: play_67_albedo  66.b ={play_67_albedo}")
-       
+          print(f"main_237: play_67_albedo  67.b ={play_67_albedo}")
+
+       # part 67.3
        window_months=play_67_albedo
 
        if play_67_albedo > 11:
@@ -243,7 +247,7 @@ if play_67_albedo > 0: #
        keep_original=True,
        # error df66c = create_running_average( 'read_csv/_CERES.csv', 
        # df66c = create_running_average( 'read_csv/_66b_out_in_ceres.csv', 
-       df66c = create_running_average( 'work/_CERES.csv', 
+       df67c = create_running_average( 'work/_CERES.csv', 
                                        'work/_67c_out_ceres.csv',
                                             window_months=play_67_albedo,
                                             min_periods=min1_periods,
@@ -251,7 +255,7 @@ if play_67_albedo > 0: #
                                             column_name='albedo')
         
        if print_debug > 9:
-          print(f"main_191: play_67_albedo  66.d ={play_67_albedo}")
+          print(f"main_255: play_67_albedo  67.d ={play_67_albedo}")
 
 
 
