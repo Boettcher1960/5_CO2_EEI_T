@@ -381,12 +381,12 @@ def plot8_right_y_axe_for_OLR_45(ax45,right62): # 62.5
     ax45.tick_params(axis="y", labelcolor=c45)
     ax45.set_ylim(y_45min, y_45max) #
 
-def plot8_right_y_axe_for_OLR_46(ax46,right62): # 62.5
+def plot8_right_y_axe_for_ASR_46(ax46,right62): # 62.5
     outward_right =  ( plot46_ASR *  yr_60 ) - yr_150
     ax46.spines.right.set_position(("outward", outward_right))
     ax46.set_ylabel("ASR=OLR+EEI AbsorbedSolarRadiation in W/m²  46", color=c46, fontname="Arial",fontsize=18)
     ax46.tick_params(axis="y", labelcolor=c46)
-    ax46.set_ylim(y_62min, y_62max) #
+    ax46.set_ylim(y_46min, y_46max) #
 
 def plot8_right_y_axe_for_47(ax47,right62): # 62.5
     outward_right =  ( plot47_ASR_12month *  yr_60 ) - yr_150
@@ -808,10 +808,10 @@ def plot_9_create_all_plots(ax1, data):
            ax46.plot(data['ceres_46']["decimal_year"], data['ceres_46']["ASR48"], '-', 
                   label="OLR K46", color=c46, linewidth=4)
            ax46.tick_params(axis="y", labelcolor=c46)
-           ax46.set_ylim(y_62min, y_62max)
-           # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
+           ax46.set_ylim(y_46min, y_46max)
+           # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  812
            if plot46_ASR > 2:
-              plot8_right_y_axe_for_OLR_46( ax46 , 0 ) # 45.4 line 450
+              plot8_right_y_axe_for_ASR_46( ax46 , 0 ) # 45.4 line 450
     if plot47_ASR_12month > 0:
         if plot47_ASR_12month == 2:
            # Plot on the left axis (ax1) instead of creating a right axis

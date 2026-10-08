@@ -145,7 +145,8 @@ y_TOAmax = 100 # bug is double set in plotting.py line 57
 
 y_45min = 240    # OLR in W/m2
 y_45max = 242.8  # OLR in W/m2
-
+y_46min = 240    # ASR in W/m2
+y_46max = 242.8  # ASR in W/m2
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars
