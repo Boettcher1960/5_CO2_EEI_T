@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure 
-v = "5F50" # work 66 albedo CERES 07_2026
+v = "5F51" # work 66 albedo CERES 07_2026
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -283,12 +283,18 @@ def load_plot_data():
         data['ceres_62'] = pd.read_csv("read_csv/_62c_LongWave.csv")
         # data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
-           print(f"main_201: 62.9 read ={play_62_CERES}")    
+           print(f"main_286: 62.9 read ={play_62_CERES}")    
     if play_64_ASR_anomaly > 0: # 62.9 read
         data['ceres_64'] = pd.read_csv("read_csv/_64c_ASR.csv")
         # data['ceres_64'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
-           print(f"main_235: 64.9 read ={play_64_ASR_anomaly}") 
+           print(f"main_291: 64.9 read ={play_64_ASR_anomaly}") 
+    if play_66_OLR > 0: # 66.9 read 'work/_66c_OLR.csv'
+        data['ceres_66'] = pd.read_csv("work/_66c_OLR.csv")
+        if print_debug > 9:
+           print(f"main_296: 66.9 read ={play_66_OLR}")  
+
+
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.3
         data['gis_temp'] = load_gis_temperature()

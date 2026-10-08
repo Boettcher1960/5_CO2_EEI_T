@@ -451,6 +451,14 @@ def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
     ax64.tick_params(axis="y", labelcolor=c64)
     ax64.set_ylim(y_64min, y_64max) #
 
+#  OLR  W/m² moving average 48 month 
+# plot8_right_y_axe_for_C_66                     ,  line  520
+def plot8_right_y_axe_for_C_66(ax66,right62): # 62.5
+    outward_right =  ( 3 *  yr_60 ) - yr_150
+    ax66.spines.right.set_position(("outward", outward_right))
+    ax66.set_ylabel("Outgoing Longwave Radiation OLR in W/m²       66", color=c66, fontname="Arial",fontsize=18)
+    ax66.tick_params(axis="y", labelcolor=c66)
+    ax66.set_ylim(y_66min, y_66max) #
 
 
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
@@ -985,6 +993,17 @@ def plot_9_create_all_plots(ax1, data):
         ax63.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
         if play_63_CB > 2:
             plot8_right_y_axe_for_C_63(ax63,1) # 63.5 line 500
+    if play_66_OLR > 0:
+        ax66 = ax1.twinx()
+        ax66.plot(data['ceres_66']["decimal_year"], data['ceres_66']["OLR"], '-', 
+                  label="OLR K66", color=c66, linewidth=2)
+        ax66.tick_params(axis="y", labelcolor=c66)
+        ax66.set_ylim(y_66min, y_66max)
+        if print_debug > 9:
+           print(f"plot_995: ax66 66.8 ={play_66_OLR}")
+        if play_66_OLR > 2:
+           plot8_right_y_axe_for_C_66( ax66 , 0 ) # 42.4 line 450
+
 
 
     if plot71_temperature > 0 : # 71.4
