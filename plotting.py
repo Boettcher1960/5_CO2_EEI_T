@@ -789,7 +789,7 @@ def plot_9_create_all_plots(ax1, data):
         ax44.set_ylim(y_Emin, y_Emax)
     if plot45_OLR > 0:
         ax45 = ax1.twinx()
-        ax45.plot(data['ceres_45']["decimal_year"], data['ceres_45']["LongWave"], '-', 
+        ax45.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR48"], '-', 
                   label="OLR K45", color=c45, linewidth=4)
         ax45.tick_params(axis="y", labelcolor=c45)
         ax45.set_ylim(y_62min, y_62max)
