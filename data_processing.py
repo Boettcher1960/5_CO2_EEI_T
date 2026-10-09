@@ -429,16 +429,17 @@ def ceres67_to_csv(
                     data3.append([year3, month3, flux3])
                 except ValueError:
                     continue
-
+    # 67.13 print
     if print_debug_DP > 9:
         print(f"DataP434: read file3  _67_EEI_TOA_Net_Flux_2026_07.txt to {output_file2}")
 
-    # 67.14 copy data3 into df3 data field
+    # 67.14 copy data3 into df3 data field 'EEI_raw'
     df3 = pd.DataFrame(data3, columns=['year', 'month', 'EEI_raw'])
 
     # read4
-    # download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
-    # rename 'read_csv/_67_TOA_Longwave_Flux_2026_07.txt'
+    # 67.15 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+    # 67.16 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+    # 67.17 read 4 read_csv/_67_TOA_Longwave_Flux_2026_07.txt into data4 field
     with open('read_csv/_67_TOA_Longwave_Flux_2026_07.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
@@ -454,29 +455,31 @@ def ceres67_to_csv(
                     data4.append([year4, month4, flux4])
                 except ValueError:
                     continue
-
+    # 67.18 print
     if print_debug_DP > 9:
-        print(f"DataP448: file4 read ")
+        print(f"DataP460: read file4  _67_TOA_Longwave_Flux_2026_07 to {output_file2}")
+
+    # 67.19 copy data4 into df4 data field 'Longwave_out'
     df4 = pd.DataFrame(data4, columns=['year', 'month', 'Longwave_out'])
 
-
-
-    
+    # 67.20 copy data2 into df2 data field
+    # 67.21 add new column5 'sw_in' to data field df2
     df2 = pd.DataFrame(data2, columns=['year', 'month', 'sw_in'])
     df2['date'] = pd.to_datetime(df2['year'].astype(str) + '-' + df2['month'].astype(str) + '-01')
     df2['decimal_year'] = df2['year'] + (df2['month'] - 0.5) / 12
-    # part 67.d.7 
+    
+    # 67.22 add new column5 'sw_in' to data field df2
     df2 = df2[['date', 'year', 'month', 'decimal_year', 'sw_in']]
-    # part 67.d.7 add a new column 6
+    # 67.22 append new column6 'sw_out' to data field df2
     df2['sw_out'] = df[['sw_out']]
-    # part 67.d.7 add a new column 7
+    # 67.23 calculate and append new column7 'albedo' to data field df2
     df2['albedo'] = df2['sw_out'] / df2['sw_in']
-    # part 67.d.7 add a new column 8
+    # 67.24 calculate and append new column8 'darkening' to data field df2
     df2['darkening'] = 1 - ( df2['sw_out'] / df2['sw_in'] )
+
+
     # part 67.d.7 add a new column 9
     df2['ASR'] = df2['sw_in'] - df2['sw_out']
-
-
     # part 67.d.7 add a new column 10
     df2['EEI_raw'] = df3['EEI_raw']
     # part 67.d.7 add a new column 11
