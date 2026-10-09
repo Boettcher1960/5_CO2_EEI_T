@@ -428,7 +428,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif play_67_albedo > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c67)
         # albedo
-        p67_text = f"albedo - All-Sky  {play_67_albedo}-month moving average                  67"
+        p67_text = f"Albedo = sw_out / sw_in             {play_67_albedo}-month moving average - min-max swapped      67"
         text_4_add_text(ax1, tr2x, tr4y, p67_text, c67, trs) 
 
 
