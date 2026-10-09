@@ -396,7 +396,38 @@ def ceres67_to_csv(
                     continue
 
     if print_debug_DP > 9:
-        print(f"DataP341: file2 read {len(df)} records to {output_file2}")
+        print(f"DataP399: file2 read {len(df)} records to {output_file2}")
+
+    # read3
+    # download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+    # rename 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+    #       to _66_TOA_Net_Flux_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+    #         'read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
+    #  with open(input_file2, 'r') as f: 
+    with open('read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt', 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('#') or line.startswith('CERES'):
+                continue
+            parts = line.split()
+            if len(parts) >= 3:
+                try:
+                    year2 = int(parts[0])
+                    month2 = int(parts[1])
+                    flux3 = float(parts[2])
+                    data2.append([year2, month2, flux3])
+                except ValueError:
+                    continue
+
+    if print_debug_DP > 9:
+        print(f"DataP421: file3 read {len(df)} records to {output_file2}")
+
+
+
+
+
+
 
     
     df2 = pd.DataFrame(data2, columns=['year', 'month', 'sw_in'])
@@ -410,9 +441,15 @@ def ceres67_to_csv(
     df2['albedo'] = df2['sw_out'] / df2['sw_in']
     # part 67.d.7 add a new column 8
     df2['darkening'] = 1 - ( df2['sw_out'] / df2['sw_in'] )
-
     # part 67.d.7 add a new column 9
     df2['ASR'] = df2['sw_in'] - df2['sw_out']
+
+
+
+
+
+
+
     # part 67.d.7 add a new column 10
     df2['EEI3'] = df2['sw_in'] - df2['sw_out']
     # part 67.d.7 add a new column 11
