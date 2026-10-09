@@ -391,7 +391,7 @@ def plot8_right_y_axe_for_ASR_46(ax46,right62): # 62.5
 def plot8_right_y_axe_for_47(ax47,right62): # 62.5
     outward_right =  ( plot47_albedo48 *  yr_60 ) - yr_150
     ax47.spines.right.set_position(("outward", outward_right))
-    ax47.set_ylabel("Albedo in % swe_out / sw_in  47", color=c47, fontname="Arial",fontsize=18)
+    ax47.set_ylabel("Albedo in % per-cent   sw_out / sw_in  47", color=c47, fontname="Arial",fontsize=18)
     ax47.tick_params(axis="y", labelcolor=c47)
     ax47.set_ylim(y_47min, y_47max) #
 
@@ -830,18 +830,17 @@ def plot_9_create_all_plots(ax1, data):
            # The left axis is already configured in plot_1_axe
         else:
            ax47 = ax1.twinx()
+           ax47.plot(data['ceres_47']["decimal_year"], data['ceres_47']["albedo48"], '-', 
+                             label="OLR K47", color=c47, linewidth=4)
+           ax47.tick_params(axis="y", labelcolor=c47)
            # ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
            # https://jimehansen.substack.com/p/2026-on-track-for-warmest-year
            # Fig. 2. Earth’s satellite-observed ab# sorbed solar radiation (ASR) and 
            # relative to their 2000-2010 averages
            # plotting line 813 ["ASR"]-0.8  add 0,5 W to ASR CERES data
-           ax47.plot(data['ceres_47']["decimal_year"], data['ceres_47']["albedo48"]-0.8, '-', 
-                  label="ASR K47", color=c47, linewidth=4)
-           ax47.tick_params(axis="y", labelcolor=c47)
            ax47.set_ylim(y_47min, y_47max)
-           # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
            if plot47_albedo48 > 2:
-              plot8_right_y_axe_for_47( ax47 , 0 ) # 45.4 line 450
+              plot8_right_y_axe_for_47( ax47 , 0 ) # 47.4 line 844
 
     # plot52_delta_CO2_red_bars, Mauna Loa delta ,  plot_9_create_all_plots() ,   line 630
 
