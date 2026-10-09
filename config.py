@@ -169,6 +169,8 @@ y_67min = 0.285  # albedo in %
 y_67max = 0.295  # albedo in %
 y_67min = 0.2936  # 0.294 albedo in %
 y_67max = 0.2862  # 0.286 albedo in %
+y_67min = 0.294 # albedo in %
+y_67max = 0.286 # albedo in %
 
 
 
