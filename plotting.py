@@ -391,9 +391,9 @@ def plot8_right_y_axe_for_ASR_46(ax46,right62): # 62.5
 def plot8_right_y_axe_for_47(ax47,right62): # 62.5
     outward_right =  ( plot47_albedo48 *  yr_60 ) - yr_150
     ax47.spines.right.set_position(("outward", outward_right))
-    ax47.set_ylabel("ASR  Absorbed Solar Radiation in W/m²  47", color=c47, fontname="Arial",fontsize=18)
+    ax47.set_ylabel("Albedo in % swe_out / sw_in  47", color=c47, fontname="Arial",fontsize=18)
     ax47.tick_params(axis="y", labelcolor=c47)
-    ax47.set_ylim(y_64min, y_64max) #
+    ax47.set_ylim(y_47min, y_47max) #
 
 
 # plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance     ,  line  383

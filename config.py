@@ -35,7 +35,7 @@ plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running me
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 3 # 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR = 2 # ASR Absorbed Solar Radiation from _CERES_ASR 48 months average
-plot47_albedo48 = 5  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
+plot47_albedo48 = 4  #  _47_ASR_12month_2026_02.csv  Absorbed Solar Radiation
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
@@ -50,7 +50,7 @@ play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1
 play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
 play_66_OLR = 0 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
-play_67_albedo = 48   # create 1..12..48..99 CERES
+play_67_albedo = 0   # create 1..12..48..99 CERES
                       # todo average 48
                       # todo plot play_67_albedo
 play_68_EEI = 0 # new
@@ -80,7 +80,7 @@ c43 = "#23442884"
 c44 = "blue"
 c45 = "#DE2B1ACC"
 c46 = "#481725DC"
-c47 = "#481725DC"
+c47 = "#31A28ADC"
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"
@@ -149,7 +149,8 @@ y_46min = 240    # ASR in W/m2
 y_46max = 242.8  # ASR in W/m2
 y_47min = 0.294 # albedo in %
 y_47max = 0.286 # albedo in %
-
+y_47min = 0.293 # albedo in %
+y_47max = 0.285 # albedo in %
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars
