@@ -389,7 +389,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr4y, 
             "ASR Absorbed Solar Radiation ASR  W/m² moving average 48 month                     46", 
                     c46, trs)
-    elif plot47_ASR_12month == 4: # plot47_ASR_12month = 4 # 
+    elif plot47_albedo48 == 4: # plot47_albedo48 = 4 # 
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c47)
         text_4_add_text(ax1, tr2x, tr4y, 
             "Absorbed Solar Radiation ASR  W/m² moving average 12 month   Hansen+0.8      47", 
