@@ -232,6 +232,7 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
 
 
 # part 67.c line182 create66_running_average (input_csv, output_csv, 
+# part 67.37  CERES.csv (perform averaging for albedo)
 def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
                              output_csv, # 'work/_66c_OLR.csv',
                              column_read,             #  column_name='ASR'
@@ -240,7 +241,8 @@ def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
                              min_periods=None, 
                              center=True, 
                              keep_original=True,
-                             column_name='ASR48'): # not used if main has different parameter
+                             column_name='ASR48'   # not used if main has different parameter
+                             ): 
     # part 67.c.2 read csv with raw ceres data into data-frame
     df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv' # 'work/_65b_SW_in_raw.csv'
 
@@ -279,65 +281,6 @@ def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
     return df_output
     # end part 67.c  CERES.csv (perform averaging)
 
-
-
-
-"""
-# part 66.e not used line 216 add_66_csv_column   (add averaging column to plotable-csv)
-def add_66_csv_column(input_csv, 
-                      input_EEI_csv, 
-                      output_csv, 
-                      window_months, 
-                      min_periods=None, 
-                      center=True, 
-                      keep_original=True,
-                      column_name='OLR48'):
-    
-    df = pd.read_csv(input_csv)
-    df['date'] = pd.to_datetime(df['date'])
-    df = df.sort_values('date').reset_index(drop=True)
-    
-    df2 = pd.read_csv(input_EEI_csv)
-    df2['date'] = pd.to_datetime(df2['date'])
-    df2 = df2.sort_values('date').reset_index(drop=True)
-
-    df = df.merge(df2[['date', 'EEI']], on='date', how='left')
-    # Merge on 'date' column df = df.merge(df2[['date', 'EEI']], on='date', how='left')
-
-    # Create OLR_EEI column (fill NaN with 0 before addition)
-    # df['OLR_EEI'] = df['EEI'].fillna(0) + df['LongWave'].fillna(0)
-
-
-    if min_periods is None:
-        # min_periods = window_months // 2
-        min_periods = window_months
-   
-    df[column_name] = df['OLR'].rolling(
-        window=window_months, 
-        center=center,
-        min_periods=min_periods
-    ).mean()
-
-    # Merge on 'date' column
-    #df = df.merge(df2[['date', 'EEI']], on='date', how='right')
-
-    output_columns = ['date', 'year', 'month', 'decimal_year', 'EEI']
-    if keep_original:
-        output_columns.append('OLR')
-    output_columns.append(column_name)
-   
-    #output_columns.append('OLR_EEI')
-    # Create OLR_EEI column (fill NaN with 0 before addition)
-    df['OLR_EEI'] = df['EEI'].fillna(0) + df['OLR'].fillna(0)
-    output_columns.append('OLR_EEI')
-
-    df_output = df[output_columns].copy()
-    df_output.to_csv(output_csv, index=False, float_format='%.6f')
-    
-    valid_records = df_output[column_name].notna().sum()
-    return df_output
-    # end part 66.e  CERES.csv (add averaging column to plotable-csv)
-    """
 
  # part 67.1 create work/_CERES_raw.csv with 14 columns
  # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg

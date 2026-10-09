@@ -253,18 +253,18 @@ if play_67_albedo > 0: #
                                             center=use_center)
        column_read    ='albedo'
        column_average ='albedo48'
-       # part 66.37  CERES.csv (perform averaging for albedo)
+       # part 67.37  CERES.csv (perform averaging for albedo)
        df67d = create67_running_average( 'work/_CERES_raw.csv', 
                                          'work/_CERES_albedo.csv',
                                                 column_read,             #  column_name='albedo')
                                                 column_average,          #  column_name='albedo48')
-                                                  window_months=play_67_albedo,
-                                                  min_periods=12,
-                                                  center=use_center)
+                                                window_months=play_67_albedo,
+                                                min_periods=12,
+                                                center=use_center)
 
-        # part 66.38
+        # part 66.58
        if print_debug > 9:
-          print(f"main_267: play_67_albedo  67.d ={play_67_albedo}")
+          print(f"main_267: all main jobs done play_67_albedo={play_67_albedo}")
 
 
 
