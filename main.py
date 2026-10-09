@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure
-v = "5F88" # play_67_albedo = 48 CERES 07_2026 
+v = "5F89" # play_67_albedo = 48 CERES 07_2026 
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

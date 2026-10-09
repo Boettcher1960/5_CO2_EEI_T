@@ -347,6 +347,8 @@ def ceres67_to_csv(
     data  = [] # 
     data2 = []
     data3 = []
+    data4 = []
+
     # part 67.d.2 read1 txt
     # 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
     # 17.2 rename   to  _66_TOA_Shortwave_Flux_All_Sky2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
@@ -421,10 +423,30 @@ def ceres67_to_csv(
 
     if print_debug_DP > 9:
         print(f"DataP426: file3 read {len(df)} records to {output_file2}")
-
-
     df3 = pd.DataFrame(data3, columns=['year', 'month', 'EEI_raw'])
 
+    # read4
+    # download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+    # rename 'read_csv/_67_TOA_Longwave_Flux_2026_07.txt'
+    with open('read_csv/_67_TOA_Longwave_Flux_2026_07.txt', 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('#') or line.startswith('CERES'):
+                continue
+            parts = line.split()
+            if len(parts) >= 3:
+                try:
+                    year4 = int(parts[0])
+                    month4 = int(parts[1])
+                    flux4 = float(parts[2])
+                    data4.append([year4, month4, flux4])
+                except ValueError:
+                    continue
+
+    if print_debug_DP > 9:
+        print(f"DataP448: file4 read ")
+    df4 = pd.DataFrame(data4, columns=['year', 'month', 'Longwave_out'])
 
 
 
@@ -446,6 +468,8 @@ def ceres67_to_csv(
     # part 67.d.7 add a new column 10
     df2['EEI_raw'] = df3['EEI_raw']
 
+    # part 67.d.7 add a new column 11
+    df2['Longwave_out'] = df4['Longwave_out']
 
 
 
