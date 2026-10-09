@@ -403,9 +403,6 @@ def ceres67_to_csv(
     # read3
     # download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
     # rename 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
-    #       to _66_TOA_Net_Flux_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-    #         'read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
-    #  with open(input_file2, 'r') as f: 
     with open('read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
@@ -426,7 +423,7 @@ def ceres67_to_csv(
         print(f"DataP426: file3 read {len(df)} records to {output_file2}")
 
 
-    df3 = pd.DataFrame(data3, columns=['year', 'month', 'EEI'])
+    df3 = pd.DataFrame(data3, columns=['year', 'month', 'EEI_raw'])
 
 
 
@@ -447,7 +444,7 @@ def ceres67_to_csv(
     df2['ASR'] = df2['sw_in'] - df2['sw_out']
 
     # part 67.d.7 add a new column 10
-    df2['EEI1'] = df3['EEI']
+    df2['EEI_raw'] = df3['EEI_raw']
 
 
 
