@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure
-v = "5F89" # play_67_albedo = 48 CERES 07_2026 
+v = "5F90" # play_67_albedo = 48 CERES 07_2026 
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -234,7 +234,7 @@ if play_67_albedo > 0: #
        df67b = ceres67_to_csv(      'work/_67b_sw_out.csv',
                                     'work/_CERES_raw.csv')
        if print_debug > 9:
-          print(f"main_237: play_67_albedo  67.b ={play_67_albedo}")
+          print(f"main_237: _CERES_raw.csv 67.b play_67_albedo={play_67_albedo}")
 
        # part 67.3
        window_months=play_67_albedo

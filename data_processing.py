@@ -465,17 +465,17 @@ def ceres67_to_csv(
     # part 67.d.7 add a new column 9
     df2['ASR'] = df2['sw_in'] - df2['sw_out']
 
+    
     # part 67.d.7 add a new column 10
     df2['EEI_raw'] = df3['EEI_raw']
-
     # part 67.d.7 add a new column 11
     df2['Longwave_out'] = df4['Longwave_out']
+    # part 67.d.7 add a new column 12
+    df2['EEI_calc'] =  df2['sw_in'] - df2['sw_out']     - df4['Longwave_out']
 
-
-
-    # part 67.d.7 add a new column 10
-    df2['EEI3'] = df2['sw_in'] - df2['sw_out']
-    # part 67.d.7 add a new column 11
+    # part 67.d.7 add a new column 13
+    df2['ASR_calc'] = df2['sw_in'] - df2['sw_out']
+    # part 67.d.7 add a new column 14
     df2['toa_net_flux_w_m2'] = df2['sw_out']
 
     # part 67.d.12 write df2 to  work/_CERES.csv'
