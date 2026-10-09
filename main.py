@@ -212,20 +212,14 @@ if play_66_OLR > 1: #
           print(f"main_210: created. OLR48 work/_66c_OLR.csv  66.c ={play_66_OLR}")
 
 
-       
-       # part 66.e  CERES.csv (add averaging column to plotable-csv)
-       # df66e = add_66_csv_column( 'work/_66b_OLR_raw.csv', 
-       #                           'work/_42_EEI48month_2026_07.csv', 
-       #                           'work/_66e_OLR.csv',
-       #                                     window_months=play_66_OLR,
-       #                                     min_periods=12,
-       #                                     center=use_center,
-       #                                     column_name='OLR')
-       # if print_debug > 9:
-       #    print(f"main_172: create work/_66e_OLR.csv 66    ={play_66_OLR}")
-
-
-
+# part 67.1 create work/_CERES_raw.csv with 13 columns
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 67.2 copy to read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
+# 67.6 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt
+# 67.7 copy to read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
+# 67.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 67.11 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
 # main.play_67_albedo line 176
 if play_67_albedo > 0: #       
        # part 67.1 to part 67.20 read 

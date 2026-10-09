@@ -339,12 +339,14 @@ def add_66_csv_column(input_csv,
     # end part 66.e  CERES.csv (add averaging column to plotable-csv)
     """
 
- # part 67.1 create work/_CERES.csv with 10 columns
+ # part 67.1 create work/_CERES_raw.csv with 13 columns
  # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
  # 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
  # 67.2 copy to read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
  # 67.6 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt
  # 67.7 copy to read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
+ # 67.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+ # 67.11 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
 def ceres67_to_csv(
         output_file1,  # work/_67b_sw_out.csv
         output_file2): # work/_CERES.csv'
@@ -406,11 +408,12 @@ def ceres67_to_csv(
                     continue
 
     if print_debug_DP > 9:
-        print(f"DataP399: file2 read {len(df)} records to {output_file2}")
+        print(f"DataP409: read file2  _66_TOA_Incoming_Solar_2026_07.txt to {output_file2}")
 
     # read3
-    # download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
-    # rename 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+    # 67.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+    # 67.11 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+    # 67.12 read 3 read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt into data3 field
     with open('read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
@@ -428,7 +431,9 @@ def ceres67_to_csv(
                     continue
 
     if print_debug_DP > 9:
-        print(f"DataP426: file3 read {len(df)} records to {output_file2}")
+        print(f"DataP434: read file3  _67_EEI_TOA_Net_Flux_2026_07.txt to {output_file2}")
+
+    # 67.14 copy data3 into df3 data field
     df3 = pd.DataFrame(data3, columns=['year', 'month', 'EEI_raw'])
 
     # read4
