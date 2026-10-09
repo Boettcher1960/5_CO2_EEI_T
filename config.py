@@ -235,6 +235,20 @@ print_debug = 10 # print some items
 # looks like https://bsky.app/profile/leonsimons.com/post/3mwy3xgypts2y
 # 
 
+#########################################################
+# 46_ASR_48month_2026_07.csv ############################
+#########################################################
+# 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 2 download CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026.txt
+# 3 copy to _66_TOA_Incoming_Solar_2026_07.txt
+# 5 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 6 copy to _66_TOA_Shortwave_Flux_All_Sky2026_07.txt 
+# 7 run with play_67_albedo = 48
+#   dokumente/5_CO2_EEI_T/work/_CERES_raw.csv is produced with column ASR
+# 8 copy dokumente/5_CO2_EEI_T/work/_CERES_ASR.csv to
+#        dokumente/5_CO2_EEI_T/read_csv/_46_ASR_48month_2026_07.csv
+# looks like https://bsky.app/profile/leonsimons.com/post/3mwy3xgypts2y
+
 
 #########################################################
 # 47_ASR_12month_2026_02.csv ############################

@@ -409,10 +409,13 @@ def ceres67_to_csv(
     # part 67.d.7 add a new column 7
     df2['albedo'] = df2['sw_out'] / df2['sw_in']
     # part 67.d.7 add a new column 8
-    df2['ASR'] = df2['sw_in'] - df2['sw_out']
+    df2['darkening'] = 1 - ( df2['sw_out'] / df2['sw_in'] )
+
     # part 67.d.7 add a new column 9
-    df2['EEI3'] = df2['sw_in'] - df2['sw_out']
+    df2['ASR'] = df2['sw_in'] - df2['sw_out']
     # part 67.d.7 add a new column 10
+    df2['EEI3'] = df2['sw_in'] - df2['sw_out']
+    # part 67.d.7 add a new column 11
     df2['toa_net_flux_w_m2'] = df2['sw_out']
 
     # part 67.d.12 write df2 to  work/_CERES.csv'
