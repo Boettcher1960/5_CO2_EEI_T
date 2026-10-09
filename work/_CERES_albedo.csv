@@ -1,4 +1,4 @@
-date,year,month,decimal_year,albedo,ASR48
+date,year,month,decimal_year,albedo,albedo48
 2000-03-01,2000,3,2000.208333,0.288983,
 2000-04-01,2000,4,2000.291667,0.289504,
 2000-05-01,2000,5,2000.375000,0.294296,
