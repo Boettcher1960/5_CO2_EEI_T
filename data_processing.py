@@ -346,7 +346,8 @@ def ceres67_to_csv(
     
     data  = [] # 
     data2 = []
-    # part 67.d.2 read txt
+    data3 = []
+    # part 67.d.2 read1 txt
     # 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
     # 17.2 rename   to  _66_TOA_Shortwave_Flux_All_Sky2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
     with open('read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt', 'r') as f:
@@ -370,12 +371,13 @@ def ceres67_to_csv(
     df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
     df = df[['date', 'year', 'month', 'decimal_year', 'sw_out']]
 
-    # part 67.d.7 write df to  work/_67b_sw_out.csv
+    # part 67.d.4 write df to  work/_67b_sw_out.csv
     df.to_csv(output_file1, index=False, float_format='%.6f')
 
     if print_debug_DP > 9:
         print(f"DataP326: Successfully converted {len(df)} records to {output_file1}")
 
+    # part 67.d.5 read2 txt
     # 25 rename      to _66_TOA_Incoming_Solar_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
     #         'read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
     #  with open(input_file2, 'r') as f: 
@@ -413,18 +415,18 @@ def ceres67_to_csv(
             parts = line.split()
             if len(parts) >= 3:
                 try:
-                    year2 = int(parts[0])
-                    month2 = int(parts[1])
+                    year3 = int(parts[0])
+                    month3 = int(parts[1])
                     flux3 = float(parts[2])
-                    data2.append([year2, month2, flux3])
+                    data3.append([year3, month3, flux3])
                 except ValueError:
                     continue
 
     if print_debug_DP > 9:
-        print(f"DataP421: file3 read {len(df)} records to {output_file2}")
+        print(f"DataP426: file3 read {len(df)} records to {output_file2}")
 
 
-    df3 = pd.DataFrame(data2, columns=['year', 'month', 'EEI'])
+    df3 = pd.DataFrame(data3, columns=['year', 'month', 'EEI'])
 
 
 
