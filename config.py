@@ -50,7 +50,7 @@ play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1
 play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
 play_66_OLR = 0 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
-play_67_albedo = 36   # create 1..12..48..99 CERES
+play_67_albedo = 48   # create 1..12..48..99 CERES
                       # todo average 48
                       # todo plot play_67_albedo
 play_68_EEI = 0 # new
