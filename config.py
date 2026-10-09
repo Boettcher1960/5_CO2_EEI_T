@@ -165,8 +165,8 @@ y_64max = -2.3  # in W/m2
 y_66min = 240  # OLR in W/m2
 y_66max = 242.8  # OLR in W/m2
 
-y_67min = 0.2  # albedo in %
-y_67max = 0.4  # albedo in %
+y_67min = 0.285  # albedo in %
+y_67max = 0.295  # albedo in %
 
 
 
