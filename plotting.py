@@ -825,7 +825,7 @@ def plot_9_create_all_plots(ax1, data):
     if plot47_albedo48 > 0:
         if plot47_albedo48 == 2:
            # Plot on the left axis (ax1) instead of creating a right axis
-           ax1.plot(data['ceres_47']["decimal_year"], data['ceres_47']["ASR"], '-', 
+           ax1.plot(data['ceres_47']["decimal_year"], data['ceres_47']["albedo48"], '-', 
                   label="ASR K47", color=c47, linewidth=4)
            # The left axis is already configured in plot_1_axe
         else:
@@ -835,10 +835,10 @@ def plot_9_create_all_plots(ax1, data):
            # Fig. 2. Earth’s satellite-observed ab# sorbed solar radiation (ASR) and 
            # relative to their 2000-2010 averages
            # plotting line 813 ["ASR"]-0.8  add 0,5 W to ASR CERES data
-           ax47.plot(data['ceres_47']["decimal_year"], data['ceres_47']["ASR"]-0.8, '-', 
+           ax47.plot(data['ceres_47']["decimal_year"], data['ceres_47']["albedo48"]-0.8, '-', 
                   label="ASR K47", color=c47, linewidth=4)
            ax47.tick_params(axis="y", labelcolor=c47)
-           ax47.set_ylim(y_64min, y_64max)
+           ax47.set_ylim(y_47min, y_47max)
            # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
            if plot47_albedo48 > 2:
               plot8_right_y_axe_for_47( ax47 , 0 ) # 45.4 line 450

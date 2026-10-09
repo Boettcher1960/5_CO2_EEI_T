@@ -296,7 +296,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "OLR Outgoing Longwave Radiation OLR in W/m² moving average 48 month           45", 
                     c45, trs)
-    elif plot46_OLR_EEI == 3:
+    elif plot46_ASR == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c46)
         text_4_add_text(ax1, tr2x, tr3y, 
                     "Absorbed Solar Radiation ASR = OLR+EEI  W/m² moving average 48 month          46", 

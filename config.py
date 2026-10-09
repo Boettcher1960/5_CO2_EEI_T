@@ -147,6 +147,9 @@ y_45min = 240    # OLR in W/m2
 y_45max = 242.8  # OLR in W/m2
 y_46min = 240    # ASR in W/m2
 y_46max = 242.8  # ASR in W/m2
+y_47min = 0.294 # albedo in %
+y_47max = 0.286 # albedo in %
+
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars
@@ -253,16 +256,14 @@ print_debug = 10 # print some items
 
 
 #########################################################
-# 47_ASR_12month_2026_02.csv ############################
+# 47_albedo_48month_2026_07.csv ############################
 #########################################################
-# 52 run with play_64_ASR_anomaly = 12
-# 53 copy dokumente/5_CO2_EEI_T/read_csv/_64c_ASR.csv to
-#         dokumente/5_CO2_EEI_T/read_csv/_47_ASR_12month_2026_02.csv
-# https://jimehansen.substack.com/p/2026-on-track-for-warmest-year
-# Fig. 2. Earth’s satellite-observed ab# sorbed solar radiation (ASR) and 
-# longwave (thermal) emission to space (LW),[7] 
-# both relative to their 2000-2010 averages
-# plotting line 813 ["ASR"]-0.8 Hansen  add 0.8 W/m/m to ASR CERES data
+# 47.1 run with play_67_albedo = 48
+# 47.2 copy dokumente/5_CO2_EEI_T/work/_CERES_albedo.csv to
+#          dokumente/5_CO2_EEI_T/read_csv/_47_albedo_48month_2026_07.csv
+# plot47_albedo48 = 5 
+
+
 
 #########################################################
 # 61 How to make EEI files ##############################
