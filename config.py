@@ -298,7 +298,7 @@ print_debug = 10 # print some items
 
 
 #########################################################
-# 66 How to make Albedo files ##############################
+# 67 How to make Albedo files ##############################
 #########################################################
 # Calculate Albedo: Compute planetary or surface albedo by 
 # dividing the upward shortwave radiation flux (toa_sw_all) 
@@ -334,6 +334,18 @@ print_debug = 10 # print some items
 # 24.2 CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt is downloaded
 # 25 rename      to _66_TOA_Incoming_Solar_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
 #
+# 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 67.2 copy to read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
+# 67.6 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt
+# 67.7 copy to read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
+# 67.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 67.11 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+# 67.15 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 67.16 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+# 67.31 with   play_67_albedo = 48  work/_CERES_albedo.csv is created with averaged albedo48 column
+# 67.33 copy to work/_67_albedo48months_2026_07.csv'
+# 
+
 
 
 

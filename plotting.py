@@ -452,12 +452,22 @@ def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
     ax64.set_ylim(y_64min, y_64max) #
 
 #  OLR  W/m² moving average 48 month 
-def plot8_right_y_axe_for_C_66(ax66,right62): # 62.5
+def plot8_right_y_axe_for_C_66(ax66,right62): # 66.50
     outward_right =  ( 4 *  yr_60 ) - yr_150
     ax66.spines.right.set_position(("outward", outward_right))
     ax66.set_ylabel("Outgoing Longwave Radiation OLR in W/m²       66", color=c66, fontname="Arial",fontsize=18)
     ax66.tick_params(axis="y", labelcolor=c66)
     ax66.set_ylim(y_66min, y_66max) #
+
+#  OLR  W/m² moving average 48 month 
+def plot8_right_y_axe_for_C_67(ax67,right62): # 67.50
+    outward_right =  ( 4 *  yr_60 ) - yr_150
+    ax67.spines.right.set_position(("outward", outward_right))
+    ax67.set_ylabel("Albedo (earth darkening) in %     67", color=c67, fontname="Arial",fontsize=18)
+    ax67.tick_params(axis="y", labelcolor=c67)
+    ax67.set_ylim(y_67min, y_67max) #
+
+
 
 
 # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
@@ -1002,6 +1012,16 @@ def plot_9_create_all_plots(ax1, data):
            print(f"plot_995: ax66 66.8 ={play_66_OLR}")
         if play_66_OLR > 2:
            plot8_right_y_axe_for_C_66( ax66 , 0 ) # 42.4 line 450
+    if play_67_albedo > 0: # part 67.44
+        ax67 = ax1.twinx()
+        ax67.plot(data['ceres_67']["decimal_year"], data['ceres_67']["albedo48"], '-', 
+                  label="albedo K67", color=c67, linewidth=2)
+        ax67.tick_params(axis="y", labelcolor=c67)
+        ax67.set_ylim(y_67min, y_67max)
+        if print_debug > 9:
+           print(f"plot1012: ax67 67.48 ={play_67_albedo}")
+        if play_67_albedo > 2:
+           plot8_right_y_axe_for_C_67( ax67 , 0 ) # part
 
 
 
