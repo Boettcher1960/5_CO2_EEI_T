@@ -339,19 +339,25 @@ def add_66_csv_column(input_csv,
     # end part 66.e  CERES.csv (add averaging column to plotable-csv)
     """
 
- # part 67.d create work/_CERES.csv with 10 columns
+ # part 67.1 create work/_CERES.csv with 10 columns
+ # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+ # 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+ # 67.2 copy to read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
+ # 67.6 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt
+ # 67.7 copy to read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
 def ceres67_to_csv(
         output_file1,  # work/_67b_sw_out.csv
         output_file2): # work/_CERES.csv'
     
-    data  = [] # 
-    data2 = []
+    data  = [] # 67.2 copy to read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
+    data2 = [] # 67.7 copy to read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
     data3 = []
     data4 = []
 
-    # part 67.d.2 read1 txt
-    # 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
-    # 17.2 rename   to  _66_TOA_Shortwave_Flux_All_Sky2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+    # part 67.3 read1 txt
+    # 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+    # 67.2 copy to read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
+    # 67.3 read _66_TOA_Shortwave_Flux_All_Sky2026_07.txt' into data
     with open('read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
@@ -367,22 +373,22 @@ def ceres67_to_csv(
                     data.append([year, month, flux])
                 except ValueError:
                     continue
-    
+    # 67.4 copy data into df data field
     df = pd.DataFrame(data, columns=['year', 'month', 'sw_out'])
     df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
     df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
     df = df[['date', 'year', 'month', 'decimal_year', 'sw_out']]
 
-    # part 67.d.4 write df to  work/_67b_sw_out.csv
+    # part 67.5 write df to  work/_67b_sw_out.csv # may be not used
     df.to_csv(output_file1, index=False, float_format='%.6f')
-
     if print_debug_DP > 9:
-        print(f"DataP326: Successfully converted {len(df)} records to {output_file1}")
+        print(f"DataP387: part 67.5 write df to {output_file1}")
 
-    # part 67.d.5 read2 txt
-    # 25 rename      to _66_TOA_Incoming_Solar_2026_07.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-    #         'read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
+    # part 67.6 read2 txt
+    # 67.6 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt
+    # 67.7 copy to read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
     #  with open(input_file2, 'r') as f: 
+    # 67.8 read _66_TOA_Incoming_Solar_2026_07.txt' into data2
     with open('read_csv/_66_TOA_Incoming_Solar_2026_07.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
@@ -465,7 +471,7 @@ def ceres67_to_csv(
     # part 67.d.7 add a new column 9
     df2['ASR'] = df2['sw_in'] - df2['sw_out']
 
-    
+
     # part 67.d.7 add a new column 10
     df2['EEI_raw'] = df3['EEI_raw']
     # part 67.d.7 add a new column 11

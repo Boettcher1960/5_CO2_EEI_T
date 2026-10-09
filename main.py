@@ -227,12 +227,10 @@ if play_66_OLR > 1: #
 
 
 # main.play_67_albedo line 176
-if play_67_albedo > 0: # 
-       # part 67.1 txt to _67_sw_out.csv
-       
-       # part 67.2  read _67_sw_out.csv column sw_out
-       df67b = ceres67_to_csv(      'work/_67b_sw_out.csv',
-                                    'work/_CERES_raw.csv')
+if play_67_albedo > 0: #       
+       # part 67.1 to part 67.20 read 
+       df67b = ceres67_to_csv(      'work/_67b_sw_out.csv',  # output1 not used
+                                    'work/_CERES_raw.csv')   # output 2 used a lot
        if print_debug > 9:
           print(f"main_237: _CERES_raw.csv 67.b play_67_albedo={play_67_albedo}")
 
