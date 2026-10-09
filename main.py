@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure
-v = "5F94" # play_67_albedo = 48 CERES 07_2026 
+v = "5F95" # play_67_albedo = 48 CERES 07_2026 
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -220,15 +220,19 @@ if play_66_OLR > 1: #
 # 67.7 copy to read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
 # 67.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
 # 67.11 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+# 67.15 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 67.16 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+# part 67.31 write df2 to  work/_CERES_raw.csv'
 # main.play_67_albedo line 176
 if play_67_albedo > 0: #       
-       # part 67.1 to part 67.20 read 
+       # part 67.1 to part 67.32 read 
        df67b = ceres67_to_csv(      'work/_67b_sw_out.csv',  # output1 not used
                                     'work/_CERES_raw.csv')   # output 2 used a lot
+       # part 67.33 print
        if print_debug > 9:
           print(f"main_237: _CERES_raw.csv 67.b play_67_albedo={play_67_albedo}")
 
-       # part 67.3
+       # part 67.34 set some variables
        window_months=play_67_albedo
 
        if play_67_albedo > 11:
@@ -239,7 +243,7 @@ if play_67_albedo > 0: #
        keep_original=True,
        column_read    ='ASR'
        column_average ='ASR48'
-       # part 66.c  CERES.csv (perform averaging for ASR)
+       # part 66.35  CERES.csv (perform averaging for ASR)
        df67c = create67_running_average( 'work/_CERES_raw.csv', 
                                          'work/_CERES_ASR.csv',
                                           column_read,             #  column_name='ASR')
@@ -247,7 +251,7 @@ if play_67_albedo > 0: #
                                             window_months=play_67_albedo,
                                             min_periods=12,
                                             center=use_center)
-
+      
 
         
        if print_debug > 9:

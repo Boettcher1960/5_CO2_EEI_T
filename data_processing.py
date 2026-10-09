@@ -339,7 +339,7 @@ def add_66_csv_column(input_csv,
     # end part 66.e  CERES.csv (add averaging column to plotable-csv)
     """
 
- # part 67.1 create work/_CERES_raw.csv with 13 columns
+ # part 67.1 create work/_CERES_raw.csv with 14 columns
  # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
  # 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
  # 67.2 copy to read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
@@ -383,7 +383,7 @@ def ceres67_to_csv(
 
     # part 67.5 write df to  work/_67b_sw_out.csv # may be not used
     df.to_csv(output_file1, index=False, float_format='%.6f')
-    if print_debug_DP > 9:
+    if print_debug_DP > 19:
         print(f"DataP387: part 67.5 write df to {output_file1}")
 
     # part 67.6 read2 txt
@@ -407,7 +407,7 @@ def ceres67_to_csv(
                 except ValueError:
                     continue
 
-    if print_debug_DP > 9:
+    if print_debug_DP > 19:
         print(f"DataP409: read file2  _66_TOA_Incoming_Solar_2026_07.txt to {output_file2}")
 
     # read3
@@ -430,7 +430,7 @@ def ceres67_to_csv(
                 except ValueError:
                     continue
     # 67.13 print
-    if print_debug_DP > 9:
+    if print_debug_DP > 19:
         print(f"DataP434: read file3  _67_EEI_TOA_Net_Flux_2026_07.txt to {output_file2}")
 
     # 67.14 copy data3 into df3 data field 'EEI_raw'
@@ -476,29 +476,27 @@ def ceres67_to_csv(
     df2['albedo'] = df2['sw_out'] / df2['sw_in']
     # 67.24 calculate and append new column8 'darkening' to data field df2
     df2['darkening'] = 1 - ( df2['sw_out'] / df2['sw_in'] )
-
-
-    # part 67.d.7 add a new column 9
+    # 67.25 calculate and append new column9 'ASR' to data field df2
     df2['ASR'] = df2['sw_in'] - df2['sw_out']
-    # part 67.d.7 add a new column 10
+    # 67.26 append new column10 'EEI_raw
     df2['EEI_raw'] = df3['EEI_raw']
-    # part 67.d.7 add a new column 11
+    # 67.27 append new column11 'Longwave_out
     df2['Longwave_out'] = df4['Longwave_out']
-    # part 67.d.7 add a new column 12
+    # 67.28 calculate and append new column12 'EEI_calc' to data field df2
     df2['EEI_calc'] =  df2['sw_in'] - df2['sw_out']     - df4['Longwave_out']
-
-    # part 67.d.7 add a new column 13
+    # 67.29 calculate and append new column13
     df2['ASR_calc'] = df2['sw_in'] - df2['sw_out']
-    # part 67.d.7 add a new column 14
+    # 67.30 append new column14
     df2['toa_net_flux_w_m2'] = df2['sw_out']
 
-    # part 67.d.12 write df2 to  work/_CERES.csv'
+    # part 67.31 write df2 to  work/_CERES_raw.csv'
     df2.to_csv(output_file2, index=False, float_format='%.6f')
-
+    # part 67.32 print
     if print_debug_DP > 9:
-        print(f"DataP361: Successfully converted {len(df)} records to {output_file2}")
+             print(f"DataP500: write  work/_CERES_raw.csv  file2= {output_file2}")
     return df2
-
+    # end part 67.1 create work/_CERES_raw.csv with 14 columns
+    # end part 67.32 create work/_CERES_raw.csv with 14 columns
 
 
 
