@@ -424,7 +424,7 @@ def ceres67_to_csv(
         print(f"DataP421: file3 read {len(df)} records to {output_file2}")
 
 
-
+    df3 = pd.DataFrame(data2, columns=['year', 'month', 'EEI'])
 
 
 
@@ -444,8 +444,8 @@ def ceres67_to_csv(
     # part 67.d.7 add a new column 9
     df2['ASR'] = df2['sw_in'] - df2['sw_out']
 
-
-
+    # part 67.d.7 add a new column 10
+    df2['EEI1'] = df3['EEI']
 
 
 
