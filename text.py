@@ -477,10 +477,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
 
     # row 6,      print line 6 below the plot ,     text_9_print_7_lines() ,           line 308
     ########################## row 6 ################################
-    # in row 6 display play_61_CERES
-    if play_61_CERES > 0:
+    # in row 6 display play_61_EEI
+    if play_61_EEI > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
-        p61_text = f"Earth Energy Imbalance {play_61_CERES}-month moving average 61 - main - line 438."
+        p61_text = f"Earth Energy Imbalance {play_61_EEI}-month moving average 61 - main - line 438."
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
     else:
         p62_text = f"Parameter {header_parameter}  Text 192:"

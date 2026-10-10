@@ -43,7 +43,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_CERES = 0     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 48     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_CERES = 0    # 12, 48 CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
@@ -51,8 +51,6 @@ play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flu
                 # todo average 48
 play_66_OLR = 0 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
 play_67_albedo = 0   # create 1..12..48..99 CERES
-                      # todo average 48
-                      # todo plot play_67_albedo
 play_68_EEI = 0 # new
                 # todo average 48
 plot71_temperature = 0
@@ -292,13 +290,13 @@ print_debug = 10 # print some items
 # 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
 # 17.1 rename      to _61_in__2026_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
 # 17.2 rename      to _61_in__2026_07_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-# 18 run with play_61_CERES = 48 
+# 18 run with play_61_EEI = 48 
 # 19 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv to
 # 20.1      dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
 # 20.2                           'read_csv/_42_EEI48month_2026_07.csv', 
 # 21 run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
 # 
-# 22 run with play_61_CERES = 12 
+# 22 run with play_61_EEI = 12 
 # 23 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
 #       dokumente/5_CO2_EEI_T/read_csv/_43_EEI12month_2026_02.csv
 # 24 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
@@ -434,7 +432,7 @@ print_debug = 10 # print some items
 # 47 left mouse select save Data as ASCII File
 # 48 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
 # 49 rename      to _63_in__2026_02_Shortwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-#  run with play_61_CERES = 48 
+#  run with play_61_EEI = 48 
 #  copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
 #       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
 #  run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
@@ -499,7 +497,7 @@ print_debug = 10 # print some items
 #     to
 #     /Dokumente/Python/5_CO2_EEI_T/read_csv/_61_in__2016_01_EEI_CERES.txt
 # 
-# 18) in config.py set play_61_CERES = 12 
+# 18) in config.py set play_61_EEI = 12 
 # 19) read_csv/_61b_out_in_ceres.csv is created from read_csv/_61_in__2016_01_EEI_CERES.txt
 # 19) read_csv/_61c_out_ceres.csv is created from read_csv/_61b_out_in_ceres.csv
 # 19) _61c_out_ceres.csv is plotted as documented in line 5
@@ -508,7 +506,7 @@ print_debug = 10 # print some items
 #     note: _61c_out_ceres.csv is same as a44d_ceres_12month_EEI.csv made by 41 chain
 # 21) plot _43_EEI12month_made_by_61c.csv using plot43_eei_12month = 4
 #
-# 22) in config.py set play_61_CERES = 48 
+# 22) in config.py set play_61_EEI = 48 
 # 23) read_csv/_61b_out_in_ceres.csv is created from read_csv/_61_in__2016_01_EEI_CERES.txt
 # 23) read_csv/_61c_out_ceres.csv is created from read_csv/_61b_out_in_ceres.csv
 # 23) _61c_out_ceres.csv is plotted as documented in line 5

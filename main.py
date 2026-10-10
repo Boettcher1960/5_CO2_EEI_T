@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure
-v = "5F106" # play_67_albedo = 48 CERES 07_2026 
+v = "5F107" # play_67_albedo = 48 CERES 07_2026 
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -14,7 +14,7 @@ v = "5F106" # play_67_albedo = 48 CERES 07_2026
 # part 5.5 plot55_population_on human earth population 
 #
 # line 60 process_ceres_data():
-#         main.play_61_CERES line 65
+#         main.play_61_EEI line 65
 #         main.play_62_CERES line 92
 #         main.play_64_ASR_anomaly line 124
 #         main.play_65_ASR line 141
@@ -61,31 +61,31 @@ if print_debug > 19:
 
 def process_ceres_data():
     """Process CERES data based on configuration"""
-    # main.play_61_CERES line 65
-    if play_61_CERES > 0: # part 6 
+    # main.play_61_EEI line 65
+    if play_61_EEI > 0: # part 6 
        df61b = convert_ceres_to_csv('read_csv/_61_in__2026_07_EEI_CERES.txt', 
                                     'read_csv/_61b_out_in_ceres.csv')
        if print_debug > 9:
-          print(f"main_156: create read_csv/_61b_out_in_ceres.csv  61.b ={play_61_CERES}")
+          print(f"main_156: create read_csv/_61b_out_in_ceres.csv  61.b ={play_61_EEI}")
        
-       window_months=play_61_CERES
+       window_months=play_61_EEI
 
-       if play_61_CERES > 11:
+       if play_61_EEI > 11:
           min1_periods=12
        else:
-          min1_periods=play_61_CERES
+          min1_periods=play_61_EEI
        use_center=False
        keep_original=True,
        
        df61c = create_running_average( 'read_csv/_61b_out_in_ceres.csv', 
                                        'read_csv/_61c_out_ceres.csv',
-                                            window_months=play_61_CERES,
+                                            window_months=play_61_EEI,
                                             min_periods=min1_periods,
                                             center=use_center,
                                             column_name='EEI')
         
        if print_debug > 9:
-          print(f"main_122: create read_csv/_61c_out_ceres.csv  61.gut ={play_61_CERES}")
+          print(f"main_122: create read_csv/_61c_out_ceres.csv  61.gut ={play_61_EEI}")
 
 
     # main.play_62_CERES line 90 
@@ -329,10 +329,10 @@ def load_plot_data():
     if plot52_delta_CO2_red_bars > 0: # 52.3
         if print_debug > 9:
            print(f"main_193: plot52_delta_CO2_red_bars # 52.3 ={plot52_delta_CO2_red_bars}")
-    if play_61_CERES > 0: # 61.9 read
+    if play_61_EEI > 0: # 61.9 read
         data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
         if print_debug > 9:
-           print(f"main_197: 61.9 read ={play_61_CERES}")
+           print(f"main_197: 61.9 read ={play_61_EEI}")
     if play_62_CERES > 0: # 62.9 read
         data['ceres_62'] = pd.read_csv("read_csv/_62c_LongWave.csv")
         # data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
@@ -387,7 +387,7 @@ def main():
                        f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({plot42_EEI_48month}"
                        f"{plot43_eei_12month}{plot45_OLR}{plot46_ASR} 5({plot52_delta_CO2_red_bars}"
                        f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on}"
-                       f" 6({play_61_CERES}{play_62_CERES}{play_63_CB}"
+                       f" 6({play_61_EEI}{play_62_CERES}{play_63_CB}"
                        f" 7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
                        f"{linear_41_75}{plot76_my_T}")
     

@@ -38,7 +38,7 @@ from config import play_62_CERES
 from config import plot34_CO2_emission
 
 if print_debug > 12:
-   print("plotting: TOA", y_TOAmin, y_TOAmax, plot34_CO2_emission, play_61_CERES)
+   print("plotting: TOA", y_TOAmin, y_TOAmax, plot34_CO2_emission, play_61_EEI)
 
 
 color_left = "blue" # color of left y axis
@@ -936,14 +936,14 @@ def plot_9_create_all_plots(ax1, data):
        plot8_160_right_y_axe_55(ax55,pop_world)    # 55.4 line 358
        # end part 5.5 plot55_population_on human earth population  
 
-    if play_61_CERES > 0:
+    if play_61_EEI > 0:
         ax61 = ax1.twinx()
         ax61.plot(data['ceres_61']["decimal_year"], data['ceres_61']["EEI"], '-', 
                   label="EEI K61", color=c61, linewidth=2)
         ax61.tick_params(axis="y", labelcolor=c61)
         ax61.set_ylim(y_61Emin, y_61Emax)
         if print_debug > 9:
-           print(f"plot_947: ax61 61.8 ={play_61_CERES}")
+           print(f"plot_947: ax61 61.8 ={play_61_EEI}")
     if play_62_CERES > 0:
         ax62 = ax1.twinx()
         ax62.plot(data['ceres_62']["decimal_year"], data['ceres_62']["LongWave"], '-', 
