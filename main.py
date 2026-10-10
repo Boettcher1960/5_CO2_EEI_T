@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure
-v = "5F116" # plot74_GIS_T = 4 # 2, 3,4,5 =right y axis
+v = "5F118" # plot74_GIS_T = 4 # 2, 3,4,5 =right y axis
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -355,7 +355,7 @@ def load_plot_data():
 
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.3
-        data['gis_temp'] = load_gis_temperature()
+        data['gis_temp'] = load74_gis_temperature()
     return data
     # end load_plot_data():
 

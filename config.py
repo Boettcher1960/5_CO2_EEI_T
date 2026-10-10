@@ -30,7 +30,7 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
-plot42_EEI_48month = 3  # 2 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
+plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
@@ -228,6 +228,20 @@ print_debug = 10 # print some items
 #
 # part 2.3 plot23_Glen_CO2 
 # part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
+
+
+#########################################################
+# _42_EEI48month_2026_07.csv ############################
+###############see 61 How to make EEI files #############
+# 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 3 copy txt to read_csv/_61_in__2026_07_EEI_CERES.txt
+# 4 run with 
+# 5
+# 6 copy to read_csv/_42_EEI48month_2026_07.csv
+# 7 
+# 8 set plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean
+#
 
 #########################################################
 # 45_OLR_48month_2026_07.csv ############################
@@ -456,6 +470,21 @@ print_debug = 10 # print some items
 # part 5.4 plot54_Glen_delta_on
 # part 5.5 plot55_population_on human earth population 
 
+#########################################################
+# 74 GISS Hansen temperature ##############################
+#########################################################
+# best read_csv/_74_gis_temperature.csv
+# https://data.giss.nasa.gov/gistemp/ 
+# https://data.giss.nasa.gov/gistemp/gmsta/
+# https://datahub.io/core/global-temp
+# download GIS_annual.numbers
+# https://github.com/datasets/global-temp
+# https://www.columbia.edu/~jeh1/
+# https://www.columbia.edu/~jeh1/Data/Temperature/
+#    landocean_1880_full(1).txt
+#    https://www.columbia.edu/~jeh1/Data/Temperature/#ref1
+#
+#
 
 #########################################################
 # 161 How to make EEI files ##############################
