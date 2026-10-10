@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure
-v = "5F115" # plot74_GIS_T = 4 # 2, 3,4,5 =right y axis
+v = "5F116" # plot74_GIS_T = 4 # 2, 3,4,5 =right y axis
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
