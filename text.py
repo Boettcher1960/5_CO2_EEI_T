@@ -222,10 +222,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr2y, 
                     "Outgoing Longwave Radiation OLR  W/m² moving average 48 month                      45", 
                     c45, trs)
-    elif plot46_ASR == 2:
+    elif plot46_ASR == 2: # line DataP423 df2['ASR'] = df2['sw_in'] - df2['sw_out']
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c46)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "ASR Absorbed Solar Radiation ASR  W/m²                  moving average 48 month    46", 
+                    "ASR Absorbed Solar Radiation =input-output in W/m²  moving average 48 month    46", 
                     c46, trs)
     elif plot71_temperature == 2: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)

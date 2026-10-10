@@ -252,7 +252,7 @@ print_debug = 10 # print some items
 # 8 copy dokumente/5_CO2_EEI_T/work/_CERES_ASR.csv to
 #        dokumente/5_CO2_EEI_T/read_csv/_46_ASR_48month_2026_07.csv
 # looks like https://bsky.app/profile/leonsimons.com/post/3mwy3xgypts2y
-
+# line DataP423 df2['ASR'] = df2['sw_in'] - df2['sw_out']
 
 #########################################################
 # 47_albedo_48month_2026_07.csv ############################
