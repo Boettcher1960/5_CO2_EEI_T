@@ -44,15 +44,15 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
 play_61_EEI = 48     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-play_62_CERES = 0    # 12, 48 CERES Outgoing Longwave Radiation OLR
+# play_62_CERES ist doppelt zu play_66_OLR
+play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
 play_66_OLR = 0 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
 play_67_albedo = 0   # create 1..12..48..99 CERES
-play_68_EEI = 0 # new
-                # todo average 48
+
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
@@ -153,8 +153,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_61Emin = 0 #   EEI in W/m2 y axis left mode
-y_61Emax = 2 #   EEI in W/m2 y axis left mode
+y_61min = 0 #   EEI in W/m2 y axis left mode
+y_61max = 2 #   EEI in W/m2 y axis left mode
 
 y_62min = 239.8  # OLR in W/m2
 y_62max = 242.6  # OLR in W/m2

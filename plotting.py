@@ -423,8 +423,16 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     # ax55.set_ylim(4, 9)
     #end plot8_160_right_y_axe_55  
 
-#  OLR  W/m² moving average 48 month 
-# plot8_right_y_axe_for_C_62                     ,  line  520
+#  play_61_EEI  W/m² moving average 48 month 
+def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
+    outward_right =  ( 5 *  yr_60 ) - yr_150
+    ax61.spines.right.set_position(("outward", outward_right))
+    ax61.set_ylabel("EEI in W/m²       61", color=c61, fontname="Arial",fontsize=18)
+    ax61.tick_params(axis="y", labelcolor=c61)
+    ax61.set_ylim(y_61min, y_61max) #
+
+
+#  play_62_CERES OLR  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_62(ax62,right62): # 62.5
     outward_right =  ( 5 *  yr_60 ) - yr_150
     ax62.spines.right.set_position(("outward", outward_right))
@@ -434,7 +442,7 @@ def plot8_right_y_axe_for_C_62(ax62,right62): # 62.5
 
 
 
-# plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 460
+# play_63_CB plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 460
 def plot8_right_y_axe_for_C_63(ax63,right52): # 63.5
      if right52 > 0:
         outward_right = right52
@@ -444,6 +452,7 @@ def plot8_right_y_axe_for_C_63(ax63,right52): # 63.5
      ax63.set_ylabel("cummulative CO2 values   plot475     63", color=c63, fontname="Arial",fontsize=18)
      ax63.tick_params(axis="y", labelcolor=c63)
 
+# play_64_ASR_anomaly
 def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
     outward_right =  ( 5 *  yr_60 ) - yr_150
     ax64.spines.right.set_position(("outward", outward_right))
@@ -451,7 +460,7 @@ def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
     ax64.tick_params(axis="y", labelcolor=c64)
     ax64.set_ylim(y_64min, y_64max) #
 
-#  OLR  W/m² moving average 48 month 
+# play_66_OLR  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_66(ax66,right62): # 66.50
     outward_right =  ( 4 *  yr_60 ) - yr_150
     ax66.spines.right.set_position(("outward", outward_right))
@@ -459,7 +468,7 @@ def plot8_right_y_axe_for_C_66(ax66,right62): # 66.50
     ax66.tick_params(axis="y", labelcolor=c66)
     ax66.set_ylim(y_66min, y_66max) #
 
-#  OLR  W/m² moving average 48 month 
+# play_67_albedo  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_67(ax67,right62): # 67.50
     outward_right =  ( 4 *  yr_60 ) - yr_150
     ax67.spines.right.set_position(("outward", outward_right))
@@ -941,9 +950,12 @@ def plot_9_create_all_plots(ax1, data):
         ax61.plot(data['ceres_61']["decimal_year"], data['ceres_61']["EEI"], '-', 
                   label="EEI K61", color=c61, linewidth=2)
         ax61.tick_params(axis="y", labelcolor=c61)
-        ax61.set_ylim(y_61Emin, y_61Emax)
+        ax61.set_ylim(y_61min, y_61max)
         if print_debug > 9:
            print(f"plot_947: ax61 61.8 ={play_61_EEI}")
+        if play_61_EEI > 2:
+           plot8_right_y_axe_for_C_61( ax61 , 0 ) # 61.9 line 957
+
     if play_62_CERES > 0:
         ax62 = ax1.twinx()
         ax62.plot(data['ceres_62']["decimal_year"], data['ceres_62']["LongWave"], '-', 
@@ -953,7 +965,7 @@ def plot_9_create_all_plots(ax1, data):
         if print_debug > 9:
            print(f"plot_969: ax62 62.8 ={play_62_CERES}")
         if play_62_CERES > 2:
-           plot8_right_y_axe_for_C_62( ax62 , 0 ) # 42.4 line 450
+           plot8_right_y_axe_for_C_62( ax62 , 0 ) # 62.4 line 967
     if play_64_ASR_anomaly > 0:
         ax64 = ax1.twinx()
         ax64.plot(data['ceres_64']["decimal_year"], data['ceres_64']["ASR"], '-', 
