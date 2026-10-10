@@ -30,7 +30,7 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
-plot42_EEI_48month = 5  # 2 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
+plot42_EEI_48month = 3  # 2 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
@@ -56,11 +56,15 @@ play_67_albedo = 0   # create 1..12..48..99 CERES
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 4 # 2, 3,4,5 =right y axis
+plot74_GIS_T = 5 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0
 plot_T_77 = 0 # 3, 4
 parameter84_save_png = 8
+
+line3 = 0 # 0 means, line 3 is not used
+line4 = 74 # 0 means, line 4 is not used
+line5 = 42 # 0 means, line 5 is not used
 
 # Colors
 c21 = "blue"
@@ -162,8 +166,8 @@ y_62max = 242.6  # OLR in W/m2
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
 
-y_66min = 240.2  # OLR in W/m2
-y_66max = 243 # 242.8  # OLR in W/m2
+y_66min = 239.8  # OLR in W/m2
+y_66max = 242.2 # 242.8  # OLR in W/m2
 
 y_67min = 0.285  # albedo in %
 y_67max = 0.295  # albedo in %
