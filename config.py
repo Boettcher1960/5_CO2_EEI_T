@@ -30,7 +30,7 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
-plot42_EEI_48month = 4  # 2 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
+plot42_EEI_48month = 5  # 2 5,4,3,2 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 3 # 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
@@ -43,14 +43,14 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 12     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 0     # 12 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # play_62_CERES ist doppelt zu play_66_OLR
 play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
-play_66_OLR = 0 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
+play_66_OLR = 48 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
 play_67_albedo = 0   # create 1..12..48..99 CERES
 
 plot71_temperature = 0
@@ -162,8 +162,8 @@ y_62max = 242.6  # OLR in W/m2
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
 
-y_66min = 240  # OLR in W/m2
-y_66max = 242.8  # OLR in W/m2
+y_66min = 240.2  # OLR in W/m2
+y_66max = 243 # 242.8  # OLR in W/m2
 
 y_67min = 0.285  # albedo in %
 y_67max = 0.295  # albedo in %
