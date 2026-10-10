@@ -225,7 +225,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot46_ASR == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c46)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "ASR Absorbed Solar Radiation ASR  W/m² moving average 48 month                     46", 
+                    "ASR Absorbed Solar Radiation ASR  W/m²                  moving average 48 month    46", 
                     c46, trs)
     elif plot71_temperature == 2: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)
@@ -294,7 +294,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot45_OLR == 3: # plot45_OLR = 4 # Outgoing Longwave Radiation OLR
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c45)
         text_4_add_text(ax1, tr2x, tr3y, 
-                    "OLR Outgoing Longwave Radiation OLR in W/m² moving average 48 month           45", 
+                    "OLR Outgoing Longwave Radiation OLR in W/m²        moving average 48 month    45", 
                     c45, trs)
     elif plot46_ASR == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c46)
@@ -392,7 +392,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot47_albedo48 == 4: # plot47_albedo48 = 4 # 
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c47)
         text_4_add_text(ax1, tr2x, tr4y, 
-            "Albedo = sw_out / sw_in         moving average 48 month  - min-max swapped         47", 
+            "Albedo = Shortwave_Flux / Incoming_Solar  in %        moving average 48 month    47", 
                     c47, trs)     
 
     # part 5.2 plot52_delta_CO2_red_bars
