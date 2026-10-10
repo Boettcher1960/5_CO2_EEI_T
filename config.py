@@ -50,13 +50,13 @@ play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
-play_66_OLR = 48 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
+play_66_OLR = 0 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
 play_67_albedo = 0   # create 1..12..48..99 CERES
 
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 0 # 2, 3,4,5 =right y axis
+plot74_GIS_T = 4 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0
 plot_T_77 = 0 # 3, 4
@@ -174,8 +174,8 @@ y_67max = 0.286 # albedo in %
 
 y_Tmin = 0
 y_Tmax = 2 # 1.7
-y_74min = y_Tmin # for GIS Temperature only 
-y_74max = y_Tmax # for GIS Temperature only 
+y_74min = 0.8 # for GIS Temperature only 
+y_74max = 1.6 # for GIS Temperature only 
 
 x_anf = 2004
 x_end = 2027

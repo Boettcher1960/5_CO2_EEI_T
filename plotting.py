@@ -233,7 +233,7 @@ def plot_1_axe(ax1):
     elif plot74_GIS_T == 2:  # 74.5 y axe left  red 
         # a Temperature in °C giss.nasa.gov Hansen+0.3°C 74 
         ax1.spines.left.set_position(("outward", 0))
-        ax1.set_ylim(y_Tmin, y_Tmax)
+        ax1.set_ylim(y_74min, y_74max)
         ax1.set_ylabel(" Temperature in °C  giss  74  ", color=c74, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c74, labelsize=20)
         y_mayor_ticks = 0.5 
@@ -504,6 +504,9 @@ def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6
         print(f"plot 564: no need for second T axis  ={plot74_GIS_T} ")
         ax74.yaxis.set_ticks([])
         ax74.spines['right'].set_visible(False)
+    else:    
+       ax74.set_ylabel("Temperature in °C        plot508      74", color=c74, fontname="Arial",fontsize=18)
+       ax74.tick_params(axis="y", labelcolor=c74)
 
 
 # plot8_right_y_axe_for_T_75 ,     linear_41_75  ,   Hansen 0.41°C         ,  line  581
@@ -1125,7 +1128,7 @@ def plot_9_create_all_plots(ax1, data):
            ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
                   label="T GIS K74", color=c74, linewidth=3)
            ax74.tick_params(axis="y", labelcolor=c74)
-           ax74.set_ylim(y_Tmin, y_Tmax)
+           ax74.set_ylim(y_74min, y_74max)
            if plot74_GIS_T > 2:
               plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 500
 
