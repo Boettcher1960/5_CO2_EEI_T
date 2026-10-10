@@ -43,7 +43,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 48     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 12     # create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # play_62_CERES ist doppelt zu play_66_OLR
 play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
