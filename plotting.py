@@ -234,10 +234,10 @@ def plot_1_axe(ax1):
         # a Temperature in °C giss.nasa.gov Hansen+0.3°C 74 
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_74min, y_74max)
-        ax1.set_ylabel(" Temperature in °C  giss  74  ", color=c74, fontsize=20)
+        ax1.set_ylabel(" GISS Temperature in °C   74  ", color=c74, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c74, labelsize=20)
-        y_mayor_ticks = 0.5 
-        y_minor_ticks = 0.1
+        y_mayor_ticks = 0.2 
+        y_minor_ticks = 0.05
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
         #ax1.yaxis.set_ticks([])
