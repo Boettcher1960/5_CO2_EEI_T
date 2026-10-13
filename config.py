@@ -34,7 +34,7 @@ plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 
 plot43_eei_12month = 0  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
-plot46_ASR = 2 # ASR Absorbed Solar Radiation from _CERES_ASR 48 months average
+plot46_ASR = 0 # 2 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average
 plot47_albedo48 = 0  # 4  
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
@@ -56,7 +56,7 @@ play_67_albedo = 0   # create 1..12..48..99 CERES
 plot71_temperature = 0
 plot72_AESS_T = 0
 plot73_ECS_T = 0
-plot74_GIS_T = 5 # 2, 3,4,5 =right y axis
+plot74_GIS_T = 2 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0
 plot_T_77 = 0 # 3, 4
@@ -491,12 +491,19 @@ print_debug = 10 # print some items
 # 88 ERA5 temperature ##############################
 #########################################################
 #  https://pulse.climate.copernicus.eu/
-#
+#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download
+#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels
+#        https://earthkit.ecmwf.int/
 # 1 https://bsky.app/profile/climatecasino.net/post/3mxoo2l7acs26 made a 4 years 
 #  running average plot with this path 
 #  https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
-#
-#
+# 2 make empty csv file work/_era5_empty.csv
+# 3 open https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+# 4 select all and copy
+# 5 in csv file work/_era5_empty.csv paste all
+# 6 save as work/_88_era5_daily_series_2026_10_13.csv and delete the first lines with #
+#   the columns are date,2t,clim_91-20,ano_91-20,status
+# 7 the column ano_91-20 are the temperature data 
 
 
 #########################################################
