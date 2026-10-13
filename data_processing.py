@@ -443,8 +443,8 @@ def ceres67_to_csv(
     # end part 67.32 create work/_CERES_raw.csv with 14 columns
 
 
-# part 68.2 line182 create66_running_average (input_csv, output_csv, 
-def create88_running_average(input_csv,  # 'work/_88_era5_daily_series_2026_10_13.csv'
+# part 68.2 
+def create68_running_average(input_csv,  # 'work/_88_era5_daily_series_2026_10_13.csv'
                              output_csv, # 'work/_66c_OLR.csv',
                              column_read,             #  column_name='ASR'
                              column_average,          #  column_name='ASR48')
@@ -483,11 +483,13 @@ def create88_running_average(input_csv,  # 'work/_88_era5_daily_series_2026_10_1
     # not needed  df['year'] = 2001     # df['month'] = 3
 
     # part 68.16 prepare the first 3 columns for the output-csv
-    output_columns = ['date', 'datetime', 'decimal_year']
+    # output_columns = ['date', 'datetime', 'decimal_year']
+    # part 68.16 prepare the first 2 columns for the output-csv
+    output_columns = ['date', 'decimal_year']
 
-    # part 68.17 columns 4 is 'ano_91-20' no average
+    # part 68.17 columns 3 is 'ano_91-20' no average
     output_columns.append(column_read)
-    # part 68.18 columns 5 is 'temp_average' the moving average
+    # part 68.18 columns 4 is 'temp_average' the moving average
     output_columns.append(column_average)
     
      # part 68.20 copy
