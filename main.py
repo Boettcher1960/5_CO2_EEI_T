@@ -371,8 +371,11 @@ def load_plot_data():
     if play_67_albedo > 0: # 67.49 read 
         data['ceres_67'] = pd.read_csv("work/_CERES_albedo.csv")
         if print_debug > 9:
-           print(f"main_355: 67.49 read ={play_66_OLR}")  
-
+           print(f"main_355: 67.49 read ={play_67_albedo}")  
+    if play68_ERA > 0: # 67.49 read 
+        data['ceres_68'] = pd.read_csv("work/_68_out.csv")
+        if print_debug > 9:
+           print(f"main_378: 68.49 read ={play68_ERA}")  
 
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.3
