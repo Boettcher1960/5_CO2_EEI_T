@@ -1,5 +1,5 @@
 # main.py
-v = "5G17" # era4-temperature
+v = "5G18" # era4-temperature
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -263,12 +263,14 @@ if play_67_albedo > 0: #
         # part 66.58
        if print_debug > 9:
           print(f"main_267: all main jobs done play_67_albedo={play_67_albedo}")
-# main. 68.1
+
+
+# 68.12 the main.py part line 266
 if play68_ERA > 0: #       
        if print_debug > 9:
-          print(f"main_272:  68.b play68_ERA={play68_ERA}")
+          print(f"main_272:  68.13 play68_ERA={play68_ERA}")
 
-       # part 68.3 set some variables
+       # part 68.13 set some variables
        window_months=play68_ERA
        if play68_ERA > 11:
           min1_periods=12
@@ -277,7 +279,7 @@ if play68_ERA > 0: #
        use_center=False
        column_read    ='ano_91-20'
        column_average ='temp_average'
-       # part 68.5  CERES.csv (perform averaging for global era5 temperatue)
+       # part 68.15  call create68_running_average for global era5 temperatue)
        df68c = create68_running_average( 'work/_68_era5_daily_series_2026_10_13.csv', 
                                          'work/_68_out.csv',
                                           column_read,             #  column_name='ano_91-20')
@@ -372,10 +374,10 @@ def load_plot_data():
         data['ceres_67'] = pd.read_csv("work/_CERES_albedo.csv")
         if print_debug > 9:
            print(f"main_355: 67.49 read ={play_67_albedo}")  
-    if play68_ERA > 0: # 67.29 read 
-        data['ceres_68'] = pd.read_csv("work/_68_out.csv")
+    if play68_ERA > 0: # 68.39 main.py line 377 read  work/_68_out.csv into  'era_68'
+        data['era_68'] = pd.read_csv("work/_68_out.csv")
         if print_debug > 9:
-           print(f"main_378: 68.31 read ={play68_ERA}")  
+           print(f"main_380: 68.41 read ={play68_ERA}")  
 
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.3

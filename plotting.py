@@ -1041,9 +1041,9 @@ def plot_9_create_all_plots(ax1, data):
         if play_67_albedo > 2:
            plot8_right_y_axe_for_C_67( ax67 , 0 ) # part
 
-    if play68_ERA > 0: # part 67.44
+    if play68_ERA > 0: # 67.44 plotting.py line 1044 plot era_68 data
         ax68 = ax1.twinx()
-        ax68.plot(data['ceres_68']["decimal_year"], data['ceres_68']["temp_average"], '-', 
+        ax68.plot(data['era_68']["decimal_year"], data['era_68']["temp_average"], '-', 
                   label="era5 temperature K68", color=c68, linewidth=2)
         ax68.tick_params(axis="y", labelcolor=c68)
         ax68.set_ylim(y_68min, y_68max)

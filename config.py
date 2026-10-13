@@ -188,7 +188,7 @@ y_Tmax = 2 # 1.7
 y_74min = 0.8 # for GIS Temperature only 
 y_74max = 1.6 # for GIS Temperature only 
 
-x_anf = 1940
+x_anf = 2004
 x_end = 2027
 
 # constants
@@ -377,23 +377,29 @@ print_debug = 10 # print some items
 # 
 
 #########################################################
-# 88 ERA5 temperature ##############################
+# 68 ERA5 temperature ##############################
 #########################################################
 #  https://pulse.climate.copernicus.eu/
 #  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download
 #  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels
 #        https://earthkit.ecmwf.int/
-# 1 https://bsky.app/profile/climatecasino.net/post/3mxoo2l7acs26 made a 4 years 
+# 68.1 https://bsky.app/profile/climatecasino.net/post/3mxoo2l7acs26 made a 4 years 
 #  running average plot with this path 
 #  https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
-# 2 make empty csv file work/_era5_empty.csv
-# 3 open https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
-# 4 select all and copy
-# 5 in csv file work/_era5_empty.csv paste all
-# 6 save as work/_88_era5_daily_series_2026_10_13.csv and delete the first lines with #
+# 68.2 make empty csv file work/_era5_empty.csv
+# 68.3 open https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+# 68.4 select all and copy
+# 68.5 in csv file work/_era5_empty.csv paste all
+# 68.6 save as work/_88_era5_daily_series_2026_10_13.csv and delete the first lines with #
 #   the columns are date,2t,clim_91-20,ano_91-20,status
-# 7 the column ano_91-20 are the temperature data 
-
+# 68.7 the column ano_91-20 are the temperature data 
+# 68.8 in config.py declare   play68_ERA = 48
+# 68.10 the main.py part lin2 266
+# 68.15  call create68_running_average for global era5 temperature from main
+# 68.17 DP read work/_68_era5_daily_series_2026_10_13.csv data-frame
+# 68.33 data_processing.py end line 507 (end perform averaging for play68_ERA )
+# 68.39 main.py line 377 read  work/_68_out.csv into  'era_68'
+# 67.44 plotting.py line 1044 plot era_68 data
 
 
 #########################################################
