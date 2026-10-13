@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure
-v = "5F118" # plot74_GIS_T = 4 # 2, 3,4,5 =right y axis
+v = "5G01" # era4-temperature
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -10,7 +10,8 @@ v = "5F118" # plot74_GIS_T = 4 # 2, 3,4,5 =right y axis
 # https://www.nature.com/articles/s43247-026-03427-w#
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3miz5mmll3k2z
 # part 5.3 plot53_CO2_orange2025
-# part 5.4 plot54_Glen_delta_on
+# play88_ERA = 48 
+# https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 # part 5.5 plot55_population_on human earth population 
 #
 # line 60 process_ceres_data():
