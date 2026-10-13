@@ -95,7 +95,7 @@ c63 = "#1652D490"
 c64 = "#9522AA90"
 c66 = "#AB263590"
 c67 = "#0F9BE190"
-c68 = "#34D48FC7"
+c68 = "#36970FD4"
 
 c71 = "red"
 c71 =  "#AB263590"
@@ -188,7 +188,7 @@ y_Tmax = 2 # 1.7
 y_74min = 0.8 # for GIS Temperature only 
 y_74max = 1.6 # for GIS Temperature only 
 
-x_anf = 2004
+x_anf = 1950
 x_end = 2027
 
 # constants

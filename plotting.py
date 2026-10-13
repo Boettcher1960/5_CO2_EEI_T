@@ -476,7 +476,7 @@ def plot8_right_y_axe_for_C_67(ax67,right62): # 67.50
 
 #  moving average 48 month 
 def plot8_right_y_axe_for_C_68(ax68,right62): # 68.50
-    outward_right =  ( 4 *  yr_60 ) - yr_150
+    outward_right =  ( 3 *  yr_60 ) - yr_150
     ax68.spines.right.set_position(("outward", outward_right))
     ax68.set_ylabel("ERA5 Temperature in °C     68", color=c68, fontname="Arial",fontsize=18)
     ax68.tick_params(axis="y", labelcolor=c68)
