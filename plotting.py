@@ -1041,7 +1041,16 @@ def plot_9_create_all_plots(ax1, data):
         if play_67_albedo > 2:
            plot8_right_y_axe_for_C_67( ax67 , 0 ) # part
 
-
+    if play68_ERA > 0: # part 67.44
+        ax68 = ax1.twinx()
+        ax68.plot(data['ceres_68']["decimal_year"], data['ceres_68']["temp_average"], '-', 
+                  label="era5 temperature K68", color=c68, linewidth=2)
+        ax68.tick_params(axis="y", labelcolor=c68)
+        ax68.set_ylim(y_68min, y_68max)
+        if print_debug > 9:
+           print(f"plot1051: ax68 68.48 ={play68_ERA}")
+        if play68_ERA > 2:
+           plot8_right_y_axe_for_C_68( ax68 , 0 ) # part
 
     if plot71_temperature > 0 : # 71.4
         # red71_text="red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"

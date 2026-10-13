@@ -444,10 +444,10 @@ def ceres67_to_csv(
 
 
 # part 68.2 
-def create68_running_average(input_csv,  # 'work/_88_era5_daily_series_2026_10_13.csv'
-                             output_csv, # 'work/_66c_OLR.csv',
-                             column_read,             #  column_name='ASR'
-                             column_average,          #  column_name='ASR48')
+def create68_running_average(input_csv,  # 'work/_68_era5_daily_series_2026_10_13.csv'
+                             output_csv, # 'work/__68_out.csv',
+                             column_read,             #  column_name='ano_91-20'
+                             column_average,          #  column_name='temp_average')
                              window_months, 
                              min_periods=None, 
                              center=True, 

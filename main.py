@@ -1,5 +1,5 @@
 # main.py
-v = "5G13" # era4-temperature
+v = "5G15" # era4-temperature
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -372,10 +372,10 @@ def load_plot_data():
         data['ceres_67'] = pd.read_csv("work/_CERES_albedo.csv")
         if print_debug > 9:
            print(f"main_355: 67.49 read ={play_67_albedo}")  
-    if play68_ERA > 0: # 67.49 read 
+    if play68_ERA > 0: # 67.29 read 
         data['ceres_68'] = pd.read_csv("work/_68_out.csv")
         if print_debug > 9:
-           print(f"main_378: 68.49 read ={play68_ERA}")  
+           print(f"main_378: 68.31 read ={play68_ERA}")  
 
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.3
