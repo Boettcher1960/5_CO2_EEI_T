@@ -470,24 +470,34 @@ def create88_running_average(input_csv,  # 'work/_88_era5_daily_series_2026_10_1
         min_periods=min_periods
     ).mean()
 
-    # part 67.46 first 4 columns are the date
+    # part 88.1 store values into the df field
+    #df = pd.DataFrame(data, columns=['year', 'month', column_name])
+    #df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
+    #df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
+    #df = df[['date', 'year', 'month', 'decimal_year', column_name]]
+    df['decimal_year'] = 2000
+
+
+
+    # part 88.12 first 4 columns are the date
     # output_columns = ['date', 'year', 'month', 'decimal_year']
-    output_columns = ['date', 'ano_91-20']
+    output_columns = ['date', 'decimal_year', 'ano_91-20']
+    # part 88.47 columns 5 is ceres txt read value, no average
+    # output_columns.append('date2')
 
-
-    # part 67.47 columns 5 is ceres txt read value, no average
+    # part 88.47 columns 5 is ceres txt read value, no average
     output_columns.append(column_read)
-    # part 67.48 columns 6 is the default column_name average
+    # part 88.48 columns 6 is the default column_name average
     output_columns.append(column_average)
-    # part 67.49 columns 7 is the parameter column_average average
+    # part 88.49 columns 7 is the parameter column_average average
     # output_columns.append(column_average)
 
-     # part 67.50 copy
+     # part 88.50 copy
     df_output = df[output_columns].copy()
-    # part 67.51 copy to csv
+    # part 88.51 copy to csv
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
     return df_output
-    # end part 67.51  end 67.c  CERES.csv (perform averaging)
+    # end part 88.51  end 88.c  CERES.csv (perform averaging)
 
 
 
