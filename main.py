@@ -1,5 +1,5 @@
 # main.py
-v = "5G22" # Annual Global Offset: 0.88°C must be added to a yearly ERA5
+v = "5G23" # Annual Global Offset: 0.88°C must be added to a yearly ERA5
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -17,7 +17,7 @@ v = "5G22" # Annual Global Offset: 0.88°C must be added to a yearly ERA5
 #         main.play_65_ASR line 141
 #         main.play_66_OLR line 144
 #         main.play_67_albedo line 176
-#         play68_ERA
+#         play68_ERA 
 
 # part 71 plot quadratic temperature with right y axis
 # part 72 plot temperature ECS = 8°C with right y axis
