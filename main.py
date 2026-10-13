@@ -1,7 +1,5 @@
 # main.py
-# part 1 configure
-v = "5G10" # era4-temperature
-# plan txt to csv to png play 64 
+v = "5G11" # era4-temperature
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -9,10 +7,8 @@ v = "5G10" # era4-temperature
 #
 # https://www.nature.com/articles/s43247-026-03427-w#
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3miz5mmll3k2z
-# part 5.3 plot53_CO2_orange2025
-# play88_ERA = 48 
+# play68_ERA = 48 
 # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
-# part 5.5 plot55_population_on human earth population 
 #
 # line 60 process_ceres_data():
 #         main.play_61_EEI line 65
@@ -21,6 +17,7 @@ v = "5G10" # era4-temperature
 #         main.play_65_ASR line 141
 #         main.play_66_OLR line 144
 #         main.play_67_albedo line 176
+#         play68_ERA
 
 # part 71 plot quadratic temperature with right y axis
 # part 72 plot temperature ECS = 8°C with right y axis
@@ -266,26 +263,26 @@ if play_67_albedo > 0: #
         # part 66.58
        if print_debug > 9:
           print(f"main_267: all main jobs done play_67_albedo={play_67_albedo}")
-# main. 88.1
-if play88_ERA > 0: #       
+# main. 68.1
+if play68_ERA > 0: #       
        if print_debug > 9:
-          print(f"main_272:  88.b play88_ERA={play88_ERA}")
+          print(f"main_272:  68.b play68_ERA={play68_ERA}")
 
-       # part 88.3 set some variables
-       window_months=play88_ERA
-       if play88_ERA > 11:
+       # part 68.3 set some variables
+       window_months=play68_ERA
+       if play68_ERA > 11:
           min1_periods=12
        else:
-          min1_periods=play88_ERA
+          min1_periods=play68_ERA
        use_center=False
        column_read    ='ano_91-20'
        column_average ='temp_average'
-       # part 88.5  CERES.csv (perform averaging for global era5 temperatue)
-       df88c = create88_running_average( 'work/_88_era5_daily_series_2026_10_13.csv', 
-                                         'work/_88_out.csv',
+       # part 68.5  CERES.csv (perform averaging for global era5 temperatue)
+       df88c = create88_running_average( 'work/_68_era5_daily_series_2026_10_13.csv', 
+                                         'work/_68_out.csv',
                                           column_read,             #  column_name='ASR')
                                           column_average,          #  column_name='ASR48')
-                                            window_months=play88_ERA,
+                                            window_months=play68_ERA,
                                             min_periods=12,
                                             center=use_center)
 

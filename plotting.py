@@ -240,8 +240,6 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.05
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-        #ax1.yaxis.set_ticks([])
-        #ax1.spines['right'].set_visible(False)
     elif plot76_my_T == 2:  # 76.5 y axe left  red 
         # my76_text="guessed quadratic temperature  my_T   76 "
         ax1.spines.left.set_position(("outward", 3))

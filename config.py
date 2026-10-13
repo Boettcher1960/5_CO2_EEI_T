@@ -52,6 +52,8 @@ play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flu
                 # todo average 48
 play_66_OLR = 0 # 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
 play_67_albedo = 24   # create 1..12..48..99 CERES
+play68_ERA = 48 # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+
 
 plot71_temperature = 0
 plot72_AESS_T = 0
@@ -60,7 +62,7 @@ plot74_GIS_T = 2 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0
 plot_T_77 = 0 # 3, 4
-play88_ERA = 48 # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+
 parameter84_save_png = 8
 
 line3 = 0 # 0 means, line 3 is not used

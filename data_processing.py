@@ -443,7 +443,7 @@ def ceres67_to_csv(
     # end part 67.32 create work/_CERES_raw.csv with 14 columns
 
 
-# part 88.2 line182 create66_running_average (input_csv, output_csv, 
+# part 68.2 line182 create66_running_average (input_csv, output_csv, 
 def create88_running_average(input_csv,  # 'work/_88_era5_daily_series_2026_10_13.csv'
                              output_csv, # 'work/_66c_OLR.csv',
                              column_read,             #  column_name='ASR'
@@ -452,50 +452,50 @@ def create88_running_average(input_csv,  # 'work/_88_era5_daily_series_2026_10_1
                              min_periods=None, 
                              center=True, 
                              ): 
-    # part 88.7 read csv with raw ceres data into data-frame
+    # part 68.7 read csv with raw ceres data into data-frame
     df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv' # 'work/_65b_SW_in_raw.csv'
 
-    # part 88.8 sort the data-frame
+    # part 68.8 sort the data-frame
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values('date').reset_index(drop=True)
 
-    # part 88.9 check the parameters 
+    # part 68.9 check the parameters 
     if min_periods is None:
         min_periods = window_months
 
-     # part 88.10 mean value (read column )(store in df)
+     # part 68.10 mean value (read column )(store in df)
     df[column_average] = df[column_read].rolling(
         window=window_months, 
         center=center,
         min_periods=min_periods
     ).mean()
 
-    # part 88.12 Convert the column to datetime objects not needed as 
+    # part 68.12 Convert the column to datetime objects not needed as 
     #            df["date"] is identical to df["datetime"]
     df["datetime"] = pd.to_datetime(df["date"])
-    # part 88.13 Extract day of the year and total days in that specific year
+    # part 68.13 Extract day of the year and total days in that specific year
     day_of_year = df["datetime"].dt.dayofyear
     days_in_year = df["datetime"].dt.is_leap_year.map(
         lambda x: 366 if x else 365
     )
-    # part 88.15 Calculate the decimal year
+    # part 68.15 Calculate the decimal year
     df["decimal_year"] = df["datetime"].dt.year + (day_of_year / days_in_year)
     # not needed  df['year'] = 2001     # df['month'] = 3
 
-    # part 88.16 prepare the first 3 columns for the output-csv
+    # part 68.16 prepare the first 3 columns for the output-csv
     output_columns = ['date', 'datetime', 'decimal_year']
 
-    # part 88.17 columns 4 is 'ano_91-20' no average
+    # part 68.17 columns 4 is 'ano_91-20' no average
     output_columns.append(column_read)
-    # part 88.18 columns 5 is 'temp_average' the moving average
+    # part 68.18 columns 5 is 'temp_average' the moving average
     output_columns.append(column_average)
     
-     # part 88.20 copy
+     # part 68.20 copy
     df_output = df[output_columns].copy()
-    # part 88.21 copy to csv
+    # part 68.21 copy to csv
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
     return df_output
-    # end part 88.23  (perform averaging for play88_ERA )
+    # end part 68.23  (perform averaging for play68_ERA )
 
 
 def load_co2_mauna_loa(x_anf, x_end): # 22.2 define the mauna loa CO2 data
