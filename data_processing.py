@@ -477,7 +477,7 @@ def create68_running_average(input_csv,  # 'work/_68_era5_daily_series_2026_10_1
         window=window_months, 
         center=center,
         min_periods=min_periods
-    ).mean()
+    ).mean() + 0.92
 
     # part 68.22 Convert the column to datetime objects not needed as 
     #            df["date"] is identical to df["datetime"]
