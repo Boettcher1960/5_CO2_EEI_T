@@ -266,6 +266,30 @@ if play_67_albedo > 0: #
         # part 66.58
        if print_debug > 9:
           print(f"main_267: all main jobs done play_67_albedo={play_67_albedo}")
+# main.play_67_albedo line 176
+if play88_ERA > 0: #       
+       if print_debug > 9:
+          print(f"main_272:  88.b play88_ERA={play88_ERA}")
+
+       # part 67.34 set some variables
+       window_months=play_67_albedo
+
+       if play_67_albedo > 11:
+          min1_periods=12
+       else:
+          min1_periods=play_67_albedo
+       use_center=False
+       keep_original=True,
+       column_read    ='ASR'
+       column_average ='ASR48'
+       # part 66.35  CERES.csv (perform averaging for ASR)
+       df67c = create67_running_average( 'work/_CERES_raw.csv', 
+                                         'work/_CERES_ASR.csv',
+                                          column_read,             #  column_name='ASR')
+                                          column_average,          #  column_name='ASR48')
+                                            window_months=play_67_albedo,
+                                            min_periods=12,
+                                            center=use_center)
 
 
 
