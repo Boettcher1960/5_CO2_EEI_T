@@ -470,54 +470,32 @@ def create88_running_average(input_csv,  # 'work/_88_era5_daily_series_2026_10_1
         min_periods=min_periods
     ).mean()
 
-    # part 88.12 store values into the df field
-    #df = pd.DataFrame(data, columns=['year', 'month', column_name])
-    #df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
-    #df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
-    #df = df[['date', 'year', 'month', 'decimal_year', column_name]]
-    # # Extracts the 4th and 5th characters ("D" and "E") result = text[3:5]
-    # df['decimal_year'] = 2000
-
-    # 1. Convert the column to datetime objects not needed as 
-    # df["date"] is identical to df["datetime"]
+    # part 88.12 Convert the column to datetime objects not needed as 
+    #            df["date"] is identical to df["datetime"]
     df["datetime"] = pd.to_datetime(df["date"])
-    # 2. Extract day of the year and total days in that specific year
+    # part 88.13 Extract day of the year and total days in that specific year
     day_of_year = df["datetime"].dt.dayofyear
     days_in_year = df["datetime"].dt.is_leap_year.map(
         lambda x: 366 if x else 365
     )
-
-    # 3. Calculate the decimal year
+    # part 88.15 Calculate the decimal year
     df["decimal_year"] = df["datetime"].dt.year + (day_of_year / days_in_year)
+    # not needed  df['year'] = 2001     # df['month'] = 3
 
-    df['year'] = 2001
-    # df['year'] = df['date'][1:3]
-    df['month'] = 3
-    # df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
-    # part 88.12 first 4 columns are the date
-    # output_columns = ['date', 'year', 'month', 'decimal_year']
-    # output_columns = ['date', 'decimal_year', 'year', 'month','ano_91-20']
-    output_columns = ['date', 'datetime', 'decimal_year', 'year', 'month']
-    # part 88.47 columns 5 is ceres txt read value, no average
-    # output_columns.append('date2')
+    # part 88.16 prepare the first 3 columns for the output-csv
+    output_columns = ['date', 'datetime', 'decimal_year']
 
-    # part 88.47 columns 5 is ceres txt read value, no average
+    # part 88.17 columns 4 is 'ano_91-20' no average
     output_columns.append(column_read)
-    # part 88.48 columns 6 is the default column_name average
+    # part 88.18 columns 5 is 'temp_average' the moving average
     output_columns.append(column_average)
-    # part 88.49 columns 7 is the parameter column_average average
-    # output_columns.append(column_average)
-
-     # part 88.50 copy
+    
+     # part 88.20 copy
     df_output = df[output_columns].copy()
-    # part 88.51 copy to csv
+    # part 88.21 copy to csv
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
     return df_output
-    # end part 88.51  end 88.c  CERES.csv (perform averaging)
-
-
-
-
+    # end part 88.23  (perform averaging for play88_ERA )
 
 
 def load_co2_mauna_loa(x_anf, x_end): # 22.2 define the mauna loa CO2 data
