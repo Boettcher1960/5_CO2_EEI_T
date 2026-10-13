@@ -464,7 +464,8 @@ def create68_running_average(input_csv,  # 'work/_68_era5_daily_series_2026_10_1
         min_periods = window_months
 
     # part 68.10 months into days 
-    window_months = window_months * 30
+    # window_months = window_months * 30
+    window_months = 1461
 
      # part 68.11 mean value (read column )(store in df)
     df[column_average] = df[column_read].rolling(
