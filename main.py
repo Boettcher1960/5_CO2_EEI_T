@@ -280,7 +280,7 @@ if play88_ERA > 0: #
        use_center=False
        column_read    ='ano_91-20'
        column_average ='temp_average'
-       # part 88.5  CERES.csv (perform averaging for ASR)
+       # part 88.5  CERES.csv (perform averaging for global era5 temperatue)
        df88c = create88_running_average( 'work/_88_era5_daily_series_2026_10_13.csv', 
                                          'work/_88_out.csv',
                                           column_read,             #  column_name='ASR')

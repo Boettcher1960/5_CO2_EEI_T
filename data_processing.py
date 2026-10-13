@@ -475,13 +475,29 @@ def create88_running_average(input_csv,  # 'work/_88_era5_daily_series_2026_10_1
     #df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
     #df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
     #df = df[['date', 'year', 'month', 'decimal_year', column_name]]
-    df['decimal_year'] = 2000
-    df['year'] = 200
-    df['month'] = 3
+    # # Extracts the 4th and 5th characters ("D" and "E") result = text[3:5]
+    # df['decimal_year'] = 2000
 
+    # 1. Convert the column to datetime objects not needed as 
+    # df["date"] is identical to df["datetime"]
+    df["datetime"] = pd.to_datetime(df["date"])
+    # 2. Extract day of the year and total days in that specific year
+    day_of_year = df["datetime"].dt.dayofyear
+    days_in_year = df["datetime"].dt.is_leap_year.map(
+        lambda x: 366 if x else 365
+    )
+
+    # 3. Calculate the decimal year
+    df["decimal_year"] = df["datetime"].dt.year + (day_of_year / days_in_year)
+
+    df['year'] = 2001
+    # df['year'] = df['date'][1:3]
+    df['month'] = 3
+    # df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
     # part 88.12 first 4 columns are the date
     # output_columns = ['date', 'year', 'month', 'decimal_year']
-    output_columns = ['date', 'decimal_year', 'year', 'month','ano_91-20']
+    # output_columns = ['date', 'decimal_year', 'year', 'month','ano_91-20']
+    output_columns = ['date', 'datetime', 'decimal_year', 'year', 'month']
     # part 88.47 columns 5 is ceres txt read value, no average
     # output_columns.append('date2')
 
