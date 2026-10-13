@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure
-v = "5G06" # era4-temperature
+v = "5G09" # era4-temperature
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -266,31 +266,28 @@ if play_67_albedo > 0: #
         # part 66.58
        if print_debug > 9:
           print(f"main_267: all main jobs done play_67_albedo={play_67_albedo}")
-# main.play_67_albedo line 176
+# main. 88.1
 if play88_ERA > 0: #       
        if print_debug > 9:
           print(f"main_272:  88.b play88_ERA={play88_ERA}")
 
-       # part 67.34 set some variables
+       # part 88.3 set some variables
        window_months=play88_ERA
-
        if play88_ERA > 11:
           min1_periods=12
        else:
           min1_periods=play88_ERA
        use_center=False
-       keep_original=True,
        column_read    ='ano_91-20'
-       column_average ='ASR48'
-       # part 66.35  CERES.csv (perform averaging for ASR)
+       column_average ='temp_average'
+       # part 88.5  CERES.csv (perform averaging for ASR)
        df88c = create88_running_average( 'work/_88_era5_daily_series_2026_10_13.csv', 
                                          'work/_88_out.csv',
                                           column_read,             #  column_name='ASR')
                                           column_average,          #  column_name='ASR48')
-                                            window_months=play_67_albedo,
+                                            window_months=play88_ERA,
                                             min_periods=12,
                                             center=use_center)
-
 
 
 
