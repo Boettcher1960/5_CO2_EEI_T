@@ -376,6 +376,23 @@ print_debug = 10 # print some items
 # 67.33 copy to work/_67_albedo48months_2026_07.csv'
 # 
 
+#########################################################
+# 88 ERA5 temperature ##############################
+#########################################################
+#  https://pulse.climate.copernicus.eu/
+#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download
+#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels
+#        https://earthkit.ecmwf.int/
+# 1 https://bsky.app/profile/climatecasino.net/post/3mxoo2l7acs26 made a 4 years 
+#  running average plot with this path 
+#  https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+# 2 make empty csv file work/_era5_empty.csv
+# 3 open https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+# 4 select all and copy
+# 5 in csv file work/_era5_empty.csv paste all
+# 6 save as work/_88_era5_daily_series_2026_10_13.csv and delete the first lines with #
+#   the columns are date,2t,clim_91-20,ano_91-20,status
+# 7 the column ano_91-20 are the temperature data 
 
 
 
@@ -492,24 +509,6 @@ print_debug = 10 # print some items
 #    https://www.columbia.edu/~jeh1/Data/Temperature/#ref1
 #
 #
-
-#########################################################
-# 88 ERA5 temperature ##############################
-#########################################################
-#  https://pulse.climate.copernicus.eu/
-#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download
-#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels
-#        https://earthkit.ecmwf.int/
-# 1 https://bsky.app/profile/climatecasino.net/post/3mxoo2l7acs26 made a 4 years 
-#  running average plot with this path 
-#  https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
-# 2 make empty csv file work/_era5_empty.csv
-# 3 open https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
-# 4 select all and copy
-# 5 in csv file work/_era5_empty.csv paste all
-# 6 save as work/_88_era5_daily_series_2026_10_13.csv and delete the first lines with #
-#   the columns are date,2t,clim_91-20,ano_91-20,status
-# 7 the column ano_91-20 are the temperature data 
 
 
 #########################################################

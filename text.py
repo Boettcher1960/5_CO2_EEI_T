@@ -472,6 +472,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        # 9.5.4 write green text
        plt.text(tr2x, tr5y, "carbon brief cummulative CO2 values in Gt CO2 since 1750     63", color=c63, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
+    elif play68_ERA > 0: # 68.66
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c68)
+        text_4_add_text(ax1, tr2x, tr5y, 
+             "Temperature in °C  climate.copernicus.eu/datasets/reanalysis-era5-single-levels     68", c68, trs)
     elif plot74_GIS_T == 5: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c74)
         text_4_add_text(ax1, tr2x, tr5y, 
