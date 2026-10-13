@@ -95,6 +95,7 @@ c63 = "#1652D490"
 c64 = "#9522AA90"
 c66 = "#AB263590"
 c67 = "#0F9BE190"
+c68 = "#34D48FC7"
 
 c71 = "red"
 c71 =  "#AB263590"
@@ -178,6 +179,9 @@ y_67min = 0.2936  # 0.294 albedo in %
 y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.294 # albedo in %
 y_67max = 0.286 # albedo in %
+y_68min = -0.8 # for ERA5 Temperature only 
+y_68max = 1.6  # for ERA5 Temperature only 
+
 
 y_Tmin = 0
 y_Tmax = 2 # 1.7
