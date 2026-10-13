@@ -50,8 +50,8 @@ play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
-play_66_OLR = 24 # 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
-play_67_albedo = 0   # create 1..12..48..99 CERES
+play_66_OLR = 0 # 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
+play_67_albedo = 24   # create 1..12..48..99 CERES
 
 plot71_temperature = 0
 plot72_AESS_T = 0

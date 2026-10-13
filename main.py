@@ -1,6 +1,6 @@
 # main.py
 # part 1 configure
-v = "5G02" # era4-temperature
+v = "5G05" # era4-temperature
 # plan txt to csv to png play 64 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -266,6 +266,8 @@ if play_67_albedo > 0: #
         # part 66.58
        if print_debug > 9:
           print(f"main_267: all main jobs done play_67_albedo={play_67_albedo}")
+
+
 
 
 
