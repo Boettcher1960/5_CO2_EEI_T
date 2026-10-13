@@ -180,7 +180,7 @@ y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.294 # albedo in %
 y_67max = 0.286 # albedo in %
 y_68min = -0.8 # for ERA5 Temperature only 
-y_68max = 1.6  # for ERA5 Temperature only 
+y_68max = 1.2  # for ERA5 Temperature only 
 
 
 y_Tmin = 0
@@ -188,7 +188,7 @@ y_Tmax = 2 # 1.7
 y_74min = 0.8 # for GIS Temperature only 
 y_74max = 1.6 # for GIS Temperature only 
 
-x_anf = 1950
+x_anf = 1940
 x_end = 2027
 
 # constants
