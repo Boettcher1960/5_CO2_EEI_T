@@ -474,8 +474,8 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        transform=plt.gca().transAxes)
     elif play68_ERA > 0: # 68.66
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c68)
-        text_4_add_text(ax1, tr2x, tr5y, 
-             "Temperature in °C  climate.copernicus.eu/datasets/reanalysis-era5-single-levels     68", c68, trs)
+        p68_text = f"Temperature in °C climate.copernicus.eu/datasets/-era5-single-levels {play68_ERA} days    68"
+        text_4_add_text(ax1, tr2x, tr5y, p68_text, c68, trs)
     elif plot74_GIS_T == 5: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c74)
         text_4_add_text(ax1, tr2x, tr5y, 
