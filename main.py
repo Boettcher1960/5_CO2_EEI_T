@@ -148,7 +148,7 @@ if play_65_ASR > 1: #
                                     'SW_in'
                                     )
        if print_debug > 9:
-          print(f"main_154: created.  work/_65b_SW_in_raw  65.b ={play_65_ASR}")
+          print(f"main_151: created.  work/_65b_SW_in_raw  65.b ={play_65_ASR}")
        
        window_months=play_65_ASR
        min_periods=12
@@ -170,7 +170,8 @@ if play_65_ASR > 1: #
                                             min_periods=12,
                                             center=use_center,
                                             column_name=columnname)
-
+       if print_debug > 9:
+          print(f"main_174: created.  work/_65c_SW_in.csv  65.50 ={play_65_ASR}")
 
 
 # main.play_66_OLR line 144

@@ -34,7 +34,7 @@ plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 
 plot43_eei_12month = 2  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean.
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
-plot46_ASR = 0 # 2 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average
+plot46_ASR = 3 # 2 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average
 plot47_albedo48 = 0  # 4  
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
@@ -48,7 +48,7 @@ play_61_EEI = 0    # 12 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv
 play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
-play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
+play_65_ASR = 12 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
 play_66_OLR = 0 # 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 W/m²
 play_67_albedo = 0   # create 1..12..48..99 CERES
