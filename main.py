@@ -1,5 +1,5 @@
 # main.py
-v = "5G26" # replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
+v = "5G27" # replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -465,11 +465,11 @@ def main():
     
     axes = plt.gcf().get_axes()
     # Keep axes 0, 1, 2, hide all others
-    print("main_323: call plot_6_remove_axe1.")
+    print("main_468: call plot_6_remove_axe1.")
     #plot_6_remove_axe1(axes,yr_delete)
-    plot_6_remove_axe1(axes,-1) # -1= no delete, print only
+    #plot_6_remove_axe1(axes,-1) # -1= no delete, print only
     #plot_6_remove_axe1(axes,0) # delete axe 
-    #plot_6_remove_axe1(axes,1) # delete axe 
+    plot_6_remove_axe1(axes,1) # delete axe 
     #plot_6_remove_axe1(axes,2) # delete axe 
     #plot_6_remove_axe1(axes,3) # delete axe 
     #plot_6_remove_axe1(axes,4) # delete axe 

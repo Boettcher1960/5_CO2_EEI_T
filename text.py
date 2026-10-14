@@ -339,7 +339,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     # row 4,      print line 4 below the plot ,     text_9_print_7_lines() ,           line 229
     ########################## row 4 ################################
     # print line 4 below the plot
-    print("text_218: plot34_CO2_emission = ", plot34_CO2_emission) # 34.8
+    # print("text_342: plot34_CO2_emission = ", plot34_CO2_emission) # 34.8
     if plot22_CO2_Mauna_Loa == 4: # 22.5.4 legend row 4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c22)
         text_4_add_text(ax1, tr2x, tr4y, 

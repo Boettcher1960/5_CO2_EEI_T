@@ -43,7 +43,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 12     # 12 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 0    # 12 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # play_62_CERES ist doppelt zu play_66_OLR
 play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
@@ -259,9 +259,10 @@ print_debug = 10 # print some items
 #    /_61c_out_ceres.csv column EEI has the 12 month average
 # 43.5 copy            read_csv/_61c_out_ceres.csv
 # 43.6 paste to        read_csv/_43_EEI12month_2026_07.csv
-# 43.7 
-# 43.8 set plot43_eei_12month = 3  # 2,3,4,5 print EEI 48 month running mean
-#
+# 43.7.1 set plot43_eei_12month = 2  # 2,3,4,5 print EEI 48 month running mean
+#        the left axis is EEI 43
+# 43.7.2 set plot43_eei_12month = 3  # 2,3,4,5 print EEI 48 month running mean
+# 43.8 run the plot
 
 #########################################################
 # 45_OLR_48month_2026_07.csv ############################
