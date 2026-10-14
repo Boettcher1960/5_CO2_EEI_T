@@ -1,5 +1,5 @@
 # main.py
-v = "5G28" # play_65_ASR = 12  replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
+v = "5G29" # play_65_ASR = 12  replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -146,12 +146,10 @@ if play_65_ASR > 1: #
        df65a = create67_running_average( 'work/_CERES_raw.csv', 
                                          'work/_CERES_65_ASR.csv',
                                                 column_read,             #  column_name='ASR')
-                                                column_average,          #  column_name='ASR48')
+                                                column_average,          #  column_name='ASR_average')
                                                 window_months=play_65_ASR,
                                                 min_periods=12,
                                                 )
-
-   
        if print_debug > 9:
           print(f"main_156: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
 
