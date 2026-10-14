@@ -1,5 +1,5 @@
 # main.py
-v = "5G29" # play_65_ASR = 12  replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
+v = "5G30" # play_65_ASR = 12  replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -135,7 +135,7 @@ if play_64_ASR_anomaly > 1: #
                                             center=use_center,
                                             column_name='ASR')
        if print_debug > 9:
-          print(f"main_165: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
+          print(f"main_138: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
 
 # main.play_65_ASR line 141
 # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
@@ -143,6 +143,7 @@ if play_65_ASR > 1: #
        column_read    ='ASR'
        column_average ='ASR_average'
        # part 65.37  CERES.csv (perform averaging for albedo)
+       # note part 67.31 write df2 to  work/_CERES_raw.csv'
        df65a = create67_running_average( 'work/_CERES_raw.csv', 
                                          'work/_CERES_65_ASR.csv',
                                                 column_read,             #  column_name='ASR')
@@ -151,7 +152,7 @@ if play_65_ASR > 1: #
                                                 min_periods=12,
                                                 )
        if print_debug > 9:
-          print(f"main_156: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
+          print(f"main_155: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
 
 
 # main.play_66_OLR line 144
@@ -165,7 +166,7 @@ if play_66_OLR > 1: #
                                     'OLR'
                                     )
        if print_debug > 9:
-          print(f"main_188: created.  work/_66b_OLR.csv  66.b ={play_66_OLR}")
+          print(f"main_169: created.  work/_66b_OLR.csv  66.b ={play_66_OLR}")
        
        window_months=play_66_OLR
        min_periods=12
@@ -348,10 +349,15 @@ def load_plot_data():
         # data['ceres_64'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
            print(f"main_291: 64.9 read ={play_64_ASR_anomaly}") 
+    if play_65_ASR > 0: # 
+        data['ceres_65'] = pd.read_csv("work/_CERES_65_ASR.csv")
+        if print_debug > 9:
+           print(f"main_355: 65.9 read ={play_65_ASR}")  
+
     if play_66_OLR > 0: # 66.9 read 'work/_66c_OLR.csv'
         data['ceres_66'] = pd.read_csv("work/_66c_OLR.csv")
         if print_debug > 9:
-           print(f"main_296: 66.9 read ={play_66_OLR}")  
+           print(f"main_357: 66.9 read ={play_66_OLR}")  
     if play_67_albedo > 0: # 67.49 read 
         data['ceres_67'] = pd.read_csv("work/_CERES_albedo.csv")
         if print_debug > 9:
