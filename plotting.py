@@ -651,29 +651,6 @@ def plot_9_create_all_plots(ax1, data):
            if plot25_long_CO2 > 2:
               plot8_right_y_axe_for_ppm_25( ax25 , 0 ) # 22.4
 
-
-
-    if plot25_long_CO2 > 90: # 25.2 plot
-      #df25 = pd.read_csv("read_csv/csv_25_ppm_long.csv") # our world in data file
-      df25 = pd.read_csv("read_csv/_25_ppm_long.csv") # our world in data file
-      long_co25 = (
-         df25[df25["Entity"] == "World"][["Year25", "ppm25"]]
-         .query("-10 <= Year25 <= 2026")
-         .sort_values("Year25")
-         .reset_index(drop=True)
-         )
-      ax25 = ax1.twinx()
-      ax25.spines.right.set_position(("outward", 90))
-      # ax25.spines["right"].set_visible(False) # remove right y-Achse
-      # ax25.tick_params(right=False, labelright=False) # remove Zahlen
-      ax25.plot(df25["Year25"], df25["ppm25"], '--', label="plot25_long_CO2", color=c25, linewidth=3)
-      ax25.tick_params(axis="y", labelcolor=c25)
-      ax25.set_ylim(y_min, y_max) # scale
-      ax25.spines.right.set_position(("outward", 60))
-      if plot25_long_CO2 > 2:
-           plot8_right_y_axe_for_ppm_25( ax25 , 0 ) # 22.4
-      # print(long_co25.head(5))
-
     # plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603
     # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
     # 3.4.0 Entity,Code,Year,Cumulat
