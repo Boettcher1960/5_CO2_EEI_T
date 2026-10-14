@@ -428,6 +428,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c77)
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2023=1.5°C         77", c77, trs)
+    elif play_65_ASR > 0:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c65)
+        p65_text = f"ASR Absorbed Solar Radiation in W/m²-               {play_65_ASR} - month moving average    65"
+        text_4_add_text(ax1, tr2x, tr4y, p65_text, c65, trs) 
     elif play_66_OLR > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c66)
         # Outgoing Longwave Radiation OLR
