@@ -1,5 +1,5 @@
 # main.py
-v = "5G27" # replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
+v = "5G28" # play_65_ASR = 12  replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -140,38 +140,20 @@ if play_64_ASR_anomaly > 1: #
 # main.play_65_ASR line 141
 # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
 if play_65_ASR > 1: #  
-       # part 65.b convert download.txt to CERES.csv (no averaging)
-       # CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt downloaded
-       # copy to 'work/_65_TOA_sw_in_all_sky_2026_07.txt'
-       df65b = convert66_txt_to_csv('work/_65_TOA_sw_in_all_sky_2026_07.txt', 
-                                    'work/_65b_SW_in_raw.csv',
-                                    'SW_in'
-                                    )
+       column_read    ='ASR'
+       column_average ='ASR_average'
+       # part 65.37  CERES.csv (perform averaging for albedo)
+       df65a = create67_running_average( 'work/_CERES_raw.csv', 
+                                         'work/_CERES_65_ASR.csv',
+                                                column_read,             #  column_name='ASR')
+                                                column_average,          #  column_name='ASR48')
+                                                window_months=play_65_ASR,
+                                                min_periods=12,
+                                                )
+
+   
        if print_debug > 9:
-          print(f"main_151: created.  work/_65b_SW_in_raw  65.b ={play_65_ASR}")
-       
-       window_months=play_65_ASR
-       min_periods=12
-       use_center=False
-       keep_original=True
-       #if play_66_OLR < 47:
-           # columnname ='OLR12'
-       #else:
-       columnname ='SW_in'
-       column_read    ='SW_in'
-       column_average ='SW_in48'
-       # part 65.c  CERES.csv (perform averaging)
-       df65c = create66_running_average( 'work/_65b_SW_in_raw.csv', 
-                                         'work/_65c_SW_in.csv',
-                                          column_read,             #  column_name='SW_in')
-                                          column_average,          #  column_name='SW_in48')
-                                          columnname,
-                                            window_months=play_65_ASR,
-                                            min_periods=12,
-                                            center=use_center,
-                                            column_name=columnname)
-       if print_debug > 9:
-          print(f"main_174: created.  work/_65c_SW_in.csv  65.50 ={play_65_ASR}")
+          print(f"main_156: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
 
 
 # main.play_66_OLR line 144
