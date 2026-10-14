@@ -1,5 +1,5 @@
 # text_annotations.py
-# version 5b85
+# version 5g25
 # row 1  ,    print line 1 below the plot ,     text_1_print_line() ,              line  21
 # row 0  ,    print line 0 above the plot ,     text_2_print_head_line() ,         line  40
 # text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y): line 15
@@ -61,6 +61,10 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Jul. 2026 Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
+    elif plot43_eei_12month == 2:
+                header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Jul. 2026 Plot {x_anf} to {x_end}."
+                ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
+                        transform=ax1.transAxes)
     elif plot45_OLR == 2:
         header = f"Outgoing Longwave Radiation OLR in   W/m²  Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color=c45, fontname="Arial", fontsize=trs,

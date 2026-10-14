@@ -171,9 +171,9 @@ def plot_1_axe(ax1):
 
     elif plot43_eei_12month == 2:  # 43.5 y axe left 
         # ax42.spines.right.set_position(("outward", outward_right))
-        ax1.spines.left.set_position(("outward", 3))
+        ax1.spines.left.set_position(("outward", 1))
         ax1.set_ylim(y_43min, y_43max)
-        ax1.set_ylabel("Earth energy Imbalance EEI in W (plot168)  ", color=c43, fontsize=20)
+        ax1.set_ylabel("Earth Energy Imbalance EEI   [W/m²] ", color=c43, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c43, labelsize=20)
         y_mayor_ticks = 0.500 
         y_minor_ticks = 0.100
@@ -801,7 +801,6 @@ def plot_9_create_all_plots(ax1, data):
         ax43.set_ylim(y_43min, y_43max)
         if print_debug > 19:
            print(f"plot_231: ax43 43.4 ={plot43_eei_12month}")
-        # plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance     ,  line  460
         if plot43_eei_12month > 2:
            plot8_right_y_axe_for_eei_43( ax43 , 0 ) # 43.4 line 460
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
