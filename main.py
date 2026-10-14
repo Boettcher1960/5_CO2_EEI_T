@@ -1,5 +1,5 @@
 # main.py
-v = "5G40" # play_65_ASR = 12  replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
+v = "5G41" # play_65_ASR = 12  replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification

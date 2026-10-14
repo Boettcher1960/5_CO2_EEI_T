@@ -196,13 +196,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
          c25, trs)
     elif plot31_CO2_emission == 2: # 31.8
        print("text_094: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
-       line31 = Line2D([lr2x1, lr2x2], [lr2y, lr2y], # y from 0 to 1
-       transform=fig.transFigure,
-       marker="o", markersize=3, color=c31, linewidth=2)
-       fig.add_artist(line31)
-       plt.text(tr2x, tr2y, print31_text, color=c31, fontname="Arial", fontsize=trs,
-       transform=plt.gca().transAxes)
-       fig.add_artist(line31)
+       text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c31)
+       text_4_add_text(ax1, tr2x, tr2y, 
+         "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data                31", 
+          c31, trs)
     elif plot32_CO2_emission == 2: # 32.8
        print("text_094: plot32_CO2_emission = ", plot32_CO2_emission,  " 32.8 ") # 32.8
        line32 = Line2D([lr2x1, lr2x2], [lr2y, lr2y], # y from 0 to 1
@@ -213,10 +210,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        transform=plt.gca().transAxes)
        fig.add_artist(line32)
     elif plot42_EEI_48month == 2:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c42)
-        text_4_add_text(ax1, tr2x, tr2y, 
-                    "Earth Energy Imbalance [W/m2] moving average 48 month                                       42", 
-                    c42, trs)
+       text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c42)
+       text_4_add_text(ax1, tr2x, tr2y, 
+         "Earth Energy Imbalance [W/m2] moving average 48 month                                       42", 
+         c42, trs)
     elif plot43_eei_12month == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
         text_4_add_text(ax1, tr2x, tr2y, 

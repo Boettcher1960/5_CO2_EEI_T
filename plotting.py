@@ -624,7 +624,36 @@ def plot_9_create_all_plots(ax1, data):
     # -----------------------------
     # part 2.5 plot CO2 # plot_9 line 453
     blue25_text="green: CO2 NOAA 800_000 year ice data 25"
-    if plot25_long_CO2 > 0: # 25.2 plot
+    if plot25_long_CO2 > 0 : # 74.4
+        df25 = pd.read_csv("read_csv/_25_ppm_long.csv") # our world in data file
+        long_co25 = (
+                 df25[df25["Entity"] == "World"][["Year25", "ppm25"]]
+                 .query("-10 <= Year25 <= 2026")
+                 .sort_values("Year25")
+                 .reset_index(drop=True)
+                 )
+        if plot25_long_CO2 == 2:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(df25["Year25"], df25["ppm25"], '--', 
+                  label="plot25_long_CO2", color=c25, linewidth=3)
+
+           # ax1.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
+           #       label="T GIS K74", color=c74, linewidth=3)
+           # The left axis is already configured in plot_1_axe
+        else:
+           ax25 = ax1.twinx()
+           # ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
+           #       label="T GIS K74", color=c74, linewidth=3)
+           ax25.plot(df25["Year25"], df25["ppm25"], '--', 
+                  label="plot25_long_CO2", color=c25, linewidth=3)
+           ax25.tick_params(axis="y", labelcolor=c25)
+           ax25.set_ylim(y_min, y_max) # scale
+           if plot25_long_CO2 > 2:
+              plot8_right_y_axe_for_ppm_25( ax25 , 0 ) # 22.4
+
+
+
+    if plot25_long_CO2 > 90: # 25.2 plot
       #df25 = pd.read_csv("read_csv/csv_25_ppm_long.csv") # our world in data file
       df25 = pd.read_csv("read_csv/_25_ppm_long.csv") # our world in data file
       long_co25 = (
@@ -661,7 +690,6 @@ def plot_9_create_all_plots(ax1, data):
         ax31.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
         if plot31_CO2_emission > 2:
             plot8_right_y_axe_for_C_31(ax31,0) # 31.5 line 500
-            # plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
 
     # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
     # 3.4.0 Entity,Code,Year,Cumulat
