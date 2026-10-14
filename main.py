@@ -446,11 +446,11 @@ def main():
     
     axes = plt.gcf().get_axes()
     # Keep axes 0, 1, 2, hide all others
-    print("main_468: call plot_6_remove_axe1.")
+    # print("main_468: call plot_6_remove_axe1.")
     #plot_6_remove_axe1(axes,yr_delete)
-    #plot_6_remove_axe1(axes,-1) # -1= no delete, print only
+    plot_6_remove_axe1(axes,-1) # -1= no delete, print only
     #plot_6_remove_axe1(axes,0) # delete axe 
-    plot_6_remove_axe1(axes,1) # delete axe 
+    # plot_6_remove_axe1(axes,1) # delete axe 
     #plot_6_remove_axe1(axes,2) # delete axe 
     #plot_6_remove_axe1(axes,3) # delete axe 
     #plot_6_remove_axe1(axes,4) # delete axe 

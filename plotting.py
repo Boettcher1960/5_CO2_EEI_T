@@ -170,7 +170,6 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
     elif plot43_eei_12month == 2:  # 43.5 y axe left 
-        # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 1))
         ax1.set_ylim(y_43min, y_43max)
         ax1.set_ylabel("EEI Earth Energy Imbalance   [W/m²] ", color=c43, fontsize=20)
@@ -794,15 +793,22 @@ def plot_9_create_all_plots(ax1, data):
               plot8_right_y_axe_for_eei_42( ax42 , 0 )
    
     if plot43_eei_12month > 0 and 'ceres_43' in data: # 43.2
-        ax43 = ax1.twinx()
-        ax43.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
+        if plot43_eei_12month == 2:
+           ax1.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
                   label="EEI K41", color=c43, linewidth=2)
-        ax43.tick_params(axis="y", labelcolor=c43)
-        ax43.set_ylim(y_43min, y_43max)
-        if print_debug > 19:
-           print(f"plot_231: ax43 43.4 ={plot43_eei_12month}")
-        if plot43_eei_12month > 2:
-           plot8_right_y_axe_for_eei_43( ax43 , 0 ) # 43.4 line 460
+           # The left axis is already configured in plot_1_axe
+        else:
+           ax43 = ax1.twinx()
+           ax43.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
+                  label="EEI K41", color=c43, linewidth=2)
+           ax43.tick_params(axis="y", labelcolor=c43)
+           ax43.set_ylim(y_43min, y_43max)
+           # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  812
+           if plot43_eei_12month > 2:
+              plot8_right_y_axe_for_eei_43( ax43 , 0 ) # 43.4 line 460
+        if print_debug > 9:
+           print(f"plot_810: ax43 43.4 ={plot43_eei_12month}")
+        
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
         if print_debug > 19:
            print(f"plot_235: ax44 44.7 ={part44_ceres_eei}")
