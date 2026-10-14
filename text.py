@@ -281,14 +281,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        transform=plt.gca().transAxes)
        fig.add_artist(line25)
     elif plot31_CO2_emission == 3: # 31.8
-       print("text_228: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
-       line31 = Line2D([lr2x1, lr2x2], [lr3y, lr3y], # y from 0 to 1
-       transform=fig.transFigure,
-       marker="o", markersize=3, color=c31, linewidth=2)
-       fig.add_artist(line31)
-       plt.text(tr2x, tr3y, print31_text, color=c31, fontname="Arial", fontsize=trs,
-       transform=plt.gca().transAxes)
-       fig.add_artist(line31)
+       text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c31)
+       text_4_add_text(ax1, tr2x, tr3y, 
+         "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data                31", 
+          c31, trs)
     elif plot42_EEI_48month == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
         text_4_add_text(ax1, tr2x, tr3y, 
@@ -360,7 +356,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        fig.add_artist(line25)
 
     elif plot31_CO2_emission == 4: # 31.8
-        # print("text_230: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c31)
        text_4_add_text(ax1, tr2x, tr4y, 
          "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data                31", 
