@@ -172,7 +172,7 @@ def plot_1_axe(ax1):
     elif plot43_eei_12month == 2:  # 43.5 y axe left 
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 3))
-        ax1.set_ylim(y_Emin, y_Emax)
+        ax1.set_ylim(y_43min, y_43max)
         ax1.set_ylabel("Earth energy Imbalance EEI in W (plot168)  ", color=c43, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c43, labelsize=20)
         y_mayor_ticks = 0.500 
@@ -368,7 +368,7 @@ def plot8_right_y_axe_for_eei_43(ax43,rightv): # 43.5
     #ax43.spines.right.set_position(("outward", 120))
     ax43.set_ylabel("Earth Energy Imbalance  in W/m²     plot470            43", color=c43, fontname="Arial",fontsize=18)
     ax43.tick_params(axis="y", labelcolor=c43)
-    ax43.set_ylim(y_45min, y_45max) #
+    ax43.set_ylim(y_43min, y_43max) #
 
 #  OLR  W/m² moving average 48 month 
 # plot8_right_y_axe_for_OLR_45                    ,  line  367
@@ -798,7 +798,7 @@ def plot_9_create_all_plots(ax1, data):
         ax43.plot(data['ceres_43']["decimal_year"], data['ceres_43']["EEI"], '-', 
                   label="EEI K41", color=c43, linewidth=2)
         ax43.tick_params(axis="y", labelcolor=c43)
-        ax43.set_ylim(y_Emin, y_Emax)
+        ax43.set_ylim(y_43min, y_43max)
         if print_debug > 19:
            print(f"plot_231: ax43 43.4 ={plot43_eei_12month}")
         # plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance     ,  line  460
