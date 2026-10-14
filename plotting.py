@@ -636,14 +636,8 @@ def plot_9_create_all_plots(ax1, data):
            # Plot on the left axis (ax1) instead of creating a right axis
            ax1.plot(df25["Year25"], df25["ppm25"], '--', 
                   label="plot25_long_CO2", color=c25, linewidth=3)
-
-           # ax1.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
-           #       label="T GIS K74", color=c74, linewidth=3)
-           # The left axis is already configured in plot_1_axe
         else:
            ax25 = ax1.twinx()
-           # ax74.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
-           #       label="T GIS K74", color=c74, linewidth=3)
            ax25.plot(df25["Year25"], df25["ppm25"], '--', 
                   label="plot25_long_CO2", color=c25, linewidth=3)
            ax25.tick_params(axis="y", labelcolor=c25)
@@ -655,6 +649,10 @@ def plot_9_create_all_plots(ax1, data):
     # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
     # 3.4.0 Entity,Code,Year,Cumulat
     if plot31_CO2_emission > 0: # 31.7
+
+
+
+
         ax31 = ax1.twinx()
         # df31 = pd.read_csv("read_csv/_31_co2_carbon_brief.csv")      # processed file from 42_CO2_T.py
         # line 923  world63.to_csv("work/_63b.csv", index=False, float_format='%.6f')
