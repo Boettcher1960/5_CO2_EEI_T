@@ -94,6 +94,7 @@ c61 = "#0D91A090"
 c62 = "#9522AA90"
 c63 = "#1652D490"
 c64 = "#9522AA90"
+c65 = "#AB263590"
 c66 = "#AB263590"
 c67 = "#0F9BE190"
 c68 = "#36970FD4"
@@ -170,6 +171,8 @@ y_62max = 242.6  # OLR in W/m2
 
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
+y_65min = 240  # ASR in W/m2
+y_65max = 243.5 # 242.8  # ASR in W/m2
 
 y_66min = 239.8  # OLR in W/m2
 y_66max = 242.2 # 242.8  # OLR in W/m2

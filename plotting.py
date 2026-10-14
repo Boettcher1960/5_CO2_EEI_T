@@ -457,6 +457,16 @@ def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
     ax64.tick_params(axis="y", labelcolor=c64)
     ax64.set_ylim(y_64min, y_64max) #
 
+# play_65_ASR
+def plot8_right_y_axe_for_C_65(ax65,right62): # 62.5
+    outward_right =  ( 5 *  yr_60 ) - yr_150
+    ax65.spines.right.set_position(("outward", outward_right))
+    ax65.set_ylabel("ASR  in W/m²       65", color=c65, fontname="Arial",fontsize=18)
+    ax65.tick_params(axis="y", labelcolor=c65)
+    ax65.set_ylim(y_65min, y_65max) #
+
+
+
 # play_66_OLR  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_66(ax66,right62): # 66.50
     outward_right =  ( 4 *  yr_60 ) - yr_150
@@ -1025,6 +1035,16 @@ def plot_9_create_all_plots(ax1, data):
         ax63.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
         if play_63_CB > 2:
             plot8_right_y_axe_for_C_63(ax63,1) # 63.5 line 500
+    if play_65_ASR > 0:
+                    ax65 = ax1.twinx()
+                    ax65.plot(data['ceres_65']["decimal_year"], data['ceres_65']["ASR_average"], '-', 
+                              label="OLR K65", color=c65, linewidth=2)
+                    ax65.tick_params(axis="y", labelcolor=c65)
+                    ax65.set_ylim(y_65min, y_65max)
+                    if print_debug > 9:
+                       print(f"plot1045: ax65 65.8 ={play_65_ASR}")
+                    if play_65_ASR > 2:
+                       plot8_right_y_axe_for_C_65( ax65 , 0 ) # 
     if play_66_OLR > 0:
         ax66 = ax1.twinx()
         ax66.plot(data['ceres_66']["decimal_year"], data['ceres_66']["OLR48"], '-', 
