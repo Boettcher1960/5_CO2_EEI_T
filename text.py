@@ -360,14 +360,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        fig.add_artist(line25)
 
     elif plot31_CO2_emission == 4: # 31.8
-       print("text_230: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
-       line31 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
-       transform=fig.transFigure,
-       marker="o", markersize=3, color=c31, linewidth=2)
-       fig.add_artist(line31)
-       plt.text(tr2x, tr4y, print31_text, color=c31, fontname="Arial", fontsize=trs,
-       transform=plt.gca().transAxes)
-       fig.add_artist(line31)
+        # print("text_230: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
+       text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c31)
+       text_4_add_text(ax1, tr2x, tr4y, 
+         "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data                31", 
+          c31, trs)
     elif plot34_CO2_emission == 4: # 34.4
        print("text_149: plot34_CO2_emission  = ", plot34_CO2_emission, " mode ", plot34_CO2_emission_mode, " 34") # 34.9
        line34 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
