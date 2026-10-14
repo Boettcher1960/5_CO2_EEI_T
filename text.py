@@ -223,7 +223,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot43_eei_12month == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "Earth Energy Imbalance W/m² moving average 12 month                                         43", 
+                    "Earth Energy Imbalance W/m²                                      moving average 12 month    43", 
                     c43, trs)
     elif plot45_OLR == 2: # plot45_OLR = 4 # Outgoing Longwave Radiation OLR
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c45)
@@ -307,7 +307,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot46_ASR == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c46)
         text_4_add_text(ax1, tr2x, tr3y, 
-                    "Absorbed Solar Radiation ASR = OLR+EEI  W/m² moving average 48 month          46", 
+                    "Absorbed Solar Radiation ASR = OLR+EEI  W/m²       moving average 48 month    46", 
                     c46, trs)
 
     # part 5.2 plot52_delta_CO2_red_bars
@@ -395,7 +395,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot46_ASR == 4: # 
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c46)
         text_4_add_text(ax1, tr2x, tr4y, 
-            "ASR Absorbed Solar Radiation ASR  W/m² moving average 48 month                     46", 
+            "ASR Absorbed Solar Radiation ASR  W/m²                   moving average 48 month   46", 
                     c46, trs)
     elif plot47_albedo48 == 4: # plot47_albedo48 = 4 # 
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c47)
@@ -430,7 +430,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2023=1.5°C         77", c77, trs)
     elif play_65_ASR > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c65)
-        p65_text = f"ASR Absorbed Solar Radiation in W/m²-               {play_65_ASR} - month moving average    65"
+        p65_text = f"ASR Absorbed Solar Radiation in W/m²                       moving average {play_65_ASR} month    65"
         text_4_add_text(ax1, tr2x, tr4y, p65_text, c65, trs) 
     elif play_66_OLR > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c66)
