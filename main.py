@@ -1,5 +1,5 @@
 # main.py
-v = "5G25" # replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
+v = "5G26" # replot https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -316,7 +316,8 @@ def load_plot_data():
         data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_07.csv")
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
     if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
-        data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_02.csv")
+    #   data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_02.csv")
+        data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_07.csv")
         if print_debug > 19:
            print(f"main_176: 43.2 read ={plot43_eei_12month}")
            #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")

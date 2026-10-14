@@ -244,22 +244,23 @@ print_debug = 10 # print some items
 # 42.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
 # 42.3 copy txt to read_csv/_61_in__2026_07_EEI_CERES.txt
 # 42.4 run with play_61_EEI = 48
-# 6 copy to read_csv/_42_EEI48month_2026_07.csv
-
+# 42.6 copy to read_csv/_42_EEI48month_2026_07.csv
+# 42.8 set plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean
 
 
 #################################################################
 # plot43_eei_12month ############################################
 # https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
 ############### see 61 How to make EEI files ####################
-# 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
-# 3 copy txt to read_csv/_61_in__2026_07_EEI_CERES.txt
-# 4 run with play_61_EEI = 12
-# 5
-# 6 copy to read_csv/_42_EEI48month_2026_07.csv
-# 7 
-# 8 set plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean
+# 43.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 43.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 43.3 copy txt to read_csv/_61_in__2026_07_EEI_CERES.txt
+# 43.4 run with play_61_EEI = 12 the file /_61c_out_ceres.csv is produced 
+#    /_61c_out_ceres.csv column EEI has the 12 month average
+# 43.5 copy            read_csv/_61c_out_ceres.csv
+# 43.6 paste to        read_csv/_43_EEI12month_2026_07.csv
+# 43.7 
+# 43.8 set plot43_eei_12month = 3  # 2,3,4,5 print EEI 48 month running mean
 #
 
 #########################################################
