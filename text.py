@@ -218,22 +218,22 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot42_EEI_48month == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c42)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "Earth Energy Imbalance W/m² moving average 48 month                                         42", 
+                    "Earth Energy Imbalance [W/m2] moving average 48 month                                       42", 
                     c42, trs)
     elif plot43_eei_12month == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "Earth Energy Imbalance W/m²                                      moving average 12 month    43", 
+                    "Earth Energy Imbalance [W/m2]                                    moving average 12 month    43", 
                     c43, trs)
     elif plot45_OLR == 2: # plot45_OLR = 4 # Outgoing Longwave Radiation OLR
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c45)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "Outgoing Longwave Radiation OLR  W/m² moving average 48 month                      45", 
+                    "Outgoing Longwave Radiation OLR  [W/m2] moving average 48 month                        45", 
                     c45, trs)
     elif plot46_ASR == 2: # line DataP423 df2['ASR'] = df2['sw_in'] - df2['sw_out']
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c46)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "ASR Absorbed Solar Radiation =input-output in W/m²  moving average 48 month    46", 
+                    "ASR Absorbed Solar Radiation =input-output in [W/m2] moving average 48 month   46", 
                     c46, trs)
     elif plot71_temperature == 2: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)
@@ -468,7 +468,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        transform=plt.gca().transAxes)
     elif play_61_EEI > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c61)
-        p61_text = f"Earth Energy Imbalance in W/m2  CERES 2026_07    moving average {play_61_EEI} month    61"
+        p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_07      moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr5y, p61_text, c61, trs) 
 
     elif play_63_CB == 5: # 55.4 row 5 legende 
@@ -497,11 +497,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr5y, p44_text, c44, trs) 
 
     # row 6,      print line 6 below the plot ,     text_9_print_7_lines() ,           line 308
-    ########################## row 6 ################################
+    ########################## row 6 ################################[W/m²]
     # in row 6 display play_61_EEI
     if play_61_EEI > 100:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
-        p61_text = f"Earth Energy Imbalance in W/m2  CERES 2026_07    moving average {play_61_EEI} month    61"
+        p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_07     moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
     else:
         p62_text = f"Parameter {header_parameter}  Text 192:"

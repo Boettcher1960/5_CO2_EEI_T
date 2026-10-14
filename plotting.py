@@ -424,7 +424,7 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
 def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
     outward_right =  ( 5 *  yr_60 ) - yr_150
     ax61.spines.right.set_position(("outward", outward_right))
-    ax61.set_ylabel("EEI in W/m²       61", color=c61, fontname="Arial",fontsize=18)
+    ax61.set_ylabel("EEI   [W/m2]       61", color=c61, fontname="Arial",fontsize=18)
     ax61.tick_params(axis="y", labelcolor=c61)
     ax61.set_ylim(y_61min, y_61max) #
 
@@ -433,7 +433,7 @@ def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
 def plot8_right_y_axe_for_C_62(ax62,right62): # 62.5
     outward_right =  ( 5 *  yr_60 ) - yr_150
     ax62.spines.right.set_position(("outward", outward_right))
-    ax62.set_ylabel("Outgoing Longwave Radiation OLR in W/m²       62", color=c62, fontname="Arial",fontsize=18)
+    ax62.set_ylabel("Outgoing Longwave Radiation OLR [W/m2]         62", color=c62, fontname="Arial",fontsize=18)
     ax62.tick_params(axis="y", labelcolor=c62)
     ax62.set_ylim(y_62min, y_62max) #
 
@@ -453,7 +453,7 @@ def plot8_right_y_axe_for_C_63(ax63,right52): # 63.5
 def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
     outward_right =  ( 5 *  yr_60 ) - yr_150
     ax64.spines.right.set_position(("outward", outward_right))
-    ax64.set_ylabel("ASR  in W/m²       64", color=c64, fontname="Arial",fontsize=18)
+    ax64.set_ylabel("ASR  [W/m2]       64", color=c64, fontname="Arial",fontsize=18)
     ax64.tick_params(axis="y", labelcolor=c64)
     ax64.set_ylim(y_64min, y_64max) #
 
