@@ -20,7 +20,7 @@ yr_delete = 1 # 9 = delete all axes delete axe 4
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 23.1 declare global integer variable (4= print in line 4)
-plot25_long_CO2 = 3      # 25.1 
+plot25_long_CO2 = 2      # 25.1 
 
 plot31_CO2_emission =    0   # 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission =    0   # 32.1 CO2_emission 600 GtC Carbon Brief made with play_63_CB 
@@ -31,7 +31,7 @@ plot34_CO2_emission_mode = 0 # 34.1 mode
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
 plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
-plot43_eei_12month = 2  # 4, 3 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
+plot43_eei_12month = 0  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR = 0 # 2 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
@@ -43,7 +43,7 @@ plot54_Glen_delta_on = 0
 plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 48    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 0    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # play_62_CERES ist doppelt zu play_66_OLR
 play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
