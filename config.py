@@ -123,7 +123,7 @@ p43_text = "Earth Energy Imbalance W/m² moving average 12 month 43"
 p44_text = "Earth Energy Imbalance W/m² moving average 44"
 print74_text = "Temperature in °C giss.nasa.gov Hansen+0.3°C 74 n"
 print75_text = "Hansen linear fit from 2015 +0.41°C 75"  # Added for linear_41_75
-green55_text = "Green line: Earth Population in billion  55"
+text55 = "Green line: Earth Population in billion                                               55"
 red71_text = "red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71"
 red72_text = "AESS_T Apparent Earth System Sensitivity = 8°C * log2(CO2/C0) 72"
 my76_text = "guessed quadratic temperature my_T 76"

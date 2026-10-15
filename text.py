@@ -424,16 +424,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr5y, 
                     "Earth Energy Imbalance W/m² moving average 48 month                                         42", 
                     c42, trs)
-
     elif plot55_population_on == 5: # 55.4 row 5 legende world data plot22_CO2_Mauna_Loa
-       line55 = Line2D([lr2x1, lr2x2], [lr5y, lr5y], # x coords in figure space (0–1)
-       transform=fig.transFigure,
-       marker="s", markersize=5, color=c55, linewidth=2)
-       # 9.5.2 draw bue line as legend
-       fig.add_artist(line55)
-       # 9.5.4 write green text
-       plt.text(tr2x, tr5y, green55_text, color=c55, fontname="Arial", fontsize=trs,
-       transform=plt.gca().transAxes)
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c55)
+        text_4_add_text(ax1, tr2x, tr5y, text55, c55, trs) 
     elif play_61_EEI > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c61)
         p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_07      moving average {play_61_EEI} month     61"
