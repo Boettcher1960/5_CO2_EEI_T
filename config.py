@@ -116,7 +116,7 @@ text25 = "green: CO2 NOAA     800_000 year ice data                             
 text31 = "dots: cumulative CO2 emissions in GtCO2     Carbon Brief / Our World in Data           31"
 text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World in Data              32"
 
-text34 = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode                                 34"
+text34 = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode                                   34"
 p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
 p42_text = "Earth Energy Imbalance W/m² moving average 48 month 42"
 p43_text = "Earth Energy Imbalance W/m² moving average 12 month 43"

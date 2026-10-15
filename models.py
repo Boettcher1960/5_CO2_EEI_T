@@ -129,6 +129,8 @@ T_71values = T_model71(years71)
 # plot34_CO2_emission_mode = 4 # 2, 4 34.1 mode 
 #      plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 # plot34_CO2_emission_mode = 2 # 34.1 mode 
+# plot34_CO2 = 0
 #
-# 2026.10.15 plots using 3   plot34_CO2_emission = 4  plot34_CO2_emission_mode = 4
+# 2026.10.15 plots using   plot34_CO2_emission = 4  plot34_CO2_emission_mode = 4
 # bug 2 Yachsen auf der rechten Seite
+# 2026.10.15 plots using    plot34_CO2_emission = 4  plot34_CO2_emission_mode = 4 plot34_CO2 = 0
