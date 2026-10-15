@@ -25,10 +25,10 @@ plot25_long_CO2 = 0   # 2, 3 25.1
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission = 2  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
 
-plot34_CO2_emission =    4   # 34.1 row 4 
-plot34_CO2_emission_mode = 4 # 34.1 mode 
+plot34_CO2_emission = 4      # 4,     # 34.1 row 4 
+plot34_CO2_emission_mode = 4 # 2, 4   # 34.1 mode 
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
-plot34_CO2 = 0 # plot34_CO2_emission mode 4
+plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 
 plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
