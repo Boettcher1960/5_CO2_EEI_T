@@ -47,3 +47,35 @@ T_71values = T_model71(years71)
 #      "Year71": years71,
 #      "Modeled71": T_71values })
 
+
+#########################################################
+# plot22_CO2_Mauna_Loa  ##############################
+#########################################################
+# https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt
+#                           2023   421.08     0.12
+#                           2024   424.61     0.12    add+3.53
+#                           2025   427.35     0.12    add+2.74
+#                           https://gml.noaa.gov/ccgg/trends/mlo.html
+#                           https://gml.noaa.gov/ccgg/trends/global.html
+#
+# part 2.3 plot23_Glen_CO2 
+# part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
+
+
+
+
+#########################################################
+# plot25_long_CO2  ##############################
+#########################################################
+# plot25_long_CO2 = 2      # 2, 3 25.1 
+# 2026.10.15 plots using plot25_long_CO2 = 2
+# 2026.10.15 plots using plot25_long_CO2 = 3
+
+
+#########################################################
+# plot31_CO2_emission  ##############################
+#########################################################
+# plot31_CO2_emission =    3 
+# 2026.10.15 plots using plot31_CO2_emission = 2
+# 2026.10.15 plots using plot31_CO2_emission = 3 
+
