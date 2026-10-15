@@ -309,6 +309,18 @@ def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
     ax22.tick_params(axis="y", labelcolor=c22)
     ax22.set_ylim(y_min, y_max) #8
 
+def plot8_right_y_axe_for_ppm_23(ax23,right23): # 
+    if print_debug > 9:
+          print(f"plot_314:     plot23_Glen_CO2 ={plot23_Glen_CO2} parameter 2 {right23}")
+    if right23 > 0:
+        outward_right = right23
+    else:
+        outward_right =  ( plot23_Glen_CO2 * yr_60 ) - yr_150
+    ax23.spines.right.set_position(("outward", outward_right))
+    ax23.set_ylabel("CO2 calculated:  t²-t  plot23_Glen", color=c23, fontname="Arial",fontsize=16)
+    ax23.tick_params(axis="y", labelcolor=c23)
+    ax23.set_ylim(y_min, y_max) #8
+
 # plot8_right_y_axe_for_ppm_25       plot25_long_CO2                 ,   line  437
 def plot8_right_y_axe_for_ppm_25(ax25,right22): # 22.4 line 375
     if print_debug > 9:
@@ -585,8 +597,9 @@ def plot_9_create_all_plots(ax1, data):
            ax22.set_ylim(y_min, y_max)
            if plot22_CO2_Mauna_Loa > 2:
               plot8_right_y_axe_for_ppm_22( ax22 , 0 ) # 22.4
+    
     # -----------------------------
-    # 2.3 plot23_Glen_CO2 = 0.013t² - 51t + 49,536 in dark blue 
+    # plot23_Glen_CO2 = 0.013t² - 51t + 49,536 in dark blue 
     # source a plot with the formula explained in a thread
     # source https://x.com/Gergyl/status/1810632238230589564
     # -----------------------------
@@ -601,20 +614,22 @@ def plot_9_create_all_plots(ax1, data):
        co23_values = co3_ppm(years23)
        # 2.3.3. Create DataFrame for convenience
        df23 = pd.DataFrame({
-          "Year3": years23,
-          "Modeled3": co23_values
-           })
+                 "Year3": years23,
+                 "Modeled3": co23_values
+                  })
        # 2.3.7
-       ax23 = ax1.twinx()
-       ax23.spines.right.set_position(("outward", 90))
-       ax23.spines["right"].set_visible(False) # remove right y-Achse
-       ax23.tick_params(right=False, labelright=False) # remove Zahlen
-       # 2.3.8
-       ax23.plot(df23["Year3"], df23["Modeled3"], '--', label="Glen formula CO2= 0.0132t² - 51t + 49,536 K6", color=c23, linewidth=3)
-       ax23.tick_params(axis="y", labelcolor="green")
-       ax23.set_ylim(y_min, y_max) # scale
-       ax23.spines.right.set_position(("outward", 60))
-       # end part 2.3 CO2
+       if plot23_Glen_CO2 == 2:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(df23["Year3"], df23["Modeled3"], '--', 
+               label="Glen formula CO2= 0.0132t² - 51t + 49,536 K6", color=c23, linewidth=3)                
+       else:
+           ax23 = ax1.twinx()
+           ax23.plot(df23["Year3"], df23["Modeled3"], '--', label="Glen formula CO2= 0.0132t² - 51t + 49,536 K6", color=c23, linewidth=3)
+           ax23.tick_params(axis="y", labelcolor="green")
+           ax23.set_ylim(y_min, y_max) # scale
+           if plot23_Glen_CO2 > 2:
+              plot8_right_y_axe_for_ppm_23( ax23 , 0 ) # 
+    # end part 2.3 CO2
 
     # plot25_long_CO2, NOAA 800_000 year ice data,  plot_9_create_all_plots() ,   line 447 
     # plot25_long_CO2 = 3 # 2, 3 print -800 000 years ppm CO2 file
@@ -659,8 +674,6 @@ def plot_9_create_all_plots(ax1, data):
            # ax31.plot(df31["Year"], df31["GtCO2"], marker="o",  c31, label="plot31_CO2_emission")
            ax31.plot(df31["Year"], df31["GtCO2"], marker="o",  color=c31, 
                     label="plot31_CO2_emission")
-
-
            ax31.tick_params(axis="y", labelcolor=c31)
            ax31.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
            if plot31_CO2_emission > 2:
