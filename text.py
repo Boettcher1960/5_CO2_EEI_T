@@ -335,18 +335,21 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot25_long_CO2 == 4: # 25.9.4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c23)
         text_4_add_text(ax1, tr2x, tr4y, 
-                    text25,                     c24, trs)
+                    text25,                     c25, trs)
     elif plot31_CO2_emission == 4: # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c31)
        text_4_add_text(ax1, tr2x, tr4y, 
          text31,  c31, trs)
     elif plot34_CO2_emission == 4: # 34.4
-       print("text_149: plot34_CO2_emission  = ", plot34_CO2_emission, " mode ", plot34_CO2_emission_mode, " 34") # 34.9
+       print("text_344: plot34_CO2_emission  = ", plot34_CO2_emission, " mode ", plot34_CO2_emission_mode, " 34") # 34.9
+       
+       
+       
        line34 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
        transform=fig.transFigure,
        marker="o", markersize=3, color=c34, linewidth=2)
        fig.add_artist(line34)
-       plt.text(tr2x, tr4y, print34_text, color=c34, fontname="Arial", fontsize=trs,
+       plt.text(tr2x, tr4y, text34, color=c34, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
        fig.add_artist(line34)
     elif plot42_EEI_48month == 4:

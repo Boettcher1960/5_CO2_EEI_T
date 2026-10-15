@@ -20,13 +20,13 @@ yr_delete = 1 # 9 = delete all axes delete axe 4
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 2 ,3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print in line 4)
-plot25_long_CO2 = 2   # 2, 3 25.1 
+plot25_long_CO2 = 0   # 2, 3 25.1 
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
-plot32_CO2_emission = 3  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
+plot32_CO2_emission = 2  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
 
-plot34_CO2_emission =    0   # 34.1 row 4 
-plot34_CO2_emission_mode = 0 # 34.1 mode 
+plot34_CO2_emission =    4   # 34.1 row 4 
+plot34_CO2_emission_mode = 2 # 34.1 mode 
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 
@@ -116,7 +116,7 @@ text25 = "green: CO2 NOAA     800_000 year ice data                             
 text31 = "dots: cumulative CO2 emissions in GtCO2     Carbon Brief / Our World in Data           31"
 text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World in Data              32"
 
-print34_text = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode"
+text34 = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode                                 34"
 p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
 p42_text = "Earth Energy Imbalance W/m² moving average 48 month 42"
 p43_text = "Earth Energy Imbalance W/m² moving average 12 month 43"
