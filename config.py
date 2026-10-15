@@ -34,7 +34,7 @@ plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 
 plot43_eei_12month = 0  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei = 0  # 47, 3, 48,   is local 
 plot45_OLR = 2 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
-plot46_ASR = 3 # 2 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
+plot46_ASR = 0 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48 = 0  # 4  
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
@@ -154,6 +154,9 @@ y_TOAmax = 100 # bug is double set in plotting.py line 57
 
 y_43min = -0.5    # EEI in W/m2
 y_43max = 2.5  # EEI in W/m2
+y_44min = 0.0 #   EEI in W/m2 y axis left mode
+y_44max = 2 #   EEI in W/m2 y axis left mode
+
 y_45min = 240    # OLR in W/m2
 y_45max = 242.8  # OLR in W/m2
 y_46min = 240    # ASR in W/m2

@@ -837,23 +837,36 @@ def plot_9_create_all_plots(ax1, data):
            print(f"plot_810: ax43 43.4 ={plot43_eei_12month}")
         
     if part44_ceres_eei > 0 and 'ceres_custom' in data:
-        if print_debug > 19:
-           print(f"plot_235: ax44 44.7 ={part44_ceres_eei}")
+        if part44_ceres_eei == 2:
+                ax1.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
+                                                        label="EEI K44", color=c44, linewidth=2)
+                # The left axis is already configured in plot_1_axe
+        else:
+            ax44 = ax1.twinx()
+            ax44.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
+                                     label="EEI K44", color=c44, linewidth=2)
+            ax44.tick_params(axis="y", labelcolor=c44)
+            ax44.set_ylim(y_44min, y_44max)
+            # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  812
+            if plot43_eei_12month > 2:
+                plot8_right_y_axe_for_eei_44( ax44 , 0 ) # 
+        if print_debug > 9:
+           print(f"plot_854: ax44 44.7 ={part44_ceres_eei}")
 
-        ax44 = ax1.twinx()
-        ax44.plot(data['ceres_custom']["decimal_year"], data['ceres_custom']["EEI"], '-', 
-                  label="EEI K44", color=c44, linewidth=2)
-        ax44.tick_params(axis="y", labelcolor=c44)
-        ax44.set_ylim(y_Emin, y_Emax)
     if plot45_OLR > 0:
-        ax45 = ax1.twinx()
-        ax45.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR48"], '-', 
+        if plot45_OLR == 2:
+           ax1.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR48"], '-', 
                   label="OLR K45", color=c45, linewidth=4)
-        ax45.tick_params(axis="y", labelcolor=c45)
-        ax45.set_ylim(y_45min, y_45max)
-        # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  381
-        if plot45_OLR > 2:
-           plot8_right_y_axe_for_OLR_45( ax45 , 0 ) # 45.4 line 450
+           # The left axis is already configured in plot_1_axe
+        else:
+           ax45 = ax1.twinx()
+           ax45.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR48"], '-', 
+                  label="OLR K45", color=c45, linewidth=4)
+           ax45.tick_params(axis="y", labelcolor=c45)
+           ax45.set_ylim(y_45min, y_45max)
+           if plot45_OLR > 2:
+              plot8_right_y_axe_for_OLR_45( ax45 , 0 ) # 45.4 line 450
+
     # plot46_ASR  ASR=OLR+EEI AbsorbedSolar Radiation W/m² running average over 48 months line 793
     if plot46_ASR > 0:
         if plot46_ASR == 2:
