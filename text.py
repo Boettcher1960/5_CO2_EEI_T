@@ -267,8 +267,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot31_CO2_emission == 3: # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c31)
        text_4_add_text(ax1, tr2x, tr3y, 
-         "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data                31", 
-          c31, trs)
+         text31, c31, trs)
     elif plot42_EEI_48month == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
         text_4_add_text(ax1, tr2x, tr3y, 
@@ -342,8 +341,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot31_CO2_emission == 4: # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c31)
        text_4_add_text(ax1, tr2x, tr4y, 
-         "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data                31", 
-          c31, trs)
+         text31,  c31, trs)
     elif plot34_CO2_emission == 4: # 34.4
        print("text_149: plot34_CO2_emission  = ", plot34_CO2_emission, " mode ", plot34_CO2_emission_mode, " 34") # 34.9
        line34 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
