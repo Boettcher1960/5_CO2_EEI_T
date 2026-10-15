@@ -197,17 +197,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
          "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data                31", 
           c31, trs)
     elif plot32_CO2_emission == 2: # 32.8
-
-       
-       print("text_094: plot32_CO2_emission = ", plot32_CO2_emission,  " 32.8 ") # 32.8
-       line32 = Line2D([lr2x1, lr2x2], [lr2y, lr2y], # y from 0 to 1
-       transform=fig.transFigure,
-       marker="o", markersize=3, color=c32, linewidth=2)
-       fig.add_artist(line32)
-       plt.text(tr2x, tr2y, print32_text, color=c32, fontname="Arial", fontsize=trs,
-       transform=plt.gca().transAxes)
-       fig.add_artist(line32)
-
+       print("text_202: plot32_CO2_emission = ", plot32_CO2_emission,  " 32.8 ") # 32.8
+       text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c31)
+       text_4_add_text(ax1, tr2x, tr2y, 
+         text32,  c32, trs)
     elif plot42_EEI_48month == 2:
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c42)
        text_4_add_text(ax1, tr2x, tr2y, 
