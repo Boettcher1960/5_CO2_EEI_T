@@ -223,6 +223,27 @@ T_71values = T_model71(years71)
 # 2026.10.15 plots plot46_ASR = 3
 
 
+
+#########################################################
+# 47_albedo_48month_2026_07.csv ############################
+#########################################################
+# 47.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 47.2 download CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026.txt
+# 47.3 copy to _66_TOA_Incoming_Solar_2026_07.txt
+# 47.5 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 47.6 copy to _66_TOA_Shortwave_Flux_All_Sky2026_07.txt 
+# 47.7 run with play_67_albedo = 48
+# 47.8 copy dokumente/5_CO2_EEI_T/work/_CERES_albedo.csv to
+#           dokumente/5_CO2_EEI_T/read_csv/_47_albedo_48month_2026_07.csv
+#      plot47_albedo48 = 4 - print text in line 4
+#
+# 2026.10.15 plots plot47_albedo48 = 4
+
+
+
+
+
+
 # text55 = "Green line: Earth Population in billion                                               55"
 # plot55_population_on = 5 # 5 word with y axis right
 

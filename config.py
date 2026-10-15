@@ -33,9 +33,9 @@ plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei = 0  # 47, 3, 48,   is local 
-plot45_OLR = 3 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
+plot45_OLR = 0 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR = 2 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
-plot47_albedo48 = 0  # 4  
+plot47_albedo48 = 4  # 4  
 
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
@@ -231,22 +231,6 @@ lr6y = 0.034
 scale_mode = 10 # other values are not used
 print_debug = 10 # print some items 
 
-
-
-
-
-#########################################################
-# 47_albedo_48month_2026_07.csv ############################
-#########################################################
-# 47.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 47.2 download CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026.txt
-# 47.3 copy to _66_TOA_Incoming_Solar_2026_07.txt
-# 47.5 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
-# 47.6 copy to _66_TOA_Shortwave_Flux_All_Sky2026_07.txt 
-# 47.7 run with play_67_albedo = 48
-# 47.8 copy dokumente/5_CO2_EEI_T/work/_CERES_albedo.csv to
-#           dokumente/5_CO2_EEI_T/read_csv/_47_albedo_48month_2026_07.csv
-# plot47_albedo48 = 4 - print text in line 4
 
 
 
