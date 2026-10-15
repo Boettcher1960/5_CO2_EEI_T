@@ -104,10 +104,6 @@ def text_4_add_text(ax, x, y, text, color, fontsize=20):
     ax.text(x, y, text, color=color, fontname="Arial", fontsize=fontsize,
            transform=ax.transAxes)
 
-text_plot23_Glen="calculated CO2 dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm 23"
-
-
-
 
 
 # 9.6 not called print line 6 below the plot explainations
@@ -187,7 +183,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot23_Glen_CO2 == 2: # 23.5.4 legend row 4
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c23)
        text_4_add_text(ax1, tr2x, tr2y, 
-         "CO2 concentration in ppm   CO2= 0.0132t² - 51t + 49,536   (CO2 emission linear)  23", 
+         "CO2 concentration in ppm   CO2= 0.0132t² - 51t + 49,536          (CO2 emission linear)    23", 
          c23, trs)
     elif plot25_long_CO2 == 2: # 25.9
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c23)
@@ -262,9 +258,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     blue22_text, 
                     c22, trs)
     elif plot23_Glen_CO2 == 3: # 23.5.4 legend row 4
+        # text23 = "CO2 calculated  dashed blue line = 0.0132251t² - 51.0337t + 49,536 ppm               23"
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c23)
         text_4_add_text(ax1, tr2x, tr3y, 
-                    text_plot23_Glen, 
+                    text23, 
                     c23, trs)
     elif plot25_long_CO2 == 3: # 25.9
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c25)
@@ -335,7 +332,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot23_Glen_CO2 == 4: # 23.5.4 legend row 4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c23)
         text_4_add_text(ax1, tr2x, tr4y, 
-                    text_plot23_Glen, 
+                    text23, 
                     c23, trs)
     elif plot25_long_CO2 == 4: # 25.9.4
        line25 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
@@ -432,7 +429,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     if plot23_Glen_CO2 == 5: # 23.5.5 legend row 5
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c23)
         text_4_add_text(ax1, tr2x, tr5y, 
-                    text_plot23_Glen, 
+                    text23, 
                     c23, trs)
     elif plot42_EEI_48month == 5:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c42)
