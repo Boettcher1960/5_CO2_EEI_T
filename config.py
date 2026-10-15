@@ -19,7 +19,7 @@ yr_delete = 1 # 9 = delete all axes delete axe 4
 
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 2 ,3    22.1 declare global integer variable (2= print in line 2)
-plot23_Glen_CO2 = 2      # 2, 3 , 23.1 declare global integer variable (4= print in line 4)
+plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0   # 2, 3 25.1 
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
@@ -34,16 +34,17 @@ plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 
 plot43_eei_12month = 0  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei = 0  # 47, 3, 48,   is local 
 plot45_OLR = 0 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
-plot46_ASR = 0 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
+plot46_ASR = 2 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48 = 0  # 4  
 
 plot52_delta_CO2_red_bars = 0 # 3 (3=print numbers)
 plot53_CO2_orange2025 = 0 # no curve is visible 3, 4
 plot54_Glen_delta_on = 0 # no curve is visible 3, 4
-plot55_population_on = 5 # 5 word with y axis right
-plot56_delta_CO2_4years = 0 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
+plot55_population_on = 0 # 5 word with y axis right
+plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
+# https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 0    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # play_62_CERES ist doppelt zu play_66_OLR
 play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
@@ -231,42 +232,6 @@ lr6y = 0.034
 scale_mode = 10 # other values are not used
 print_debug = 10 # print some items 
 
-
-
-
-#########################################################
-# 61 How to make EEI files ##############################
-#########################################################
-# 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 2  https://ceres.larc.nasa.gov/data/
-# 3 https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
-# 4 t.boettcher@directbox.com enter email adress
-# 5 Order Data - left mouse click
-# 6 select
-# 7 global mean
-# 8 Visualize Data - left mouse click
-# 9 global mean https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 10 select first item
-# 11 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
-# 12 six small curves are shown
-# 13 select item 3 Label TOA Net Flux All Sky -10 to +10 W/m/m monthly values
-# 14 big window appears with one curve only
-# 15 left mouse select save Data as ASCII File
-# 16.1 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-# 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
-# 17.1 rename      to _61_in__2026_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-# 17.2 rename      to _61_in__2026_07_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-# 18 run with play_61_EEI = 48 
-# 19 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv to
-# 20.1      dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
-# 20.2                           'read_csv/_42_EEI48month_2026_07.csv', 
-# 21 run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
-# 
-# 22 run with play_61_EEI = 12 
-# 23 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
-#       dokumente/5_CO2_EEI_T/read_csv/_43_EEI12month_2026_02.csv
-# 24 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
 
 
 #########################################################

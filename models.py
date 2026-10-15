@@ -271,3 +271,49 @@ T_71values = T_model71(years71)
 #
 # 2026.10.15 plots plot55_population_on = 5 # 5 word with y axis right
 
+
+
+#--------------------------------------------------------
+# plot56_delta_CO2_4years ---------------------------------
+#--------------------------------------------------------
+# plot56_delta_CO2_4years = 3 # no curve is visible 3, 4 
+
+
+
+
+#########################################################
+# 61 How to make EEI files ##############################
+#########################################################
+# 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 2  https://ceres.larc.nasa.gov/data/
+# 3 https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
+# 4 t.boettcher@directbox.com enter email adress
+# 5 Order Data - left mouse click
+# 6 select
+# 7 global mean
+# 8 Visualize Data - left mouse click
+# 9 global mean https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 10 select first item
+# 11 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+# 12 six small curves are shown
+# 13 select item 3 Label TOA Net Flux All Sky -10 to +10 W/m/m monthly values
+# 14 big window appears with one curve only
+# 15 left mouse select save Data as ASCII File
+# 16.1 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
+# 17.1 rename      to _61_in__2026_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 17.2 rename      to _61_in__2026_07_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 18 run with play_61_EEI = 48 
+# 19 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv to
+# 20.1      dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
+# 20.2                           'read_csv/_42_EEI48month_2026_07.csv', 
+# 21 run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
+# 
+# 22 run with play_61_EEI = 12 
+# 23 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
+#       dokumente/5_CO2_EEI_T/read_csv/_43_EEI12month_2026_02.csv
+# 24 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
+#
+# 2026.10.15 plots play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv 
+
