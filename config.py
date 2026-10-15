@@ -143,6 +143,9 @@ y_31Gmax = 2000 # 2500 Gt CO2
 y_32min = 0   #   0 GtC
 y_32max = 800 # 800 GtC
 
+y_34min = 0   #   0 GtC
+y_34max = 600 # 800 GtC
+
 y_Emin = 0.0 #   EEI in W/m2 y axis left mode
 y_Emax = 2 #   EEI in W/m2 y axis left mode
 
