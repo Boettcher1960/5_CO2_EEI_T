@@ -147,6 +147,9 @@ T_71values = T_model71(years71)
 # 42.4 run with play_61_EEI = 48
 # 42.6 copy to read_csv/_42_EEI48month_2026_07.csv
 # 42.8 set plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean
+#
+# 2026.10.15 plots  plot42_EEI_48month = 2
+# 2026.10.15 plots  plot42_EEI_48month = 3
 
 
 #################################################################
@@ -164,6 +167,9 @@ T_71values = T_model71(years71)
 #        the left axis is EEI 43
 # 43.7.2 set plot43_eei_12month = 3  # 2,3,4,5 print EEI 48 month running mean
 # 43.8 run the plot
+#
+# 2026.10.15 plots plot43_eei_12month = 2
+# 2026.10.15 plots plot43_eei_12month = 3
 
 
 

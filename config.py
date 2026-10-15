@@ -23,15 +23,15 @@ plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print
 plot25_long_CO2 = 0   # 2, 3 25.1 
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
-plot32_CO2_emission = 2  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
+plot32_CO2_emission = 0  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
 
-plot34_CO2_emission = 4      # 4,     # 34.1 row 4 
-plot34_CO2_emission_mode = 4 # 2, 4   # 34.1 mode 
+plot34_CO2_emission = 0      # 4,     # 34.1 row 4 
+plot34_CO2_emission_mode = 0 # 4, 2, 4   # 34.1 mode 
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 
 plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
-plot43_eei_12month = 0  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
+plot43_eei_12month = 2  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei = 0  # 47 is local 
 plot45_OLR = 0 # 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR = 0 # 2 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
