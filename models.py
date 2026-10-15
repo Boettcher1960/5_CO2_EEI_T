@@ -65,9 +65,10 @@ T_71values = T_model71(years71)
 #                           2025   427.35     0.12    add+2.74
 #                           https://gml.noaa.gov/ccgg/trends/mlo.html
 #                           https://gml.noaa.gov/ccgg/trends/global.html
-#
+#                           part 2.3 plot23_Glen_CO2 
 # 2026.10.15 plots using plot22_CO2_Mauna_Loa = 2
-
+#
+# part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
 
 
 
@@ -86,11 +87,11 @@ T_71values = T_model71(years71)
 
 # plot24 ist frei
 
-
 #########################################################
 # plot25_long_CO2  ##############################
 #########################################################
 # plot25_long_CO2 = 2      # 2, 3 25.1 
+#  part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
 # 2026.10.15 plots using plot25_long_CO2 = 2
 # 2026.10.15 plots using plot25_long_CO2 = 3
 
@@ -113,12 +114,12 @@ T_71values = T_model71(years71)
 # plot31_CO2_emission = 2, 3 
 # 2026.10.15 plots using 
 
+
 #########################################################
 # plot32_CO2_emission  ##############################
 #########################################################
 # plot32_CO2_emission = 2, 3 
 # 2026.10.15 plots using 3
-
 
 
 #########################################################
@@ -134,3 +135,32 @@ T_71values = T_model71(years71)
 # 2026.10.15 plots using   plot34_CO2_emission = 4  plot34_CO2_emission_mode = 4
 # bug 2 Yachsen auf der rechten Seite
 # 2026.10.15 plots using    plot34_CO2_emission = 4  plot34_CO2_emission_mode = 4 plot34_CO2 = 0
+
+
+
+#################################################################
+# plot42_EEI_48month ############################################
+###############see 61 How to make EEI files #####################
+# 42.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 42.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 42.3 copy txt to read_csv/_61_in__2026_07_EEI_CERES.txt
+# 42.4 run with play_61_EEI = 48
+# 42.6 copy to read_csv/_42_EEI48month_2026_07.csv
+# 42.8 set plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean
+
+
+#################################################################
+# plot43_eei_12month ############################################
+# https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
+############### see 61 How to make EEI files ####################
+# 43.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 43.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 43.3 copy txt to read_csv/_61_in__2026_07_EEI_CERES.txt
+# 43.4 run with play_61_EEI = 12 the file /_61c_out_ceres.csv is produced 
+#    /_61c_out_ceres.csv column EEI has the 12 month average
+# 43.5 copy            read_csv/_61c_out_ceres.csv
+# 43.6 paste to        read_csv/_43_EEI12month_2026_07.csv
+# 43.7.1 set plot43_eei_12month = 2  # 2,3,4,5 print EEI 48 month running mean
+#        the left axis is EEI 43
+# 43.7.2 set plot43_eei_12month = 3  # 2,3,4,5 print EEI 48 month running mean
+# 43.8 run the plot

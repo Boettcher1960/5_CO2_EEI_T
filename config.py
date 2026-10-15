@@ -40,7 +40,7 @@ plot47_albedo48 = 0  # 4
 plot52_delta_CO2_red_bars = 0 # (3=print numbers)
 plot53_CO2_orange2025 = 0
 plot54_Glen_delta_on = 0
-plot55_population_on = 0 # 5 word with y axis right
+plot55_population_on = 5 # 5 word with y axis right
 plot56_delta_CO2_4years = 4 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
 play_61_EEI = 0    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
@@ -118,7 +118,7 @@ text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World i
 
 text34 = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode                                   34"
 p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
-p42_text = "Earth Energy Imbalance W/m² moving average 48 month 42"
+text42 = "Earth Energy Imbalance W/m² moving average 48 month 42"
 p43_text = "Earth Energy Imbalance W/m² moving average 12 month 43"
 p44_text = "Earth Energy Imbalance W/m² moving average 44"
 print74_text = "Temperature in °C giss.nasa.gov Hansen+0.3°C 74 n"
@@ -230,45 +230,8 @@ print_debug = 10 # print some items
 
 
 
-#########################################################
-# plot22_CO2_Mauna_Loa  ##############################
-#########################################################
-# https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt
-#                           2023   421.08     0.12
-#                           2024   424.61     0.12    add+3.53
-#                           2025   427.35     0.12    add+2.74
-#                           https://gml.noaa.gov/ccgg/trends/mlo.html
-#                           https://gml.noaa.gov/ccgg/trends/global.html
-#
-# part 2.3 plot23_Glen_CO2 
-# part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
-
-#################################################################
-# plot42_EEI_48month ############################################
-###############see 61 How to make EEI files #####################
-# 42.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 42.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
-# 42.3 copy txt to read_csv/_61_in__2026_07_EEI_CERES.txt
-# 42.4 run with play_61_EEI = 48
-# 42.6 copy to read_csv/_42_EEI48month_2026_07.csv
-# 42.8 set plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean
 
 
-#################################################################
-# plot43_eei_12month ############################################
-# https://x.com/Pat_Schmidt_89/status/2110140450161987999/photo/1
-############### see 61 How to make EEI files ####################
-# 43.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 43.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
-# 43.3 copy txt to read_csv/_61_in__2026_07_EEI_CERES.txt
-# 43.4 run with play_61_EEI = 12 the file /_61c_out_ceres.csv is produced 
-#    /_61c_out_ceres.csv column EEI has the 12 month average
-# 43.5 copy            read_csv/_61c_out_ceres.csv
-# 43.6 paste to        read_csv/_43_EEI12month_2026_07.csv
-# 43.7.1 set plot43_eei_12month = 2  # 2,3,4,5 print EEI 48 month running mean
-#        the left axis is EEI 43
-# 43.7.2 set plot43_eei_12month = 3  # 2,3,4,5 print EEI 48 month running mean
-# 43.8 run the plot
 
 #########################################################
 # 45_OLR_48month_2026_07.csv ############################
