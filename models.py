@@ -249,10 +249,25 @@ T_71values = T_model71(years71)
 # 2026.10.15 plots plot52_delta_CO2_red_bars = 3 # (3=print numbers)
 
 
+#--------------------------------------------------------
+# plot53_CO2_orange2025 ---------------------------------
+#--------------------------------------------------------
+# plot53_CO2_orange2025 = 3 # no curve is visible 3# 
+# plot53_CO2_orange2025 = 4 # no curve is visible
+
+
+#--------------------------------------------------------
+# plot54_Glen_delta_on ---------------------------------
+#--------------------------------------------------------
+# plot54_Glen_delta_on = 4 # no curve is visible 3, 4 
 
 
 
+#########################################################
+# plot55_population_on ############################
+#########################################################
 # text55 = "Green line: Earth Population in billion                                               55"
 # plot55_population_on = 5 # 5 word with y axis right
-
+#
+# 2026.10.15 plots plot55_population_on = 5 # 5 word with y axis right
 
