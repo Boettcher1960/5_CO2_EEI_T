@@ -352,10 +352,10 @@ def plot8_right_y_axe_for_C_32(ax32,right52): # 32.6
     if right52 > 0:
         outward_right = right52
     else:
-        outward_right =  ( plot31_CO2_emission * yr_60 ) - yr_150
+        outward_right =  ( plot32_CO2_emission * yr_60 ) - yr_150
     ax32.spines.right.set_position(("outward", outward_right))
     ax32.set_ylabel("cumulative CO2 emissions in Gt  plot410     32", color=c32, fontname="Arial",fontsize=18)
-    ax32.tick_params(axis="y", labelcolor=c31)
+    ax32.tick_params(axis="y", labelcolor=c32)
 
 
 
@@ -671,7 +671,6 @@ def plot_9_create_all_plots(ax1, data):
                     label="plot31_CO2_emission")
         else:
            ax31 = ax1.twinx()
-           # ax31.plot(df31["Year"], df31["GtCO2"], marker="o",  c31, label="plot31_CO2_emission")
            ax31.plot(df31["Year"], df31["GtCO2"], marker="o",  color=c31, 
                     label="plot31_CO2_emission")
            ax31.tick_params(axis="y", labelcolor=c31)
@@ -693,12 +692,6 @@ def plot_9_create_all_plots(ax1, data):
            ax32.plot(df32["Year"], df32["GtC"], marker="o",  color=c32, linewidth=3, label="plot32_CO2_emission")
            ax32.tick_params(axis="y", labelcolor=c32)
            ax32.set_ylim(y_32min, y_32max) # best scaling 2000 GtC
-
-
-           # ax31.plot(df31["Year"], df31["GtCO2"], marker="o",  c31, label="plot31_CO2_emission")
-           ax31.plot(df31["Year"], df31["GtCO2"], marker="o",  color=c31, 
-                    label="plot31_CO2_emission")
-           
            if plot32_CO2_emission > 2:
               plot8_right_y_axe_for_C_32(ax32,0) # 32.5 line 500
         print("plot_705: plot32_CO2_emission = ", plot32_CO2_emission) # 32.7 plot 32

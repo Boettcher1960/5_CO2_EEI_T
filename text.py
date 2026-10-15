@@ -194,8 +194,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        print("text_094: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c31)
        text_4_add_text(ax1, tr2x, tr2y, 
-         "dots: cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data                31", 
-          c31, trs)
+         text31,   c31, trs)
     elif plot32_CO2_emission == 2: # 32.8
        print("text_202: plot32_CO2_emission = ", plot32_CO2_emission,  " 32.8 ") # 32.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c31)
@@ -268,6 +267,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c31)
        text_4_add_text(ax1, tr2x, tr3y, 
          text31, c31, trs)
+    elif plot32_CO2_emission == 3: # 31.8
+       text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c32)
+       text_4_add_text(ax1, tr2x, tr3y, 
+         text32, c32, trs)
+       
     elif plot42_EEI_48month == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
         text_4_add_text(ax1, tr2x, tr3y, 

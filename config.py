@@ -22,8 +22,8 @@ plot22_CO2_Mauna_Loa = 0 # 2 ,3    22.1 declare global integer variable (2= prin
 plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0   # 2, 3 25.1 
 
-plot31_CO2_emission = 3   # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
-plot32_CO2_emission = 2  # 32.1 CO2_emission 600 GtC Carbon Brief made with play_63_CB 
+plot31_CO2_emission = 2  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
+plot32_CO2_emission = 3  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
 
 plot34_CO2_emission =    0   # 34.1 row 4 
 plot34_CO2_emission_mode = 0 # 34.1 mode 
