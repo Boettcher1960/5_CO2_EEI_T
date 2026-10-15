@@ -164,3 +164,13 @@ T_71values = T_model71(years71)
 #        the left axis is EEI 43
 # 43.7.2 set plot43_eei_12month = 3  # 2,3,4,5 print EEI 48 month running mean
 # 43.8 run the plot
+
+
+
+
+
+
+# text55 = "Green line: Earth Population in billion                                               55"
+# plot55_population_on = 5 # 5 word with y axis right
+
+
