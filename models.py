@@ -58,8 +58,7 @@ T_71values = T_model71(years71)
 #                           https://gml.noaa.gov/ccgg/trends/mlo.html
 #                           https://gml.noaa.gov/ccgg/trends/global.html
 #
-# part 2.3 plot23_Glen_CO2 
-# part 2.5 plot25_long_CO2  -800 000 years ppm CO2 file
+# 2026.10.15 plots using plot22_CO2_Mauna_Loa = 2
 
 
 
@@ -78,4 +77,5 @@ T_71values = T_model71(years71)
 # plot31_CO2_emission =    3 
 # 2026.10.15 plots using plot31_CO2_emission = 2
 # 2026.10.15 plots using plot31_CO2_emission = 3 
+# 2026.10.15 plots using plot31_CO2_emission = 4 
 
