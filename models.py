@@ -67,8 +67,8 @@ T_71values = T_model71(years71)
 #  plot23_Glen_CO2 = 0.013t² - 51t + 49,536 in dark blue 
 #  source a plot with the formula explained in a thread
 #  source https://x.com/Gergyl/status/1810632238230589564
+# 2026.10.15 plots using plot23_Glen_CO2 = 2 
 # 2026.10.15 plots using plot23_Glen_CO2 = 3 
-
 
 
 #########################################################

@@ -183,12 +183,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot23_Glen_CO2 == 2: # 23.5.4 legend row 4
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c23)
        text_4_add_text(ax1, tr2x, tr2y, 
-         "CO2 concentration in ppm   CO2= 0.0132t² - 51t + 49,536          (CO2 emission linear)    23", 
+         "CO2 concentration in ppm   CO2= 0.0132t² - 51t + 49,536   (CO2 emission linear)    23", 
          c23, trs)
     elif plot25_long_CO2 == 2: # 25.9
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c23)
        text_4_add_text(ax1, tr2x, tr2y, 
-         "green: CO2 NOAA     800_000 year ice data                                                             25", 
+         "green: CO2 NOAA     800_000 year ice data                                                               25", 
          c25, trs)
     elif plot31_CO2_emission == 2: # 31.8
        print("text_094: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
@@ -266,7 +266,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot25_long_CO2 == 3: # 25.9
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c25)
        text_4_add_text(ax1, tr2x, tr3y, 
-         "green: CO2 NOAA     800_000 year ice data                                                              25", 
+         "green: CO2 NOAA     800_000 year ice data                                                               25", 
          c25, trs)
     elif plot31_CO2_emission == 3: # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c31)
