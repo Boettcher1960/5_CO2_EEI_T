@@ -26,7 +26,7 @@ plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brie
 plot32_CO2_emission = 2  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
 
 plot34_CO2_emission =    4   # 34.1 row 4 
-plot34_CO2_emission_mode = 2 # 34.1 mode 
+plot34_CO2_emission_mode = 4 # 34.1 mode 
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # plot34_CO2_emission mode 4
 

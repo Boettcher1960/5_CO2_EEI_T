@@ -342,7 +342,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
          text31,  c31, trs)
     elif plot34_CO2_emission == 4: # 34.4
        print("text_344: plot34_CO2_emission  = ", plot34_CO2_emission, " mode ", plot34_CO2_emission_mode, " 34") # 34.9
-       
+       text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c34)
+       text_4_add_text(ax1, tr2x, tr4y, 
+                text34,  c34, trs)
        
        
        line34 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
