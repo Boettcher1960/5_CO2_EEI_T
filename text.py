@@ -261,8 +261,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot25_long_CO2 == 3: # 25.9
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c25)
        text_4_add_text(ax1, tr2x, tr3y, 
-         "green: CO2 NOAA     800_000 year ice data                                                               25", 
-         c25, trs)
+         text25, c25, trs)
     elif plot31_CO2_emission == 3: # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c31)
        text_4_add_text(ax1, tr2x, tr3y, 
@@ -334,14 +333,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     text23, 
                     c23, trs)
     elif plot25_long_CO2 == 4: # 25.9.4
-       line25 = Line2D([lr2x1, lr2x2], [lr4y, lr4y], # y from 0 to 1
-       transform=fig.transFigure,
-       marker="o", markersize=3, color=c25, linewidth=2)
-       fig.add_artist(line25)
-       plt.text(tr2x, tr4y, blue25_text, color=c25, fontname="Arial", fontsize=trs,
-       transform=plt.gca().transAxes)
-       fig.add_artist(line25)
-
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c23)
+        text_4_add_text(ax1, tr2x, tr4y, 
+                    text25,                     c24, trs)
     elif plot31_CO2_emission == 4: # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c31)
        text_4_add_text(ax1, tr2x, tr4y, 
