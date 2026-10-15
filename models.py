@@ -225,7 +225,7 @@ T_71values = T_model71(years71)
 
 
 #########################################################
-# 47_albedo_48month_2026_07.csv ############################
+# plot47_albedo48 ############################
 #########################################################
 # 47.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 47.2 download CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026.txt
@@ -239,6 +239,14 @@ T_71values = T_model71(years71)
 #
 # 2026.10.15 plots plot47_albedo48 = 4
 
+
+
+#########################################################
+# plot52_delta_CO2_red_bars ############################
+#########################################################
+# delta 2025 = 2.74 ppm
+# 
+# 2026.10.15 plots plot52_delta_CO2_red_bars = 3 # (3=print numbers)
 
 
 
