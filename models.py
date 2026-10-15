@@ -198,7 +198,7 @@ T_71values = T_model71(years71)
 # 4 run with play_66_OLR = 48
 # 5 copy dokumente/5_CO2_EEI_T/work/_66c_OLR.csv to
 #        dokumente/5_CO2_EEI_T/read_csv/_45_OLR_48month_2026_07.csv
-# looks like https://bsky.app/profile/leonsimons.com/post/3mwy3xgypts2y
+#   looks like https://bsky.app/profile/leonsimons.com/post/3mwy3xgypts2y
 #
 #  plot45_OLR = 2 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 #
@@ -219,8 +219,8 @@ T_71values = T_model71(years71)
 #        dokumente/5_CO2_EEI_T/read_csv/_46_ASR_48month_2026_07.csv
 # looks like https://bsky.app/profile/leonsimons.com/post/3mwy3xgypts2y
 # line DataP423 df2['ASR'] = df2['sw_in'] - df2['sw_out']
-
-
+# 2026.10.15 plots plot46_ASR = 2
+# 2026.10.15 plots plot46_ASR = 3
 
 
 # text55 = "Green line: Earth Population in billion                                               55"
