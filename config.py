@@ -33,7 +33,7 @@ plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei = 0  # 47, 3, 48,   is local 
-plot45_OLR = 0 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
+plot45_OLR = 3 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR = 2 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48 = 0  # 4  
 
@@ -91,7 +91,7 @@ c47 = "#31A28ADC"
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"
-c61 = "#0D91A090"
+c61 = "#2BD20EA1"
 c62 = "#9522AA90"
 c63 = "#1652D490"
 c64 = "#9522AA90"
@@ -170,16 +170,16 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_61min = -0.5 #   EEI in W/m2 y axis left mode
-y_61max = 2.5 #   EEI in W/m2 y axis left mode
+y_61min = 0 #   EEI in W/m2 y axis left mode
+y_61max = 2 #   EEI in W/m2 y axis left mode
 
 y_62min = 239.8  # OLR in W/m2
 y_62max = 242.6  # OLR in W/m2
 
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
-y_65min = 240  # ASR in W/m2
-y_65max = 243.5 # 242.8  # ASR in W/m2
+y_65min = 240.3  # ASR in W/m2
+y_65max = 243  # 242.8  # ASR in W/m2
 
 y_66min = 239.8  # OLR in W/m2
 y_66max = 242.2 # 242.8  # OLR in W/m2
@@ -200,7 +200,7 @@ y_74min = 0.8 # for GIS Temperature only
 y_74max = 1.8 # for GIS Temperature only 
 
 x_anf = 2004
-x_end = 2026
+x_end = 2027
 
 # constants
 # C280 =275 in Zack Labe plots.

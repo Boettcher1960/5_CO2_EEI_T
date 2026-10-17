@@ -203,22 +203,22 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot42_EEI_48month == 2:
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c42)
        text_4_add_text(ax1, tr2x, tr2y, 
-         "Earth Energy Imbalance [W/m2] moving average 48 month                                       42", 
+         "Earth Energy Imbalance [W/m²] moving average 48 month                                       42", 
          c42, trs)
     elif plot43_eei_12month == 2:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c43)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "Earth Energy Imbalance [W/m2]                                    moving average 12 month    43", 
+                    "Earth Energy Imbalance [W/m²]                                    moving average 12 month    43", 
                     c43, trs)
     elif plot45_OLR == 2: # plot45_OLR = 4 # Outgoing Longwave Radiation OLR
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c45)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "Outgoing Longwave Radiation OLR  [W/m2] moving average 48 month                        45", 
+                    "Outgoing Longwave Radiation OLR  [W/m²] moving average 48 month                        45", 
                     c45, trs)
     elif plot46_ASR == 2: # line DataP423 df2['ASR'] = df2['sw_in'] - df2['sw_out']
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c46)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "ASR Absorbed Solar Radiation =input-output in [W/m2] moving average 48 month   46", 
+                    "ASR Absorbed Solar Radiation =input-output in [W/m²] moving average 48 month   46", 
                     c46, trs)
     elif plot71_temperature == 2: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)
@@ -300,7 +300,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     c52, trs)    
     elif play_65_ASR > 0:
                 text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c65)
-                p65_text = f"ASR Absorbed Solar Radiation in [W/m2]                       moving average {play_65_ASR} month    65"
+                p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                       moving average {play_65_ASR} month    65"
                 text_4_add_text(ax1, tr2x, tr3y, p65_text, c65, trs) 
     elif plot71_temperature == 3: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c71)
@@ -402,7 +402,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2023=1.5°C         77", c77, trs)
     elif play_65_ASR > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c65)
-        p65_text = f"ASR Absorbed Solar Radiation in [W/m2]                       moving average {play_65_ASR} month    65"
+        p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                       moving average {play_65_ASR} month    65"
         text_4_add_text(ax1, tr2x, tr4y, p65_text, c65, trs) 
     elif play_66_OLR > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c66)
@@ -458,7 +458,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     # in row 5 display part44_ceres_eei
     if part44_ceres_eei > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
-        p44_text = f"Earth Energy Imbalance {part44_ceres_eei}-month moving average 44"
+        p44_text = f"Earth Energy Imbalance    W/m²   {part44_ceres_eei}-month moving average 44"
         text_4_add_text(ax1, tr2x, tr5y, p44_text, c44, trs) 
 
     # row 6,      print line 6 below the plot ,     text_9_print_7_lines() ,           line 308
@@ -466,7 +466,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     # in row 6 display play_61_EEI
     if play_61_EEI > 100:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
-        p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_07     moving average {play_61_EEI} month     61"
+        p61_text = f"Earth Energy Imbalance [W/m²]  CERES 2026_07     moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
     else:
         p62_text = f"Parameter {header_parameter}  Text 192:"
@@ -475,13 +475,13 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     if play_62_CERES > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
         # Outgoing Longwave Radiation OLR
-        p62_text = f"TOA Longwave Flux - All-Sky {play_62_CERES}-month moving average  - text    443.                     62"
+        p62_text = f"TOA Longwave Flux - All-Sky  [W/m²] {play_62_CERES}-month moving average  - text    443.                     62"
         text_4_add_text(ax1, tr2x, tr5y, p62_text, c62, trs) 
     # in row 5 display play_62_CERES
     if play_64_ASR_anomaly > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c62)
         # Outgoing Longwave Radiation OLR
-        p64_text = f"ASR absorbed solar radiation in  [W/m2]                       moving average {play_64_ASR_anomaly} month    64"
+        p64_text = f"ASR absorbed solar radiation in  [W/m²]                       moving average {play_64_ASR_anomaly} month    64"
         text_4_add_text(ax1, tr2x, tr3y, p64_text, c64, trs) 
    
 
