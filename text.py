@@ -298,6 +298,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "CO2_delta_green_bars, the yearly CO2 Mauna Loa increase  (text224)                  52", 
                     c52, trs)    
+    elif play_65_ASR > 0:
+                text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c65)
+                p65_text = f"ASR Absorbed Solar Radiation in [W/m2]                       moving average {play_65_ASR} month    65"
+                text_4_add_text(ax1, tr2x, tr3y, p65_text, c65, trs) 
     elif plot71_temperature == 3: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c71)
         text_4_add_text(ax1, tr2x, tr3y, 
@@ -398,7 +402,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2023=1.5°C         77", c77, trs)
     elif play_65_ASR > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c65)
-        p65_text = f"ASR Absorbed Solar Radiation in W/m²                       moving average {play_65_ASR} month    65"
+        p65_text = f"ASR Absorbed Solar Radiation in [W/m2]                       moving average {play_65_ASR} month    65"
         text_4_add_text(ax1, tr2x, tr4y, p65_text, c65, trs) 
     elif play_66_OLR > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c66)
@@ -475,10 +479,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr5y, p62_text, c62, trs) 
     # in row 5 display play_62_CERES
     if play_64_ASR_anomaly > 0:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c62)
         # Outgoing Longwave Radiation OLR
-        p64_text = f"TOA ASR absorbed solar radiation anomaly  {play_64_ASR_anomaly}-month moving average                  64"
-        text_4_add_text(ax1, tr2x, tr5y, p64_text, c64, trs) 
+        p64_text = f"ASR absorbed solar radiation in  [W/m2]                       moving average {play_64_ASR_anomaly} month    64"
+        text_4_add_text(ax1, tr2x, tr3y, p64_text, c64, trs) 
    
 
 

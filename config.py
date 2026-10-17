@@ -49,7 +49,7 @@ play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out
 play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
-play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
+play_65_ASR = 12 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
 play_66_OLR = 0 # 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo = 0   # create 1..12..48..99 CERES
@@ -199,8 +199,8 @@ y_Tmax = 2 # 1.7
 y_74min = 0.8 # for GIS Temperature only 
 y_74max = 1.8 # for GIS Temperature only 
 
-x_anf = 2000
-x_end = 2027
+x_anf = 2004
+x_end = 2026
 
 # constants
 # C280 =275 in Zack Labe plots.
