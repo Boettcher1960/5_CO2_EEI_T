@@ -1,5 +1,5 @@
 # main.py
-v = "5G71" # 
+v = "5G72" # 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -308,7 +308,7 @@ def load_plot_data():
            print(f"main_180: custom-read 44.7 ={part44_ceres_eei}")
         data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
     if plot45_OLR > 0: # Outgoing Longwave Radiation OLR
-        data['ceres_45'] = pd.read_csv("read_csv/_45_OLR_48month_2026_07.csv")
+        data['ceres_45'] = pd.read_csv("read_csv/_45_OLR_48month_2026_08.csv")
         if print_debug > 9:
            print(f"main_302: OLR read 45.1 ={plot45_OLR}")
     if plot46_ASR > 0: # Outgoing Longwave Radiation OLR
