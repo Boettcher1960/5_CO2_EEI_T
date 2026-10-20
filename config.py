@@ -30,8 +30,8 @@ plot34_CO2_emission_mode = 0 # 4, 2, 4   # 34.1 mode
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 
-plot42_EEI_48month = 4  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
-plot43_eei_12month = 0  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
+plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
+plot43_eei_12month = 4  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei = 0  # 47, 3, 48,   is local 
 plot45_OLR = 3 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR = 2 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
@@ -44,7 +44,7 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 48    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # play_62_CERES ist doppelt zu play_66_OLR
 play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
@@ -120,7 +120,7 @@ text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World i
 text34 = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode                                   34"
 p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
 text42 = "Earth Energy Imbalance W/m² moving average 48 month 42"
-p43_text = "Earth Energy Imbalance W/m² moving average 12 month 43"
+text43 = "Earth Energy Imbalance in W/m²                                  moving average 12 month    43"
 p44_text = "Earth Energy Imbalance W/m² moving average 44"
 print74_text = "Temperature in °C giss.nasa.gov Hansen+0.3°C 74 n"
 print75_text = "Hansen linear fit from 2015 +0.41°C 75"  # Added for linear_41_75

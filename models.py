@@ -183,18 +183,28 @@ T_71values = T_model71(years71)
 # 41.44 new in main.py  line 64  df61b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt',   
 # 41.45 new in main.py  line 65                               'work/61b_out_in_ceres.csv')
 # 42.46 run with play_61_EEI = 48
-# 42.47 copy     work/61c_out_EEI.csv to read_csv/_42_EEI48month_2026_08.csv
+# 42.47 copy           work/61c_out_EEI.csv to 
 # 42.48      read_csv/_42_EEI48month_2026_08.csv
 # 41.49 old in main.py  line 298      data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_07.csv")
 # 41.50 new in main.py  line 298      data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
 # 41.51 works with august data plot42_EEI_48month = 4 
-#
+############################ plot43_eei_12month #####################################
+# 41.52 set    play_61_EEI = 12 
+# 41.53 set    plot43_eei_12month = 4 
+# 41.54 old in main.py  line 339      data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
+# 41.55 new in main.py  line 339      data['ceres_61'] = pd.read_csv("work/61c_out_EEI.csv")
+# 42.56 copy           work/61c_out_EEI.csv to 
+# 42.57  to    read_csv/_43_EEI12month_2026_08.csv
+
+# 41.43 old in main.py  line 64  df61b = convert_ceres_to_csv('read_csv/_61_in__2026_07_EEI_CERES.txt', 
+# 41.44 new in main.py  line 64  df61b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt',   
+
 
 
 
 #################################################################
 # plot42_EEI_48month ############################################
-###############see 41 process 4 CERES files #####################
+############### see 41 process 4 CERES files ####################
 # 42.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 41.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toAugust-2026.txt
 # 41.3 copy txt to work/_61_in__2026_08_EEI_CERES.txt
@@ -215,6 +225,7 @@ T_71values = T_model71(years71)
 # 43.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
 # 43.3 copy txt to read_csv/_61_in__2026_07_EEI_CERES.txt
 # 43.4 run with play_61_EEI = 12 the file /_61c_out_ceres.csv is produced 
+
 #    /_61c_out_ceres.csv column EEI has the 12 month average
 # 43.5 copy            read_csv/_61c_out_ceres.csv
 # 43.6 paste to        read_csv/_43_EEI12month_2026_07.csv

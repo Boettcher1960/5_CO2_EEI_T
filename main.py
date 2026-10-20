@@ -1,5 +1,5 @@
 # main.py
-v = "5G80" # 
+v = "5G83" # 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -299,7 +299,7 @@ def load_plot_data():
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
     if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
     #   data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_02.csv")
-        data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_07.csv")
+        data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_08.csv")
         if print_debug > 19:
            print(f"main_176: 43.2 read ={plot43_eei_12month}")
            #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")
@@ -336,7 +336,7 @@ def load_plot_data():
         if print_debug > 9:
            print(f"main_193: plot52_delta_CO2_red_bars # 52.3 ={plot52_delta_CO2_red_bars}")
     if play_61_EEI > 0: # 61.9 read
-        data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
+        data['ceres_61'] = pd.read_csv("work/61c_out_EEI.csv")
         if print_debug > 9:
            print(f"main_197: 61.9 read ={play_61_EEI}")
     if play_62_CERES > 0: # 62.9 read
