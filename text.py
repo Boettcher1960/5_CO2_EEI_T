@@ -433,7 +433,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr5y, text55, c55, trs) 
     elif play_61_EEI > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c61)
-        p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_07      moving average {play_61_EEI} month     61"
+        p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr5y, p61_text, c61, trs) 
 
     elif play_63_CB == 5: # 55.4 row 5 legende 
@@ -466,7 +466,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     # in row 6 display play_61_EEI
     if play_61_EEI > 100:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
-        p61_text = f"Earth Energy Imbalance [W/m²]  CERES 2026_07     moving average {play_61_EEI} month     61"
+        p61_text = f"Earth Energy Imbalance [W/m²]  CERES 2026_08     moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
     else:
         p62_text = f"Parameter {header_parameter}  Text 192:"

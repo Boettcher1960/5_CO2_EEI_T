@@ -1,5 +1,5 @@
 # main.py
-v = "5G78" # 
+v = "5G80" # 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -76,14 +76,14 @@ def process_ceres_data():
        keep_original=True,
        
        df61c = create_running_average( 'work/61b_out_in_ceres.csv', 
-                                       'work/61c_out_ceres.csv',
+                                       'work/61c_out_EEI.csv',
                                             window_months=play_61_EEI,
                                             min_periods=min1_periods,
                                             center=use_center,
                                             column_name='EEI')
         
        if print_debug > 9:
-          print(f"main_122: create read_csv/_61c_out_ceres.csv  61.gut ={play_61_EEI}")
+          print(f"main_086: create work/61c_out_EEI.csv  61.gut ={play_61_EEI}")
 
 
     # main.play_62_CERES line 90 
@@ -295,7 +295,7 @@ def load_plot_data():
            print(f"main_168: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
            print(f"main_169: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")        
     if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
-        data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_07.csv")
+        data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
     if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
     #   data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_02.csv")
