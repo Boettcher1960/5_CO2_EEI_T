@@ -58,11 +58,11 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     elif plot42_EEI_48month == 2:
-        header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Jul. 2026 Plot {x_anf} to {x_end}."
+        header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Aug. 2026 Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     elif plot43_eei_12month == 2:
-                header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Jul. 2026 Plot {x_anf} to {x_end}."
+                header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Aug. 2026 Plot {x_anf} to {x_end}."
                 ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                         transform=ax1.transAxes)
     elif plot45_OLR == 2:
@@ -71,7 +71,7 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
                 transform=ax1.transAxes)
     # ax1.set_ylabel("NASA CERES Earth Energy: ASR = OLR + EEI in W/m²  ", color=c46, fontsize=20)
     elif plot46_ASR == 2:
-        header = f"NASA CERES Earth Energy Imbalance: ASR and OLR in W/m² (Jul. 2026) Plot {x_anf} to {x_end}."
+        header = f"NASA CERES Earth Energy Imbalance: ASR and OLR in W/m² (Aug. 2026) Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color=c46, fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     elif plot74_GIS_T == 2:
@@ -79,7 +79,7 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         ax1.text(-0.1, 1.05, header, color=c74, fontname="Arial", fontsize=trs,
                         transform=ax1.transAxes)
     elif yl_mode == 4:
-        header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Feb. 2026 data. Plot {x_anf} to {x_end}."
+        header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Aug. 2026 data. Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     elif yl_mode == 7:
