@@ -201,7 +201,7 @@ T_71values = T_model71(years71)
 # 41.60      dokumente/5_CO2_EEI_T/read_csv/_47_albedo_48month_2026_08.csv
 # 41.61 old in main.py  line 320      data['ceres_47'] = pd.read_csv("read_csv/_47_albedo_48month_2026_07.csv")
 # 41.62 new in main.py  line 320      data['ceres_47'] = pd.read_csv("read_csv/_47_albedo_48month_2026_08.csv")
-# 41.
+#
 
 
 
@@ -291,15 +291,11 @@ T_71values = T_model71(years71)
 # 41.7 copy txt to work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt
 # 41.14 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toAugust-2026.txt
 # 41.15 copy txt to work/_66_TOA_Incoming_Solar_2026_08.txt
-# 47.17 run with play_67_albedo = 48
-# 47.18 copy dokumente/5_CO2_EEI_T/work/_CERES_albedo.csv to
-# 47.19      dokumente/5_CO2_EEI_T/read_csv/_47_albedo_48month_2026_08.csv
-
-
-#        plot47_albedo48 = 4 - print text in line 4
-#
+# 41.58 run with play_67_albedo = 48
+# 41.59 copy dokumente/5_CO2_EEI_T/work/_CERES_albedo.csv to
+# 41.60      dokumente/5_CO2_EEI_T/read_csv/_47_albedo_48month_2026_08.csv
 # 2026.10.15 plots plot47_albedo48 = 4
-
+# 2026.10.20 plots plot47_albedo48 = 4
 
 
 #########################################################
@@ -344,40 +340,136 @@ T_71values = T_model71(years71)
 
 #########################################################
 # 61 How to make EEI files ##############################
-#########################################################
-# 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+#--- see 41 process 4 CERES files ---------------------
+# 61.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 2  https://ceres.larc.nasa.gov/data/
-# 3 https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
-# 4 t.boettcher@directbox.com enter email adress
-# 5 Order Data - left mouse click
-# 6 select
-# 7 global mean
-# 8 Visualize Data - left mouse click
-# 9 global mean https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 10 select first item
-# 11 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
-# 12 six small curves are shown
-# 13 select item 3 Label TOA Net Flux All Sky -10 to +10 W/m/m monthly values
-# 14 big window appears with one curve only
-# 15 left mouse select save Data as ASCII File
-# 16.1 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-# 16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
-# 17.1 rename      to _61_in__2026_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-# 17.2 rename      to _61_in__2026_07_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-# 18 run with play_61_EEI = 48 
-# 19 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv to
-# 20.1      dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
-# 20.2                           'read_csv/_42_EEI48month_2026_07.csv', 
-# 21 run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
+# 61.2  https://ceres.larc.nasa.gov/data/
+# 61.3 https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
+# 61.4 t.boettcher@directbox.com enter email adress
+# 61.5 Order Data - left mouse click
+# 61.6 select
+# 61.7 global mean
+# 61.8 Visualize Data - left mouse click
+# 61.9 global mean https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 61.10 select first item
+# 61.11 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+# 61.12 six small curves are shown
+# 61.13 select item 3 Label TOA Net Flux All Sky -10 to +10 W/m/m monthly values
+# 61.14 big window appears with one curve only
+# 61.15 left mouse select save Data as ASCII File
+# 61.16.1 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 61.16.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
+# 61.17.1 rename      to _61_in__2026_02_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 61.17.2 rename      to _61_in__2026_07_EEI_CERES.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+# 61.18 run with play_61_EEI = 48 
+# 61.19 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv to
+# 61.20.1      dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
+# 61.20.2                           'read_csv/_42_EEI48month_2026_07.csv', 
+# 61.21 run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
 # 
-# 22 run with play_61_EEI = 12 
-# 23 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
+# 61.22 run with play_61_EEI = 12 
+# 61.23 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
 #       dokumente/5_CO2_EEI_T/read_csv/_43_EEI12month_2026_02.csv
-# 24 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
+# 61.24 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
 #
 # 2026.10.15 plots play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv 
 
 
 
+# ----------------------------------------------
+# play_63_CERES = 12 
+# --- see 41 process 4 CERES files ---------------------
+# 63.41 open
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 63.42 select first item
+# 63.43 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+# 63.44 six small curves are shown
+# 63.45 select item 1 Label TOA Short Wave Flux All Sky 90 to 110 W/m/m monthly values
+# 63.46 big window appears with one curve only
+# 63.47 left mouse select save Data as ASCII File
+# 63.48 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 63.49 rename      to _63_in__2026_02_Shortwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+#  run with play_61_EEI = 48 
+#  copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
+#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
+#  run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
+# ----------------------------------------------
+
+
+
+# ----------------------------------------------
+# 62    play_62_CERES   ------------------------
+# play_62_CERES ist doppelt zu play_66_OLR
+# --- see 41 process 4 CERES files ---------------------
+# play_62_CERES = 48 
+# 62.21 open
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+#  62.22 select first item
+#  62.23 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+#  62.24 six small curves are shown
+#  62.25 select item 2 Label TOA Long Wave Flux All Sky 235 to 245 W/m/m monthly values
+#  62.26 big window appears with one curve only
+#  62.27 left mouse select save Data as ASCII File
+#  62.28.1 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+#  62.28.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
+#  62.29.1 rename      to _62_in__2026_02_Longwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+#  62.29.2 rename      to _66_TOA_OLR_all_sky_2026_07.txt and save to dokumente/5_CO2_EEI_T/work/
+#  62.30.1 run with play_62_CERES = 48
+#    read read_csv/_62_in__2026_02_Longwave.txt main 124
+#    output1 read_csv/_62b_LongWave.csv'
+#  62.30.2 run with play_66_OLR = 48
+#  62.31.1 run with play_62_CERES = 48
+#    input1  read_csv/_62_in__2026_02_Longwave.txt main 124
+#    input2  read_csv/_42_EEI48month_2026_02.csv   main 141
+#    output2 read_csv/_62c_LongWave.csv with column LongWave for  48 month running average 
+#    output3.1 read_csv/_62e_LongWave.csv with column EEI copy from input2 for  48 month running average 
+#    output3.2 read_csv/_62e_LongWave.csv with column LongWave for  48 month running average 
+#    output3.3 read_csv/_62e_LongWave.csv with column OLR_EEI = LongWave + EEI   48 month running average 
+#  62.32.1 copy dokumente/5_CO2_EEI_T/read_csv/_62e_LongWave.csv to
+#         dokumente/5_CO2_EEI_T/read_csv/_45_OLR_EEI_48month_2026_02.csv
+#  62.32.2 copy dokumente/5_CO2_EEI_T/work/_66c_OLR.csv to
+#           dokumente/5_CO2_EEI_T/read_csv/_45_OLR_48month_2026_07.csv file, column OLR48 
+#  62.33.1 run   plot45_OLR_48month=2 reading new _45_OLR_EEI_48month_2026_02.csv file
+#  62.33.2 run   plot45_OLR = 3 reading new _45_OLR_48month_2026_07.csv file, column OLR48 
+# ------- play_62_CERES ist doppelt zu play_66_OLR ---------
+
+
+#########################################################
+# 67    play_67_albedo     ##############################
+#########################################################
+# Calculate Albedo: Compute planetary or surface albedo by 
+# dividing the upward shortwave radiation flux (toa_sw_all) 
+# by the incoming solar radiation (solar_mon).
+#  67.1 open  https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+#  67.2       https://ceres.larc.nasa.gov/data/
+#  67.3       https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
+#  67.4 t.boettcher@directbox.com enter email adress
+#  67.5 Order Data - left mouse click
+#  67.6 select
+#  67.7 global mean
+#  67.8 Visualize Data - left mouse click
+#  67.9 global mean https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+#  67.10 select first item
+#  67.11 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+#  67.12 six small curves are shown
+#  67.13 select item 1 Label TOA Shortwave Flux All Sky 90 to +110 W/m/m monthly values
+#  67.14 big window appears with one curve only
+#  67.15 left mouse select save Data as ASCII File
+# 67.16 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+# 67.17 copy txt to work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt
+# 67.18 select Parameter Solar Flux
+# 67.19 global mean
+# 67.20 Visualize Data - left mouse click
+# 67.21 big window appears with one curve only 325 to 360 W/m2
+# 67.22 left mouse click window gets big 328 to 352 W/m2
+# 67.23 left mouse select save Data as ASCII File
+# 67.24 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toAugust-2026.txt
+# 67.25 copy txt to work/_66_TOA_Incoming_Solar_2026_08.txt
+# 67.30 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 67.31 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+# 67.35 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 67.36 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+# 67.31 with   play_67_albedo = 48  work/_CERES_albedo.csv is created with averaged albedo48 column
+# 67.33 copy to work/_67_albedo48months_2026_08.csv'
+# 2026.10.20 play_67_albedo = 48 
 
