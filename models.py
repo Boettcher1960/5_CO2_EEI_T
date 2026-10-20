@@ -193,8 +193,15 @@ T_71values = T_model71(years71)
 # 41.53 set    plot43_eei_12month = 4 
 # 41.54 old in main.py  line 339      data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
 # 41.55 new in main.py  line 339      data['ceres_61'] = pd.read_csv("work/61c_out_EEI.csv")
-# 42.56 copy           work/61c_out_EEI.csv to 
-# 42.57  to    read_csv/_43_EEI12month_2026_08.csv
+# 41.56 copy           work/61c_out_EEI.csv to 
+# 41.57  to    read_csv/_43_EEI12month_2026_08.csv
+############################ plot47_albedo48 #####################################
+# 41.58 run with play_67_albedo = 48
+# 41.59 copy dokumente/5_CO2_EEI_T/work/_CERES_albedo.csv to
+# 41.60      dokumente/5_CO2_EEI_T/read_csv/_47_albedo_48month_2026_08.csv
+
+# 41.54 old in main.py  line 339      data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
+# 41.55 new in main.py  line 339      data['ceres_61'] = pd.read_csv("work/61c_out_EEI.csv")
 
 
 
@@ -213,24 +220,15 @@ T_71values = T_model71(years71)
 # 2026.10.20 plots  plot42_EEI_48month = 4
 
 
-
 #################################################################
 # plot43_eei_12month ############################################
 ############### see 41 process 4 CERES files ####################
 # 43.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 41.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toAugust-2026.txt
 # 41.3 copy txt to work/_61_in__2026_08_EEI_CERES.txt
-
-# 43.4 run with play_61_EEI = 12 the file /_61c_out_ceres.csv is produced 
-
-#    /_61c_out_ceres.csv column EEI has the 12 month average
-# 43.5 copy            read_csv/_61c_out_ceres.csv
-# 43.6 paste to        read_csv/_43_EEI12month_2026_07.csv
-# 43.7.1 set plot43_eei_12month = 2  # 2,3,4,5 print EEI 48 month running mean
-#        the left axis is EEI 43
-# 43.7.2 set plot43_eei_12month = 3  # 2,3,4,5 print EEI 48 month running mean
-# 43.8 run the plot
-#
+# 41.52 set    play_61_EEI = 12 
+# 42.56 copy           work/61c_out_EEI.csv to 
+# 42.57  to    read_csv/_43_EEI12month_2026_08.csv
 # 2026.10.15 plots plot43_eei_12month = 2
 # 2026.10.15 plots plot43_eei_12month = 3
 # 2026.10.20 plots plot43_eei_12month = 4
@@ -246,61 +244,59 @@ T_71values = T_model71(years71)
 #    /_61c_out_ceres.csv column EEI has the 12 month average
 # 44.5 copy           tbd read_csv/_61c_out_ceres.csv
 # 44.6 paste to        work/c44d_ceres.csv
-#
 # 2026.10.15 plots part44_ceres_eei = 3   # makes 3 month average
 # 2026.10.15 plots part44_ceres_eei = 47  # makes same 12 month average best
 # 2026.10.15 plots part44_ceres_eei = 36  # makes same 3 month average
-
-
 
 
 #########################################################
 # 45_OLR_48month_2026_07.csv ############################
 #########################################################
 # 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026(2).txt
-# 3 copy txt to work/_66_TOA_OLR_all_sky_2026_07.txt
-# 4 run with play_66_OLR = 48
-# 5 copy dokumente/5_CO2_EEI_T/work/_66c_OLR.csv to
-#        dokumente/5_CO2_EEI_T/read_csv/_45_OLR_48month_2026_07.csv
-#   looks like https://bsky.app/profile/leonsimons.com/post/3mwy3xgypts2y
-#
-#  plot45_OLR = 2 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
-#
+# 41.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+# 41.11 copy txt to work/_66_TOA_OLR_all_sky_2026_08.txt
+# 41.17 in config.py set play_66_OLR = 48 
+# 41.21 copy the new file  work/66c_OLR.csv has the column OLR48
+# 41.22 to   read_csv/_45_OLR_48month_2026_08.csv
+# plot45_OLR = 2 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 # 2026.10.15 plots plot45_OLR = 2
 # 2026.10.15 plots plot45_OLR = 3
+# 2026.10.20 plots plot45_OLR = 3
+
 
 #########################################################
 # 46_ASR_48month_2026_07.csv ############################
 #########################################################
 # 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 2 download CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026.txt
-# 3 copy to _66_TOA_Incoming_Solar_2026_07.txt
-# 5 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
-# 6 copy to _66_TOA_Shortwave_Flux_All_Sky2026_07.txt 
-# 7 run with play_67_albedo = 48
-#   dokumente/5_CO2_EEI_T/work/_CERES_raw.csv is produced with column ASR
-# 8 copy dokumente/5_CO2_EEI_T/work/_CERES_ASR.csv to
-#        dokumente/5_CO2_EEI_T/read_csv/_46_ASR_48month_2026_07.csv
-# looks like https://bsky.app/profile/leonsimons.com/post/3mwy3xgypts2y
-# line DataP423 df2['ASR'] = df2['sw_in'] - df2['sw_out']
+# 41.6 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+# 41.7 copy txt to work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt
+# 41.14 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toAugust-2026.txt
+# 41.15 copy txt to work/_66_TOA_Incoming_Solar_2026_08.txt
+# 41.26 config.py set play_67_albedo = 48
+#       dokumente/5_CO2_EEI_T/work/_CERES_raw.csv is produced with column ASR
+# 46.28 copy dokumente/5_CO2_EEI_T/work/_CERES_ASR.csv to
+#            dokumente/5_CO2_EEI_T/read_csv_46_ASR_48month_2026_08.csv
+# 46.30 looks like https://bsky.app/profile/leonsimons.com/post/3mwy3xgypts2y
+#       line DataP423 df2['ASR'] = df2['sw_in'] - df2['sw_out']
 # 2026.10.15 plots plot46_ASR = 2
 # 2026.10.15 plots plot46_ASR = 3
-
+# 2026.10.20 plots plot46_ASR = 2
 
 
 #########################################################
 # plot47_albedo48 ############################
 #########################################################
 # 47.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 47.2 download CERES_EBAF_Ed4.2.1_Incoming_Solar_Flux_March-2000toMay-2026.txt
-# 47.3 copy to _66_TOA_Incoming_Solar_2026_07.txt
-# 47.5 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
-# 47.6 copy to _66_TOA_Shortwave_Flux_All_Sky2026_07.txt 
-# 47.7 run with play_67_albedo = 48
-# 47.8 copy dokumente/5_CO2_EEI_T/work/_CERES_albedo.csv to
-#           dokumente/5_CO2_EEI_T/read_csv/_47_albedo_48month_2026_07.csv
-#      plot47_albedo48 = 4 - print text in line 4
+# 41.6 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+# 41.7 copy txt to work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt
+# 41.14 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toAugust-2026.txt
+# 41.15 copy txt to work/_66_TOA_Incoming_Solar_2026_08.txt
+# 47.17 run with play_67_albedo = 48
+# 47.18 copy dokumente/5_CO2_EEI_T/work/_CERES_albedo.csv to
+# 47.19      dokumente/5_CO2_EEI_T/read_csv/_47_albedo_48month_2026_08.csv
+
+
+#        plot47_albedo48 = 4 - print text in line 4
 #
 # 2026.10.15 plots plot47_albedo48 = 4
 

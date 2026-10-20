@@ -444,6 +444,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        # 9.5.4 write green text
        plt.text(tr2x, tr5y, "carbon brief cummulative CO2 values in Gt CO2 since 1750     63", color=c63, fontname="Arial", fontsize=trs,
        transform=plt.gca().transAxes)
+    elif play_67_albedo > 0:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c67)
+        # albedo
+        p67_text = f"Albedo = sw_out / sw_in             {play_67_albedo}-month moving average - min-max swapped      67"
+        text_4_add_text(ax1, tr2x, tr5y, p67_text, c67, trs) 
     elif play68_ERA > 0: # 68.66
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c68)
         p68_text = f"Temperature in °C climate.copernicus.eu/datasets/-era5-single-levels {play68_ERA} days    68"
