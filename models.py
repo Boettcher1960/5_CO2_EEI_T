@@ -137,6 +137,29 @@ T_71values = T_model71(years71)
 # 2026.10.15 plots using    plot34_CO2_emission = 4  plot34_CO2_emission_mode = 4 plot34_CO2 = 0
 
 
+#################################################################
+# process 4 CERES files 
+#################################################################
+#  open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+#      select file 3 
+# 41.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toAugust-2026.txt
+# 41.3 copy txt to read_csv/_61_in__2026_08_EEI_CERES.txt
+#      select file 1
+# 41.6 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+# 41.7 copy txt to read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt
+#      select file 2
+# 41.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+# 41.11 copy txt to work/_66_TOA_OLR_all_sky_2026_08.txt
+#      select file 4
+# 41.14 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toAugust-2026.txt
+# 41.15 copy txt to read_csv/ _66_TOA_Incoming_Solar_2026_08.txt
+#################################################################
+# 41.17 in config.py set play_66_OLR = 48 
+# 41.18 in main.py  line 164       df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
+# 41.19 in main.py  line 164       df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_08.txt', 
+
+
+
 
 #################################################################
 # plot42_EEI_48month ############################################
@@ -170,6 +193,7 @@ T_71values = T_model71(years71)
 #
 # 2026.10.15 plots plot43_eei_12month = 2
 # 2026.10.15 plots plot43_eei_12month = 3
+
 
 #################################################################
 # part44_ceres_eei ############################################
@@ -316,4 +340,7 @@ T_71values = T_model71(years71)
 # 24 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
 #
 # 2026.10.15 plots play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv 
+
+
+
 

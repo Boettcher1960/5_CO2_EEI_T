@@ -44,14 +44,14 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 0    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # play_62_CERES ist doppelt zu play_66_OLR
 play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
-play_65_ASR = 12 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
+play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                 # todo average 48
-play_66_OLR = 0 # 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
+play_66_OLR = 48 # 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo = 0   # create 1..12..48..99 CERES
 play68_ERA = 0 # 1461, 1095, 720, 365, 24
     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
@@ -190,7 +190,8 @@ y_67min = 0.2936  # 0.294 albedo in %
 y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.294 # albedo in %
 y_67max = 0.286 # albedo in %
-y_68min = 0.8 # for ERA5 Temperature only 
+
+y_68min = 0.8  # for ERA5 Temperature only 
 y_68max = 1.8  # for ERA5 Temperature only 
 
 
@@ -240,10 +241,9 @@ print_debug = 10 # print some items
 # Calculate Albedo: Compute planetary or surface albedo by 
 # dividing the upward shortwave radiation flux (toa_sw_all) 
 # by the incoming solar radiation (solar_mon).
-# 1 open 
-# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 2  https://ceres.larc.nasa.gov/data/
-# 3 https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
+# 1 open  https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 2       https://ceres.larc.nasa.gov/data/
+# 3       https://ceres-tool.larc.nasa.gov/ord-tool/jsp/EBAFTOA421Selection.jsp
 # 4 t.boettcher@directbox.com enter email adress
 # 5 Order Data - left mouse click
 # 6 select

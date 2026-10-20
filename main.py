@@ -1,5 +1,5 @@
 # main.py
-v = "5G70" # 
+v = "5G71" # 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -161,7 +161,7 @@ if play_66_OLR > 1: #
        # part 66.b convert download.txt to CERES.csv (no averaging)
        # CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt downloaded
        # copy to 'work/_66_TOA_OLR_all_sky_2026_07.txt'
-       df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
+       df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_08.txt', 
                                     'work/_66b_OLR_raw.csv',
                                     'OLR'
                                     )
