@@ -167,8 +167,12 @@ T_71values = T_model71(years71)
 # 41.26 config.py set play_67_albedo = 48
 # 41.27 old in data_processing.py  line 307   with open('read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt', 'r') as f:
 # 41.28 new in data_processing.py  line 307   with open('work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt', 'r') as f:
-# 41.29 old in data_processing.py  line 338  with open('read_csv/_66_TOA_Incoming_Solar_2026_07.txt', 'r') as f:
-# 41.30 old in data_processing.py  line 338  with open('work/_66_TOA_Incoming_Solar_2026_08.txt', 'r') as f:
+# 41.29 old in data_processing.py  line 338   with open('read_csv/_66_TOA_Incoming_Solar_2026_07.txt', 'r') as f:
+# 41.30 new in data_processing.py  line 338   with open('work/_66_TOA_Incoming_Solar_2026_08.txt', 'r') as f:
+# 41.31 old in data_processing.py  line 361   with open('read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt', 'r') as f:
+# 41.32 new in data_processing.py  line 361   with open('work/_61_in__2026_08_EEI_CERES.txt', 'r') as f:
+############################ play_67_albedo = 48 #####################################
+                                               
 
 
 

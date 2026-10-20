@@ -332,7 +332,7 @@ def ceres67_to_csv(
 
     # part 67.6 read2 txt
     # 67.6 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt
-    # 67.7 copy to read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
+    # 67.7 copy to rwork/_66_TOA_Incoming_Solar_2026_08.txt'
     #  with open(input_file2, 'r') as f: 
     # 67.8 read _66_TOA_Incoming_Solar_2026_07.txt' into data2
     with open('work/_66_TOA_Incoming_Solar_2026_08.txt', 'r') as f:
@@ -356,9 +356,9 @@ def ceres67_to_csv(
 
     # read3
     # 67.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
-    # 67.11 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
+    # 67.11 copy to 'work/_67_EEI_TOA_Net_Flux_2026_08.txt'
     # 67.12 read 3 read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt into data3 field
-    with open('read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt', 'r') as f:
+    with open('work/_61_in__2026_08_EEI_CERES.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
             line = line.strip()
