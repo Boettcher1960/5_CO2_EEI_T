@@ -158,12 +158,12 @@ def plot_1_axe(ax1):
     elif plot42_EEI_48month == 2:  # 43.5 y axe left 
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 0))
-        ax1.set_ylim(y_Emin, y_Emax)
+        ax1.set_ylim(y_42min, y_42max)
         ax1.set_ylabel("Earth Energy Imbalance EEI in W/m² (plot180)  ", color=c42, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c42, labelsize=20)
         y_mayor_ticks = 0.500 
         y_minor_ticks = 0.100
-        if (y_Emax - y_Emin) > 5:
+        if (y_42max - y_42min) > 5:
            y_mayor_ticks = 5
            y_minor_ticks = 1
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
@@ -369,7 +369,7 @@ def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
     #ax42.spines.right.set_position(("outward", 120))
     ax42.set_ylabel("Earth Energy Imbalance  in W/m²     plot470            42", color=c42, fontname="Arial",fontsize=18)
     ax42.tick_params(axis="y", labelcolor=c42)
-    ax42.set_ylim(y_Emin, y_Emax) #
+    ax42.set_ylim(y_42min, y_42max) #
 
 # Earth Energy Imbalance W/m² moving average 12 month 
 # plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance     ,  line  460
@@ -434,7 +434,7 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
 
 #  play_61_EEI  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
-    outward_right =  ( 4 *  yr_60 ) - yr_150
+    outward_right =  ( 5 *  yr_60 ) - yr_150
     ax61.spines.right.set_position(("outward", outward_right))
     ax61.set_ylabel("EEI   [W/m2]       61", color=c61, fontname="Arial",fontsize=18)
     ax61.tick_params(axis="y", labelcolor=c61)

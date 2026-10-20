@@ -178,6 +178,13 @@ T_71values = T_model71(years71)
 # 41.39       dokumente/5_CO2_EEI_T/read_csv/_46_ASR_48month_2026_08.csv
 # 41.40 old in main.py  line 315      data['ceres_46'] = pd.read_csv("read_csv/_46_ASR_48month_2026_07.csv")
 # 41.41 new in main.py  line 315      data['ceres_46'] = pd.read_csv("read_csv/_46_ASR_48month_2026_08.csv")                                               
+############################ plot42_EEI_48month #####################################
+# 41.43 old in main.py  line 64  df61b = convert_ceres_to_csv('read_csv/_61_in__2026_07_EEI_CERES.txt', 
+# 41.44 new in main.py  line 64  df61b = convert_ceres_to_csv('work/_61_in__2026_08_EEI_CERES.txt',   
+# 41.45 new in main.py  line 65                               'work/_61b_out_in_ceres.csv')
+
+# 42.4 run with play_61_EEI = 48
+
 
 
 
@@ -185,7 +192,9 @@ T_71values = T_model71(years71)
 # plot42_EEI_48month ############################################
 ###############see 61 How to make EEI files #####################
 # 42.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 42.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
+# 41.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toAugust-2026.txt
+# 41.3 copy txt to work/_61_in__2026_08_EEI_CERES.txt
+
 # 42.3 copy txt to read_csv/_61_in__2026_07_EEI_CERES.txt
 # 42.4 run with play_61_EEI = 48
 # 42.6 copy to read_csv/_42_EEI48month_2026_07.csv

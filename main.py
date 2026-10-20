@@ -1,5 +1,5 @@
 # main.py
-v = "5G77" # 
+v = "5G78" # 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -61,10 +61,10 @@ def process_ceres_data():
     """Process CERES data based on configuration"""
     # main.play_61_EEI line 65
     if play_61_EEI > 0: # part 6 
-       df61b = convert_ceres_to_csv('read_csv/_61_in__2026_07_EEI_CERES.txt', 
-                                    'read_csv/_61b_out_in_ceres.csv')
+       df61b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
+                                    'work/61b_out_in_ceres.csv')
        if print_debug > 9:
-          print(f"main_156: create read_csv/_61b_out_in_ceres.csv  61.b ={play_61_EEI}")
+          print(f"main_067: create work/61b_out_in_ceres.csv'  61.b ={play_61_EEI}")
        
        window_months=play_61_EEI
 
@@ -75,8 +75,8 @@ def process_ceres_data():
        use_center=False
        keep_original=True,
        
-       df61c = create_running_average( 'read_csv/_61b_out_in_ceres.csv', 
-                                       'read_csv/_61c_out_ceres.csv',
+       df61c = create_running_average( 'work/61b_out_in_ceres.csv', 
+                                       'work/61c_out_ceres.csv',
                                             window_months=play_61_EEI,
                                             min_periods=min1_periods,
                                             center=use_center,

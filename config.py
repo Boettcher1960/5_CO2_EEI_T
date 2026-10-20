@@ -30,7 +30,7 @@ plot34_CO2_emission_mode = 0 # 4, 2, 4   # 34.1 mode
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 
-plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
+plot42_EEI_48month = 4  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 2, 3, 4 , 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei = 0  # 47, 3, 48,   is local 
 plot45_OLR = 3 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
@@ -44,7 +44,7 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 0    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 48    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # play_62_CERES ist doppelt zu play_66_OLR
 play_62_CERES = 0    # 12, 48  CERES Outgoing Longwave Radiation OLR
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
@@ -52,7 +52,7 @@ play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1
 play_65_ASR = 0 # new absorbed solar radiation ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
                  # todo average 48
 play_66_OLR = 0 # 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
-play_67_albedo = 48   # create 1..12..48..99 CERES
+play_67_albedo = 0   # create 1..12..48..99 CERES
 play68_ERA = 0 # 1461, 1095, 720, 365, 24
     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 
@@ -91,7 +91,7 @@ c47 = "#31A28ADC"
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"
-c61 = "#2BD20EA1"
+c61 = "#1E0ED2A0"
 c62 = "#9522AA90"
 c63 = "#1652D490"
 c64 = "#9522AA90"
@@ -153,6 +153,8 @@ y_Emax = 2 #   EEI in W/m2 y axis left mode
 y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
 
+y_42min = 0.2 #   EEI in W/m2 y axis left mode
+y_42max = 2.2 #   EEI in W/m2 y axis left mode
 y_43min = -0.5    # EEI in W/m2
 y_43max = 2.5  # EEI in W/m2
 y_44min = 0.0 #   EEI in W/m2 y axis left mode
@@ -200,7 +202,7 @@ y_Tmax = 2 # 1.7
 y_74min = 0.8 # for GIS Temperature only 
 y_74max = 1.8 # for GIS Temperature only 
 
-x_anf = 2004
+x_anf = 2024
 x_end = 2027
 
 # constants
