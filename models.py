@@ -138,7 +138,7 @@ T_71values = T_model71(years71)
 
 
 #################################################################
-# process 4 CERES files 
+# 41 process 4 CERES files 
 #################################################################
 #  open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 #      select file 3 
@@ -187,21 +187,24 @@ T_71values = T_model71(years71)
 # 42.48      read_csv/_42_EEI48month_2026_08.csv
 # 41.49 old in main.py  line 298      data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_07.csv")
 # 41.50 new in main.py  line 298      data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
+# 41.51 works with august data plot42_EEI_48month = 4 
 #
+
 
 
 #################################################################
 # plot42_EEI_48month ############################################
-###############see 61 How to make EEI files #####################
+###############see 41 process 4 CERES files #####################
 # 42.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 41.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toAugust-2026.txt
 # 41.3 copy txt to work/_61_in__2026_08_EEI_CERES.txt
 # 42.4 run with play_61_EEI = 48
 # 42.6 copy to read_csv/_42_EEI48month_2026_08.csv
 # 42.8 set plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean
-#
 # 2026.10.15 plots  plot42_EEI_48month = 2
 # 2026.10.15 plots  plot42_EEI_48month = 3
+# 2026.10.20 plots  plot42_EEI_48month = 4
+
 
 
 #################################################################
