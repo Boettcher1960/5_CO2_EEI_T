@@ -382,9 +382,9 @@ def ceres67_to_csv(
 
     # read4
     # 67.15 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
-    # 67.16 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
-    # 67.17 read 4 read_csv/_67_TOA_Longwave_Flux_2026_07.txt into data4 field
-    with open('read_csv/_67_TOA_Longwave_Flux_2026_07.txt', 'r') as f:
+    # 67.16 copy to 'work/_66_TOA_OLR_all_sky_2026_08.txt'
+    # 67.17 read 4    into data4 field
+    with open('work/_66_TOA_OLR_all_sky_2026_08.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
             line = line.strip()

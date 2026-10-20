@@ -171,11 +171,13 @@ T_71values = T_model71(years71)
 # 41.30 new in data_processing.py  line 338   with open('work/_66_TOA_Incoming_Solar_2026_08.txt', 'r') as f:
 # 41.31 old in data_processing.py  line 361   with open('read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt', 'r') as f:
 # 41.32 new in data_processing.py  line 361   with open('work/_61_in__2026_08_EEI_CERES.txt', 'r') as f:
+# 41.33 old in data_processing.py  line 387   with open('read_csv/_67_TOA_Longwave_Flux_2026_07.txt', 'r') as f:
+# 41.34 new in data_processing.py  line 387   with open('work/_66_TOA_OLR_all_sky_2026_08.txt', 'r') as f:
 ############################ plot46_ASR = 2 #####################################
-# 41.35  copy dokumente/5_CO2_EEI_T/work/_CERES_ASR.csv to
-# 41.36       dokumente/5_CO2_EEI_T/read_csv/_46_ASR_48month_2026_08.csv
-# 41.37 old in main.py  line 315      data['ceres_46'] = pd.read_csv("read_csv/_46_ASR_48month_2026_07.csv")
-# 41.38 new in main.py  line 315      data['ceres_46'] = pd.read_csv("read_csv/_46_ASR_48month_2026_08.csv")                                               
+# 41.38  copy dokumente/5_CO2_EEI_T/work/_CERES_ASR.csv to
+# 41.39       dokumente/5_CO2_EEI_T/read_csv/_46_ASR_48month_2026_08.csv
+# 41.40 old in main.py  line 315      data['ceres_46'] = pd.read_csv("read_csv/_46_ASR_48month_2026_07.csv")
+# 41.41 new in main.py  line 315      data['ceres_46'] = pd.read_csv("read_csv/_46_ASR_48month_2026_08.csv")                                               
 
 
 
