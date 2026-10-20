@@ -162,7 +162,15 @@ T_71values = T_model71(years71)
 # 41.22 to   read_csv/_45_OLR_48month_2026_08.csv
 # 41.23 in main.py  line 311     data['ceres_45'] = pd.read_csv("read_csv/_45_OLR_48month_2026_07.csv")
 # 41.24 in main.py  line 311     data['ceres_45'] = pd.read_csv("read_csv/_45_OLR_48month_2026_08.csv")
-#  
+############################ play_67_albedo = 48 #####################################
+# 41.25 no good in config.py set play_65_ASR = 48
+# 41.26 config.py set play_67_albedo = 48
+# 41.27 old in data_processing.py  line 307   with open('read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt', 'r') as f:
+# 41.28 new in data_processing.py  line 307   with open('work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt', 'r') as f:
+# 41.29 old in data_processing.py  line 338  with open('read_csv/_66_TOA_Incoming_Solar_2026_07.txt', 'r') as f:
+# 41.30 old in data_processing.py  line 338  with open('work/_66_TOA_Incoming_Solar_2026_08.txt', 'r') as f:
+
+
 
 #################################################################
 # plot42_EEI_48month ############################################
