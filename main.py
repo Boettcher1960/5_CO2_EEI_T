@@ -1,5 +1,5 @@
 # main.py
-v = "5G87" # 
+v = "5G88" # 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -317,7 +317,7 @@ def load_plot_data():
            print(f"main_302: ASR read 46.1 ={plot46_ASR}")
 
     if plot47_albedo48 > 0: # _64c_ASR.csv read_csv/_47_ASR_12month_2026_02.csv
-        data['ceres_47'] = pd.read_csv("read_csv/_47_albedo_48month_2026_07.csv")
+        data['ceres_47'] = pd.read_csv("read_csv/_47_albedo_48month_2026_08.csv")
         if print_debug > 9:
            print(f"main_316: 47.2 read ={plot47_albedo48}")
 

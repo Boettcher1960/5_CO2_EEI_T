@@ -199,9 +199,9 @@ T_71values = T_model71(years71)
 # 41.58 run with play_67_albedo = 48
 # 41.59 copy dokumente/5_CO2_EEI_T/work/_CERES_albedo.csv to
 # 41.60      dokumente/5_CO2_EEI_T/read_csv/_47_albedo_48month_2026_08.csv
-
-# 41.54 old in main.py  line 339      data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
-# 41.55 new in main.py  line 339      data['ceres_61'] = pd.read_csv("work/61c_out_EEI.csv")
+# 41.61 old in main.py  line 320      data['ceres_47'] = pd.read_csv("read_csv/_47_albedo_48month_2026_07.csv")
+# 41.62 new in main.py  line 320      data['ceres_47'] = pd.read_csv("read_csv/_47_albedo_48month_2026_08.csv")
+# 41.
 
 
 
