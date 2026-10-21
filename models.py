@@ -391,6 +391,9 @@ T_71values = T_model71(years71)
 # df["EEA"] = df["EEI36"].cumsum()
 # 3. CSV-Datei speichern
 # df.to_csv("62c_EEA_aktualisiert.csv", index=False)
+#  python how to sum up 62c_EEA.csv column EEI36 and multiply with 1.23    and store it to new column EEA
+
+
 
 # ----------------------------------------------
 # play_63_CERES = 12 

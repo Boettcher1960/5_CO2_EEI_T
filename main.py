@@ -1,5 +1,5 @@
 # main.py
-v = "5H14" # line2_play = 61
+v = "5H15" # line2_play = 61
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -126,8 +126,9 @@ def process_ceres_data():
        df62g = pd.read_csv("work/62c_EEA.csv")
 
        # 62.52. Laufende Summe (kumulierte Summe) bilden und in 'EEA' speichern
-       df62g["EEA"] = df62g["EEI36"].cumsum()
-
+       factor = 1.37  #     then multiplied by a constant 16.087 to convert it to ZJ. 
+       df62g["EEA"] = df62g["EEI36"].cumsum() * factor
+       
        # 62.53. CSV-Datei speichern  df.to_csv(output_file, index=False, float_format='%.6f')
        df62g.to_csv("work/62g_EEA.csv", index=False, float_format='%.6f')
 

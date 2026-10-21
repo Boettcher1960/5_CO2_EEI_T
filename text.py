@@ -74,6 +74,10 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"NASA CERES Earth Energy Imbalance: ASR and OLR in W/m² (Aug. 2026) Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color=c46, fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
+    elif line2_play == 61   :
+        header = f"EEI Earth Energy Imbalance   CERES data from Aug. 2026    Plot {x_anf} to {x_end}."
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
+                            transform=ax1.transAxes)
     elif plot74_GIS_T == 2:
         header = f"Global Surface Temperature GISS (74 Hansen +0.3°C ) years {x_anf} to {x_end}."       
         ax1.text(-0.1, 1.05, header, color=c74, fontname="Arial", fontsize=trs,
