@@ -10,8 +10,17 @@ from config import *
 C280 = 280
 
 def T_model71(t):
+    """Quadratic temperature model 
+    https://substack.com/@drtomharris/note/c-365674298
+    https://substack.com/@drtomharris/note/c-365674298
+    y = 0.0004x2 + 0.0019x + 0.5079
+    """
+    return 0.0004 * t**2 + 0.0019 * t + 0.5079
+
+def T_model71old(t):
     """Quadratic temperature model from @reescatophuls.bsky"""
     return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+
 
 def T_model72(t):
     """Apparent Earth System Sensitivity (AESS) model"""

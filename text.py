@@ -318,10 +318,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c68)
             p68_text = f"Temperature in °C climate.copernicus.eu/datasets/-era5-single-levels   {play68_ERA} days    68"
             text_4_add_text(ax1, tr2x, tr3y, p68_text, c68, trs)
-    elif plot71_temperature == 3: # 71.5 legend
+    elif plot71_temperature == 3: # 71.5 legend    y = 0.0004x2 + 0.0019x + 0.5079
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c71)
         text_4_add_text(ax1, tr2x, tr3y, 
-                    "Temperature in °C 0.000618t² - 2.459 t + 2446.0579                                                 71", 
+                    "Temperature in °C 0.0004t² + 0.0019 t + 0.5079     from Tom Harris                           71", 
                     c71, trs)
     elif plot74_GIS_T == 3: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
@@ -413,7 +413,8 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                 p68_text = f"Temperature in °C climate.copernicus.eu/datasets/-era5-single-levels   {play68_ERA} days    68"
                 text_4_add_text(ax1, tr2x, tr4y, p68_text, c68, trs)
      
-    elif plot71_temperature == 4: # 71.5.5 legend
+    elif plot71_temperature == 4: # 71.5.5 legend y = 0.0004x2 + 0.0019x + 0.5079
+        # old "Temperature in °C 0.000618t² - 2.459 t + 2446.0579   71", 
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c71)
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Temperature in °C 0.000618t² - 2.459 t + 2446.0579   71", 

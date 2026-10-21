@@ -528,7 +528,7 @@ def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
     else:
                 outward_right =  ( plot71_temperature * yr_60 ) - yr_150
     ax71.spines.right.set_position(("outward", outward_right))
-    ax71.set_ylabel("Temperature in °C           plot532               71", color=c71, fontname="Arial",fontsize=18)
+    ax71.set_ylabel("Temperature in °C  from  Tom Harris      71", color=c71, fontname="Arial",fontsize=18)
     ax71.tick_params(axis="y", labelcolor=c71)
     # ax71.set_ylim(y_Tmin, y_Tmax) #8
 
