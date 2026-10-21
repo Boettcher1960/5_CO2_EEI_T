@@ -174,7 +174,7 @@ y_61min = 0  #   EEI in W/m2 y axis left mode
 y_61max = 1.8  #   EEI in W/m2 y axis left mode
 
 y_62min = 0  # EEA in ZJ
-y_62max = 400  # EEA in ZJ
+y_62max = 360  # EEA in ZJ
 
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
