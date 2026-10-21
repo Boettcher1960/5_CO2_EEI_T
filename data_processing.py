@@ -100,17 +100,11 @@ def add_62_csv_column(input_csv,
     df2 = df2.sort_values('date').reset_index(drop=True)
 
     df = df.merge(df2[['date', 'EEI']], on='date', how='left')
-    # Merge on 'date' column df = df.merge(df2[['date', 'EEI']], on='date', how='left')
-
-    # Create OLR_EEI column (fill NaN with 0 before addition)
-    # df['OLR_EEI'] = df['EEI'].fillna(0) + df['LongWave'].fillna(0)
-
-
+    
     if min_periods is None:
-        # min_periods = window_months // 2
         min_periods = window_months
    
-    df[column_name] = df['toa_net_flux_w_m2'].rolling(
+    df[column_name] = df['EEI'].rolling(
         window=window_months, 
         center=center,
         min_periods=min_periods
@@ -121,7 +115,7 @@ def add_62_csv_column(input_csv,
 
     output_columns = ['date', 'year', 'month', 'decimal_year', 'EEI']
     if keep_original:
-        output_columns.append('toa_net_flux_w_m2')
+        output_columns.append('EEI36')
     output_columns.append(column_name)
    
     #output_columns.append('OLR_EEI')
@@ -141,11 +135,50 @@ def add_62_csv_column(input_csv,
     return df_output
     # end part 62.e  CERES.csv (add averaging column to plotable-csv)
 
-# part 66.b convert download.txt to CERES.csv (no averaging) convert66_ceres_to_csv(input_file, output_file)
+# part 62.b convert download.txt to CERES.csv (no averaging) 
+def convert62_txt_to_csv(input_file, 
+                         output_file,  #  'work/62b_EEA.csv',
+                         column_name): #  'EEI'
+    data = []
+    # 62.13 open txt file
+    with open(input_file, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('#') or line.startswith('CERES'):
+                continue
+            # 62.16 read one line of the txt file
+            parts = line.split()
+            if len(parts) >= 3:
+                try:
+                    year = int(parts[0])
+                    month = int(parts[1])
+                    flux = float(parts[2])
+                    # 62.18 store values into the data field
+                    data.append([year, month, flux])
+                except ValueError:
+                    continue
+
+    # 62.20 store values into the df field
+    df = pd.DataFrame(data, columns=['year', 'month', column_name])
+    df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
+    df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
+    df = df[['date', 'year', 'month', 'decimal_year', column_name]]
+
+    df.to_csv(output_file, index=False, float_format='%.6f')
+
+    if print_debug_DP > 9:
+        print(f"DataP_177: convert62_ceres_to_csv {len(df)} records to {output_file}")
+    return df
+    # end part 62.28 convert download.txt to CERES.csv (no averaging)
+
+
+
+
+# part 66.b convert download.txt to CERES.csv (no averaging) 
 def convert66_txt_to_csv(input_file, 
-                           output_file,  #  'work/_66b_OLR_raw.csv',
-                           column_name): #  'OLR'
-    """Convert CERES TOA flux ASCII file to CSV format"""
+                         output_file,  #  'work/_66b_OLR_raw.csv',
+                         column_name): #  'OLR'
     data = []
     # part 66.b.2 open txt file
     with open(input_file, 'r') as f:
@@ -178,6 +211,9 @@ def convert66_txt_to_csv(input_file,
         print(f"DataP_168: convert66_ceres_to_csv {len(df)} records to {output_file}")
     return df
     # end part 66.b convert download.txt to CERES.csv (no averaging)
+
+
+
 
 # part 66.c line182 create66_running_average (input_csv, output_csv, 
 def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'

@@ -1,5 +1,5 @@
 # main.py
-v = "5H05" # line4_play = 61
+v = "5H07" # line4_play = 61
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -89,31 +89,46 @@ def process_ceres_data():
     # main.play_62_EEA line 90 
     # CERES Outgoing Longwave Radiation OLR     # _62_in__2026_02_Longwave.txt
     if play_62_EEA > 1: #  
-       # part 62.b convert download.txt to CERES.csv (no averaging)
-       df62b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
-                                    'work/62b_EEA.csv')
+       # 62.11 convert download.txt to CERES.csv (no averaging)
+       df62b = convert62_txt_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
+                                      'work/62b_EEA.csv',
+                                      'EEI'          )
+       # df62b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
+       #                             'work/62b_EEA.csv')
        if print_debug > 9:
-          print(f"main_127: create read_csv/_62b_LongWave.csv  62.b ={play_62_EEA}")
+          print(f"main_100: create work/62b_EEA.csv    62.b ={play_62_EEA}")
        
        window_months=play_62_EEA
        min_periods=12
        use_center=False
        keep_original=True,
-       # part 62.c  CERES.csv (perform averaging)
-       df62c = create_running_average( 'work/62b_EEA.csv', 
-                                       'work/62c_EEA.csv',
+       # 62.33  CERES.csv (perform averaging)
+       window_months=play_62_EEA
+       min_periods=12
+       use_center=False
+       keep_original=True
+       columnname ='EEI36'
+       column_read    ='EEI'
+       column_average ='EEI36'
+       # 62.37  CERES.csv (perform averaging)
+       df66c = create66_running_average( 'work/62b_EEA.csv', 
+                                         'work/62c_EEA.csv',
+                                          column_read,             #  column_name='EEI')
+                                          column_average,          #  column_name='EEI36')
+                                          columnname,              #  column_name='EEI36')
                                             window_months=play_62_EEA,
                                             min_periods=12,
                                             center=use_center,
-                                            column_name='LongWave')
+                                            column_name=columnname)
+
        # part 62.e  CERES.csv (add averaging column to plotable-csv)
-       df62e = add_62_csv_column( 'work/62b_EEA.csv', 
-                                  'read_csv/_42_EEI48month_2026_08.csv', 
-                                  'work/62e_EEA.csv',
-                                            window_months=play_62_EEA,
-                                            min_periods=12,
-                                            center=use_center,
-                                            column_name='LongWave')
+       #df62e = add_62_csv_column( 'work/62b_EEA.csv', 
+       #                           'read_csv/_42_EEI48month_2026_08.csv', 
+       #                           'work/62e_EEA.csv',
+       #                                     window_months=play_62_EEA,
+       #                                     min_periods=12,
+       #                                     center=use_center,
+       #                                     column_name='LongWave')
        if print_debug > 9:
           print(f"main_118: create work/62e_EEA.csv   62    ={play_62_EEA}")
 
@@ -185,9 +200,6 @@ if play_66_OLR > 1: #
        min_periods=12
        use_center=False
        keep_original=True
-       #if play_66_OLR < 47:
-           # columnname ='OLR12'
-       #else:
        columnname ='OLR48'
        column_read    ='OLR'
        column_average ='OLR48'

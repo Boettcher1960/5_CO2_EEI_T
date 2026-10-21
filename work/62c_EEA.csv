@@ -1,4 +1,4 @@
-date,year,month,decimal_year,toa_net_flux_w_m2,LongWave
+date,year,month,decimal_year,EEI,EEI36
 2000-03-01,2000,3,2000.208333,5.960000,
 2000-04-01,2000,4,2000.291667,1.930000,
 2000-05-01,2000,5,2000.375000,-5.930000,
