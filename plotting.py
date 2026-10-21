@@ -1011,14 +1011,21 @@ def plot_9_create_all_plots(ax1, data):
        # end part 5.5 plot55_population_on human earth population  
 
     if play_61_EEI > 0:
-        ax61 = ax1.twinx()
-        ax61.plot(data['ceres_61']["decimal_year"], data['ceres_61']["EEI"], '-', 
+       if line2_play == 61:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['ceres_61']["decimal_year"], data['ceres_61']["EEI"], '-', 
+                             label="EEI K61", color=c61, linewidth=2)
+           # The left axis is already configured in plot_1_axe
+       else:
+           ax61 = ax1.twinx()
+           ax61.plot(data['ceres_61']["decimal_year"], data['ceres_61']["EEI"], '-', 
                   label="EEI K61", color=c61, linewidth=2)
-        ax61.tick_params(axis="y", labelcolor=c61)
-        ax61.set_ylim(y_61min, y_61max)
-        if print_debug > 9:
-           print(f"plot_947: ax61 61.8 ={play_61_EEI}")
-        if play_61_EEI > 2:
+           ax61.tick_params(axis="y", labelcolor=c61)
+           ax61.set_ylim(y_61min, y_61max)
+        
+       if print_debug > 9:
+           print(f"plot1028: ax61 61.8 ={play_61_EEI}")
+       if play_61_EEI > 2 and line2_play != 61:
            plot8_right_y_axe_for_C_61( ax61 , 0 ) # 61.9 line 957
 
     if play_62_EEA > 0:
