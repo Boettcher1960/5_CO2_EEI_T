@@ -302,6 +302,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                 text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c65)
                 p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                      moving average {play_65_ASR} month    65"
                 text_4_add_text(ax1, tr2x, tr3y, p65_text, c65, trs) 
+    elif play68_ERA > 0: # 68.66
+            text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c68)
+            p68_text = f"Temperature in °C climate.copernicus.eu/datasets/-era5-single-levels   {play68_ERA} days    68"
+            text_4_add_text(ax1, tr2x, tr3y, p68_text, c68, trs)
     elif plot71_temperature == 3: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c71)
         text_4_add_text(ax1, tr2x, tr3y, 
@@ -373,25 +377,26 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr4y, 
             "Albedo = Shortwave_Flux / Incoming_Solar  in %        moving average 48 month    47", 
                     c47, trs)     
-
     # part 5.2 plot52_delta_CO2_red_bars
     elif plot52_delta_CO2_red_bars == 4: # 52.4 row 4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c52)
         text_4_add_text(ax1, tr2x, tr4y, 
                     "plot52_delta_CO2_red_bars  (text259)  52", 
                     c52, trs)
+    elif play_65_ASR > 0:
+            text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c65)
+            p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                       moving average {play_65_ASR} month    65"
+            text_4_add_text(ax1, tr2x, tr4y, p65_text, c65, trs) 
     elif play_66_OLR > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c66)
         # Outgoing Longwave Radiation OLR
         p66_text = f"OLR Outgoing Longwave Radiation in W/m²- All-Sky    moving average {play_66_OLR} month   66"
         text_4_add_text(ax1, tr2x, tr4y, p66_text, c66, trs) 
-
     elif plot71_temperature == 4: # 71.5.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c71)
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Temperature in °C 0.000618t² - 2.459 t + 2446.0579   71", 
                     c71, trs)
-
     elif plot74_GIS_T == 4: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c74)
         text_4_add_text(ax1, tr2x, tr4y, 
@@ -404,10 +409,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c77)
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2023=1.5°C         77", c77, trs)
-    elif play_65_ASR > 0:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c65)
-        p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                       moving average {play_65_ASR} month    65"
-        text_4_add_text(ax1, tr2x, tr4y, p65_text, c65, trs) 
     elif play_67_albedo > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c67)
         # albedo
