@@ -528,7 +528,7 @@ def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
     else:
                 outward_right =  ( plot71_temperature * yr_60 ) - yr_150
     ax71.spines.right.set_position(("outward", outward_right))
-    ax71.set_ylabel("Temperature in °C  from  Tom Harris      71", color=c71, fontname="Arial",fontsize=18)
+    ax71.set_ylabel("Temperature in °C    71", color=c71, fontname="Arial",fontsize=18)
     ax71.tick_params(axis="y", labelcolor=c71)
     ax71.set_ylim(y_71min, y_71max) #
 
@@ -1137,16 +1137,16 @@ def plot_9_create_all_plots(ax1, data):
         # 7.1 plot71_temperature @reescatophuls.bsky.social
         # https://parisagreementtemperatureindex.com/gwfs-2-quadratic/
         # (0.000617965091650558 * date*date) – (2.45858656778789*date) + 2446.05792853123
-        # def T_model71a(t):
-        #    return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
         def T_model71(t):
-            """ y = 0.0004x2 + 0.0019x + 0.5079 
-                https://substack.com/@drtomharris/note/c-365674298
-                Tom Harris  
-                return 0.0004 * x**2 + 0.0019 * x + 0.5079
-            """
-            x = t - 1980
-            return 0.0004 * x**2 + 0.0019 * x + 0.5079
+            return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+        # def T_model71_Harris(t):
+           # y = 0.0004x2 + 0.0019x + 0.5079 
+           #     https://substack.com/@drtomharris/note/c-365674298
+           #     Tom Harris  
+           #     return 0.0004 * x**2 + 0.0019 * x + 0.5079
+           # 
+           # x = t - 1980
+           # return 0.0004 * x**2 + 0.0019 * x + 0.5079
 
         
         # 7.1.2 years scale x axis

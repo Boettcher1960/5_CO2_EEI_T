@@ -123,7 +123,10 @@ p44_text = "Earth Energy Imbalance W/m² moving average 44"
 print74_text = "Temperature in °C giss.nasa.gov Hansen+0.3°C 74 n"
 print75_text = "Hansen linear fit from 2015 +0.41°C 75"  # Added for linear_41_75
 text55 = "Green line: Earth Population in billion                                               55"
-red71_text = "red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71"
+text71 = "Temperature in °C 0.000618t² - 2.459 t + 2446.0579            from  @reescatophul     71"
+# "Temperature in °C 0.000618t² - 2.459 t + 2446.0579                       @reescatophul     71", 
+# "Temperature in °C 0.0004t² + 0.0019 t + 0.5079     from Tom Harris                           71", 
+
 red72_text = "AESS_T Apparent Earth System Sensitivity = 8°C * log2(CO2/C0) 72"
 my76_text = "guessed quadratic temperature my_T 76"
 
@@ -191,22 +194,20 @@ y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.294 # albedo in %
 y_67max = 0.286 # albedo in %
 
-y_68min = 0  # for ERA5 Temperature only 
-y_68max = 3  # for ERA5 Temperature only 
-
+y_68min = 0  # for ERA5 Temperature
+y_68max = 2  # for ERA5 Temperature 
 
 y_Tmin = 0
 y_Tmax = 2 # 1.7
 y_71min = 0
-y_71max = 3 # 1.7
-
-y_74min = 0.8 # for GIS Temperature only 
-y_74max = 2.6  # for GIS Temperature only 
+y_71max = 2 # 1.7
+y_74min = 0.8 # for GIS Temperature 
+y_74max = 2.6  # for GIS Temperature 
 y_75min = 0.2 #  Temperature  
 y_75max = 2   #  Temperature 
 
-x_anf = 1980
-x_end = 2055
+x_anf = 2004
+x_end = 2027
 
 # constants
 # C280 =275 in Zack Labe plots.

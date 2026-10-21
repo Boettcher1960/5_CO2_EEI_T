@@ -501,3 +501,24 @@ T_71values = T_model71(years71)
 # 67.33 copy to work/_67_albedo48months_2026_08.csv'
 # 2026.10.20 play_67_albedo = 48 
 
+#########################################################
+# 71     plot71_temperature   ##############################
+#########################################################
+# red71_text="red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"
+# red71_text="red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C  71"
+# 7.1 plot71_temperature @reescatophuls.bsky.social
+# https://parisagreementtemperatureindex.com/gwfs-2-quadratic/
+# (0.000617965091650558 * date*date) – (2.45858656778789*date) + 2446.05792853123
+# this works:
+# def T_model71a(t):
+#    return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+# this is too low :
+#        def T_model71(t):
+#                 y = 0.0004x2 + 0.0019x + 0.5079 
+#                https://substack.com/@drtomharris/note/c-365674298
+#                Tom Harris  
+#                return 0.0004 * x**2 + 0.0019 * x + 0.5079
+#            x = t - 1980
+#            return 0.0004 * x**2 + 0.0019 * x + 0.5079
+
+
