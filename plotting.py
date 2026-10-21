@@ -196,9 +196,6 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.100
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-
-
-
     elif plot71_temperature == 2:  # 71.5 y axe left  red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 3))
@@ -259,7 +256,6 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     return ax1 
     # end plot_1_axe
-
 
 
 
@@ -357,10 +353,6 @@ def plot8_right_y_axe_for_C_32(ax32,right52): # 32.6
     ax32.set_ylabel("cumulative CO2 emissions in Gt  plot410     32", color=c32, fontname="Arial",fontsize=18)
     ax32.tick_params(axis="y", labelcolor=c32)
 
-
-
-
-
 # Earth Energy Imbalance W/m² moving average 48 month 
 # plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance     ,  line  383
 def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
@@ -371,8 +363,7 @@ def plot8_right_y_axe_for_eei_42(ax42,rightv): # 42.5
     ax42.tick_params(axis="y", labelcolor=c42)
     ax42.set_ylim(y_42min, y_42max) #
 
-# Earth Energy Imbalance W/m² moving average 12 month 
-# plot8_right_y_axe_for_eei_43  plot43_eei_12month   Earth Energy Imbalance     ,  line  460
+# Earth Energy Imbalance W/m² moving average 12 month EEI
 def plot8_right_y_axe_for_eei_43(ax43,rightv): # 43.5
     outward_right =  ( plot43_eei_12month *  yr_60 ) - yr_150
     ax43.spines.right.set_position(("outward", outward_right))
@@ -388,10 +379,7 @@ def plot8_right_y_axe_for_44(ax44,rightv): # 43.5 part44_ceres_eei
     ax44.tick_params(axis="y", labelcolor=c44)
     ax44.set_ylim(y_44min, y_44max) #
 
-
-
 #  OLR  W/m² moving average 48 month 
-# plot8_right_y_axe_for_OLR_45                    ,  line  367
 def plot8_right_y_axe_for_OLR_45(ax45,right62): # 62.5
     outward_right =  ( plot45_OLR *  yr_60 ) - yr_150
     ax45.spines.right.set_position(("outward", outward_right))
@@ -414,8 +402,6 @@ def plot8_right_y_axe_for_47(ax47,right62): # 62.5
     ax47.set_ylim(y_47min, y_47max) #
 
 
-# plot8_right_y_axe_for_eei_42  plot42_EEI_48month   Earth Energy Imbalance     ,  line  383
-# plot8_right_y_axe_for_delta_ppm_increase_52      plot52_delta_CO2_red_bars  ,  line  397
 def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right52): # 52.4
     # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
     if right52 > 0:
@@ -431,7 +417,6 @@ def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right52): # 52.4
     ax52.set_ylim(y_52min, y_52max) # scale y axis3 right red   
     # end plot8_right_y_axe_for_delta_ppm_increase_52
   
-# plot8_160_right_y_axe_55                         plot55_population_on       ,  line  412
 def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     ax55.spines.right.set_position(("outward", 210))
     ax55.plot(pop_world["Year"], pop_world["Population_Mrd"], marker="s", color=c55, label="Earth Population in Billion K2")
@@ -439,12 +424,13 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
     ax55.tick_params(axis="y", labelcolor="green")
     ax55.set_ylim(y_55min, y_55max) #8
     # ax55.set_ylim(4, 9)
-    #end plot8_160_right_y_axe_55  
 
 #  play_61_EEI  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
-    if play_61_EEI > 0 and line4_play == 61:
-        outward_right =  ( 3.5 *  yr_60 ) - yr_150
+    if play_61_EEI > 0 and line3_play == 61:
+        outward_right =  ( 2.5 *  yr_60 ) - yr_150
+    elif play_61_EEI > 0 and line4_play == 61:
+        outward_right =  ( 3.7 *  yr_60 ) - yr_150
     else:
         outward_right =  ( 5 *  yr_60 ) - yr_150
     ax61.spines.right.set_position(("outward", outward_right))
@@ -453,11 +439,16 @@ def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
     ax61.set_ylim(y_61min, y_61max) #
 
 
-#  play_62_EEA OLR  W/m² moving average 48 month 
+#  play_62_EEA 
 def plot8_right_y_axe_for_C_62(ax62,right62): # 62.5
-    outward_right =  ( 5 *  yr_60 ) - yr_150
+    if play_62_EEA > 0 and line3_play == 62:
+        outward_right =  ( 2.5 *  yr_60 ) - yr_150
+    elif play_62_EEA > 0 and line4_play == 62:
+        outward_right =  ( 3.5 *  yr_60 ) - yr_150
+    else:
+        outward_right =  ( 5 *  yr_60 ) - yr_150
     ax62.spines.right.set_position(("outward", outward_right))
-    ax62.set_ylabel("Outgoing Longwave Radiation OLR [W/m2]         62", color=c62, fontname="Arial",fontsize=18)
+    ax62.set_ylabel("EEA Earth Energy Accumulated in ZJ      62", color=c62, fontname="Arial",fontsize=18)
     ax62.tick_params(axis="y", labelcolor=c62)
     ax62.set_ylim(y_62min, y_62max) #
 
