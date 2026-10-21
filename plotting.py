@@ -201,7 +201,7 @@ def plot_1_axe(ax1):
                 ax1.set_ylim(y_61min, y_61max)
                 ax1.set_ylabel("EEI Earth Energy Imbalance   [W/m²] ", color=c61, fontsize=20)
                 ax1.tick_params(axis="y", labelcolor=c61, labelsize=20)
-                y_mayor_ticks = 0.300 
+                y_mayor_ticks = 0.500 
                 y_minor_ticks = 0.100
                 ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
                 ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
@@ -523,8 +523,10 @@ def plot8_right_y_axe_for_C_68(ax68,right62): # 68.50
 def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
     if right52 > 0:
         outward_right = right52
+    elif plot71_temperature == 3:
+        outward_right =  ( 2.5 * yr_60 ) - yr_150
     else:
-        outward_right =  ( plot71_temperature * yr_60 ) - yr_150
+                outward_right =  ( plot71_temperature * yr_60 ) - yr_150
     ax71.spines.right.set_position(("outward", outward_right))
     ax71.set_ylabel("Temperature in °C           plot532               71", color=c71, fontname="Arial",fontsize=18)
     ax71.tick_params(axis="y", labelcolor=c71)

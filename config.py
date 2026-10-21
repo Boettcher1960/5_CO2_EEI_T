@@ -44,8 +44,8 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 48    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-play_62_EEA = 48    # 12, 48  Earth Energy Accumulated EEA is sum of EEI
+play_61_EEI = 36    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_62_EEA = 0    # 36, 12, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
@@ -59,7 +59,7 @@ line3_play = 62  #  play_62_EEA #   68 play68_ERA = 720
 line4_play = 68  # 61 play_61_EEI = 36 
 line5_play = 0   # 62 61
 
-plot71_temperature = 0
+plot71_temperature = 3 # 5
 plot72_AESS_T = 0
 plot73_ECS_T = 0
 plot74_GIS_T = 0 # 2, 3,4,5 =right y axis
@@ -171,7 +171,7 @@ y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
 y_61min = 0  #   EEI in W/m2 y axis left mode
-y_61max = 1.8  #   EEI in W/m2 y axis left mode
+y_61max = 2  #   EEI in W/m2 y axis left mode
 
 y_62min = 0  # EEA in ZJ
 y_62max = 360  # EEA in ZJ
