@@ -208,7 +208,7 @@ def plot_1_axe(ax1):
     elif plot71_temperature == 2:  # 71.5 y axe left  red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 3))
-        ax1.set_ylim(y_Tmin, y_Tmax)
+        ax1.set_ylim(y_71min, y_71max)
         ax1.set_ylabel("quadratic Temperature in °C      71  (plot178)  ", color=c71, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c71, labelsize=20)
         y_mayor_ticks = 0.500 
@@ -530,7 +530,7 @@ def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
     ax71.spines.right.set_position(("outward", outward_right))
     ax71.set_ylabel("Temperature in °C  from  Tom Harris      71", color=c71, fontname="Arial",fontsize=18)
     ax71.tick_params(axis="y", labelcolor=c71)
-    # ax71.set_ylim(y_Tmin, y_Tmax) #8
+    ax71.set_ylim(y_71min, y_71max) #
 
 # plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
 def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6 
@@ -1137,8 +1137,23 @@ def plot_9_create_all_plots(ax1, data):
         # 7.1 plot71_temperature @reescatophuls.bsky.social
         # https://parisagreementtemperatureindex.com/gwfs-2-quadratic/
         # (0.000617965091650558 * date*date) – (2.45858656778789*date) + 2446.05792853123
-        def T_model71(t):
+        def T_model71a(t):
             return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+        # y = 0.0004x2 + 0.0019x + 0.5079
+        def T_model71b(t):
+            return 0.0004 * t**2 + 0.0019 * t + 0.5079
+        def T_model71b(t):
+            t2= t + 2000
+            return 0.0004 * t2**2 + 0.0019 * t2 + 0.5079
+        def T_model71(t):
+            """ y = 0.0004x2 + 0.0019x + 0.5079 
+                https://substack.com/@drtomharris/note/c-365674298
+                Tom Harris  
+            """
+            x = t - 1980
+            return 0.0004 * x**2 + 0.0019 * x + 0.5079
+
+        
         # 7.1.2 years scale x axis
         years71 = np.arange(x_anf, x_end + 1 )
         T_71values = T_model71(years71)
@@ -1149,7 +1164,7 @@ def plot_9_create_all_plots(ax1, data):
         ax71 = ax1.twinx()
         ax71.plot(df7["Year71"], df7["Modeled71"], '--', label="T formula CO2=  K6", color=c71, linewidth=3)
         ax71.tick_params(axis="y", labelcolor=c71)
-        ax71.set_ylim(y_Tmin, y_Tmax) # scale
+        ax71.set_ylim(y_71min, y_71max) # scale
         # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
         plot8_right_y_axe_for_T_71(ax71,0) # 71.5 line 35
         # end 7.1 

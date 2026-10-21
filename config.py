@@ -197,13 +197,16 @@ y_68max = 2  # for ERA5 Temperature only
 
 y_Tmin = 0
 y_Tmax = 2 # 1.7
+y_71min = 0
+y_71max = 3 # 1.7
+
 y_74min = 0.8 # for GIS Temperature only 
 y_74max = 2.6  # for GIS Temperature only 
 y_75min = 0.2 #  Temperature  
 y_75max = 2   #  Temperature 
 
 x_anf = 2004
-x_end = 2027
+x_end = 2055
 
 # constants
 # C280 =275 in Zack Labe plots.

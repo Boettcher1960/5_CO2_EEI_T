@@ -9,7 +9,7 @@ from config import *
 
 C280 = 280
 
-def T_model71(t):
+def T_model71_not_called(t):
     """Quadratic temperature model 
     https://substack.com/@drtomharris/note/c-365674298
     https://substack.com/@drtomharris/note/c-365674298
