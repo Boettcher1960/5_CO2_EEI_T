@@ -384,8 +384,13 @@ T_71values = T_model71(years71)
 #     then multiplied by a constant 16.087 to convert it to ZJ. 
 #     1 W/m2 is 1 joule per second per square meter. 
 #     The constant above is seconds per month x area of Earth / 10^21 (zeta)
-# 
-
+#  python how to sum up 62c_EEA.csv column EEI36 and store it to new column EEA
+#     # 1. CSV-Datei einlesen
+#  df = pd.read_csv("62c_EEA.csv")
+# 2. Laufende Summe (kumulierte Summe) bilden und in 'EEA' speichern
+# df["EEA"] = df["EEI36"].cumsum()
+# 3. CSV-Datei speichern
+# df.to_csv("62c_EEA_aktualisiert.csv", index=False)
 
 # ----------------------------------------------
 # play_63_CERES = 12 

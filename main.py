@@ -1,5 +1,5 @@
 # main.py
-v = "5H10" # line4_play = 61
+v = "5H13" # line2_play = 61
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -110,8 +110,8 @@ def process_ceres_data():
        columnname ='EEI36'
        column_read    ='EEI'
        column_average ='EEI36'
-       # 62.37  CERES.csv (perform averaging)
-       df66c = create66_running_average( 'work/62b_EEA.csv', 
+       # 62.37  CERES.csv (perform running average over play_62_EEA months)
+       df62c = create66_running_average( 'work/62b_EEA.csv', 
                                          'work/62c_EEA.csv',
                                           column_read,             #  column_name='EEI')
                                           column_average,          #  column_name='EEI36')
@@ -120,6 +120,18 @@ def process_ceres_data():
                                             min_periods=12,
                                             center=use_center,
                                             column_name=columnname)
+
+       # 62.50  
+       # 62.51. CSV-Datei einlesen
+       df62g = pd.read_csv("work/62c_EEA.csv")
+
+       # 62.52. Laufende Summe (kumulierte Summe) bilden und in 'EEA' speichern
+       df62g["EEA"] = df62g["EEI36"].cumsum()
+
+       # 62.53. CSV-Datei speichern  df.to_csv(output_file, index=False, float_format='%.6f')
+       df62g.to_csv("work/62g_EEA.csv", index=False, float_format='%.6f')
+
+
 
        # part 62.e  CERES.csv (add averaging column to plotable-csv)
        #df62e = add_62_csv_column( 'work/62b_EEA.csv', 
@@ -130,7 +142,7 @@ def process_ceres_data():
        #                                     center=use_center,
        #                                     column_name='LongWave')
        if print_debug > 9:
-          print(f"main_118: create work/62e_EEA.csv   62    ={play_62_EEA}")
+          print(f"main_133: create work/62e_EEA.csv   62    ={play_62_EEA}")
 
 # main.play_64_ASR_anomaly line 124
 if play_64_ASR_anomaly > 1: #  

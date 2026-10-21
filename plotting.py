@@ -247,7 +247,7 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif line2_play == 61:  # play_61_EEI = 36
-        ax1.spines.left.set_position(("outward", 1))
+        ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_61min, y_61max)
         ax1.set_ylabel("EEI Earth Energy Imbalance   [W/m²] ", color=c61, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c61, labelsize=20)
