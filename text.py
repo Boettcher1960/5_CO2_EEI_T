@@ -300,7 +300,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     c52, trs)    
     elif play_65_ASR > 0:
                 text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c65)
-                p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                       moving average {play_65_ASR} month    65"
+                p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                      moving average {play_65_ASR} month    65"
                 text_4_add_text(ax1, tr2x, tr3y, p65_text, c65, trs) 
     elif plot71_temperature == 3: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c71)
