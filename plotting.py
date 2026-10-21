@@ -434,7 +434,10 @@ def plot8_160_right_y_axe_55(ax55,pop_world): # 55.4 line 356
 
 #  play_61_EEI  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
-    outward_right =  ( 5 *  yr_60 ) - yr_150
+    if play_61_EEI > 0 and line4_play == 61:
+        outward_right =  ( 3.5 *  yr_60 ) - yr_150
+    else:
+        outward_right =  ( 5 *  yr_60 ) - yr_150
     ax61.spines.right.set_position(("outward", outward_right))
     ax61.set_ylabel("EEI   [W/m2]       61", color=c61, fontname="Arial",fontsize=18)
     ax61.tick_params(axis="y", labelcolor=c61)
