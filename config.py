@@ -56,9 +56,9 @@ play68_ERA = 0 # 1461, 1095, 720, 365, 24
     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 # variable to show play variable in line 4
 line2_play = 0   # 61
-line3_play = 68  # 68 play68_ERA = 720
+line3_play = 62  #  play_62_EEA #   68 play68_ERA = 720
 line4_play = 61  # 61 play_61_EEI = 36 
-line5_play = 0   # 61
+line5_play = 0   # 62 61
 
 plot71_temperature = 0
 plot72_AESS_T = 0

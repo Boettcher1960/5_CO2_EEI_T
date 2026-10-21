@@ -298,6 +298,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "CO2_delta_green_bars, the yearly CO2 Mauna Loa increase  (text224)                  52", 
                     c52, trs)    
+    elif play_62_EEA > 0 and line3_play == 62:
+                text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c62)
+                p62_text = f"EEA Earth Energy Accumulated in ZJ   = sum of EEI     moving average {play_62_EEA} month   62"
+                text_4_add_text(ax1, tr2x, tr3y, p62_text, c62, trs) 
     elif play_65_ASR > 0 and line3_play == 65:
                 text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c65)
                 p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                      moving average {play_65_ASR} month    65"
@@ -479,13 +483,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     else:
         p62_text = f"Parameter {header_parameter}  Text 192:"
         text_4_add_text(ax1, tr2x, tr6y, p62_text, "black", 16) 
-    # in row 5 display play_62_EEA
-    if play_62_EEA > 0:
+        # elif play_61_EEI > 0 and line4_play == 61:
+    if play_62_EEA > 0 and line5_play == 62:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
-        # Outgoing Longwave Radiation OLR
-        p62_text = f"TOA Longwave Flux - All-Sky  [W/m²] {play_62_EEA}-month moving average  - text    443.                     62"
+        p62_text = f"EEA Earth Energy Accumulated in ZJ   = sum of EEI     moving average {play_62_EEA} month   62"
         text_4_add_text(ax1, tr2x, tr5y, p62_text, c62, trs) 
-    # in row 5 display play_62_EEA
     if play_64_ASR_anomaly > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c62)
         # Outgoing Longwave Radiation OLR

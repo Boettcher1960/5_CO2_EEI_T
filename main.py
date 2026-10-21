@@ -1,5 +1,5 @@
 # main.py
-v = "5H02" # line4_play = 61
+v = "5H03" # line4_play = 61
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -353,8 +353,7 @@ def load_plot_data():
         if print_debug > 9:
            print(f"main_197: 61.9 read ={play_61_EEI}")
     if play_62_EEA > 0: # 62.9 read
-        data['ceres_62'] = pd.read_csv("read_csv/_62c_LongWave.csv")
-        # data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
+        data['ceres_62'] = pd.read_csv("work/62c_EEA.csv")
         if print_debug > 9:
            print(f"main_286: 62.9 read ={play_62_EEA}")    
     if play_64_ASR_anomaly > 0: # 62.9 read
