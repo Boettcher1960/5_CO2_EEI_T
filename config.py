@@ -46,7 +46,7 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 
 play_61_EEI = 36    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 # play_62_EEA ist doppelt zu play_66_OLR
-play_62_EEA = 48    # 12, 48  Earth Energy Accumulated EEA is sum of EEI
+play_62_EEA = 36    # 12, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
@@ -178,8 +178,8 @@ y_55max = 9 # plot55_population_on = 5
 y_61min = 0  #   EEI in W/m2 y axis left mode
 y_61max = 1.8  #   EEI in W/m2 y axis left mode
 
-y_62min = 239.8  # OLR in W/m2
-y_62max = 242.6  # OLR in W/m2
+y_62min = 0  # EEA in ZJ
+y_62max = 3  # EEA in ZJ
 
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
