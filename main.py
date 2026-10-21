@@ -1,5 +1,5 @@
 # main.py
-v = "5G92" # 
+v = "5G93" # 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -142,6 +142,7 @@ if play_64_ASR_anomaly > 1: #
 if play_65_ASR > 1: #  
        column_read    ='ASR'
        column_average ='ASR_average'
+       use_center=False
        # part 65.37  CERES.csv (perform averaging for albedo)
        # note part 67.31 write df2 to  work/_CERES_raw.csv'
        df65a = create67_running_average( 'work/_CERES_raw.csv', 
@@ -150,9 +151,21 @@ if play_65_ASR > 1: #
                                                 column_average,          #  column_name='ASR_average')
                                                 window_months=play_65_ASR,
                                                 min_periods=12,
+                                                center=use_center
                                                 )
+       # column_read    ='ASR'
+       # column_average ='ASR12'
+       # use_center=False
+       # part 66.35  CERES.csv (perform averaging for ASR)
+       # df67d = create67_running_average( 'work/_CERES_raw.csv', 
+       #                                  'work/_65c_CERES_ASR.csv',
+       #                                   column_read,             #  column_name='ASR')
+       #                                   column_average,          #  column_name='ASR12')
+       #                                   window_months=play_65_ASR,
+       #                                   min_periods=12,
+       #                                   center=use_center)
        if print_debug > 9:
-          print(f"main_155: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
+          print(f"main_165: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
 
 
 # main.play_66_OLR line 144

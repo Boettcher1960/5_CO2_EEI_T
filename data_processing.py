@@ -233,10 +233,10 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
 
 # part 67.c line182 create66_running_average (input_csv, output_csv, 
 # part 67.37  CERES.csv (perform averaging for albedo)
-def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
-                             output_csv, # 'work/_66c_OLR.csv',
+def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'  _CERES_raw.csv
+                             output_csv, # 'work/_66c_OLR.csv',     _CERES_65_ASR.csv
                              column_read,             #  column_name='ASR'
-                             column_average,          #  column_name='ASR48')
+                             column_average,          #  column_name='ASR_average'
                              window_months, 
                              min_periods=None, 
                              center=True, 

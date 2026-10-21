@@ -154,8 +154,8 @@ y_TOAmax = 100 # bug is double set in plotting.py line 57
 
 y_42min = 0.4 #   EEI in W/m2 y axis left mode
 y_42max = 1.6 #   EEI in W/m2 y axis left mode
-y_43min = -0.5    # EEI in W/m2
-y_43max = 2.5  # EEI in W/m2
+y_43min = 0    # EEI in W/m2
+y_43max = 2  # EEI in W/m2
 y_44min = 0.0 #   EEI in W/m2 y axis left mode
 y_44max = 2 #   EEI in W/m2 y axis left mode
 
@@ -179,11 +179,11 @@ y_62max = 242.6  # OLR in W/m2
 
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
-y_65min = 240.3  # ASR in W/m2
-y_65max = 243  # 242.8  # ASR in W/m2
+y_65min = 239.5  # ASR in W/m2
+y_65max = 243.5  # 242.8  # ASR in W/m2
 
-y_66min = 239.8  # OLR in W/m2
-y_66max = 242.2 # 242.8  # OLR in W/m2
+y_66min = 239.5  # OLR in W/m2
+y_66max = 243.5 # 242.8  # OLR in W/m2
 
 y_67min = 0.285  # albedo in %
 y_67max = 0.295  # albedo in %
@@ -201,7 +201,7 @@ y_Tmax = 2 # 1.7
 y_74min = 0.8 # for GIS Temperature only 
 y_74max = 1.8 # for GIS Temperature only 
 
-x_anf = 2024
+x_anf = 2004
 x_end = 2027
 
 # constants
