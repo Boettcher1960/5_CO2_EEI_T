@@ -471,7 +471,7 @@ def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
 
 # play_65_ASR
 def plot8_right_y_axe_for_C_65(ax65,right62): # 62.5
-    outward_right =  ( 5 *  yr_60 ) - yr_150
+    outward_right =  ( 3 *  yr_60 ) - yr_150
     ax65.spines.right.set_position(("outward", outward_right))
     ax65.set_ylabel("ASR  in W/m²       65", color=c65, fontname="Arial",fontsize=18)
     ax65.tick_params(axis="y", labelcolor=c65)

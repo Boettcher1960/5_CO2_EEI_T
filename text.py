@@ -380,7 +380,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr4y, 
                     "plot52_delta_CO2_red_bars  (text259)  52", 
                     c52, trs)
-        
+    elif play_66_OLR > 0:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c66)
+        # Outgoing Longwave Radiation OLR
+        p66_text = f"OLR Outgoing Longwave Radiation in W/m²- All-Sky    moving average {play_66_OLR} month   66"
+        text_4_add_text(ax1, tr2x, tr4y, p66_text, c66, trs) 
+
     elif plot71_temperature == 4: # 71.5.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c71)
         text_4_add_text(ax1, tr2x, tr4y, 
@@ -403,11 +408,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c65)
         p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                       moving average {play_65_ASR} month    65"
         text_4_add_text(ax1, tr2x, tr4y, p65_text, c65, trs) 
-    elif play_66_OLR > 0:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c66)
-        # Outgoing Longwave Radiation OLR
-        p66_text = f"OLR Outgoing Longwave Radiation in W/m²- All-Sky    moving average {play_66_OLR} month   66"
-        text_4_add_text(ax1, tr2x, tr4y, p66_text, c66, trs) 
     elif play_67_albedo > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c67)
         # albedo
