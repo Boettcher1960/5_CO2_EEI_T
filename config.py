@@ -175,8 +175,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_61min = 0 #   EEI in W/m2 y axis left mode
-y_61max = 1.8 #   EEI in W/m2 y axis left mode
+y_61min = 0  #   EEI in W/m2 y axis left mode
+y_61max = 1.8  #   EEI in W/m2 y axis left mode
 
 y_62min = 239.8  # OLR in W/m2
 y_62max = 242.6  # OLR in W/m2
@@ -197,13 +197,15 @@ y_67min = 0.294 # albedo in %
 y_67max = 0.286 # albedo in %
 
 y_68min = 0.8  # for ERA5 Temperature only 
-y_68max = 1.8  # for ERA5 Temperature only 
+y_68max = 2.6  # for ERA5 Temperature only 
 
 
 y_Tmin = 0
 y_Tmax = 2 # 1.7
 y_74min = 0.8 # for GIS Temperature only 
-y_74max = 1.8 # for GIS Temperature only 
+y_74max = 2.6  # for GIS Temperature only 
+y_75min = 0.2 #  Temperature  
+y_75max = 2   #  Temperature 
 
 x_anf = 2004
 x_end = 2027
