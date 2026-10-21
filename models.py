@@ -375,6 +375,17 @@ T_71values = T_model71(years71)
 # 2026.10.15 plots play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv 
 
 
+# ----------------------------------------------
+# play_62_CERES = 12 
+# --- see 41 process 4 CERES files ---------------------
+# Tom Harris on substack https://substack.com/@drtomharris/note/c-366539763
+#     Thanks, yes it is a 36 month rolling average.
+#     The EEA is simply a monthly rolling sum of the monthly (36m smoothed) EEI, 
+#     then multiplied by a constant 16.087 to convert it to ZJ. 
+#     1 W/m2 is 1 joule per second per square meter. 
+#     The constant above is seconds per month x area of Earth / 10^21 (zeta)
+# 
+
 
 # ----------------------------------------------
 # play_63_CERES = 12 

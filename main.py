@@ -1,5 +1,5 @@
 # main.py
-v = "5G99" # line4_play = 61
+v = "5H01" # line4_play = 61
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -12,7 +12,7 @@ v = "5G99" # line4_play = 61
 #
 # line 60 process_ceres_data():
 #         main.play_61_EEI line 65
-#         main.play_62_CERES line 92
+#         main.play_62_EEA line 92
 #         main.play_64_ASR_anomaly line 124
 #         main.play_65_ASR line 141
 #         main.play_66_OLR line 144
@@ -50,11 +50,11 @@ from text import *
 from models import *
 
 
-#from config import play_62_CERES
+#from config import play_62_EEA
 
 
 if print_debug > 19:
-   print("main_052: start main ", y_TOAmin, y_TOAmax, play_62_CERES, part44_ceres_eei)
+   print("main_052: start main ", y_TOAmin, y_TOAmax, play_62_EEA, part44_ceres_eei)
 
 
 def process_ceres_data():
@@ -86,36 +86,36 @@ def process_ceres_data():
           print(f"main_086: create work/61c_out_EEI.csv  61.gut ={play_61_EEI}")
 
 
-    # main.play_62_CERES line 90 
+    # main.play_62_EEA line 90 
     # CERES Outgoing Longwave Radiation OLR     # _62_in__2026_02_Longwave.txt
-    if play_62_CERES > 1: #  
+    if play_62_EEA > 1: #  
        # part 62.b convert download.txt to CERES.csv (no averaging)
-       df62b = convert_ceres_to_csv('read_csv/_62_in__2026_02_Longwave.txt', 
-                                    'read_csv/_62b_LongWave.csv')
+       df62b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
+                                    'work/62b_EEA.csv')
        if print_debug > 9:
-          print(f"main_127: create read_csv/_62b_LongWave.csv  62.b ={play_62_CERES}")
+          print(f"main_127: create read_csv/_62b_LongWave.csv  62.b ={play_62_EEA}")
        
-       window_months=play_62_CERES
+       window_months=play_62_EEA
        min_periods=12
        use_center=False
        keep_original=True,
        # part 62.c  CERES.csv (perform averaging)
-       df62c = create_running_average( 'read_csv/_62b_LongWave.csv', 
-                                       'read_csv/_62c_LongWave.csv',
-                                            window_months=play_62_CERES,
+       df62c = create_running_average( 'work/62b_EEA.csv', 
+                                       'work/62c_EEA.csv',
+                                            window_months=play_62_EEA,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='LongWave')
        # part 62.e  CERES.csv (add averaging column to plotable-csv)
-       df62e = add_62_csv_column( 'read_csv/_62b_LongWave.csv', 
-                                  'read_csv/_42_EEI48month_2026_07.csv', 
-                                  'read_csv/_62e_LongWave.csv',
-                                            window_months=play_62_CERES,
+       df62e = add_62_csv_column( 'work/62b_EEA.csv', 
+                                  'read_csv/_42_EEI48month_2026_08.csv', 
+                                  'work/62e_EEA.csv',
+                                            window_months=play_62_EEA,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='LongWave')
        if print_debug > 9:
-          print(f"main_151: create read_csv/_62e_LongWave.csv 62    ={play_62_CERES}")
+          print(f"main_118: create work/62e_EEA.csv   62    ={play_62_EEA}")
 
 # main.play_64_ASR_anomaly line 124
 if play_64_ASR_anomaly > 1: #  
@@ -352,11 +352,11 @@ def load_plot_data():
         data['ceres_61'] = pd.read_csv("work/61c_out_EEI.csv")
         if print_debug > 9:
            print(f"main_197: 61.9 read ={play_61_EEI}")
-    if play_62_CERES > 0: # 62.9 read
+    if play_62_EEA > 0: # 62.9 read
         data['ceres_62'] = pd.read_csv("read_csv/_62c_LongWave.csv")
         # data['ceres_62'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
-           print(f"main_286: 62.9 read ={play_62_CERES}")    
+           print(f"main_286: 62.9 read ={play_62_EEA}")    
     if play_64_ASR_anomaly > 0: # 62.9 read
         data['ceres_64'] = pd.read_csv("read_csv/_64c_ASR.csv")
         # data['ceres_64'] = pd.read_csv("work/c62d_ceres.csv")
@@ -414,7 +414,7 @@ def main():
                        f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({plot42_EEI_48month}"
                        f"{plot43_eei_12month}{plot45_OLR}{plot46_ASR} 5({plot52_delta_CO2_red_bars}"
                        f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on}"
-                       f" 6({play_61_EEI}{play_62_CERES}{play_63_CB}"
+                       f" 6({play_61_EEI}{play_62_EEA}{play_63_CB}"
                        f" 7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
                        f"{linear_41_75}{plot76_my_T}")
     

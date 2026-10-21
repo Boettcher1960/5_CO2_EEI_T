@@ -34,7 +34,7 @@ from config import *
 from data_processing import *
 from data_processing import *
 from text import *
-from config import play_62_CERES
+# from config import play_62_EEA
 from config import plot34_CO2_emission
 
 if print_debug > 12:
@@ -381,6 +381,15 @@ def plot8_right_y_axe_for_eei_43(ax43,rightv): # 43.5
     ax43.tick_params(axis="y", labelcolor=c43)
     ax43.set_ylim(y_43min, y_43max) #
 
+def plot8_right_y_axe_for_44(ax44,rightv): # 43.5 part44_ceres_eei
+    outward_right =  ( part44_ceres_eei *  yr_60 ) - yr_150
+    ax44.spines.right.set_position(("outward", outward_right))
+    ax44.set_ylabel("Earth Energy Imbalance  in W/m²     plot470            44", color=c44, fontname="Arial",fontsize=18)
+    ax44.tick_params(axis="y", labelcolor=c44)
+    ax44.set_ylim(y_44min, y_44max) #
+
+
+
 #  OLR  W/m² moving average 48 month 
 # plot8_right_y_axe_for_OLR_45                    ,  line  367
 def plot8_right_y_axe_for_OLR_45(ax45,right62): # 62.5
@@ -444,7 +453,7 @@ def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
     ax61.set_ylim(y_61min, y_61max) #
 
 
-#  play_62_CERES OLR  W/m² moving average 48 month 
+#  play_62_EEA OLR  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_62(ax62,right62): # 62.5
     outward_right =  ( 5 *  yr_60 ) - yr_150
     ax62.spines.right.set_position(("outward", outward_right))
@@ -852,8 +861,8 @@ def plot_9_create_all_plots(ax1, data):
             ax44.tick_params(axis="y", labelcolor=c44)
             ax44.set_ylim(y_44min, y_44max)
             # plot8_right_y_axe_for_eei_42        plot42_EEI_48month                       ,   line  812
-            if plot43_eei_12month > 2:
-                plot8_right_y_axe_for_eei_44( ax44 , 0 ) # 
+            if part44_ceres_eei > 2:
+                plot8_right_y_axe_for_44( ax44 , 0 ) # 
         if print_debug > 9:
            print(f"plot_854: ax44 44.7 ={part44_ceres_eei}")
 
@@ -1012,15 +1021,15 @@ def plot_9_create_all_plots(ax1, data):
         if play_61_EEI > 2:
            plot8_right_y_axe_for_C_61( ax61 , 0 ) # 61.9 line 957
 
-    if play_62_CERES > 0:
+    if play_62_EEA > 0:
         ax62 = ax1.twinx()
         ax62.plot(data['ceres_62']["decimal_year"], data['ceres_62']["LongWave"], '-', 
                   label="EEI K62", color=c62, linewidth=2)
         ax62.tick_params(axis="y", labelcolor=c62)
         ax62.set_ylim(y_62min, y_62max)
         if print_debug > 9:
-           print(f"plot_969: ax62 62.8 ={play_62_CERES}")
-        if play_62_CERES > 2:
+           print(f"plot_969: ax62 62.8 ={play_62_EEA}")
+        if play_62_EEA > 2:
            plot8_right_y_axe_for_C_62( ax62 , 0 ) # 62.4 line 967
     if play_64_ASR_anomaly > 0:
         ax64 = ax1.twinx()

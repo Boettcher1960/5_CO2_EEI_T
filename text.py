@@ -445,14 +445,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr5y, p61_text, c61, trs) 
 
     elif play_63_CB == 5: # 55.4 row 5 legende 
-       line63 = Line2D([lr2x1, lr2x2], [lr5y, lr5y], # x coords in figure space (0–1)
-       transform=fig.transFigure,
-       marker="s", markersize=5, color=c63, linewidth=2)
-       # 9.5.2 draw bue line as legend
-       fig.add_artist(line63)
-       # 9.5.4 write green text
-       plt.text(tr2x, tr5y, "carbon brief cummulative CO2 values in Gt CO2 since 1750     63", color=c63, fontname="Arial", fontsize=trs,
-       transform=plt.gca().transAxes)
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c63)
+        p63_text = f"carbon brief cummulative CO2 values in Gt CO2 since 1750     63 {play_63_CB} month     63"
+        text_4_add_text(ax1, tr2x, tr5y, p63_text, c63, trs) 
     elif play_67_albedo > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c67)
         # albedo
@@ -484,13 +479,13 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     else:
         p62_text = f"Parameter {header_parameter}  Text 192:"
         text_4_add_text(ax1, tr2x, tr6y, p62_text, "black", 16) 
-    # in row 5 display play_62_CERES
-    if play_62_CERES > 0:
+    # in row 5 display play_62_EEA
+    if play_62_EEA > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
         # Outgoing Longwave Radiation OLR
-        p62_text = f"TOA Longwave Flux - All-Sky  [W/m²] {play_62_CERES}-month moving average  - text    443.                     62"
+        p62_text = f"TOA Longwave Flux - All-Sky  [W/m²] {play_62_EEA}-month moving average  - text    443.                     62"
         text_4_add_text(ax1, tr2x, tr5y, p62_text, c62, trs) 
-    # in row 5 display play_62_CERES
+    # in row 5 display play_62_EEA
     if play_64_ASR_anomaly > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c62)
         # Outgoing Longwave Radiation OLR
