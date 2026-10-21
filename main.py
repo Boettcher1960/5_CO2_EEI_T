@@ -1,5 +1,5 @@
 # main.py
-v = "5H17" # line2_play = 61
+v = "5H18" # line2_play = 61
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -93,20 +93,8 @@ def process_ceres_data():
        df62b = convert62_txt_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
                                       'work/62b_EEA.csv',
                                       'EEI'          )
-       # df62b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
-       #                             'work/62b_EEA.csv')
-       if print_debug > 9:
-          print(f"main_100: create work/62b_EEA.csv    62.b ={play_62_EEA}")
-       
-       window_months=play_62_EEA
-       min_periods=12
-       use_center=False
-       keep_original=True,
        # 62.33  CERES.csv (perform averaging)
-       window_months=play_62_EEA
-       min_periods=12
        use_center=False
-       keep_original=True
        columnname ='EEI36'
        column_read    ='EEI'
        column_average ='EEI36'
@@ -120,19 +108,15 @@ def process_ceres_data():
                                             min_periods=12,
                                             center=use_center,
                                             column_name=columnname)
-
-       # 62.50  
-       # 62.51. CSV-Datei einlesen
+       # 62.51. read above created CSV-file
        df62g = pd.read_csv("work/62c_EEA.csv")
 
-       # 62.52. Laufende Summe (kumulierte Summe) bilden und in 'EEA' speichern
+       # 62.52. summ the averaged column "EEI36" and store it in new column 'EEA'
        factor = 1.37  #     then multiplied by a constant 16.087 to convert it to ZJ. 
        df62g["EEA"] = df62g["EEI36"].cumsum() * factor
        
-       # 62.53. CSV-Datei speichern  df.to_csv(output_file, index=False, float_format='%.6f')
+       # 62.53. store 62g*csv to print it later, or copy it and use for other plots
        df62g.to_csv("work/62g_EEA.csv", index=False, float_format='%.6f')
-
-
 
        # part 62.e  CERES.csv (add averaging column to plotable-csv)
        #df62e = add_62_csv_column( 'work/62b_EEA.csv', 
