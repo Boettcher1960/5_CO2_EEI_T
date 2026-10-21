@@ -220,6 +220,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr2y, 
                     "ASR Absorbed Solar Radiation =input-output in [W/m²] moving average 48 month   46", 
                     c46, trs)
+    elif play_61_EEI > 0 and line2_play == 61:
+                text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c61)
+                p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"
+                text_4_add_text(ax1, tr2x, tr2y, p61_text, c61, trs) 
     elif plot71_temperature == 2: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)
         text_4_add_text(ax1, tr2x, tr2y, 
