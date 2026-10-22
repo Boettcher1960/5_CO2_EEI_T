@@ -322,6 +322,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot72_AESS_T == 3: # 72.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c72)
         text_4_add_text(ax1, tr2x, tr3y, text72, c72, trs)
+    elif plot73_ECS_T == 3: # 73.5 legend
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c73)
+        text_4_add_text(ax1, tr2x, tr3y, text73, c73, trs)
     elif plot74_GIS_T == 3: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
         text_4_add_text(ax1, tr2x, tr3y, 

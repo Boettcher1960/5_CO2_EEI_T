@@ -551,6 +551,23 @@ def plot8_right_y_axe_for_T_72(ax72,right52): # 72.6 plot71_temperature
     ax72.tick_params(axis="y", labelcolor=c72)   # 71.70 
     ax72.set_ylim(y_72min, y_72max) # 71.72 the plotted values outside the graph y xis
 
+# 72.57 call plotting.px line 538
+def plot8_right_y_axe_for_T_73(ax73,right52): # 72.6 plot72_temperature
+    if right52 > 0:
+        outward_right = right52
+    elif plot73_ECS_T == 3: # 72.61 scale for line 3 the first y axis on the left
+        outward_right =  ( 2.5 * yr_60 ) - yr_150
+    elif plot73_ECS_T == 4: # 72.62 scale for line 4 the second y axis on the left
+            outward_right =  ( 4.5 * yr_60 ) - yr_150    
+    else: # 73.62 scale for 
+        outward_right =  ( plot73_ECS_T * yr_60 ) - yr_150
+    # 73.67    
+    ax73.spines.right.set_position(("outward", outward_right))    # 73.67 
+    ax73.set_ylabel("Temperature in °C    73", color=c73, fontname="Arial",fontsize=18)  # 73.68
+    ax73.tick_params(axis="y", labelcolor=c73)   # 72.70 
+    ax73.set_ylim(y_73min, y_73max) # 73.72 the plotted values outside the graph y xis
+
+
 
 # plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
 def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6 
@@ -1203,19 +1220,14 @@ def plot_9_create_all_plots(ax1, data):
        
 
 
-    if plot73_ECS_T > 0 : # 73.4
+    if plot73_ECS_T > 0 : # 73.40
         # plot73_ECS_T Earth Climate sensitivity 
         # 7.3  dT=ECS*log2(C/C0) # T560ppm=ECS*log2(560/280) 
-        def T_model73(t):
-           CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
-           log2_value = np.log2(CO2/C280)
-           ECS = 4.5
-           temp73 = ECS * log2_value
-           return temp73
-        # 7.3.2 years scale x axis
+        # 73.41 years scale x axis
         years73 = np.arange(x_anf, x_end + 1 )
-        T_73values = T_model73(years73)
-        # 7.3.4. Create DataFrame for convenience
+        # 73.44 call define T_72: from models.py line 570     
+        T_73values = T_73(years73)
+        # 73.4 Create DataFrame for convenience
         df73 = pd.DataFrame({
                "Year73": years73,
                "Modeled73": T_73values })
@@ -1223,10 +1235,11 @@ def plot_9_create_all_plots(ax1, data):
         ax73 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
         ax73.plot(df73["Year73"], df73["Modeled73"], '--', label="T formula CO2=  K73", color=c73, linewidth=3)
         ax73.tick_params(axis="y", labelcolor=c73)
-        ax73.set_ylim(y_Tmin, y_Tmax) # scale
-        # end 7.3
-        # plot8_right_y_axe_for_T_74(ax74,0) # 74.5 line 356
-
+        ax73.set_ylim(y_73min, y_73max) #  # 73.64 scale
+        # 72.66 call plotting.px line 520
+        if plot73_ECS_T > 2:
+            plot8_right_y_axe_for_T_73(ax73,0)
+       
     # plot74_GIS_T,   GIS temperature add 0.3°C like Hansen    ,  plot_9_create_all_plots() ,   line 1040
     if plot74_GIS_T > 0 : # 74.4
         if plot74_GIS_T == 2:

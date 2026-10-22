@@ -515,7 +515,7 @@ def T_model71_not_called(t):
 
 
 #########################################################
-# 72     plot72_AESS_T   ##############################
+# 72     plot72_AESS_T     ##############################
 #########################################################
 #
 # plot72_AESS_T= 4 # apparent Earth system sensitivity (AESS=7.7°C)
@@ -546,3 +546,16 @@ def T_72(t):
           return temp72
 # 2026.10.22 plots plot72_AESS_T = 2
 # 2026.10.22 plots plot72_AESS_T = 3
+
+
+#########################################################
+# 73     plot73_ECS_T     ##############################
+#########################################################
+# plot73_ECS_T Earth Climate sensitivity 
+# 7.3  dT=ECS*log2(C/C0) # T560ppm=ECS*log2(560/280) 
+def T_73(t):
+           CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
+           log2_value = np.log2(CO2/C280)
+           ECS = 4.5
+           temp73 = ECS * log2_value
+           return temp73
