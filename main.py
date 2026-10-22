@@ -1,5 +1,5 @@
 # main.py
-v = "5H35" # line2_play = 61
+v = "5H36" # line2_play = 61
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -390,8 +390,8 @@ def load_plot_data():
            print(f"main_380: 68.41 read ={play68_ERA}")  
 
     # Load GIS temperature data
-    if plot74_GIS_T > 0: # 74.3
-        data['gis_temp'] = load74_gis_temperature()
+    if plot74_GIS_T > 0: # 74.33 models.py line 600 
+        data['gis_temp'] = load74_gis_T()
     return data
     # end load_plot_data():
 

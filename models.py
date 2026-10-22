@@ -3,7 +3,7 @@
 # includes the documentation
 
 import numpy as np
-
+import pandas as pd
 from config import *
 
 
@@ -11,19 +11,6 @@ C280 = 280
 
 
 
-def T_model72(t):
-    """Apparent Earth System Sensitivity (AESS) model"""
-    CO2 = 0.0132251 * t**2 - 51.0337 * t + 49536.7
-    log2_value = np.log2(CO2 / C280)
-    AESS = 8
-    return AESS * log2_value
-
-def T_model73(t):
-    """Earth Climate Sensitivity (ECS) model"""
-    CO2 = 0.0132251 * t**2 - 51.0337 * t + 49536.7
-    log2_value = np.log2(CO2 / C280)
-    ECS = 4.5
-    return ECS * log2_value
 
 def T_model76(t):
     """My best temperature model"""
@@ -615,5 +602,27 @@ def T_73(t):
 #    landocean_1880_full(1).txt
 #    https://www.columbia.edu/~jeh1/Data/Temperature/#ref1
 #
+# data_processing.py line 560 plot74_GIS_T
+def load74_gis_T():
+    """Load GIS temperature data"""
+    return pd.read_csv("read_csv/_74_gis_temperature.csv")
+
+
+def T_model72(t):
+    """Apparent Earth System Sensitivity (AESS) model"""
+    CO2 = 0.0132251 * t**2 - 51.0337 * t + 49536.7
+    log2_value = np.log2(CO2 / C280)
+    AESS = 8
+    return AESS * log2_value
+
+def T_model73(t):
+    """Earth Climate Sensitivity (ECS) model"""
+    CO2 = 0.0132251 * t**2 - 51.0337 * t + 49536.7
+    log2_value = np.log2(CO2 / C280)
+    ECS = 4.5
+    return ECS * log2_value
+
+
+
 #
 # 2026.10.22 plots plot74_GIS_T = 2
