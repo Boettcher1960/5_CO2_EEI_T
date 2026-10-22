@@ -44,7 +44,7 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 36    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 0    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 36, 12, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
@@ -54,12 +54,12 @@ play_67_albedo = 0   # create 1..12..48..99 CERES
 play68_ERA = 1095 # 1461, 1095, 720, 365, 24
     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 # variable to show play variable in line 4
-line2_play = 61   # 61
-line3_play = 62  #  play_62_EEA #   68 play68_ERA = 720
+line2_play = 62   # 61
+line3_play = 0  #  play_62_EEA #   68 play68_ERA = 720
 line4_play = 68  # 61 play_61_EEI = 36 
 line5_play = 0   # 62 61
 
-plot71_temperature = 3 # 5
+plot71_temperature = 2 # 5
 plot72_AESS_T = 0
 plot73_ECS_T = 0
 plot74_GIS_T = 0 # 2, 3,4,5 =right y axis
