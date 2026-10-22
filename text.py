@@ -481,6 +481,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr5y, text76, c76, trs)
 
     # in row 5 display part44_ceres_eei
+    # elif:
     if part44_ceres_eei > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
         p44_text = f"Earth Energy Imbalance    W/m²   {part44_ceres_eei}-month moving average 44"

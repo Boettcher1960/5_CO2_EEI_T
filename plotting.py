@@ -638,6 +638,23 @@ def plot8_right_y_axe_for_T_77(ax77,right52): # 77.6
     else:    
        ax77.set_ylabel("Temperature in °C        plot635         77", color=c77, fontname="Arial",fontsize=18)
        ax77.tick_params(axis="y", labelcolor=c77)
+
+def plot8_right_y_axe_for_T_78(ax78,right52): # 78.6 
+    if right52 > 0:
+        outward_right = right52
+    elif plot_T_78 == 3: # 76.61 scale for line 3 the first y axis on the left
+        outward_right =  ( 2.5 * yr_60 ) - yr_150
+    else:
+        outward_right =  ( plot_T_78 * yr_60 ) - yr_150
+    ax78.spines.right.set_position(("outward", outward_right))
+    if plot_T_78 == 2: # T axis already on the left
+        print(f"plot 651: no need for second T axis on the right ax78 ={plot_T_78} {'='*2}")
+        ax78.yaxis.set_ticks([])
+        ax78.spines['right'].set_visible(False)
+    else:    
+       ax78.set_ylabel("Temperature in °C        plot635         78", color=c77, fontname="Arial",fontsize=18)
+       ax78.tick_params(axis="y", labelcolor=c77)
+
       
 # plot_9_create_all_plots(ax1, data): line 436 600
 def plot_9_create_all_plots(ax1, data):
@@ -1298,36 +1315,15 @@ def plot_9_create_all_plots(ax1, data):
             plot8_right_y_axe_for_T_76(ax76,0) # 76.5 line 540
        # end 7.6 plot76_my_T
 
-
-    def T_model77(t):
-        # https://chat.deepseek.com/a/chat/s/d9a11bdb-f2ce-4c34-b14e-492b673e0a4e
-        # Define the three points
-        #t1, y1 = 1980, 0.5  # 
-        t1, y1 = 1950, 0.2 
-        t2, y2 = 2013, 1.0
-        t3, y3 = 2022, 1.5
-        # Lagrange interpolation
-        term1 = y1 * ((t - t2) * (t - t3)) / ((t1 - t2) * (t1 - t3))
-        term2 = y2 * ((t - t1) * (t - t3)) / ((t2 - t1) * (t2 - t3))
-        term3 = y3 * ((t - t1) * (t - t2)) / ((t3 - t1) * (t3 - t2))
-        return term1 + term2 + term3
-
     if plot_T_77 > 0:
-       # 7.6.2 years scale x axis
+       # 77.2 years scale x axis
        years77 = np.arange(x_anf, x_end + 1 )
-       T_77values = T_model77(years77)
+       T_77values = T_77(years77)
        #print(T_77values)
        # 7.6.3. Create DataFrame for convenience
        df77 = pd.DataFrame({
              "Year77":      years77,
              "Modeled77": T_77values })
-       # 7.6.4 plot77_temperature
-       # print(df77.head(2))
-       #print(T_model77(1950) ,"  1950")  # 0.2
-       #print(T_model77(2013) ,"  2013")  # 1.0
-       #print(T_model77(2023) ,"  2023")
-       #print(T_model77(2026) ,"  2026")  # 1.5
-       #print(T_model77(2028) ,"  2028")  # 1.5
        ax77 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
        ax77.plot(df77["Year77"], df77["Modeled77"], '--', label="T formula CO2=  K77", color=c77, linewidth=3)
        ax77.tick_params(axis="y", labelcolor=c77)
@@ -1336,9 +1332,26 @@ def plot_9_create_all_plots(ax1, data):
             print(f"plot1143: no need for second T axis on the right ax77 ={plot_T_77} {'='*2}")
        if plot_T_77 > 2:
             plot8_right_y_axe_for_T_77(ax77,0) # 77.5 line 540
-       # end 7.7 plot_T_77
+       # end 77.66 plot_T_77
 
-
+    if plot_T_78 > 0:
+       # 78.2 years scale x axis
+       years78 = np.arange(x_anf, x_end + 1 )
+       T_78values = T_78(years78)
+       #print(T_78values)
+       # 7.6.3. Create DataFrame for convenience
+       df78 = pd.DataFrame({
+             "Year78":      years78,
+             "Modeled78": T_78values })
+       ax78 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+       ax78.plot(df78["Year78"], df78["Modeled78"], '--', label="T formula CO2=  K78", color=c78, linewidth=3)
+       ax78.tick_params(axis="y", labelcolor=c78)
+       ax78.set_ylim(y_78min, y_78max) # scale
+       if print_debug > 9:
+            print(f"plot1143: no need for second T axis on the right ax78 ={plot_T_78} {'='*2}")
+       if plot_T_78 > 2:
+            plot8_right_y_axe_for_T_78(ax78,0) # 78.5 line 540
+       # end 78.66 plot_T_78
 
 
     # end plot_9_create_all_plots(ax1, data):

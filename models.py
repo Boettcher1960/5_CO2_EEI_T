@@ -648,8 +648,8 @@ def load74_gis_T():
 def T_76(t): # my best try
         x = t - 2000
         return 0.00034 * x**2 + 0.0238 * x + 0.74
-
-
+#
+#
 # 2026.10.22 plots plot76_my_T = 3
 
 
@@ -671,4 +671,48 @@ def T_76(t): # my best try
 #               term3 = y3 * ((t - t1) * (t - t2)) / ((t3 - t1) * (t3 - t2))
 #               return term1 + term2 + term3
 #
+#         def T_model77(t):
+#                t1, y1 = 1950, 0.2 
+#                t2, y2 = 2013, 1.0
+#                t3, y3 = 2022, 1.5
+#                # Lagrange interpolation
+#                term1 = y1 * ((t - t2) * (t - t3)) / ((t1 - t2) * (t1 - t3))
+#                term2 = y2 * ((t - t1) * (t - t3)) / ((t2 - t1) * (t2 - t3))
+#                term3 = y3 * ((t - t1) * (t - t2)) / ((t3 - t1) * (t3 - t2))
+#                return term1 + term2 + term3
+#
+def T_77(t):
+        # https://chat.deepseek.com/a/chat/s/d9a11bdb-f2ce-4c34-b14e-492b673e0a4e
+        # Define the three points
+        #t1, y1 = 1980, 0.5  # 
+        t1, y1 = 1950, 0.2 
+        t2, y2 = 2013, 1.0
+        t3, y3 = 2022, 1.5
+        # Lagrange interpolation
+        term1 = y1 * ((t - t2) * (t - t3)) / ((t1 - t2) * (t1 - t3))
+        term2 = y2 * ((t - t1) * (t - t3)) / ((t2 - t1) * (t2 - t3))
+        term3 = y3 * ((t - t1) * (t - t2)) / ((t3 - t1) * (t3 - t2))
+        return term1 + term2 + term3
+#
 # 2026.10.22 plots   plot_T_77  = 3
+
+
+#########################################################
+# 78   plot_T_78  #     Tom Harris              #########
+#########################################################
+# plot_T_78 = 3 # Tom Harris
+#
+#
+def T_78(t):
+        #t1, y1 = 1980, 0.5  # 
+        t1, y1 = 1950, 0.2 
+        t2, y2 = 2013, 1.0
+        t3, y3 = 2022, 1.5
+        # Lagrange interpolation
+        term1 = y1 * ((t - t2) * (t - t3)) / ((t1 - t2) * (t1 - t3))
+        term2 = y2 * ((t - t1) * (t - t3)) / ((t2 - t1) * (t2 - t3))
+        term3 = y3 * ((t - t1) * (t - t2)) / ((t3 - t1) * (t3 - t2))
+        return term1 + term2 + term3
+
+
+

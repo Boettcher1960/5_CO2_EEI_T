@@ -59,7 +59,8 @@ plot73_ECS_T = 0 # 3
 plot74_GIS_T = 2 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 5 # 3
-plot_T_77 = 3 # 3, 4
+plot_T_77 = 0 # 3, 4
+plot_T_78 = 3 # Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 0   # 61  62
@@ -107,6 +108,7 @@ c74 = "red"
 c75 = "#371EA484"
 c76 = "#13DF2F84"
 c77 = "#34753D84"
+c78 = "#8FE32084"
 
 # Text definitions (added missing print texts)
 blue22_text      = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm)                          22"
