@@ -1137,19 +1137,23 @@ def plot_9_create_all_plots(ax1, data):
         years71 = np.arange(x_anf, x_end + 1 )
         # 71.43 see models.px line 500
         T_71values = T_71_rees(years71)
-
         # 71.46 Create DataFrame for convenience
         df71 = pd.DataFrame({
               "Year71": years71,
               "Modeled71": T_71values })
-        # 71.48 
-        ax71 = ax1.twinx()
-        # 71.50 plot
-        ax71.plot(df71["Year71"], df71["Modeled71"], '--', label="T formula CO2=  K6", color=c71, linewidth=3)
-        ax71.tick_params(axis="y", labelcolor=c71)
-        ax71.set_ylim(y_71min, y_71max) #  # 71.54 scale
-        # 71.56 call plotting.px line 520
-        plot8_right_y_axe_for_T_71(ax71,0) 
+        # 71.47 case line 2 use the left y axis (ax1) instead of creating a right axis
+        if plot71_temperature == 2:
+           ax1.plot(df71["Year71"], df71["Modeled71"], '--', label="T formula CO2=  K6", color=c71, linewidth=3)
+           # The left y-axis is already configured in plot_1_axe
+        else:
+           ax71 = ax1.twinx()
+           # 71.50 plot
+           ax71.plot(df71["Year71"], df71["Modeled71"], '--', label="T formula CO2=  K6", color=c71, linewidth=3)
+           ax71.tick_params(axis="y", labelcolor=c71)
+           ax71.set_ylim(y_71min, y_71max) #  # 71.54 scale
+           # 71.56 call plotting.px line 520
+           if plot71_temperature > 2:
+              plot8_right_y_axe_for_T_71(ax71,0)
         # end  # 71.77
 
     if plot72_AESS_T > 0 : # 72.4
