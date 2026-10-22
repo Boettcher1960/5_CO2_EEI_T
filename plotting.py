@@ -209,8 +209,8 @@ def plot_1_axe(ax1):
          ax1.set_ylim(y_68min, y_68max)
          ax1.set_ylabel("Temperature from ERA5    [°C] ", color=c68, fontsize=20)
          ax1.tick_params(axis="y", labelcolor=c68, labelsize=20)
-         y_mayor_ticks = 0.500 
-         y_minor_ticks = 0.100
+         y_mayor_ticks = 0.200 
+         y_minor_ticks = 0.050
          ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
          ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 

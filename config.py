@@ -91,7 +91,7 @@ c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"
 c61 = "#1E0ED2A0"
-c62 = "#9522AA90"
+c62 = "#BEBE21DD"
 c63 = "#1652D490"
 c64 = "#9522AA90"
 c65 = "#390509E1"
@@ -182,7 +182,7 @@ y_61min = 0  #   EEI in W/m2 y axis left mode
 y_61max = 2  #   EEI in W/m2 y axis left mode
 
 y_62min = 0  # EEA in ZJ
-y_62max = 360  # EEA in ZJ
+y_62max = 400  # EEA in ZJ
 
 y_64min = 0.4  # in W/m2
 y_64max = -2.3  # in W/m2
@@ -199,8 +199,8 @@ y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.294 # albedo in %
 y_67max = 0.286 # albedo in %
 
-y_68min = 0.4  # for era5 Temperature
-y_68max = 1.8  # for era5 Temperature 
+y_68min = 0  # for era5 Temperature
+y_68max = 1.6  # for era5 Temperature 
 
 y_Tmin = 0
 y_Tmax = 2 # 1.7
@@ -218,10 +218,10 @@ y_76min = 0 #  Temperature
 y_76max = 4   #  Temperature 
 y_77min = 0 #  Temperature  
 y_77max = 4 #  Temperature 
-y_78min = 0.4 #  for Tom Harris Temperature 
-y_78max = 1.8 #  for Tom Harris Temperature
+y_78min = 0 #  for Tom Harris Temperature 
+y_78max = 1.6 #  for Tom Harris Temperature
 x_anf = 2004
-x_end = 2040
+x_end = 2027
 
 # constants
 # C280 =275 in Zack Labe plots.
