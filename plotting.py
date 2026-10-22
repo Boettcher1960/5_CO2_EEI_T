@@ -204,6 +204,17 @@ def plot_1_axe(ax1):
                 y_minor_ticks = 0.100
                 ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
                 ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif line2_play == 68:
+         ax1.spines.left.set_position(("outward", 0))
+         ax1.set_ylim(y_68min, y_68max)
+         ax1.set_ylabel("Temperature from ERA5    [°C] ", color=c68, fontsize=20)
+         ax1.tick_params(axis="y", labelcolor=c68, labelsize=20)
+         y_mayor_ticks = 0.500 
+         y_minor_ticks = 0.100
+         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+
+
     elif plot71_temperature == 2:  # 71.5 y axe left  red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 0))
@@ -1183,15 +1194,21 @@ def plot_9_create_all_plots(ax1, data):
            plot8_right_y_axe_for_C_67( ax67 , 0 ) # part
 
     if play68_ERA > 0: # 67.44 plotting.py line 1044 plot era_68 data
-        ax68 = ax1.twinx()
-        ax68.plot(data['era_68']["decimal_year"], data['era_68']["temp_average"], '-', 
+        if line2_play == 68:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['era_68']["decimal_year"], data['era_68']["temp_average"], '-', 
+                             label="era5 temperature K68", color=c68, linewidth=2)
+           # The left axis is already configured in plot_1_axe
+        else:
+           ax68 = ax1.twinx()
+           ax68.plot(data['era_68']["decimal_year"], data['era_68']["temp_average"], '-', 
                   label="era5 temperature K68", color=c68, linewidth=2)
-        ax68.tick_params(axis="y", labelcolor=c68)
-        ax68.set_ylim(y_68min, y_68max)
-        if print_debug > 9:
-           print(f"plot1051: ax68 68.48 ={play68_ERA}")
-        if play68_ERA > 2:
-           plot8_right_y_axe_for_C_68( ax68 , 0 ) # part
+           ax68.tick_params(axis="y", labelcolor=c68)
+           ax68.set_ylim(y_68min, y_68max)
+           if print_debug > 9:
+              print(f"plot1051: ax68 68.48 ={play68_ERA}")
+           if play68_ERA > 2:
+              plot8_right_y_axe_for_C_68( ax68 , 0 ) # part
 
     if plot71_temperature > 0 : # 71.41
         # 71.42 years scale x axis

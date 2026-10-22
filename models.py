@@ -686,8 +686,6 @@ def T_77(t):
 #########################################################
 # plot_T_78 = 3 # Tom Harris
 #
-#
-# this is too low :
 #        def T_model78(t):
 #                 y = 0.0004x2 + 0.0019x + 0.5079 
 #                https://substack.com/@drtomharris/note/c-365674298
@@ -700,3 +698,4 @@ def T_78(t):
     return 0.0004 * x**2 + 0.0019 * x + 0.5079
 #
 # 2026.10.22 plots   plot_T_78  = 3 formula  good
+# 2026.10.22 plots   plot_T_78  = 4 formula  good

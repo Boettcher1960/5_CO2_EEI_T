@@ -78,6 +78,10 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"EEI Earth Energy Imbalance   CERES data from Aug. 2026    Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                             transform=ax1.transAxes)
+    elif line2_play == 68   :
+        header = f"Temperature in °C  era5        Plot {x_anf} to {x_end}."
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
+                            transform=ax1.transAxes)
     elif plot71_temperature == 2:
         header = f"Temperature in °C     71 quadratic calculation      year {x_anf} to {x_end}"
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
@@ -89,6 +93,7 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"Global Surface Temperature in °C       year {x_anf} to {x_end}."       
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                         transform=ax1.transAxes)
+        
     elif yl_mode == 4:
         header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Aug. 2026 data. Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
@@ -228,9 +233,13 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "ASR Absorbed Solar Radiation =input-output in [W/m²] moving average 48 month   46", 
                     c46, trs)
     elif play_61_EEI > 0 and line2_play == 61:
-                text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c61)
-                p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"
-                text_4_add_text(ax1, tr2x, tr2y, p61_text, c61, trs) 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c61)
+        p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"
+        text_4_add_text(ax1, tr2x, tr2y, p61_text, c61, trs) 
+    elif play68_ERA > 0 and line2_play == 68:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c68)
+        p68_text = f"Temperature in °C climate.copernicus.eu/datasets/-era5-single-levels   {play68_ERA} days    68"
+        text_4_add_text(ax1, tr2x, tr2y, p68_text, c68, trs)
     elif plot71_temperature == 2: # 71.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c71)
         text_4_add_text(ax1, tr2x, tr2y, text71, c71, trs)
@@ -437,6 +446,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         # albedo
         p67_text = f"Albedo = sw_out / sw_in             {play_67_albedo}-month moving average - min-max swapped      67"
         text_4_add_text(ax1, tr2x, tr4y, p67_text, c67, trs) 
+    elif plot_T_78 == 4: # 78.5.3 legend
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c78)
+        text_4_add_text(ax1, tr2x, tr4y, text78, c78, trs)
 
 
 
