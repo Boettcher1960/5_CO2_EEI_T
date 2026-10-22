@@ -120,13 +120,13 @@ p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
 text42 = "Earth Energy Imbalance W/m² moving average 48 month 42"
 text43 = "Earth Energy Imbalance in W/m²                                  moving average 12 month    43"
 p44_text = "Earth Energy Imbalance W/m² moving average 44"
-print75_text = "Hansen linear fit from 2015 +0.41°C 75"  # Added for linear_41_75
 text55 = "Green line: Earth Population in billion                                               55"
 text71 = "Temperature in °C 0.000618t² - 2.459 t + 2446.0579            from  @reescatophul     71"
 # "Temperature in °C 0.000618t² - 2.459 t + 2446.0579                       @reescatophul     71", 
 # "Temperature in °C 0.0004t² + 0.0019 t + 0.5079     from Tom Harris                         71", 
 text72 = "Temperature in °C   AESS Apparent Earth System Sensitivity = 8°C * log2(CO2/C0  72"
 text73 = "Temperature in °C   Earth Climate sensitivity              dT = ECS * log2 ( C / C0 )      73"
+text74 = "Temperature in °C   giss.nasa.gov   Hansen+0.3°C                                                   74"  
 text75 = "Hansen linear fit   from 2015    +0.41°C                       75"  # Added for linear_41_75
 text76 = "Temperature in °C   my guess quadratic increase                                                      76" 
 
