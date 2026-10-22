@@ -51,14 +51,14 @@ play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1
 play_65_ASR = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo = 0   # create 1..12..48..99 CERES
-play68_ERA = 1095 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+play68_ERA = 0 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 
 plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
 plot74_GIS_T = 2 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
-plot76_my_T = 0 # 3
+plot76_my_T = 5 # 3
 plot_T_77 = 3 # 3, 4
 
 # variable to show play variable in line 4
@@ -112,15 +112,17 @@ c77 = "#34753D84"
 blue22_text      = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm)                          22"
 text23 = "CO2 calculated dashed blue line      CO2 = 0.0132251t² - 51.0337t + 49,536 ppm    23"
 text25 = "green: CO2 NOAA     800_000 year ice data                                                   25"
+
 text31 = "dots: cumulative CO2 emissions in GtCO2     Carbon Brief / Our World in Data           31"
 text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World in Data              32"
-
 text34 = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode                                   34"
-p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
+
+text41 = "Earth Energy Imbalance W/m² moving average 12 month 41"
 text42 = "Earth Energy Imbalance W/m² moving average 48 month 42"
 text43 = "Earth Energy Imbalance in W/m²                                  moving average 12 month    43"
-p44_text = "Earth Energy Imbalance W/m² moving average 44"
+text44 = "Earth Energy Imbalance W/m² moving average 44"
 text55 = "Green line: Earth Population in billion                                               55"
+
 text71 = "Temperature in °C 0.000618t² - 2.459 t + 2446.0579            from  @reescatophul     71"
 # "Temperature in °C 0.000618t² - 2.459 t + 2446.0579                       @reescatophul     71", 
 # "Temperature in °C 0.0004t² + 0.0019 t + 0.5079     from Tom Harris                         71", 
@@ -130,7 +132,7 @@ text74 = "Temperature in °C   giss.nasa.gov   Hansen+0.3°C                    
 text75 = "Hansen linear fit   from 2015    +0.41°C                       75"  # Added for linear_41_75
 text76 = "Temperature in °C   my guess quadratic increase                                                      76" 
 text77 = "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2022=1.5°C         77" 
-
+text78 = "Temperature in °C   quadratic       Tom Harris        78" 
 
 
 # Axis ranges
@@ -196,7 +198,7 @@ y_67min = 0.294 # albedo in %
 y_67max = 0.286 # albedo in %
 
 y_68min = 0  # for ERA5 Temperature
-y_68max = 3  # for ERA5 Temperature 
+y_68max = 4  # for ERA5 Temperature 
 
 y_Tmin = 0
 y_Tmax = 2 # 1.7
@@ -207,15 +209,17 @@ y_72max = 6 #
 y_73min = 0
 y_73max = 6 # 
 y_74min = 0  # for GIS Temperature 
-y_74max = 2  # for GIS Temperature 
+y_74max = 4  # for GIS Temperature 
 y_75min = 0 #  Temperature  
 y_75max = 2   #  Temperature 
 y_76min = 0 #  Temperature  
-y_76max = 2   #  Temperature 
+y_76max = 4   #  Temperature 
 y_77min = 0 #  Temperature  
-y_77max = 2   #  Temperature 
+y_77max = 4 #  Temperature 
+y_78min = 0 #  Temperature  
+y_78max = 4 #  Temperature 
 x_anf = 2004
-x_end = 2027
+x_end = 2057
 
 # constants
 # C280 =275 in Zack Labe plots.

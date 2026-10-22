@@ -624,6 +624,32 @@ def load74_gis_T():
 # 76   plot76_my_T                              #########
 #########################################################
 #
+# years76 = np.arange(x_anf, x_end + 1 )
+#       T_76values = T_model76(years76)
+#       df76 = pd.DataFrame({
+#             "Year76":      years76,
+#             "Modeled76": T_76values })
+# 76.4 plot76_temperature
+#      print(df76.head(2))
+#      print(T_model76(1950) ,"  1950")  # 0.2
+#      print(T_model76(2013) ,"  2013")  # 1.0
+#      print(T_model76(2023) ,"  2023")
+#      print(T_model76(2026) ,"  2026")  # 1.5
+#      print(T_model76(2028) ,"  2028")  # 1.5
+#       my76_text="guessed quadratic temperature  my_T   76 "
+#       0.39999   1950
+#       1.10686   2013
+#       1.46726   2023
+#       1.58864   2026
+#       1.6729600000000002   2028
+#           def T_model76(t): # my best try
+#               x = t - 2000
+#               return 0.00034 * x**2 + 0.0238 * x + 0.74
+def T_76(t): # my best try
+        x = t - 2000
+        return 0.00034 * x**2 + 0.0238 * x + 0.74
+
+
 # 2026.10.22 plots plot76_my_T = 3
 
 
@@ -631,5 +657,18 @@ def load74_gis_T():
 #########################################################
 # 77   plot_T_77                                #########
 #########################################################
+#
+#       def T_model77_old(t):
+#        https://chat.deepseek.com/a/chat/s/d9a11bdb-f2ce-4c34-b14e-492b673e0a4e
+#        Define the three points
+#       t1, y1 = 1980, 0.5  # 
+#               t1, y1 = 1950, 0.2 
+#               t2, y2 = 2013, 1.0
+#               t3, y3 = 2023, 1.5
+#              # Lagrange interpolation
+#               term1 = y1 * ((t - t2) * (t - t3)) / ((t1 - t2) * (t1 - t3))
+#               term2 = y2 * ((t - t1) * (t - t3)) / ((t2 - t1) * (t2 - t3))
+#               term3 = y3 * ((t - t1) * (t - t2)) / ((t3 - t1) * (t3 - t2))
+#               return term1 + term2 + term3
 #
 # 2026.10.22 plots   plot_T_77  = 3

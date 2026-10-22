@@ -226,8 +226,6 @@ def create66_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'
                              center=True, 
                              keep_original=True,
                              column_name='EEI48'): # not used if main has different parameter
-    """Create running average for specified window size"""
-
     # part 66.c.2 read csv with raw ceres data into data-frame
     df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv' # 'work/_65b_SW_in_raw.csv'
 
@@ -290,7 +288,7 @@ def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'  _CERES_raw.c
     if min_periods is None:
         min_periods = window_months
 
-     # part 67.45 mean value (read column OLR)(store in ?)
+    # part 67.45 mean value (read column OLR)(store in ?)
     df[column_average] = df[column_read].rolling(
         window=window_months, 
         center=center,
@@ -308,14 +306,12 @@ def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'  _CERES_raw.c
     # part 67.49 columns 7 is the parameter column_average average
     # output_columns.append(column_average)
 
-     # part 67.50 copy
+    # part 67.50 copy
     df_output = df[output_columns].copy()
     # part 67.51 copy to csv
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
     return df_output
     # end part 67.51  end 67.c  CERES.csv (perform averaging)
-
-
 
 
 

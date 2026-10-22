@@ -476,7 +476,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c74)
         text_4_add_text(ax1, tr2x, tr5y, 
                    "Temperature in °C giss.nasa.gov Hansen+0.3°C                                                       74", c74, trs)
-
+    elif plot76_my_T == 5: # 76.5.3 legend
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c76)
+        text_4_add_text(ax1, tr2x, tr5y, text76, c76, trs)
 
     # in row 5 display part44_ceres_eei
     if part44_ceres_eei > 0:

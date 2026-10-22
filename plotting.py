@@ -241,8 +241,12 @@ def plot_1_axe(ax1):
         ax1.set_ylim(y_74min, y_74max)
         ax1.set_ylabel(" GISS Temperature in °C   74  ", color=c74, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c74, labelsize=20)
-        y_mayor_ticks = 0.2 
-        y_minor_ticks = 0.05
+        if y_74max < 2:
+           y_mayor_ticks = 0.2 
+           y_minor_ticks = 0.05
+        else:
+           y_mayor_ticks = 0.5 
+           y_minor_ticks = 0.2
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot76_my_T == 2:  # 76.5 y axe left  red 
@@ -1274,53 +1278,22 @@ def plot_9_create_all_plots(ax1, data):
             plot8_right_y_axe_for_T_75(ax75,0) # 75.5 line 530
        # end 7.5
 
-    # plot76_my_T
-    my76_text="guessed quadratic temperature  my_T   76 "
-    # 7.6.1 0.3999999999999999   1950
-    # 1.10686   2013
-    # 1.46726   2023
-    # 1.58864   2026
-    # 1.6729600000000002   2028
-    def T_model76(t): # my best try
-        x = t - 2000
-        return 0.00034 * x**2 + 0.0238 * x + 0.74
-
-    def T_model77_old(t):
-        # https://chat.deepseek.com/a/chat/s/d9a11bdb-f2ce-4c34-b14e-492b673e0a4e
-        # Define the three points
-        #t1, y1 = 1980, 0.5  # 
-        t1, y1 = 1950, 0.2 
-        t2, y2 = 2013, 1.0
-        t3, y3 = 2023, 1.5
-        # Lagrange interpolation
-        term1 = y1 * ((t - t2) * (t - t3)) / ((t1 - t2) * (t1 - t3))
-        term2 = y2 * ((t - t1) * (t - t3)) / ((t2 - t1) * (t2 - t3))
-        term3 = y3 * ((t - t1) * (t - t2)) / ((t3 - t1) * (t3 - t2))
-        return term1 + term2 + term3
-
     if plot76_my_T > 0:
-       # 7.6.2 years scale x axis
+       # 76.2 years scale x axis
        years76 = np.arange(x_anf, x_end + 1 )
-       T_76values = T_model76(years76)
+       T_76values = T_76(years76)
        #print(T_76values)
-       # 7.6.3. Create DataFrame for convenience
+       # 76.3. Create DataFrame for convenience
        df76 = pd.DataFrame({
              "Year76":      years76,
              "Modeled76": T_76values })
-       # 7.6.4 plot76_temperature
-       # print(df76.head(2))
-       #print(T_model76(1950) ,"  1950")  # 0.2
-       #print(T_model76(2013) ,"  2013")  # 1.0
-       #print(T_model76(2023) ,"  2023")
-       #print(T_model76(2026) ,"  2026")  # 1.5
-       #print(T_model76(2028) ,"  2028")  # 1.5
+       # 76.4 plot76_temperature
        ax76 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
        ax76.plot(df76["Year76"], df76["Modeled76"], '--', label="T formula CO2=  K76", color=c76, linewidth=3)
        ax76.tick_params(axis="y", labelcolor=c76)
-       ax76.set_ylim(y_Tmin, y_Tmax) # scale
+       ax76.set_ylim(y_76min, y_76max) # scale
        if print_debug > 9:
-            print(f"plot1108: ax76 ={plot76_my_T} {'='*2}")
-
+            print(f"plot1326: ax76 ={plot76_my_T} {'='*2}")
        if plot76_my_T > 2:
             plot8_right_y_axe_for_T_76(ax76,0) # 76.5 line 540
        # end 7.6 plot76_my_T

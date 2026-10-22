@@ -1,5 +1,5 @@
 # main.py
-v = "5H42" # line2_play = 61
+v = "5H43" # line2_play = 61
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -307,15 +307,14 @@ def hide_other_right_axes(ax1, keep_axis):
                 ax.tick_params(right=False, labelright=False)
 
 def load_plot_data():
-    """Load all data needed for plotting"""
     data = {}
-    
     # Load CO2 data if needed
     if plot22_CO2_Mauna_Loa > 0:  # 22.3 load the mauna loa CO2 data
         data['co2'] = load_co2_mauna_loa(x_anf, x_end)
         if print_debug > 19:
            print(f"main_168: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
-           print(f"main_169: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")        
+           print(f"main_169: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")     
+              
     if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
         data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
@@ -337,13 +336,10 @@ def load_plot_data():
         data['ceres_46'] = pd.read_csv("read_csv/_46_ASR_48month_2026_08.csv")
         if print_debug > 9:
            print(f"main_302: ASR read 46.1 ={plot46_ASR}")
-
     if plot47_albedo48 > 0: # _64c_ASR.csv read_csv/_47_ASR_12month_2026_02.csv
         data['ceres_47'] = pd.read_csv("read_csv/_47_albedo_48month_2026_08.csv")
         if print_debug > 9:
            print(f"main_316: 47.2 read ={plot47_albedo48}")
-
-
 
     # part 5.2 plot52_delta_CO2_red_bars
     # part 5.3 plot53_CO2_orange2025
@@ -357,6 +353,7 @@ def load_plot_data():
     if plot52_delta_CO2_red_bars > 0: # 52.3
         if print_debug > 9:
            print(f"main_193: plot52_delta_CO2_red_bars # 52.3 ={plot52_delta_CO2_red_bars}")
+
     if play_61_EEI > 0: # 61.9 read
         data['ceres_61'] = pd.read_csv("work/61c_out_EEI.csv")
         if print_debug > 9:
@@ -375,7 +372,6 @@ def load_plot_data():
         data['ceres_65'] = pd.read_csv("work/_CERES_65_ASR.csv")
         if print_debug > 9:
            print(f"main_355: 65.9 read ={play_65_ASR}")  
-
     if play_66_OLR > 0: # 66.9 read 'work/_66c_OLR.csv'
         data['ceres_66'] = pd.read_csv("work/_66c_OLR.csv")
         if print_debug > 9:
