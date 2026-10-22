@@ -513,6 +513,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
         p61_text = f"Earth Energy Imbalance [W/m²]  CERES 2026_08     moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
+    elif plot74_GIS_T == 6: # 74.6
+            text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c74)
+            text_4_add_text(ax1, tr2x, tr6y, text74 , c74, trs)
     else:
         p62_text = f"Parameter {header_parameter}  Text 192:"
         text_4_add_text(ax1, tr2x, tr6y, p62_text, "black", 16) 
