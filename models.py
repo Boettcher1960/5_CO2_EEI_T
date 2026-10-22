@@ -526,6 +526,18 @@ def T_model71_not_called(t):
         # 2025
 # https://www.annualreviews.org/content/journals/10.1146/annurev-earth-032320-064209
 #
+#
+# def T_model72(t):
+#          CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
+#          log2_value = np.log2(CO2/C280)
+#          AESS=8 # apparent Earth system sensitivity (AESS=7.7°C)
+#          temp72=AESS * log2_value
+#          return temp72
+#        
+#        years72 = np.arange(x_anf, x_end + 1 )
+#
+#        T_72values = T_model72(years72)
+# # 72.44 call define T_72: from models.py line 540   
 def T_72(t):
           CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
           log2_value = np.log2(CO2/C280)

@@ -1176,28 +1176,16 @@ def plot_9_create_all_plots(ax1, data):
         # end  # 71.77
 
     if plot72_AESS_T > 0 : # 72.4
-    # 71.42 years scale x axis
-        def T_model72(t):
-          CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
-          log2_value = np.log2(CO2/C280)
-          AESS=8 # apparent Earth system sensitivity (AESS=7.7°C)
-          temp72=AESS * log2_value
-          return temp72
-        
+        # 72.42 years scale x axis
         years72 = np.arange(x_anf, x_end + 1 )
-
-        T_72values = T_model72(years72)
+                  # old local define T_72values = T_model72(years72)
+        # 72.44 call define T_72: from models.py line 540         
+        T_72values = T_72(years72)
+        # 72.50 copy data to data frame df72 Create DataFrame for convenience
         df72 = pd.DataFrame({
                "Year72":      years72,
                "Modeled72": T_72values })
-        
-        # 71.43 see models.px line 500
-        # T_72values = T_72(years72)
-        # 71.46 Create DataFrame for convenience
-        df72 = pd.DataFrame({
-              "Year72": years72,
-              "Modeled72": T_72values })
-        # 71.47 case line 2 use the left y axis (ax1) instead of creating a right axis
+        # 71.57 case line 2 use the left y axis (ax1) instead of creating a right axis
         if plot72_AESS_T == 2:
            ax1.plot(df72["Year72"], df72["Modeled72"], '--', label="T formula CO2=  K6", color=c72, linewidth=3)
            # The left y-axis is already configured in plot_1_axe
@@ -1206,8 +1194,8 @@ def plot_9_create_all_plots(ax1, data):
            ax72.plot(df72["Year72"], df72["Modeled72"], '--', label="T formula CO2=  K72", color=c72, linewidth=3)
            ax72.tick_params(axis="y", labelcolor=c72)
            
-           ax72.set_ylim(y_72min, y_72max) #  # 71.54 scale
-           # 71.56 call plotting.px line 520
+           ax72.set_ylim(y_72min, y_72max) #  # 72.64 scale
+           # 72.66 call plotting.px line 520
            if plot72_AESS_T > 2:
               plot8_right_y_axe_for_T_72(ax72,0)
         # end  # 72.77
