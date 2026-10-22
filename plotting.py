@@ -1217,9 +1217,6 @@ def plot_9_create_all_plots(ax1, data):
               plot8_right_y_axe_for_T_72(ax72,0)
         # end  # 72.77
 
-       
-
-
     if plot73_ECS_T > 0 : # 73.40
         # plot73_ECS_T Earth Climate sensitivity 
         # 7.3  dT=ECS*log2(C/C0) # T560ppm=ECS*log2(560/280) 

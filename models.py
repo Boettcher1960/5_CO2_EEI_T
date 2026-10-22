@@ -471,6 +471,37 @@ def T_model76(t):
 # 67.33 copy to work/_67_albedo48months_2026_08.csv'
 # 2026.10.20 play_67_albedo = 48 
 
+
+
+#########################################################
+# 68   play68_ERA          ##############################
+#########################################################
+#  https://pulse.climate.copernicus.eu/
+#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download
+#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels
+#        https://earthkit.ecmwf.int/
+# 68.1 https://bsky.app/profile/climatecasino.net/post/3mxoo2l7acs26 made a 4 years 
+#  running average plot with this path 
+#  https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+# 68.2 make empty csv file work/_era5_empty.csv
+# 68.3 open https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+# 68.4 select all and copy
+# 68.5 in csv file work/_era5_empty.csv paste all
+# 68.6 save as work/_88_era5_daily_series_2026_10_13.csv and delete the first lines with #
+#   the columns are date,2t,clim_91-20,ano_91-20,status
+# 68.7 the column ano_91-20 are the temperature data 
+# 68.8 in config.py declare   play68_ERA = 48
+# 68.10 the main.py part lin2 266
+# 68.15  call create68_running_average for global era5 temperature from main
+# 68.17 DP read work/_68_era5_daily_series_2026_10_13.csv data-frame
+# 68.33 data_processing.py end line 507 (end perform averaging for play68_ERA )
+# 68.39 main.py line 377 read  work/_68_out.csv into  'era_68'
+# 66.44 plotting.py line 1044 plot era_68 data
+# 2026.10.20 works with play68_ERA = 1095 # 1461, 1095, 720, 365, 24  
+
+
+
+
 #########################################################
 # 71     plot71_temperature   ##############################
 #########################################################
@@ -559,3 +590,30 @@ def T_73(t):
            ECS = 4.5
            temp73 = ECS * log2_value
            return temp73
+# 2026.10.22 plots plot73_ECS_T = 3
+
+
+#########################################################
+# 73     plot74_GIS_T     ##############################
+#########################################################
+#
+#
+# 2026.10.22 plots plot74_GIS_T = 2
+
+
+#########################################################
+# 74 GISS Hansen temperature ##############################
+#########################################################
+# best read_csv/_74_gis_temperature.csv
+# https://data.giss.nasa.gov/gistemp/ 
+# https://data.giss.nasa.gov/gistemp/gmsta/
+# https://datahub.io/core/global-temp
+# download GIS_annual.numbers
+# https://github.com/datasets/global-temp
+# https://www.columbia.edu/~jeh1/
+# https://www.columbia.edu/~jeh1/Data/Temperature/
+#    landocean_1880_full(1).txt
+#    https://www.columbia.edu/~jeh1/Data/Temperature/#ref1
+#
+#
+# 2026.10.22 plots plot74_GIS_T = 2
