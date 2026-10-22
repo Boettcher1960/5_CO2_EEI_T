@@ -58,7 +58,7 @@ plot72_AESS_T = 0 # 2 , 3
 plot73_ECS_T = 0 # 3
 plot74_GIS_T = 2 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
-plot76_my_T = 5 # 3
+plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 3 # Tom Harris
 
@@ -220,7 +220,7 @@ y_77min = 0 #  Temperature
 y_77max = 4 #  Temperature 
 y_78min = 0 #  Temperature  
 y_78max = 4 #  Temperature 
-x_anf = 2004
+x_anf = 1960
 x_end = 2057
 
 # constants
