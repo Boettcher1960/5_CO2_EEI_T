@@ -663,7 +663,7 @@ def plot8_right_y_axe_for_T_78(ax78,right52): # 78.6
         ax78.yaxis.set_ticks([])
         ax78.spines['right'].set_visible(False)
     else:    
-       ax78.set_ylabel("Temperature in °C        plot635         78", color=c78, fontname="Arial",fontsize=18)
+       ax78.set_ylabel("Temperature in °C  Tom Harris     78", color=c78, fontname="Arial",fontsize=18)
        ax78.tick_params(axis="y", labelcolor=c78)
 
       

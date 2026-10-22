@@ -60,7 +60,7 @@ plot74_GIS_T = 0 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
-plot_T_78 = 4 # 3 , 4 Tom Harris
+plot_T_78 = 5 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 68   # 61  62
@@ -220,7 +220,7 @@ y_77min = 0 #  Temperature
 y_77max = 4 #  Temperature 
 y_78min = 0 #  for Tom Harris Temperature 
 y_78max = 4 #  for Tom Harris Temperature
-x_anf = 2004
+x_anf = 1980
 x_end = 2057
 
 # constants
