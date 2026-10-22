@@ -57,7 +57,7 @@ plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
 plot74_GIS_T = 2 # 2, 3,4,5 =right y axis
-linear_41_75 = 0 # 3 4 5
+linear_41_75 = 3 # 3 4 5
 plot76_my_T = 0
 plot_T_77 = 0 # 3, 4
 
@@ -120,7 +120,6 @@ p41_text = "Earth Energy Imbalance W/m² moving average 12 month 41"
 text42 = "Earth Energy Imbalance W/m² moving average 48 month 42"
 text43 = "Earth Energy Imbalance in W/m²                                  moving average 12 month    43"
 p44_text = "Earth Energy Imbalance W/m² moving average 44"
-print74_text = "Temperature in °C giss.nasa.gov Hansen+0.3°C 74 n"
 print75_text = "Hansen linear fit from 2015 +0.41°C 75"  # Added for linear_41_75
 text55 = "Green line: Earth Population in billion                                               55"
 text71 = "Temperature in °C 0.000618t² - 2.459 t + 2446.0579            from  @reescatophul     71"
@@ -128,6 +127,7 @@ text71 = "Temperature in °C 0.000618t² - 2.459 t + 2446.0579            from  
 # "Temperature in °C 0.0004t² + 0.0019 t + 0.5079     from Tom Harris                         71", 
 text72 = "Temperature in °C   AESS Apparent Earth System Sensitivity = 8°C * log2(CO2/C0  72"
 text73 = "Temperature in °C   Earth Climate sensitivity              dT = ECS * log2 ( C / C0 )      73"
+text75 = "Hansen linear fit   from 2015    +0.41°C                       75"  # Added for linear_41_75
 
 my76_text = "guessed quadratic temperature my_T 76"
 
@@ -208,11 +208,11 @@ y_73min = 0
 y_73max = 6 # 
 y_74min = 0  # for GIS Temperature 
 y_74max = 2  # for GIS Temperature 
-y_75min = 0.2 #  Temperature  
+y_75min = 0 #  Temperature  
 y_75max = 2   #  Temperature 
 
-x_anf = 1990
-x_end = 2057
+x_anf = 2004
+x_end = 2027
 
 # constants
 # C280 =275 in Zack Labe plots.
