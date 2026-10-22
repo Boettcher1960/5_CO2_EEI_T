@@ -108,7 +108,7 @@ c74 = "red"
 c75 = "#371EA484"
 c76 = "#13DF2F84"
 c77 = "#34753D84"
-c78 = "#8FE32084"
+c78 = "#9D2A9984"
 
 # Text definitions (added missing print texts)
 blue22_text      = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm)                          22"
@@ -133,8 +133,8 @@ text73 = "Temperature in °C   Earth Climate sensitivity              dT = ECS *
 text74 = "Temperature in °C   giss.nasa.gov   Hansen+0.3°C                                                   74"  
 text75 = "Hansen linear fit   from 2015    +0.41°C                       75"  # Added for linear_41_75
 text76 = "Temperature in °C   my guess quadratic increase                                                      76" 
-text77 = "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2022=1.5°C         77" 
-text78 = "Temperature in °C   quadratic       Tom Harris        78" 
+text77 = "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2022=1.5°C       77" 
+text78 = "Temperature in °C   quadratic       Tom Harris  y = 0.0004x2 + 0.0019x + 0.5079      78" 
 
 
 # Axis ranges

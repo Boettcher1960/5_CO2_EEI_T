@@ -85,8 +85,9 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"Temperature in °C     72  plot72_AESS_T      year {x_anf} to {x_end}"
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
     elif plot74_GIS_T == 2:
-        header = f"Global Surface Temperature GISS (74 Hansen +0.3°C ) years {x_anf} to {x_end}."       
-        ax1.text(-0.1, 1.05, header, color=c74, fontname="Arial", fontsize=trs,
+        # header = f"Global Surface Temperature GISS (74 Hansen +0.3°C ) years {x_anf} to {x_end}."   
+        header = f"Global Surface Temperature in °C       year {x_anf} to {x_end}."       
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                         transform=ax1.transAxes)
     elif yl_mode == 4:
         header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Aug. 2026 data. Plot {x_anf} to {x_end}."
@@ -336,6 +337,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot_T_77 == 3: # 77.5.3 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c77)
         text_4_add_text(ax1, tr2x, tr3y, text77, c77, trs)
+    elif plot_T_78 == 3: # 78.5.3 legend
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c78)
+        text_4_add_text(ax1, tr2x, tr3y, text78, c78, trs)
 
 
     # row 4,      print line 4 below the plot ,     text_9_print_7_lines() ,           line 229

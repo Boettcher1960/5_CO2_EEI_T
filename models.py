@@ -513,16 +513,7 @@ def T_71_rees(t):
     return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
 # 2026.10.22 plots plot71_temperature = 2
 # 2026.10.22 plots plot71_temperature = 3
-
-
-# this is too low :
-#        def T_model71(t):
-#                 y = 0.0004x2 + 0.0019x + 0.5079 
-#                https://substack.com/@drtomharris/note/c-365674298
-#                Tom Harris  
-#                return 0.0004 * x**2 + 0.0019 * x + 0.5079
-#            x = t - 1980
-#            return 0.0004 * x**2 + 0.0019 * x + 0.5079
+#
 def T_model71_not_called(t):
     """Quadratic temperature model 
     https://substack.com/@drtomharris/note/c-365674298
@@ -703,6 +694,14 @@ def T_77(t):
 # plot_T_78 = 3 # Tom Harris
 #
 #
+# this is too low :
+#        def T_model78(t):
+#                 y = 0.0004x2 + 0.0019x + 0.5079 
+#                https://substack.com/@drtomharris/note/c-365674298
+#                Tom Harris  
+#                return 0.0004 * x**2 + 0.0019 * x + 0.5079
+#            x = t - 1980
+#            return 0.0004 * x**2 + 0.0019 * x + 0.5079
 def T_78(t):
         #t1, y1 = 1980, 0.5  # 
         t1, y1 = 1950, 0.2 
