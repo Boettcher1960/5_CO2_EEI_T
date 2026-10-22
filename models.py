@@ -514,13 +514,6 @@ def T_71_rees(t):
 # 2026.10.22 plots plot71_temperature = 2
 # 2026.10.22 plots plot71_temperature = 3
 #
-def T_model71_not_called(t):
-    """Quadratic temperature model 
-    https://substack.com/@drtomharris/note/c-365674298
-    https://substack.com/@drtomharris/note/c-365674298
-    y = 0.0004x2 + 0.0019x + 0.5079
-    """
-    return 0.0004 * t**2 + 0.0019 * t + 0.5079
 
 
 #########################################################
@@ -703,15 +696,7 @@ def T_77(t):
 #            x = t - 1980
 #            return 0.0004 * x**2 + 0.0019 * x + 0.5079
 def T_78(t):
-        #t1, y1 = 1980, 0.5  # 
-        t1, y1 = 1950, 0.2 
-        t2, y2 = 2013, 1.0
-        t3, y3 = 2022, 1.5
-        # Lagrange interpolation
-        term1 = y1 * ((t - t2) * (t - t3)) / ((t1 - t2) * (t1 - t3))
-        term2 = y2 * ((t - t1) * (t - t3)) / ((t2 - t1) * (t2 - t3))
-        term3 = y3 * ((t - t1) * (t - t2)) / ((t3 - t1) * (t3 - t2))
-        return term1 + term2 + term3
-
-
-
+    x = t - 1980
+    return 0.0004 * x**2 + 0.0019 * x + 0.5079
+#
+# 2026.10.22 plots   plot_T_78  = 3 formula  good
