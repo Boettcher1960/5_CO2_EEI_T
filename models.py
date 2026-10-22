@@ -571,6 +571,16 @@ def T_72(t):
 #########################################################
 # plot73_ECS_T Earth Climate sensitivity 
 # 7.3  dT=ECS*log2(C/C0) # T560ppm=ECS*log2(560/280) 
+#
+#
+def T_model73_not_used(t):
+    """Earth Climate Sensitivity (ECS) model"""
+    CO2 = 0.0132251 * t**2 - 51.0337 * t + 49536.7
+    log2_value = np.log2(CO2 / C280)
+    ECS = 4.5
+    return ECS * log2_value
+#
+#
 def T_73(t):
            CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
            log2_value = np.log2(CO2/C280)
@@ -580,8 +590,9 @@ def T_73(t):
 # 2026.10.22 plots plot73_ECS_T = 3
 
 
+
 #########################################################
-# 73     plot74_GIS_T     ##############################
+# 74     plot74_GIS_T     ##############################
 #########################################################
 #
 #
@@ -608,19 +619,6 @@ def load74_gis_T():
     return pd.read_csv("read_csv/_74_gis_temperature.csv")
 
 
-def T_model72(t):
-    """Apparent Earth System Sensitivity (AESS) model"""
-    CO2 = 0.0132251 * t**2 - 51.0337 * t + 49536.7
-    log2_value = np.log2(CO2 / C280)
-    AESS = 8
-    return AESS * log2_value
-
-def T_model73(t):
-    """Earth Climate Sensitivity (ECS) model"""
-    CO2 = 0.0132251 * t**2 - 51.0337 * t + 49536.7
-    log2_value = np.log2(CO2 / C280)
-    ECS = 4.5
-    return ECS * log2_value
 
 
 
