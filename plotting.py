@@ -610,10 +610,12 @@ def plot8_right_y_axe_for_T_76(ax76,right52): # 76.6
     # ax76.spines.right.set_position(("outward", rightv))
     if right52 > 0:
         outward_right = right52
+    elif plot76_my_T == 3: # 76.61 scale for line 3 the first y axis on the left
+        outward_right =  ( 2.5 * yr_60 ) - yr_150
     else:
         outward_right =  ( plot76_my_T * yr_60 ) - yr_150
     ax76.spines.right.set_position(("outward", outward_right))
-    ax76.set_ylabel("Temperature in °C        plot559          76", color=c76, fontname="Arial",fontsize=18)
+    ax76.set_ylabel("Temperature in °C     76", color=c76, fontname="Arial",fontsize=18)
     ax76.tick_params(axis="y", labelcolor=c76)
     
 # plot8_right_y_axe_for_T_77 ,     plot_T_77    ,   my quadratic   ,  line  604

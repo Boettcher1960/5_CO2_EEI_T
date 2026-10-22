@@ -327,15 +327,13 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, text73, c73, trs)
     elif plot74_GIS_T == 3: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
-        text_4_add_text(ax1, tr2x, tr3y, 
-                   "Temperature in °C giss.nasa.gov Hansen+0.3°C                                                       74", c74, trs)
+        text_4_add_text(ax1, tr2x, tr3y, text74, c74, trs)
     elif linear_41_75 == 3: # 75.6
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c75)
             text_4_add_text(ax1, tr2x, tr3y, text75, c75, trs)
     elif plot76_my_T == 3: # 76.5.3 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c76)
-        text_4_add_text(ax1, tr2x, tr3y, 
-                    "Temperature in °C   my guess quadratic increase                                                      76", c76, trs)
+        text_4_add_text(ax1, tr2x, tr3y, text76, c76, trs)
     elif plot_T_77 == 3: # 77.5.3 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c77)
         text_4_add_text(ax1, tr2x, tr3y, 
