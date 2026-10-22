@@ -53,8 +53,8 @@ play_66_OLR = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwav
 play_67_albedo = 0   # create 1..12..48..99 CERES
 play68_ERA = 1095 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 
-plot71_temperature = 0 # 2 3 5
-plot72_AESS_T = 2 # 3
+plot71_temperature = 2 # 2 3 5
+plot72_AESS_T = 3 # 2 , 3 
 plot73_ECS_T = 0
 plot74_GIS_T = 0 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
