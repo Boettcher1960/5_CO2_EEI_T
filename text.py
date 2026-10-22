@@ -335,9 +335,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, text76, c76, trs)
     elif plot_T_77 == 3: # 77.5.3 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c77)
-        text_4_add_text(ax1, tr2x, tr3y, 
-                    "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2022=1.5°C         77", c77, trs)
-
+        text_4_add_text(ax1, tr2x, tr3y, text77, c77, trs)
 
 
     # row 4,      print line 4 below the plot ,     text_9_print_7_lines() ,           line 229

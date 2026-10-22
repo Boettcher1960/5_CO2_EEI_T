@@ -622,15 +622,17 @@ def plot8_right_y_axe_for_T_76(ax76,right52): # 76.6
 def plot8_right_y_axe_for_T_77(ax77,right52): # 77.6 
     if right52 > 0:
         outward_right = right52
+    elif plot_T_77 == 3: # 76.61 scale for line 3 the first y axis on the left
+        outward_right =  ( 2.5 * yr_60 ) - yr_150
     else:
         outward_right =  ( plot_T_77 * yr_60 ) - yr_150
     ax77.spines.right.set_position(("outward", outward_right))
-    if plot74_GIS_T == 2: # T axis already on the left
+    if plot_T_77 == 2: # T axis already on the left
         print(f"plot 496: no need for second T axis on the right ax77 ={plot_T_77} {'='*2}")
         ax77.yaxis.set_ticks([])
         ax77.spines['right'].set_visible(False)
     else:    
-       ax77.set_ylabel("Temperature in °C        plot570          77", color=c77, fontname="Arial",fontsize=18)
+       ax77.set_ylabel("Temperature in °C        plot635         77", color=c77, fontname="Arial",fontsize=18)
        ax77.tick_params(axis="y", labelcolor=c77)
       
 # plot_9_create_all_plots(ax1, data): line 436 600
@@ -1356,7 +1358,7 @@ def plot_9_create_all_plots(ax1, data):
        ax77 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
        ax77.plot(df77["Year77"], df77["Modeled77"], '--', label="T formula CO2=  K77", color=c77, linewidth=3)
        ax77.tick_params(axis="y", labelcolor=c77)
-       ax77.set_ylim(y_Tmin, y_Tmax) # scale
+       ax77.set_ylim(y_77min, y_77max) # scale
        if print_debug > 9:
             print(f"plot1143: no need for second T axis on the right ax77 ={plot_T_77} {'='*2}")
        if plot_T_77 > 2:

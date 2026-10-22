@@ -58,8 +58,8 @@ plot72_AESS_T = 0 # 2 , 3
 plot73_ECS_T = 0 # 3
 plot74_GIS_T = 2 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
-plot76_my_T = 3
-plot_T_77 = 0 # 3, 4
+plot76_my_T = 0 # 3
+plot_T_77 = 3 # 3, 4
 
 # variable to show play variable in line 4
 line2_play = 0   # 61  62
@@ -129,7 +129,7 @@ text73 = "Temperature in °C   Earth Climate sensitivity              dT = ECS *
 text74 = "Temperature in °C   giss.nasa.gov   Hansen+0.3°C                                                   74"  
 text75 = "Hansen linear fit   from 2015    +0.41°C                       75"  # Added for linear_41_75
 text76 = "Temperature in °C   my guess quadratic increase                                                      76" 
-
+text77 = "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2022=1.5°C         77" 
 
 
 
@@ -210,7 +210,10 @@ y_74min = 0  # for GIS Temperature
 y_74max = 2  # for GIS Temperature 
 y_75min = 0 #  Temperature  
 y_75max = 2   #  Temperature 
-
+y_76min = 0 #  Temperature  
+y_76max = 2   #  Temperature 
+y_77min = 0 #  Temperature  
+y_77max = 2   #  Temperature 
 x_anf = 2004
 x_end = 2027
 
