@@ -517,19 +517,21 @@ def plot8_right_y_axe_for_C_68(ax68,right62): # 68.50
     ax68.tick_params(axis="y", labelcolor=c68)
     ax68.set_ylim(y_68min, y_68max) #
 
-
-# plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
+# 71.57 call plotting.px line 520
 def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
     if right52 > 0:
         outward_right = right52
-    elif plot71_temperature == 3:
+    elif plot71_temperature == 3: # 71.61 scale for line 3 the first y axis on the left
         outward_right =  ( 2.5 * yr_60 ) - yr_150
-    else:
-                outward_right =  ( plot71_temperature * yr_60 ) - yr_150
-    ax71.spines.right.set_position(("outward", outward_right))
-    ax71.set_ylabel("Temperature in °C    71", color=c71, fontname="Arial",fontsize=18)
-    ax71.tick_params(axis="y", labelcolor=c71)
-    ax71.set_ylim(y_71min, y_71max) #
+    elif plot71_temperature == 4: # 71.62 scale for line 4 the second y axis on the left
+            outward_right =  ( 4.5 * yr_60 ) - yr_150    
+    else: # 71.62 scale for 
+        outward_right =  ( plot71_temperature * yr_60 ) - yr_150
+    # 71.67    
+    ax71.spines.right.set_position(("outward", outward_right))    # 71.67 
+    ax71.set_ylabel("Temperature in °C    71", color=c71, fontname="Arial",fontsize=18)  # 71.68
+    ax71.tick_params(axis="y", labelcolor=c71)   # 71.70 
+    ax71.set_ylim(y_71min, y_71max) # 71.72 the plotted values outside the graph y xis
 
 # plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
 def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6 
@@ -1130,40 +1132,25 @@ def plot_9_create_all_plots(ax1, data):
         if play68_ERA > 2:
            plot8_right_y_axe_for_C_68( ax68 , 0 ) # part
 
-    if plot71_temperature > 0 : # 71.4
-        # red71_text="red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"
-        # red71_text="red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C  71"
-        # 7.1 plot71_temperature @reescatophuls.bsky.social
-        # https://parisagreementtemperatureindex.com/gwfs-2-quadratic/
-        # (0.000617965091650558 * date*date) – (2.45858656778789*date) + 2446.05792853123
-        def T_model71(t):
-            return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
-        # def T_model71_Harris(t):
-           # y = 0.0004x2 + 0.0019x + 0.5079 
-           #     https://substack.com/@drtomharris/note/c-365674298
-           #     Tom Harris  
-           #     return 0.0004 * x**2 + 0.0019 * x + 0.5079
-           # 
-           # x = t - 1980
-           # return 0.0004 * x**2 + 0.0019 * x + 0.5079
-
-        
-        # 7.1.2 years scale x axis
+    if plot71_temperature > 0 : # 71.41
+        # 71.42 years scale x axis
         years71 = np.arange(x_anf, x_end + 1 )
-        # T_71values = T_model71(years71)
+        # 71.43 see models.px line 500
         T_71values = T_71_rees(years71)
 
-        # 7.1.3. Create DataFrame for convenience
-        df7 = pd.DataFrame({
+        # 71.46 Create DataFrame for convenience
+        df71 = pd.DataFrame({
               "Year71": years71,
               "Modeled71": T_71values })
+        # 71.48 
         ax71 = ax1.twinx()
-        ax71.plot(df7["Year71"], df7["Modeled71"], '--', label="T formula CO2=  K6", color=c71, linewidth=3)
+        # 71.50 plot
+        ax71.plot(df71["Year71"], df71["Modeled71"], '--', label="T formula CO2=  K6", color=c71, linewidth=3)
         ax71.tick_params(axis="y", labelcolor=c71)
-        ax71.set_ylim(y_71min, y_71max) # scale
-        # plot8_right_y_axe_for_T_71 ,  plot71_temperature                            ,  line  525
-        plot8_right_y_axe_for_T_71(ax71,0) # 71.5 line 35
-        # end 7.1 
+        ax71.set_ylim(y_71min, y_71max) #  # 71.54 scale
+        # 71.56 call plotting.px line 520
+        plot8_right_y_axe_for_T_71(ax71,0) 
+        # end  # 71.77
 
     if plot72_AESS_T > 0 : # 72.4
         # plot72_AESS_T= 4 # apparent Earth system sensitivity (AESS=7.7°C)

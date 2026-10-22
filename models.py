@@ -9,27 +9,6 @@ from config import *
 
 C280 = 280
 
-# red71_text="red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"
-        # red71_text="red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C  71"
-        # 7.1 plot71_temperature @reescatophuls.bsky.social
-        # https://parisagreementtemperatureindex.com/gwfs-2-quadratic/
-        # (0.000617965091650558 * date*date) – (2.45858656778789*date) + 2446.05792853123
-def T_71_rees(t):
-    return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
-
-
-
-def T_model71_not_called(t):
-    """Quadratic temperature model 
-    https://substack.com/@drtomharris/note/c-365674298
-    https://substack.com/@drtomharris/note/c-365674298
-    y = 0.0004x2 + 0.0019x + 0.5079
-    """
-    return 0.0004 * t**2 + 0.0019 * t + 0.5079
-
-def T_model71old(t):
-    """Quadratic temperature model from @reescatophuls.bsky"""
-    return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
 
 
 def T_model72(t):
@@ -50,25 +29,6 @@ def T_model76(t):
     """My best temperature model"""
     x = t - 2000
     return 0.00034 * x**2 + 0.0238 * x + 0.74
-
-
-# 7 part 1
-# red71_text="red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"
-red71_text="red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C  71"
-# 7.1 plot71_temperature @reescatophuls.bsky.social
-# https://parisagreementtemperatureindex.com/gwfs-2-quadratic/
-# (0.000617965091650558 * date*date) – (2.45858656778789*date) + 2446.05792853123
-def T_model71(t):
-   return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
-# 7.1.2 years scale x axis
-years71 = np.arange(x_anf, x_end + 1 )
-T_71values = T_model71(years71)
-# 7.1.3. Create DataFrame for convenience
-# df7 = pd.DataFrame({
-#      "Year71": years71,
-#      "Modeled71": T_71values })
-
-
 
 
 
@@ -514,14 +474,29 @@ T_71values = T_model71(years71)
 #########################################################
 # 71     plot71_temperature   ##############################
 #########################################################
-# red71_text="red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"
-# red71_text="red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C  71"
-# 7.1 plot71_temperature @reescatophuls.bsky.social
+# reescatophuls works
+# https://parisagreementtemperatureindex.com/gwfs-2-quadratic/
+#
+#    From 1970 -> July 2000, use the Loess-30-year-trend
+#    From Aug 2000 -> 2050 use the quadratic best fit line:
+#        (0.000617965091650558 * date*date) – (2.45858656778789*date) + 2446.05792853123
+#        This quadratic best fit line has been calculated using the Copernicus ERA5 Data from 1995 to September 2025.
+#
+# reescatophuls works
+#  def T_model71_copy1(t):
+#      return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+#  "red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"
+#  "red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C  71"
+# 
 # https://parisagreementtemperatureindex.com/gwfs-2-quadratic/
 # (0.000617965091650558 * date*date) – (2.45858656778789*date) + 2446.05792853123
-# this works:
-# def T_model71a(t):
-#    return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+# 71.44 models.px line 500
+def T_71_rees(t):
+    return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+
+
+
+
 # this is too low :
 #        def T_model71(t):
 #                 y = 0.0004x2 + 0.0019x + 0.5079 
@@ -530,5 +505,14 @@ T_71values = T_model71(years71)
 #                return 0.0004 * x**2 + 0.0019 * x + 0.5079
 #            x = t - 1980
 #            return 0.0004 * x**2 + 0.0019 * x + 0.5079
+def T_model71_not_called(t):
+    """Quadratic temperature model 
+    https://substack.com/@drtomharris/note/c-365674298
+    https://substack.com/@drtomharris/note/c-365674298
+    y = 0.0004x2 + 0.0019x + 0.5079
+    """
+    return 0.0004 * t**2 + 0.0019 * t + 0.5079
+
+
 
 
