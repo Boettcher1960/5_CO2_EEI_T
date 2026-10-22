@@ -32,10 +32,9 @@ import matplotlib.pyplot as plt
 # Import modules
 from config import *
 from data_processing import *
-from data_processing import *
+from models import *
 from text import *
-# from config import play_62_EEA
-from config import plot34_CO2_emission
+# from config import plot34_CO2_emission
 
 if print_debug > 12:
    print("plotting: TOA", y_TOAmin, y_TOAmax, plot34_CO2_emission, play_61_EEI)
@@ -1151,7 +1150,9 @@ def plot_9_create_all_plots(ax1, data):
         
         # 7.1.2 years scale x axis
         years71 = np.arange(x_anf, x_end + 1 )
-        T_71values = T_model71(years71)
+        # T_71values = T_model71(years71)
+        T_71values = T_71_rees(years71)
+
         # 7.1.3. Create DataFrame for convenience
         df7 = pd.DataFrame({
               "Year71": years71,

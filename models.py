@@ -9,6 +9,16 @@ from config import *
 
 C280 = 280
 
+# red71_text="red @reescatophuls.bsky :  Temperature = 0.000618t² - 2.459 t + 2446.0579"
+        # red71_text="red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C  71"
+        # 7.1 plot71_temperature @reescatophuls.bsky.social
+        # https://parisagreementtemperatureindex.com/gwfs-2-quadratic/
+        # (0.000617965091650558 * date*date) – (2.45858656778789*date) + 2446.05792853123
+def T_71_rees(t):
+    return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
+
+
+
 def T_model71_not_called(t):
     """Quadratic temperature model 
     https://substack.com/@drtomharris/note/c-365674298
