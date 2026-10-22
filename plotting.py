@@ -216,12 +216,13 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot72_AESS_T == 2:  # 72.5 y axe left  red quadratic Temperature = 0.000618t² - 2.459 t + 2446.0579 in °C 71
         # ax42.spines.right.set_position(("outward", outward_right))
-        ax1.spines.left.set_position(("outward", 3))
-        ax1.set_ylim(y_Tmin, y_Tmax)
-        ax1.set_ylabel(" Temperature in °C      72  (plot188)  ", color=c72, fontsize=20)
+        # ax1.spines.left.set_position(("outward", 3))
+        ax1.spines.left.set_position(("outward", 0))
+        ax1.set_ylim(y_72min, y_72max)
+        ax1.set_ylabel(" Temperature in °C      72  AESS  ", color=c72, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c72, labelsize=20)
-        y_mayor_ticks = 1 
-        y_minor_ticks = 0.5
+        y_mayor_ticks = 1
+        y_minor_ticks = 0.200
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot73_ECS_T == 2:  # 73.5 y axe left  red 
@@ -532,6 +533,24 @@ def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
     ax71.set_ylabel("Temperature in °C    71", color=c71, fontname="Arial",fontsize=18)  # 71.68
     ax71.tick_params(axis="y", labelcolor=c71)   # 71.70 
     ax71.set_ylim(y_71min, y_71max) # 71.72 the plotted values outside the graph y xis
+
+
+# 71.57 call plotting.px line 538
+def plot8_right_y_axe_for_T_72(ax72,right52): # 72.6 plot71_temperature
+    if right52 > 0:
+        outward_right = right52
+    elif plot72_AESS_T == 3: # 71.61 scale for line 3 the first y axis on the left
+        outward_right =  ( 2.5 * yr_60 ) - yr_150
+    elif plot72_AESS_T == 4: # 71.62 scale for line 4 the second y axis on the left
+            outward_right =  ( 4.5 * yr_60 ) - yr_150    
+    else: # 71.62 scale for 
+        outward_right =  ( plot71_temperature * yr_60 ) - yr_150
+    # 71.67    
+    ax72.spines.right.set_position(("outward", outward_right))    # 71.67 
+    ax72.set_ylabel("Temperature in °C    72", color=c72, fontname="Arial",fontsize=18)  # 71.68
+    ax72.tick_params(axis="y", labelcolor=c72)   # 71.70 
+    ax72.set_ylim(y_72min, y_72max) # 71.72 the plotted values outside the graph y xis
+
 
 # plot8_right_y_axe_for_T_74 ,     plot74_GIS_T  ,   GISS Temperature         ,  line  421
 def plot8_right_y_axe_for_T_74(ax74,right52): # 74.6 
@@ -1157,33 +1176,43 @@ def plot_9_create_all_plots(ax1, data):
         # end  # 71.77
 
     if plot72_AESS_T > 0 : # 72.4
-        # plot72_AESS_T= 4 # apparent Earth system sensitivity (AESS=7.7°C)
-        red72_text="AESS_T Apparent Earth System Sensitivity = 8°C * log2(CO2/C0) 72"
-        # 7.2 plot72_AESS_T # dT=ECS*log2(C/C0) # T560ppm=AESS*log2(560/280) 
-        # AESS=7.7°C  # (Judd 2024)
-        # https://www.science.org/doi/10.1126/science.adk3705) 
-        # 2025
-        # https://www.annualreviews.org/content/journals/10.1146/annurev-earth-032320-064209
-        #
+    # 71.42 years scale x axis
         def T_model72(t):
           CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
           log2_value = np.log2(CO2/C280)
           AESS=8 # apparent Earth system sensitivity (AESS=7.7°C)
           temp72=AESS * log2_value
           return temp72
-        # 7.2.2 years scale x axis
+        
         years72 = np.arange(x_anf, x_end + 1 )
+
         T_72values = T_model72(years72)
-        # 7.2.3. Create DataFrame for convenience
         df72 = pd.DataFrame({
                "Year72":      years72,
                "Modeled72": T_72values })
-        # 7.2.4 plot72_temperature
-        ax72 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
-        ax72.plot(df72["Year72"], df72["Modeled72"], '--', label="T formula CO2=  K72", color=c72, linewidth=3)
-        ax72.tick_params(axis="y", labelcolor=c72)
-        ax72.set_ylim(y_Tmin, y_Tmax) # scale
-        # end 7.2 plot72_AESS_T
+        
+        # 71.43 see models.px line 500
+        # T_72values = T_72(years72)
+        # 71.46 Create DataFrame for convenience
+        df72 = pd.DataFrame({
+              "Year72": years72,
+              "Modeled72": T_72values })
+        # 71.47 case line 2 use the left y axis (ax1) instead of creating a right axis
+        if plot72_AESS_T == 2:
+           ax1.plot(df72["Year72"], df72["Modeled72"], '--', label="T formula CO2=  K6", color=c72, linewidth=3)
+           # The left y-axis is already configured in plot_1_axe
+        else:
+           ax72 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+           ax72.plot(df72["Year72"], df72["Modeled72"], '--', label="T formula CO2=  K72", color=c72, linewidth=3)
+           ax72.tick_params(axis="y", labelcolor=c72)
+           
+           ax72.set_ylim(y_72min, y_72max) #  # 71.54 scale
+           # 71.56 call plotting.px line 520
+           if plot72_AESS_T > 2:
+              plot8_right_y_axe_for_T_72(ax72,0)
+        # end  # 72.77
+
+       
 
 
     if plot73_ECS_T > 0 : # 73.4

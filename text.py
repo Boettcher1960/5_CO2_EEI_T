@@ -79,7 +79,10 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                             transform=ax1.transAxes)
     elif plot71_temperature == 2:
-        header = f"Temperature in °C     71 quadratic   year {x_anf} to {x_end}"
+        header = f"Temperature in °C     71 quadratic calculation      year {x_anf} to {x_end}"
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
+    elif plot72_AESS_T == 2:
+        header = f"Temperature in °C     72  plot72_AESS_T      year {x_anf} to {x_end}"
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
     elif plot74_GIS_T == 2:
         header = f"Global Surface Temperature GISS (74 Hansen +0.3°C ) years {x_anf} to {x_end}."       
@@ -232,9 +235,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr2y, text71, c71, trs)
     elif plot72_AESS_T == 2: # 72.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c72)
-        text_4_add_text(ax1, tr2x, tr2y, 
-                    "Temperature in °C plot72_AESS_T   72", 
-                    c72, trs)
+        text_4_add_text(ax1, tr2x, tr2y, text72, c72, trs)
     elif plot73_ECS_T == 2: # 72.5 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c73)
         text_4_add_text(ax1, tr2x, tr2y, 
@@ -318,6 +319,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot71_temperature == 3: # 71.5 legend    y = 0.0004x2 + 0.0019x + 0.5079
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c71)
         text_4_add_text(ax1, tr2x, tr3y, text71, c71, trs)
+    elif plot72_AESS_T == 3: # 72.5 legend
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c72)
+        text_4_add_text(ax1, tr2x, tr3y, text72, c72, trs)
     elif plot74_GIS_T == 3: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
         text_4_add_text(ax1, tr2x, tr3y, 

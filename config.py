@@ -53,8 +53,8 @@ play_66_OLR = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwav
 play_67_albedo = 0   # create 1..12..48..99 CERES
 play68_ERA = 1095 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 
-plot71_temperature = 2 # 5
-plot72_AESS_T = 0
+plot71_temperature = 0 # 2 3 5
+plot72_AESS_T = 2 # 3
 plot73_ECS_T = 0
 plot74_GIS_T = 0 # 2, 3,4,5 =right y axis
 linear_41_75 = 0 # 3 4 5
@@ -100,8 +100,8 @@ c68 = "#36970FD4"
 
 c71 = "red"
 c71 =  "#AB263590"
-c72 =  "#BD316990"
-c73 =  "#13DF2F84"
+c72 =  "#31BD9590"
+c72 =  "red"
 c74 = "red"
 #c74 = "#9522AA90"
 c75 = "#371EA484"
@@ -125,9 +125,8 @@ print75_text = "Hansen linear fit from 2015 +0.41°C 75"  # Added for linear_41_
 text55 = "Green line: Earth Population in billion                                               55"
 text71 = "Temperature in °C 0.000618t² - 2.459 t + 2446.0579            from  @reescatophul     71"
 # "Temperature in °C 0.000618t² - 2.459 t + 2446.0579                       @reescatophul     71", 
-# "Temperature in °C 0.0004t² + 0.0019 t + 0.5079     from Tom Harris                           71", 
-
-red72_text = "AESS_T Apparent Earth System Sensitivity = 8°C * log2(CO2/C0) 72"
+# "Temperature in °C 0.0004t² + 0.0019 t + 0.5079     from Tom Harris                         71", 
+text72 = "Temperature in °C   AESS Apparent Earth System Sensitivity = 8°C * log2(CO2/C0  72"
 my76_text = "guessed quadratic temperature my_T 76"
 
 
@@ -201,6 +200,9 @@ y_Tmin = 0
 y_Tmax = 2 # 1.7
 y_71min = 0
 y_71max = 3 # 1.7
+y_72min = 0
+y_72max = 6 # 
+
 y_74min = 0.8 # for GIS Temperature 
 y_74max = 2.6  # for GIS Temperature 
 y_75min = 0.2 #  Temperature  

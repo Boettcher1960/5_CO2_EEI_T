@@ -493,8 +493,8 @@ def T_model76(t):
 # 71.44 models.px line 500
 def T_71_rees(t):
     return 0.000617965091650558 * t**2 - 2.45858656778789 * t + 2446.05792853123
-
-
+# 2026.10.22 plots plot71_temperature = 2
+# 2026.10.22 plots plot71_temperature = 3
 
 
 # this is too low :
@@ -514,5 +514,23 @@ def T_model71_not_called(t):
     return 0.0004 * t**2 + 0.0019 * t + 0.5079
 
 
-
-
+#########################################################
+# 72     plot72_AESS_T   ##############################
+#########################################################
+#
+# plot72_AESS_T= 4 # apparent Earth system sensitivity (AESS=7.7°C)
+#       red72_text="AESS_T Apparent Earth System Sensitivity = 8°C * log2(CO2/C0) 72"
+# 7.2 plot72_AESS_T # dT=ECS*log2(C/C0) # T560ppm=AESS*log2(560/280) 
+# AESS=7.7°C  # (Judd 2024)
+# https://www.science.org/doi/10.1126/science.adk3705) 
+        # 2025
+# https://www.annualreviews.org/content/journals/10.1146/annurev-earth-032320-064209
+#
+def T_72(t):
+          CO2= 0.0132251 * t**2 - 51.0337 * t + 49536.7 # Glen formula
+          log2_value = np.log2(CO2/C280)
+          AESS=8 # apparent Earth system sensitivity (AESS=7.7°C)
+          temp72=AESS * log2_value
+          return temp72
+# 2026.10.22 plots plot72_AESS_T = 2
+# 2026.10.22 plots plot72_AESS_T = 3
