@@ -56,7 +56,7 @@ play68_ERA = 720 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/c
 plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
-plot74_GIS_T = 6 # 2, 3,4,5,6,7 =right y axis
+plot74_GIS_T = 7 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
