@@ -180,8 +180,8 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
  
 
     # text_4_add_text(ax1, tr2x, tr5y, "--row5---main338--- tr5y", c43, trs)
-    text_4_add_text(ax1, 0.9, tr6y, 
-                    "-main330", 
+    text_4_add_text(ax1, 0.9, tr7y, 
+                    "-text184", 
                     c43, 10)
 
     # Add legend lines for active plots 
@@ -516,9 +516,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot74_GIS_T == 6: # 74.6
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c74)
             text_4_add_text(ax1, tr2x, tr6y, text74 , c74, trs)
-    else:
-        p62_text = f"Parameter {header_parameter}  Text 192:"
-        text_4_add_text(ax1, tr2x, tr6y, p62_text, "black", 16) 
         # elif play_61_EEI > 0 and line4_play == 61:
     if play_62_EEA > 0 and line5_play == 62:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
@@ -530,5 +527,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         p64_text = f"ASR absorbed solar radiation in  [W/m²]                       moving average {play_64_ASR_anomaly} month    64"
         text_4_add_text(ax1, tr2x, tr3y, p64_text, c64, trs) 
    
-
-
+    # row 7,      print line 6 below the plot ,     text_9_print_7_lines() ,           line 308
+    ########################## row 6 ################################[W/m²]  
+    if plot74_GIS_T == 7: # 74.6
+            text_3_add_legend_line(fig, lr2x1, lr2x2, lr7y, c74)
+            text_4_add_text(ax1, tr2x, tr7y, text74 , c74, trs)
+    else: # row 7
+        p62_text = f"Parameter {header_parameter}  Text520:"
+        text_4_add_text(ax1, tr2x, tr7y, p62_text, "black", 16) 

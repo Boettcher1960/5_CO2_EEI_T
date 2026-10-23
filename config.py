@@ -56,7 +56,7 @@ play68_ERA = 720 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/c
 plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
-plot74_GIS_T = 6 # 2, 3,4,5 =right y axis
+plot74_GIS_T = 6 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
@@ -236,7 +236,8 @@ tr2y = -.26
 tr3y = -.33
 tr4y = -.40
 tr5y = -.46
-tr6y = -.57
+tr6y = -.51
+tr7y = -.57
 trs = 20
 
 # Legend line positions
@@ -247,7 +248,9 @@ lr2y = 0.211
 lr3y = 0.168
 lr4y = 0.129
 lr5y = 0.095
-lr6y = 0.034
+lr6y = 0.064
+lr7y = 0.034
+
 
 # Figure size
 scale_mode = 10 # other values are not used
