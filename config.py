@@ -235,9 +235,9 @@ tr1y = -.19
 tr2y = -.26
 tr3y = -.33
 tr4y = -.40
-tr5y = -.46
-tr6y = -.51
-tr7y = -.57
+tr5y = -.47  # -.47    -.46  Text position
+tr6y = -.53  # -.53    -.51  Text position
+tr7y = -.57  # -.57  Text position
 trs = 20
 
 # Legend line positions
@@ -247,8 +247,8 @@ lr1y = 0.248
 lr2y = 0.211
 lr3y = 0.168
 lr4y = 0.129
-lr5y = 0.095
-lr6y = 0.064
+lr5y = 0.092 # 0.092   0.095 Legend line position
+lr6y = 0.054 # 0.054   0.064 Legend line position
 lr7y = 0.034
 
 
