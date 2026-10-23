@@ -455,9 +455,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     ########################## row 5 ################################
     if plot23_Glen_CO2 == 5: # 23.5.5 legend row 5
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c23)
-        text_4_add_text(ax1, tr2x, tr5y, 
-                    text23, 
-                    c23, trs)
+        text_4_add_text(ax1, tr2x, tr5y, text23, c23, trs)
     elif plot42_EEI_48month == 5:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c42)
         text_4_add_text(ax1, tr2x, tr5y, 
@@ -465,8 +463,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     c42, trs)
     elif plot43_eei_12month == 5:
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c43)
-            text_4_add_text(ax1, tr2x, tr5y, 
-                        text43, c43, trs)
+            text_4_add_text(ax1, tr2x, tr5y, text43, c43, trs)
+    elif part44_ceres_eei > 0:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
+        p44_text = f"Earth Energy Imbalance    W/m²   {part44_ceres_eei}-month moving average 44"
+        text_4_add_text(ax1, tr2x, tr5y, p44_text, c44, trs) 
     elif plot55_population_on == 5: # 55.4 row 5 legende world data plot22_CO2_Mauna_Loa
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c55)
         text_4_add_text(ax1, tr2x, tr5y, text55, c55, trs) 
@@ -474,14 +475,16 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c61)
         p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr5y, p61_text, c61, trs) 
-
+    elif play_62_EEA > 0 and line5_play == 62:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
+        p62_text = f"EEA Earth Energy Accumulated in ZJ   = sum of EEI     moving average {play_62_EEA} month   62"
+        text_4_add_text(ax1, tr2x, tr5y, p62_text, c62, trs) 
     elif play_63_CB == 5: # 55.4 row 5 legende 
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c63)
         p63_text = f"carbon brief cummulative CO2 values in Gt CO2 since 1750     63 {play_63_CB} month     63"
         text_4_add_text(ax1, tr2x, tr5y, p63_text, c63, trs) 
     elif play_67_albedo > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c67)
-        # albedo
         p67_text = f"Albedo = sw_out / sw_in             {play_67_albedo}-month moving average - min-max swapped      67"
         text_4_add_text(ax1, tr2x, tr5y, p67_text, c67, trs) 
     elif play68_ERA > 0 and line5_play == 68:
@@ -498,13 +501,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot_T_78 == 5: # 78.5.3 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c78)
         text_4_add_text(ax1, tr2x, tr5y, text78, c78, trs)
-
-    # in row 5 display part44_ceres_eei
-    # elif:
-    if part44_ceres_eei > 0:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
-        p44_text = f"Earth Energy Imbalance    W/m²   {part44_ceres_eei}-month moving average 44"
-        text_4_add_text(ax1, tr2x, tr5y, p44_text, c44, trs) 
+    # end row 5 display 
 
     # row 6,      print line 6 below the plot ,     text_9_print_7_lines() ,           line 308
     ########################## row 6 ################################[W/m²]
@@ -513,25 +510,27 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
         p61_text = f"Earth Energy Imbalance [W/m²]  CERES 2026_08     moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
-    elif plot74_GIS_T == 6: # 74.6
-            text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c74)
-            text_4_add_text(ax1, tr2x, tr6y, text74 , c74, trs)
-        # elif play_61_EEI > 0 and line4_play == 61:
-    if play_62_EEA > 0 and line5_play == 62:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c62)
+    elif play_62_EEA > 0 and line6_play == 62:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c62)
         p62_text = f"EEA Earth Energy Accumulated in ZJ   = sum of EEI     moving average {play_62_EEA} month   62"
-        text_4_add_text(ax1, tr2x, tr5y, p62_text, c62, trs) 
-    if play_64_ASR_anomaly > 0:
+        text_4_add_text(ax1, tr2x, tr6y, p62_text, c62, trs) 
+    elif play_64_ASR_anomaly > 0:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c62)
         # Outgoing Longwave Radiation OLR
         p64_text = f"ASR absorbed solar radiation in  [W/m²]                       moving average {play_64_ASR_anomaly} month    64"
         text_4_add_text(ax1, tr2x, tr3y, p64_text, c64, trs) 
+    elif plot74_GIS_T == 6: # 74.6
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c74)
+        text_4_add_text(ax1, tr2x, tr6y, text74 , c74, trs)
+        # end row 6 display 
+
+
    
     # row 7,      print line 6 below the plot ,     text_9_print_7_lines() ,           line 308
     ########################## row 6 ################################[W/m²]  
     if plot74_GIS_T == 7: # 74.6
-            text_3_add_legend_line(fig, lr2x1, lr2x2, lr7y, c74)
-            text_4_add_text(ax1, tr2x, tr7y, text74 , c74, trs)
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr7y, c74)
+        text_4_add_text(ax1, tr2x, tr7y, text74 , c74, trs)
     else: # row 7
-        p62_text = f"Parameter {header_parameter}  Text520:"
-        text_4_add_text(ax1, tr2x, tr7y, p62_text, "black", 16) 
+        row7_text = f"Parameter {header_parameter}  Text520:"
+        text_4_add_text(ax1, tr2x, tr7y, row7_text, "black", 16) 

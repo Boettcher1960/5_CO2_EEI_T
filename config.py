@@ -66,7 +66,8 @@ plot_T_78 = 3 # 3 , 4 , 5 Tom Harris
 line2_play = 68   # 61  62
 line3_play = 0  #  play_62_EEA #   68 play68_ERA = 720
 line4_play = 61  # 61 play_61_EEI = 36 
-line5_play = 62   # 62 61
+line5_play = 62  # 62 61
+line6_play = 0 
 
 parameter84_save_png = 8
 
