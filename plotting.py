@@ -514,7 +514,13 @@ def plot8_right_y_axe_for_C_66(ax66,right62): # 66.50
 
 # play_67_albedo  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_67(ax67,right62): # 67.50
-    outward_right =  ( 5 *  yr_60 ) - yr_150
+    if play_67_albedo > 0 and line3_play == 67:
+        outward_right =  ( 2.5 *  yr_60 ) - yr_150
+    elif play_67_albedo > 0 and line4_play == 67:
+        outward_right =  ( 3.5 *  yr_60 ) - yr_150
+    else:
+        outward_right =  ( 5 *  yr_60 ) - yr_150
+
     ax67.spines.right.set_position(("outward", outward_right))
     ax67.set_ylabel("Albedo (earth darkening) in %     67", color=c67, fontname="Arial",fontsize=18)
     ax67.tick_params(axis="y", labelcolor=c67)
