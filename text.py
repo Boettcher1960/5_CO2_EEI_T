@@ -445,7 +445,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c77)
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2023=1.5°C         77", c77, trs)
-    elif play_67_albedo > 0:
+    elif play_67_albedo > 0 and line4_play == 67:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c67)
         # albedo
         p67_text = f"Albedo = sw_out / sw_in             {play_67_albedo}-month moving average - min-max swapped      67"
@@ -487,7 +487,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c63)
         p63_text = f"carbon brief cummulative CO2 values in Gt CO2 since 1750     63 {play_63_CB} month     63"
         text_4_add_text(ax1, tr2x, tr5y, p63_text, c63, trs) 
-    elif play_67_albedo > 0:
+    elif play_67_albedo > 0 and line5_play == 67:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c67)
         p67_text = f"Albedo = sw_out / sw_in             {play_67_albedo}-month moving average - min-max swapped      67"
         text_4_add_text(ax1, tr2x, tr5y, p67_text, c67, trs) 
