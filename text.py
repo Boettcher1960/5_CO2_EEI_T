@@ -424,6 +424,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c61)
             p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"
             text_4_add_text(ax1, tr2x, tr4y, p61_text, c61, trs) 
+    elif play_62_EEA > 0 and line4_play == 62:
+            text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c62)
+            p62_text = f"EEA Earth Energy Accumulated in ZJ   = sum of EEI     moving average {play_62_EEA} month   62"
+            text_4_add_text(ax1, tr2x, tr4y, p62_text, c62, trs) 
     elif play_65_ASR > 0:
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c65)
             p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                       moving average {play_65_ASR} month    65"

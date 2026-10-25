@@ -338,10 +338,11 @@ def T_model76(t):
 #       dokumente/5_CO2_EEI_T/read_csv/_43_EEI12month_2026_02.csv
 # 61.24 run   plot43_eei_12month=3 reading new _43_EEI12month_2026_02.csv file
 #
-# 2026.10.15 plots play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv 
+# 2026.10.25 plots play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv 
+####### o k ##################################################
 
 
-# ----------------------------------------------
+#########################################################
 # play_62_CERES = 12 
 # --- see 41 process 4 CERES files ---------------------
 # Tom Harris on substack https://substack.com/@drtomharris/note/c-366539763
@@ -358,7 +359,9 @@ def T_model76(t):
 # 3. CSV-Datei speichern
 # df.to_csv("62c_EEA_aktualisiert.csv", index=False)
 #  python how to sum up 62c_EEA.csv column EEI36 and multiply with 1.23    and store it to new column EEA
-
+#      play_62_EEA = 12 line4_play = 62
+# 2026.10.25 plots play_62_EEA = 12 line4_play = 62
+####### o k ##################################################
 
 
 # ----------------------------------------------
