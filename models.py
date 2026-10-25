@@ -287,7 +287,7 @@ def T_model76(t):
 
 
 #########################################################
-# plot55_population_on ############################
+# 55     plot55_population_on ###########################
 #########################################################
 # text55 = "Green line: Earth Population in billion                                               55"
 # plot55_population_on = 5 # 5 word with y axis right
@@ -305,7 +305,8 @@ def T_model76(t):
 
 
 #########################################################
-# 61 How to make EEI files ##############################
+# 61    play_61_EEI = 12   ##############################
+#########################################################
 #--- see 41 process 4 CERES files ---------------------
 # 61.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
@@ -342,9 +343,38 @@ def T_model76(t):
 ####### o k ##################################################
 
 
-#########################################################
-# play_62_CERES = 12 
+##################################################################
+# 62     play_62_EEA = 12       Earth Energy Accumulated #########
+##################################################################
 # --- see 41 process 4 CERES files ---------------------
+# ----------------------------------------------
+# old 62.21 open
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+#  old_62.22 select first item
+#  old_62.23 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
+#  old_62.24 six small curves are shown
+#  old_62.25 select item 2 Label TOA Long Wave Flux All Sky 235 to 245 W/m/m monthly values
+#  old_62.26 big window appears with one curve only
+#  old_62.27 left mouse select save Data as ASCII File
+#  old_62.28.1 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+#  old_62.28.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
+#  old_62.29.1 rename      to _62_in__2026_02_Longwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
+#  old_62.29.2 rename      to _66_TOA_OLR_all_sky_2026_07.txt and save to dokumente/5_CO2_EEI_T/work/
+#  old_62.30.1 run with play_62_CERES = 48
+#    read read_csv/_62_in__2026_02_Longwave.txt main 124
+#    output1 read_csv/_62b_LongWave.csv'
+#  old_62.30.2 run with play_66_OLR = 48
+#  old_62.31.1 run with play_62_CERES = 48
+#    input1  read_csv/_62_in__2026_02_Longwave.txt main 124
+#    input2  read_csv/_42_EEI48month_2026_02.csv   main 141
+#    output2 read_csv/_62c_LongWave.csv with column LongWave for  48 month running average 
+#    output3.1 read_csv/_62e_LongWave.csv with column EEI copy from input2 for  48 month running average 
+#    output3.2 read_csv/_62e_LongWave.csv with column LongWave for  48 month running average 
+#    output3.3 read_csv/_62e_LongWave.csv with column OLR_EEI = LongWave + EEI   48 month running average 
+#  old_62.32.1 copy dokumente/5_CO2_EEI_T/read_csv/_62e_LongWave.csv to
+#         dokumente/5_CO2_EEI_T/read_csv/_45_OLR_EEI_48month_2026_02.csv
+#  old_62.32.2 copy dokumente/5_CO2_EEI_T/work/_66c_OLR.csv to
+#           dokumente/5_CO2_EEI_T/read_csv/_45_OLR_48month_2026_07.csv file, column OLR48 
 # Tom Harris on substack https://substack.com/@drtomharris/note/c-366539763
 #     Thanks, yes it is a 36 month rolling average.
 #     The EEA is simply a monthly rolling sum of the monthly (36m smoothed) EEI, 
@@ -352,7 +382,7 @@ def T_model76(t):
 #     1 W/m2 is 1 joule per second per square meter. 
 #     The constant above is seconds per month x area of Earth / 10^21 (zeta)
 #  python how to sum up 62c_EEA.csv column EEI36 and store it to new column EEA
-#     # 1. CSV-Datei einlesen
+#  1. CSV-Datei einlesen
 #  df = pd.read_csv("62c_EEA.csv")
 # 2. Laufende Summe (kumulierte Summe) bilden und in 'EEA' speichern
 # df["EEA"] = df["EEI36"].cumsum()
@@ -364,62 +394,27 @@ def T_model76(t):
 ####### o k ##################################################
 
 
-# ----------------------------------------------
-# play_63_CERES = 12 
-# --- see 41 process 4 CERES files ---------------------
-# 63.41 open
-# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 63.42 select first item
-# 63.43 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
-# 63.44 six small curves are shown
-# 63.45 select item 1 Label TOA Short Wave Flux All Sky 90 to 110 W/m/m monthly values
-# 63.46 big window appears with one curve only
-# 63.47 left mouse select save Data as ASCII File
-# 63.48 CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-# 63.49 rename      to _63_in__2026_02_Shortwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-#  run with play_61_EEI = 48 
-#  copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv.csv to
-#       dokumente/5_CO2_EEI_T/read_csv/_42_EEI48month_2026_02.csv
-#  run   plot42_EEI_48month=2 reading new _42_EEI48month_2026_02.csv file
-# ----------------------------------------------
+
+##################################################################
+# 63     play_63_CB = 5      Carbon Brief CO2 cummulated #########
+##################################################################
+# 63.1 open
+# https://ourworldindata.org/grapher/cumulative-co-emissions?country=OWID_WR~OWID_WRL
+# 63.2 select item world (a red hockex stick is visible 1.8tntCO2) (1800GtCO2)
+# 63.3        Download item below the curve  
+# 63.4        right item Data (not visualization)
+# 63.5        Download displayed data with 275 rows
+# 63.6        zip with cumulative-co-emissions.csv is downloaded
+# 63.7        Duplizieren ; rename as work/63a_cumulative-co-emissions_world.csv
+# 63.
+# 63.
+# 63.
+#  run with play_63_CB = 5 
+# 2026.10.25 plots play_63_CB = 5 
+####### o k ######todo scaling 
 
 
 
-# ----------------------------------------------
-# 62    play_62_CERES   ------------------------
-# play_62_CERES ist doppelt zu play_66_OLR
-# --- see 41 process 4 CERES files ---------------------
-# play_62_CERES = 48 
-# 62.21 open
-# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-#  62.22 select first item
-#  62.23 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
-#  62.24 six small curves are shown
-#  62.25 select item 2 Label TOA Long Wave Flux All Sky 235 to 245 W/m/m monthly values
-#  62.26 big window appears with one curve only
-#  62.27 left mouse select save Data as ASCII File
-#  62.28.1 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-#  62.28.2 CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt is downloaded
-#  62.29.1 rename      to _62_in__2026_02_Longwave.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-#  62.29.2 rename      to _66_TOA_OLR_all_sky_2026_07.txt and save to dokumente/5_CO2_EEI_T/work/
-#  62.30.1 run with play_62_CERES = 48
-#    read read_csv/_62_in__2026_02_Longwave.txt main 124
-#    output1 read_csv/_62b_LongWave.csv'
-#  62.30.2 run with play_66_OLR = 48
-#  62.31.1 run with play_62_CERES = 48
-#    input1  read_csv/_62_in__2026_02_Longwave.txt main 124
-#    input2  read_csv/_42_EEI48month_2026_02.csv   main 141
-#    output2 read_csv/_62c_LongWave.csv with column LongWave for  48 month running average 
-#    output3.1 read_csv/_62e_LongWave.csv with column EEI copy from input2 for  48 month running average 
-#    output3.2 read_csv/_62e_LongWave.csv with column LongWave for  48 month running average 
-#    output3.3 read_csv/_62e_LongWave.csv with column OLR_EEI = LongWave + EEI   48 month running average 
-#  62.32.1 copy dokumente/5_CO2_EEI_T/read_csv/_62e_LongWave.csv to
-#         dokumente/5_CO2_EEI_T/read_csv/_45_OLR_EEI_48month_2026_02.csv
-#  62.32.2 copy dokumente/5_CO2_EEI_T/work/_66c_OLR.csv to
-#           dokumente/5_CO2_EEI_T/read_csv/_45_OLR_48month_2026_07.csv file, column OLR48 
-#  62.33.1 run   plot45_OLR_48month=2 reading new _45_OLR_EEI_48month_2026_02.csv file
-#  62.33.2 run   plot45_OLR = 3 reading new _45_OLR_48month_2026_07.csv file, column OLR48 
-# ------- play_62_CERES ist doppelt zu play_66_OLR ---------
 
 
 #########################################################

@@ -1152,7 +1152,7 @@ def plot_9_create_all_plots(ax1, data):
 
     if play_63_CB > 0: # 63.4
         ax63 = ax1.twinx()
-        df63 = pd.read_csv("work/_63a_cumulative-co-emissions.csv")
+        df63 = pd.read_csv("work/63a_cumulative-co-emissions_world.csv")
         if print_debug > 9:
            print(f"plot_888: ax63 63.4 ={play_63_CB}")
         world63 = (

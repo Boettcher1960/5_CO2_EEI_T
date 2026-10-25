@@ -44,9 +44,9 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 12    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-play_62_EEA = 12    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
-play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
+play_61_EEI = 0    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
+play_63_CB    = 5 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
@@ -64,8 +64,8 @@ plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 67   # 61  62
-line3_play = 61  #  play_62_EEA #   68 play68_ERA = 720
-line4_play = 62  # 61 play_61_EEI = 36 
+line3_play = 63  #  play_62_EEA #   68 play68_ERA = 720
+line4_play = 0  # 61 play_61_EEI = 36 
 line5_play = 0  # 62 61
 line6_play = 0 
 
@@ -125,6 +125,8 @@ text42 = "Earth Energy Imbalance W/m² moving average 48 month 42"
 text43 = "Earth Energy Imbalance in W/m²                                  moving average 12 month    43"
 text44 = "Earth Energy Imbalance W/m² moving average 44"
 text55 = "Green line: Earth Population in billion                                               55"
+
+text63 = "carbon brief cummulative CO2 emissions in GtCO2 since 1750    ourworldindata     63"
 
 text71 = "Temperature in °C 0.000618t² - 2.459 t + 2446.0579            from  @reescatophul     71"
 # "Temperature in °C 0.000618t² - 2.459 t + 2446.0579                       @reescatophul     71", 
