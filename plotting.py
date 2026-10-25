@@ -196,14 +196,25 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif line2_play == 61:  # play_61_EEI = 36
-                ax1.spines.left.set_position(("outward", 0))
-                ax1.set_ylim(y_61min, y_61max)
-                ax1.set_ylabel("EEI Earth Energy Imbalance   [W/m²] ", color=c61, fontsize=20)
-                ax1.tick_params(axis="y", labelcolor=c61, labelsize=20)
-                y_mayor_ticks = 0.500 
-                y_minor_ticks = 0.100
-                ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
-                ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+        ax1.spines.left.set_position(("outward", 0))
+        ax1.set_ylim(y_61min, y_61max)
+        ax1.set_ylabel("EEI Earth Energy Imbalance   [W/m²] ", color=c61, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c61, labelsize=20)
+        y_mayor_ticks = 0.500 
+        y_minor_ticks = 0.100
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif line2_play == 67:  # play_67_albedo = 12
+        ax1.spines.left.set_position(("outward", 0))
+        ax1.set_ylim(y_67min, y_67max)
+        ax1.set_ylabel("Earth’s albedo (reflectivity, in percent)  ", color=c67, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c67, labelsize=20)
+        y_mayor_ticks = 0.00500 
+        y_minor_ticks = 0.00100
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+
+
     elif line2_play == 68:
          ax1.spines.left.set_position(("outward", 0))
          ax1.set_ylim(y_68min, y_68max)
@@ -1189,15 +1200,21 @@ def plot_9_create_all_plots(ax1, data):
         if play_66_OLR > 2:
            plot8_right_y_axe_for_C_66( ax66 , 0 ) # 42.4 line 450
     if play_67_albedo > 0: # part 67.44
-        ax67 = ax1.twinx()
-        ax67.plot(data['ceres_67']["decimal_year"], data['ceres_67']["albedo48"], '-', 
+       if line2_play == 67:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['ceres_67']["decimal_year"], data['ceres_67']["albedo48"], '-', 
                   label="albedo K67", color=c67, linewidth=2)
-        ax67.tick_params(axis="y", labelcolor=c67)
-        ax67.set_ylim(y_67min, y_67max)
-        if print_debug > 9:
-           print(f"plot1012: ax67 67.48 ={play_67_albedo}")
-        if play_67_albedo > 2:
-           plot8_right_y_axe_for_C_67( ax67 , 0 ) # part
+           # The left axis is already configured in plot_1_axe
+       else:
+           ax67 = ax1.twinx()
+           ax67.plot(data['ceres_67']["decimal_year"], data['ceres_67']["albedo48"], '-', 
+                  label="albedo K67", color=c67, linewidth=2)
+           ax67.tick_params(axis="y", labelcolor=c67)
+           ax67.set_ylim(y_67min, y_67max)
+           if print_debug > 9:
+              print(f"plot1012: ax67 67.48 ={play_67_albedo}")
+           if play_67_albedo > 2:
+              plot8_right_y_axe_for_C_67( ax67 , 0 ) # part
 
     if play68_ERA > 0: # 67.44 plotting.py line 1044 plot era_68 data
         if line2_play == 68:

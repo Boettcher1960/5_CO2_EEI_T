@@ -44,28 +44,28 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 24    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 0    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB    = 0 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
-play_67_albedo = 24   # create 1..12..48..99 CERES
+play_67_albedo = 12   # create 1..12..48..99 CERES
 play68_ERA = 0 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 
 plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
-plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
+plot74_GIS_T = 0 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
-line2_play = 0   # 61  62
+line2_play = 67   # 61  62
 line3_play = 61  #  play_62_EEA #   68 play68_ERA = 720
-line4_play = 67  # 61 play_61_EEI = 36 
+line4_play = 0  # 61 play_61_EEI = 36 
 line5_play = 0  # 62 61
 line6_play = 0 
 
@@ -199,6 +199,10 @@ y_67min = 0.2936  # 0.294 albedo in %
 y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.294 # albedo in %
 y_67max = 0.286 # albedo in %
+y_67min = 0.28  # Hansen no swap albedo in %
+y_67max = 0.298 # Hansen no swap albedo in %
+
+
 
 y_68min = 0  # for era5 Temperature
 y_68max = 1.6  # for era5 Temperature 
