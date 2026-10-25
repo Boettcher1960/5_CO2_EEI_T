@@ -503,9 +503,16 @@ def plot8_right_y_axe_for_C_63(ax63,right52): # 63.5
 
 # play_64_ASR_anomaly
 def plot8_right_y_axe_for_C_64(ax64,right62): # 62.5
-    outward_right =  ( 5 *  yr_60 ) - yr_150
+    if right62 > 0:
+        outward_right = right62
+    elif play_64_ASR_anomaly > 0 and line3_play == 64:
+        outward_right =  ( 2.5 *  yr_60 ) - yr_150
+    elif play_64_ASR_anomaly > 0 and line4_play == 64:
+        outward_right =  ( 3.5 *  yr_60 ) - yr_150
+    else:
+       outward_right =  ( 5 *  yr_60 ) - yr_150
     ax64.spines.right.set_position(("outward", outward_right))
-    ax64.set_ylabel("ASR  [W/m2]       64", color=c64, fontname="Arial",fontsize=18)
+    ax64.set_ylabel("ASR Anomaly [W/m2]     64", color=c64, fontname="Arial",fontsize=18)
     ax64.tick_params(axis="y", labelcolor=c64)
     ax64.set_ylim(y_64min, y_64max) #
 
@@ -1137,7 +1144,7 @@ def plot_9_create_all_plots(ax1, data):
     if play_64_ASR_anomaly > 0:
         ax64 = ax1.twinx()
         ax64.plot(data['ceres_64']["decimal_year"], data['ceres_64']["ASR"], '-', 
-                  label="EEI K62", color=c62, linewidth=2)
+                  label="EEI K62", color=c64, linewidth=2)
         ax64.tick_params(axis="y", labelcolor=c62)
         ax64.set_ylim(y_64min, y_64max)
         if print_debug > 9:

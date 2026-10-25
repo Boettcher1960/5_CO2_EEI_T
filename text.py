@@ -332,6 +332,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif play_63_CB == 5 and line3_play == 63:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c63)
         text_4_add_text(ax1, tr2x, tr3y, text63, c63, trs) 
+    elif play_64_ASR_anomaly > 0 and line3_play == 64:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c64)
+        p64_text = f"ASRA absorbed solar radiation Anomaly in  [W/m²]      moving average {play_64_ASR_anomaly} month    64"
+        text_4_add_text(ax1, tr2x, tr3y, p64_text, c64, trs) 
     elif play_65_ASR > 0 and line3_play == 65:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c65)
         p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                      moving average {play_65_ASR} month    65"
@@ -531,11 +535,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c62)
         p62_text = f"EEA Earth Energy Accumulated in ZJ   = sum of EEI     moving average {play_62_EEA} month   62"
         text_4_add_text(ax1, tr2x, tr6y, p62_text, c62, trs) 
-    elif play_64_ASR_anomaly > 0:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c62)
+    elif play_64_ASR_anomaly > 0 and line6_play == 64:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c64)
         # Outgoing Longwave Radiation OLR
-        p64_text = f"ASR absorbed solar radiation in  [W/m²]                       moving average {play_64_ASR_anomaly} month    64"
-        text_4_add_text(ax1, tr2x, tr3y, p64_text, c64, trs) 
+        p64_text = f"ASRA absorbed solar radiation Anomaly in  [W/m²]      moving average {play_64_ASR_anomaly} month    64"
+        text_4_add_text(ax1, tr2x, tr6y, p64_text, c64, trs) 
     elif plot74_GIS_T == 6: # 74.6
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c74)
         text_4_add_text(ax1, tr2x, tr6y, text74 , c74, trs)

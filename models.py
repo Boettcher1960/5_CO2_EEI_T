@@ -452,9 +452,9 @@ def T_model76(t):
 #
 # https://www.nature.com/articles/s43247-026-03427-w#
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3miz5mmll3k2z
-# part 5.3 plot53_CO2_orange2025
-# part 5.4 plot54_Glen_delta_on
-# part 5.5 plot55_population_on human earth population 
+# 2026.10.25 plots   line3_play = 64 and play_64_ASR_anomaly = 12 
+# 2026.10.25 plots   line3_play = 64 and play_64_ASR_anomaly = 24
+# 2026.10.25 plots   line3_play = 64 and play_64_ASR_anomaly = 48 
 
 
 

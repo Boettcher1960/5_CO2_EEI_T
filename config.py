@@ -48,7 +48,7 @@ play_61_EEI = 0    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_o
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
                 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
-play_64_ASR_anomaly = 12 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
+play_64_ASR_anomaly = 12 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo = 12   # line2 1..12..48..99 create 1..12..48..99 CERES
@@ -65,10 +65,10 @@ plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 67   # 61  62
-line3_play = 0  #  play_62_EEA #   68 play68_ERA = 720
+line3_play = 64  #  play_62_EEA #   68 play68_ERA = 720
 line4_play = 0  # 61 play_61_EEI = 36 
 line5_play = 0  # 62 61
-line6_play = 0 
+line6_play = 0
 
 parameter84_save_png = 8
 
@@ -188,8 +188,8 @@ y_61max = 2  #   EEI in W/m2 y axis left mode
 y_62min = 0  # EEA in ZJ
 y_62max = 400  # EEA in ZJ
 
-y_64min = 0.4  # in W/m2
-y_64max = -2.3  # in W/m2
+y_64min = -2  # in W/m2
+y_64max = 1  # in W/m2
 y_65min = 239.5  # ASR in W/m2
 y_65max = 243.5  # 242.8  # ASR in W/m2
 
