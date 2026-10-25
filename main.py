@@ -132,7 +132,7 @@ def process_ceres_data():
 
 # main.play_64_ASR_anomaly line 124
 if play_64_ASR_anomaly > 1: #  
-       df64b = convert_ceres_to_csv('read_csv/_64_in__2026_02_ASR_anomaly.txt', 
+       df64b = convert_ceres_to_csv('work/64a_in__2026_08_ASR_anomaly.txt', 
                                     'read_csv/_64b_ASR.csv')
        if print_debug > 9:
           print(f"main_152: create read_csv/_64b_ASR.csv  64.b ={play_64_ASR_anomaly}")

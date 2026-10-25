@@ -409,10 +409,52 @@ def T_model76(t):
 # 63.
 # 63.
 # 63.
-#  
+#             play_63_CB =5=world     plan    play_63_CB=2=germany..
+#
 # 2026.10.25 plots   line3_play = 63 and play_63_CB = 5
-####### o k ######todo scaling 
+####### o k ##########################################################
 
+
+
+##################################################################
+# 64    play_64_ASR_anomaly #########   _64_in__2026_02_ASR_anomaly.txt
+##################################################################
+# play_64_ASR_anomaly = 12 # absorbed solar radiation ASR = 1.48 W/m² 
+# 64.1 open
+# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 64.2 select first item
+# 64.3 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Aug. 2026 is shown
+# 64.4 six small curves are shown
+# 64.5 select item 1 Label TOA ShortWave Flux All Sky 90 to 110 W/m/m monthly values
+# 64.6 big window appears with one curve only
+# 64.7 left mouse select Show Anomaly
+# 64.8 TOA ShortWave Flux All Sky -3 to 3 W/m/m monthly values shows
+# 64.9 left mouse select save Data as ASCII File
+#       CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+# 64.10 CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Shortwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
+# 64.11 rename      to 64a_in__2026_08_ASR_anomaly.txt and save to dokumente/5_CO2_EEI_T/work/
+# 64.12 run with play_64_ASR_anomaly = 12
+#    read     work/64a_in__2026_08_ASR_anomaly.txt   main.py 
+#    output1 read_csv/_64b_ASR.csv')
+#    output2 read_csv/_64c_ASR.csv'
+# 53 copy dokumente/5_CO2_EEI_T/read_csv/_64c_ASR.csv to
+#         dokumente/5_CO2_EEI_T/read_csv/_47_ASR_12month_2026_02.csv
+# 54 run with play_64_ASR_anomaly = 48
+#    read read_csv/_64_in__2026_02_ASR_anomaly.txt   main.py 
+#    output1 read_csv/_64b_ASR.csv')
+#    output2 read_csv/_64c_ASR.csv'
+# 55 copy dokumente/5_CO2_EEI_T/read_csv/_64c_ASR.csv to
+#         dokumente/5_CO2_EEI_T/read_csv/_48_ASR_48month_2026_02.csv
+# plan txt to csv to png play 64 
+# ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
+# https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
+# http://www.ocean.iap.ac.cn/ftp/images_files/Stratification_global_time_series.txt
+#
+# https://www.nature.com/articles/s43247-026-03427-w#
+# https://bsky.app/profile/thomas-boettcher.bsky.social/post/3miz5mmll3k2z
+# part 5.3 plot53_CO2_orange2025
+# part 5.4 plot54_Glen_delta_on
+# part 5.5 plot55_population_on human earth population 
 
 
 

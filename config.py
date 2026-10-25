@@ -46,8 +46,9 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 
 play_61_EEI = 0    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
-play_63_CB  = 5 # 5 carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
-play_64_ASR_anomaly = 0 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
+play_63_CB  = 0 # 5=world   plan 2=germany..
+                # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
+play_64_ASR_anomaly = 12 # 12 # 12, 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
 play_65_ASR = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo = 12   # line2 1..12..48..99 create 1..12..48..99 CERES
@@ -64,7 +65,7 @@ plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 67   # 61  62
-line3_play = 63  #  play_62_EEA #   68 play68_ERA = 720
+line3_play = 0  #  play_62_EEA #   68 play68_ERA = 720
 line4_play = 0  # 61 play_61_EEI = 36 
 line5_play = 0  # 62 61
 line6_play = 0 
@@ -227,7 +228,7 @@ y_77min = 0 #  Temperature
 y_77max = 4 #  Temperature 
 y_78min = 0 #  for Tom Harris Temperature 
 y_78max = 1.6 #  for Tom Harris Temperature
-x_anf = 1740
+x_anf = 2004
 x_end = 2027
 
 # constants
@@ -263,46 +264,6 @@ lr7y = 0.034
 scale_mode = 10 # other values are not used
 print_debug = 10 # print some items 
 
-
-# play_64_ASR_anomaly = 12 # absorbed solar radiation ASR = 1.48 W/m² 
-# 41 open
-# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 42 select first item
-# 43 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Feb. 2026 is shown
-# 44 six small curves are shown
-# 45 select item 1 Label TOA ShortWave Flux All Sky 90 to 110 W/m/m monthly values
-# 46 big window appears with one curve only
-# 47 left mouse select Show Anomaly
-# 48 TOA ShortWave Flux All Sky -3 to 3 W/m/m monthly values shows
-# 49 left mouse select save Data as ASCII File
-# 50 CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Shortwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-# 51 rename      to _64_in__2026_02_ASR_anomaly.txt and save to dokumente/5_CO2_EEI_T/read_csv/
-# 52 run with play_64_ASR_anomaly = 12
-#    read read_csv/_64_in__2026_02_ASR_anomaly.txt   main.py 
-#    output1 read_csv/_64b_ASR.csv')
-#    output2 read_csv/_64c_ASR.csv'
-# 53 copy dokumente/5_CO2_EEI_T/read_csv/_64c_ASR.csv to
-#         dokumente/5_CO2_EEI_T/read_csv/_47_ASR_12month_2026_02.csv
-# 54 run with play_64_ASR_anomaly = 48
-#    read read_csv/_64_in__2026_02_ASR_anomaly.txt   main.py 
-#    output1 read_csv/_64b_ASR.csv')
-#    output2 read_csv/_64c_ASR.csv'
-# 55 copy dokumente/5_CO2_EEI_T/read_csv/_64c_ASR.csv to
-#         dokumente/5_CO2_EEI_T/read_csv/_48_ASR_48month_2026_02.csv
-
-
-
-
-# plan txt to csv to png play 64 
-# ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
-# https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
-# http://www.ocean.iap.ac.cn/ftp/images_files/Stratification_global_time_series.txt
-#
-# https://www.nature.com/articles/s43247-026-03427-w#
-# https://bsky.app/profile/thomas-boettcher.bsky.social/post/3miz5mmll3k2z
-# part 5.3 plot53_CO2_orange2025
-# part 5.4 plot54_Glen_delta_on
-# part 5.5 plot55_population_on human earth population 
 
 
 
