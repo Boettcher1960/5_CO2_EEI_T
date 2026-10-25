@@ -487,16 +487,18 @@ def plot8_right_y_axe_for_C_62(ax62,right62): # 62.5
     ax62.tick_params(axis="y", labelcolor=c62)
     ax62.set_ylim(y_62min, y_62max) #
 
-
-
-# play_63_CB plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 460
+# play_63_CB 
 def plot8_right_y_axe_for_C_63(ax63,right52): # 63.5
      if right52 > 0:
         outward_right = right52
+     elif play_63_CB > 0 and line3_play == 63:
+        outward_right =  ( 2.5 *  yr_60 ) - yr_150
+     elif play_63_CB > 0 and line4_play == 63:
+        outward_right =  ( 3.5 *  yr_60 ) - yr_150
      else:
         outward_right =  ( play_63_CB * yr_60 ) - yr_150
      ax63.spines.right.set_position(("outward", outward_right))
-     ax63.set_ylabel("cummulative CO2 values   plot475     63", color=c63, fontname="Arial",fontsize=18)
+     ax63.set_ylabel("Cummulative CO2 emissions in GtCO2    63", color=c63, fontname="Arial",fontsize=18)
      ax63.tick_params(axis="y", labelcolor=c63)
 
 # play_64_ASR_anomaly
@@ -1178,7 +1180,7 @@ def plot_9_create_all_plots(ax1, data):
         ax63.tick_params(axis="y", labelcolor=c63)
         ax63.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
         if play_63_CB > 2:
-            plot8_right_y_axe_for_C_63(ax63,1) # 63.5 line 500
+            plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 500
     if play_65_ASR > 0:
                     ax65 = ax1.twinx()
                     ax65.plot(data['ceres_65']["decimal_year"], data['ceres_65']["ASR_average"], '-', 

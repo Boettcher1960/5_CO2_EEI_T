@@ -1,5 +1,5 @@
 # main.py
-v = "5H63" # H61 = albedo67 as line 2
+v = "5H65" # H61 = albedo67 as line 2
 #          43 work on albedo 12 month
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

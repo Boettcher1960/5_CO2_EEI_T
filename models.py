@@ -409,8 +409,8 @@ def T_model76(t):
 # 63.
 # 63.
 # 63.
-#  run with play_63_CB = 5 
-# 2026.10.25 plots play_63_CB = 5 
+#  
+# 2026.10.25 plots   line3_play = 63 and play_63_CB = 5
 ####### o k ######todo scaling 
 
 
