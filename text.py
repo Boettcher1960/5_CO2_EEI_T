@@ -435,6 +435,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c62)
             p62_text = f"EEA Earth Energy Accumulated in ZJ   = sum of EEI     moving average {play_62_EEA} month   62"
             text_4_add_text(ax1, tr2x, tr4y, p62_text, c62, trs) 
+    elif play_64_ASR_anomaly > 0 and line4_play == 64:
+            text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c64)
+            p64_text = f"ASRA absorbed solar radiation Anomaly in  [W/m²]      moving average {play_64_ASR_anomaly} month    64"
+            text_4_add_text(ax1, tr2x, tr4y, p64_text, c64, trs) 
     elif play_65_ASR > 0:
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c65)
             p65_text = f"ASR Absorbed Solar Radiation in [W/m²]                       moving average {play_65_ASR} month    65"

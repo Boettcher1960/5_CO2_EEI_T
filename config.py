@@ -53,7 +53,8 @@ play_65_ASR = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo = 12   # line2 1..12..48..99 create 1..12..48..99 CERES
 play68_ERA = 0 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
-play69_AA = 0 # albedo anomaly
+play69_AA = 12 # 12    albedo anomaly  # 69.12
+play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   play69_AA_in = "69a_AA_Albedo_anomaly_2026_08.txt" input filename
 
 plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
@@ -66,8 +67,8 @@ plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 67   # 61  62
-line3_play = 64  #  play_62_EEA #   68 play68_ERA = 720
-line4_play = 0  # 61 play_61_EEI = 36 
+line3_play = 69  #  play_62_EEA #   68 play68_ERA = 720
+line4_play = 64  # 61 play_61_EEI = 36 
 line5_play = 0  # 62 61
 line6_play = 0
 
@@ -102,6 +103,7 @@ c66 = "#AB263590"
 c67 = "#0F9BE190"
 c67 = "red"
 c68 = "#36970FD4"
+c69 = "#1652D490"
 
 c71 = "red"
 c71 =  "#AB263590"
@@ -203,10 +205,12 @@ y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.285  # Hansen no swap albedo in %
 y_67max = 0.294   # Hansen no swap albedo in %
 
-
-
 y_68min = 0  # for era5 Temperature
 y_68max = 1.6  # for era5 Temperature 
+
+y_69min = -2   # albedo anomaly in W/m2 
+y_69max = 1.6  # albedo anomaly in W/m2
+
 
 y_Tmin = 0
 y_Tmax = 2 # 1.7
@@ -341,33 +345,5 @@ print_debug = 10 # print some items
 #                                            column_name='EEI')
 # 25) copy /work/c44d_ceres.csv to /read_csv/c44d_ceres_48month_EEI.csv
 #
-# 31)  set part44_ceres_eei = 11
-# 32) /Dokumente/Python/5_CO2_EEI_T/main.py reads 
-#     /Dokumente/Python/5_CO2_EEI_T/read_csv/2016_01_EEI_CERES_TOA Net Flux.txt
-#        df44 = convert_ceres_to_csv('read_csv/2016_01_EEI_CERES_TOA Net Flux.txt', 
-#                                   'work/c44b_ceres.csv')
-# 33) the file /Dokumente/Python/5_CO2_EEI_T/work/c44b_ceres.csv is created with year as decimal
-# 34) the file /Dokumente/Python/5_CO2_EEI_T/work/c44d_ceres.csv is created 
-#                      with 48 month trailing average in new column EEI
-# 35) copy /work/c44d_ceres.csv to /read_csv/c44d_ceres_12month_EEI.csv
-#
-#########################################################
-# 163 How to make TOA_Shortwave_Fluxfiles ################
-#########################################################
-# download https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-#      63  TOA Longwave Flux - All-Sky
-#          CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJanuary-2026
-#          2026_01_TOA_Longwave_Flux_All-Sky.txt
 
-#      63  TOA Longwave Flux - All-Sky
-#          CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJanuary-2026
-#          2026_01_TOA_Longwave_Flux_All-Sky.txt
-# 
-#  ceres olr csv download 
-# https://neo.gsfc.nasa.gov/view.php?datasetId=CERES_LWFLUX_M
-#The monthly climatology-corrected Earth's Energy Imbalance was record high in December 2025, at +2.57 W/m²!
-#https://bsky.app/profile/leonsimons.com/post/3mfchkvjyjs2k
-#https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mfcnnsfkgk2h
-# NASA CERES Earth's Energy Imbalance
-#—Absorbed Solar Radiation (ASR)
-#—Outgoing Longwave Radiation (OLR)
+

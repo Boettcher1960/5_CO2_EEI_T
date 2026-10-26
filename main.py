@@ -1,5 +1,5 @@
 # main.py
-v = "5H70" # H61 = albedo67 as line 2
+v = "5H71" # H61 = albedo67 as line 2
 #          43 work on albedo 12 month
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -264,6 +264,25 @@ if play68_ERA > 0: #
                                             window_months=play68_ERA,
                                             min_periods=12,
                                             center=use_center)
+if play69_AA > 1: #  # 69.20  main.py   line 267  if play69_AA > 1: 
+       df69b = convert62_txt_to_csv( play69_AA_in, 
+                                    'work/69b_AA.csv',
+                                    'AlbedoA')
+       if print_debug > 9:
+          print(f"main_271: create albedo work/69b_AA.csv  69.28 ={play69_AA}")
+       
+       window_months=play_64_ASR_anomaly
+       min_periods=12
+       use_center=False
+       keep_original=True,
+       df64c = create_running_average( 'read_csv/_64b_ASR.csv', 
+                                       'read_csv/_64c_ASR.csv',
+                                            window_months=play_64_ASR_anomaly,
+                                            min_periods=12,
+                                            center=use_center,
+                                            column_name='ASR')
+       if print_debug > 9:
+          print(f"main_138: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
 
 
 

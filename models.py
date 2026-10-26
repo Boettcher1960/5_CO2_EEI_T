@@ -527,6 +527,41 @@ def T_model76(t):
 # 2026.10.20 works with play68_ERA = 1095 # 1461, 1095, 720, 365, 24  
 
 
+##################################################################
+# 69     play69_AA = 0 #   albedo anomaly      ###################
+##################################################################
+# 69.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
+# 69.2 select first item
+# 69.3 CERES_EBAF-TOA_Ed4.2.1 - Global Data Charts up to Aug. 2026 is shown
+# 69.4 six small curves are shown
+# 69.5 select item 1 Label TOA ShortWave Flux All Sky 90 to 110 W/m/m monthly values
+# 69.6 big window appears with one curve only
+# 69.7 left mouse select Show Anomaly
+# 69.8 TOA ShortWave Flux All Sky -3 to 3 W/m/m monthly values shows
+# 69.9 left mouse select save Data as ASCII File
+# 69.10      CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt is downloaded
+#                  year month   data
+#                  2000 03 1.01...
+#                  2026 08 -0.90
+# 69.11      open rename Bewegen     to work/69a_AA_Albedo_anomaly_2026_08.txt 
+# 69.12  config.py   play69_AA = 12     line 56 
+# 69.13  config.py   play69_AA_in = "69a_AA_Albedo_anomaly_2026_08.txt" input filename
+# 69.14  config.py   line3_play = 69
+# 69.15  config.py   c69 = "#1652D490"
+# 69.16  config.py   y_69min = -2   # albedo anomaly in W/m2 
+# 69.20  main.py   line 267  if play69_AA > 1: # 
+# 69.22  main.py   line 268  df69b = convert_ceres_to_csv( play69_AA_in,  // input file
+# 69.23  main.py   line 269                            'work/69b_AA.csv') // output file
+# 69.2  main.py   line 267 
+# 69.2  main.py   line 267 
+# 69.2  main.py   line 267 
+# 69.2  main.py   line 267 
+# 69.2  main.py   line 267 
+
+
+
+
+
 
 
 #########################################################
