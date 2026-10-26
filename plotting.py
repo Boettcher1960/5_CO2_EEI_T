@@ -558,6 +558,23 @@ def plot8_right_y_axe_for_C_68(ax68,right62): # 68.50
     ax68.tick_params(axis="y", labelcolor=c68)
     ax68.set_ylim(y_68min, y_68max) #
 
+# play69_AA
+def plot8_right_y_axe_for_C_69(ax69,right62): # 69.5
+    if right62 > 0:
+        outward_right = right62
+    elif play69_AA > 0 and line3_play == 69:
+        outward_right =  ( 2.5 *  yr_60 ) - yr_150
+    elif play69_AA > 0 and line4_play == 69:
+        outward_right =  ( 3.5 *  yr_60 ) - yr_150
+    else:
+       outward_right =  ( 5 *  yr_60 ) - yr_150
+    ax69.spines.right.set_position(("outward", outward_right))
+    ax69.set_ylabel("Albedo Anomaly [W/m2]     69", color=c69, fontname="Arial",fontsize=18)
+    ax69.tick_params(axis="y", labelcolor=c69)
+    ax69.set_ylim(y_69min, y_69max) #
+
+
+
 # 71.57 call plotting.px line 520
 def plot8_right_y_axe_for_T_71(ax71,right52): # 71.6 plot71_temperature
     if right52 > 0:
@@ -1140,23 +1157,11 @@ def plot_9_create_all_plots(ax1, data):
            print(f"plot_969: ax62 62.8 ={play_62_EEA}")
         if play_62_EEA > 2:
            plot8_right_y_axe_for_C_62( ax62 , 0 ) # 62.4 line 967
-    if play_64_ASR_anomaly > 0:
-        ax64 = ax1.twinx()
-        ax64.plot(data['ceres_64']["decimal_year"], data['ceres_64']["ASR"], '-', 
-                  label="EEI K62", color=c64, linewidth=2)
-        ax64.tick_params(axis="y", labelcolor=c62)
-        ax64.set_ylim(y_64min, y_64max)
-        if print_debug > 9:
-           print(f"plot_969:  64.8 ={play_64_ASR_anomaly}")
-        if play_64_ASR_anomaly > 2:
-           plot8_right_y_axe_for_C_64( ax64 , 0 ) # 64.4 
 
-
-
-# play_63_CB    = 3 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
-# https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL
-# download cumulative-co-emissions.csv displayed data and copy to 
-# work/_63a_cumulative-co-emissions.csv with columns  Entity,Code,Year,Cumulative CO₂ emissions
+    # play_63_CB    = 3 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
+    # https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL
+    # download cumulative-co-emissions.csv displayed data and copy to 
+    # work/_63a_cumulative-co-emissions.csv with columns  Entity,Code,Year,Cumulative CO₂ emissions
 
     if play_63_CB > 0: # 63.4
         ax63 = ax1.twinx()
@@ -1187,6 +1192,16 @@ def plot_9_create_all_plots(ax1, data):
         ax63.set_ylim(y_Gmin, y_Gmax) # best scaling 2000 GtCO2
         if play_63_CB > 2:
             plot8_right_y_axe_for_C_63(ax63,0) # 63.5 line 500
+    if play_64_ASR_anomaly > 0:
+            ax64 = ax1.twinx()
+            ax64.plot(data['ceres_64']["decimal_year"], data['ceres_64']["ASR"], '-', 
+                      label="EEI K62", color=c64, linewidth=2)
+            ax64.tick_params(axis="y", labelcolor=c62)
+            ax64.set_ylim(y_64min, y_64max)
+            if print_debug > 9:
+               print(f"plot_969:  64.8 ={play_64_ASR_anomaly}")
+            if play_64_ASR_anomaly > 2:
+               plot8_right_y_axe_for_C_64( ax64 , 0 ) # 64.4 
     if play_65_ASR > 0:
                     ax65 = ax1.twinx()
                     ax65.plot(data['ceres_65']["decimal_year"], data['ceres_65']["ASR_average"], '-', 
@@ -1240,6 +1255,18 @@ def plot_9_create_all_plots(ax1, data):
               print(f"plot1051: ax68 68.48 ={play68_ERA}")
            if play68_ERA > 2:
               plot8_right_y_axe_for_C_68( ax68 , 0 ) # part
+    if play69_AA > 0:            # 69.55
+        ax69 = ax1.twinx()       # 69.56
+        ax69.plot(data['ceres_69']["decimal_year"], data['ceres_69']["AA12"], '-',   # 69.57
+                  label="EEI K69", color=c69, linewidth=2)
+        ax69.tick_params(axis="y", labelcolor=c69) # 69.59
+        ax69.set_ylim(y_69min, y_69max)            # 69.61
+        if print_debug > 9:
+           print(f"plot1248:  69.62 ={play69_AA}")
+        if play69_AA > 2:
+           plot8_right_y_axe_for_C_69( ax69 , 0 ) # 69.4 
+
+
 
     if plot71_temperature > 0 : # 71.41
         # 71.42 years scale x axis

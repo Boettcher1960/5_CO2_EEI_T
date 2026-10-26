@@ -555,7 +555,13 @@ def T_model76(t):
 # 69.24  main.py   line 270                        'AlbedoA' is new column in 69b_AA.csv'
 # 69.25             print(f"main_271: create albedo work/69b_AA.csv  69.25 ={play69_AA}")
 # 69.31 main.py    output column name for average
+# 69.32            df69c = create67_running_average( 'work/69b_AA.csv',   # 69.32 input file name   part 67.37
 # 69.33            output file name 'work/69c_AA.csv',   
+# 69.39 data_processing.py line 280  part 67.39 read csv with raw ceres data into data-frame
+# 69.39 data_processing.py   df = pd.read_csv(input_csv) # 'work/69b_AA.csv
+# 69.45 data_processing.py   part 67.45 mean value (read column column_read)(store in column_average)
+
+# 69.70 main.py 384  data['ceres_69'] = pd.read_csv("read_csv/_64c_ASR.csv") # 69.70 read
 
 # 69.2  main.py   line 267 
 # 69.2  main.py   line 267 

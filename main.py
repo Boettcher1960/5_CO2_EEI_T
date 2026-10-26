@@ -1,5 +1,5 @@
 # main.py
-v = "5H72" # H61 = albedo67 as line 2
+v = "5H73" # H61 = albedo67 as line 2
 #          43 work on albedo 12 month
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -270,23 +270,23 @@ if play69_AA > 1:                                       # 69.20  main.py   line 
                                     'work/69b_AA.csv',  # 69.23    'work/69b_AA.csv') // output file
                                     'AlbedoA')          # 69.24  'AlbedoA' is new column in 69b_AA.csv'
        if print_debug > 9:
-          print(f"main_271: create albedo work/69b_AA.csv  69.25 ={play69_AA}")
+          print(f"main_273: create albedo work/69b_AA.csv  69.25 ={play69_AA}")
        
        window_months=play69_AA                          # 69.26
-       min_periods=12                                   # 69.2
+       min_periods=3                                   # 69.27
        use_center=False                                 # 69.28
        keep_original=True,                              # 69.29
        column_read    ='AlbedoA'                        # 69.30 input column name
-       column_average ='AA12'                           # 69.31 output column name for average
-       df69c = create68_running_average( 'work/69b_AA.csv',   # 69.32 input file name
+       column_average ='AA12'                           # 69.31 output column name for average  
+       df69c = create67_running_average( 'work/69b_AA.csv',   # 69.32 input file name   part 67.37
                                          'work/69c_AA.csv',   # 69.33 output file name
                                             column_read,      # 69.34  column_name='AlbedoA')
                                           column_average,     # 69.35  column_name='AA')
-                                          window_months=play69_AA,
-                                          min_periods=12,
-                                          center=use_center)
+                                          window_months=play69_AA, # 69.36  
+                                          min_periods=3,     # 69.37    min_periods=12 was ok
+                                          center=use_center) # 69.38  # end part 67.51
        if print_debug > 9:
-          print(f"main_286: play69_AA   ={play69_AA}")
+          print(f"main_289:   part 69.52   play69_AA   ={play69_AA}")
 
 
 
@@ -380,6 +380,11 @@ def load_plot_data():
         data['era_68'] = pd.read_csv("work/_68_out.csv")
         if print_debug > 9:
            print(f"main_380: 68.41 read ={play68_ERA}")  
+    if play69_AA > 0: # 69.66 read
+        data['ceres_69'] = pd.read_csv("work/69c_AA.csv") # 69.70 read
+        if print_debug > 9:
+           print(f"main_386: 64.72 read ={play69_AA}") 
+
 
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.33 models.py line 600 

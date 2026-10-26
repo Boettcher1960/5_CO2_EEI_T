@@ -277,8 +277,8 @@ def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'  _CERES_raw.c
                              keep_original=True,
                              # column_name='ASR48'   # not used if main has different parameter
                              ): 
-    # part 67.39 read csv with raw ceres data into data-frame
-    df = pd.read_csv(input_csv) # 'work/_66b_OLR_raw.csv' # 'work/_65b_SW_in_raw.csv'
+    # 69.39 part 67.39 read csv with raw ceres data into data-frame
+    df = pd.read_csv(input_csv) # work/69b_AA.csv 'work/_66b_OLR_raw.csv' # 'work/_65b_SW_in_raw.csv'
 
     # part 67.40 sort the data-frame
     df['date'] = pd.to_datetime(df['date'])
@@ -288,7 +288,7 @@ def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'  _CERES_raw.c
     if min_periods is None:
         min_periods = window_months
 
-    # part 67.45 mean value (read column OLR)(store in ?)
+    # 69.45 part 67.45 mean value (read column column_read)(store in column_average)
     df[column_average] = df[column_read].rolling(
         window=window_months, 
         center=center,
@@ -311,7 +311,7 @@ def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'  _CERES_raw.c
     # part 67.51 copy to csv
     df_output.to_csv(output_csv, index=False, float_format='%.6f')
     return df_output
-    # end part 67.51  end 67.c  CERES.csv (perform averaging)
+    # 69.51 end part 67.51  end 67.c  CERES.csv (perform averaging)
 
 
 
