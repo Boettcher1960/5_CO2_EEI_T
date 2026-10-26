@@ -309,7 +309,7 @@ def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'  _CERES_raw.c
     # part 67.50 copy
     df_output = df[output_columns].copy()
     # part 67.51 copy to csv
-    df_output.to_csv(output_csv, index=False, float_format='%.6f')
+    df_output.to_csv(output_csv, index=False, float_format='%.6f') # 69.51
     return df_output
     # 69.51 end part 67.51  end 67.c  CERES.csv (perform averaging)
 

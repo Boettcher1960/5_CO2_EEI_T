@@ -344,7 +344,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c68)
             p68_text = f"Temperature in °C climate.copernicus.eu/datasets/-era5-single-levels   {play68_ERA} days    68"
             text_4_add_text(ax1, tr2x, tr3y, p68_text, c68, trs)
-    elif play69_AA > 0 and line3_play == 69:
+    elif play69_AA > 0 and line3_play == 69:  # 69.85 write text in line 3 text.py line 347
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c69)
             p64_text = f"AA    Albedo Anomaly in  [W/m²]     sw in / sw out           moving average {play69_AA} month    69"
             text_4_add_text(ax1, tr2x, tr3y, p64_text, c69, trs) 

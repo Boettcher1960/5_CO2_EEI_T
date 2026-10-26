@@ -1,5 +1,5 @@
 # main.py
-v = "5H73" # H61 = albedo67 as line 2
+v = "5H75" # H61 = albedo67 as line 2
 #          43 work on albedo 12 month
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -380,10 +380,10 @@ def load_plot_data():
         data['era_68'] = pd.read_csv("work/_68_out.csv")
         if print_debug > 9:
            print(f"main_380: 68.41 read ={play68_ERA}")  
-    if play69_AA > 0: # 69.66 read
-        data['ceres_69'] = pd.read_csv("work/69c_AA.csv") # 69.70 read
+    if play69_AA > 0: # 69.55 read
+        data['ceres_69'] = pd.read_csv("work/69c_AA.csv") # 69.56 read into data field
         if print_debug > 9:
-           print(f"main_386: 64.72 read ={play69_AA}") 
+           print(f"main_386: 64.57 read 69c_AA.csv  play69_AA ={play69_AA}") 
 
 
     # Load GIS temperature data

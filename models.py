@@ -558,16 +558,23 @@ def T_model76(t):
 # 69.32            df69c = create67_running_average( 'work/69b_AA.csv',   # 69.32 input file name   part 67.37
 # 69.33            output file name 'work/69c_AA.csv',   
 # 69.39 data_processing.py line 280  part 67.39 read csv with raw ceres data into data-frame
-# 69.39 data_processing.py   df = pd.read_csv(input_csv) # 'work/69b_AA.csv
+# 69.39                      df = pd.read_csv(input_csv) # 'work/69b_AA.csv
 # 69.45 data_processing.py   part 67.45 mean value (read column column_read)(store in column_average)
-
-# 69.70 main.py 384  data['ceres_69'] = pd.read_csv("read_csv/_64c_ASR.csv") # 69.70 read
-
-# 69.2  main.py   line 267 
-# 69.2  main.py   line 267 
-# 69.2  main.py   line 267 
-# 69.2  main.py   line 267 
-
+# 69.51 data_processing.py   df_output.to_csv(output_csv, index=False, float_format='%.6f') # 69.51
+# 69.52 main.py              print(f"main_289:   part 69.52   play69_AA   ={play69_AA}") 
+# 69.56 main.py    data['ceres_69'] = pd.read_csv("work/69c_AA.csv") # 69.56 read into data field
+# 69.57 main.py            print(f"main_386: 64.57 read 69c_AA.csv  play69_AA ={play69_AA}") 
+# 69.62 plotting.py 1259   make axis   ax69 = ax1.twinx()  
+# 69.63                    ax69.plot(data['ceres_69']["decimal_year"], data['ceres_69']["AA12"], '-',   
+# 69.69                    ax69.set_ylim(y_69min, y_69max)            # 69.69 scale the plot field
+# 69.70                    print(f"plot1265:  69.70 ={play69_AA}")
+# 69.72                    plot8_right_y_axe_for_C_69( ax69 , 0 ) # call   # 69.72 call  plotting.py 562
+# 69.74 plotting.py 562 def plot8_right_y_axe_for_C_69(ax69,right62):       # 69.74 plotting.py 562
+# 69.77             566    elif play69_AA > 0 and line3_play == 69:        # 69.77 configure right y axis line 3
+# 69.82                    label the right y axis   ax69.set_ylabel("Albedo Anomaly [W/m2]     69"
+# 69.84 plotting.py  574   scale the right y axis plotting.py 574
+# 69.85 text.py line 347   write text   elif play69_AA > 0 and line3_play == 69:  
+# 69.86                    write text f"AA    Albedo Anomaly in  [W/m²]     sw in / sw out           moving average {play69_AA} month    69"
 
 
 

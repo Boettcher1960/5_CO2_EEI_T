@@ -559,19 +559,19 @@ def plot8_right_y_axe_for_C_68(ax68,right62): # 68.50
     ax68.set_ylim(y_68min, y_68max) #
 
 # play69_AA
-def plot8_right_y_axe_for_C_69(ax69,right62): # 69.5
+def plot8_right_y_axe_for_C_69(ax69,right62):       # 69.74 plotting.py 562
     if right62 > 0:
         outward_right = right62
-    elif play69_AA > 0 and line3_play == 69:
-        outward_right =  ( 2.5 *  yr_60 ) - yr_150
-    elif play69_AA > 0 and line4_play == 69:
+    elif play69_AA > 0 and line3_play == 69:        # 69.77 configure right y axis line 3
+        outward_right =  ( 2.5 *  yr_60 ) - yr_150  # 69.78
+    elif play69_AA > 0 and line4_play == 69:        # 69.79
         outward_right =  ( 3.5 *  yr_60 ) - yr_150
-    else:
+    else:                                           # 69.80
        outward_right =  ( 5 *  yr_60 ) - yr_150
-    ax69.spines.right.set_position(("outward", outward_right))
-    ax69.set_ylabel("Albedo Anomaly [W/m2]     69", color=c69, fontname="Arial",fontsize=18)
-    ax69.tick_params(axis="y", labelcolor=c69)
-    ax69.set_ylim(y_69min, y_69max) #
+    ax69.spines.right.set_position(("outward", outward_right))  # 69.81
+    ax69.set_ylabel("Albedo Anomaly [W/m2]     69", color=c69, fontname="Arial",fontsize=18) # 69.82 label the right y axis
+    ax69.tick_params(axis="y", labelcolor=c69)    # 69.83 label the right y axis
+    ax69.set_ylim(y_69min, y_69max)               # 69.84 scale the right y axis plotting.py 574
 
 
 
@@ -1255,18 +1255,16 @@ def plot_9_create_all_plots(ax1, data):
               print(f"plot1051: ax68 68.48 ={play68_ERA}")
            if play68_ERA > 2:
               plot8_right_y_axe_for_C_68( ax68 , 0 ) # part
-    if play69_AA > 0:            # 69.55
-        ax69 = ax1.twinx()       # 69.56
-        ax69.plot(data['ceres_69']["decimal_year"], data['ceres_69']["AA12"], '-',   # 69.57
+    if play69_AA > 0:            # 69.61
+        ax69 = ax1.twinx()       # 69.62  plotting.py 1259 make axis ax 69
+        ax69.plot(data['ceres_69']["decimal_year"], data['ceres_69']["AA12"], '-',   # 69.63 
                   label="EEI K69", color=c69, linewidth=2)
-        ax69.tick_params(axis="y", labelcolor=c69) # 69.59
-        ax69.set_ylim(y_69min, y_69max)            # 69.61
+        ax69.tick_params(axis="y", labelcolor=c69) # 69.65
+        ax69.set_ylim(y_69min, y_69max)            # 69.69 scale the plot field
         if print_debug > 9:
-           print(f"plot1248:  69.62 ={play69_AA}")
+           print(f"plot1265:  69.70 ={play69_AA}")
         if play69_AA > 2:
-           plot8_right_y_axe_for_C_69( ax69 , 0 ) # 69.4 
-
-
+           plot8_right_y_axe_for_C_69( ax69 , 0 ) # call   # 69.72 call  plotting.py 562
 
     if plot71_temperature > 0 : # 71.41
         # 71.42 years scale x axis
