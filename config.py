@@ -203,14 +203,15 @@ y_66max = 243.5 # 242.8  # OLR in W/m2
 y_67min = 0.2936  # 0.294 albedo in %
 y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.285  # Hansen no swap albedo in %
-y_67max = 0.294   # Hansen no swap albedo in %
+y_67max = 0.295   # Hansen no swap albedo in %
 
 y_68min = 0  # for era5 Temperature
 y_68max = 1.6  # for era5 Temperature 
 
-y_69min = -2   # albedo anomaly in W/m2 
+y_69min = -1.6   # albedo anomaly in W/m2 
 y_69max = 1.6  # albedo anomaly in W/m2
-
+#y_69min = 1.3   # albedo anomaly in W/m2 
+#y_69max = -1.5  # albedo anomaly in W/m2
 
 y_Tmin = 0
 y_Tmax = 2 # 1.7
