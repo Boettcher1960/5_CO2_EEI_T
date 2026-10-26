@@ -1,5 +1,5 @@
 # main.py
-v = "5H68" # H61 = albedo67 as line 2
+v = "5H70" # H61 = albedo67 as line 2
 #          43 work on albedo 12 month
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -11,31 +11,6 @@ v = "5H68" # H61 = albedo67 as line 2
 # play68_ERA = 48 
 # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 #
-# line 60 process_ceres_data():
-#         main.play_61_EEI line 65
-#         main.play_62_EEA line 92
-#         main.play_64_ASR_anomaly line 124
-#         main.play_65_ASR line 141
-#         main.play_66_OLR line 144
-#         main.play_67_albedo line 176
-#         play68_ERA 
-
-# part 71 plot quadratic temperature with right y axis
-# part 72 plot temperature ECS = 8°C with right y axis
-# part 73 plot temperature ECS = 4.5°C with right y axis
-# part 74 plot Hansen GIS temperature 1880 2027
-# part 75      Hansen 2015 .41°C linear fit
-# part 76  my  T 
-# part 77 T with 2 values
-#
-# part 8 print headline, axis numbers. around figue
-# 8.3 print the left y axis 
-# 8.5 configure the right y axis legend  
-# 8.6 print the vertical lines CO2=constant
-# 8.7 print the right y axis
-# 8.8 print the x axis 
-# 8.9 print the horizontal lines year 2026
-# part 9 print line 1 to 5 below the figure 
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -45,17 +20,14 @@ import sys
 
 # Import modules
 from config import *
-from plotting import *
 from data_processing import *
-from text import *
 from models import *
+from plotting import *
+from text import *
 
 
-#from config import play_62_EEA
-
-
-if print_debug > 19:
-   print("main_052: start main ", y_TOAmin, y_TOAmax, play_62_EEA, part44_ceres_eei)
+if print_debug > 9:
+   print("main_030: start main ", line2_play , line3_play , line4_play)
 
 
 def process_ceres_data():
@@ -267,13 +239,13 @@ if play_67_albedo > 0: #
 
         # part 66.58
        if print_debug > 9:
-          print(f"main_267: all main jobs done play_67_albedo={play_67_albedo}")
+          print(f"main_242: all main jobs done play_67_albedo={play_67_albedo}")
 
 
 # 68.12 the main.py part line 266
 if play68_ERA > 0: #       
        if print_debug > 9:
-          print(f"main_272:  68.13 play68_ERA={play68_ERA}")
+          print(f"main_248:  68.13 play68_ERA={play68_ERA}")
 
        # part 68.13 set some variables
        window_months=play68_ERA

@@ -432,7 +432,7 @@ def T_model76(t):
 # 64.9 left mouse select save Data as ASCII File
 #       CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
 # 64.10 CERES_EBAF-TOA_Ed4.2.1_anom_TOA_Shortwave_Flux_-_All-Sky_March-2000toFebruary-2026.txt is downloaded
-# 64.11 rename      to 64a_in__2026_08_ASR_anomaly.txt and save to dokumente/5_CO2_EEI_T/work/
+# 64.11                                rename move     to work/64a_in__2026_08_ASR_anomaly.txt 
 # 64.12 run with play_64_ASR_anomaly = 12
 #    read     work/64a_in__2026_08_ASR_anomaly.txt   main.py 
 #    output1 read_csv/_64b_ASR.csv')
@@ -497,7 +497,7 @@ def T_model76(t):
 # 67.31 with   play_67_albedo = 48  work/_CERES_albedo.csv is created with averaged albedo48 column
 # 67.33 copy to work/_67_albedo48months_2026_08.csv'
 # 2026.10.20 play_67_albedo = 48 
-
+# 2026.10.26 play_67_albedo = 12 same as  https://bsky.app/profile/climatecasino.net/post/3mypajgq73c2f
 
 
 #########################################################
