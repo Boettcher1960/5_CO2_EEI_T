@@ -1,5 +1,5 @@
 # main.py
-v = "5H71" # H61 = albedo67 as line 2
+v = "5H72" # H61 = albedo67 as line 2
 #          43 work on albedo 12 month
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -27,6 +27,7 @@ from text import *
 
 
 if print_debug > 9:
+   print("")
    print("main_030: start main ", line2_play , line3_play , line4_play)
 
 
@@ -106,8 +107,8 @@ def process_ceres_data():
 if play_64_ASR_anomaly > 1: #  
        df64b = convert_ceres_to_csv('work/64a_in__2026_08_ASR_anomaly.txt', 
                                     'read_csv/_64b_ASR.csv')
-       if print_debug > 9:
-          print(f"main_152: create read_csv/_64b_ASR.csv  64.b ={play_64_ASR_anomaly}")
+       if print_debug > 19:
+          print(f"main_110: create read_csv/_64b_ASR.csv  64.b ={play_64_ASR_anomaly}")
        
        window_months=play_64_ASR_anomaly
        min_periods=12
@@ -119,8 +120,8 @@ if play_64_ASR_anomaly > 1: #
                                             min_periods=12,
                                             center=use_center,
                                             column_name='ASR')
-       if print_debug > 9:
-          print(f"main_138: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
+       if print_debug > 19:
+          print(f"main_123: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
 
 # main.play_65_ASR line 141
 # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
@@ -204,8 +205,8 @@ if play_67_albedo > 0: #
        df67b = ceres67_to_csv(      'work/_67b_sw_out.csv',  # output1 not used
                                     'work/_CERES_raw.csv')   # output 2 used a lot
        # part 67.33 print
-       if print_debug > 9:
-          print(f"main_237: _CERES_raw.csv 67.b play_67_albedo={play_67_albedo}")
+       if print_debug > 19:
+          print(f"main_208: _CERES_raw.csv 67.b play_67_albedo={play_67_albedo}")
 
        # part 67.34 set some variables
        window_months=play_67_albedo
@@ -239,7 +240,7 @@ if play_67_albedo > 0: #
 
         # part 66.58
        if print_debug > 9:
-          print(f"main_242: all main jobs done play_67_albedo={play_67_albedo}")
+          print(f"main_242:  done play_67_albedo={play_67_albedo}")
 
 
 # 68.12 the main.py part line 266
@@ -264,25 +265,28 @@ if play68_ERA > 0: #
                                             window_months=play68_ERA,
                                             min_periods=12,
                                             center=use_center)
-if play69_AA > 1: #  # 69.20  main.py   line 267  if play69_AA > 1: 
-       df69b = convert62_txt_to_csv( play69_AA_in, 
-                                    'work/69b_AA.csv',
-                                    'AlbedoA')
+if play69_AA > 1:                                       # 69.20  main.py   line 267  if play69_AA > 1: 
+       df69b = convert62_txt_to_csv( play69_AA_in,      # 69.22    input file
+                                    'work/69b_AA.csv',  # 69.23    'work/69b_AA.csv') // output file
+                                    'AlbedoA')          # 69.24  'AlbedoA' is new column in 69b_AA.csv'
        if print_debug > 9:
-          print(f"main_271: create albedo work/69b_AA.csv  69.28 ={play69_AA}")
+          print(f"main_271: create albedo work/69b_AA.csv  69.25 ={play69_AA}")
        
-       window_months=play_64_ASR_anomaly
-       min_periods=12
-       use_center=False
-       keep_original=True,
-       df64c = create_running_average( 'read_csv/_64b_ASR.csv', 
-                                       'read_csv/_64c_ASR.csv',
-                                            window_months=play_64_ASR_anomaly,
-                                            min_periods=12,
-                                            center=use_center,
-                                            column_name='ASR')
+       window_months=play69_AA                          # 69.26
+       min_periods=12                                   # 69.2
+       use_center=False                                 # 69.28
+       keep_original=True,                              # 69.29
+       column_read    ='AlbedoA'                        # 69.30 input column name
+       column_average ='AA12'                           # 69.31 output column name for average
+       df69c = create68_running_average( 'work/69b_AA.csv',   # 69.32 input file name
+                                         'work/69c_AA.csv',   # 69.33 output file name
+                                            column_read,      # 69.34  column_name='AlbedoA')
+                                          column_average,     # 69.35  column_name='AA')
+                                          window_months=play69_AA,
+                                          min_periods=12,
+                                          center=use_center)
        if print_debug > 9:
-          print(f"main_138: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
+          print(f"main_286: play69_AA   ={play69_AA}")
 
 
 
@@ -359,7 +363,7 @@ def load_plot_data():
         data['ceres_64'] = pd.read_csv("read_csv/_64c_ASR.csv")
         # data['ceres_64'] = pd.read_csv("work/c62d_ceres.csv")
         if print_debug > 9:
-           print(f"main_291: 64.9 read ={play_64_ASR_anomaly}") 
+           print(f"main_362: 64.9 read ={play_64_ASR_anomaly}") 
     if play_65_ASR > 0: # 
         data['ceres_65'] = pd.read_csv("work/_CERES_65_ASR.csv")
         if print_debug > 9:

@@ -551,8 +551,12 @@ def T_model76(t):
 # 69.16  config.py   y_69min = -2   # albedo anomaly in W/m2 
 # 69.20  main.py   line 267  if play69_AA > 1: # 
 # 69.22  main.py   line 268  df69b = convert_ceres_to_csv( play69_AA_in,  // input file
-# 69.23  main.py   line 269                            'work/69b_AA.csv') // output file
-# 69.2  main.py   line 267 
+# 69.23  main.py   line 269                        'work/69b_AA.csv') // output file
+# 69.24  main.py   line 270                        'AlbedoA' is new column in 69b_AA.csv'
+# 69.25             print(f"main_271: create albedo work/69b_AA.csv  69.25 ={play69_AA}")
+# 69.31 main.py    output column name for average
+# 69.33            output file name 'work/69c_AA.csv',   
+
 # 69.2  main.py   line 267 
 # 69.2  main.py   line 267 
 # 69.2  main.py   line 267 

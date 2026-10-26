@@ -36,8 +36,8 @@ def convert_ceres_to_csv(input_file, output_file):
     df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
     df = df[['date', 'year', 'month', 'toa_net_flux_w_m2', 'decimal_year']]
     df.to_csv(output_file, index=False, float_format='%.6f')
-    if print_debug_DP > 9:
-        print(f"DataP_32: Successfully converted {len(df)} records to {output_file}")
+    if print_debug_DP > 19:
+        print(f"DataP_40: Successfully converted {len(df)} records to {output_file}")
     return df
     # end part 62.b convert download.txt to CERES.csv (no averaging)
 
@@ -75,7 +75,7 @@ def create_running_average(input_csv,
     valid_records = df_output[column_name].notna().sum()
     #print(f"{window_months}-month running average saved to {output_csv}")
     #print(f"Valid records: {valid_records} out of {len(df_output)}")
-    if print_debug_DP > 9:
+    if print_debug_DP > 19:
         print(f"DataP_79: Valid records: {valid_records} out of {len(df_output)}")
         print(f"DataP_80: {window_months}-month running average saved to {output_csv} ")
     return df_output
@@ -432,7 +432,7 @@ def ceres67_to_csv(
                 except ValueError:
                     continue
     # 67.18 print
-    if print_debug_DP > 9:
+    if print_debug_DP > 19:
         print(f"DataP460: read file4  _67_TOA_Longwave_Flux_2026_07 to {output_file2}")
 
     # 67.19 copy data4 into df4 data field 'Longwave_out'
@@ -468,7 +468,7 @@ def ceres67_to_csv(
     # part 67.31 write df2 to  work/_CERES_raw.csv'
     df2.to_csv(output_file2, index=False, float_format='%.6f')
     # part 67.32 print
-    if print_debug_DP > 9:
+    if print_debug_DP > 19:
              print(f"DataP500: write  work/_CERES_raw.csv  file2= {output_file2}")
     return df2
     # end part 67.1 create work/_CERES_raw.csv with 14 columns
