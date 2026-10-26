@@ -53,6 +53,7 @@ play_65_ASR = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo = 12   # line2 1..12..48..99 create 1..12..48..99 CERES
 play68_ERA = 0 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+play69_AA = 0 # albedo anomaly
 
 plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
@@ -99,6 +100,7 @@ c64 = "#9522AA90"
 c65 = "#390509E1"
 c66 = "#AB263590"
 c67 = "#0F9BE190"
+c67 = "red"
 c68 = "#36970FD4"
 
 c71 = "red"
@@ -188,22 +190,18 @@ y_61max = 2  #   EEI in W/m2 y axis left mode
 y_62min = 0  # EEA in ZJ
 y_62max = 400  # EEA in ZJ
 
-y_64min = -2  # in W/m2
-y_64max = 1  # in W/m2
+y_64min = -1.6  # in W/m2
+y_64max = 2  # in W/m2
 y_65min = 239.5  # ASR in W/m2
 y_65max = 243.5  # 242.8  # ASR in W/m2
 
 y_66min = 239.5  # OLR in W/m2
 y_66max = 243.5 # 242.8  # OLR in W/m2
 
-y_67min = 0.285  # albedo in %
-y_67max = 0.295  # albedo in %
 y_67min = 0.2936  # 0.294 albedo in %
 y_67max = 0.2862  # 0.286 albedo in %
-y_67min = 0.294 # albedo in %
-y_67max = 0.286 # albedo in %
-y_67min = 0.2855  # Hansen no swap albedo in %
-y_67max = 0.294 # Hansen no swap albedo in %
+y_67min = 0.285  # Hansen no swap albedo in %
+y_67max = 0.294   # Hansen no swap albedo in %
 
 
 
@@ -228,7 +226,7 @@ y_77min = 0 #  Temperature
 y_77max = 4 #  Temperature 
 y_78min = 0 #  for Tom Harris Temperature 
 y_78max = 1.6 #  for Tom Harris Temperature
-x_anf = 2004
+x_anf = 2001
 x_end = 2027
 
 # constants

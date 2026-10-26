@@ -210,7 +210,7 @@ def plot_1_axe(ax1):
         ax1.set_ylabel("Earth’s albedo (reflectivity, in percent)  ", color=c67, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c67, labelsize=20)
         y_mayor_ticks = 0.001
-        y_minor_ticks = 0.0005
+        y_minor_ticks = 0.0002
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
