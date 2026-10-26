@@ -1,5 +1,5 @@
 # main.py
-v = "5H77" # H61 = albedo67 as line 2
+v = "5H79" # H61 = albedo67 as line 2
 #          43 work on albedo 12 month
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -420,7 +420,7 @@ def main():
                        f" 3({plot31_CO2_emission}{plot34_CO2_emission} 4({plot42_EEI_48month}"
                        f"{plot43_eei_12month}{plot45_OLR}{plot46_ASR} 5({plot52_delta_CO2_red_bars}"
                        f"{plot53_CO2_orange2025}{plot54_Glen_delta_on}{plot55_population_on}"
-                       f" 6({play_61_EEI}{play_62_EEA}{play_63_CB}{play_64_ASR_anomaly}{play_65_ASR}{play_66_OLR}{play_67_albedo}{play68_ERA}{play69_AA}"
+                       f" 6({play_61_EEI}{play_62_EEA}{play_63_CB}_{play_64_ASR_anomaly}{play_65_ASR}{play_66_OLR}_{play_67_albedo}{play68_ERA}{play69_AA}"
                        f" 7({plot71_temperature}{plot72_AESS_T}{plot73_ECS_T}{plot74_GIS_T}"
                        f"{linear_41_75}{plot76_my_T}")
     
