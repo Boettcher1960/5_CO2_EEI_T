@@ -209,8 +209,8 @@ def plot_1_axe(ax1):
         ax1.set_ylim(y_67min, y_67max)
         ax1.set_ylabel("Earth’s albedo (reflectivity, in percent)  ", color=c67, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c67, labelsize=20)
-        y_mayor_ticks = 0.00500 
-        y_minor_ticks = 0.00100
+        y_mayor_ticks = 0.001
+        y_minor_ticks = 0.0005
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
@@ -540,7 +540,6 @@ def plot8_right_y_axe_for_C_67(ax67,right62): # 67.50
         outward_right =  ( 3.5 *  yr_60 ) - yr_150
     else:
         outward_right =  ( 5 *  yr_60 ) - yr_150
-
     ax67.spines.right.set_position(("outward", outward_right))
     ax67.set_ylabel("Albedo (earth darkening) in %     67", color=c67, fontname="Arial",fontsize=18)
     ax67.tick_params(axis="y", labelcolor=c67)
