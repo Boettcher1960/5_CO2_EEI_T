@@ -414,9 +414,15 @@ def plot8_right_y_axe_for_44(ax44,rightv): # 43.5 part44_ceres_eei
     ax44.tick_params(axis="y", labelcolor=c44)
     ax44.set_ylim(y_44min, y_44max) #
 
-#  OLR  W/m² moving average 48 month 
+#  OLR  W/m² moving average 48 month   plot45_OLR = 3
 def plot8_right_y_axe_for_OLR_45(ax45,right62): # 62.5
-    outward_right =  ( plot45_OLR *  yr_60 ) - yr_150
+    if plot45_OLR == 3:
+        outward_right =  ( 2.5 *  yr_60 ) - yr_150
+    elif plot45_OLR == 4:
+        outward_right =  ( 3.7 *  yr_60 ) - yr_150
+    else:
+        outward_right =  ( plot45_OLR *  yr_60 ) - yr_150
+
     ax45.spines.right.set_position(("outward", outward_right))
     ax45.set_ylabel("Outgoing Longwave Radiation OLR in W/m²       45", color=c45, fontname="Arial",fontsize=18)
     ax45.tick_params(axis="y", labelcolor=c45)
