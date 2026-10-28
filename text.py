@@ -72,7 +72,7 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
     # ax1.set_ylabel("NASA CERES Earth Energy: ASR = OLR + EEI in W/m²  ", color=c46, fontsize=20)
     elif plot46_ASR == 2:
         header = f"NASA CERES Earth Energy Imbalance: ASR and OLR in W/m² (Aug. 2026) Plot {x_anf} to {x_end}."
-        ax1.text(-0.1, 1.05, header, color=c46, fontname="Arial", fontsize=trs,
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     elif line2_play == 61   :
         header = f"EEI Earth Energy Imbalance   CERES data from Aug. 2026    Plot {x_anf} to {x_end}."
@@ -234,7 +234,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot46_ASR == 2: # line DataP423 df2['ASR'] = df2['sw_in'] - df2['sw_out']
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c46)
         text_4_add_text(ax1, tr2x, tr2y, 
-                    "ASR Absorbed Solar Radiation =input-output in [W/m²] moving average 48 month   46", 
+                    "in ASR Absorbed Solar Radiation =input-output in [W/m²]moving average 48 month 46", 
                     c46, trs)
     elif play_61_EEI > 0 and line2_play == 61:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c61)
@@ -306,9 +306,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     c43, trs)
     elif plot45_OLR == 3: # plot45_OLR = 4 # Outgoing Longwave Radiation OLR
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c45)
-        text_4_add_text(ax1, tr2x, tr3y, 
-                    "OLR Outgoing Longwave Radiation OLR in W/m²        moving average 48 month    45", 
-                    c45, trs)
+        text_4_add_text(ax1, tr2x, tr3y, text45 , c45, trs)
     elif plot46_ASR == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c46)
         text_4_add_text(ax1, tr2x, tr3y, 
