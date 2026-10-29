@@ -34,8 +34,9 @@ plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 
 plot43_eei_12month = 0  # 2, 3, 4 ,5 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei   = 0  # 47, 3, 48,   is local 
 plot45_OLR         = 3 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
-plot46_ASR         = 2 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
+plot46_ASR         = 0 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48    = 0  # 4  
+plank48_= 5 # plank feedback is 68_ERA temperature * 3.22
 
 plot52_delta_CO2_red_bars = 0 # 3 (3=print numbers)
 plot53_CO2_orange2025 = 0 # no curve is visible 3, 4
@@ -44,7 +45,7 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 48    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 0    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
                 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
@@ -52,7 +53,7 @@ play_64_ASR_anomaly = 0 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly =
 play_65_ASR         = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR         = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo      = 0   # line2 1..12..48..99 create 1..12..48..99 CERES
-play68_ERA          = 0 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+play68_ERA          = 1461 # 1461, 1095, 720, 365, 24     # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 play69_AA           = 0 # 48 , 3,  7 , 11, 12, 13,48    albedo anomaly  # 69.12
 play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   play69_AA_in = "69a_AA_Albedo_anomaly_2026_08.txt" input filename
 
@@ -66,7 +67,7 @@ plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
-line2_play = 0   # 61  62
+line2_play = 68   # 61  62
 line3_play = 0  #  play_62_EEA #   68 play68_ERA = 720
 line4_play = 61  # 61 play_61_EEI = 36 
 line5_play = 0  # 62 61
@@ -89,7 +90,7 @@ c42 = "#13DF2F84"
 c43 = "green" # "#70A915B1"
 c44 = "blue"
 c45 = "#1A27DECC"
-c46 = "#52190AEA"
+c46 = "#B72E1CEA"
 c47 = "#31A28ADC"
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"
@@ -207,7 +208,7 @@ y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.296  # Hansen no swap albedo in %
 y_67max = 0.286   # Hansen no swap albedo in %
 
-y_68min = 0  # for era5 Temperature
+y_68min = 0.7  # for era5 Temperature
 y_68max = 1.6  # for era5 Temperature 
 
 y_69min = 1.6   # albedo anomaly in W/m2 
@@ -234,7 +235,7 @@ y_77max = 4 #  Temperature
 y_78min = 0 #  for Tom Harris Temperature 
 y_78max = 1.6 #  for Tom Harris Temperature
 
-x_anf = 2004
+x_anf = 2003
 x_end = 2027
 
 # constants

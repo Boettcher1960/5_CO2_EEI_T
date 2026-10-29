@@ -263,6 +263,16 @@ def T_model76(t):
 # 2026.10.15 plots plot47_albedo48 = 4
 # 2026.10.20 plots plot47_albedo48 = 4
 
+#########################################################
+# 48   plank48_= 5 #       plank feedback   #############
+#########################################################
+# https://substack.com/home/post/p-221922327 Figure 3
+# Tom Harris starts at Februar 2003 plank surface radiation 0...2.5W/m/m
+# 4year averge era4 T is 0.74°C   0.739°C
+# plank48_= 5 # plank feedback is 68_ERA temperature * 3.22
+
+
+
 
 #########################################################
 # plot52_delta_CO2_red_bars ############################

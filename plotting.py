@@ -220,8 +220,8 @@ def plot_1_axe(ax1):
          ax1.set_ylim(y_68min, y_68max)
          ax1.set_ylabel("Temperature from ERA5    [°C] ", color=c68, fontsize=20)
          ax1.tick_params(axis="y", labelcolor=c68, labelsize=20)
-         y_mayor_ticks = 0.200 
-         y_minor_ticks = 0.050
+         y_mayor_ticks = 0.200 # 0.200 
+         y_minor_ticks = 0.050 # 0.050
          ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
          ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
 
@@ -557,6 +557,8 @@ def plot8_right_y_axe_for_C_68(ax68,right62): # 68.50
        outward_right =  ( 2.5 *  yr_60 ) - yr_150
     elif play68_ERA > 0 and line4_play == 68:
            outward_right =  ( 3.5 *  yr_60 ) - yr_150
+    elif play68_ERA > 0 and line5_play == 68:
+                      outward_right =  ( 4.5 *  yr_60 ) - yr_150
     else:
        outward_right =  ( 3 *  yr_60 ) - yr_150
     ax68.spines.right.set_position(("outward", outward_right))
@@ -998,7 +1000,7 @@ def plot_9_create_all_plots(ax1, data):
            # The left axis is already configured in plot_1_axe
         else:
            ax45 = ax1.twinx()
-           ax45.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR48"], '-.', 
+           ax45.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR48"], '-.',    # '-.'  ':' : Gepunktete Linie (Dotted)
                   label="OLR K45", color=c45, linewidth=4)
            ax45.tick_params(axis="y", labelcolor=c45)
            ax45.set_ylim(y_45min, y_45max)
