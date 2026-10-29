@@ -133,6 +133,7 @@ text42 = "Earth Energy Imbalance W/m² moving average 48 month 42"
 text43 = "Earth Energy Imbalance in W/m²                                  moving average 12 month    43"
 text44 = "Earth Energy Imbalance W/m² moving average 44"
 text45 = "out OLR Outgoing Longwave Radiation OLR in W/m²     moving average 48 month  45"
+text48 = "Plank Feedback    in W/m²     era5-4year average   -0.74) * 3.22                      48"
 text55 = "Green line: Earth Population in billion                                               55"
 
 text63 = "carbon brief cummulative CO2 emissions in GtCO2 since 1750    ourworldindata     63"
@@ -179,7 +180,7 @@ y_44min = 0.0 #   EEI in W/m2 y axis left mode
 y_44max = 2 #   EEI in W/m2 y axis left mode
 
 y_45min = 240    # OLR in W/m2
-y_45max = 242.8  # OLR in W/m2
+y_45max = 243  # OLR in W/m2 242.8
 y_46min = 240    # ASR in W/m2
 y_46max = 242.8  # ASR in W/m2
 y_47min = 0.294 # albedo in %

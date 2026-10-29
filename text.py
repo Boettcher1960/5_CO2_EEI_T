@@ -496,6 +496,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c44)
         p44_text = f"Earth Energy Imbalance    W/m²   {part44_ceres_eei}-month moving average 44"
         text_4_add_text(ax1, tr2x, tr5y, p44_text, c44, trs) 
+    elif plank48 == 5:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c48)
+        text_4_add_text(ax1, tr2x, tr5y, text48, c48, trs)
     elif plot55_population_on == 5: # 55.4 row 5 legende world data plot22_CO2_Mauna_Loa
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c55)
         text_4_add_text(ax1, tr2x, tr5y, text55, c55, trs) 
