@@ -231,7 +231,7 @@ def T_model76(t):
 
 
 #########################################################
-# 46_ASR_48month_2026_07.csv ############################
+# 46     plot46_ASR          ############################
 #########################################################
 # 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 41.6 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
@@ -268,8 +268,14 @@ def T_model76(t):
 #########################################################
 # https://substack.com/home/post/p-221922327 Figure 3
 # Tom Harris starts at Februar 2003 plank surface radiation 0...2.5W/m/m
-# 4year averge era4 T is 0.74°C   0.739°C
+# 4year averge era4 T is 0.74°C  0.740300°C
 # plank48_= 5 # plank feedback is 68_ERA temperature * 3.22
+# run play68_ERA = 1461 creates work/_68_out.csv create68_running_average()
+# copy /_68_out.csv to work/_48_era5_in.csv
+#
+#
+#
+
 
 
 
