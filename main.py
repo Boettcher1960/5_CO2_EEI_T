@@ -336,6 +336,9 @@ def load_plot_data():
         data['ceres_47'] = pd.read_csv("read_csv/_47_albedo_48month_2026_08.csv")
         if print_debug > 9:
            print(f"main_316: 47.2 read ={plot47_albedo48}")
+    # Load 
+    if plank48 > 0: #  pd.read_csv("work/_48_era5_in.csv")
+        data['plank4'] = pd.read_csv("work/_48_era5_in.csv")
 
     # part 5.2 plot52_delta_CO2_red_bars
     # part 5.3 plot53_CO2_orange2025

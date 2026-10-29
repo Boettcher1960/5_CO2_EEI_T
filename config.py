@@ -36,7 +36,7 @@ part44_ceres_eei   = 0  # 47, 3, 48,   is local
 plot45_OLR         = 3 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR         = 0 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48    = 0  # 4  
-plank48_= 5 # plank feedback is 68_ERA temperature * 3.22
+plank48 = 5 # plank feedback is 68_ERA temperature * 3.22
 
 plot52_delta_CO2_red_bars = 0 # 3 (3=print numbers)
 plot53_CO2_orange2025 = 0 # no curve is visible 3, 4

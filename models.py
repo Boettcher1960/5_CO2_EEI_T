@@ -275,7 +275,9 @@ def T_model76(t):
 #
 #
 #
-
+def load48_plank_T():
+    return pd.read_csv("work/_48_era5_in.csv")
+#
 
 
 
