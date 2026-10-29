@@ -442,6 +442,23 @@ def plot8_right_y_axe_for_47(ax47,right62): # 62.5
     ax47.tick_params(axis="y", labelcolor=c47)
     ax47.set_ylim(y_47min, y_47max) #
 
+def plot8_right_y_axe_for_T_48(ax48,right52): # 48.6 
+    # ax48.spines.right.set_position(("outward", rightv))
+    if right52 > 0:
+        outward_right = right52
+    else:
+        outward_right =  ( plank48 * yr_60 ) - yr_150
+    ax48.spines.right.set_position(("outward", outward_right))
+    ax48.set_ylabel("plank feedback    48 ", color=c48, fontname="Arial",fontsize=18)
+    ax48.tick_params(axis="y", labelcolor=c48)
+    if plank48 == 2: # T axis already on the left
+        print(f"plot 564: no need for second T axis  ={plot48_GIS_T} ")
+        ax48.yaxis.set_ticks([])
+        ax48.spines['right'].set_visible(False)
+    else:    
+       ax48.set_ylabel("Plank feedback    48", color=c48, fontname="Arial",fontsize=18)
+       ax48.tick_params(axis="y", labelcolor=c48)
+
 
 def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right52): # 52.4
     # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
@@ -1048,15 +1065,15 @@ def plot_9_create_all_plots(ax1, data):
            #ax1.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
            #       label="T GIS K74", color=c74, linewidth=3)
            # The left axis is already configured in plot_1_axe
-        # else:
+        # else:   ax48.plot(data['plank4']["decimal_year"], data['plank4']["temp_average"]-0.74, '-', 
            ax48 = ax1.twinx()
-           ax48.plot(data['plank4']["decimal_year"], data['plank4']["temp_average"]+0.3, '-', 
+           ax48.plot(data['plank4']["decimal_year"], data['plank4']["temp_average"]*1.3, '-', 
                   label="T plank4", color=c74, linewidth=3)
            ax48.tick_params(axis="y", labelcolor=c74)
-           ax48.set_ylim(y_74min, y_74max)
+           ax48.set_ylim(y_48min, y_48max)
            if plank48 > 2:
-              plot8_right_y_axe_for_T_74(ax48,0) # 74.5 line 500
-
+              plot8_right_y_axe_for_T_48(ax48,0) # 
+              
 
 
     # plot52_delta_CO2_red_bars, Mauna Loa delta ,  plot_9_create_all_plots() ,   line 630

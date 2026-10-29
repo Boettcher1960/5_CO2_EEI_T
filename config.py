@@ -92,6 +92,7 @@ c44 = "blue"
 c45 = "#1A27DECC"
 c46 = "#B72E1CEA"
 c47 = "#31A28ADC"
+c48 = "red"
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"
@@ -183,6 +184,8 @@ y_46min = 240    # ASR in W/m2
 y_46max = 242.8  # ASR in W/m2
 y_47min = 0.294 # albedo in %
 y_47max = 0.286 # albedo in %
+y_48min = 0
+y_48max = 3
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars
