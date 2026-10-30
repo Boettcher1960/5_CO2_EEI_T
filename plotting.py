@@ -1087,10 +1087,10 @@ def plot_9_create_all_plots(ax1, data):
            ax48.set_ylim(y_48min, y_48max)
            if plank48 > 2:
               plot8_right_y_axe_for_T_48(ax48,0) # 
-    if plot49 > 0 : # 74.4
+    if plot49 > 0 : # 74.4  ax49.plot(data['plank5']["decimal_year"], ((data['plank5']["temp_average"] - 0.74) * 3.22) , '-', 
             ax49 = ax1.twinx()
-            ax49.plot(data['plank5']["decimal_year"], (data['plank5']["temp_average"] - 0.74) * 3.22, '-', 
-                         label="T plank49", color=c49, linewidth=3)
+            ax49.plot(data['plank5']["decimal_year"], ((data['plank5']["temp_average"] - 0.74) * 3.22) - (data['ceres_45']["OLR48"] -240  )
+                         , '-', label="T plank49", color=c49, linewidth=3)
             ax49.tick_params(axis="y", labelcolor=c49)
             ax49.set_ylim(y_49min, y_49max)
             if plot49 > 2:
