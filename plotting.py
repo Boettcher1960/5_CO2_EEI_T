@@ -1077,21 +1077,21 @@ def plot_9_create_all_plots(ax1, data):
               plot8_right_y_axe_for_47( ax47 , 0 ) # 47.4 line 844
     if plank48 > 0 : # 74.4
         # if plank48 == 2:
-           #ax1.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
+           #ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':',
            #       label="T GIS K74", color=c74, linewidth=3)
         # else:   ax48.plot(data['plank4']["decimal_year"], data['plank4']["temp_average"]-0.74, '-', 
            ax48 = ax1.twinx()
            ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':', 
-                  label="T plank4", color=c74, linewidth=3)
-           ax48.tick_params(axis="y", labelcolor=c74)
+                  label="T plank4", color=c48, linewidth=3)
+           ax48.tick_params(axis="y", labelcolor=c48)
            ax48.set_ylim(y_48min, y_48max)
            if plank48 > 2:
               plot8_right_y_axe_for_T_48(ax48,0) # 
     if plot49 > 0 : # 74.4
             ax49 = ax1.twinx()
-            ax49.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':', 
-                         label="T plank4", color=c74, linewidth=3)
-            ax49.tick_params(axis="y", labelcolor=c74)
+            ax49.plot(data['plank5']["decimal_year"], (data['plank5']["temp_average"] - 0.74) * 3.22, '-', 
+                         label="T plank49", color=c49, linewidth=3)
+            ax49.tick_params(axis="y", labelcolor=c49)
             ax49.set_ylim(y_49min, y_49max)
             if plot49 > 2:
                 plot8_right_y_axe_for_T_49(ax49,0) # 

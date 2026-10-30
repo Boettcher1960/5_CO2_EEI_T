@@ -340,7 +340,7 @@ def load_plot_data():
     if plank48 > 0: #  pd.read_csv("work/_48_era5_in.csv")
         data['plank4'] = pd.read_csv("work/_48_era5_in.csv")
     if plot49 > 0: #  pd.read_csv("work/_48_era5_in.csv")
-        data['plank4'] = pd.read_csv("work/_48_era5_in.csv")
+        data['plank5'] = pd.read_csv("work/_48_era5_in.csv")
     # part 5.2 plot52_delta_CO2_red_bars
     # part 5.3 plot53_CO2_orange2025
     # part 5.4 plot54_Glen_delta_on
