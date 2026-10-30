@@ -178,12 +178,12 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot45_OLR  == 2:  # 43.5 y axe left 
-        ax1.spines.left.set_position(("outward", 3))
-        ax1.set_ylim(y_62min, y_62max)
-        ax1.set_ylabel("Outgoing Longwave Radiation OLR in W/m²  ", color=c45, fontsize=20)
+        ax1.spines.left.set_position(("outward", 0))
+        ax1.set_ylim(y_45min, y_45max)
+        ax1.set_ylabel("OLR Outgoing Longwave Radiation W/m² ", color=c45, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c45, labelsize=20)
-        y_mayor_ticks = 0.500 
-        y_minor_ticks = 0.100
+        y_mayor_ticks = 0.5
+        y_minor_ticks = 0.1
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot46_ASR  == 2:  # 43.5 y axe left 
@@ -452,11 +452,11 @@ def plot8_right_y_axe_for_T_48(ax48,right52): # 48.6
     ax48.set_ylabel("plank feedback    48 ", color=c48, fontname="Arial",fontsize=18)
     ax48.tick_params(axis="y", labelcolor=c48)
     if plank48 == 2: # T axis already on the left
-        print(f"plot 564: no need for second T axis  ={plot48_GIS_T} ")
+        print(f"plot 564: no need for second T axis  ={plank48} ")
         ax48.yaxis.set_ticks([])
         ax48.spines['right'].set_visible(False)
     else:    
-       ax48.set_ylabel("Plank feedback    48", color=c48, fontname="Arial",fontsize=18)
+       ax48.set_ylabel("Plank feedback  in W/m²        48", color=c48, fontname="Arial",fontsize=18)
        ax48.tick_params(axis="y", labelcolor=c48)
 
 
@@ -1012,7 +1012,7 @@ def plot_9_create_all_plots(ax1, data):
 
     if plot45_OLR > 0:
         if plot45_OLR == 2:
-           ax1.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR48"], '-', 
+           ax1.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR48"], '-.',
                   label="OLR K45", color=c45, linewidth=4)
            # The left axis is already configured in plot_1_axe
         else:
@@ -1061,16 +1061,12 @@ def plot_9_create_all_plots(ax1, data):
               plot8_right_y_axe_for_47( ax47 , 0 ) # 47.4 line 844
     if plank48 > 0 : # 74.4
         # if plank48 == 2:
-           # Plot on the left axis (ax1) instead of creating a right axis
            #ax1.plot(data['gis_temp']["Year74"], data['gis_temp']["GIS_temp"]+0.3, '-', 
            #       label="T GIS K74", color=c74, linewidth=3)
-           # The left axis is already configured in plot_1_axe
         # else:   ax48.plot(data['plank4']["decimal_year"], data['plank4']["temp_average"]-0.74, '-', 
            ax48 = ax1.twinx()
-           ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, '-', 
+           ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':', 
                   label="T plank4", color=c74, linewidth=3)
-           # ax48.plot(data['plank4']["decimal_year"], data['plank4']["temp_average"]-0.74*3.22, '-', 
-               
            ax48.tick_params(axis="y", labelcolor=c74)
            ax48.set_ylim(y_48min, y_48max)
            if plank48 > 2:

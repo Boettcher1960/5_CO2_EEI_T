@@ -97,7 +97,6 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"Global Surface Temperature in °C       year {x_anf} to {x_end}."       
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                         transform=ax1.transAxes)
-        
     elif yl_mode == 4:
         header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Aug. 2026 data. Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
@@ -228,9 +227,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     c43, trs)
     elif plot45_OLR == 2: # plot45_OLR = 4 # Outgoing Longwave Radiation OLR
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c45)
-        text_4_add_text(ax1, tr2x, tr2y, 
-                    "Outgoing Longwave Radiation OLR  [W/m²] moving average 48 month                        45", 
-                    c45, trs)
+        text_4_add_text(ax1, tr2x, tr2y, text45 , c45, trs)
     elif plot46_ASR == 2: # line DataP423 df2['ASR'] = df2['sw_in'] - df2['sw_out']
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c46)
         text_4_add_text(ax1, tr2x, tr2y, 
@@ -312,7 +309,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "Absorbed Solar Radiation ASR = OLR+EEI  W/m²       moving average 48 month    46", 
                     c46, trs)
-
+    elif plank48 == 3:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c48,3,"x",7)
+        text_4_add_text(ax1, tr2x, tr3y, text48, c48, trs)
     # part 5.2 plot52_delta_CO2_red_bars
     elif plot52_delta_CO2_red_bars == 3: # 52.4 row 3
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c52)
@@ -497,7 +496,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         p44_text = f"Earth Energy Imbalance    W/m²   {part44_ceres_eei}-month moving average 44"
         text_4_add_text(ax1, tr2x, tr5y, p44_text, c44, trs) 
     elif plank48 == 5:
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c48)
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c48,3,"x",7)
         text_4_add_text(ax1, tr2x, tr5y, text48, c48, trs)
     elif plot55_population_on == 5: # 55.4 row 5 legende world data plot22_CO2_Mauna_Loa
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c55)

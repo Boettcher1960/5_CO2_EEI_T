@@ -1,5 +1,5 @@
 # main.py
-v = "5H84" # H61 = albedo67 as line 2
+v = "5H85" # H61 = albedo67 as line 2
 #          43 work on albedo 12 month
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -428,8 +428,7 @@ def main():
                        f"{linear_41_75}{plot76_my_T}")
     
     if print_debug > 9:
-       print("main_237: begin ", header_parameter)
-
+       print("main_431: begin ", header_parameter)
 
     # Process CERES data
     process_ceres_data()

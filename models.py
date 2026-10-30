@@ -272,8 +272,22 @@ def T_model76(t):
 # plank48_= 5 # plank feedback is 68_ERA temperature * 3.22
 # run play68_ERA = 1461 creates work/_68_out.csv create68_running_average()
 # copy /_68_out.csv to work/_48_era5_in.csv
+#       
+#          Alle Linienstile (linestyle)
 #
-#
+#         Ersetzt den Bindestrich - in Ihrem Beispiel:
+#         • '-' : Durchgezogene Linie (Solid)
+#         • '--' : Gestrichelte Linie (Dashed)
+#         • '-.' : Strich-Punkt-Linie (Dash-dot)
+#         • ':' : Gepunktete Linie (Dotted)
+#         • '' oder ' ' (Leerzeichen) : Keine Linie (zeigt nur Marker)
+#         • '.' : Punkt (Punktgröße sehr klein)
+#         • ',' : Pixel (1x1 Pixel)
+#         • 'o' : Kreis / Circle
+#         • 'v' : Dreieck nach unten
+#         • '^' : Dreieck nach oben
+#         • '<' : Dreieck nach links
+#         • '>' : Dreieck nach rechts
 #
 def load48_plank_T():
     return pd.read_csv("work/_48_era5_in.csv")
