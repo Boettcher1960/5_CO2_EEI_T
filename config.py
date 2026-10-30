@@ -192,7 +192,7 @@ y_47max = 0.286 # albedo in %
 y_48min = 0
 y_48max = 3
 y_49min = 0
-y_49max = 2.5
+y_49max = 4
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars
@@ -245,7 +245,7 @@ y_77max = 4 #  Temperature
 y_78min = 0 #  for Tom Harris Temperature 
 y_78max = 1.6 #  for Tom Harris Temperature
 
-x_anf = 2003
+x_anf = 2000
 x_end = 2027
 
 # constants
