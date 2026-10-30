@@ -1,5 +1,5 @@
 # main.py
-v = "5H85" # H61 = albedo67 as line 2
+v = "5H86" # H61 = albedo67 as line 2
 #          43 work on albedo 12 month
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -339,7 +339,8 @@ def load_plot_data():
     # Load 
     if plank48 > 0: #  pd.read_csv("work/_48_era5_in.csv")
         data['plank4'] = pd.read_csv("work/_48_era5_in.csv")
-
+    if plot49 > 0: #  pd.read_csv("work/_48_era5_in.csv")
+        data['plank4'] = pd.read_csv("work/_48_era5_in.csv")
     # part 5.2 plot52_delta_CO2_red_bars
     # part 5.3 plot53_CO2_orange2025
     # part 5.4 plot54_Glen_delta_on

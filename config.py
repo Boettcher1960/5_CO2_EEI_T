@@ -13,7 +13,7 @@
 # line 2 defines the left Y axis. example
 
 # 8.5 configure the right axis legend 
-yr_60  = 60  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
+yr_60  = 50  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
 yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_74
 yr_delete = 1 # 9 = delete all axes delete axe 4
 
@@ -37,6 +37,7 @@ plot45_OLR         = 2 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave 
 plot46_ASR         = 0 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48    = 0  # 4  
 plank48 = 3 # 3 , 5 plank feedback is 68_ERA temperature * 3.22
+plot49 = 4  # plot49 = plank48 - plot45_OLR missing   long wave radiation absorbed within the atmosphere
 
 plot52_delta_CO2_red_bars = 0 # 3 (3=print numbers)
 plot53_CO2_orange2025 = 0 # no curve is visible 3, 4
@@ -93,6 +94,8 @@ c45 = "#1A27DECC"
 c46 = "#B72E1CEA"
 c47 = "#31A28ADC"
 c48 = "red"
+c49 = "#DB1ADECC"
+
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"
@@ -134,6 +137,7 @@ text43 = "Earth Energy Imbalance in W/m²                                  movin
 text44 = "Earth Energy Imbalance W/m² moving average 44"
 text45 = "out OLR Outgoing Longwave Radiation OLR in W/m²     moving average 48 month  45"
 text48 = "out FB1 Plank Feedback    in W/m²     era5-4year average   -0.74) * 3.22                   48"
+text49 = "missing Long Wave Radiation =  FB1 Plank Feedback -OLR   in W/m²   Tom Harris   49"
 text55 = "Green line: Earth Population in billion                                               55"
 
 text63 = "carbon brief cummulative CO2 emissions in GtCO2 since 1750    ourworldindata     63"
@@ -187,6 +191,8 @@ y_47min = 0.294 # albedo in %
 y_47max = 0.286 # albedo in %
 y_48min = 0
 y_48max = 3
+y_49min = 0
+y_49max = 2.5
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars

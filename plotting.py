@@ -459,6 +459,22 @@ def plot8_right_y_axe_for_T_48(ax48,right52): # 48.6
        ax48.set_ylabel("Plank feedback  in W/m²        48", color=c48, fontname="Arial",fontsize=18)
        ax48.tick_params(axis="y", labelcolor=c48)
 
+def plot8_right_y_axe_for_T_49(ax49,right52): # 48.6 
+    # ax49.spines.right.set_position(("outward", rightv))
+    if right52 > 0:
+        outward_right = right52
+    else:
+        outward_right =  ( plot49 * yr_60 ) - yr_150
+    ax49.spines.right.set_position(("outward", outward_right))
+    ax49.set_ylabel("plank feedback    49 ", color=c49, fontname="Arial",fontsize=18)
+    ax49.tick_params(axis="y", labelcolor=c49)
+    if plot49 == 2: # T axis already on the left
+        print(f"plot 564: no need for second T axis  ={plot49} ")
+        ax49.yaxis.set_ticks([])
+        ax49.spines['right'].set_visible(False)
+    else:    
+       ax49.set_ylabel("Plank feedback  in W/m²        49", color=c49, fontname="Arial",fontsize=18)
+       ax49.tick_params(axis="y", labelcolor=c49)
 
 def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right52): # 52.4
     # growth data is different https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_gr_mlo.txt
@@ -1071,7 +1087,15 @@ def plot_9_create_all_plots(ax1, data):
            ax48.set_ylim(y_48min, y_48max)
            if plank48 > 2:
               plot8_right_y_axe_for_T_48(ax48,0) # 
-              
+    if plot49 > 0 : # 74.4
+            ax49 = ax1.twinx()
+            ax49.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':', 
+                         label="T plank4", color=c74, linewidth=3)
+            ax49.tick_params(axis="y", labelcolor=c74)
+            ax49.set_ylim(y_49min, y_49max)
+            if plot49 > 2:
+                plot8_right_y_axe_for_T_49(ax49,0) # 
+               
 
 
     # plot52_delta_CO2_red_bars, Mauna Loa delta ,  plot_9_create_all_plots() ,   line 630

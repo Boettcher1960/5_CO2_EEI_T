@@ -289,10 +289,27 @@ def T_model76(t):
 #         • '<' : Dreieck nach links
 #         • '>' : Dreieck nach rechts
 #
-def load48_plank_T():
-    return pd.read_csv("work/_48_era5_in.csv")
-#
+# def load48_plank_T():
+#     return pd.read_csv("work/_48_era5_in.csv")
+# 2026.10.30 plots plank48 = 3 # 3 , 5
+# 2026.10.30 plots plank48 = 5
 
+
+
+######################################################################
+# 49     plot49 = 4 #     plot49 = plank48 - plot45_OLR missing #####
+######################################################################
+# https://substack.com/home/post/p-221922327 Figure 3
+# plot49 = 4  # plot49 = plank48 - plot45_OLR missing   long wave radiation absorbed within the atmosphere
+# Tom Harris starts at Februar 2003 plank surface radiation 0...2.5W/m/m
+# 4year averge era4 T is 0.74°C  0.740300°C
+# plank48_= 5 # plank feedback is 68_ERA temperature * 3.22
+# run play68_ERA = 1461 creates work/_68_out.csv create68_running_average()
+# copy /_68_out.csv to work/_48_era5_in.csv
+# if plot45_OLR == 3:         outward_right =  ( 2.5 *  yr_60 ) - yr_150
+#         2.5 *  yr_60 = 150  
+#         3 *  yr_60   = 180
+#            yr_60 = 50
 
 
 
