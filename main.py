@@ -1,5 +1,5 @@
 # main.py
-v = "5K01" # with AI 
+v = "5K02" # with AI 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -337,7 +337,7 @@ def load_plot_data():
            print(f"main_316: 47.2 read ={plot47_albedo48}")
     # Load 
     if plank48 > 0: #  pd.read_csv("work/_48_era5_in.csv")  _48monthly_era5_in.csv
-        data['plank4'] = pd.read_csv("work/_48_era5_in.csv")
+        data['plank4'] = pd.read_csv("work/_48monthly_era5_in.csv")
     if plot49 > 0: #  pd.read_csv("work/_48_era5_in.csv")
         data['plank5'] = pd.read_csv("work/_48_era5_in.csv")
     # part 5.2 plot52_delta_CO2_red_bars

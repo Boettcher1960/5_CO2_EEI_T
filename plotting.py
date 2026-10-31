@@ -1080,8 +1080,9 @@ def plot_9_create_all_plots(ax1, data):
            #ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':',
            #       label="T GIS K74", color=c74, linewidth=3)
         # else:   ax48.plot(data['plank4']["decimal_year"], data['plank4']["temp_average"]-0.74, '-', 
+        # ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':', 
            ax48 = ax1.twinx()
-           ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':', 
+           ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.7) * 3.22, ':', 
                   label="T plank4", color=c48, linewidth=3)
            ax48.tick_params(axis="y", labelcolor=c48)
            ax48.set_ylim(y_48min, y_48max)
