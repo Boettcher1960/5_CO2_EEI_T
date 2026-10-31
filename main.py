@@ -1,5 +1,5 @@
 # main.py
-v = "5K05" # with AI 
+v = "5K06" # with AI 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -339,7 +339,12 @@ def load_plot_data():
     if plank48 > 0: #  pd.read_csv("work/_48_era5_in.csv")  _48monthly_era5_in.csv 
         data['plank4'] = pd.read_csv("work/_48monthly_era5_in.csv")
     if plot49 > 0: #  pd.read_csv("work/_48_era5_in.csv")
-        data['plank5'] = pd.read_csv("work/_48_era5_in.csv")
+        create49_fb1_olr48_sum(
+          "work/_49_in_plank_FB1.csv", # plank FB1 in 
+          "work/_49_OLR_48month_2026_08.csv", # outgoing longwave radiation OLR
+          "work/_49_FB1_plus_OLR48.csv", # 
+         )
+        data['plank5'] = pd.read_csv("work/_49_FB1_plus_OLR48.csv")
     # part 5.2 plot52_delta_CO2_red_bars
     # part 5.3 plot53_CO2_orange2025
     # part 5.4 plot54_Glen_delta_on
@@ -432,13 +437,6 @@ def main():
 
     # Process CERES data
     process_ceres_data()
-
-    if plot49 > 0:
-       create49_fb1_olr48_sum(
-          "work/_49_in_plank_FB1.csv",
-          "work/_49_OLR_48month_2026_08.csv",
-          "work/_49_FB1_plus_OLR48.csv",
-       )
     
     # Setup figure
     fig, ax1 = setup_figure(scale_mode)

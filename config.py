@@ -191,8 +191,8 @@ y_47min = 0.294 # albedo in %
 y_47max = 0.286 # albedo in %
 y_48min = 0
 y_48max = 3
-y_49min = 0
-y_49max = 4
+y_49min = 240
+y_49max = 243
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars

@@ -1092,14 +1092,12 @@ def plot_9_create_all_plots(ax1, data):
 
            if plank48 > 2:
               plot8_right_y_axe_for_T_48(ax48,0) # 
-    if plot49 > 0 : # 74.4  ax49.plot(data['plank5']["decimal_year"], ((data['plank5']["temp_average"] - 0.74) * 3.22) , '-', 
-            # ax49.plot(data['plank5']["decimal_year"], ((data['plank5']["temp_average"] - 0.74) * 3.22) + (data['plank4']["temp_average"]   )  
-            # ax49.plot(data['plank5']["decimal_year"], ((data['plank5']["temp_average"] - 0.74) * 3.22) - (data['ceres_45']["OLR48"]/1000   )
-            #  ax49.plot(data['plank5']["decimal_year"], ((data['plank5']["temp_average"] - 0.74) * 3.22) + (data['plank4']["temp_average"]   )
-            # # ax49.plot(data['plank5']["decimal_year"], ((data['plank5']["temp_average"] - 0.74) * 3.22) - (data['ceres_45']["OLR48"]/1000   )
+    if plot49 > 0 : # 
+            #  ax49.plot(data['plank5']["decimal_year"], ((data['plank5']["temp_average"] - 0.74) * 3.22) + (data['plank4']["temp_average"]   )          
+            #                         , '-', label="T plank49", color=c49, linewidth=3)
+            #
             ax49 = ax1.twinx()
-            # ax49.plot(data['plank5']["decimal_year"], ((data['plank5']["temp_average"] - 0.74) * 3.22) - (data['ceres_45']["OLR48"]/1000   )
-            ax49.plot(data['plank5']["decimal_year"], ((data['plank5']["temp_average"] - 0.74) * 3.22) + (data['plank4']["temp_average"]   )          
+            ax49.plot(data['plank5']["decimal_year"], data['plank5']["FB1_plus_OLR48"]            
                          , '-', label="T plank49", color=c49, linewidth=3)
             ax49.tick_params(axis="y", labelcolor=c49)
             ax49.set_ylim(y_49min, y_49max)
