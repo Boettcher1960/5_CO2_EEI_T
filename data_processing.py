@@ -492,7 +492,8 @@ def create49_fb1_olr48_sum(input_fb1, input_olr48, output_csv):
         how="inner",
         suffixes=("_FB1", "_OLR48"),
     ).dropna(subset=["FB1", "OLR48"]).copy()
-    merged["FB1_plus_OLR48"] = merged["FB1"] + merged["OLR48"]
+    # merged["FB1_plus_OLR48"] = merged["FB1"] + merged["OLR48"]
+    merged["FB1_plus_OLR48"] = 240 + merged["FB1"] - merged["OLR48"]
     merged["decimal_year"] = merged["decimal_year_OLR48"]
     result = merged[["decimal_year", "FB1", "OLR48", "FB1_plus_OLR48"]]
     result.to_csv(output_csv, index=False, float_format="%.6f")
