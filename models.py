@@ -308,8 +308,12 @@ def T_model76(t):
 # visualize
 # -----------------------
 # copy _68_out_monthly.csv to work/_48monthly_era5_in.csv
+# plotting.py line 1085
+# ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':'
+# plotting.py line 1089 48.48 save as file 
 #
 #
+# 2026.10.31 plots   plank48 = 3
 
 
 

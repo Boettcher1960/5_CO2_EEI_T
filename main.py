@@ -336,7 +336,7 @@ def load_plot_data():
         if print_debug > 9:
            print(f"main_316: 47.2 read ={plot47_albedo48}")
     # Load 
-    if plank48 > 0: #  pd.read_csv("work/_48_era5_in.csv")  _48monthly_era5_in.csv
+    if plank48 > 0: #  pd.read_csv("work/_48_era5_in.csv")  _48monthly_era5_in.csv 
         data['plank4'] = pd.read_csv("work/_48monthly_era5_in.csv")
     if plot49 > 0: #  pd.read_csv("work/_48_era5_in.csv")
         data['plank5'] = pd.read_csv("work/_48_era5_in.csv")
