@@ -473,7 +473,7 @@ def plot8_right_y_axe_for_T_49(ax49,right52): # 48.6
         ax49.yaxis.set_ticks([])
         ax49.spines['right'].set_visible(False)
     else:    
-       ax49.set_ylabel("Plank feedback  in W/m²        49", color=c49, fontname="Arial",fontsize=18)
+       ax49.set_ylabel("missing Plank feedback - OLR  in W/m²   49", color=c49, fontname="Arial",fontsize=18)
        ax49.tick_params(axis="y", labelcolor=c49)
 
 def plot8_right_y_axe_for_delta_ppm_increase_52(ax52, df52,right52): # 52.4
@@ -1028,7 +1028,7 @@ def plot_9_create_all_plots(ax1, data):
 
     if plot45_OLR > 0:
         if plot45_OLR == 2:
-           ax1.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR48"], '-.',
+           ax1.plot(data['ceres_45']["decimal_year"], data['ceres_45']["OLR48"], '-',
                   label="OLR K45", color=c45, linewidth=4)
            # The left axis is already configured in plot_1_axe
         else:
@@ -1082,7 +1082,7 @@ def plot_9_create_all_plots(ax1, data):
         # else:   ax48.plot(data['plank4']["decimal_year"], data['plank4']["temp_average"]-0.74, '-', 
         # ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':', 
            ax48 = ax1.twinx()
-           ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.7) * 3.22, ':', 
+           ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.7) * 3.22, '-.', 
                   label="T plank4", color=c48, linewidth=3)
            ax48.tick_params(axis="y", labelcolor=c48)
            ax48.set_ylim(y_48min, y_48max)
@@ -1097,8 +1097,7 @@ def plot_9_create_all_plots(ax1, data):
             #                         , '-', label="T plank49", color=c49, linewidth=3)
             #
             ax49 = ax1.twinx()
-            ax49.plot(data['plank5']["decimal_year"], data['plank5']["FB1_plus_OLR48"]            
-                         , '-', label="T plank49", color=c49, linewidth=3)
+            ax49.plot(data['plank5']["decimal_year"], data['plank5']["FB1_plus_OLR48"] , ':', label="T plank49", color=c49, linewidth=3)
             ax49.tick_params(axis="y", labelcolor=c49)
             ax49.set_ylim(y_49min, y_49max)
             if plot49 > 2:

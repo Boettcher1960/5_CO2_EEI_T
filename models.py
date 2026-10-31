@@ -343,6 +343,11 @@ def T_model76(t):
 #          "work/_49_in_plank_FB1.csv",
 #          "work/_49_OLR_48month_2026_08.csv",
 #          "work/_49_FB1_plus_OLR48.csv",        )
+#
+# data_processing line 492 merged["FB1_plus_OLR48"] = 240 + merged["FB1"] - merged["OLR48"]
+#         240 W /m² is the average 
+# 2026.10.31 plots   plot49 = 4
+
 
 
 #########################################################
