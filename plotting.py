@@ -1087,8 +1087,8 @@ def plot_9_create_all_plots(ax1, data):
            ax48.tick_params(axis="y", labelcolor=c48)
            ax48.set_ylim(y_48min, y_48max)
            ax48_data = data['plank4'][["decimal_year"]].copy()
-           ax48_data["ax48"] = (data['plank4']["temp_average"] - 0.7) * 3.22
-           ax48_data.to_csv("work/48_plank_FB3_out.csv", index=False, float_format="%.6f")
+           ax48_data["FB1"] = (data['plank4']["temp_average"] - 0.7) * 3.22
+           ax48_data.to_csv("work/48_plank_FB1_out.csv", index=False, float_format="%.6f")
 
            if plank48 > 2:
               plot8_right_y_axe_for_T_48(ax48,0) # 

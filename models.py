@@ -311,7 +311,8 @@ def T_model76(t):
 # plotting.py line 1085
 # ax48.plot(data['plank4']["decimal_year"], (data['plank4']["temp_average"] - 0.74) * 3.22, ':'
 # plotting.py line 1089 48.48 save as file 
-#
+# file 48_plank_FB1_out.csv is created   with 2 columns decimal_year and FB1 values in W/m/m
+#         copy to work/_49_in_plank_FB1.csv
 #
 # 2026.10.31 plots   plank48 = 3
 
