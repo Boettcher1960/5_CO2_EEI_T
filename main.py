@@ -1,5 +1,5 @@
 # main.py
-v = "5K03" # with AI 
+v = "5K04" # with AI 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -432,6 +432,13 @@ def main():
 
     # Process CERES data
     process_ceres_data()
+
+    if plot49 > 0:
+       create49_fb1_olr48_sum(
+          "work/_49_in_plank_FB1.csv",
+          "work/_49_OLR_48month_2026_08.csv",
+          "work/_49_FB1_plus_OLR48.csv",
+       )
     
     # Setup figure
     fig, ax1 = setup_figure(scale_mode)

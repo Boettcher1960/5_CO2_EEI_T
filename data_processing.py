@@ -475,6 +475,30 @@ def ceres67_to_csv(
     # end part 67.32 create work/_CERES_raw.csv with 14 columns
 
 
+# part 49: combine monthly FB1 and OLR48 values
+def create49_fb1_olr48_sum(input_fb1, input_olr48, output_csv):
+    fb1 = pd.read_csv(input_fb1, usecols=["decimal_year", "FB1"])
+    olr48 = pd.read_csv(input_olr48, usecols=["decimal_year", "OLR48"])
+
+    for frame in (fb1, olr48):
+        frame["year"] = np.floor(frame["decimal_year"]).astype(int)
+        frame["month"] = np.floor(
+            (frame["decimal_year"] - frame["year"]) * 12
+        ).astype(int) + 1
+
+    merged = fb1.merge(
+        olr48,
+        on=["year", "month"],
+        how="inner",
+        suffixes=("_FB1", "_OLR48"),
+    ).dropna(subset=["FB1", "OLR48"]).copy()
+    merged["FB1_plus_OLR48"] = merged["FB1"] + merged["OLR48"]
+    merged["decimal_year"] = merged["decimal_year_OLR48"]
+    result = merged[["decimal_year", "FB1", "OLR48", "FB1_plus_OLR48"]]
+    result.to_csv(output_csv, index=False, float_format="%.6f")
+    return result
+
+
 # part 68.16
 def create68_running_average(input_csv,  # 'work/_68_era5_daily_series_2026_10_13.csv'
                              output_csv, # 'work/__68_out.csv',
