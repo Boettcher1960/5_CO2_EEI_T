@@ -1,25 +1,17 @@
 # models.py
-# version 5G50
+# version 5K10
 # includes the documentation
-
 import numpy as np
 import pandas as pd
 from config import *
 
-
 C280 = 280
-
-
 
 
 def T_model76(t):
     """My best temperature model"""
     x = t - 2000
     return 0.00034 * x**2 + 0.0238 * x + 0.74
-
-
-
-
 
 
 #########################################################
@@ -293,6 +285,31 @@ def T_model76(t):
 #     return pd.read_csv("work/_48_era5_in.csv")
 # 2026.10.30 plots plank48 = 3 # 3 , 5
 # 2026.10.30 plots plank48 = 5
+# chat01:
+# /Users/thomasboettcher/Documents/Python/5_CO2_EEI_T/work/_68_out.csv
+#   reduce this file to only monthly numbers and copy in this workdir
+# ---------
+#  The source is daily (31,696 rows, 1940-01-01 through 2026-10-11
+#     import csv; from collections import defaultdict; from decimal import Decimal; from pathlib import Path; source=Path("work/_68_out.csv"); target=Path("_68_out_monthly.csv"); groups=defaultdict(list); fields=None
+#     with source.open(newline="") as handle:
+#      reader=csv.DictReader(handle); fields=reader.fieldnames
+#     for row in reader: groups[row["date"][:7]].append(row)
+#     with target.open("w", newline="") as handle:
+#      writer=csv.DictWriter(handle, fieldnames=fields); writer.writeheader()
+#           for month, rows in sorted(groups.items()):
+#       output={"date": month + "-01"}
+#       for field in fields[1:]:
+#        values=[Decimal(row[field]) for row in rows if row[field] != ""]
+#        output[field]=format(sum(values) / len(values), ".6f") if values else ""
+#       writer.writerow(output)
+#     print(f"Wrote {len(groups)} monthly rows to {target}")
+#  Wrote 1042 monthly rows to _68_out_monthly.csv
+# chat02:
+# visualize
+# -----------------------
+# copy _68_out_monthly.csv to work/_48monthly_era5_in.csv
+#
+#
 
 
 
@@ -574,7 +591,7 @@ def T_model76(t):
 # 68.39 main.py line 377 read  work/_68_out.csv into  'era_68'
 # 66.44 plotting.py line 1044 plot era_68 data
 # 2026.10.20 works with play68_ERA = 1095 # 1461, 1095, 720, 365, 24  
-
+# 2026.10.31 works with play68_ERA = 1461 and line5_play = 68
 
 ##################################################################
 # 69     play69_AA = 0 #   albedo anomaly      ###################
