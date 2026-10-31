@@ -332,7 +332,17 @@ def T_model76(t):
 #         2.5 *  yr_60 = 150  
 #         3 *  yr_60   = 180
 #            yr_60 = 50
-
+# chat03:
+#  Make python code.
+# import     /work/_49_in_plank_FB1.csv with column FB1
+# import     /work/_49_OLR_48month_2026_08.csv with column OLR48
+# when decimal_year is same, add FB1 and OLR48
+# store result in a new csv file
+# -----
+# main.py line 436 if plot49 > 0:        create49_fb1_olr48_sum(
+#          "work/_49_in_plank_FB1.csv",
+#          "work/_49_OLR_48month_2026_08.csv",
+#          "work/_49_FB1_plus_OLR48.csv",        )
 
 
 #########################################################
