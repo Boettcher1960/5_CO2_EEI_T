@@ -108,8 +108,8 @@ def plot_1_axe(ax1):
     ax1.grid(True)
 
     if plot22_CO2_Mauna_Loa == 2:  # 22.5 y axe left 
-        ax1.set_ylim(y_min, y_max)
-        ax1.set_ylabel("Mauna Loa CO₂ in ppm  (plot128) ", color=c22, fontsize=20)
+        ax1.set_ylim(y_22min, y_22max)
+        ax1.set_ylabel("Mauna Loa CO₂ in ppm  ", color=c22, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c22, labelsize=20)
         y_mayor_ticks = 50 if (y_max - y_min) > 200 else 20
         y_minor_ticks = 10
@@ -342,7 +342,7 @@ def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
 
 def plot8_right_y_axe_for_ppm_23(ax23,right23): # 
     if print_debug > 9:
-          print(f"plot_314:     plot23_Glen_CO2 ={plot23_Glen_CO2} parameter 2 {right23}")
+          print(f"plot_314:     plot23_Glen_CO₂ ={plot23_Glen_CO2} parameter 2 {right23}")
     if right23 > 0:
         outward_right = right23
     else:
@@ -363,9 +363,9 @@ def plot8_right_y_axe_for_ppm_25(ax25,right22): # 22.4 line 375
     if print_debug > 9:
           print(f"plot_445: plot8_right_y_plot25_long_CO2  22.3 ={plot25_long_CO2} parameter 2 {outward_right}")
     ax25.spines.right.set_position(("outward", outward_right))
-    ax25.set_ylabel("CO2_plot25_long_CO2   plot450                  25", color=c25, fontname="Arial",fontsize=16)
+    ax25.set_ylabel("CO₂ in ppm atmosphere      25", color=c25, fontname="Arial",fontsize=16)
     ax25.tick_params(axis="y", labelcolor=c25)
-    ax25.set_ylim(y_min, y_max) #8
+    ax25.set_ylim(y_25min, y_25max) #8
 
 
 
