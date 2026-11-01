@@ -906,3 +906,9 @@ def T_78(t):
 # chat05 visualize work/_48_era5_in.csv column temp_average like
 # https://climatecasino.substack.com/p/dear-everyone-150c-is-yesterdays
 # Run: python3 main.py --visualize-era5-temp-average
+#
+# Fit: T = 0.000610555(year − 2000)² + 0.009740682(year − 2000) + 0.736626732
+# R²: 0.953830
+# make quadratic equation and visualize work/_48_era5_in.csv column temp_average like
+# https://climatecasino.substack.com/p/dear-everyone-150c-is-yesterdays
+# Fit the quadratic trend from 2000 onward and show its equation on the plot.

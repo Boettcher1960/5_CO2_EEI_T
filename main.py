@@ -1,5 +1,5 @@
 # main.py
-v = "5K16" # _48_era5_temp_average.png
+v = "5K17" # _48_era5_temp_average.png
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -421,7 +421,7 @@ def save_png(fig, header_parameter):
 
 
 def visualize_era5_temp_average():
-    """Plot the ERA5 four-year running mean against the 1.5 °C benchmark."""
+    """Plot the ERA5 running mean and its post-2000 quadratic trend."""
     input_path = "work/_48_era5_in.csv"
     output_path = "work/_48_era5_temp_average.png"
     data = pd.read_csv(input_path)
@@ -439,15 +439,42 @@ def visualize_era5_temp_average():
     if data.empty:
         raise ValueError(f"{input_path} has no valid date/temp_average rows")
 
-    latest = data.iloc[-1]
+    plot_data = data.loc[data["date"] >= "2000-01-01"].copy()
+    if len(plot_data) < 3:
+        raise ValueError("At least three valid observations since 2000 are required for a quadratic fit")
+
+    plot_data["decimal_year"] = (
+        plot_data["date"].dt.year
+        + (plot_data["date"].dt.dayofyear - 1)
+        / np.where(plot_data["date"].dt.is_leap_year, 366, 365)
+    )
+    x = plot_data["decimal_year"] - 2000
+    coefficients = np.polyfit(x, plot_data["temp_average"], 2)
+    trend = np.polyval(coefficients, x)
+    residual_sum_squares = np.sum((plot_data["temp_average"] - trend) ** 2)
+    total_sum_squares = np.sum(
+        (plot_data["temp_average"] - plot_data["temp_average"].mean()) ** 2
+    )
+    r_squared = 1 - residual_sum_squares / total_sum_squares
+    plot_data["quadratic_fit"] = trend
+
+    latest = plot_data.iloc[-1]
     benchmark = 1.5
     fig, ax = plt.subplots(figsize=(13, 7))
     ax.plot(
-        data["date"],
-        data["temp_average"],
+        plot_data["date"],
+        plot_data["temp_average"],
         color="#b22222",
         linewidth=2,
-        label="ERA5 four-year running mean",
+        label="ERA5 temp_average",
+    )
+    ax.plot(
+        plot_data["date"],
+        plot_data["quadratic_fit"],
+        color="#1f4e79",
+        linestyle=":",
+        linewidth=2.5,
+        label="Quadratic fit (2000 onward)",
     )
     ax.axhline(
         benchmark,
@@ -458,24 +485,35 @@ def visualize_era5_temp_average():
     )
     ax.scatter(latest["date"], latest["temp_average"], color="#b22222", zorder=3)
     ax.text(
-        0.02,
-        0.96,
-        f"Latest: {latest['temp_average']:.3f} °C ({latest['date']:%Y-%m-%d})",
+        0.02, 0.84,
+        (
+            f"T = {coefficients[0]:.6f}(year - 2000)^2 "
+            f"{coefficients[1]:+.6f}(year - 2000) {coefficients[2]:+.6f} °C\n"
+            f"R² = {r_squared:.4f}\n"
+            f"Latest: {latest['temp_average']:.3f} °C ({latest['date']:%Y-%m-%d})"
+        ),
         transform=ax.transAxes,
         va="top",
+        bbox={"facecolor": "white", "alpha": 0.85, "edgecolor": "none"},
     )
-    ax.set_title("ERA5 global temperature anomaly — four-year running mean")
+    ax.set_title("ERA5 temperature anomaly and quadratic trend")
     ax.set_xlabel("Date")
-    ax.set_ylabel("Temperature anomaly (°C, relative to 1850–1900)")
+    ax.set_ylabel("Temperature anomaly (°C)")
     ax.set_ylim(
-        min(float(data["temp_average"].min()), benchmark) - 0.05,
-        max(float(data["temp_average"].max()), benchmark) + 0.05,
+        min(float(plot_data["temp_average"].min()), benchmark) - 0.05,
+        max(float(plot_data["temp_average"].max()), benchmark) + 0.05,
     )
     ax.grid(True, alpha=0.3)
-    ax.legend(loc="upper left", bbox_to_anchor=(0, 0.91))
+    ax.legend(loc="upper left", bbox_to_anchor=(0, 0.68))
     fig.autofmt_xdate()
     fig.tight_layout()
     fig.savefig(output_path, dpi=300, bbox_inches="tight")
+    print(
+        "Quadratic fit since 2000: "
+        f"T = {coefficients[0]:.9f}(year - 2000)^2 "
+        f"{coefficients[1]:+.9f}(year - 2000) {coefficients[2]:+.9f}; "
+        f"R² = {r_squared:.6f}"
+    )
     print(f"Saved ERA5 temperature visualization to {output_path}")
     plt.show()
     plt.close(fig)
@@ -569,4 +607,3 @@ if __name__ == "__main__":
         visualize_era5_temp_average()
     else:
         main()
-
