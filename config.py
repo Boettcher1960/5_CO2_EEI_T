@@ -54,7 +54,7 @@ play_64_ASR_anomaly = 0 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly =
 play_65_ASR         = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR         = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo      = 0   # line2 1..12..48..99 create 1..12..48..99 CERES
-play68_ERA          = 0 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+play68_ERA          = 1461 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 play69_AA           = 0 # 48 , 3,  7 , 11, 12, 13,48    albedo anomaly  # 69.12
 play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   play69_AA_in = "69a_AA_Albedo_anomaly_2026_08.txt" input filename
 
@@ -67,12 +67,12 @@ plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
-plot200 = 2 # 2=new figure with era5 temperature and quadratic curve
+plot200 = 0 # 2=new figure with era5 temperature and quadratic curve
 
 # variable to show play variable in line 4
 line2_play = 0   # 61  62
 line3_play = 0  #  play_62_EEA #   68 play68_ERA = 720
-line4_play = 0  # 61 play_61_EEI = 36 
+line4_play = 68  # 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
 line6_play = 0
 
@@ -223,7 +223,7 @@ y_67min = 0.296  # Hansen no swap albedo in %
 y_67max = 0.286   # Hansen no swap albedo in %
 
 y_68min = 0  # for era5 Temperature
-y_68max = 1.5  # for era5 Temperature 
+y_68max = 2  # for era5 Temperature 
 
 y_69min = 1.6   # albedo anomaly in W/m2 
 y_69max = -1.6  # albedo anomaly in W/m2
