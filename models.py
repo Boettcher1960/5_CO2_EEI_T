@@ -609,7 +609,7 @@ def T_model76(t):
 # 68.17 DP read work/_68_era5_daily_series_2026_10_13.csv data-frame
 # 68.33 data_processing.py end line 507 (end perform averaging for play68_ERA )
 # 68.39 main.py line 377 read  work/_68_out.csv into  'era_68'
-# 66.44 plotting.py line 1044 plot era_68 data
+# 68.44 plotting.py line 1044 plot era_68 data
 #
 #  https://pulse.climate.copernicus.eu/
 #  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download
@@ -619,6 +619,8 @@ def T_model76(t):
 #
 # 2026.10.20 works with play68_ERA = 1095 # 1461, 1095, 720, 365, 24  
 # 2026.10.31 works with play68_ERA = 1461 and line5_play = 68
+# 2026.11.01 works with play68_ERA = 1461 and line5_play = 68
+
 
 ##################################################################
 # 69     play69_AA = 0 #   albedo anomaly      ###################

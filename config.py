@@ -67,7 +67,7 @@ plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
-plot200 = 0 # 2=new figure with era5 temperature and quadratic curve
+plot200 = 2 # 2=new figure with era5 temperature and quadratic curve
 
 # variable to show play variable in line 4
 line2_play = 0   # 61  62

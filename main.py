@@ -1,5 +1,5 @@
 # main.py
-v = "5K22" # 68_era5_daily_series_2026_10_30.csv
+v = "5K25" # 68_era5_daily_series_2026_10_30.csv
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -420,10 +420,12 @@ def save_png(fig, header_parameter):
         if print_debug > 9:
            print(f"main_382 saved png as file {path}")
 
+
 # 200.2 main.py line 422 fig_202_era5_temp_quadratic
 def fig_202_era5_temp_quadratic():
     """Plot the ERA5 running mean and its post-2000 quadratic trend."""
-    input_path = "work/_48_era5_in.csv"
+    # input_path = "work/_48_era5_in.csv"
+    input_path = "work/_68_out.csv"
     output_path = "work/_48_era5_temp_average.png"
     # 200.3 read CSV and validate columns
     data = pd.read_csv(input_path)
@@ -499,14 +501,19 @@ def fig_202_era5_temp_quadratic():
         color="black",
         linestyle="--",
         linewidth=1.5,
-        label="1.5 °C benchmark",
+        label="1.5 °C is above the planetary boundary",
     )
     # 200.24 highlight the latest data point on the plot
     ax.scatter(latest["date"], latest["temp_average"], color="#b22222", zorder=3)
     # 200.25 add text annotations for the quadratic equation, R², and latest temperature
+
+    text_below = ( f"https://github.com/Boettcher1960/5_CO2_EEI_T"
+                   f"    version {v} ")
+
     ax.text(
         0.02, 0.84,
         (
+            f" {text_below} \n"
             f"T = {coefficients[0]:.6f}(year - 2000)^2 "
             f"{coefficients[1]:+.6f}(year - 2000) {coefficients[2]:+.6f} °C\n"
             f"R² = {r_squared:.4f}\n"
@@ -517,7 +524,7 @@ def fig_202_era5_temp_quadratic():
         bbox={"facecolor": "white", "alpha": 0.85, "edgecolor": "none"},
     )
     # 200.26 set the title, labels, limits, grid, and legend for the plot
-    ax.set_title("ERA5 temperature anomaly and quadratic trend")
+    ax.set_title("ERA5 temperature 4 years rolling average  (Nov. 1, 2026 downloaded)")
     ax.set_xlabel("Date")
     ax.set_ylabel("Temperature anomaly (°C)")
     # 200.27 set y-axis limits to include the benchmark and data range with some padding
@@ -537,13 +544,13 @@ def fig_202_era5_temp_quadratic():
     fig.savefig(output_path, dpi=300, bbox_inches="tight")
     # 200.33 print the quadratic fit equation and R² value to the console
     print(
-        "Quadratic fit since 2000: "
+        "main_540: Quadratic fit since 2000: "
         f"T = {coefficients[0]:.9f}(year - 2000)^2 "
         f"{coefficients[1]:+.9f}(year - 2000) {coefficients[2]:+.9f}; "
         f"R² = {r_squared:.6f}"
     )
     # 200.34 print the path where the visualization was saved
-    print(f"Saved ERA5 temperature visualization to {output_path}")
+    print(f"main_546: Saved ERA5 temperature visualization to {output_path}")
     # 200.35 show the plot and close the figure to free memory
     plt.show()
     # 200.36 close the figure to free up memory
