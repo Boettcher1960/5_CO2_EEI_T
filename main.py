@@ -1,5 +1,5 @@
 # main.py
-v = "5K14" # CO$_2$ format CO with small 2 placed at bottom
+v = "5K16" # _48_era5_temp_average.png
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -419,6 +419,68 @@ def save_png(fig, header_parameter):
         if print_debug > 9:
            print(f"main_382 saved png as file {path}")
 
+
+def visualize_era5_temp_average():
+    """Plot the ERA5 four-year running mean against the 1.5 °C benchmark."""
+    input_path = "work/_48_era5_in.csv"
+    output_path = "work/_48_era5_temp_average.png"
+    data = pd.read_csv(input_path)
+    required_columns = {"date", "temp_average"}
+    missing_columns = required_columns.difference(data.columns)
+    if missing_columns:
+        raise ValueError(
+            f"{input_path} is missing required columns: {', '.join(sorted(missing_columns))}"
+        )
+
+    data = data.loc[:, ["date", "temp_average"]].copy()
+    data["date"] = pd.to_datetime(data["date"], errors="raise")
+    data["temp_average"] = pd.to_numeric(data["temp_average"], errors="raise")
+    data = data.dropna(subset=["date", "temp_average"]).sort_values("date")
+    if data.empty:
+        raise ValueError(f"{input_path} has no valid date/temp_average rows")
+
+    latest = data.iloc[-1]
+    benchmark = 1.5
+    fig, ax = plt.subplots(figsize=(13, 7))
+    ax.plot(
+        data["date"],
+        data["temp_average"],
+        color="#b22222",
+        linewidth=2,
+        label="ERA5 four-year running mean",
+    )
+    ax.axhline(
+        benchmark,
+        color="black",
+        linestyle="--",
+        linewidth=1.5,
+        label="1.5 °C benchmark",
+    )
+    ax.scatter(latest["date"], latest["temp_average"], color="#b22222", zorder=3)
+    ax.text(
+        0.02,
+        0.96,
+        f"Latest: {latest['temp_average']:.3f} °C ({latest['date']:%Y-%m-%d})",
+        transform=ax.transAxes,
+        va="top",
+    )
+    ax.set_title("ERA5 global temperature anomaly — four-year running mean")
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Temperature anomaly (°C, relative to 1850–1900)")
+    ax.set_ylim(
+        min(float(data["temp_average"].min()), benchmark) - 0.05,
+        max(float(data["temp_average"].max()), benchmark) + 0.05,
+    )
+    ax.grid(True, alpha=0.3)
+    ax.legend(loc="upper left", bbox_to_anchor=(0, 0.91))
+    fig.autofmt_xdate()
+    fig.tight_layout()
+    fig.savefig(output_path, dpi=300, bbox_inches="tight")
+    print(f"Saved ERA5 temperature visualization to {output_path}")
+    plt.show()
+    plt.close(fig)
+
+
 # main program 
 def main():
     """Main execution function"""
@@ -503,6 +565,8 @@ def main():
     plt.close(fig)
 
 if __name__ == "__main__":
-    main()
-
+    if "--visualize-era5-temp-average" in sys.argv[1:]:
+        visualize_era5_temp_average()
+    else:
+        main()
 

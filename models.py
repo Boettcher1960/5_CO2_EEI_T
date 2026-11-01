@@ -896,6 +896,13 @@ def T_78(t):
 # github recovery codes bef76-40245
 # github recovery codes e2d71-a6654
 #
+# chat01 /work/_68_out.csv
+#   reduce this file to only monthly numbers and copy in this workdir
+# chat02: # visualize
+#
 # 01.11.2026 version 5K13
 # chat04: replace CO₂ with Matplotlib math text, such as "CO$_2$" (and GtCO$_2$ where needed).
 #
+# chat05 visualize work/_48_era5_in.csv column temp_average like
+# https://climatecasino.substack.com/p/dear-everyone-150c-is-yesterdays
+# Run: python3 main.py --visualize-era5-temp-average
