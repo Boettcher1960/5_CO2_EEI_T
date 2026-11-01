@@ -1,5 +1,5 @@
 # main.py
-v = "5K19" # _48_era5_temp_average.png
+v = "5K21" # _48_era5_temp_average.png
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -419,48 +419,63 @@ def save_png(fig, header_parameter):
         if print_debug > 9:
            print(f"main_382 saved png as file {path}")
 
-
-def visualize_era5_temp_average():
+# 200.2 main.py line 422 fig_202_era5_temp_quadratic
+def fig_202_era5_temp_quadratic():
     """Plot the ERA5 running mean and its post-2000 quadratic trend."""
     input_path = "work/_48_era5_in.csv"
     output_path = "work/_48_era5_temp_average.png"
+    # 200.3 read CSV and validate columns
     data = pd.read_csv(input_path)
     required_columns = {"date", "temp_average"}
     missing_columns = required_columns.difference(data.columns)
+    # 200.4 raise error if required columns are missing
     if missing_columns:
         raise ValueError(
             f"{input_path} is missing required columns: {', '.join(sorted(missing_columns))}"
         )
-
+    # 200.5 process data: convert types, drop NaNs, and sort by date
     data = data.loc[:, ["date", "temp_average"]].copy()
+    # 200.6 convert date to datetime and temp_average to numeric, raising errors for invalid entries
     data["date"] = pd.to_datetime(data["date"], errors="raise")
+    # 200.7 convert temp_average to numeric, raising errors for invalid entries
     data["temp_average"] = pd.to_numeric(data["temp_average"], errors="raise")
+    # 200.8 drop rows with missing values and sort by date
     data = data.dropna(subset=["date", "temp_average"]).sort_values("date")
     if data.empty:
         raise ValueError(f"{input_path} has no valid date/temp_average rows")
-
+    # 200.9 filter data for plotting and ensure enough points for quadratic fit
     plot_data = data.loc[data["date"] >= "2000-01-01"].copy()
     if len(plot_data) < 3:
         raise ValueError("At least three valid observations since 2000 are required for a quadratic fit")
-
+    # 200.10 calculate decimal year for quadratic fitting
     plot_data["decimal_year"] = (
         plot_data["date"].dt.year
         + (plot_data["date"].dt.dayofyear - 1)
         / np.where(plot_data["date"].dt.is_leap_year, 366, 365)
     )
+    # 200.11 perform quadratic fit and calculate R²
     x = plot_data["decimal_year"] - 2000
+    # 200.12 fit a quadratic polynomial to the data
     coefficients = np.polyfit(x, plot_data["temp_average"], 2)
+    # 200.13 evaluate the polynomial at the x values to get the trend
     trend = np.polyval(coefficients, x)
+    # 200.14 calculate R² to assess the fit quality
     residual_sum_squares = np.sum((plot_data["temp_average"] - trend) ** 2)
+    # 200.15 calculate total sum of squares for R² calculation
     total_sum_squares = np.sum(
         (plot_data["temp_average"] - plot_data["temp_average"].mean()) ** 2
     )
+    # 200.16 calculate R² value
     r_squared = 1 - residual_sum_squares / total_sum_squares
+    # 200.17 add the quadratic fit to the plot_data DataFrame for plotting
     plot_data["quadratic_fit"] = trend
-
+    # 200.18 create the plot
     latest = plot_data.iloc[-1]
+    # 200.19 define the benchmark temperature for reference
     benchmark = 1.5
+    # 200.20 create the figure and axis for plotting
     fig, ax = plt.subplots(figsize=(13, 7))
+    # 200.21 plot the ERA5 temperature anomaly
     ax.plot(
         plot_data["date"],
         plot_data["temp_average"],
@@ -468,6 +483,7 @@ def visualize_era5_temp_average():
         linewidth=2,
         label="ERA5 temp_average",
     )
+    # 200.22 plot the quadratic fit since 2000
     ax.plot(
         plot_data["date"],
         plot_data["quadratic_fit"],
@@ -476,6 +492,7 @@ def visualize_era5_temp_average():
         linewidth=2.5,
         label="Quadratic fit (2000 onward)",
     )
+    # 200.23 add a horizontal line for the 1.5 °C benchmark
     ax.axhline(
         benchmark,
         color="black",
@@ -483,7 +500,9 @@ def visualize_era5_temp_average():
         linewidth=1.5,
         label="1.5 °C benchmark",
     )
+    # 200.24 highlight the latest data point on the plot
     ax.scatter(latest["date"], latest["temp_average"], color="#b22222", zorder=3)
+    # 200.25 add text annotations for the quadratic equation, R², and latest temperature
     ax.text(
         0.02, 0.84,
         (
@@ -496,26 +515,37 @@ def visualize_era5_temp_average():
         va="top",
         bbox={"facecolor": "white", "alpha": 0.85, "edgecolor": "none"},
     )
+    # 200.26 set the title, labels, limits, grid, and legend for the plot
     ax.set_title("ERA5 temperature anomaly and quadratic trend")
     ax.set_xlabel("Date")
     ax.set_ylabel("Temperature anomaly (°C)")
+    # 200.27 set y-axis limits to include the benchmark and data range with some padding
     ax.set_ylim(
         min(float(plot_data["temp_average"].min()), benchmark) - 0.05,
         max(float(plot_data["temp_average"].max()), benchmark) + 0.05,
     )
+    # 200.28 set x-axis limits to the range of the data
     ax.grid(True, alpha=0.3)
+    # 200.29 add a legend in the upper left corner with a specific bounding box
     ax.legend(loc="upper left", bbox_to_anchor=(0, 0.68))
+    # 200.30 format the x-axis dates for better readability
     fig.autofmt_xdate()
+    # 200.31 adjust layout and save the figure to the specified output path
     fig.tight_layout()
+    # 200.32 save the figure with high resolution and tight bounding box
     fig.savefig(output_path, dpi=300, bbox_inches="tight")
+    # 200.33 print the quadratic fit equation and R² value to the console
     print(
         "Quadratic fit since 2000: "
         f"T = {coefficients[0]:.9f}(year - 2000)^2 "
         f"{coefficients[1]:+.9f}(year - 2000) {coefficients[2]:+.9f}; "
         f"R² = {r_squared:.6f}"
     )
+    # 200.34 print the path where the visualization was saved
     print(f"Saved ERA5 temperature visualization to {output_path}")
+    # 200.35 show the plot and close the figure to free memory
     plt.show()
+    # 200.36 close the figure to free up memory
     plt.close(fig)
 
 
@@ -601,11 +631,12 @@ def main():
     
     # Close figure
     plt.close(fig)
+    # 200.1 main.py line 606 call 
     if plot200 == 2: # plot200 = 2 # 2=new figure with era5 temperature and quadratic curve
-       visualize_era5_temp_average()
+       fig_202_era5_temp_quadratic()
 
 if __name__ == "__main__":
     if "--visualize-era5-temp-average" in sys.argv[1:]:
-        visualize_era5_temp_average()
+        fig_202_era5_temp_quadratic()
     else:
         main()

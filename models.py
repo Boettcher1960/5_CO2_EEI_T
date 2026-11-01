@@ -896,6 +896,23 @@ def T_78(t):
 # github recovery codes bef76-40245
 # github recovery codes e2d71-a6654
 #
+
+
+###############################################################
+# 200      plot200   make a new figure  as AI coded   #########
+###############################################################
+# plot200 = 2 # 2=new figure with era5 temperature and quadratic curve
+# chat05 visualize work/_48_era5_in.csv column temp_average like
+#        https://climatecasino.substack.com/p/dear-everyone-150c-is-yesterdays
+#
+# 200.1 main.py line 606 call fig_202_era5_temp_quadratic()
+# 200.2 main.py line 422 fig_202_era5_temp_quadratic
+#
+
+# 2026.11.01 a second figure is made with:  plot200 = 2
+
+
+
 # chat01 /work/_68_out.csv
 #   reduce this file to only monthly numbers and copy in this workdir
 # chat02: # visualize
