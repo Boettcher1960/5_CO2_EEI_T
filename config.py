@@ -123,9 +123,9 @@ c77 = "#34753D84"
 c78 = "#9D2A9984"
 
 # Text definitions (added missing print texts)
-blue22_text      = "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm)                            22"
-text23 = "CO2 calculated dashed blue line      CO2 = 0.0132251t² - 51.0337t + 49,536 ppm    23"
-text25 = "green: CO2 in ppm    NOAA     800_000 year ice data                                                 25"
+blue22_text      = "blue dots: CO$_2$ measured at Mauna Loa (2025 = 427.35 ppm)                            22"
+text23 = "CO$_2$ calculated dashed blue line      CO2 = 0.0132251t² - 51.0337t + 49,536 ppm    23"
+text25 = "green: CO$_2$ in ppm    NOAA     800_000 year ice data                                                 25"
 
 text31 = "dots: cumulative CO2 emissions in GtCO2     Carbon Brief / Our World in Data           31"
 text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World in Data              32"

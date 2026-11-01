@@ -895,3 +895,7 @@ def T_78(t):
 # github recovery codes 42d64-2cb46
 # github recovery codes bef76-40245
 # github recovery codes e2d71-a6654
+#
+# 01.11.2026 version 5K13
+# chat04: replace CO₂ with Matplotlib math text, such as "CO$_2$" (and GtCO$_2$ where needed).
+#

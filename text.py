@@ -102,7 +102,7 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     else:
-        header = f"CO2 measured at Mauna Loa {x_anf} to {x_end}"
+        header = f"CO$_2$ measured at Mauna Loa {x_anf} to {x_end}"
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
 
@@ -193,7 +193,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     if plot22_CO2_Mauna_Loa == 2: # 22.5.2 legend row 2
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c22)
         text_4_add_text(ax1, tr2x, tr2y, 
-            "blue dots: CO2 measured at Mauna Loa (2025 = 427.35 ppm)                                   22", 
+            "blue dots: CO$_2$ measured at Mauna Loa (2025 = 427.35 ppm)                                   22", 
                     c22, trs)
     elif plot23_Glen_CO2 == 2: # 23.5.4 legend row 4
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c23)
@@ -202,7 +202,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot25_long_CO2 == 2: # 25.9
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c23)
        text_4_add_text(ax1, tr2x, tr2y, 
-         "green: CO2 NOAA     800_000 year ice data                                                               25", 
+         "green: CO$_2$ NOAA     800_000 year ice data                                                               25", 
          c25, trs)
     elif plot31_CO2_emission == 2: # 31.8
        print("text_094: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8

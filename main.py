@@ -1,5 +1,5 @@
 # main.py
-v = "5K12" # recopied from USB stick 5k11-recopy_CO2_EEI_T
+v = "5K14" # CO$_2$ format CO with small 2 placed at bottom
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification

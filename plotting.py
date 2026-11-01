@@ -363,7 +363,8 @@ def plot8_right_y_axe_for_ppm_25(ax25,right22): # 22.4 line 375
     if print_debug > 9:
           print(f"plot_445: plot8_right_y_plot25_long_CO2  22.3 ={plot25_long_CO2} parameter 2 {outward_right}")
     ax25.spines.right.set_position(("outward", outward_right))
-    ax25.set_ylabel("CO₂ in ppm atmosphere      25", color=c25, fontname="Arial",fontsize=16)
+    #ax25.set_ylabel("CO₂ in ppm atmosphere      25", color=c25, fontname="Arial",fontsize=16)
+    ax25.set_ylabel("CO$_2$ in ppm atmosphere      25", color=c25, fontname="Arial",fontsize=16)
     ax25.tick_params(axis="y", labelcolor=c25)
     ax25.set_ylim(y_25min, y_25max) #8
 
