@@ -311,6 +311,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plank48 == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c48,3,"x",7)
         text_4_add_text(ax1, tr2x, tr3y, text48, c48, trs)
+    elif plot49 == 3:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c49,3,"o",7)
+        text_4_add_text(ax1, tr2x, tr3y, text49, c49, trs)
     # part 5.2 plot52_delta_CO2_red_bars
     elif plot52_delta_CO2_red_bars == 3: # 52.4 row 3
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c52)

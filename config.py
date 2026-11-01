@@ -18,9 +18,9 @@ yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_7
 yr_delete = 1 # 9 = delete all axes delete axe 4
 
 # Plot configuration flags
-plot22_CO2_Mauna_Loa = 2 # 2 ,3    22.1 declare global integer variable (2= print in line 2)
+plot22_CO2_Mauna_Loa = 0 # 2 ,3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print in line 4)
-plot25_long_CO2 = 5   # 2, 3 25.1 
+plot25_long_CO2 = 2   # 2, 3 25.1 
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission = 0  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
@@ -36,8 +36,8 @@ part44_ceres_eei   = 0  # 47, 3, 48,   is local
 plot45_OLR         = 0 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR         = 0 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48    = 0  # 4  
-plank48 = 3 # 3 , 5 plank feedback is 68_ERA temperature * 3.22
-plot49 = 4  # plot49 = plank48 - plot45_OLR missing   long wave radiation absorbed within the atmosphere
+plank48 = 0 # 3 , 5 plank feedback is 68_ERA temperature * 3.22
+plot49 = 3  # plot49 = plank48 - plot45_OLR missing   long wave radiation absorbed within the atmosphere
 
 plot52_delta_CO2_red_bars = 0 # 3 (3=print numbers)
 plot53_CO2_orange2025 = 0 # no curve is visible 3, 4
@@ -161,7 +161,7 @@ y_max = 430 # 500 ppm CO2
 y_22min = 360 # ppm CO2
 y_22max = 440 # ppm CO2
 y_25min = 360 # nok   only for y axis 
-y_25max = 440 # only for y axis
+y_25max = 430 # only for y axis
 y_Gmin = 0 # 250 ppm CO2 
 y_Gmax = 2000 # 2500 Gt CO2  
 y_31Gmin = 0 # 250 ppm CO2  
@@ -193,8 +193,8 @@ y_47min = 0.294 # albedo in %
 y_47max = 0.286 # albedo in %
 y_48min = 0.5
 y_48max = 2.5
-y_49min = 0
-y_49max = 2
+y_49min = -0.4
+y_49max = 1.6
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars

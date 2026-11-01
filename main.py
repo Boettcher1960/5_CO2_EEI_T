@@ -1,5 +1,5 @@
 # main.py
-v = "5K17" # _48_era5_temp_average.png
+v = "5K18" # _48_era5_temp_average.png
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
