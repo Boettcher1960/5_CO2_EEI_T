@@ -33,11 +33,11 @@ plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 2, 3, 4 ,5 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei   = 0  # 47, 3, 48,   is local 
-plot45_OLR         = 0 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
+plot45_OLR         = 2 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR         = 0 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48    = 0  # 4  
-plank48 = 0 # 3 , 5 plank feedback is 68_ERA temperature * 3.22
-plot49 = 0  # 3 plot49 = plank48 - plot45_OLR missing   long wave radiation absorbed within the atmosphere
+plank48 = 3 # 3 , 5 plank feedback is 68_ERA temperature * 3.22
+plot49 = 4  # 3 plot49 = plank48 - plot45_OLR missing   long wave radiation absorbed within the atmosphere
 
 plot52_delta_CO2_red_bars = 0 # 3 (3=print numbers)
 plot53_CO2_orange2025 = 0 # no curve is visible 3, 4
@@ -54,7 +54,7 @@ play_64_ASR_anomaly = 0 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly =
 play_65_ASR         = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR         = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo      = 0   # line2 1..12..48..99 create 1..12..48..99 CERES
-play68_ERA          = 1461 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+play68_ERA          = 0 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 play69_AA           = 0 # 48 , 3,  7 , 11, 12, 13,48    albedo anomaly  # 69.12
 play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   play69_AA_in = "69a_AA_Albedo_anomaly_2026_08.txt" input filename
 
@@ -65,9 +65,9 @@ plot74_GIS_T = 0 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
-plot_T_78 = 3 # 3 , 4 , 5 Tom Harris
+plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
-plot200 = 2 # 2=new figure with era5 temperature and quadratic curve
+plot200 = 0 # 2=new figure with era5 temperature and quadratic curve
 
 # variable to show play variable in line 4
 line2_play = 68   # 61  62
@@ -189,15 +189,15 @@ y_44min = 0.0 #   EEI in W/m2 y axis left mode
 y_44max = 2 #   EEI in W/m2 y axis left mode
 
 y_45min = 240    # OLR in W/m2
-y_45max = 242  # OLR in W/m2 242.8
+y_45max = 243  # OLR in W/m2 242.8
 y_46min = 240    # ASR in W/m2
 y_46max = 242.8  # ASR in W/m2
 y_47min = 0.294 # albedo in %
 y_47max = 0.286 # albedo in %
-y_48min = 0.5
-y_48max = 2.5
-y_49min = -0.4
-y_49max = 1.6
+y_48min = 0
+y_48max = 3
+y_49min = 0
+y_49max = 3
 
 y_52min = 0 # plot52_delta_CO2_red_bars
 y_52max = 4 # plot52_delta_CO2_red_bars
