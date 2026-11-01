@@ -543,6 +543,9 @@ def T_model76(t):
 # 2026.10.25 plots   line3_play = 64 and play_64_ASR_anomaly = 48 
 
 
+##################################################################
+# 66    play_66_OLR                                      #########   
+##################################################################
 
 
 #########################################################
@@ -589,19 +592,16 @@ def T_model76(t):
 #########################################################
 # 68   play68_ERA          ##############################
 #########################################################
-#  https://pulse.climate.copernicus.eu/
-#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download
-#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels
-#        https://earthkit.ecmwf.int/
-# 68.1 https://bsky.app/profile/climatecasino.net/post/3mxoo2l7acs26 made a 4 years 
+# 68.0 note https://bsky.app/profile/climatecasino.net/post/3mxoo2l7acs26 made a 4 years 
 #  running average plot with this path 
-#  https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
-# 68.2 make empty csv file work/_era5_empty.csv
+# 68.1 browse https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+# 68.2 make empty csv file work/empty.csv
 # 68.3 open https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 # 68.4 select all and copy
 # 68.5 in csv file work/_era5_empty.csv paste all
-# 68.6 save as work/_88_era5_daily_series_2026_10_13.csv and delete the first lines with #
-#   the columns are date,2t,clim_91-20,ano_91-20,status
+# 68.6a save as work/_68_era5_daily_series_2026_10_13.csv and delete the first lines with #
+# 68.6b save as work/68_era5_daily_series_2026_10_30.csv and delete the first lines with #
+#       the columns are date,2t,clim_91-20,ano_91-20,status
 # 68.7 the column ano_91-20 are the temperature data 
 # 68.8 in config.py declare   play68_ERA = 48
 # 68.10 the main.py part lin2 266
@@ -610,6 +610,13 @@ def T_model76(t):
 # 68.33 data_processing.py end line 507 (end perform averaging for play68_ERA )
 # 68.39 main.py line 377 read  work/_68_out.csv into  'era_68'
 # 66.44 plotting.py line 1044 plot era_68 data
+#
+#  https://pulse.climate.copernicus.eu/
+#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download
+#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download
+#  https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels
+#        https://earthkit.ecmwf.int/
+#
 # 2026.10.20 works with play68_ERA = 1095 # 1461, 1095, 720, 365, 24  
 # 2026.10.31 works with play68_ERA = 1461 and line5_play = 68
 

@@ -1,5 +1,5 @@
 # main.py
-v = "5K22" # _48_era5_temp_average.png
+v = "5K22" # 68_era5_daily_series_2026_10_30.csv
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -257,7 +257,8 @@ if play68_ERA > 0: #
        column_read    ='ano_91-20'
        column_average ='temp_average'
        # part 68.15  call create68_running_average for global era5 temperatue)
-       df68c = create68_running_average( 'work/_68_era5_daily_series_2026_10_13.csv', 
+       # df68c = create68_running_average( 'work/_68_era5_daily_series_2026_10_13.csv', 
+       df68c = create68_running_average( 'work/68_era5_daily_series_2026_10_30.csv', 
                                          'work/_68_out.csv',
                                           column_read,             #  column_name='ano_91-20')
                                           column_average,          #  column_name='temp_average')
