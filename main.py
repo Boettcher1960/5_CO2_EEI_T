@@ -1,5 +1,5 @@
 # main.py
-v = "5K18" # _48_era5_temp_average.png
+v = "5K19" # _48_era5_temp_average.png
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -601,6 +601,8 @@ def main():
     
     # Close figure
     plt.close(fig)
+    if plot200 == 2: # plot200 = 2 # 2=new figure with era5 temperature and quadratic curve
+       visualize_era5_temp_average()
 
 if __name__ == "__main__":
     if "--visualize-era5-temp-average" in sys.argv[1:]:
