@@ -878,3 +878,20 @@ def T_78(t):
 # 2026.10.22 plots   plot_T_78  = 3 formula  good
 # 2026.10.22 plots   plot_T_78  = 4 formula  good
 # 2026.10.22 plots   plot_T_78  = 5 formula  good
+# github recovery codes 
+# github recovery codes 2ffaf-8bace
+# github recovery codes 907a1-3bee0
+# github recovery codes 8385c-b2a25
+# github recovery codes c65a3-6b1a3
+# github recovery codes 2b943-69720
+# github recovery codes dc7cf-10698
+# github recovery codes # github recovery codes 89272-e63ad
+# github recovery codes e9db8-f6996
+# github recovery codes ceee8-ab558
+# github recovery codes 6c8ef-18c87
+# github recovery codes 9f382-d1f46
+# github recovery codes 098ba-603c0
+# github recovery codes 2fc05-cc510
+# github recovery codes 42d64-2cb46
+# github recovery codes bef76-40245
+# github recovery codes e2d71-a6654
