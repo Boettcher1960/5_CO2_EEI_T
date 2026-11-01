@@ -49,6 +49,10 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"CO2 concentration in ppm calculated   {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
+    if plot25_long_CO2 == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
+                header = f"CO$_2$ concentration matches the absorbed long wave radiation    {x_anf} to {x_end}."
+                ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
+                        transform=ax1.transAxes)
     elif plot31_CO2_emission == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
         header = f"cumulative CO2 emissions in GtCO2 from Carbon Brief {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
