@@ -1,5 +1,5 @@
 # main.py
-v = "5K25" # 68_era5_daily_series_2026_10_30.csv
+v = "5K26" # 68_era5_daily_series_2026_10_30.csv
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -513,7 +513,8 @@ def fig_202_era5_temp_quadratic():
     ax.text(
         0.02, 0.84,
         (
-            f" {text_below} \n"
+            f"https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv  (Nov. 1, 2026 downloaded)\n"
+            f"https://github.com/Boettcher1960/5_CO2_EEI_T      version  {v} \n"
             f"T = {coefficients[0]:.6f}(year - 2000)^2 "
             f"{coefficients[1]:+.6f}(year - 2000) {coefficients[2]:+.6f} °C\n"
             f"R² = {r_squared:.4f}\n"
@@ -524,7 +525,7 @@ def fig_202_era5_temp_quadratic():
         bbox={"facecolor": "white", "alpha": 0.85, "edgecolor": "none"},
     )
     # 200.26 set the title, labels, limits, grid, and legend for the plot
-    ax.set_title("ERA5 temperature 4 years rolling average  (Nov. 1, 2026 downloaded)")
+    ax.set_title("The ERA5 temperature -4 years rolling average- is above the planetary boundary of 1.5 °C", fontsize=16)
     ax.set_xlabel("Date")
     ax.set_ylabel("Temperature anomaly (°C)")
     # 200.27 set y-axis limits to include the benchmark and data range with some padding

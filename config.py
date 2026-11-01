@@ -20,7 +20,7 @@ yr_delete = 1 # 9 = delete all axes delete axe 4
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 2 ,3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print in line 4)
-plot25_long_CO2 = 2   # 2, 3 25.1 
+plot25_long_CO2 = 0   # 4 2, 3 25.1 
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission = 0  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
@@ -37,7 +37,7 @@ plot45_OLR         = 0 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave 
 plot46_ASR         = 0 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48    = 0  # 4  
 plank48 = 0 # 3 , 5 plank feedback is 68_ERA temperature * 3.22
-plot49 = 3  # plot49 = plank48 - plot45_OLR missing   long wave radiation absorbed within the atmosphere
+plot49 = 0  # 3 plot49 = plank48 - plot45_OLR missing   long wave radiation absorbed within the atmosphere
 
 plot52_delta_CO2_red_bars = 0 # 3 (3=print numbers)
 plot53_CO2_orange2025 = 0 # no curve is visible 3, 4
@@ -65,14 +65,14 @@ plot74_GIS_T = 0 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
-plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
+plot_T_78 = 3 # 3 , 4 , 5 Tom Harris
 
 plot200 = 2 # 2=new figure with era5 temperature and quadratic curve
 
 # variable to show play variable in line 4
-line2_play = 0   # 61  62
+line2_play = 68   # 61  62
 line3_play = 0  #  play_62_EEA #   68 play68_ERA = 720
-line4_play = 68  # 61 play_61_EEI = 36 
+line4_play = 0  # 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
 line6_play = 0
 
@@ -111,6 +111,7 @@ c66 = "#AB263590"
 c67 = "#0F9BE190"
 c67 = "red"
 c68 = "#36970FD4"
+c68 = "red"
 c69 = "#1652D490"
 
 c71 = "red"
@@ -222,8 +223,8 @@ y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.296  # Hansen no swap albedo in %
 y_67max = 0.286   # Hansen no swap albedo in %
 
-y_68min = 0  # for era5 Temperature
-y_68max = 2  # for era5 Temperature 
+y_68min = 0.6  # for era5 Temperature
+y_68max = 1.6  # for era5 Temperature 
 
 y_69min = 1.6   # albedo anomaly in W/m2 
 y_69max = -1.6  # albedo anomaly in W/m2
@@ -246,7 +247,7 @@ y_76min = 0 #  Temperature
 y_76max = 4   #  Temperature 
 y_77min = 0 #  Temperature  
 y_77max = 4 #  Temperature 
-y_78min = 0 #  for Tom Harris Temperature 
+y_78min = 0.6 #  for Tom Harris Temperature 
 y_78max = 1.6 #  for Tom Harris Temperature
 
 x_anf = 2004

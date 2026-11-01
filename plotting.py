@@ -749,7 +749,7 @@ def plot8_right_y_axe_for_T_78(ax78,right52): # 78.6
     if right52 > 0:
         outward_right = right52
     elif plot_T_78 == 3: # 76.61 scale for line 3 the first y axis on the left
-        outward_right =  ( 2.5 * yr_60 ) - yr_150
+        outward_right =  ( 2.5 * 60 ) - yr_150
     else:
         outward_right =  ( plot_T_78 * yr_60 ) - yr_150
     ax78.spines.right.set_position(("outward", outward_right))
