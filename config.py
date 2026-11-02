@@ -20,7 +20,7 @@ yr_delete = 1 # 9 = delete all axes delete axe 4
 # Plot configuration flags
 plot22_CO2_Mauna_Loa = 0 # 2 ,3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print in line 4)
-plot25_long_CO2 = 2   # 4 2, 3 25.1 
+plot25_long_CO2 = 0   # 4 2, 3 25.1 
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission = 0  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
@@ -30,14 +30,14 @@ plot34_CO2_emission_mode = 0 # 4, 2, 4   # 34.1 mode
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 
-plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
+plot42_EEI_48month = 2  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 2, 3, 4 ,5 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei   = 0  # 47, 3, 48,   is local 
 plot45_OLR         = 0 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR         = 0 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48    = 0  # 4  
 plank48 = 0 # 3 , 5 plank feedback is 68_ERA temperature * 3.22
-plot49 = 3  # 3 plot49 = plank48 - plot45_OLR missing   long wave radiation absorbed within the atmosphere
+plot49 = 0  # 3 plot49 = plank48 - plot45_OLR missing   long wave radiation absorbed within the atmosphere
 
 plot52_delta_CO2_red_bars = 0 # 3 (3=print numbers)
 plot53_CO2_orange2025 = 0 # no curve is visible 3, 4
@@ -46,7 +46,7 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_61_EEI = 0    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 12    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
                 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
@@ -70,8 +70,8 @@ plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 plot200 = 0 # 2=new figure with era5 temperature and quadratic curve
 
 # variable to show play variable in line 4
-line2_play = 68   # 61  62
-line3_play = 0  #  play_62_EEA #   68 play68_ERA = 720
+line2_play = 0   # 61  62
+line3_play = 61  #  play_62_EEA #   68 play68_ERA = 720
 line4_play = 0  # 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
 line6_play = 0
@@ -89,7 +89,7 @@ c32 = "red"
 c34 = "#942296C5"
 c41 = "#289C1684"
 c42 = "purple"
-c42 = "#13DF2F84"
+#c42 = "#13DF2F84"
 c43 = "green" # "#70A915B1"
 c44 = "blue"
 c45 = "#1A27DECC"
@@ -182,7 +182,7 @@ y_TOAmin = 97  # bug is double set in plotting.py line 56
 y_TOAmax = 100 # bug is double set in plotting.py line 57
 
 y_42min = 0 #   EEI in W/m2 y axis left mode
-y_42max = 1.8 #   EEI in W/m2 y axis left mode
+y_42max = 2 #   EEI in W/m2 y axis left mode
 y_43min = 0    # EEI in W/m2
 y_43max = 2  # EEI in W/m2
 y_44min = 0.0 #   EEI in W/m2 y axis left mode
@@ -204,8 +204,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_61min = 0.2  #   EEI in W/m2 y axis left mode
-y_61max = 1.6  #   EEI in W/m2 y axis left mode
+y_61min = 0  #   EEI in W/m2 y axis left mode
+y_61max = 2  #   EEI in W/m2 y axis left mode
 
 y_62min = 0  # EEA in ZJ
 y_62max = 400  # EEA in ZJ
