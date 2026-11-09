@@ -1,0 +1,109 @@
+# -*- coding: utf-8 -*-
+"""Figure 1 (v5) - the equilibrium relationship and how the band is defined.
+
+Three reconstructions, each with its own marker, and the York fit to each.
+The gray envelope is the union of the three fits, widened by each fit's slope
+uncertainty, and is the band used in every later figure.
+
+No annotation is drawn - labelling is done in PowerPoint. Waypoint values are
+printed to the console instead.
+
+Conventions: round axis limits, band extending past the data on all sides,
+legend entries giving the range each record covers rather than a point count.
+"""
+import io
+import os
+import contextlib
+
+import numpy as np
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
+
+with contextlib.redirect_stdout(io.StringIO()):
+    import build_york_final as B
+
+OUT = os.environ.get("OUTDIR", ".")
+GRAY = "#b8b8b8"
+JUDD = "#111111"          # black diamonds, the established default
+EP = "#8e6fc7"            # EPICA, the original purple
+CLK = "#3b1f8f"            # Clark, deep violet-blue - separated from EPICA in hue and value
+XLO, XHI = 125, 1500
+YLO, YHI = 5, 40
+
+Lg = lambda p: np.log2(np.asarray(p, float) / B.C0)
+FITS = [("Judd et al. 2024, Cenozoic, 66\u20130 Ma", B.S_judd, B.b_judd, B.se_judd, B.sb_judd, JUDD, "--"),
+        ("EPICA Dome C \u00d70.55, 1\u2013800 kyr", B.S_ep, B.b_ep, B.se_ep, B.sb_ep, EP, "-."),
+        ("Clark et al. 2024, 1\u2013800 kyr", B.S_clk, B.b_clk, B.se_clk, B.sb_clk, CLK, ":")]
+
+fig, ax = plt.subplots(figsize=(11, 7.6))
+
+# band: union of the three fits, each widened by its slope uncertainty
+p = np.linspace(XLO * 0.9, XHI * 1.1, 800)
+x = Lg(p)
+lo = np.full_like(x, np.inf)
+hi = np.full_like(x, -np.inf)
+for _n, S, b, sg, _sbx, _c, _s in FITS:
+    v = S * x + b
+    h = sg * np.abs(x) + _sbx
+    lo = np.minimum(lo, v - h)
+    hi = np.maximum(hi, v + h)
+ax.fill_between(p, lo, hi, color=GRAY, alpha=0.75, lw=0, zorder=1,
+                label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)")
+
+# records
+ax.plot(B.C0 * 2 ** B.c_grid, B.gmst_epica, "o", ms=2.6, mfc=EP, mec="none",
+        alpha=0.70, zorder=3, label="EPICA Dome C \u00d70.55, 1\u2013800 kyr")
+ax.plot(B.C0 * 2 ** B.c_clk, B.gmst_clk_f, "^", ms=2.8, mfc=CLK, mec="none",
+        alpha=0.70, zorder=3, label="Clark et al. 2024, 1\u2013800 kyr")
+ax.plot(B.C0 * 2 ** B.jx, B.jgm_f, "D", ms=7.5, mfc=JUDD, mec="white", mew=0.9,
+        zorder=12, label="Judd et al. 2024, Cenozoic stages, 66\u20130 Ma")
+
+# fits drawn at the same weight across the whole frame, so the three can be
+# compared as one trajectory rather than three separate segments
+print("Figure 1 \u2014 fits and where each record sits\n")
+xs = np.linspace(Lg(XLO), Lg(XHI), 400)
+for name, S, b, sg, _sb, col, ls in FITS:
+    src = B.jx if "Judd" in name else (B.c_grid if "EPICA" in name else B.c_clk)
+    ax.plot(B.C0 * 2 ** xs, S * xs + b, color=col, ls=ls, lw=2.2, zorder=7,
+            label=f"{name}: {S:.2f} K/doubling")
+    print(f"  {name:42s} {B.C0*2**src.min():6.0f}\u2013{B.C0*2**src.max():6.0f} ppm"
+          f"   slope {S:5.2f}")
+
+ax.set_xscale("log", base=2)
+ax.set_xlim(XLO, XHI)
+ticks = [125, 250, 500, 1000, 1500]
+ax.set_xticks(ticks)
+ax.set_xticklabels([f"{t:,}" for t in ticks])
+ax.set_ylim(YLO, YHI)
+ax.set_yticks(np.arange(YLO, YHI + 1, 5))
+ax.set_xlabel("Atmospheric CO$_2$ (ppm, log$_2$ scale)", fontsize=16)
+ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=16)
+ax.tick_params(axis="both", labelsize=13)
+ax.grid(True, alpha=0.22)
+# legend handles drawn at full opacity and a legible size: a single translucent
+# 2.6 pt marker on white reads far paler than the same marker piled up on the plot
+handles = [
+    Patch(facecolor=GRAY, alpha=0.75,
+          label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)"),
+    Line2D([], [], ls="none", marker="o", ms=9, mfc=EP, mec="none",
+           label="EPICA Dome C \u00d70.55, 1\u2013800 kyr"),
+    Line2D([], [], ls="none", marker="^", ms=9, mfc=CLK, mec="none",
+           label="Clark et al. 2024, 1\u2013800 kyr"),
+    Line2D([], [], ls="none", marker="D", ms=9, mfc=JUDD, mec="white", mew=0.9,
+           label="Judd et al. 2024, Cenozoic stages, 66\u20130 Ma"),
+]
+for name, S, b, sg, _sb, col, ls in FITS:
+    handles.append(Line2D([], [], color=col, ls=ls, lw=2.4,
+                          label=f"{name}: {S:.2f} K/doubling"))
+ax.legend(handles=handles, fontsize=10.5, loc="upper left", framealpha=0.96)
+plt.tight_layout()
+q = os.path.join(OUT, "v5_figure01_band_log.png")
+plt.savefig(q, dpi=200, bbox_inches="tight")
+plt.close(fig)
+
+print(f"\n  band at the frame corners: {np.interp(Lg(XLO), x, lo):.1f} to "
+      f"{np.interp(Lg(XHI), x, hi):.1f} C   frame is {YLO} to {YHI}")
+print(f"\nwrote end figure:1  {q}")
