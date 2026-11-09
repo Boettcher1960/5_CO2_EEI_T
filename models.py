@@ -931,10 +931,19 @@ def T_78(t):
 ###############################################################
 # 210      plot200   make a new figure  as AI coded   #########
 ###############################################################
-# 210.1 download deposit_v5.zip from 
-#       https://zenodo.org/records/22837428
 #
+# https://justdean.substack.com/p/the-paper-goes-to-review
+#
+# 210.2 download deposit_v5.zip from 
+#       https://zenodo.org/records/22837428
 # 
+# 210.4 new folder /Users/thomasboettcher/Documents/Python/5_CO2_EEI_T/Rovang
+# 210.5 unzip deposit_v5.zip into Rovang
+# 210.6 run Rovang_figure_1.py to produce Rovang_figure01.png
+# 210.7 run Rovang_figure_1.py with plot210 = 3 to produce Rovang_figure01.png
+# 210.
+
+
 
 """Figure 1 (v5) - the equilibrium relationship and how the band is defined.
 
@@ -957,6 +966,11 @@ which produces Rovang_figure01.png
 chat09
 make a green line for 14°C temperature and
 280 ppm CO2 in Rovang_figure_1.png
+
+make the green line for 280 ppm CO2 only from 5°C to 25°C in Rovang_figure_1.png
+not to spoil the legend
+
+make a new legend line with writing 280 ppm 14°C preindustieal in Rovang_figure_1.png
 
 """
 

@@ -104,10 +104,8 @@ def Rovang_figure_1():
     ax.grid(True, alpha=0.22)
     reference_color = "#228B22"
     ax.axhline(14, color=reference_color, ls="--", lw=1.8, zorder=6)
-    ax.axvline(280, color=reference_color, ls="--", lw=1.8, zorder=6)
-
-    ax.axhline(14, color=reference_color, ls="--", lw=1.8, zorder=6)
-    ax.axvline(280, color=reference_color, ls="--", lw=1.8, zorder=6)
+    ax.plot([280, 280], [5, 25], color=reference_color, ls="--", lw=1.8,
+            zorder=6)
     handles = [
         Patch(facecolor=GRAY, alpha=0.75,
               label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)"),
@@ -118,7 +116,7 @@ def Rovang_figure_1():
         Line2D([], [], ls="none", marker="D", ms=9, mfc=JUDD, mec="white",
                mew=0.9, label="Judd et al. 2024, Cenozoic stages, 66\u20130 Ma"),
         Line2D([], [], color=reference_color, ls="--", lw=1.8,
-               label="14\u00b0C and 280 ppm reference lines"),
+               label="280 ppm, 14\u00b0C preindustrial"),
     ]
     for name, slope, _intercept, _sg, _sb, color, style in fits:
         handles.append(
