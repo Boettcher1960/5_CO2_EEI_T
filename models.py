@@ -972,6 +972,7 @@ not to spoil the legend
 
 make a new legend line with writing 280 ppm 14°C preindustieal in Rovang_figure_1.png
 
+how to show Rovang_figure_1.png when running main.py
 """
 
 

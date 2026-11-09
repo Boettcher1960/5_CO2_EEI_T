@@ -2,7 +2,9 @@ import numpy as np
 import scipy.io as sio
 import pandas as pd
 import matplotlib
-matplotlib.use('Agg')
+import sys
+if "matplotlib.pyplot" not in sys.modules:
+    matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from scipy import odr
