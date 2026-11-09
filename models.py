@@ -982,6 +982,13 @@ make a light blue band for 15.5 to 16°C °C temperature and write 1,5°C Paris 
 
 make a light blue band for 430ppm to 480ppm CO2 x axis in 2026 in Rovang_figure_1.png
 
+when running main.px only show Rovang_figure_1.png when plot210 = 3
+do not show old figure100
+figure100 = 0 # 0 means create no old figure 
+---
+5K40 when running main.px only show Rovang_figure_1.png when figure100 = 0 
+---
+
 """
 
 

@@ -67,7 +67,7 @@ plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
-figure100 = 0 # createe no old figure 
+figure100 = 0 # 0 means create no old figure 1= make old figuure
 figure202 = 0 # 2=new figure with era5 temperature and quadratic curve
 figure210 = 3 # 3=new figure Rovang_figure_1.py
 

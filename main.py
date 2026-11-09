@@ -1,5 +1,5 @@
 # main.py
-v = "5K38" # Rovang_figure01.png copied Dean Rovang https://zenodo.org/records/22837428
+v = "5K40" # Rovang_figure01.png copied Dean Rovang https://zenodo.org/records/22837428
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -558,9 +558,20 @@ def fig_202_era5_temp_quadratic():
     plt.close(fig)
 
 
-# main program 
+# main program
+def run_optional_figures():
+    if figure202 == 2:
+        fig_202_era5_temp_quadratic()
+    if figure210 == 3:
+        Rovang_figure_1()
+
+
 def main():
     """Main execution function"""
+    if figure100 == 0:
+        run_optional_figures()
+        return
+
     # Create header parameter string
     header_parameter = (f" "
                        f"2({plot22_CO2_Mauna_Loa}{plot23_Glen_CO2}{plot25_long_CO2}" 
@@ -640,13 +651,7 @@ def main():
     
     # Close figure
     plt.close(fig)
-    # 200.1 main.py line 606 call 
-    if figure202 == 2: # figure202 = 2 # 2=new figure with era5 temperature and quadratic curve
-       fig_202_era5_temp_quadratic()
-
-    # 210.1 main.py line 606 call 
-    if figure210 == 3: # call Rovang_figure_1.py
-       Rovang_figure_1()
+    run_optional_figures()
 
 
 if __name__ == "__main__":
