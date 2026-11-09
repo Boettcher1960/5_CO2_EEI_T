@@ -17,7 +17,7 @@ import contextlib
 
 import numpy as np
 import matplotlib
-matplotlib.use("Agg")
+# matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
@@ -100,8 +100,11 @@ for name, S, b, sg, _sb, col, ls in FITS:
                           label=f"{name}: {S:.2f} K/doubling"))
 ax.legend(handles=handles, fontsize=10.5, loc="upper left", framealpha=0.96)
 plt.tight_layout()
-q = os.path.join(OUT, "v5_figure01_band_log.png")
+q = os.path.join(OUT, "Rovang/Rovang_figure01.png")
 plt.savefig(q, dpi=200, bbox_inches="tight")
+
+plt.show()
+
 plt.close(fig)
 
 print(f"\n  band at the frame corners: {np.interp(Lg(XLO), x, lo):.1f} to "
