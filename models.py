@@ -973,6 +973,15 @@ not to spoil the legend
 make a new legend line with writing 280 ppm 14°C preindustieal in Rovang_figure_1.png
 
 how to show Rovang_figure_1.png when running main.py
+
+make a new legend line with writing 280 ppm 14°C preindustieal in Rovang_figure_1.png
+
+how to show Rovang_figure_1.png when running main.py
+
+make a light blue band for 15.5 to 16°C °C temperature and write 1,5°C Paris treaty in Rovang_figure_1.png
+
+make a light blue band for 430ppm to 480ppm CO2 x axis in 2026 in Rovang_figure_1.png
+
 """
 
 

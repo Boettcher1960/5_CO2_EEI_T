@@ -30,7 +30,7 @@ XLO, XHI = 125, 1500
 YLO, YHI = 5, 40
 
 def Rovang_figure_1():
-    """Create Rovang Figure 1 and save it as Rovang/Rovang_figure01.png."""
+    """Create Rovang Figure 1 and save it as Rovang/Rovang_figure_1.png."""
     with contextlib.redirect_stdout(io.StringIO()):
         try:
             from . import build_york_final as B
@@ -42,7 +42,7 @@ def Rovang_figure_1():
     )
     figure_dir = os.path.join(out_dir, "Rovang")
     os.makedirs(figure_dir, exist_ok=True)
-    output_path = os.path.join(figure_dir, "Rovang_figure01.png")
+    output_path = os.path.join(figure_dir, "Rovang_figure_1.png")
 
     Lg = lambda p: np.log2(np.asarray(p, float) / B.C0)
     fits = [
@@ -102,6 +102,10 @@ def Rovang_figure_1():
     ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=16)
     ax.tick_params(axis="both", labelsize=13)
     ax.grid(True, alpha=0.22)
+    paris_band_color = "#add8e6"
+    ax.axhspan(15.5, 16, color=paris_band_color, alpha=0.55, zorder=2)
+    co2_band_color = "#87ceeb"
+    ax.axvspan(430, 480, color=co2_band_color, alpha=0.35, zorder=2)
     reference_color = "#228B22"
     ax.axhline(14, color=reference_color, ls="--", lw=1.8, zorder=6)
     ax.plot([280, 280], [5, 25], color=reference_color, ls="--", lw=1.8,
@@ -109,6 +113,10 @@ def Rovang_figure_1():
     handles = [
         Patch(facecolor=GRAY, alpha=0.75,
               label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)"),
+        Patch(facecolor=paris_band_color, alpha=0.55,
+              label="1.5\u00b0C Paris treaty below 2°C"),
+        Patch(facecolor=co2_band_color, alpha=0.35,
+              label="430 ppm in 2026 (430\u2013480 ppm range)"),
         Line2D([], [], ls="none", marker="o", ms=9, mfc=EP, mec="none",
                label="EPICA Dome C \u00d70.55, 1\u2013800 kyr"),
         Line2D([], [], ls="none", marker="^", ms=9, mfc=CLK, mec="none",
