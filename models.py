@@ -15,6 +15,13 @@ def Rovang_figure_1():
     return create_figure()
 
 
+def Rovang_figure_2():
+    """Create and save the linear-x Rovang Figure 2."""
+    from Rovang.Rovang_figure_1 import Rovang_figure_2 as create_figure
+
+    return create_figure()
+
+
 def T_model76(t):
     """My best temperature model"""
     x = t - 2000
@@ -988,7 +995,8 @@ figure100 = 0 # 0 means create no old figure
 ---
 5K40 when running main.px only show Rovang_figure_1.png when figure100 = 0 
 ---
-
+for figure210 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
+for figure210 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
 """
 
 

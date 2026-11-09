@@ -1,5 +1,6 @@
 # main.py
-v = "5K40" # Rovang_figure01.png copied Dean Rovang https://zenodo.org/records/22837428
+v = "5K41" # for figure210 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
+           # for figure210 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -564,6 +565,8 @@ def run_optional_figures():
         fig_202_era5_temp_quadratic()
     if figure210 == 3:
         Rovang_figure_1()
+    elif figure210 == 4:
+        Rovang_figure_2()
 
 
 def main():

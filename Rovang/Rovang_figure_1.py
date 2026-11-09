@@ -29,8 +29,8 @@ CLK = "#3b1f8f"            # Clark, deep violet-blue - separated from EPICA in h
 XLO, XHI = 125, 1500
 YLO, YHI = 5, 40
 
-def Rovang_figure_1():
-    """Create Rovang Figure 1 and save it as Rovang/Rovang_figure_1.png."""
+def _create_figure(linear_x=False):
+    """Create a Rovang figure using logarithmic or linear CO2 scaling."""
     with contextlib.redirect_stdout(io.StringIO()):
         try:
             from . import build_york_final as B
@@ -42,7 +42,8 @@ def Rovang_figure_1():
     )
     figure_dir = os.path.join(out_dir, "Rovang")
     os.makedirs(figure_dir, exist_ok=True)
-    output_path = os.path.join(figure_dir, "Rovang_figure_1.png")
+    filename = "Rovang_figure_2.png" if linear_x else "Rovang_figure_1.png"
+    output_path = os.path.join(figure_dir, filename)
 
     Lg = lambda p: np.log2(np.asarray(p, float) / B.C0)
     fits = [
@@ -91,14 +92,24 @@ def Rovang_figure_1():
             f"{B.C0*2**src.max():6.0f} ppm   slope {slope:5.2f}"
         )
 
-    ax.set_xscale("log", base=2)
+    if not linear_x:
+        ax.set_xscale("log", base=2)
     ax.set_xlim(XLO, XHI)
-    ticks = [125, 250, 500, 1000, 1500]
+    ticks = (
+        np.linspace(XLO, XHI, 6)
+        if linear_x
+        else [125, 250, 500, 1000, 1500]
+    )
     ax.set_xticks(ticks)
     ax.set_xticklabels([f"{tick:,}" for tick in ticks])
     ax.set_ylim(YLO, YHI)
     ax.set_yticks(np.arange(YLO, YHI + 1, 5))
-    ax.set_xlabel("Atmospheric CO$_2$ (ppm, log$_2$ scale) Dean Rovang figure 1", fontsize=16)
+    figure_label = "2" if linear_x else "1"
+    scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
+    ax.set_xlabel(
+        f"Atmospheric CO$_2$ ({scale_label}) Dean Rovang figure {figure_label}",
+        fontsize=16,
+    )
     ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=16)
     ax.tick_params(axis="both", labelsize=13)
     ax.grid(True, alpha=0.22)
@@ -141,8 +152,18 @@ def Rovang_figure_1():
         f"\n  band at the frame corners: {np.interp(Lg(XLO), x, lo):.1f} to "
         f"{np.interp(Lg(XHI), x, hi):.1f} C   frame is {YLO} to {YHI}"
     )
-    print(f"\nwrote end figure:1  {output_path}")
+    print(f"\nwrote end figure:{figure_label}  {output_path}")
     return output_path
+
+
+def Rovang_figure_1():
+    """Create the logarithmic-x Rovang figure and save Rovang_figure_1.png."""
+    return _create_figure()
+
+
+def Rovang_figure_2():
+    """Create the linear-x Rovang figure and save Rovang_figure_2.png."""
+    return _create_figure(linear_x=True)
 
 
 if __name__ == "__main__":
