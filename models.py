@@ -8,6 +8,13 @@ from config import *
 C280 = 280
 
 
+def Rovang_figure_1():
+    """Create and save Rovang Figure 1."""
+    from Rovang.Rovang_figure_1 import Rovang_figure_1 as create_figure
+
+    return create_figure()
+
+
 def T_model76(t):
     """My best temperature model"""
     x = t - 2000
@@ -921,6 +928,40 @@ def T_78(t):
 # 2026.11.01 a second figure is made with:  plot200 = 2
 
 
+###############################################################
+# 210      plot200   make a new figure  as AI coded   #########
+###############################################################
+# 210.1 download deposit_v5.zip from 
+#       https://zenodo.org/records/22837428
+#
+# 
+
+"""Figure 1 (v5) - the equilibrium relationship and how the band is defined.
+
+Three reconstructions, each with its own marker, and the York fit to each.
+The gray envelope is the union of the three fits, widened by each fit's slope
+uncertainty, and is the band used in every later figure.
+
+No annotation is drawn - labelling is done in PowerPoint. Waypoint values are
+printed to the console instead.
+
+Conventions: round axis limits, band extending past the data on all sides,
+legend entries giving the range each record covers rather than a point count.
+
+chat07: 
+how to call Rovang_figure_1.py with plot210 = 3 and show Rovang_figure01.png
+chat08
+make a function 
+Rovang_figure_1()
+which produces Rovang_figure01.png
+chat09
+make a green line for 14°C temperature and
+280 ppm CO2 in Rovang_figure_1.png
+
+"""
+
+
+
 
 # chat01 /work/_68_out.csv
 #   reduce this file to only monthly numbers and copy in this workdir
@@ -938,3 +979,5 @@ def T_78(t):
 # make quadratic equation and visualize work/_48_era5_in.csv column temp_average like
 # https://climatecasino.substack.com/p/dear-everyone-150c-is-yesterdays
 # Fit the quadratic trend from 2000 onward and show its equation on the plot.
+#
+#

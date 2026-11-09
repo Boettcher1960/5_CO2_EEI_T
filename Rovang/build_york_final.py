@@ -8,7 +8,10 @@ from matplotlib.lines import Line2D
 from scipy import odr
 from scipy.interpolate import Akima1DInterpolator
 import os
-from load_primary_data import load_datasets
+try:
+    from .load_primary_data import load_datasets
+except ImportError:
+    from load_primary_data import load_datasets
 import os as _os
 _HERE=_os.path.dirname(_os.path.abspath(__file__))
 DATA=_os.environ.get('DIAGRAM_DATA', _os.path.join(_HERE,'data'))

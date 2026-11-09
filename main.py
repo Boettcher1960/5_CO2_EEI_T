@@ -1,5 +1,5 @@
 # main.py
-v = "5K33" # Rovang_figure01.png copied Dean Rovang https://zenodo.org/records/22837428
+v = "5K35" # Rovang_figure01.png copied Dean Rovang https://zenodo.org/records/22837428
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -643,6 +643,11 @@ def main():
     # 200.1 main.py line 606 call 
     if plot200 == 2: # plot200 = 2 # 2=new figure with era5 temperature and quadratic curve
        fig_202_era5_temp_quadratic()
+
+    # 210.1 main.py line 606 call 
+    if plot210 == 3: # call Rovang_figure_1.py
+       Rovang_figure_1()
+
 
 if __name__ == "__main__":
     if "--visualize-era5-temp-average" in sys.argv[1:]:

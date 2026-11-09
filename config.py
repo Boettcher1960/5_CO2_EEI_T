@@ -68,6 +68,7 @@ plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 plot200 = 0 # 2=new figure with era5 temperature and quadratic curve
+plot210 = 3 # 3=new figure Rovang_figure_1.py
 
 # variable to show play variable in line 4
 line2_play = 0   # 61  62
