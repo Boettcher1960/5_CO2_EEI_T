@@ -1002,7 +1002,7 @@ for figure210 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
 in Rovang_figure_303.py make a headline like in def text_2_print_head_line():
 -5k44
 in Rovang_figure_303.py make 4 text lines below the plot like in text_9_print_7_lines():
-in Rovang_figure_303.py make the plot area bigger 
+in Rovang_figure_303.py move the bottom_lines more away from the plot 
 
 """
 

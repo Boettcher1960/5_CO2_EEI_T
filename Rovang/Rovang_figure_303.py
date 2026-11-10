@@ -26,14 +26,14 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
 from config import *
+from main import v
 
 GRAY = "#b8b8b8"
 JUDD = "#111111"          # black diamonds, the established default
 EP = "#8e6fc7"            # EPICA, the original purple
 CLK = "#3b1f8f"           # Clark, deep violet-blue - separated from EPICA in hue and value
-XLO, XHI = 125, 1500        # see config.py for the y axis limits, which are set in the figure creation function
-YLO, YHI = 5, 40
-
+XLO, XHI = 125, 1500        # see config.py for the x axis CO2 limits, x_303min, x_303max
+YLO, YHI = 5, 40            # see config.py for the y axis T limits, y_303min, y_303max
 def _create_figure(linear_x=False):
     """Create a Rovang figure using logarithmic or linear CO2 scaling."""
     with contextlib.redirect_stdout(io.StringIO()):
@@ -117,7 +117,7 @@ def _create_figure(linear_x=False):
         transform=ax.transAxes,
     )
     ax.set_xlabel(
-        f"Figure 304: Atmospheric CO$_2$ ({scale_label}) after Dean Rovang ",
+        f"Figure 304: Atmospheric CO$_2$ ({scale_label}) is the x axis - after Dean Rovang ",
         fontsize=16,
     )
     ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=16)
@@ -153,17 +153,31 @@ def _create_figure(linear_x=False):
                    label=f"{name}: {slope:.2f} K/doubling")
         )
     ax.legend(handles=handles, fontsize=10.5, loc="upper left", framealpha=0.96)
-    fig.subplots_adjust(left=0.12, right=0.98, top=0.88, bottom=0.20)
+
+    #text_below = (f"Figure from  "
+    #              f"https://github.com/Boettcher1960/5_CO2_EEI_T      "
+    #              f" {filename} version {v} ")
+    text_below3 = (f"  "
+                  f"https://github.com/Boettcher1960/5_CO2_EEI_T"
+                  f" {filename} version {v} ")
+   
+    # f"https://github.com/Boettcher1960/co2_python       Parameter {header_parameter}")
+    ax.text(-0.1, tr1y, text_below3, color="black", fontname="Arial", fontsize=14,
+            transform=ax.transAxes)
+
+
+    fig.subplots_adjust(left=0.12, right=0.98, top=0.88, bottom=0.30)
     bottom_lines = [
         "CO$_2$ and temperature reconstructions with York fits",
         "Judd et al. (2024): Cenozoic stages, 66–0 Ma",
         "EPICA Dome C ×0.55 and Clark et al. (2024): 1–800 kyr",
         "Reference: 280 ppm / 14°C preindustrial; shaded CO$_2$ and temperature ranges",
     ]
-    for y, line in zip((0.16, 0.13, 0.10, 0.07), bottom_lines):
+    for y, line in zip((0.12, 0.09, 0.06, 0.03), bottom_lines):
         fig.text(
             0.12, y, line, color="black", fontname="Arial", fontsize=11,
         )
+
     fig.savefig(output_path, dpi=200, bbox_inches="tight")
     plt.show()
     plt.close(fig)
