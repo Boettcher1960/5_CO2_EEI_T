@@ -60,7 +60,10 @@ def _create_figure(linear_x=False):
          B.se_clk, B.sb_clk, CLK, ":"),
     ]
 
-    fig, ax = plt.subplots(figsize=(12, 8.5))
+    # 303.60 create the figure and axes with a specific size
+    # fig, ax = plt.subplots(figsize=(15, 10.625))
+    # figure1 is , ax = plt.subplots(figsize=(13, 7))
+    fig, ax = plt.subplots(figsize=(13, 11))
 
     p = np.linspace(XLO * 0.9, XHI * 1.1, 800)
     x = Lg(p)
@@ -174,21 +177,29 @@ def _create_figure(linear_x=False):
     ax.text(-0.1, t3y2, text_below3, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
+
     t3y3 = -0.28    # 303.124 print line 3 t3y3 = -0.28
-    label3="blue band for 1.5\u00b0C, the Paris treaty 14\u00b0C+2\u00b0C = 16\u00b0C"
-    ax.add_patch(
+    # 303.125 in legend, line 3, add a blue band
+    ax.add_patch(   
         Rectangle(
             (-0.1, t3y3 - 0.005), 0.035, 0.025,
             transform=ax.transAxes, facecolor=paris_band_color,
             edgecolor="none", clip_on=False,
         )
     )
-    # 303.125 print line 3 below the plot
+    # 303.127 print line 3 below the plot
+    label3="blue band for 1.5\u00b0C, the Paris treaty 14\u00b0C+2\u00b0C = 16\u00b0C"
+    # 303.128 print the text for line 3 below the plot
     ax.text(-0.055, t3y3, label3, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
-
-
-    fig.subplots_adjust(left=0.12, right=0.98, top=0.88, bottom=0.30)
+    
+    # 303.131  fig.subplots_adjust(left=0.12, right=0.98, top=0.88, bottom=0.30)
+    # sets the plot area’s margins within the figure. The values are fractions of the figure dimensions:
+    # left=0.12: plot starts 12% from the left.
+    # right=0.98: plot ends 2% from the right.
+    # top=0.88: plot ends 12% below the top.
+    # bottom=0.30: plot starts 30% above the bottom, leaving room below for captions.
+    fig.subplots_adjust(left=0.12, right=0.98, top=0.92, bottom=0.40)
     
     t3y4 = -0.35    # 303.124 print line 6 
     label4="label 4 in line 4"
