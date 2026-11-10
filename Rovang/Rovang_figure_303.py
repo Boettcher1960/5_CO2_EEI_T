@@ -99,9 +99,10 @@ def _create_figure(linear_x=False):
 
     if not linear_x:
         ax.set_xscale("log", base=2)
-    ax.set_xlim(XLO, XHI)
+    # ax.set_xlim(XLO, XHI)
+    ax.set_xlim(x_303min, x_303max)
     ticks = (
-        np.linspace(XLO, XHI, 6)
+        np.linspace(x_303min, x_303max, 6)
         if linear_x
         else [125, 250, 500, 1000, 1500]
     )
@@ -123,14 +124,21 @@ def _create_figure(linear_x=False):
     ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=16)
     ax.tick_params(axis="both", labelsize=13)
     ax.grid(True, alpha=0.22)
+   
+    # 303.96 blue band for 15.5°C the 2024 Temperature 
     paris_band_color = "#add8e6"
     ax.axhspan(15.5, 16, color=paris_band_color, alpha=0.55, zorder=2)
+
+    # 303.97 blue band for 430 ppm the 2026 CO2 atmosphere level
     co2_band_color = "#87ceeb"
     ax.axvspan(430, 480, color=co2_band_color, alpha=0.35, zorder=2)
     reference_color = "#228B22"
+
+    # 303.99 green dashed line for 14°C the 1850 to 1900 Temperaturelevel
     ax.axhline(14, color=reference_color, ls="--", lw=1.8, zorder=6)
-    ax.plot([280, 280], [5, 25], color=reference_color, ls="--", lw=1.8,
-            zorder=6)
+
+    # 303.100 green dashed line for 280 ppm the 1850 to 1900 CO2 atmosphere level
+    ax.plot([280, 280], [5, 19], color=reference_color, ls="--", lw=1.8, zorder=6)
     handles = [
         Patch(facecolor=GRAY, alpha=0.75,
               label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)"),
