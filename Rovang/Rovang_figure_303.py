@@ -145,42 +145,49 @@ def _create_figure(linear_x=False):
     # 303.63 set the y-axis tick labels to range from y_303min to y_303max with a step of 5
     figure_label = "4" if linear_x else "3"
     scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
-    # 303.80 print the headline above the plot
+    # 303.65 print the headline above the plot
     headline1 = "Global mean surface temperature vs Atmospheric CO$_2$"
     ax.text(
         -0.1, 1.05, headline1, color="black", fontname="Arial", fontsize=20,
         transform=ax.transAxes,
     )
-    # 303.82 print the x axis text below the plot
+    # 303.68 print the x axis text below the plot
     ax.set_xlabel(
         f"Figure 304: Atmospheric CO$_2$ ({scale_label}) is the x axis - after Dean Rovang ",
         fontsize=16,
         loc="left",
     )
-    # 303.83 move  the x axis text
+    # 303.69 move  the x axis text
     ax.xaxis.set_label_coords(-0.1, -0.11)
 
-    # 303.85 print the y axis text left of the plot
+    # 303.70 print the y axis text left of the plot
     ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=18)
     ax.tick_params(axis="both", labelsize=13)
     ax.grid(True, alpha=0.22)
-   
-    # 303.96 blue band for 15.5°C the 2024 Temperature 
-    paris_band_color = "#add8e6"
-    ax.axhspan(15.5, 16, color=paris_band_color, alpha=0.55, zorder=2)
 
-    # 303.97 blue band for 430 ppm the 2026 CO2 atmosphere level
-    co2_band_color = "#87ceeb"
-    ax.axvspan(430, 480, color=co2_band_color, alpha=0.35, zorder=2)
+    # 303.80 lines parallel to x axis
+    # 303.80 green dashed line for 14°C the 1850 to 1900 Temperaturelevel
     reference_color = "#228B22"
-
-    # 303.99 green dashed line for 14°C the 1850 to 1900 Temperaturelevel
     ax.axhline(14, color=reference_color, ls="--", lw=1.8, zorder=6)
+    # 303.82 blue band for 15.5°C the 2024 Temperature
+    paris_band_color = "#add8e6"
+    # ax.axhspan(15.5, 16, color=paris_band_color, alpha=0.55, zorder=2)
+    # 303.84 orange dashed line for 15.5°C the 2024 Temperaturelevel 1.5°C above preindustrial 14°C
+    c305 = "#DE7525D8"
+    ax.axhline(15.5, color=c305, ls="--", lw=1.8, zorder=6)
 
-    # 303.100 green dashed line for 280 ppm the 1850 to 1900 CO2 atmosphere level
+    # 303.90 lines parallel to y axis
+    # 303.90 blue band for 430 ppm the 2026 CO2 atmosphere level
+    c306 = "#87ceeb"
+    ax.axvspan(430, 480, color=c306, alpha=0.35, zorder=2)
+
+    # 303.82 green dashed line for 280 ppm the 1850 to 1900 CO2 atmosphere level
     ax.plot([280, 280], [5, 19], color=reference_color, ls="--", lw=1.8, zorder=6)
 
-     # 303.101 legend with the 3 fits and the 4 bands
+
+
+
+    # 303.101 legend with the 3 fits and the 4 bands
     handles = [
         Patch(facecolor=GRAY, alpha=0.75,
               label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)"),
@@ -239,9 +246,13 @@ def _create_figure(linear_x=False):
     fig.subplots_adjust(left=0.12, right=0.98, top=0.92, bottom=0.40)
     
     t3y4 = -0.35    # 303.124 print line 6 
-    label4="label 4 in line 4"
+    label4 = "1.5°C is the planetary boundary - 15.5°C in dashed orange line"
+    ax.plot(
+        [-0.1, -0.06], [t3y4 + 0.015, t3y4 + 0.015], color=c305, ls="--", lw=2,
+        transform=ax.transAxes, clip_on=False,
+    )
     # 303.135 print line 3 below the plot
-    ax.text(-0.1, t3y4, label4, color="black", fontname="Arial", fontsize=14,
+    ax.text(-0.055, t3y4, label4, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
     t3y5 = -0.42    # 303.124 print line 6 
