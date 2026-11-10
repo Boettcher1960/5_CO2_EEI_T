@@ -7,21 +7,6 @@ from config import *
 
 C280 = 280
 
-
-def Rovang_figure_1():
-    """Create and save Rovang Figure 1."""
-    from Rovang.Rovang_figure_1 import Rovang_figure_1 as create_figure
-
-    return create_figure()
-
-
-def Rovang_figure_2():
-    """Create and save the linear-x Rovang Figure 2."""
-    from Rovang.Rovang_figure_1 import Rovang_figure_2 as create_figure
-
-    return create_figure()
-
-
 def T_model76(t):
     """My best temperature model"""
     x = t - 2000
@@ -948,8 +933,23 @@ def T_78(t):
 # 210.5 unzip deposit_v5.zip into Rovang
 # 210.6 run Rovang_figure_1.py to produce Rovang_figure01.png
 # 210.7 run Rovang_figure_1.py with plot210 = 3 to produce Rovang_figure01.png
-# 210.8 Dean Rovang
+# 210.8 Dean Rovang https://bsky.app/profile/deanrovang.bsky.social/post/3mwaxrljqss2y 
+#       https://essopenarchive.org/doi/pdf/10.22541/essoar.15007921/v5?download=true?redirectToLatest=false
+# 210.9      # for figure210 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
+# 210.10     # for figure210 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
+#
+def Figure_303():
+    """Create and save Rovang Figure 1."""
+    from Rovang.Rovang_figure_303 import figure_303_Rovang as create_figure
 
+    return create_figure()
+
+
+def Rovang_figure_2():
+    """Create and save the linear-x Rovang Figure 2."""
+    from Rovang.Rovang_figure_1 import Rovang_figure_2 as create_figure
+
+    return create_figure()
 
 
 """Figure 1 (v5) - the equilibrium relationship and how the band is defined.

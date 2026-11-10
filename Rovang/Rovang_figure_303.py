@@ -42,7 +42,7 @@ def _create_figure(linear_x=False):
     )
     figure_dir = os.path.join(out_dir, "Rovang")
     os.makedirs(figure_dir, exist_ok=True)
-    filename = "Rovang_figure_2.png" if linear_x else "Rovang_figure_1.png"
+    filename = "figure_304_Rovang.png" if linear_x else "figure_303_Rovang.png"
     output_path = os.path.join(figure_dir, filename)
 
     Lg = lambda p: np.log2(np.asarray(p, float) / B.C0)
@@ -156,15 +156,18 @@ def _create_figure(linear_x=False):
     return output_path
 
 
-def Rovang_figure_1():
-    """Create the logarithmic-x Rovang figure and save Rovang_figure_1.png."""
+def figure_303_Rovang():
+    """Create the logarithmic-x Rovang figure and save figure_303_Rovang.png."""
     return _create_figure()
 
+
+def figure_304_Rovang():
+    """Create the linear-x Rovang figure and save figure_304_Rovang.png."""
+    return _create_figure(linear_x=True)
 
 def Rovang_figure_2():
     """Create the linear-x Rovang figure and save Rovang_figure_2.png."""
     return _create_figure(linear_x=True)
 
-
 if __name__ == "__main__":
-    Rovang_figure_1()
+    figure_303_Rovang()

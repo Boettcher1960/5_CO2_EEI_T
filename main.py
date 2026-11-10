@@ -1,6 +1,5 @@
 # main.py
-v = "5K41" # for figure210 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
-           # for figure210 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
+v = "5K42" # Figure_303
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -24,6 +23,7 @@ from data_processing import *
 from models import *
 from plotting import *
 from text import *
+from Rovang import *
 
 
 if print_debug > 9:
@@ -563,11 +563,11 @@ def fig_202_era5_temp_quadratic():
 def run_optional_figures():
     if figure202 == 2:
         fig_202_era5_temp_quadratic()
-    if figure210 == 3:
-        Rovang_figure_1()
-    elif figure210 == 4:
+    if figure303 == 3:
+        Figure_303()
+    elif figure303 == 4:
+        # figure_304_Rovang() # eror: figure_304_Rovang() is not defined
         Rovang_figure_2()
-
 
 def main():
     """Main execution function"""
