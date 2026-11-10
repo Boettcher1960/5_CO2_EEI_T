@@ -165,7 +165,7 @@ def figure_304_Rovang():
     """Create the linear-x Rovang figure and save figure_304_Rovang.png."""
     return _create_figure(linear_x=True)
 
-def Rovang_figure_2():
+def Rovang_figure_2_not_used():
     """Create the linear-x Rovang figure and save Rovang_figure_2.png."""
     return _create_figure(linear_x=True)
 

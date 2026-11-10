@@ -12,6 +12,13 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
+figure100 = 0 # 0 means create no old figure 1= make old figuure
+figure202 = 0 # 2=new figure with era5 temperature and quadratic curve
+figure303 = 4 # 3 , 4 
+              # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
+              # for figure303 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
+
+
 # 8.5 configure the right axis legend 
 yr_60  = 50  # 60 (0=no right yaxis) 60 * 4 = 240 pixel to the right
 yr_150    = 150  #  240 - 150 = 90 ( 60 * 4 = 240      plot8_right_y_axe_for_T_74
@@ -67,11 +74,6 @@ plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
-figure100 = 0 # 0 means create no old figure 1= make old figuure
-figure202 = 0 # 2=new figure with era5 temperature and quadratic curve
-figure303 = 3 # 3 , 4 
-              # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
-              # for figure303 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
 # variable to show play variable in line 4
 line2_play = 0   # 61  62
 line3_play = 61  #  play_62_EEA #   68 play68_ERA = 720

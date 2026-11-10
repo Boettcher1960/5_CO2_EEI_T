@@ -1,5 +1,5 @@
 # main.py
-v = "5K42" # Figure_303
+v = "5K43" # Figure_304
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -566,8 +566,7 @@ def run_optional_figures():
     if figure303 == 3:
         Figure_303()
     elif figure303 == 4:
-        # figure_304_Rovang() # eror: figure_304_Rovang() is not defined
-        Rovang_figure_2()
+        Figure_304()
 
 def main():
     """Main execution function"""

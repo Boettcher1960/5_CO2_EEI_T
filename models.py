@@ -945,9 +945,10 @@ def Figure_303():
     return create_figure()
 
 
-def Rovang_figure_2():
+def Figure_304():
     """Create and save the linear-x Rovang Figure 2."""
-    from Rovang.Rovang_figure_1 import Rovang_figure_2 as create_figure
+    # from Rovang.Rovang_figure_1 import Rovang_figure_2 as create_figure
+    from Rovang.Rovang_figure_303 import figure_304_Rovang as create_figure
 
     return create_figure()
 
