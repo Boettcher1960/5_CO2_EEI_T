@@ -25,7 +25,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch, Rectangle
-from matplotlib.ticker import MultipleLocator
+from matplotlib.ticker import MultipleLocator, StrMethodFormatter
 
  # 303.22 my imports from  https://github.com/Boettcher1960/5_CO2_EEI_T
 from config import *
@@ -129,15 +129,14 @@ def _create_figure(linear_x=False):
     # 303.56 set the x-axis limits to x_303min and x_303max, which are defined in config.py
     ax.set_xlim(x_303min, x_303max)
     # 303.57 set the y-axis limits to y_303min and y_303max, which are defined in config.py
-    ticks = (
-        np.linspace(x_303min, x_303max, 6)
-        if linear_x
-        else [125, 250, 500, 1000, 1500]
-    )
-    # 303.58 set the x-axis ticks to the specified ticks and format them with commas for thousands
-    ax.set_xticks(ticks)
-    # 303.59 set the x-axis tick labels to the specified ticks and format them with commas for thousands
-    ax.set_xticklabels([f"{tick:,}" for tick in ticks])
+    if linear_x:
+        ax.xaxis.set_major_locator(MultipleLocator(100))
+        ax.xaxis.set_minor_locator(MultipleLocator(20))
+        ax.xaxis.set_major_formatter(StrMethodFormatter("{x:,.0f}"))
+    else:
+        ticks = [125, 250, 500, 1000, 1500]
+        ax.set_xticks(ticks)
+        ax.set_xticklabels([f"{tick:,}" for tick in ticks])
     # 303.60 set the y-axis limits to y_303min and y_303max, which are defined in config.py
     ax.set_ylim(y_303min, y_303max)
     y_range = y_303max - y_303min
