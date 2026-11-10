@@ -223,16 +223,12 @@ def _create_figure(linear_x=False):
 
 
     t3y3 = -0.28    # 303.124 print line 3 t3y3 = -0.28
-    # 303.125 in legend, line 3, add a blue band
-    ax.add_patch(   
-        Rectangle(
-            (-0.1, t3y3 - 0.005), 0.035, 0.025,
-            transform=ax.transAxes, facecolor=paris_band_color,
-            edgecolor="none", clip_on=False,
-        )
+    ax.plot(
+        [-0.1, -0.06], [t3y3 + 0.015, t3y3 + 0.015],
+        color=reference_color, ls="--", lw=2,
+        transform=ax.transAxes, clip_on=False,
     )
-    # 303.127 print line 3 below the plot
-    label3="blue band for 1.5\u00b0C, the Paris treaty 14\u00b0C+2\u00b0C = 16\u00b0C"
+    label3 = "14\u00b0C was the preindustrial level, the coridor of life, civilization evolved 10 000 years"
     # 303.128 print the text for line 3 below the plot
     ax.text(-0.055, t3y3, label3, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
