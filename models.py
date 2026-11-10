@@ -1004,6 +1004,9 @@ in Rovang_figure_303.py make a headline like in def text_2_print_head_line():
 in Rovang_figure_303.py make 4 text lines below the plot like in text_9_print_7_lines():
 in Rovang_figure_303.py move the bottom_lines more away from the plot 
 
+in Rovang_figure_303.py insert the blue band before the text "blue band for 1.5\u00b0C Paris treaty below 2°C"
+
+
 """
 
 

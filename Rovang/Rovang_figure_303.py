@@ -23,7 +23,7 @@ import matplotlib
 # matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
-from matplotlib.patches import Patch
+from matplotlib.patches import Patch, Rectangle
 
 from config import *
 from main import v
@@ -175,9 +175,16 @@ def _create_figure(linear_x=False):
             transform=ax.transAxes)
 
     t3y3 = -0.28    # 303.124 print line 3 t3y3 = -0.28
-    label3="blue band for 1.5\u00b0C Paris treaty below 2°C"
+    label3="blue band for 1.5\u00b0C, the Paris treaty 14\u00b0C+2\u00b0C = 16\u00b0C"
+    ax.add_patch(
+        Rectangle(
+            (-0.1, t3y3 - 0.005), 0.035, 0.025,
+            transform=ax.transAxes, facecolor=paris_band_color,
+            edgecolor="none", clip_on=False,
+        )
+    )
     # 303.125 print line 3 below the plot
-    ax.text(-0.1, t3y3, label3, color="black", fontname="Arial", fontsize=14,
+    ax.text(-0.055, t3y3, label3, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
 
