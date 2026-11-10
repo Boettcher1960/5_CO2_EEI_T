@@ -113,18 +113,25 @@ def _create_figure(linear_x=False):
     ax.set_xticklabels([f"{tick:,}" for tick in ticks])
     ax.set_ylim(y_303min, y_303max)
     ax.set_yticks(np.arange(y_303min, y_303max + 1, 5))
-    figure_label = "2" if linear_x else "1"
+    figure_label = "4" if linear_x else "3"
     scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
-    header = "Figure 304: Atmospheric CO$_2$ and global mean surface temperature"
+    # 303.80 print the headline above the plot
+    headline1 = "Global mean surface temperature vs Atmospheric CO$_2$"
     ax.text(
-        -0.1, 1.05, header, color="black", fontname="Arial", fontsize=20,
+        -0.1, 1.05, headline1, color="black", fontname="Arial", fontsize=20,
         transform=ax.transAxes,
     )
+    # 303.82 print the x axis text below the plot
     ax.set_xlabel(
         f"Figure 304: Atmospheric CO$_2$ ({scale_label}) is the x axis - after Dean Rovang ",
         fontsize=16,
+        loc="left",
     )
-    ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=16)
+    # 303.83 move  the x axis text
+    ax.xaxis.set_label_coords(-0.1, -0.11)
+
+    # 303.85 print the y axis text left of the plot
+    ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=18)
     ax.tick_params(axis="both", labelsize=13)
     ax.grid(True, alpha=0.22)
    
