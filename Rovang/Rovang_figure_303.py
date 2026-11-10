@@ -22,10 +22,12 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
+from config import *
+
 GRAY = "#b8b8b8"
 JUDD = "#111111"          # black diamonds, the established default
 EP = "#8e6fc7"            # EPICA, the original purple
-CLK = "#3b1f8f"            # Clark, deep violet-blue - separated from EPICA in hue and value
+CLK = "#3b1f8f"           # Clark, deep violet-blue - separated from EPICA in hue and value
 XLO, XHI = 125, 1500
 YLO, YHI = 5, 40
 
@@ -79,7 +81,7 @@ def _create_figure(linear_x=False):
             mew=0.9, zorder=12,
             label="Judd et al. 2024, Cenozoic stages, 66\u20130 Ma")
 
-    print("Figure 1 \u2014 fits and where each record sits\n")
+    print("Figure 303 \u2014 fits and where each record sits\n")
     xs = np.linspace(Lg(XLO), Lg(XHI), 400)
     for name, slope, intercept, _sg, _sb, color, style in fits:
         src = B.jx if "Judd" in name else (
@@ -102,12 +104,12 @@ def _create_figure(linear_x=False):
     )
     ax.set_xticks(ticks)
     ax.set_xticklabels([f"{tick:,}" for tick in ticks])
-    ax.set_ylim(YLO, YHI)
-    ax.set_yticks(np.arange(YLO, YHI + 1, 5))
+    ax.set_ylim(y_303min, y_303max)
+    ax.set_yticks(np.arange(y_303min, y_303max + 1, 5))
     figure_label = "2" if linear_x else "1"
     scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
     ax.set_xlabel(
-        f"Atmospheric CO$_2$ ({scale_label}) Dean Rovang figure {figure_label}",
+        f"Atmospheric CO$_2$ ({scale_label}) Dean Rovang figure30{figure_label}",
         fontsize=16,
     )
     ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=16)
@@ -165,9 +167,6 @@ def figure_304_Rovang():
     """Create the linear-x Rovang figure and save figure_304_Rovang.png."""
     return _create_figure(linear_x=True)
 
-def Rovang_figure_2_not_used():
-    """Create the linear-x Rovang figure and save Rovang_figure_2.png."""
-    return _create_figure(linear_x=True)
 
 if __name__ == "__main__":
     figure_303_Rovang()

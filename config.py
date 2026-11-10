@@ -255,8 +255,14 @@ y_77max = 4 #  Temperature
 y_78min = 0.6 #  for Tom Harris Temperature 
 y_78max = 1.6 #  for Tom Harris Temperature
 
+# YLO, YHI = 5, 40
+y_303min = 3  # figure303 Temperature y axis 2
+y_303max = 33 # figure303 Temperature y axis 2
+
 x_anf = 2004
 x_end = 2027
+
+# XLO, XHI = 125, 1500
 
 # constants
 # C280 =275 in Zack Labe plots.
