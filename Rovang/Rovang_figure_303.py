@@ -25,6 +25,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch, Rectangle
+from matplotlib.ticker import MultipleLocator
 
  # 303.22 my imports from  https://github.com/Boettcher1960/5_CO2_EEI_T
 from config import *
@@ -139,10 +140,18 @@ def _create_figure(linear_x=False):
     ax.set_xticklabels([f"{tick:,}" for tick in ticks])
     # 303.60 set the y-axis limits to y_303min and y_303max, which are defined in config.py
     ax.set_ylim(y_303min, y_303max)
-     # 303.61 set the y-axis ticks to range from y_303min to y_303max with a step of 5
-    ax.set_yticks(np.arange(y_303min, y_303max + 1, 5))
-    # 303.62 set the y-axis tick labels to range from y_303min to y_303max with a step of 5
-    # 303.63 set the y-axis tick labels to range from y_303min to y_303max with a step of 5
+    y_range = y_303max - y_303min
+    if y_range < 5:
+        major_y_step, minor_y_step = 0.5, 0.2
+    elif y_range < 20:
+        major_y_step, minor_y_step = 2, 1
+    elif y_range < 30:
+        major_y_step, minor_y_step = 5, 1
+    else:
+        major_y_step, minor_y_step = 5, None
+    ax.yaxis.set_major_locator(MultipleLocator(major_y_step))
+    if minor_y_step is not None:
+        ax.yaxis.set_minor_locator(MultipleLocator(minor_y_step))
     figure_label = "4" if linear_x else "3"
     scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
     # 303.65 print the headline above the plot
@@ -163,7 +172,8 @@ def _create_figure(linear_x=False):
     # 303.70 print the y axis text left of the plot
     ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=18)
     ax.tick_params(axis="both", labelsize=13)
-    ax.grid(True, alpha=0.22)
+    ax.grid(True, which="major", color="#777777", alpha=0.75, linewidth=0.9)
+    ax.grid(True, which="minor", color="#999999", alpha=0.5, linewidth=0.6)
 
     # 303.80 lines parallel to x axis
     # 303.80 green dashed line for 14°C the 1850 to 1900 Temperaturelevel

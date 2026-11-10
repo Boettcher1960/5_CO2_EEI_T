@@ -921,22 +921,22 @@ def T_78(t):
 
 
 ###############################################################
-# 210      plot200   make a new figure  as AI coded   #########
+# 303      plot200   make a new figure  as AI coded   #########
 ###############################################################
 #
 # https://justdean.substack.com/p/the-paper-goes-to-review
 #
-# 210.2 download deposit_v5.zip from 
+# 303.2 download deposit_v5.zip from 
 #       https://zenodo.org/records/22837428
 # 
-# 210.4 new folder /Users/thomasboettcher/Documents/Python/5_CO2_EEI_T/Rovang
-# 210.5 unzip deposit_v5.zip into Rovang
-# 210.6 run Rovang_figure_1.py to produce Rovang_figure01.png
-# 210.7 run Rovang_figure_1.py with plot210 = 3 to produce Rovang_figure01.png
-# 210.8 Dean Rovang https://bsky.app/profile/deanrovang.bsky.social/post/3mwaxrljqss2y 
+# 303.4 new folder /Users/thomasboettcher/Documents/Python/5_CO2_EEI_T/Rovang
+# 303.5 unzip deposit_v5.zip into Rovang
+# 303.6 run Rovang_figure_1.py to produce Rovang_figure01.png
+# 303.7 run Rovang_figure_1.py with plot210 = 3 to produce Rovang_figure01.png
+# 303.8 Dean Rovang https://bsky.app/profile/deanrovang.bsky.social/post/3mwaxrljqss2y 
 #       https://essopenarchive.org/doi/pdf/10.22541/essoar.15007921/v5?download=true?redirectToLatest=false
-# 210.9      # for figure210 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
-# 210.10     # for figure210 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
+# 303.9      # for figure210 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
+# 303.10     # for figure210 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
 #
 def Figure_303():
     """Create and save Rovang Figure 1."""
@@ -1006,6 +1006,18 @@ in Rovang_figure_303.py move the bottom_lines more away from the plot
 
 in Rovang_figure_303.py insert the blue band before the text "blue band for 1.5\u00b0C Paris treaty below 2°C"
 
+if ( y_303max - y_303min ) < 5 make grid lines every 0.2°C
+if ( y_303max - y_303min ) < 20 make grid lines every 0.5°C
+if ( y_303max - y_303min ) < 30 make grid lines every 1°C
+
+if ( y_303max - y_303min ) < 30 make major grid lines every 5°C
+if ( y_303max - y_303min ) < 30 make minor grid lines every 1°C
+
+if ( y_303max - y_303min ) < 20 make major grid lines every 2°C
+if ( y_303max - y_303min ) < 20 make minor grid lines every 1°C
+
+if ( y_303max - y_303min ) < 5 make major grid lines every 0.5°C
+if ( y_303max - y_303min ) < 5 make minor grid lines every 0.2°C
 
 """
 
