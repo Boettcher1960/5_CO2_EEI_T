@@ -1023,6 +1023,9 @@ if ( y_303max - y_303min ) < 5 make minor grid lines every 0.2°C
 if ( figure303 == 4 ) make major grid lines every 100 ppm
 if ( figure303 == 4 ) make minor grid lines every 20 ppm
 
+
+if ( x_303max - y_303min ) < 260 make minor grid lines every 10 ppm
+
 """
 
 

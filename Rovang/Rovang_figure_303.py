@@ -131,7 +131,8 @@ def _create_figure(linear_x=False):
     # 303.57 set the y-axis limits to y_303min and y_303max, which are defined in config.py
     if linear_x:
         ax.xaxis.set_major_locator(MultipleLocator(100))
-        ax.xaxis.set_minor_locator(MultipleLocator(20))
+        minor_x_step = 10 if x_303max - x_303min < 260 else 20
+        ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
         ax.xaxis.set_major_formatter(StrMethodFormatter("{x:,.0f}"))
     else:
         ticks = [125, 250, 500, 1000, 1500]
@@ -154,19 +155,19 @@ def _create_figure(linear_x=False):
     figure_label = "4" if linear_x else "3"
     scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
     # 303.65 print the headline above the plot
-    headline1 = "Global mean surface temperature vs Atmospheric CO$_2$"
+    headline1 = "Global mean surface temperature plotted against the  Atmospheric CO$_2$ concentration"
     ax.text(
         -0.1, 1.05, headline1, color="black", fontname="Arial", fontsize=20,
         transform=ax.transAxes,
     )
     # 303.68 print the x axis text below the plot
     ax.set_xlabel(
-        f"Figure 304: Atmospheric CO$_2$ ({scale_label}) is the x axis - after Dean Rovang ",
+        f"Figure 304: Atmospheric CO$_2$ concentration ({scale_label}) is the x axis - after Dean Rovang ",
         fontsize=16,
         loc="left",
     )
     # 303.69 move  the x axis text
-    ax.xaxis.set_label_coords(-0.1, -0.11)
+    ax.xaxis.set_label_coords(-0.05, -0.08)
 
     # 303.70 print the y axis text left of the plot
     ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=18)
