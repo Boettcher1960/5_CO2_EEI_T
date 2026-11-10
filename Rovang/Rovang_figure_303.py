@@ -181,13 +181,11 @@ def _create_figure(linear_x=False):
     c306 = "#87ceeb"
     ax.axvspan(430, 480, color=c306, alpha=0.35, zorder=2)
 
-    # 303.82 green dashed line for 280 ppm the 1850 to 1900 CO2 atmosphere level
+    # 303.92 green dashed line for 280 ppm the 1850 to 1900 CO2 atmosphere level
     ax.plot([280, 280], [5, 19], color=reference_color, ls="--", lw=1.8, zorder=6)
 
 
-
-
-    # 303.101 legend with the 3 fits and the 4 bands
+    # 303.94 legend with the 3 fits and the 4 bands
     handles = [
         Patch(facecolor=GRAY, alpha=0.75,
               label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)"),
@@ -209,40 +207,43 @@ def _create_figure(linear_x=False):
             Line2D([], [], color=color, ls=style, lw=2.4,
                    label=f"{name}: {slope:.2f} K/doubling")
         )
-    # 303.109 plot the legend with the 3 fits and the 4 bands
+    # 303.99 plot the legend with the 3 fits and the 4 bands
     ax.legend(handles=handles, fontsize=10.5, loc="upper left", framealpha=0.96)
 
-    # 303.121 print line 2 github with version number below the plot
+    # 303.101 print line 2 github with version number below the plot
     text_below3 = (f""
                   f"https://github.com/Boettcher1960/5_CO2_EEI_T"
                   f" {filename} version {v} ")
     t3y2 = -0.22    # 303.122 print line 2 t3y2 = -0.22
-    # 303.123 print line 2 github with version number below the plot
+    # 303.103 print line 2 github with version number below the plot
     ax.text(-0.1, t3y2, text_below3, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
-
-    t3y3 = -0.28    # 303.124 print line 3 t3y3 = -0.28
+    # 303.108 print line 3
+    t3y3 = -0.28    
+    # 303.109 print dashed green line left of the text
     ax.plot(
         [-0.1, -0.06], [t3y3 + 0.015, t3y3 + 0.015],
         color=reference_color, ls="--", lw=2,
         transform=ax.transAxes, clip_on=False,
     )
-    label3 = "14\u00b0C was the preindustrial level, the coridor of life, civilization evolved 10 000 years"
-    # 303.128 print the text for line 3 below the plot
+    # 303.110 text for line 3
+    label3 = "14\u00b0C -dashed green- the preindustrial level, the coridor of life, human civilization evolved 10 000 years"
+    # 303.111 print the text for line 3 below the plot
     ax.text(-0.055, t3y3, label3, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
     
-    # 303.131  fig.subplots_adjust(left=0.12, right=0.98, top=0.88, bottom=0.30)
+    # 303.115  fig.subplots_adjust(left=0.12, right=0.98, top=0.88, bottom=0.30)
     # sets the plot area’s margins within the figure. The values are fractions of the figure dimensions:
     # left=0.12: plot starts 12% from the left.
     # right=0.98: plot ends 2% from the right.
     # top=0.88: plot ends 12% below the top.
     # bottom=0.30: plot starts 30% above the bottom, leaving room below for captions.
     fig.subplots_adjust(left=0.12, right=0.98, top=0.92, bottom=0.40)
-    
-    t3y4 = -0.35    # 303.124 print line 6 
-    label4 = "1.5°C is the planetary boundary - 15.5°C in dashed orange line"
+
+    # 303.118 print line 4
+    t3y4 = -0.35    
+    label4 = "15.5°C -dashed orange- 1.5°C is the planetary boundary and the Paris treaty value"
     ax.plot(
         [-0.1, -0.06], [t3y4 + 0.015, t3y4 + 0.015], color=c305, ls="--", lw=2,
         transform=ax.transAxes, clip_on=False,
