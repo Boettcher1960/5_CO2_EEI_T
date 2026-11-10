@@ -154,14 +154,14 @@ def _create_figure(linear_x=False):
     handles = [
         Patch(facecolor=GRAY, alpha=0.75,
               label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)"),
-        Patch(facecolor=paris_band_color, alpha=0.55,
-              label="1.5\u00b0C Paris treaty below 2°C"),
-        Patch(facecolor=co2_band_color, alpha=0.35,
-              label="430 ppm in 2026 (430\u2013480 ppm range)"),
+        # Patch(facecolor=paris_band_color, alpha=0.55,
+        #      label="1.5\u00b0C Paris treaty below 2°C"),
+        # Patch(facecolor=co2_band_color, alpha=0.35,
+        #      label="430 ppm in 2026 (430\u2013480 ppm range)"),
         Line2D([], [], ls="none", marker="o", ms=9, mfc=EP, mec="none",
                label="EPICA Dome C \u00d70.55, 1\u2013800 kyr"),
-        Line2D([], [], ls="none", marker="^", ms=9, mfc=CLK, mec="none",
-               label="Clark et al. 2024, 1\u2013800 kyr"),
+        # Line2D([], [], ls="none", marker="^", ms=9, mfc=CLK, mec="none",
+        #       label="Clark et al. 2024, 1\u2013800 kyr"),
         Line2D([], [], ls="none", marker="D", ms=9, mfc=JUDD, mec="white",
                mew=0.9, label="Judd et al. 2024, Cenozoic stages, 66\u20130 Ma"),
         Line2D([], [], color=reference_color, ls="--", lw=1.8,
@@ -210,20 +210,30 @@ def _create_figure(linear_x=False):
     
     t3y4 = -0.35    # 303.124 print line 6 
     label4="label 4 in line 4"
-    # 303.125 print line 3 below the plot
+    # 303.135 print line 3 below the plot
     ax.text(-0.1, t3y4, label4, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
     t3y5 = -0.42    # 303.124 print line 6 
     label5="label 5 in line 5"
-    # 303.125 print line 3 below the plot
+    # 303.136 print line 3 below the plot
     ax.text(-0.1, t3y5, label5, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
     t3y6 = -0.49    # 303.124 print line 6 
-    label6="label 6 in line 6"
-    # 303.125 print line 3 below the plot
-    ax.text(-0.1, t3y6, label6, color="black", fontname="Arial", fontsize=14,
+    # 303.139 in legend, line 6, add a blue band
+    ax.add_patch(   
+        Rectangle(
+            (-0.1, t3y6 - 0.005), 0.035, 0.025,
+            transform=ax.transAxes, facecolor=paris_band_color,
+            edgecolor="none", clip_on=False,
+        )
+    )
+
+
+    label6="blue band for 430 ppm in 2026 (430\u2013480 ppm range)"
+    # 303.145 print line 6 below the plot
+    ax.text(-0.055, t3y6, label6, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
 
