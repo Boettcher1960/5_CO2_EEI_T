@@ -139,6 +139,8 @@ def _create_figure(linear_x=False):
 
     # 303.100 green dashed line for 280 ppm the 1850 to 1900 CO2 atmosphere level
     ax.plot([280, 280], [5, 19], color=reference_color, ls="--", lw=1.8, zorder=6)
+
+     # 303.101 legend with the 3 fits and the 4 bands
     handles = [
         Patch(facecolor=GRAY, alpha=0.75,
               label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)"),
@@ -160,31 +162,46 @@ def _create_figure(linear_x=False):
             Line2D([], [], color=color, ls=style, lw=2.4,
                    label=f"{name}: {slope:.2f} K/doubling")
         )
+    # 303.109 plot the legend with the 3 fits and the 4 bands
     ax.legend(handles=handles, fontsize=10.5, loc="upper left", framealpha=0.96)
 
-    #text_below = (f"Figure from  "
-    #              f"https://github.com/Boettcher1960/5_CO2_EEI_T      "
-    #              f" {filename} version {v} ")
-    text_below3 = (f"  "
+    # 303.121 print line 2 github with version number below the plot
+    text_below3 = (f""
                   f"https://github.com/Boettcher1960/5_CO2_EEI_T"
                   f" {filename} version {v} ")
-   
-    # f"https://github.com/Boettcher1960/co2_python       Parameter {header_parameter}")
-    ax.text(-0.1, tr1y, text_below3, color="black", fontname="Arial", fontsize=14,
+    t3y2 = -0.22    # 303.122 print line 2 t3y2 = -0.22
+    # 303.123 print line 2 github with version number below the plot
+    ax.text(-0.1, t3y2, text_below3, color="black", fontname="Arial", fontsize=14,
+            transform=ax.transAxes)
+
+    t3y3 = -0.28    # 303.124 print line 3 t3y3 = -0.28
+    label3="blue band for 1.5\u00b0C Paris treaty below 2°C"
+    # 303.125 print line 3 below the plot
+    ax.text(-0.1, t3y3, label3, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
 
     fig.subplots_adjust(left=0.12, right=0.98, top=0.88, bottom=0.30)
-    bottom_lines = [
-        "CO$_2$ and temperature reconstructions with York fits",
-        "Judd et al. (2024): Cenozoic stages, 66–0 Ma",
-        "EPICA Dome C ×0.55 and Clark et al. (2024): 1–800 kyr",
-        "Reference: 280 ppm / 14°C preindustrial; shaded CO$_2$ and temperature ranges",
-    ]
-    for y, line in zip((0.12, 0.09, 0.06, 0.03), bottom_lines):
-        fig.text(
-            0.12, y, line, color="black", fontname="Arial", fontsize=11,
-        )
+    
+    t3y4 = -0.35    # 303.124 print line 6 
+    label4="label 4 in line 4"
+    # 303.125 print line 3 below the plot
+    ax.text(-0.1, t3y4, label4, color="black", fontname="Arial", fontsize=14,
+            transform=ax.transAxes)
+
+    t3y5 = -0.42    # 303.124 print line 6 
+    label5="label 5 in line 5"
+    # 303.125 print line 3 below the plot
+    ax.text(-0.1, t3y5, label5, color="black", fontname="Arial", fontsize=14,
+            transform=ax.transAxes)
+
+    t3y6 = -0.49    # 303.124 print line 6 
+    label6="label 6 in line 6"
+    # 303.125 print line 3 below the plot
+    ax.text(-0.1, t3y6, label6, color="black", fontname="Arial", fontsize=14,
+            transform=ax.transAxes)
+
+
 
     fig.savefig(output_path, dpi=200, bbox_inches="tight")
     plt.show()
