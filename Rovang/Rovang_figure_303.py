@@ -14,6 +14,7 @@ printed to the console instead.
 Conventions: round axis limits, band extending past the data on all sides,
 legend entries giving the range each record covers rather than a point count.
 """
+ # 303.20 imports from Dean https://zenodo.org/records/22837428 
 import io
 import os
 import contextlib
@@ -25,32 +26,43 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch, Rectangle
 
+ # 303.22 my imports from  https://github.com/Boettcher1960/5_CO2_EEI_T
 from config import *
 from main import v
 
+# 303.25 local variables for colors and axis limits
 GRAY = "#b8b8b8"
 JUDD = "#111111"          # black diamonds, the established default
 EP = "#8e6fc7"            # EPICA, the original purple
 CLK = "#3b1f8f"           # Clark, deep violet-blue - separated from EPICA in hue and value
 XLO, XHI = 125, 1500        # see config.py for the x axis CO2 limits, x_303min, x_303max
 YLO, YHI = 5, 40            # see config.py for the y axis T limits, y_303min, y_303max
+
+# 303.30 create the figure and axes with a specific size
 def _create_figure(linear_x=False):
     """Create a Rovang figure using logarithmic or linear CO2 scaling."""
+    # 303.31 import the York fit parameters from build_york_final.py, suppressing stdout
     with contextlib.redirect_stdout(io.StringIO()):
         try:
             from . import build_york_final as B
         except ImportError:
             import build_york_final as B
 
+    # 303.32 determine the output directory and filename based on the linear_x flag
     out_dir = os.environ.get(
         "OUTDIR", os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     )
+    # 303.33 create the figure directory if it doesn't exist
     figure_dir = os.path.join(out_dir, "Rovang")
+    # 303.34 create the output path for the figure
     os.makedirs(figure_dir, exist_ok=True)
+    # 303.35 set the filename based on whether linear_x is True or False
     filename = "figure_304_Rovang.png" if linear_x else "figure_303_Rovang.png"
+    # 303.36 create the full output path for the figure
     output_path = os.path.join(figure_dir, filename)
-
+    # 303.37 define a lambda function to calculate the logarithm base 2 of the ratio of p to B.C0
     Lg = lambda p: np.log2(np.asarray(p, float) / B.C0)
+    # 303.38 define the fits for the three datasets, including their slope, intercept, and uncertainties
     fits = [
         ("Judd et al. 2024, Cenozoic, 66\u20130 Ma", B.S_judd, B.b_judd,
          B.se_judd, B.sb_judd, JUDD, "--"),
@@ -60,59 +72,77 @@ def _create_figure(linear_x=False):
          B.se_clk, B.sb_clk, CLK, ":"),
     ]
 
-    # 303.60 create the figure and axes with a specific size
-    # fig, ax = plt.subplots(figsize=(15, 10.625))
+    # 303.40 create the figure and axes with a specific size
     # figure1 is , ax = plt.subplots(figsize=(13, 7))
+    # 303.41 size the figure303 13items high, 11 items wide, to accommodate the text lines below the plot
     fig, ax = plt.subplots(figsize=(13, 11))
-
+    # 303.42 create an array of 800 points between 90% of XLO and 110% of XHI for plotting the fits
     p = np.linspace(XLO * 0.9, XHI * 1.1, 800)
+    # 303.43 calculate the logarithm base 2 of the ratio of p to B.C0 for the x-axis values
     x = Lg(p)
+    # 303.44 initialize arrays to hold the lower and upper bounds of the uncertainty band
     lo = np.full_like(x, np.inf)
+    # 303.45 initialize arrays to hold the lower and upper bounds of the uncertainty band
     hi = np.full_like(x, -np.inf)
+    # 303.46 loop through each fit and calculate the uncertainty band based on the slope and intercept uncertainties
     for _name, slope, intercept, slope_error, intercept_error, _color, _style in fits:
         value = slope * x + intercept
         uncertainty = slope_error * np.abs(x) + intercept_error
         lo = np.minimum(lo, value - uncertainty)
         hi = np.maximum(hi, value + uncertainty)
+    # 303.47 fill the area between the lower and upper bounds of the uncertainty band with a gray color and label it
     ax.fill_between(
         p, lo, hi, color=GRAY, alpha=0.75, lw=0, zorder=1,
         label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)",
     )
-
+    # 303.48 plot the three datasets with their respective markers, sizes, colors, and labels
     ax.plot(B.C0 * 2 ** B.c_grid, B.gmst_epica, "o", ms=2.6, mfc=EP, mec="none",
             alpha=0.70, zorder=3, label="EPICA Dome C \u00d70.55, 1\u2013800 kyr")
+    # 303.49 plot the Clark et al. 2024 dataset with triangle markers, size 2.8, filled with CLK color, no edge color, alpha 0.70, zorder 3, and label it
     ax.plot(B.C0 * 2 ** B.c_clk, B.gmst_clk_f, "^", ms=2.8, mfc=CLK, mec="none",
             alpha=0.70, zorder=3, label="Clark et al. 2024, 1\u2013800 kyr")
+    # 303.50 plot the Judd et al. 2024 dataset with diamond markers, size 7.5, filled with JUDD color, white edge color, edge width 0.9, zorder 12, and label it
     ax.plot(B.C0 * 2 ** B.jx, B.jgm_f, "D", ms=7.5, mfc=JUDD, mec="white",
             mew=0.9, zorder=12,
             label="Judd et al. 2024, Cenozoic stages, 66\u20130 Ma")
-
-    print("Figure 303 \u2014 fits and where each record sits\n")
+    # 303.51 print the headline above the plot
+    print("Figure 303: fits and where each record sits")
+    # 303.52 create an array of 400 points between the logarithm base 2 of XLO and XHI for plotting the fits
     xs = np.linspace(Lg(XLO), Lg(XHI), 400)
+    # 303.53 loop through each fit and plot the linear fit line with its respective color, style, and label it with the slope value
     for name, slope, intercept, _sg, _sb, color, style in fits:
         src = B.jx if "Judd" in name else (
             B.c_grid if "EPICA" in name else B.c_clk
         )
+        # 303.54 plot the linear fit line for each dataset with its respective color, style, and label it with the slope value
         ax.plot(B.C0 * 2 ** xs, slope * xs + intercept, color=color, ls=style,
                 lw=2.2, zorder=7, label=f"{name}: {slope:.2f} K/doubling")
         print(
             f"  {name:42s} {B.C0*2**src.min():6.0f}\u2013"
             f"{B.C0*2**src.max():6.0f} ppm   slope {slope:5.2f}"
         )
-
+    # 303.55 set the x-axis scale to logarithmic base 2 if linear_x is False, otherwise keep it linear
     if not linear_x:
         ax.set_xscale("log", base=2)
     # ax.set_xlim(XLO, XHI)
+    # 303.56 set the x-axis limits to x_303min and x_303max, which are defined in config.py
     ax.set_xlim(x_303min, x_303max)
+    # 303.57 set the y-axis limits to y_303min and y_303max, which are defined in config.py
     ticks = (
         np.linspace(x_303min, x_303max, 6)
         if linear_x
         else [125, 250, 500, 1000, 1500]
     )
+    # 303.58 set the x-axis ticks to the specified ticks and format them with commas for thousands
     ax.set_xticks(ticks)
+    # 303.59 set the x-axis tick labels to the specified ticks and format them with commas for thousands
     ax.set_xticklabels([f"{tick:,}" for tick in ticks])
+    # 303.60 set the y-axis limits to y_303min and y_303max, which are defined in config.py
     ax.set_ylim(y_303min, y_303max)
+     # 303.61 set the y-axis ticks to range from y_303min to y_303max with a step of 5
     ax.set_yticks(np.arange(y_303min, y_303max + 1, 5))
+    # 303.62 set the y-axis tick labels to range from y_303min to y_303max with a step of 5
+    # 303.63 set the y-axis tick labels to range from y_303min to y_303max with a step of 5
     figure_label = "4" if linear_x else "3"
     scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
     # 303.80 print the headline above the plot
@@ -164,8 +194,8 @@ def _create_figure(linear_x=False):
         #       label="Clark et al. 2024, 1\u2013800 kyr"),
         Line2D([], [], ls="none", marker="D", ms=9, mfc=JUDD, mec="white",
                mew=0.9, label="Judd et al. 2024, Cenozoic stages, 66\u20130 Ma"),
-        Line2D([], [], color=reference_color, ls="--", lw=1.8,
-               label="280 ppm, 14\u00b0C preindustrial"),
+        # Line2D([], [], color=reference_color, ls="--", lw=1.8,
+        #       label="280 ppm, 14\u00b0C preindustrial"),
     ]
     for name, slope, _intercept, _sg, _sb, color, style in fits:
         handles.append(
