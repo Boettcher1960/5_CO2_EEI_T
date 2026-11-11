@@ -131,7 +131,8 @@ def _create_figure(linear_x=False):
     # 303.57 set the y-axis limits to y_303min and y_303max, which are defined in config.py
     if linear_x:
         ax.xaxis.set_major_locator(MultipleLocator(100))
-        minor_x_step = 10 if x_303max - x_303min < 260 else 20
+        minor_x_step = 10 if x_303max - x_303min < 510 else 20
+
         ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
         ax.xaxis.set_major_formatter(StrMethodFormatter("{x:,.0f}"))
     else:
@@ -143,6 +144,9 @@ def _create_figure(linear_x=False):
     y_range = y_303max - y_303min
     if y_range < 5:
         major_y_step, minor_y_step = 0.5, 0.2
+    # 303.62 set  y-axis minor grig 0.5°C
+    elif y_range < 16:
+        major_y_step, minor_y_step = 2, 0.5
     elif y_range < 20:
         major_y_step, minor_y_step = 2, 1
     elif y_range < 30:
@@ -184,7 +188,7 @@ def _create_figure(linear_x=False):
     # 303.80 lines parallel to x axis
     # 303.80 green dashed line for 14°C the 1850 to 1900 Temperaturelevel
     reference_color = "#228B22"
-    ax.axhline(13.9, color=reference_color, ls="--", lw=1.8, zorder=6)
+    ax.axhline(13.97, color=reference_color, ls="--", lw=1.8, zorder=6)
     # 303.82 blue band for 15.5°C the 2024 Temperature
     paris_band_color = "#add8e6"
     # ax.axhspan(15.5, 16, color=paris_band_color, alpha=0.55, zorder=2)
@@ -265,7 +269,7 @@ def _create_figure(linear_x=False):
     # 303.111 print line 2 github with version number below the plot
     text_below3 = (f""
                   f"https://github.com/Boettcher1960/5_CO2_EEI_T"
-                  f" {filename} version {v} ")
+                  f"        {filename}     version {v} ")
     t3y2 = -0.19    # 303.122 print line 2 t3y2 = -0.22
     # 303.113 print line 2 github with version number below the plot
     ax.text(-0.1, t3y2, text_below3, color="black", fontname="Arial", fontsize=14,
