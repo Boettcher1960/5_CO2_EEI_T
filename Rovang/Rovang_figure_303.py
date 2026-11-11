@@ -156,6 +156,8 @@ def _create_figure(linear_x=False):
     scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
     # 303.65 print the headline above the plot
     headline1 = "Global mean surface temperature plotted against the  Atmospheric CO$_2$ concentration"
+    headline1 = "Where on Earth are we Heading: Pliocene or Miocene?  temperature plotted against CO$_2$"
+
     ax.text(
         -0.1, 1.05, headline1, color="black", fontname="Arial", fontsize=20,
         transform=ax.transAxes,
@@ -303,7 +305,7 @@ def _create_figure(linear_x=False):
     # 303.156   https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mzzpmbobdc23
 
     # 303.157 print line 5 Mid-Pliocene Warm Period, 3-3.3 million years ago
-    label5 = "400-450 ppmCO2 resulted in 2-3\u00b0C warming in the Pliocene, 3-4 million years ago: best case 4C warming on land"
+    label5 = "400-450 ppm CO$_2$ resulted in 2-3\u00b0C warming in the Pliocene, 3-4 million years ago: the best case means +4\u00b0C warming on land"
     # 303.158 make a red square in the legend below the plot
     if (box303_3Ma == 5):
        ax.add_patch(
@@ -329,7 +331,7 @@ def _create_figure(linear_x=False):
            )
        )
        # 303.164 print line 6 
-       label6 = "300-500 ppmCO2 resulted in 4-5\u00b0C warming in the Miiocene, 15-17 million years ago: Where on Earth are We Heading"
+       label6 = "300-500 ppm CO$_2$ resulted in 4-5\u00b0C warming in the Miocene, 15-17 million years ago: 3\u00b0C warming means end of civilization"
        ax.text(-0.055, t3y6, label6, color="black", fontname="Arial", fontsize=14,
                transform=ax.transAxes)
     else:
