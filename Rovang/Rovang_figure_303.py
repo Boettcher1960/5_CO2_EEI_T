@@ -191,15 +191,25 @@ def _create_figure(linear_x=False):
     c306 = "#87ceeb"
     ax.axvspan(430, 480, color=c306, alpha=0.35, zorder=2)
 
-    # 303.95 ad a red square from 420ppm 14°C to 20+420ppm 4.1+14°C
+    # 303.95 ad a red square from 400ppm 14°C to 50+420ppm 3+14°C
     if (box303_3Ma > 2):
        ax.add_patch(
            Rectangle(
                (400, 14), 50, 3,
-               facecolor="#ffcccc", edgecolor="red", linewidth=1.8,
+               facecolor=cbox303Ma, edgecolor=cbox303Maedge, linewidth=1.8,
                alpha=0.65, zorder=5,
            )
        )
+    # 303.96 ad a red square from 300ppm 14°C to 200+420ppm 5+14°C
+    if (box303_3Ma > 2):
+       ax.add_patch(
+           Rectangle(
+               (300, 14), 50, 5,
+               facecolor=cbox304Ma, edgecolor=cbox304Maedge, linewidth=1.8,
+               alpha=0.65, zorder=5,
+           )
+       )
+
 
     # 303.98 green dashed line for 280 ppm the 1850 to 1900 CO2 atmosphere level
     ax.plot([280, 280], [5, 19], color=reference_color, ls="--", lw=1.8, zorder=6)
@@ -291,33 +301,42 @@ def _create_figure(linear_x=False):
        ax.add_patch(
            Rectangle(
                (-0.1, t3y5 - 0.005), 0.035, 0.025,
-               transform=ax.transAxes, facecolor="#ffcccc",
-               edgecolor="red", linewidth=1.5, alpha=0.65, clip_on=False,
+               transform=ax.transAxes, facecolor=cbox303Ma,
+               edgecolor=cbox303Maedge, linewidth=1.5, alpha=0.65, clip_on=False,
            )
        )
        # 303.159 print line 5 Mid-Pliocene Warm Period, 3-3.3 million years ago
        ax.text(-0.055, t3y5, label5, color="black", fontname="Arial", fontsize=14,
                transform=ax.transAxes)
 
-
-
-
-
+    # 303.160 line 6 of my legend below the plot
     t3y6 = -0.49    # 303.124 print line 6 
-    # 303.139 in legend, line 6, add a blue band
-    ax.add_patch(   
-        Rectangle(
-            (-0.1, t3y6 - 0.005), 0.035, 0.025,
-            transform=ax.transAxes, facecolor=paris_band_color,
-            edgecolor="none", clip_on=False,
-        )
-    )
-
-
-    label6="blue band for 430 ppm in 2026 (430\u2013480 ppm range)"
-    # 303.145 print line 6 below the plot
-    ax.text(-0.055, t3y6, label6, color="black", fontname="Arial", fontsize=14,
-            transform=ax.transAxes)
+    # 303.162 make a red square in the legend below the plot
+    if (box304_16Ma == 6):
+       ax.add_patch(
+           Rectangle(
+               (-0.1, t3y6 - 0.005), 0.035, 0.025,
+               transform=ax.transAxes, facecolor=cbox304Ma,
+               edgecolor=cbox304Maedge, linewidth=1.5, alpha=0.65, clip_on=False,
+           )
+       )
+       # 303.164 print line 6 
+       label6 = "300-500 ppmCO2 resulted in 4-5\u00b0C warming in the Miiocene, 15-17 million years ago: there on Earth are We Heading"
+       ax.text(-0.055, t3y6, label6, color="black", fontname="Arial", fontsize=14,
+               transform=ax.transAxes)
+    else:
+       # 303.169 in legend, line 6, add a blue band
+       ax.add_patch(   
+           Rectangle(
+               (-0.1, t3y6 - 0.005), 0.035, 0.025,
+               transform=ax.transAxes, facecolor=paris_band_color,
+               edgecolor="none", clip_on=False,
+           )
+       )
+       label6="blue band for 430 ppm in 2026 (430\u2013480 ppm range)"
+       # 303.145 print line 6 below the plot
+       ax.text(-0.055, t3y6, label6, color="black", fontname="Arial", fontsize=14,
+               transform=ax.transAxes)
 
 
 
