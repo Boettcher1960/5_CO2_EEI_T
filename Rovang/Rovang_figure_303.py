@@ -191,7 +191,7 @@ def _create_figure(linear_x=False):
     c306 = "#87ceeb"
     ax.axvspan(430, 480, color=c306, alpha=0.35, zorder=2)
 
-    # 303.95 ad a red square from 400ppm 14°C to 50+420ppm 3+14°C
+    # 303.95 ad a green square from 400ppm 14°C to 50+420ppm 3+14°C
     if (box303_3Ma > 2):
        ax.add_patch(
            Rectangle(
@@ -200,16 +200,24 @@ def _create_figure(linear_x=False):
                alpha=0.65, zorder=5,
            )
        )
-    # 303.96 ad a red square from 300ppm 14°C to 200+420ppm 5+14°C
+    # 303.96 ad a red square from 300ppm 14°C to 200+300ppm 5+14°C
     if (box303_3Ma > 2):
        ax.add_patch(
            Rectangle(
-               (300, 14), 50, 5,
+               (300, 14), 200, 5,
                facecolor=cbox304Ma, edgecolor=cbox304Maedge, linewidth=1.8,
                alpha=0.65, zorder=5,
            )
        )
-
+    # 303.97 ad a green square from 400ppm 14°C to 50+420ppm 3+14°C
+    if (box303_3Ma > 2):
+       ax.add_patch(
+           Rectangle(
+               (400, 14), 50, 3,
+               facecolor=cbox303Ma, edgecolor=cbox303Maedge, linewidth=1.8,
+               alpha=0.65, zorder=5,
+           )
+       )
 
     # 303.98 green dashed line for 280 ppm the 1850 to 1900 CO2 atmosphere level
     ax.plot([280, 280], [5, 19], color=reference_color, ls="--", lw=1.8, zorder=6)
@@ -295,7 +303,7 @@ def _create_figure(linear_x=False):
     # 303.156   https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mzzpmbobdc23
 
     # 303.157 print line 5 Mid-Pliocene Warm Period, 3-3.3 million years ago
-    label5 = "400-450 ppmCO2 resulted in 2-3\u00b0C warming in the Pliocene, 3-4 million years ago: the best case possible"
+    label5 = "400-450 ppmCO2 resulted in 2-3\u00b0C warming in the Pliocene, 3-4 million years ago: best case 4C warming on land"
     # 303.158 make a red square in the legend below the plot
     if (box303_3Ma == 5):
        ax.add_patch(
@@ -321,7 +329,7 @@ def _create_figure(linear_x=False):
            )
        )
        # 303.164 print line 6 
-       label6 = "300-500 ppmCO2 resulted in 4-5\u00b0C warming in the Miiocene, 15-17 million years ago: there on Earth are We Heading"
+       label6 = "300-500 ppmCO2 resulted in 4-5\u00b0C warming in the Miiocene, 15-17 million years ago: Where on Earth are We Heading"
        ax.text(-0.055, t3y6, label6, color="black", fontname="Arial", fontsize=14,
                transform=ax.transAxes)
     else:
