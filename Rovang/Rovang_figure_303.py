@@ -302,6 +302,17 @@ def _create_figure(linear_x=False):
         arrowprops={"arrowstyle": "->", "color": cbox303Maedge, "lw": 2.5},
         zorder=10,
     )
+    ax.annotate(
+        "We are heading back to Miocene\n5\u00b0C warming like 16 million years ago",
+        xy=(420, 19), xycoords="data",
+        xytext=(420, y_303max - 1.5), textcoords="data",
+        ha="center", va="center", fontsize=12, color="black",
+        bbox={"boxstyle": "round,pad=0.8,rounding_size=1.0",
+              "facecolor": "white", "edgecolor": "red",
+              "linewidth": 2, "alpha": 0.98},
+        arrowprops={"arrowstyle": "->", "color": "red", "lw": 4.5},
+        zorder=10,
+    )
 
     # 303.100 legend with the 3 fits and the 4 bands from Dean Rowing
     handles = [
