@@ -191,6 +191,14 @@ def _create_figure(linear_x=False):
     c306 = "#87ceeb"
     ax.axvspan(430, 480, color=c306, alpha=0.35, zorder=2)
 
+    ax.add_patch(
+        Rectangle(
+            (420, 14), 20, 4.1,
+            facecolor="#ffcccc", edgecolor="red", linewidth=1.8,
+            alpha=0.65, zorder=5,
+        )
+    )
+
     # 303.92 green dashed line for 280 ppm the 1850 to 1900 CO2 atmosphere level
     ax.plot([280, 280], [5, 19], color=reference_color, ls="--", lw=1.8, zorder=6)
 
@@ -263,9 +271,16 @@ def _create_figure(linear_x=False):
             transform=ax.transAxes)
 
     t3y5 = -0.42    # 303.124 print line 6 
-    label5="label 5 in line 5"
+    label5 = "426 ppm resulted in 4\u00b0C warming in the Eemian, 3 million years ago"
+    ax.add_patch(
+        Rectangle(
+            (-0.1, t3y5 - 0.005), 0.035, 0.025,
+            transform=ax.transAxes, facecolor="#ffcccc",
+            edgecolor="red", linewidth=1.5, alpha=0.65, clip_on=False,
+        )
+    )
     # 303.136 print line 3 below the plot
-    ax.text(-0.1, t3y5, label5, color="black", fontname="Arial", fontsize=14,
+    ax.text(-0.055, t3y5, label5, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
     t3y6 = -0.49    # 303.124 print line 6 

@@ -257,9 +257,9 @@ y_78max = 1.6 #  for Tom Harris Temperature
 
 # YLO, YHI = 5, 40
 x_303min = 200   # 125  figure303 CO2 x axis 
-x_303max = 450  # 1500 figure303 CO2 x axis 
-y_303min = 10  # 5 13 figure303 Temperature y axis left
-y_303max = 20 # 30 17 figure303 Temperature y axis left
+x_303max = 1000  # 1500 figure303 CO2 x axis 
+y_303min = 5  # 5 13 figure303 Temperature y axis left
+y_303max = 30 # 30 17 figure303 Temperature y axis left
 
 
 x_anf = 2004

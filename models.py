@@ -1026,6 +1026,13 @@ if ( figure303 == 4 ) make minor grid lines every 20 ppm
 
 if ( x_303max - y_303min ) < 260 make minor grid lines every 10 ppm
 
+add a square with red border and light red inside
+420ppm to 440ppm wide
+14°C to 18.1°C high
+v = "5K59"
+instead of writing "label 5 in line 5" plot a smal  square with red border and light red inside
+and write 426ppm resulted in 4°C warming in the emian, 3 Million years ago
+
 """
 
 
