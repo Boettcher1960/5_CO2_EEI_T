@@ -1039,6 +1039,37 @@ headline3 = " temperature plotted against CO$_2$"
 
 print headline2 in bold and green and bigger
 print headline3 in black after headline2
+v = "5K59"
+
+make an orange arrow pointing to 426 ppm, 15.5°C from right below from 
+a white bubble with text "We are here 2026 426ppm 1.5°C warming"
+make the bubble more oval and the black edge thicker
+
+make the orange arrow thicker and change the black edge color to orange
+
+make a green arrow pointing to 280 ppm, 14°C from right below from 
+a white bubble with text "Civilization evolved in stable climate up to 1750"
+make the bubble more oval and the green edge thicker
+
+move the green box to the left 320ppm
+and down 12°C
+
+move the green box to the right 380ppm
+
+move the green box to the left 360ppm
+
+make a black arrow pointing to 450 ppm, 17°C from left from 
+a white bubble with text "Best case like Pliocene 2.5°C warming"
+
+move the black box to the right 500ppm
+a white bubble with text "Best case like Pliocene 2.5°C warming means 4°C warming on land"
+
+move the black box to the right 550ppm
+move the black box to the right 530ppm
+move the black box to the left 510ppm
+
+move the black box 1°C up and change the black color to cbox303Maedge
+
 """
 
 

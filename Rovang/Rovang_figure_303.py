@@ -157,16 +157,19 @@ def _create_figure(linear_x=False):
     y_range = y_303max - y_303min
     if y_range < 5:
         major_y_step, minor_y_step = 0.5, 0.2
-    # 303.62 set  y-axis minor grig 0.5°C
+    # 303.62 set  y-axis minor grid 0.5°C
     elif y_range < 16:
         major_y_step, minor_y_step = 2, 0.5
     elif y_range < 20:
         major_y_step, minor_y_step = 2, 1
     elif y_range < 30:
         major_y_step, minor_y_step = 5, 1
+    # 303.65 set  y-axis major grid 5°C
     else:
         major_y_step, minor_y_step = 5, None
+    # 303.66 set  y-axis major
     ax.yaxis.set_major_locator(MultipleLocator(major_y_step))
+
     if minor_y_step is not None:
         ax.yaxis.set_minor_locator(MultipleLocator(minor_y_step))
     visible_yticks = [
@@ -264,6 +267,41 @@ def _create_figure(linear_x=False):
     # 303.99 orange dashed line for 426 ppm the 2026 CO2 atmosphere level
     c305 = "#DE7525D8"
     ax.plot([426, 426], [5, 27], color=c305, ls="--", lw=1.8, zorder=6)
+    # 303.102 text bubble for 2026 426 ppm
+    ax.annotate(
+        "We are here\n2026 426 ppm\n1.5\u00b0C warming",
+        xy=(426, 15.5), xycoords="data",
+        xytext=(0.72, 0.16), textcoords="axes fraction",
+        ha="center", va="center", fontsize=12, color="black",
+        bbox={"boxstyle": "round,pad=0.8,rounding_size=1.0",
+              "facecolor": "white", "edgecolor": c305,
+              "linewidth": 2.5, "alpha": 0.98},
+        arrowprops={"arrowstyle": "->", "color": c305, "lw": 3.5},
+        zorder=10,
+    )
+    # 303.103 text bubble for 1750 280 ppm
+    ax.annotate(
+        "Civilization evolved in stable\nclimate up to 1750 280ppm",
+        xy=(280, 14), xycoords="data",
+        xytext=(360, 12), textcoords="data",
+        ha="center", va="center", fontsize=12, color="black",
+        bbox={"boxstyle": "round,pad=0.9,rounding_size=1.2",
+              "facecolor": "white", "edgecolor": reference_color,
+              "linewidth": 3, "alpha": 0.98},
+        arrowprops={"arrowstyle": "->", "color": reference_color, "lw": 3},
+        zorder=10,
+    )
+    ax.annotate(
+        "Best case like Pliocene 2.5\u00b0C warming\nmeans 4\u00b0C warming on land",
+        xy=(450, 17), xycoords="data",
+        xytext=(530, 18), textcoords="data",
+        ha="center", va="center", fontsize=12, color="black",
+        bbox={"boxstyle": "round,pad=0.8,rounding_size=1.0",
+              "facecolor": "white", "edgecolor": cbox303Maedge,
+              "linewidth": 2, "alpha": 0.98},
+        arrowprops={"arrowstyle": "->", "color": cbox303Maedge, "lw": 2.5},
+        zorder=10,
+    )
 
     # 303.100 legend with the 3 fits and the 4 bands from Dean Rowing
     handles = [
