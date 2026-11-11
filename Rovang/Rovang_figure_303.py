@@ -25,7 +25,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch, Rectangle
-from matplotlib.ticker import MultipleLocator, StrMethodFormatter
+from matplotlib.ticker import FuncFormatter, MultipleLocator
 
  # 303.22 my imports from  https://github.com/Boettcher1960/5_CO2_EEI_T
 from config import *
@@ -134,11 +134,24 @@ def _create_figure(linear_x=False):
         minor_x_step = 10 if x_303max - x_303min < 510 else 20
 
         ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
-        ax.xaxis.set_major_formatter(StrMethodFormatter("{x:,.0f}"))
     else:
         ticks = [125, 250, 500, 1000, 1500]
         ax.set_xticks(ticks)
-        ax.set_xticklabels([f"{tick:,}" for tick in ticks])
+    visible_xticks = [
+        tick for tick in ax.get_xticks()
+        if x_303min <= tick <= x_303max
+    ]
+
+    def format_co2_tick(value, _position):
+        label = f"{value:,.0f}"
+        if visible_xticks and (
+            np.isclose(value, visible_xticks[0])
+            or np.isclose(value, visible_xticks[-1])
+        ):
+            label += " ppm"
+        return label
+
+    ax.xaxis.set_major_formatter(FuncFormatter(format_co2_tick))
     # 303.60 set the y-axis limits to y_303min and y_303max, which are defined in config.py
     ax.set_ylim(y_303min, y_303max)
     y_range = y_303max - y_303min
@@ -156,6 +169,21 @@ def _create_figure(linear_x=False):
     ax.yaxis.set_major_locator(MultipleLocator(major_y_step))
     if minor_y_step is not None:
         ax.yaxis.set_minor_locator(MultipleLocator(minor_y_step))
+    visible_yticks = [
+        tick for tick in ax.get_yticks()
+        if y_303min <= tick <= y_303max
+    ]
+
+    def format_temperature_tick(value, _position):
+        label = f"{value:g}"
+        if visible_yticks and (
+            np.isclose(value, visible_yticks[0])
+            or np.isclose(value, visible_yticks[-1])
+        ):
+            label += "\u00b0C"
+        return label
+
+    ax.yaxis.set_major_formatter(FuncFormatter(format_temperature_tick))
     figure_label = "4" if linear_x else "3"
     scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
     # 303.65 print the two-part headline above the plot
