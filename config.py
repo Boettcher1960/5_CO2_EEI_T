@@ -260,7 +260,7 @@ x_303min = 200   # 125  figure303 CO2 x axis
 x_303max = 1000  # 1500 figure303 CO2 x axis 
 y_303min = 5  # 5 13 figure303 Temperature y axis left
 y_303max = 30 # 30 17 figure303 Temperature y axis left
-
+box303_3Ma = 5 # in figure 304 line 5 print 400 ppm resulted in 3C warming in the Pliocene, 3-4 million years ago
 
 x_anf = 2004
 x_end = 2027
