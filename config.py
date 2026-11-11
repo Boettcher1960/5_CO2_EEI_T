@@ -257,15 +257,16 @@ y_78max = 1.6 #  for Tom Harris Temperature
 
 # YLO, YHI = 5, 40
 x_303min = 200   # 125  figure303 CO2 x axis 
-x_303max = 1000  # 1500 figure303 CO2 x axis 
-y_303min = 5  # 5 13 figure303 Temperature y axis left
-y_303max = 30 # 30 17 figure303 Temperature y axis left
+x_303max = 600  # 1500 figure303 CO2 x axis 
+y_303min = 10  # 5 13 figure303 Temperature y axis left
+y_303max = 25 # 30 17 figure303 Temperature y axis left
 box303_3Ma = 5 # in figure 304 line 5 print 400 ppm resulted in 3C warming in the Pliocene, 3-4 million years ago
 cbox303Ma="#94dd2d"
 cbox303Maedge="#16b426"
 box304_16Ma = 6 # in figure 304 line 6 print 400 ppm resulted in 5C warming in the Pliocene, 16 million years ago
 cbox304Ma="#ffcccc"
 cbox304Maedge="red"
+plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
 x_anf = 2004
 x_end = 2027

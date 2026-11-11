@@ -154,22 +154,26 @@ def _create_figure(linear_x=False):
         ax.yaxis.set_minor_locator(MultipleLocator(minor_y_step))
     figure_label = "4" if linear_x else "3"
     scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
-    # 303.65 print the headline above the plot
-    headline1 = "Global mean surface temperature plotted against the  Atmospheric CO$_2$ concentration"
-    headline1 = "Where on Earth are we Heading: Pliocene or Miocene?  temperature plotted against CO$_2$"
+    # 303.65 print the two-part headline above the plot
 
+    headline2 = "Where on Earth are we Heading: Pliocene or Miocene?"
+    headline3 = "Temperature vs CO$_2$"
     ax.text(
-        -0.1, 1.05, headline1, color="black", fontname="Arial", fontsize=20,
+        -0.1, 1.07, headline2, color="green", fontname="Arial",
+        fontsize=24, fontweight="bold", transform=ax.transAxes,
+    )
+    ax.text(
+        0.77 , 1.07, headline3, color="black", fontname="Arial", fontsize=20,
         transform=ax.transAxes,
     )
     # 303.68 print the x axis text below the plot
     ax.set_xlabel(
-        f"Figure 304: Atmospheric CO$_2$ concentration ({scale_label}) is the x axis - after Dean Rovang ",
-        fontsize=16,
+        f"Figure 304: Atmospheric CO$_2$ concentration (in {scale_label}) is the x axis - after Dean Rovang ",
+        fontsize=16, fontweight="bold",
         loc="left",
     )
     # 303.69 move  the x axis text
-    ax.xaxis.set_label_coords(-0.05, -0.08)
+    ax.xaxis.set_label_coords(-0.1, -0.08)
 
     # 303.70 print the y axis text left of the plot
     ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=18)
@@ -180,7 +184,7 @@ def _create_figure(linear_x=False):
     # 303.80 lines parallel to x axis
     # 303.80 green dashed line for 14°C the 1850 to 1900 Temperaturelevel
     reference_color = "#228B22"
-    ax.axhline(14, color=reference_color, ls="--", lw=1.8, zorder=6)
+    ax.axhline(13.9, color=reference_color, ls="--", lw=1.8, zorder=6)
     # 303.82 blue band for 15.5°C the 2024 Temperature
     paris_band_color = "#add8e6"
     # ax.axhspan(15.5, 16, color=paris_band_color, alpha=0.55, zorder=2)
@@ -188,10 +192,11 @@ def _create_figure(linear_x=False):
     c305 = "#DE7525D8"
     ax.axhline(15.5, color=c305, ls="--", lw=1.8, zorder=6)
 
-    # 303.90 lines parallel to y axis
     # 303.90 blue band for 430 ppm the 2026 CO2 atmosphere level
-    c306 = "#87ceeb"
-    ax.axvspan(430, 480, color=c306, alpha=0.35, zorder=2)
+    if plot304_450ppm_blue_band == 1: # 
+       c306 = "#87ceeb"
+       ax.axvspan(430, 480, color=c306, alpha=0.35, zorder=2)
+
 
     # 303.95 ad a green square from 400ppm 14°C to 50+420ppm 3+14°C
     if (box303_3Ma > 2):
@@ -224,6 +229,9 @@ def _create_figure(linear_x=False):
     # 303.98 green dashed line for 280 ppm the 1850 to 1900 CO2 atmosphere level
     ax.plot([280, 280], [5, 19], color=reference_color, ls="--", lw=1.8, zorder=6)
 
+    # 303.99 orange dashed line for 426 ppm the 2026 CO2 atmosphere level
+    c305 = "#DE7525D8"
+    ax.plot([426, 426], [5, 27], color=c305, ls="--", lw=1.8, zorder=6)
 
     # 303.100 legend with the 3 fits and the 4 bands from Dean Rowing
     handles = [
@@ -258,7 +266,7 @@ def _create_figure(linear_x=False):
     text_below3 = (f""
                   f"https://github.com/Boettcher1960/5_CO2_EEI_T"
                   f" {filename} version {v} ")
-    t3y2 = -0.22    # 303.122 print line 2 t3y2 = -0.22
+    t3y2 = -0.19    # 303.122 print line 2 t3y2 = -0.22
     # 303.113 print line 2 github with version number below the plot
     ax.text(-0.1, t3y2, text_below3, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
@@ -287,7 +295,7 @@ def _create_figure(linear_x=False):
 
     # 303.148 print line 4
     t3y4 = -0.35    
-    label4 = "15.5°C -dashed orange- 1.5°C is the Planetary Boundary and the Paris Treaty value"
+    label4 = "15.5°C -dashed orange- 1.5°C is the Planetary Boundary and the Paris Treaty value    (426 ppm CO$_2$ in 2026)"
     ax.plot(
         [-0.1, -0.06], [t3y4 + 0.015, t3y4 + 0.015], color=c305, ls="--", lw=2,
         transform=ax.transAxes, clip_on=False,
@@ -305,7 +313,7 @@ def _create_figure(linear_x=False):
     # 303.156   https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mzzpmbobdc23
 
     # 303.157 print line 5 Mid-Pliocene Warm Period, 3-3.3 million years ago
-    label5 = "400-450 ppm CO$_2$ resulted in 2-3\u00b0C warming in the Pliocene, 3-4 million years ago: the best case means +4\u00b0C warming on land"
+    label5 = "400-450 ppm CO$_2$ resulted in 2-3\u00b0C warming in the Pliocene, 3-4 million years ago: this best case means +4\u00b0C warming on land"
     # 303.158 make a red square in the legend below the plot
     if (box303_3Ma == 5):
        ax.add_patch(

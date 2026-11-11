@@ -1033,6 +1033,12 @@ v = "5K59"
 instead of writing "label 5 in line 5" plot a smal  square with red border and light red inside
 and write 426ppm resulted in 4°C warming in the emian, 3 Million years ago
 
+
+headline2 = "Where on Earth are we Heading: Pliocene or Miocene?"
+headline3 = " temperature plotted against CO$_2$"
+
+print headline2 in bold and green and bigger
+print headline3 in black after headline2
 """
 
 
