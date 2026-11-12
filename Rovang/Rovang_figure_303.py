@@ -129,7 +129,7 @@ def _create_figure(linear_x=False):
         # 303.57 Set the major CO2 tick locations for the logarithmic x-axis.
         ticks = [125, 200, 250, 280, 300, 350, 400, 450, 500, 550, 1000, 1500]
         ax.set_xticks(ticks)
-        ax.xaxis.set_major_locator(MultipleLocator(100))
+        ax.xaxis.set_major_locator(MultipleLocator(50))
         # ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
     # 303.59 linear x axis
     else:
