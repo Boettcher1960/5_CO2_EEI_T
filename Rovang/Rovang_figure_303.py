@@ -123,15 +123,17 @@ def _create_figure(linear_x=False):
             f"{B.C0*2**src.max():6.0f} ppm   slope {slope:5.2f}"
         )
     # 303.55 set the x-axis scale to logarithmic base 2  logarithmic x axis
+    minor_x_step = 20
     if figure303 == 3: 
         ax.set_xscale("log", base=2) 
         # 303.57 Set the major CO2 tick locations for the logarithmic x-axis.
         ticks = [125, 200, 250, 280, 300, 350, 400, 450, 500, 550, 1000, 1500]
         ax.set_xticks(ticks)
+        ax.xaxis.set_major_locator(MultipleLocator(100))
+        # ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
     # 303.59 linear x axis
     else:
         ax.xaxis.set_major_locator(MultipleLocator(100))
-        minor_x_step = 20
         ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
     
     # Include configured endpoints as labeled ticks, then restore limits because
@@ -147,6 +149,7 @@ def _create_figure(linear_x=False):
         return label
 
     ax.xaxis.set_major_formatter(FuncFormatter(format_co2_tick))
+
     # 303.60 set the y-axis limits to y_303min and y_303max, which are defined in config.py
     ax.set_ylim(y_303min, y_303max)
     y_range = y_303max - y_303min
