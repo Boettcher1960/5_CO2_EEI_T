@@ -58,7 +58,7 @@ def _create_figure(linear_x=False):
     # 303.34 create the output path for the figure
     os.makedirs(figure_dir, exist_ok=True)
     # 303.35 set the filename based on whether linear_x is True or False
-    filename = "figure_304_Rovang.png" if linear_x else "figure_303_Rovang.png"
+    filename = "figure_304.png" if linear_x else "figure_303.png"
     # 303.36 create the full output path for the figure
     output_path = os.path.join(figure_dir, filename)
     # 303.37 define a lambda function to calculate the logarithm base 2 of the ratio of p to B.C0
@@ -126,28 +126,22 @@ def _create_figure(linear_x=False):
     if not linear_x:
         ax.set_xscale("log", base=2)
     # ax.set_xlim(XLO, XHI)
-    # 303.56 set the x-axis limits to x_303min and x_303max, which are defined in config.py
-    ax.set_xlim(x_303min, x_303max)
     # 303.57 set the y-axis limits to y_303min and y_303max, which are defined in config.py
     if linear_x:
         ax.xaxis.set_major_locator(MultipleLocator(100))
-        minor_x_step = 10 if x_303max - x_303min < 510 else 20
-
-        ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
+        ax.xaxis.set_minor_locator(MultipleLocator(20))
     else:
         ticks = [125, 250, 500, 1000, 1500]
         ax.set_xticks(ticks)
-    visible_xticks = [
-        tick for tick in ax.get_xticks()
-        if x_303min <= tick <= x_303max
-    ]
+    # Include configured endpoints as labeled ticks, then restore limits because
+    # set_xticks can otherwise expand the view.
+    ax.set_xlim(x_303min, x_303max)
+    ax.set_xticks(sorted(set(ax.get_xticks()) | {x_303min, x_303max}))
+    ax.set_xlim(x_303min, x_303max)
 
     def format_co2_tick(value, _position):
         label = f"{value:,.0f}"
-        if visible_xticks and (
-            np.isclose(value, visible_xticks[0])
-            or np.isclose(value, visible_xticks[-1])
-        ):
+        if np.isclose(value, x_303min) or np.isclose(value, x_303max):
             label += " ppm"
         return label
 
@@ -176,7 +170,7 @@ def _create_figure(linear_x=False):
         tick for tick in ax.get_yticks()
         if y_303min <= tick <= y_303max
     ]
-
+     # 303.69 label °C on first and last number of y axis
     def format_temperature_tick(value, _position):
         label = f"{value:g}"
         if visible_yticks and (
@@ -185,45 +179,55 @@ def _create_figure(linear_x=False):
         ):
             label += "\u00b0C"
         return label
-
+    # 303.71 call °C on first and last number of y axis
     ax.yaxis.set_major_formatter(FuncFormatter(format_temperature_tick))
-    figure_label = "4" if linear_x else "3"
-    scale_label = "ppm" if linear_x else "ppm, log$_2$ scale"
-    # 303.65 print the two-part headline above the plot
 
+     # 303.72 logarithmic x axis
+    if figure303 == 3: 
+        figure_label = "3" 
+        scale_label = "ppm, log$_2$ scale"
+    # 303.73 logarithmic x axis
+    else: 
+        figure_label = "4"
+        scale_label = "ppm"
+    
+    # 303.75 prepare the two-part headline above the plot
     headline2 = "Where on Earth are we Heading: Pliocene or Miocene?"
     headline3 = "Temperature vs CO$_2$"
+    # 303.76 print the left headline above the plot
     ax.text(
         -0.1, 1.07, headline2, color="green", fontname="Arial",
         fontsize=24, fontweight="bold", transform=ax.transAxes,
     )
+    # 303.77 print the right headline above the plot
     ax.text(
         0.77 , 1.07, headline3, color="black", fontname="Arial", fontsize=20,
         transform=ax.transAxes,
     )
-    # 303.68 print the x axis text below the plot
+    # 303.78 print the x axis text below the plot
     ax.set_xlabel(
-        f"Figure 304: Atmospheric CO$_2$ concentration (in {scale_label}) is the x axis - after Dean Rovang ",
+        f"Figure 30{figure303}: Atmospheric CO$_2$ concentration (in {scale_label}) is the x axis ",
         fontsize=16, fontweight="bold",
         loc="left",
     )
-    # 303.69 move  the x axis text
+    # 303.79 move  the x axis text
     ax.xaxis.set_label_coords(-0.1, -0.08)
 
-    # 303.70 print the y axis text left of the plot
+    # 303.80 print the y axis text left of the plot
     ax.set_ylabel("Global Mean Surface Temperature (\u00b0C)", fontsize=18)
     ax.tick_params(axis="both", labelsize=13)
     ax.grid(True, which="major", color="#777777", alpha=0.75, linewidth=0.9)
-    ax.grid(True, which="minor", color="#999999", alpha=0.5, linewidth=0.6)
+    ax.grid(True, axis="x", which="minor", color="#999999", alpha=0.5, linewidth=0.6)
+    ax.grid(True, axis="y", which="minor", color="#999999", alpha=0.5, linewidth=0.6)
 
-    # 303.80 lines parallel to x axis
-    # 303.80 green dashed line for 14°C the 1850 to 1900 Temperaturelevel
+    # 303.84 lines parallel to x axis
+    # 303.85 green dashed line for 14°C the 1850 to 1900 Temperaturelevel
     reference_color = "#228B22"
     ax.axhline(13.97, color=reference_color, ls="--", lw=1.8, zorder=6)
-    # 303.82 blue band for 15.5°C the 2024 Temperature
+    # 303.87 blue band for 15.5°C the 2024 Temperature
     paris_band_color = "#add8e6"
     # ax.axhspan(15.5, 16, color=paris_band_color, alpha=0.55, zorder=2)
-    # 303.84 orange dashed line for 15.5°C the 2024 Temperaturelevel 1.5°C above preindustrial 14°C
+    # 303.89 orange dashed line for 15.5°C the 2024 Temperaturelevel 1.5°C above preindustrial 14°C
     c305 = "#DE7525D8"
     ax.axhline(15.5, color=c305, ls="--", lw=1.8, zorder=6)
 
@@ -231,7 +235,6 @@ def _create_figure(linear_x=False):
     if plot304_450ppm_blue_band == 1: # 
        c306 = "#87ceeb"
        ax.axvspan(430, 480, color=c306, alpha=0.35, zorder=2)
-
 
     # 303.95 ad a green square from 400ppm 14°C to 50+420ppm 3+14°C
     if (box303_3Ma > 2):
@@ -267,6 +270,7 @@ def _create_figure(linear_x=False):
     # 303.99 orange dashed line for 426 ppm the 2026 CO2 atmosphere level
     c305 = "#DE7525D8"
     ax.plot([426, 426], [5, 27], color=c305, ls="--", lw=1.8, zorder=6)
+    
     # 303.102 text bubble for 2026 426 ppm
     ax.annotate(
         "We are here\n2026 426 ppm\n1.5\u00b0C warming",
@@ -291,6 +295,7 @@ def _create_figure(linear_x=False):
         arrowprops={"arrowstyle": "->", "color": reference_color, "lw": 3},
         zorder=10,
     )
+    # 303.110 text bubble for Pliocene
     ax.annotate(
         "Best case like Pliocene 2.5\u00b0C warming\nmeans 4\u00b0C warming on land",
         xy=(450, 17), xycoords="data",
@@ -302,6 +307,7 @@ def _create_figure(linear_x=False):
         arrowprops={"arrowstyle": "->", "color": cbox303Maedge, "lw": 2.5},
         zorder=10,
     )
+    # 303.120 text bubble for Miocene
     ax.annotate(
         "We are heading back to Miocene\n5\u00b0C warming like 16 million years ago",
         xy=(420, 19), xycoords="data",
@@ -314,45 +320,45 @@ def _create_figure(linear_x=False):
         zorder=10,
     )
 
-    # 303.100 legend with the 3 fits and the 4 bands from Dean Rowing
+    # 303.132 legend with the 3 fits and the 4 bands from Dean Rowing
     handles = [
-        # 303.101 line1 of legend from Dean Rowing
+        # 303.141 line1 of legend from Dean Rowing
         Patch(facecolor=GRAY, alpha=0.75,
               label="Equilibrium relationship, last 66 Myr ($\\pm1\\sigma$)"),
         # Patch(facecolor=paris_band_color, alpha=0.55,
         #      label="1.5\u00b0C Paris treaty below 2°C"),
         # Patch(facecolor=co2_band_color, alpha=0.35,
         #      label="430 ppm in 2026 (430\u2013480 ppm range)"),
-        # 303.104 line2 of legend from Dean Rowing
+        # 303.144 line2 of legend from Dean Rowing
         Line2D([], [], ls="none", marker="o", ms=9, mfc=EP, mec="none",
                label="EPICA Dome C \u00d70.55, 1\u2013800 kyr"),
         # Line2D([], [], ls="none", marker="^", ms=9, mfc=CLK, mec="none",
         #       label="Clark et al. 2024, 1\u2013800 kyr"),
-        # 303.106 line3 of legend from Dean Rowing
+        # 303.146 line3 of legend from Dean Rowing
         Line2D([], [], ls="none", marker="D", ms=9, mfc=JUDD, mec="white",
                mew=0.9, label="Judd et al. 2024, Cenozoic stages, 66\u20130 Ma"),
         # Line2D([], [], color=reference_color, ls="--", lw=1.8,
         #       label="280 ppm, 14\u00b0C preindustrial"),
     ]
-    # 303.108 legend with the 3 fits and the 4 bands from Dean Rowing
+    # 303.148 legend with the 3 fits and the 4 bands from Dean Rowing
     for name, slope, _intercept, _sg, _sb, color, style in fits:
         handles.append(
             Line2D([], [], color=color, ls=style, lw=2.4,
                    label=f"{name}: {slope:.2f} K/doubling")
         )
-    # 303.110 inside the plot, plot the Dean Rowing legend with the 3 fits and the 4 bands
+    # 303.150 inside the plot, plot the Dean Rowing legend with the 3 fits and the 4 bands
     ax.legend(handles=handles, fontsize=10.5, loc="upper left", framealpha=0.96)
 
-    # 303.111 print line 2 github with version number below the plot
+    # 303.151 print line 2 github with version number below the plot
     text_below3 = (f""
                   f"https://github.com/Boettcher1960/5_CO2_EEI_T"
                   f"        {filename}     version {v} ")
     t3y2 = -0.19    # 303.122 print line 2 t3y2 = -0.22
-    # 303.113 print line 2 github with version number below the plot
+    # 303.153 print line 2 github with version number below the plot
     ax.text(-0.1, t3y2, text_below3, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
-    # 303.118 print line 3
+    # 303.158 print line 3
     t3y3 = -0.28    
     # 303.109 print dashed green line left of the text
     ax.plot(
@@ -360,13 +366,13 @@ def _create_figure(linear_x=False):
         color=reference_color, ls="--", lw=2,
         transform=ax.transAxes, clip_on=False,
     )
-    # 303.120 text for line 3
+    # 303.160 text for line 3
     label3 = "14\u00b0C -dashed green- the preindustrial level, the coridor of life, human civilization evolved 10 000 years"
     # 303.111 print the text for line 3 below the plot
     ax.text(-0.055, t3y3, label3, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
     
-    # 303.125  fig.subplots_adjust(left=0.12, right=0.98, top=0.88, bottom=0.30)
+    # 303.165  fig.subplots_adjust(left=0.12, right=0.98, top=0.88, bottom=0.30)
     # sets the plot area’s margins within the figure. The values are fractions of the figure dimensions:
     # left=0.12: plot starts 12% from the left.
     # right=0.98: plot ends 2% from the right.
@@ -374,14 +380,14 @@ def _create_figure(linear_x=False):
     # bottom=0.30: plot starts 30% above the bottom, leaving room below for captions.
     fig.subplots_adjust(left=0.12, right=0.98, top=0.92, bottom=0.40)
 
-    # 303.148 print line 4
+    # 303.168 print line 4
     t3y4 = -0.35    
     label4 = "15.5°C -dashed orange- 1.5°C is the Planetary Boundary and the Paris Treaty value    (426 ppm CO$_2$ in 2026)"
     ax.plot(
         [-0.1, -0.06], [t3y4 + 0.015, t3y4 + 0.015], color=c305, ls="--", lw=2,
         transform=ax.transAxes, clip_on=False,
     )
-    # 303.150 print line 4 below the plot
+    # 303.170 print line 4 below the plot
     ax.text(-0.055, t3y4, label4, color="black", fontname="Arial", fontsize=14,
             transform=ax.transAxes)
 
@@ -393,9 +399,9 @@ def _create_figure(linear_x=False):
     # 303.155   https://twitter.com/bratananium/status/1570253133355384832
     # 303.156   https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mzzpmbobdc23
 
-    # 303.157 print line 5 Mid-Pliocene Warm Period, 3-3.3 million years ago
+    # 303.177 print line 5 Mid-Pliocene Warm Period, 3-3.3 million years ago
     label5 = "400-450 ppm CO$_2$ resulted in 2-3\u00b0C warming in the Pliocene, 3-4 million years ago: this best case means +4\u00b0C warming on land"
-    # 303.158 make a red square in the legend below the plot
+    # 303.178 make a red square in the legend below the plot
     if (box303_3Ma == 5):
        ax.add_patch(
            Rectangle(
@@ -404,13 +410,13 @@ def _create_figure(linear_x=False):
                edgecolor=cbox303Maedge, linewidth=1.5, alpha=0.65, clip_on=False,
            )
        )
-       # 303.159 print line 5 Mid-Pliocene Warm Period, 3-3.3 million years ago
+       # 303.179 print line 5 Mid-Pliocene Warm Period, 3-3.3 million years ago
        ax.text(-0.055, t3y5, label5, color="black", fontname="Arial", fontsize=14,
                transform=ax.transAxes)
 
-    # 303.160 line 6 of my legend below the plot
+    # 303.180 line 6 of my legend below the plot
     t3y6 = -0.49    # 303.124 print line 6 
-    # 303.162 make a red square in the legend below the plot
+    # 303.182 make a red square in the legend below the plot
     if (box304_16Ma == 6):
        ax.add_patch(
            Rectangle(
@@ -419,12 +425,12 @@ def _create_figure(linear_x=False):
                edgecolor=cbox304Maedge, linewidth=1.5, alpha=0.65, clip_on=False,
            )
        )
-       # 303.164 print line 6 
+       # 303.184 print line 6 
        label6 = "300-500 ppm CO$_2$ resulted in 4-5\u00b0C warming in the Miocene, 15-17 million years ago: 3\u00b0C warming means end of civilization"
        ax.text(-0.055, t3y6, label6, color="black", fontname="Arial", fontsize=14,
                transform=ax.transAxes)
     else:
-       # 303.169 in legend, line 6, add a blue band
+       # 303.189 in legend, line 6, add a blue band
        ax.add_patch(   
            Rectangle(
                (-0.1, t3y6 - 0.005), 0.035, 0.025,
@@ -433,7 +439,7 @@ def _create_figure(linear_x=False):
            )
        )
        label6="blue band for 430 ppm in 2026 (430\u2013480 ppm range)"
-       # 303.145 print line 6 below the plot
+       # 303.192 print line 6 below the plot
        ax.text(-0.055, t3y6, label6, color="black", fontname="Arial", fontsize=14,
                transform=ax.transAxes)
 

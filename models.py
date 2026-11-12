@@ -1073,6 +1073,9 @@ move the black box 1°C up and change the black color to cbox303Maedge
 make a thick red arrow pointing to 420 ppm, 19°C from top from 
 a white bubble with text "We are heading back to Miocene 5°C warming like 16 million years ago"
 
+scale the x axis with x_303min and x_303max 
+
+on x axis allways print x_303min and x_303max with ppm
 
 """
 

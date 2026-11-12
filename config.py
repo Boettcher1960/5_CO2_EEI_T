@@ -14,7 +14,7 @@
 
 figure100 = 0 # 0 means create no old figure 1= make old figuure
 figure202 = 0 # 2=new figure with era5 temperature and quadratic curve
-figure303 = 4 # 3 , 4 
+figure303 = 3 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
 
