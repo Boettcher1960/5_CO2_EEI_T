@@ -127,15 +127,15 @@ def _create_figure(linear_x=False):
     if figure303 == 3: 
         ax.set_xscale("log", base=2) 
         # 303.57 Set the major CO2 tick locations for the logarithmic x-axis.
-        ticks = [125, 200, 250, 280, 300, 350, 400, 450, 500, 550, 1000, 1500]
-        ax.set_xticks(ticks)
+        # ticks = [125, 200, 250, 280, 300, 350, 400, 450, 500, 550, 1000, 1500]
+        # ax.set_xticks(ticks)
         ax.xaxis.set_major_locator(MultipleLocator(50))
         # ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
     # 303.59 linear x axis
     else:
         ax.xaxis.set_major_locator(MultipleLocator(100))
         ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
-    
+
     # Include configured endpoints as labeled ticks, then restore limits because
     # set_xticks can otherwise expand the view.
     ax.set_xlim(x_303min, x_303max)
@@ -190,10 +190,11 @@ def _create_figure(linear_x=False):
     if figure303 == 3: 
         figure_label = "3" 
         scale_label = "ppm, log$_2$ scale"
-    # 303.73 logarithmic x axis
+    # 303.73 linear x axis
     else: 
         figure_label = "4"
         scale_label = "ppm"
+       
     
     # 303.75 prepare the two-part headline above the plot
     headline2 = "Where on Earth are we Heading: Pliocene or Miocene?"
@@ -299,11 +300,23 @@ def _create_figure(linear_x=False):
         arrowprops={"arrowstyle": "->", "color": reference_color, "lw": 3},
         zorder=10,
     )
-    # 303.110 text bubble for Pliocene
+    # 303.110 text bubble3 for Pliocene
+    # 303.111 logarithmic x axis
+    if figure303 == 3: 
+        bubble3x = 280 # x value 530
+        bubble3y = 20  # y value 18
+        arrow3x = 425
+        arrow3y = 16.5
+    # 303.112 linear x axis
+    else:
+        bubble3x = 530 # x value 530
+        bubble3y = 18  # y value 18
+        arrow3x = 450
+        arrow3y = 17
     ax.annotate(
         "Best case like Pliocene 2.5\u00b0C warming\nmeans 4\u00b0C warming on land",
-        xy=(450, 17), xycoords="data",
-        xytext=(530, 18), textcoords="data",
+        xy=(arrow3x, arrow3y), xycoords="data",
+        xytext=(bubble3x, bubble3y), textcoords="data",
         ha="center", va="center", fontsize=12, color="black",
         bbox={"boxstyle": "round,pad=0.8,rounding_size=1.0",
               "facecolor": "white", "edgecolor": cbox303Maedge,
