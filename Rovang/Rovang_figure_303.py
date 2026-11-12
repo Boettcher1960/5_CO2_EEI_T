@@ -129,14 +129,19 @@ def _create_figure(linear_x=False):
     # 303.57 set the y-axis limits to y_303min and y_303max, which are defined in config.py
     if linear_x:
         ax.xaxis.set_major_locator(MultipleLocator(100))
-        ax.xaxis.set_minor_locator(MultipleLocator(20))
+        minor_x_step = 20
+        ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
     else:
+        #ticks = [125, 250, 500, 1000, 1500]
+        # minor_x_step = 20
+        # ax.xaxis.set_minor_locator(MultipleLocator(minor_x_step))
         ticks = [125, 250, 500, 1000, 1500]
         ax.set_xticks(ticks)
+        #ax.set_xticks(ticks)
     # Include configured endpoints as labeled ticks, then restore limits because
     # set_xticks can otherwise expand the view.
     ax.set_xlim(x_303min, x_303max)
-    ax.set_xticks(sorted(set(ax.get_xticks()) | {x_303min, x_303max}))
+    ax.set_xticks(sorted(set(ax.get_xticks()) | {280, x_303min, x_303max}))
     ax.set_xlim(x_303min, x_303max)
 
     def format_co2_tick(value, _position):
