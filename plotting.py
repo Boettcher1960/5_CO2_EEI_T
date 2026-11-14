@@ -525,6 +525,20 @@ def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
     ax61.set_ylim(y_61min, y_61max) #
 
 
+#  play_60_T_EA 
+def plot8_right_y_axe_for_C_60(ax60,right60): # 60.5
+    if play_60_T_E > 0 and line3_play == 60:
+        outward_right =  ( 2.5 *  60 ) - yr_150
+    elif play_60_T_E > 0 and line4_play == 60:
+        outward_right =  ( 3.5 *  60 ) - yr_150
+    else:
+        outward_right =  ( 5 *  yr_60 ) - yr_150
+    ax60.spines.right.set_position(("outward", outward_right))
+    ax60.set_ylabel("EEA Earth Energy Accumulated in ZJ      60", color=c60, fontname="Arial",fontsize=18)
+    ax60.tick_params(axis="y", labelcolor=c60)
+    ax60.set_ylim(y_60min, y_60max) #
+
+
 #  play_62_EEA 
 def plot8_right_y_axe_for_C_62(ax62,right62): # 62.5
     if play_62_EEA > 0 and line3_play == 62:

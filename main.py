@@ -1,5 +1,5 @@
 # main.py
-v = "5K79" # line4_play = 62
+v = "5K81" # line4_play = 60
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -60,8 +60,51 @@ def process_ceres_data():
           print(f"main_086: create work/61c_out_EEI.csv  61.gut ={play_61_EEI}")
 
 
-    # main.play_62_EEA line 90 
-    # CERES Outgoing Longwave Radiation OLR     # _62_in__2026_02_Longwave.txt
+    # play_60_T_E = 48    # add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
+    # Earth Energy Accumulated EEA is sum of EEI
+    if play_60_T_E > 1: #  
+       # 60.11 convert download.txt to CERES.csv (no averaging)
+       df60b = convert62_txt_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
+                                      'work/60b_EEA.csv',
+                                      'EEI'          )
+       # 60.33  CERES.csv (perform averaging)
+       use_center=False
+       columnname ='EEI36'
+       column_read    ='EEI'
+       column_average ='EEI36'
+       # 60.37  CERES.csv (perform running average over play_60_T_E months)
+       df60c = create66_running_average( 'work/60b_EEA.csv', 
+                                         'work/60c_T_E.csv',
+                                          column_read,             #  column_name='EEI')
+                                          column_average,          #  column_name='EEI36')
+                                          columnname,              #  column_name='EEI36')
+                                            window_months=play_60_T_E,
+                                            min_periods=12,
+                                            center=use_center,
+                                            column_name=columnname)
+       # 60.51. read above created CSV-file
+       df60g = pd.read_csv("work/60c_T_E.csv")
+
+       # 60.52. summ the averaged column "EEI36" and store it in new column 'EEA'
+       factor = 0.00208  #     then multiplied by a constant 16.087 to convert it to ZJ. 
+       df60g["T_E"] = df60g["EEI36"].cumsum() * factor
+       
+       # 60.53. store 62g*csv to print it later, or copy it and use for other plots
+       df60g.to_csv("work/60g_T_E.csv", index=False, float_format='%.6f')
+
+       # part 60.e  CERES.csv (add averaging column to plotable-csv)
+       #df62e = add_62_csv_column( 'work/62b_EEA.csv', 
+       #                           'read_csv/_42_EEI48month_2026_08.csv', 
+       #                           'work/62e_EEA.csv',
+       #                                     window_months=play_60_T_E,
+       #                                     min_periods=12,
+       #                                     center=use_center,
+       #                                     column_name='LongWave')
+       if print_debug > 9:
+          print(f"main_104: create work/60g_T_E.csv   60    ={play_60_T_E}")
+
+
+    # Earth Energy Accumulated EEA is sum of EEI
     if play_62_EEA > 1: #  
        # 62.11 convert download.txt to CERES.csv (no averaging)
        df62b = convert62_txt_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
@@ -101,7 +144,7 @@ def process_ceres_data():
        #                                     center=use_center,
        #                                     column_name='LongWave')
        if print_debug > 9:
-          print(f"main_133: create work/62e_EEA.csv   62    ={play_62_EEA}")
+          print(f"main_147: create work/62e_EEA.csv   62    ={play_62_EEA}")
 
 # main.play_64_ASR_anomaly line 124
 if play_64_ASR_anomaly > 1: #  
@@ -360,6 +403,11 @@ def load_plot_data():
         if print_debug > 9:
            print(f"main_193: plot52_delta_CO2_red_bars # 52.3 ={plot52_delta_CO2_red_bars}")
 
+    if play_60_T_E > 0: # 60.9 read
+        # data['ceres_62'] = pd.read_csv("work/62c_EEA.csv")
+        data['ceres_60'] = pd.read_csv("work/60g_T_E.csv")
+        if print_debug > 9:
+           print(f"main_410: 60.69 read ={play_60_T_E}")  
     if play_61_EEI > 0: # 61.9 read
         data['ceres_61'] = pd.read_csv("work/61c_out_EEI.csv")
         if print_debug > 9:
