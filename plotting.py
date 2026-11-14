@@ -520,7 +520,7 @@ def plot8_right_y_axe_for_C_60(ax60,right60): # 60.5
     else:
         outward_right =  ( 5 *  yr_60 ) - yr_150
     ax60.spines.right.set_position(("outward", outward_right))
-    ax60.set_ylabel("Temperature in °C from EEI   60", color=c60, fontname="Arial",fontsize=18)
+    ax60.set_ylabel("Warming in °C from EEI  P.Forster 60", color=c60, fontname="Arial",fontsize=18)
     ax60.tick_params(axis="y", labelcolor=c60)
     ax60.set_ylim(y_60min, y_60max) #
 
