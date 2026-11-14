@@ -390,6 +390,53 @@ def T_model76(t):
 
 
 #########################################################
+# 60    play_60_EEI_T = 12   ############################
+#########################################################
+#--- see 41 process 4 CERES files ---------------------
+# An EEI of 2 W/m² over 10 years results in 0.5°C warming. Piers Forster slide
+# Temperature accelerates 
+# 0.1°C 2000
+# 0.27°C 2025
+# https://www.youtube.com/watch?v=lx4k97DsrBU&t=700s
+# https://bsky.app/profile/thomas-boettcher.bsky.social/post/3my6e6h2ius24
+# Piers Forster 2 W/m² in 10a make 0.5°C
+# Piers Forster 2 W/m² in 1year makes 0.05°C
+# Piers Forster 1 W/m² in 1 year warmes 0.025°C
+# Piers Forster 1 W/m² in 1month warmes 0.00208°C 
+#
+#
+# how much does an earth energy imbalance of
+# 1 W/m² 
+# warm the earth in 1 month - in °C ?
+# https://chatgpt.com/c/6ae8e844-54e4-83ed-91fa-64429b9a04b7
+# An Earth energy imbalance of 1 W/m² sustained for one month would warm the Earth by approximately:
+# 0.0053 °C
+# This is a simplified estimate assuming all excess energy is absorbed by the Earth's system and distributed uniformly.
+# Calculation
+# 1. Energy imbalance: 1 W/m²  = 1 J /s / m² 
+# 2. Energy accumulated in one month (30 days): E = 1 * 30 * 24 * 3600 = 2.592 * 10^6 J/m² 
+# 3. Earth's effective heat capacity (atmosphere, ocean, land):
+# For a simplified estimate, use the heat capacity of the entire ocean mixed layer (approximately 50 m deep):
+# C\approx 2.05\times10^8\ \mathrm{J/(m^2 K)}
+#  C = 2.05 * 10^8  J (  m² * K  ) 
+#
+# 4. Temperature increase:  dT = E / C =  2.592 * 10^6 / 2.05 * 10^8 = 0.0126°C
+# 
+# Important distinction
+#     The answer depends strongly on how much of the Earth's system is included:
+#     Assumption	Warming in one month
+#     50 m ocean mixed layer	0.0126 °C
+#     100 m ocean mixed layer	0.0063 °C
+#     700 m ocean layer	0.0009 °C
+#
+# how much does an earth energy imbalance of
+# 1 W/m² 
+# warm the earth atmosphere in 1 month - in °C ?
+
+
+
+
+#########################################################
 # 61    play_61_EEI = 12   ##############################
 #########################################################
 #--- see 41 process 4 CERES files ---------------------
@@ -1078,6 +1125,10 @@ a white bubble with text "We are heading back to Miocene 5°C warming like 16 mi
 scale the x axis with x_303min and x_303max 
 
 on x axis allways print x_303min and x_303max with ppm
+
+how much does an earth energy imbalance of
+1 W/m² 
+warm the earth in 1 month - in °C ?
 
 """
 

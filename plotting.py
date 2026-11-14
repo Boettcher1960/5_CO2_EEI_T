@@ -528,9 +528,9 @@ def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
 #  play_62_EEA 
 def plot8_right_y_axe_for_C_62(ax62,right62): # 62.5
     if play_62_EEA > 0 and line3_play == 62:
-        outward_right =  ( 2.5 *  yr_60 ) - yr_150
+        outward_right =  ( 2.5 *  60 ) - yr_150
     elif play_62_EEA > 0 and line4_play == 62:
-        outward_right =  ( 3.5 *  yr_60 ) - yr_150
+        outward_right =  ( 3.5 *  60 ) - yr_150
     else:
         outward_right =  ( 5 *  yr_60 ) - yr_150
     ax62.spines.right.set_position(("outward", outward_right))

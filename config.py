@@ -54,7 +54,7 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
 play_61_EEI = 12    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
+play_62_EEA = 48    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
                 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
@@ -77,7 +77,7 @@ plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 # variable to show play variable in line 4
 line2_play = 0   # 61  62
 line3_play = 61  #  play_62_EEA #   68 play68_ERA = 720
-line4_play = 0  # 61 play_61_EEI = 36 
+line4_play = 62  # 62 , 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
 line6_play = 0
 
