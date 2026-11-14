@@ -393,12 +393,15 @@ def T_model76(t):
 # 60    play_60_EEI_T = 12   ############################
 #########################################################
 #--- see 41 process 4 CERES files ---------------------
-# An EEI of 2 W/m² over 10 years results in 0.5°C warming. Piers Forster slide
+# Piers Forster slide:
+# "An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming"
+# Piers Forster An EEI of 2 W/m² results in 0.5°C warming. Piers Forster slide
 # Temperature accelerates 
 # 0.1°C 2000
 # 0.27°C 2025
 # https://www.youtube.com/watch?v=lx4k97DsrBU&t=700s
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3my6e6h2ius24
+# Piers Forster 2 W/m²
 # Piers Forster 2 W/m² in 10a make 0.5°C
 # Piers Forster 2 W/m² in 1year makes 0.05°C
 # Piers Forster 1 W/m² in 1 year warmes 0.025°C
