@@ -1225,6 +1225,19 @@ def plot_9_create_all_plots(ax1, data):
        plot8_160_right_y_axe_55(ax55,pop_world)    # 55.4 line 358
        # end part 5.5 plot55_population_on human earth population  
 
+
+    if play_60_T_E > 0:
+        ax60 = ax1.twinx()
+        ax60.plot(data['ceres_60']["decimal_year"], data['ceres_60']["T_E"], '-', 
+                  label="EEI K60", color=c60, linewidth=2)
+        ax60.tick_params(axis="y", labelcolor=c60)
+        ax60.set_ylim(y_60min, y_60max)
+        if print_debug > 9:
+           print(f"plot_969: ax60 60.8 ={play_60_T_E}")
+        if play_60_T_E > 2:
+           plot8_right_y_axe_for_C_60( ax60 , 0 ) # 60.4 line 967
+
+
     if play_61_EEI > 0:
        if line2_play == 61:
            # Plot on the left axis (ax1) instead of creating a right axis
