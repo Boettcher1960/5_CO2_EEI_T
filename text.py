@@ -436,6 +436,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr4y, 
                     "plot52_delta_CO2_red_bars  (text259)  52", 
                     c52, trs)
+    elif play_60_T_E > 0 and line4_play == 60:
+                text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c60)
+                p60_text = f"Temperature [°C] Piers Forster: EEI of 1 W/m² a month warmes 0.00208°C {play_60_T_E} 60"
+                text_4_add_text(ax1, tr2x, tr4y, p60_text, c60, trs) 
     elif play_61_EEI > 0 and line4_play == 61:
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c61)
             p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"

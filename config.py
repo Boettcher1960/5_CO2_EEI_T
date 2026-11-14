@@ -55,7 +55,7 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 
 play_60_T_E = 48    # add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
 play_61_EEI = 12    # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
-play_62_EEA = 48    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
+play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
                 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
@@ -211,7 +211,7 @@ y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
 y_60min = 0  #  Temperature in °C y axis left mode
-y_60max = 1  #  Temperature in °C y axis left mode
+y_60max = 0.6  #  Temperature in °C y axis left mode
 y_61min = 0  #   EEI in W/m2 y axis left mode
 y_61max = 2  #   EEI in W/m2 y axis left mode
 
