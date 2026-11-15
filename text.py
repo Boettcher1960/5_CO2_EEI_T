@@ -241,7 +241,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "in ASR Absorbed Solar Radiation =input-output in [W/m²]moving average 48 month 46",  c46, trs)
     elif play_60_T_E > 0 and line2_play == 60: # EEI of 2 W/m² over 10 years results in 0.5°C warming
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c60)
-        p60_text = f"Warming °C [Piers Forster: an EEI of 2 W/m² applied 10 years warmes 0.5°C] {play_60_T_E}    60"
+        p60_text = f"Warming °C EEI of 2 W/m² applied 10 years warmes 0.5°C]   m={play_60_T_E} y={a60_start} +{a60_offset}  60"
         text_4_add_text(ax1, tr2x, tr2y, p60_text, c60, trs)     
     elif play_61_EEI > 0 and line2_play == 61:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c61)
@@ -300,7 +300,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c32)
        text_4_add_text(ax1, tr2x, tr3y, 
          text32, c32, trs)
-       
     elif plot42_EEI_48month == 3:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c42)
         text_4_add_text(ax1, tr2x, tr3y, 
@@ -332,7 +331,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "CO2_delta_green_bars, the yearly CO2 Mauna Loa increase  (text224)                  52", c52, trs)    
     elif play_60_T_E > 0 and line3_play == 60: # EEI of 2 W/m² over 10 years results in 0.5°C warming
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c60)
-        p60_text = f"Warming °C [Piers Forster: an EEI of 2 W/m² applied 10 years warmes 0.5°C] {play_60_T_E}    60"
+        p60_text = f"Warming °C EEI of 2 W/m² applied 10 years warmes 0.5°C   m={play_60_T_E}  y={a60_start}  +{a60_offset}  60"
         text_4_add_text(ax1, tr2x, tr3y, p60_text, c60, trs) 
     elif play_61_EEI > 0 and line3_play == 61:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c61)
@@ -447,9 +446,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "plot52_delta_CO2_red_bars  (text259)  52", 
                     c52, trs)
     elif play_60_T_E > 0 and line4_play == 60: # EEI of 2 W/m² over 10 years results in 0.5°C warming
-                text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c60)
-                p60_text = f"Warming °C [Piers Forster: an EEI of 2 W/m² applied 10 years warmes 0.5°C] {play_60_T_E}    60"
-                text_4_add_text(ax1, tr2x, tr4y, p60_text, c60, trs) 
+            text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c60)
+            p60_text = f"Warming °C EEI of 2 W/m² applied 10 years warmes 0.5°C     m={play_60_T_E} y={a60_start} +{a60_offset}  60"
+            text_4_add_text(ax1, tr2x, tr4y, p60_text, c60, trs) 
     elif play_61_EEI > 0 and line4_play == 61:
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c61)
             p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"

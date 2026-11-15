@@ -233,8 +233,6 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.0002
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
-
-
     elif line2_play == 68:
          ax1.spines.left.set_position(("outward", 0))
          ax1.set_ylim(y_68min, y_68max)
@@ -529,7 +527,7 @@ def plot8_right_y_axe_for_C_60(ax60,right60): # 60.5
     else:
         outward_right =  ( 5 *  yr_60 ) - yr_150
     ax60.spines.right.set_position(("outward", outward_right))
-    ax60.set_ylabel("Warming in °C from EEI  P.Forster 60", color=c60, fontname="Arial",fontsize=18)
+    ax60.set_ylabel("Warming in °C from EEI   60", color=c60, fontname="Arial",fontsize=18)
     ax60.tick_params(axis="y", labelcolor=c60)
     ax60.set_ylim(y_60min, y_60max) #
 
