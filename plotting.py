@@ -209,10 +209,14 @@ def plot_1_axe(ax1):
     elif line2_play == 60:  # play_60_T_E
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_60min, y_60max)
-        ax1.set_ylabel("Warming in °C  ", color=c60, fontsize=20)
+        ax1.set_ylabel("Temperature in °C - calculated with EEI ", color=c60, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c60, labelsize=20)
-        y_mayor_ticks = 0.500 
-        y_minor_ticks = 0.100
+        ax1.xaxis.set_major_locator(MultipleLocator(5))
+        ax1.grid(True, axis="x", which="major", linewidth=1.5)
+        ax1.xaxis.set_minor_locator(MultipleLocator(1))
+        ax1.grid(True, axis="x", which="minor")
+        y_mayor_ticks = 0.100
+        y_minor_ticks = 0.02
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif line2_play == 61:  # play_61_EEI = 36
@@ -1541,8 +1545,4 @@ def plot_9_create_all_plots(ax1, data):
 
 
     # end plot_9_create_all_plots(ax1, data):
-
-
-
-
 
