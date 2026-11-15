@@ -88,7 +88,13 @@ def process_ceres_data():
        # 60.52. summ the averaged column "EEI36" and store it in new column 'T_A'
        # 60.53 Piers Forster: An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming.
        factor = 0.00208  #     then multiplied by a constant 0.00208 to convert it to °C. 
-       df60g["T_E"] = df60g["EEI36"].cumsum() * factor # 60.54 modify to start after year a60_start = 2005
+       # a60_start = 2005
+       df60g["T_E"] = (
+           df60g["EEI36"]
+           .where(df60g["year"] >= a60_start)
+           .cumsum()
+           * factor
+       )
        
        # 60.53. store 62g*csv to print it later, or copy it and use for other plots
        df60g.to_csv("work/60g_T_E.csv", index=False, float_format='%.6f')
