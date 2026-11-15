@@ -55,7 +55,7 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 
 play_60_T_E = 48   # 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
 a60_start = 2005   # 2015 starting year of play_60_T_E
-a60_offset = 0     # 0.15 add offset 0.2°C at start of adding
+a60_offset = 1.0     # 0.15 add offset 0.2°C at start of adding
 play_61_EEI = 12   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
@@ -79,8 +79,8 @@ plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 0   # 61  62
-line3_play = 61  #  play_62_EEA #   68 play68_ERA = 720
-line4_play = 60  # 62 , 61 play_61_EEI = 36 
+line3_play = 60  #  play_62_EEA #   68 play68_ERA = 720
+line4_play = 61  # 62 , 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
 line6_play = 0
 
@@ -219,8 +219,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_60min = 0  #  Temperature in °C y axis left mode
-y_60max = 0.8  #  Temperature in °C y axis left mode
+y_60min = 0.8  #  Temperature in °C y axis left mode
+y_60max = 1.6  #  Temperature in °C y axis left mode
 y_61min = 0  #   EEI in W/m2 y axis left mode
 y_61max = 2  #   EEI in W/m2 y axis left mode
 

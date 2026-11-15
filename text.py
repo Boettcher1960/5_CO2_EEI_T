@@ -63,7 +63,7 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
                 transform=ax1.transAxes)
     elif plot42_EEI_48month == 2:
         # header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Aug. 2026 Plot {x_anf} to {x_end}."
-        header = f"Earth Energy Imbalance EEI heats the Earth     CERES Aug.2026     Plot {x_anf} to {x_end}."
+        header = f"Earth Energy Imbalance EEI warms the Earth     CERES Aug.2026     Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     elif plot43_eei_12month == 2:
@@ -325,6 +325,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, 
                     "CO2_delta_green_bars, the yearly CO2 Mauna Loa increase  (text224)                  52", 
                     c52, trs)    
+    elif play_60_T_E > 0 and line3_play == 60: # EEI of 2 W/m² over 10 years results in 0.5°C warming
+                    text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c60)
+                    p60_text = f"Warming °C [Piers Forster: an EEI of 2 W/m² applied 10 years warmes 0.5°C] {play_60_T_E}    60"
+                    text_4_add_text(ax1, tr2x, tr3y, p60_text, c60, trs) 
     elif play_61_EEI > 0 and line3_play == 61:
                 text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c61)
                 p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"
