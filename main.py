@@ -1,5 +1,5 @@
 # main.py
-v = "5K87" # line4_play = 60
+v = "5K88" # line4_play = 60
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -89,11 +89,13 @@ def process_ceres_data():
        # 60.53 Piers Forster: An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming.
        factor = 0.00208  #     then multiplied by a constant 0.00208 to convert it to °C. 
        # a60_start = 2005
+       # a60_offset = 0.2 # add offset 0.2°C at start of adding
        df60g["T_E"] = (
            df60g["EEI36"]
            .where(df60g["year"] >= a60_start)
            .cumsum()
-           * factor
+           * factor          # factor = 0.00208 to convert it to °C
+           + a60_offset      # add offset 0.2°C at start of adding
        )
        
        # 60.53. store 62g*csv to print it later, or copy it and use for other plots

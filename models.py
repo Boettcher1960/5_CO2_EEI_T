@@ -1132,6 +1132,20 @@ how much does an earth energy imbalance of
 1 W/m² 
 warm the earth in 1 month - in °C ?
 
+
+modify line 91 of main   (that only values after year a60_start are summed) 
+
+modify line 93 of main.py  (that  a60_offset = 0.2 is the starting value of the sum) 
+df60g["T_E"] = (
+           df60g["EEI36"]
+           .where(df60g["year"] >= a60_start)
+           .cumsum()
+           * factor
+       )
+
+
+
+
 """
 
 
