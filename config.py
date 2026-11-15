@@ -53,7 +53,7 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_60_T_E = 48   # 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
+play_60_T_E = 48   # 1=no average 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
 a60_start = 2005   # 2015 starting year of play_60_T_E
 a60_offset = 1.01     # 1 , 0.85 add offset 0.2°C at start of adding
 play_61_EEI = 48   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
@@ -219,8 +219,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_60min = 0  #  Temperature in °C y axis left mode
-y_60max = 2  #  Temperature in °C y axis left mode
+y_60min = 1  #  Temperature in °C y axis left mode
+y_60max = 1.6  #  Temperature in °C y axis left mode
 y_61min = 0  #   EEI in W/m2 y axis left mode
 y_61max = 2  #   EEI in W/m2 y axis left mode
 

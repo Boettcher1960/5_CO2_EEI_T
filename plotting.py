@@ -208,7 +208,7 @@ def plot_1_axe(ax1):
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif line2_play == 60:  # play_60_T_E
         ax1.spines.left.set_position(("outward", 0))
-        ax1.set_ylim(y_61min, y_61max)
+        ax1.set_ylim(y_60min, y_60max)
         ax1.set_ylabel("Warming in °C  ", color=c60, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c60, labelsize=20)
         y_mayor_ticks = 0.500 

@@ -1,5 +1,5 @@
 # main.py
-v = "5K96" # line4_play = 60
+v = "5K97" # line4_play = 60
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -90,25 +90,24 @@ def process_ceres_data():
        factor = 0.00208  #     then multiplied by a constant 0.00208 to convert it to °C. 
        # a60_start = 2005
        # a60_offset = 0.2 # add offset 0.2°C at start of adding
-       df60g["T_E"] = (
-           df60g["EEI36"]
-           .where(df60g["year"] >= a60_start)
-           .cumsum()
-           * factor          # factor = 0.00208 to convert it to °C
-           + a60_offset      # add offset 0.2°C at start of adding
-       )
-       
+       if play_60_T_E < 2: # may be does not work
+          df60g["T_E"] = (
+              df60g["EEI"]       # df60g["EEI36"]
+              .where(df60g["year"] >= a60_start)
+              .cumsum()
+              * factor          # factor = 0.00208 to convert it to °C
+              + a60_offset      # add offset 0.2°C at start of adding
+             )
+       if play_60_T_E > 2:
+          df60g["T_E"] = (
+              df60g["EEI36"]
+              .where(df60g["year"] >= a60_start)
+              .cumsum()
+              * factor          # factor = 0.00208 to convert it to °C
+              + a60_offset      # add offset 0.2°C at start of adding
+           )
        # 60.53. store 62g*csv to print it later, or copy it and use for other plots
        df60g.to_csv("work/60g_T_E.csv", index=False, float_format='%.6f')
-
-       # part 60.e  CERES.csv (add averaging column to plotable-csv)
-       #df62e = add_62_csv_column( 'work/62b_EEA.csv', 
-       #                           'read_csv/_42_EEI48month_2026_08.csv', 
-       #                           'work/62e_EEA.csv',
-       #                                     window_months=play_60_T_E,
-       #                                     min_periods=12,
-       #                                     center=use_center,
-       #                                     column_name='LongWave')
        if print_debug > 9:
           print(f"main_104: create work/60g_T_E.csv   60    ={play_60_T_E}")
 
@@ -143,15 +142,6 @@ def process_ceres_data():
        
        # 62.53. store 62g*csv to print it later, or copy it and use for other plots
        df62g.to_csv("work/62g_EEA.csv", index=False, float_format='%.6f')
-
-       # part 62.e  CERES.csv (add averaging column to plotable-csv)
-       #df62e = add_62_csv_column( 'work/62b_EEA.csv', 
-       #                           'read_csv/_42_EEI48month_2026_08.csv', 
-       #                           'work/62e_EEA.csv',
-       #                                     window_months=play_62_EEA,
-       #                                     min_periods=12,
-       #                                     center=use_center,
-       #                                     column_name='LongWave')
        if print_debug > 9:
           print(f"main_147: create work/62e_EEA.csv   62    ={play_62_EEA}")
 
@@ -191,17 +181,6 @@ if play_65_ASR > 1: #
                                                 min_periods=12,
                                                 center=use_center
                                                 )
-       # column_read    ='ASR'
-       # column_average ='ASR12'
-       # use_center=False
-       # part 66.35  CERES.csv (perform averaging for ASR)
-       # df67d = create67_running_average( 'work/_CERES_raw.csv', 
-       #                                  'work/_65c_CERES_ASR.csv',
-       #                                   column_read,             #  column_name='ASR')
-       #                                   column_average,          #  column_name='ASR12')
-       #                                   window_months=play_65_ASR,
-       #                                   min_periods=12,
-       #                                   center=use_center)
        if print_debug > 9:
           print(f"main_165: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
 
