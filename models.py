@@ -397,8 +397,7 @@ def T_model76(t):
 # "An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming"
 # Piers Forster An EEI of 2 W/m² results in 0.5°C warming. Piers Forster slide
 # Temperature accelerates 
-# 0.1°C 2000
-# 0.27°C 2025
+# 
 # https://www.youtube.com/watch?v=lx4k97DsrBU&t=700s
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3my6e6h2ius24
 # Piers Forster 2 W/m²

@@ -54,6 +54,7 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
 play_60_T_E = 48   # 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
+a60_start = 2005   # starting year of play_60_T_E
 play_61_EEI = 12   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
@@ -108,6 +109,7 @@ c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"
 c60 = "#D20E119F"
+c60a ="black"
 c61 = "#34D48FC7"
 c62 = "#BEBE21DD"
 c63 = "#1652D490"
@@ -148,6 +150,10 @@ text45 = "out OLR Outgoing Longwave Radiation OLR in W/m²     moving average 48
 text48 = "out FB1 Plank Feedback    in W/m²     era5-4year average   -0.74) * 3.22                   48"
 text49 = "missing Long Wave Radiation =  FB1 Plank Feedback -OLR   in W/m²   Tom Harris   49"
 text55 = "Green line: Earth Population in billion                                               55"
+
+text60c = "An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming: Piers Forster"
+text60b = "An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming: Piers Forster"
+text60a = "Piers Forster: An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming."
 
 text63 = "carbon brief cummulative CO2 emissions in GtCO2 since 1750    ourworldindata     63"
 
