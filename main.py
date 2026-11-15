@@ -1,5 +1,5 @@
 # main.py
-v = "5K85" # line4_play = 60
+v = "5K87" # line4_play = 60
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -85,9 +85,10 @@ def process_ceres_data():
        # 60.51. read above created CSV-file
        df60g = pd.read_csv("work/60c_T_E.csv")
 
-       # 60.52. summ the averaged column "EEI36" and store it in new column 'EEA'
-       factor = 0.00208  #     then multiplied by a constant 16.087 to convert it to ZJ. 
-       df60g["T_E"] = df60g["EEI36"].cumsum() * factor
+       # 60.52. summ the averaged column "EEI36" and store it in new column 'T_A'
+       # 60.53 Piers Forster: An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming.
+       factor = 0.00208  #     then multiplied by a constant 0.00208 to convert it to °C. 
+       df60g["T_E"] = df60g["EEI36"].cumsum() * factor # 60.54 modify to start after year a60_start = 2005
        
        # 60.53. store 62g*csv to print it later, or copy it and use for other plots
        df60g.to_csv("work/60g_T_E.csv", index=False, float_format='%.6f')
