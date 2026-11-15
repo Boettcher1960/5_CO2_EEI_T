@@ -54,8 +54,8 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
 play_60_T_E = 48   # 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
-a60_start = 2015   # starting year of play_60_T_E
-a60_offset = 0.15 # add offset 0.2°C at start of adding
+a60_start = 2005   # 2015 starting year of play_60_T_E
+a60_offset = 0     # 0.15 add offset 0.2°C at start of adding
 play_61_EEI = 12   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
@@ -152,9 +152,11 @@ text48 = "out FB1 Plank Feedback    in W/m²     era5-4year average   -0.74) * 3
 text49 = "missing Long Wave Radiation =  FB1 Plank Feedback -OLR   in W/m²   Tom Harris   49"
 text55 = "Green line: Earth Population in billion                                               55"
 
-text60c = "An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming: Piers Forster"
-text60b = "An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming: Piers Forster"
 text60a = "Piers Forster: An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming."
+text60b = "with EEI of 2 W/m²    sustained over decades:     2035=2°C    2055=3°C     2075=4°C"
+# 10 years 0.5°C * 1.5/2 = 0.375°C x years = 10 * 2 /1.5 = 13.3 years 27 years for 1°C more
+text60c = "with EEI of 1.5 W/m² sustained over decades:     2038=2°C    2065=3°C     2092=4°C"
+
 
 text63 = "carbon brief cummulative CO2 emissions in GtCO2 since 1750    ourworldindata     63"
 
@@ -218,7 +220,7 @@ y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
 y_60min = 0  #  Temperature in °C y axis left mode
-y_60max = 0.6  #  Temperature in °C y axis left mode
+y_60max = 0.8  #  Temperature in °C y axis left mode
 y_61min = 0  #   EEI in W/m2 y axis left mode
 y_61max = 2  #   EEI in W/m2 y axis left mode
 
@@ -278,8 +280,8 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 2004
-x_end = 2027
+x_anf = 2005
+x_end = 2028
 
 # XLO, XHI = 125, 1500
 

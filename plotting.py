@@ -169,7 +169,7 @@ def plot_1_axe(ax1):
         # ax42.spines.right.set_position(("outward", outward_right))
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_42min, y_42max)
-        ax1.set_ylabel("Earth Energy Imbalance EEI in W/m² (plot180)  ", color=c42, fontsize=20)
+        ax1.set_ylabel("Earth Energy Imbalance EEI in W/m² ", color=c42, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c42, labelsize=20)
         y_mayor_ticks = 0.500 
         y_minor_ticks = 0.100

@@ -62,7 +62,8 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     elif plot42_EEI_48month == 2:
-        header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Aug. 2026 Plot {x_anf} to {x_end}."
+        # header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Aug. 2026 Plot {x_anf} to {x_end}."
+        header = f"Earth Energy Imbalance EEI heats the Earth     CERES Aug.2026     Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     elif plot43_eei_12month == 2:
@@ -499,9 +500,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c23)
         text_4_add_text(ax1, tr2x, tr5y,  text25,   c25, trs)
     elif a60_start > 2000:
-        # text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c23)
-        text_4_add_text(ax1, tr1x, tr5y,  text60a,   c60a, trs)
-        # text_4_add_text(ax1, tr1x, tr6y,  text60a,   c60b, trs)
+        text_4_add_text(ax1, tr1x, tr5y,  text60a,   c60a, 15)
     elif plot42_EEI_48month == 5:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c42)
         text_4_add_text(ax1, tr2x, tr5y, 
@@ -558,6 +557,8 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
         p61_text = f"Earth Energy Imbalance [W/m²]  CERES 2026_08     moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
+    elif a60_start > 2000:
+        text_4_add_text(ax1, tr1x, tr6y,  text60b,   c60a, 15)
     elif play_62_EEA > 0 and line6_play == 62:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c62)
         p62_text = f"EEA Earth Energy Accumulated in ZJ   = sum of EEI     moving average {play_62_EEA} month   62"
@@ -576,9 +577,11 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
    
     # row 7,      print line 6 below the plot ,     text_9_print_7_lines() ,           line 308
     ########################## row 6 ################################[W/m²]  
-    if plot74_GIS_T == 7: # 74.6
+    if plot74_GIS_T == 7: # 74.6 tr7y = -.57
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr7y, c74)
         text_4_add_text(ax1, tr2x, tr7y, text74 , c74, trs)
+    elif a60_start > 2000:
+        text_4_add_text(ax1, tr1x, -.58,  text60c,   c60a, 15)
     else: # row 7
         row7_text = f"Parameter {header_parameter}  Text564:"
         text_4_add_text(ax1, tr2x, tr7y, row7_text, "black", 16) 
