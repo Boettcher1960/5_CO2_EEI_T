@@ -71,16 +71,16 @@ play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   pl
 plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
-plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
+plot74_GIS_T = 0 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
-line2_play = 0  # 61  62
-line3_play = 60  # 60 play_62_EEA #   68 play68_ERA = 720
-line4_play = 61  # 62 , 61 play_61_EEI = 36 
+line2_play = 60  # 61  62
+line3_play = 61  # 60 play_62_EEA #   68 play68_ERA = 720
+line4_play = 0  # 62 , 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
 line6_play = 0
 
