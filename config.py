@@ -37,7 +37,7 @@ plot34_CO2_emission_mode = 0 # 4, 2, 4   # 34.1 mode
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 
-plot42_EEI_48month = 2  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
+plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 2, 3, 4 ,5 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei   = 0  # 47, 3, 48,   is local 
 plot45_OLR         = 0 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
@@ -56,7 +56,7 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 play_60_T_E = 48   # 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
 a60_start = 2005   # 2015 starting year of play_60_T_E
 a60_offset = 1.0     # 0.15 add offset 0.2°C at start of adding
-play_61_EEI = 12   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 48   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
                 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
@@ -78,8 +78,8 @@ plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
-line2_play = 0   # 61  62
-line3_play = 60  #  play_62_EEA #   68 play68_ERA = 720
+line2_play = 60  # 61  62
+line3_play = 0  # 60 play_62_EEA #   68 play68_ERA = 720
 line4_play = 61  # 62 , 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
 line6_play = 0

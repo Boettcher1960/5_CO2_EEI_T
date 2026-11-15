@@ -206,6 +206,15 @@ def plot_1_axe(ax1):
         y_minor_ticks = 0.100
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
+    elif line2_play == 60:  # play_60_T_E
+        ax1.spines.left.set_position(("outward", 0))
+        ax1.set_ylim(y_61min, y_61max)
+        ax1.set_ylabel("Warming in °C  ", color=c60, fontsize=20)
+        ax1.tick_params(axis="y", labelcolor=c60, labelsize=20)
+        y_mayor_ticks = 0.500 
+        y_minor_ticks = 0.100
+        ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
+        ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif line2_play == 61:  # play_61_EEI = 36
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_61min, y_61max)
@@ -529,7 +538,7 @@ def plot8_right_y_axe_for_C_61(ax61,right61): # 61.5
     if play_61_EEI > 0 and line3_play == 61:
         outward_right =  ( 2.5 *  60 ) - yr_150
     elif play_61_EEI > 0 and line4_play == 61:
-        outward_right =  ( 3.7 *  60 ) - yr_150
+        outward_right =  ( 3.5 *  60 ) - yr_150
     else:
         outward_right =  ( 5 *  yr_60 ) - yr_150
     ax61.spines.right.set_position(("outward", outward_right))
@@ -1113,7 +1122,6 @@ def plot_9_create_all_plots(ax1, data):
            ax48_data = data['plank4'][["decimal_year"]].copy()
            ax48_data["FB1"] = (data['plank4']["temp_average"] - 0.7) * 3.22
            ax48_data.to_csv("work/48_plank_FB1_out.csv", index=False, float_format="%.6f")
-
            if plank48 > 2:
               plot8_right_y_axe_for_T_48(ax48,0) # 
     if plot49 > 0 : # 
@@ -1127,13 +1135,7 @@ def plot_9_create_all_plots(ax1, data):
             if plot49 > 2:
                 plot8_right_y_axe_for_T_49(ax49,0) # 
                
-
-
     # plot52_delta_CO2_red_bars, Mauna Loa delta ,  plot_9_create_all_plots() ,   line 630
-
-    # part 5.2 plot52_delta_CO2_red_bars
-    # part 5.3 plot53_CO2_orange2025
-    # part 5.4 plot54_Glen_delta_on
     # -----------------------------
     # part 5.2 plot52_delta_CO2_red_bars
     # 5.2.2 ΔCO₂ berechnen (per pandas) Balken
@@ -1225,14 +1227,20 @@ def plot_9_create_all_plots(ax1, data):
 
 
     if play_60_T_E > 0:
-        ax60 = ax1.twinx()
-        ax60.plot(data['ceres_60']["decimal_year"], data['ceres_60']["T_E"], '-', 
+       if line2_play == 60:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['ceres_60']["decimal_year"], data['ceres_60']["T_E"], '-', 
+                             label="EEI K60", color=c60, linewidth=2)
+           # The left axis is already configured in plot_1_axe
+       else:
+         ax60 = ax1.twinx()
+         ax60.plot(data['ceres_60']["decimal_year"], data['ceres_60']["T_E"], '-', 
                   label="EEI K60", color=c60, linewidth=2)
-        ax60.tick_params(axis="y", labelcolor=c60)
-        ax60.set_ylim(y_60min, y_60max)
-        if print_debug > 9:
-           print(f"plot_969: ax60 60.8 ={play_60_T_E}")
-        if play_60_T_E > 2:
+         ax60.tick_params(axis="y", labelcolor=c60)
+         ax60.set_ylim(y_60min, y_60max)
+         if print_debug > 9:
+           print(f"plot_1242: ax60 60.8 ={play_60_T_E}")
+         if play_60_T_E > 2 and line2_play != 60:
            plot8_right_y_axe_for_C_60( ax60 , 0 ) # 60.4 line 967
 
 
