@@ -82,9 +82,39 @@ def process_ceres_data():
            df60g.to_csv("work/60g_T_E.csv", index=False, float_format='%.6f')
            if print_debug > 9:
               print(f"main__84: create work/60g_T_E.csv   60    ={play_60_T_E}")
-        # 60.24 add the temperature for every month, some averaging  done for play_60_T_E=2,3,4,5,6,7,8,9,10,11
+       # 60.23 add the temperature for every month, some averaging  done for play_60_T_E=2,3,4,5,6,7,8,9,10,11
        elif play_60_T_E < 12: # prints for 11
-           print(f"main__86: play_60_T_E=2,3,4,5,6,7,8,9,10,11  60.25    ={play_60_T_E}")
+           print(f"main__86: play_60_T_E= 3,4,5,6,7,8,9,10,11  60.25    ={play_60_T_E}")
+           # 60.23  CERES.csv (perform averaging)
+           use_center=False
+           columnname ='EEI36'
+           column_read    ='EEI'
+           column_average ='EEI36'
+           # 60.27  CERES.csv (perform running average over play_60_T_E months)
+           df60c = create66_running_average( 'work/60b_EEI.csv', 
+                                         'work/60c_T_E.csv',
+                                          column_read,             #  column_name='EEI')
+                                          column_average,          #  column_name='EEI36')
+                                          columnname,              #  column_name='EEI36')
+                                            window_months=play_60_T_E,
+                                            min_periods=play_60_T_E-1,
+                                            center=use_center,
+                                            column_name=columnname)
+           # 60.29 read above created CSV-file
+           df60g = pd.read_csv("work/60c_T_E.csv")
+           # 60.31
+           df60g["T_E"] = (
+              df60g["EEI36"]
+              .where(df60g["year"] >= a60_start)
+              .cumsum()
+              * factor          # factor = 0.00208 to convert it to °C
+              + a60_offset      # add offset 0.2°C at start of adding
+           )
+           # 60.33. store 62g*csv to print it later, or copy it and use for other plots
+           df60g.to_csv("work/60g_T_E.csv", index=False, float_format='%.6f')
+           if print_debug > 9:
+              print(f"main_116: create work/60g_T_E.csv   60    ={play_60_T_E}")
+
        # 60.32 add the temperature for every month, some averaging  done for play_60_T_E=2,3,4,5,6,7,8,9,10,11
        else: 
            # 60.33  CERES.csv (perform averaging)
