@@ -1,5 +1,5 @@
 # main.py
-v = "5M16" # line4_play = 67
+v = "5M17" # line4_play = 67
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
