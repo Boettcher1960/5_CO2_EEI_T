@@ -1,5 +1,5 @@
 # main.py
-v = "5M12" # new file ceres.py 
+v = "5M13" # line4_play = 67
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -29,62 +29,6 @@ from ceres import *
 if print_debug > 9:
    print("")
    print("main_030: start main ", line2_play , line3_play , line4_play)
-
-
-
-# part 67.1 create work/_CERES_raw.csv with 13 columns
-# https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
-# 67.2 copy to read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
-# 67.6 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt
-# 67.7 copy to read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
-# 67.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
-# 67.11 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
-# 67.15 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
-# 67.16 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
-# part 67.31 write df2 to  work/_CERES_raw.csv'
-# main.play_67_albedo line 176
-if play_67_albedo > 0: #       
-       # part 67.1 to part 67.32 read 
-       df67b = ceres67_to_csv(      'work/_67b_sw_out.csv',  # output1 not used
-                                    'work/_CERES_raw.csv')   # output 2 used a lot
-       # part 67.33 print
-       if print_debug > 19:
-          print(f"main_208: _CERES_raw.csv 67.b play_67_albedo={play_67_albedo}")
-
-       # part 67.34 set some variables
-       window_months=play_67_albedo
-
-       if play_67_albedo > 11:
-          min1_periods=12
-       else:
-          min1_periods=play_67_albedo
-       use_center=False
-       keep_original=True,
-       column_read    ='ASR'
-       column_average ='ASR48'
-       # part 66.35  CERES.csv (perform averaging for ASR)
-       df67c = create67_running_average( 'work/_CERES_raw.csv', 
-                                         'work/_CERES_ASR.csv',
-                                          column_read,             #  column_name='ASR')
-                                          column_average,          #  column_name='ASR48')
-                                            window_months=play_67_albedo,
-                                            min_periods=12,
-                                            center=use_center)
-       column_read    ='albedo'
-       column_average ='albedo48'
-       # part 67.37  CERES.csv (perform averaging for albedo)
-       df67d = create67_running_average( 'work/_CERES_raw.csv', 
-                                         'work/_CERES_albedo.csv',
-                                                column_read,             #  column_name='albedo')
-                                                column_average,          #  column_name='albedo48')
-                                                window_months=play_67_albedo,
-                                                min_periods=12,
-                                                center=use_center)
-
-        # part 66.58
-       if print_debug > 9:
-          print(f"main_242:  done play_67_albedo={play_67_albedo}")
 
 
 # 68.12 the main.py part line 266
