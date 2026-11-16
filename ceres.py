@@ -2,6 +2,7 @@
 
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+from matplotlib.ticker import MultipleLocator
 import pandas as pd
 import numpy as np
 import os
@@ -626,7 +627,7 @@ def fig_404_eei_quadratic():
     else:
         quadratic_r_squared = linear_r_squared = float("nan")
 
-    fig, ax = plt.subplots(figsize=(13, 7))
+    fig, ax = plt.subplots(figsize=(13, 9))
     ax.plot(
         plot_data["date"],
         plot_data["EEI"],
@@ -704,6 +705,11 @@ def fig_404_eei_quadratic():
     ax.set_xlabel("year", fontsize=16, fontweight="black")
     ax.set_ylabel("EEI (W/m²)", fontsize=16, fontweight="bold")
     ax.tick_params(axis="y", labelsize=12)
+    ax.yaxis.set_minor_locator(MultipleLocator(0.05))
+    ax.tick_params(
+        axis="y", which="minor",
+        left=False, right=False, labelleft=False, labelright=False,
+    )
     for label in ax.get_yticklabels():
         label.set_fontweight("normal")
     ax.set_ylim(y_61min, y_61max)
@@ -717,7 +723,8 @@ def fig_404_eei_quadratic():
     for label in ax.xaxis.get_minorticklabels():
         label.set_fontweight("normal")
         label.set_fontsize(9)
-    ax.grid(True, axis="y", which="major", alpha=0.3)
+    ax.grid(True, axis="y", which="major", alpha=0.5, linewidth=2.0)
+    ax.grid(True, axis="y", which="minor", color="black", alpha=0.45, linewidth=0.5)
     ax.grid(True, axis="x", which="major", alpha=0.55, linewidth=1.5)
     ax.grid(True, axis="x", which="minor", alpha=0.3, linewidth=0.7)
     ax.tick_params(axis="x", which="minor", labelbottom=True)
