@@ -1,5 +1,5 @@
 # main.py
-v = "5M03" # deleted old files
+v = "5M04" # work on 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -39,6 +39,7 @@ def process_ceres_data():
     # Earth Energy Accumulated EEA is sum of EEI
     if play_60_T_E > 1: #  
        # 60.11 convert download.txt to CERES.csv (no averaging)
+       print(f"main__42: play_60_T_E=1    60.11    ={play_60_T_E}")
        df60b = convert62_txt_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
                                       'work/60b_EEI.csv',
                                       'EEI'          )
@@ -49,7 +50,7 @@ def process_ceres_data():
        #                       a60_offset = 0.2 # add offset 0.2°C at start of adding
        #
        # 60.14 add the temperature for every month, no averaging is done for play_60_T_E=1
-       print(f"main__52: play_60_T_E=1    60.25    ={play_60_T_E}/n")
+       print(f"main__53: play_60_T_E=1    60.25    ={play_60_T_E}")
        if play_60_T_E < 2: # may be does not work
            print(f"main__54: play_60_T_E=1    60.25    ={play_60_T_E}")
            # 60.15 read csv produced in 60.11
@@ -64,7 +65,7 @@ def process_ceres_data():
                     )
         # 60.24 add the temperature for every month, some averaging  done for play_60_T_E=2,3,4,5,6,7,8,9,10,11
        elif play_60_T_E < 12: # may be does not work
-           print(f"main__67: play_60_T_E=2,3,4,5,6,7,8,9,10,11  60.25    ={play_60_T_E}")
+           print(f"main__68: play_60_T_E=2,3,4,5,6,7,8,9,10,11  60.25    ={play_60_T_E}")
        # 60.32 add the temperature for every month, some averaging  done for play_60_T_E=2,3,4,5,6,7,8,9,10,11
        else: 
            # 60.33  CERES.csv (perform averaging)
@@ -95,7 +96,7 @@ def process_ceres_data():
            # 60.43. store 62g*csv to print it later, or copy it and use for other plots
            df60g.to_csv("work/60g_T_E.csv", index=False, float_format='%.6f')
            if print_debug > 9:
-              print(f"main__98: create work/60g_T_E.csv   60    ={play_60_T_E}")
+              print(f"main__99: create work/60g_T_E.csv   60    ={play_60_T_E}")
 
     # main.play_61_EEI line 65
     if play_61_EEI > 0: # 61.10
