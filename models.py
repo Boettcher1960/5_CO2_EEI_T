@@ -1070,6 +1070,13 @@ x_end = 2024 in the headline
 
 add to figure404 the linear fit
 
+
+write more comments in the code for
+fig_404_eei_quadratic():
+always start with the comment with
+# 402.11 comment 1
+# 402.12 comment 3
+# 402.15 call the running average function with figure404 month averaging    
 """
 
 
