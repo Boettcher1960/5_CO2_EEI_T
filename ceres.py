@@ -553,3 +553,101 @@ def fig_202_era5_temp_quadratic():
     plt.close(fig)
 
 
+def fig_404_eei_quadratic():
+    """Plot the 12-month CERES EEI series with a quadratic fit."""
+    if play_61_EEI != 12:
+        raise ValueError(
+            "Figure 404 requires play_61_EEI = 12 to match work/61c_out_EEI.csv."
+        )
+
+    input_path = "work/61c_out_EEI.csv"
+    output_path = "work/figure404_EEI_quadratic.png"
+    data = pd.read_csv(input_path)
+    required_columns = {"date", "EEI"}
+    missing_columns = required_columns.difference(data.columns)
+    if missing_columns:
+        raise ValueError(
+            f"{input_path} is missing required columns: "
+            f"{', '.join(sorted(missing_columns))}"
+        )
+
+    plot_data = data.loc[:, ["date", "EEI"]].copy()
+    plot_data["date"] = pd.to_datetime(plot_data["date"], errors="raise")
+    plot_data["EEI"] = pd.to_numeric(plot_data["EEI"], errors="raise")
+    plot_data = (
+        plot_data.dropna(subset=["date", "EEI"])
+        .sort_values("date")
+        .reset_index(drop=True)
+    )
+    if len(plot_data) < 3:
+        raise ValueError(
+            "At least three valid EEI observations are required for a quadratic fit."
+        )
+
+    plot_data["decimal_year"] = (
+        plot_data["date"].dt.year
+        + (plot_data["date"].dt.dayofyear - 1)
+        / np.where(plot_data["date"].dt.is_leap_year, 366, 365)
+    )
+    x = plot_data["decimal_year"] - 2000
+    coefficients = np.polyfit(x, plot_data["EEI"], 2)
+    plot_data["quadratic_fit"] = np.polyval(coefficients, x)
+    residual_sum_squares = np.sum(
+        (plot_data["EEI"] - plot_data["quadratic_fit"]) ** 2
+    )
+    total_sum_squares = np.sum((plot_data["EEI"] - plot_data["EEI"].mean()) ** 2)
+    r_squared = (
+        1 - residual_sum_squares / total_sum_squares
+        if total_sum_squares > 0
+        else float("nan")
+    )
+
+    fig, ax = plt.subplots(figsize=(13, 7))
+    ax.plot(
+        plot_data["date"],
+        plot_data["EEI"],
+        color="#b22222",
+        linewidth=1.8,
+        label="CERES EEI 12-month average",
+    )
+    ax.plot(
+        plot_data["date"],
+        plot_data["quadratic_fit"],
+        color="#1f4e79",
+        linestyle="--",
+        linewidth=2.5,
+        label="Quadratic fit",
+    )
+    ax.text(
+        0.02,
+        0.98,
+        (
+            f"EEI = {coefficients[0]:.6f}(year - 2000)^2 "
+            f"{coefficients[1]:+.6f}(year - 2000) "
+            f"{coefficients[2]:+.6f} W/m²\n"
+            f"R² = {r_squared:.4f}"
+        ),
+        transform=ax.transAxes,
+        va="top",
+        bbox={"facecolor": "white", "alpha": 0.9, "edgecolor": "#777777"},
+    )
+    ax.set_title("CERES Earth Energy Imbalance (12-month average)")
+    ax.set_xlabel("Year")
+    ax.set_ylabel("EEI (W/m²)")
+    ax.grid(True, alpha=0.3)
+    ax.legend(loc="best")
+    fig.autofmt_xdate()
+    fig.tight_layout()
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    fig.savefig(output_path, dpi=300, bbox_inches="tight")
+
+    print(
+        "Figure 404 quadratic fit: "
+        f"EEI = {coefficients[0]:.9f}(year - 2000)^2 "
+        f"{coefficients[1]:+.9f}(year - 2000) "
+        f"{coefficients[2]:+.9f} W/m²; R² = {r_squared:.6f}"
+    )
+    print(f"Saved Figure 404 to {output_path}")
+    plt.show()
+    plt.close(fig)
+
