@@ -1,5 +1,5 @@
 # main.py
-v = "5M02" # deleted old files
+v = "5M03" # deleted old files
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -33,12 +33,76 @@ if print_debug > 9:
 
 def process_ceres_data():
     """Process CERES data based on configuration"""
+    print(f"main__36: play_60_T_E=1    60.00    ={play_60_T_E}")
+    print(f"")
+    # play_60_T_E = 48    # add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
+    # Earth Energy Accumulated EEA is sum of EEI
+    if play_60_T_E > 1: #  
+       # 60.11 convert download.txt to CERES.csv (no averaging)
+       df60b = convert62_txt_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
+                                      'work/60b_EEI.csv',
+                                      'EEI'          )
+       # 60.12. summ the averaged column "EEI36" and store it in new column 'T_A'
+       # 60.    Piers Forster: An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming.
+       factor = 0.00208  #     then multiplied by a constant 0.00208 to convert it to °C. 
+       #                       a60_start = 2005
+       #                       a60_offset = 0.2 # add offset 0.2°C at start of adding
+       #
+       # 60.14 add the temperature for every month, no averaging is done for play_60_T_E=1
+       print(f"main__52: play_60_T_E=1    60.25    ={play_60_T_E}/n")
+       if play_60_T_E < 2: # may be does not work
+           print(f"main__54: play_60_T_E=1    60.25    ={play_60_T_E}")
+           # 60.15 read csv produced in 60.11
+           df60g = pd.read_csv("work/60b_EEI.csv")
+           # 60.16 read csv produced in 60.11
+           df60g["T_E"] = (
+                     df60g["EEI"]       # df60g["EEI36"]
+                     .where(df60g["year"] >= a60_start)
+                     .cumsum()
+                     * factor          # factor = 0.00208 to convert it to °C
+                     + a60_offset      # add offset 0.2°C at start of adding
+                    )
+        # 60.24 add the temperature for every month, some averaging  done for play_60_T_E=2,3,4,5,6,7,8,9,10,11
+       elif play_60_T_E < 12: # may be does not work
+           print(f"main__67: play_60_T_E=2,3,4,5,6,7,8,9,10,11  60.25    ={play_60_T_E}")
+       # 60.32 add the temperature for every month, some averaging  done for play_60_T_E=2,3,4,5,6,7,8,9,10,11
+       else: 
+           # 60.33  CERES.csv (perform averaging)
+           use_center=False
+           columnname ='EEI36'
+           column_read    ='EEI'
+           column_average ='EEI36'
+           # 60.37  CERES.csv (perform running average over play_60_T_E months)
+           df60c = create66_running_average( 'work/60b_EEI.csv', 
+                                         'work/60c_T_E.csv',
+                                          column_read,             #  column_name='EEI')
+                                          column_average,          #  column_name='EEI36')
+                                          columnname,              #  column_name='EEI36')
+                                            window_months=play_60_T_E,
+                                            min_periods=12,
+                                            center=use_center,
+                                            column_name=columnname)
+           # 60.39 read above created CSV-file
+           df60g = pd.read_csv("work/60c_T_E.csv")
+           # 60.41
+           df60g["T_E"] = (
+              df60g["EEI36"]
+              .where(df60g["year"] >= a60_start)
+              .cumsum()
+              * factor          # factor = 0.00208 to convert it to °C
+              + a60_offset      # add offset 0.2°C at start of adding
+           )
+           # 60.43. store 62g*csv to print it later, or copy it and use for other plots
+           df60g.to_csv("work/60g_T_E.csv", index=False, float_format='%.6f')
+           if print_debug > 9:
+              print(f"main__98: create work/60g_T_E.csv   60    ={play_60_T_E}")
+
     # main.play_61_EEI line 65
-    if play_61_EEI > 0: # part 6 
+    if play_61_EEI > 0: # 61.10
        df61b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
                                     'work/61b_out_in_ceres.csv')
        if print_debug > 9:
-          print(f"main_067: create work/61b_out_in_ceres.csv'  61.b ={play_61_EEI}")
+          print(f"main_104: create work/61b_out_in_ceres.csv'  61.b ={play_61_EEI}")
        
        window_months=play_61_EEI
 
@@ -57,60 +121,7 @@ def process_ceres_data():
                                             column_name='EEI')
         
        if print_debug > 9:
-          print(f"main_086: create work/61c_out_EEI.csv  61.gut ={play_61_EEI}")
-
-
-    # play_60_T_E = 48    # add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
-    # Earth Energy Accumulated EEA is sum of EEI
-    if play_60_T_E > 1: #  
-       # 60.11 convert download.txt to CERES.csv (no averaging)
-       df60b = convert62_txt_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
-                                      'work/60b_EEI.csv',
-                                      'EEI'          )
-       # 60.33  CERES.csv (perform averaging)
-       use_center=False
-       columnname ='EEI36'
-       column_read    ='EEI'
-       column_average ='EEI36'
-       # 60.37  CERES.csv (perform running average over play_60_T_E months)
-       df60c = create66_running_average( 'work/60b_EEI.csv', 
-                                         'work/60c_T_E.csv',
-                                          column_read,             #  column_name='EEI')
-                                          column_average,          #  column_name='EEI36')
-                                          columnname,              #  column_name='EEI36')
-                                            window_months=play_60_T_E,
-                                            min_periods=12,
-                                            center=use_center,
-                                            column_name=columnname)
-       # 60.51. read above created CSV-file
-       df60g = pd.read_csv("work/60c_T_E.csv")
-
-       # 60.52. summ the averaged column "EEI36" and store it in new column 'T_A'
-       # 60.53 Piers Forster: An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming.
-       factor = 0.00208  #     then multiplied by a constant 0.00208 to convert it to °C. 
-       # a60_start = 2005
-       # a60_offset = 0.2 # add offset 0.2°C at start of adding
-       if play_60_T_E < 2: # may be does not work
-          df60g["T_E"] = (
-              df60g["EEI"]       # df60g["EEI36"]
-              .where(df60g["year"] >= a60_start)
-              .cumsum()
-              * factor          # factor = 0.00208 to convert it to °C
-              + a60_offset      # add offset 0.2°C at start of adding
-             )
-       if play_60_T_E > 2:
-          df60g["T_E"] = (
-              df60g["EEI36"]
-              .where(df60g["year"] >= a60_start)
-              .cumsum()
-              * factor          # factor = 0.00208 to convert it to °C
-              + a60_offset      # add offset 0.2°C at start of adding
-           )
-       # 60.53. store 62g*csv to print it later, or copy it and use for other plots
-       df60g.to_csv("work/60g_T_E.csv", index=False, float_format='%.6f')
-       if print_debug > 9:
-          print(f"main_104: create work/60g_T_E.csv   60    ={play_60_T_E}")
-
+          print(f"main_123: create work/61c_out_EEI.csv  61.gut ={play_61_EEI}")
 
     # Earth Energy Accumulated EEA is sum of EEI
     if play_62_EEA > 1: #  
