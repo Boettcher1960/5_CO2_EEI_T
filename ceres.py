@@ -723,8 +723,10 @@ def fig_404_eei_quadratic():
     for label in ax.xaxis.get_minorticklabels():
         label.set_fontweight("normal")
         label.set_fontsize(9)
-    ax.grid(True, axis="y", which="major", alpha=0.5, linewidth=2.0)
-    ax.grid(True, axis="y", which="minor", color="black", alpha=0.45, linewidth=0.5)
+    mcolor="#9F2044"
+    ax.grid(True, axis="y", which="major", color=mcolor, alpha=0.4, linewidth=1.3)
+    ax.grid(True, axis="y", which="minor", color="black", alpha=0.25, linewidth=0.5)
+
     ax.grid(True, axis="x", which="major", alpha=0.55, linewidth=1.5)
     ax.grid(True, axis="x", which="minor", alpha=0.3, linewidth=0.7)
     ax.tick_params(axis="x", which="minor", labelbottom=True)
