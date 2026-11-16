@@ -79,7 +79,7 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
     elif line2_play == 60   :
-        header = f"Temperature in °C  calculated from EEI       Plot {x_anf} to {x_end}."
+        header = f"Globale Warming  - - Temperature in °C  calculated from EEI - - years {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                                 transform=ax1.transAxes)
     elif line2_play == 61   :
