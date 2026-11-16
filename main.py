@@ -1,5 +1,5 @@
 # main.py
-v = "5M13" # line4_play = 67
+v = "5M14" # line4_play = 67
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -31,29 +31,6 @@ if print_debug > 9:
    print("main_030: start main ", line2_play , line3_play , line4_play)
 
 
-# 68.12 the main.py part line 266
-if play68_ERA > 0: #       
-       if print_debug > 9:
-          print(f"main_248:  68.13 play68_ERA={play68_ERA}")
-
-       # part 68.13 set some variables
-       window_months=play68_ERA
-       if play68_ERA > 11:
-          min1_periods=12
-       else:
-          min1_periods=play68_ERA
-       use_center=False
-       column_read    ='ano_91-20'
-       column_average ='temp_average'
-       # part 68.15  call create68_running_average for global era5 temperatue)
-       # df68c = create68_running_average( 'work/_68_era5_daily_series_2026_10_13.csv', 
-       df68c = create68_running_average( 'work/68_era5_daily_series_2026_10_30.csv', 
-                                         'work/_68_out.csv',
-                                          column_read,             #  column_name='ano_91-20')
-                                          column_average,          #  column_name='temp_average')
-                                            window_months=play68_ERA,
-                                            min_periods=12,
-                                            center=use_center)
 if play69_AA > 1:                                       # 69.20  main.py   line 267  if play69_AA > 1: 
        df69b = convert62_txt_to_csv( play69_AA_in,      # 69.22    input file
                                     'work/69b_AA.csv',  # 69.23    'work/69b_AA.csv') // output file

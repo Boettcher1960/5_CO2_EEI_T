@@ -335,8 +335,8 @@ def ceres_process_data():
           print(f"ceres242:  done play_67_albedo={play_67_albedo}")
 
 
-# 68.12 the main.py part line 266
-if play68_ERA > 0: #       
+    # 68.12 the main.py part line 266
+    if play68_ERA > 0: #       
        if print_debug > 9:
           print(f"ceres248:  68.13 play68_ERA={play68_ERA}")
 
