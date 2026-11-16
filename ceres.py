@@ -358,7 +358,7 @@ def ceres_process_data():
                                             window_months=play68_ERA,
                                             min_periods=12,
                                             center=use_center)
-if play69_AA > 1:                                       # 69.20  main.py   line 267  if play69_AA > 1: 
+    if play69_AA > 1:                                       # 69.20  main.py   line 267  if play69_AA > 1: 
        df69b = convert62_txt_to_csv( play69_AA_in,      # 69.22    input file
                                     'work/69b_AA.csv',  # 69.23    'work/69b_AA.csv') // output file
                                     'AlbedoA')          # 69.24  'AlbedoA' is new column in 69b_AA.csv'

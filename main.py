@@ -1,5 +1,5 @@
 # main.py
-v = "5M14" # line4_play = 67
+v = "5M15" # line4_play = 67
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -29,32 +29,6 @@ from ceres import *
 if print_debug > 9:
    print("")
    print("main_030: start main ", line2_play , line3_play , line4_play)
-
-
-if play69_AA > 1:                                       # 69.20  main.py   line 267  if play69_AA > 1: 
-       df69b = convert62_txt_to_csv( play69_AA_in,      # 69.22    input file
-                                    'work/69b_AA.csv',  # 69.23    'work/69b_AA.csv') // output file
-                                    'AlbedoA')          # 69.24  'AlbedoA' is new column in 69b_AA.csv'
-       if print_debug > 9:
-          print(f"main_273: create albedo work/69b_AA.csv  69.25 ={play69_AA}")
-       
-       window_months=play69_AA                          # 69.26
-       min_periods=12                                   # 69.27
-       use_center=False                                 # 69.28
-       keep_original=True,                              # 69.29
-       column_read    ='AlbedoA'                        # 69.30 input column name
-       column_average ='AA12'                           # 69.31 output column name for average  
-       df69c = create67_running_average( 'work/69b_AA.csv',   # 69.32 input file name   part 67.37
-                                         'work/69c_AA.csv',   # 69.33 output file name
-                                            column_read,      # 69.34  column_name='AlbedoA')
-                                          column_average,     # 69.35  column_name='AA')
-                                          window_months=play69_AA, # 69.36  
-                                          min_periods=1,     # 69.37    min_periods=12 was ok
-                                          center=use_center) # 69.38  # end part 67.51
-       if print_debug > 9:
-          print(f"main_289:   part 69.52   play69_AA   ={play69_AA}")
-
-
 
 
 def hide_other_right_axes(ax1, keep_axis):

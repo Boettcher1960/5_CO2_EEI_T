@@ -373,8 +373,8 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
         text_4_add_text(ax1, tr2x, tr3y, text74, c74, trs)
     elif linear_41_75 == 3: # 75.6
-            text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c75)
-            text_4_add_text(ax1, tr2x, tr3y, text75, c75, trs)
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c75)
+        text_4_add_text(ax1, tr2x, tr3y, text75, c75, trs)
     elif plot76_my_T == 3: # 76.5.3 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c76)
         text_4_add_text(ax1, tr2x, tr3y, text76, c76, trs)
@@ -479,6 +479,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                 text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c68)
                 p68_text = f"Temperature in °C climate.copernicus.eu/datasets/-era5-single-levels   {play68_ERA} days    68"
                 text_4_add_text(ax1, tr2x, tr4y, p68_text, c68, trs)
+    elif play69_AA > 0 and line4_play == 69:  # 69.85 write text in line 3 text.py line 347
+            text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c69)
+            p69_text = f"AA    Albedo Anomaly in  [W/m²]     sw out / sw in          moving average {play69_AA} month    69"
+            text_4_add_text(ax1, tr2x, tr4y, p69_text, c69, trs) 
     elif plot71_temperature == 4:  
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c71)
         text_4_add_text(ax1, tr2x, tr4y, text71, c71, trs)
