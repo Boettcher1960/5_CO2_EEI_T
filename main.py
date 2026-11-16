@@ -1,5 +1,5 @@
 # main.py
-v = "5K99" # line4_play = 60
+v = "5M01" # line4_play = 60
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -65,7 +65,7 @@ def process_ceres_data():
     if play_60_T_E > 1: #  
        # 60.11 convert download.txt to CERES.csv (no averaging)
        df60b = convert62_txt_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
-                                      'work/60b_EEA.csv',
+                                      'work/60b_EEI.csv',
                                       'EEI'          )
        # 60.33  CERES.csv (perform averaging)
        use_center=False
@@ -73,7 +73,7 @@ def process_ceres_data():
        column_read    ='EEI'
        column_average ='EEI36'
        # 60.37  CERES.csv (perform running average over play_60_T_E months)
-       df60c = create66_running_average( 'work/60b_EEA.csv', 
+       df60c = create66_running_average( 'work/60b_EEI.csv', 
                                          'work/60c_T_E.csv',
                                           column_read,             #  column_name='EEI')
                                           column_average,          #  column_name='EEI36')
