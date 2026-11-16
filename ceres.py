@@ -31,7 +31,7 @@ from Rovang import *
 
 
 
-def process_ceres_data():
+def ceres_process_data():
     """Process CERES data based on configuration"""
     print(f"ceres_36: play_60_T_E=1    60.00    ={play_60_T_E}")
     print(f"")

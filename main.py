@@ -1,5 +1,5 @@
 # main.py
-v = "5M08" # new file ceres.py 
+v = "5M09" # new file ceres.py 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -487,10 +487,10 @@ def main():
                        f"{linear_41_75}{plot76_my_T}")
     
     if print_debug > 9:
-       print("main_431: begin ", header_parameter)
+       print("main_490: begin ", header_parameter)
 
     # Process CERES data
-    process_ceres_data()
+    ceres_process_data()
     
     # Setup figure
     fig, ax1 = setup_figure(scale_mode)
