@@ -559,22 +559,15 @@ def fig_202_era5_temp_quadratic():
 def fig_404_eei_quadratic():
     """Plot the selected CERES EEI running average with a quadratic fit."""
 
-    if figure404 == 24: play_61_EEI = 24
-    if figure404 == 48: play_61_EEI = 48
-
     if figure404 not in (12, 24, 48):
         raise ValueError("Figure 404 must be set to 12, 24, or 48.")
-    if play_61_EEI != figure404:
-        raise ValueError(
-            f"Figure 404 is set to {figure404}, but play_61_EEI is "
-            f"{play_61_EEI}; set both to the same value (12, 24, or 48)."
-        )
 
+    window_months = figure404
     min1_periods = 12
     use_center=False
     df404c = create_running_average( 'work/61b_out_in_ceres.csv', 
                                      'work/404c_out_EEI.csv',
-                                            window_months=play_61_EEI,
+                                            window_months=window_months,
                                             min_periods=min1_periods,
                                             center=use_center,
                                             column_name='EEI')
@@ -600,9 +593,13 @@ def fig_404_eei_quadratic():
         .sort_values("date")
         .reset_index(drop=True)
     )
+    plot_data = plot_data.loc[
+        plot_data["date"].dt.year.between(x_anf, x_end)
+    ].reset_index(drop=True)
     if len(plot_data) < 3:
         raise ValueError(
-            "At least three valid EEI observations are required for a quadratic fit."
+            f"At least three valid EEI observations from {x_anf} through "
+            f"{x_end} are required for a quadratic fit."
         )
 
     plot_data["decimal_year"] = (
@@ -610,7 +607,7 @@ def fig_404_eei_quadratic():
         + (plot_data["date"].dt.dayofyear - 1)
         / np.where(plot_data["date"].dt.is_leap_year, 366, 365)
     )
-    x = plot_data["decimal_year"] - 2000
+    x = plot_data["decimal_year"] - x_anf
     coefficients = np.polyfit(x, plot_data["EEI"], 2)
     plot_data["quadratic_fit"] = np.polyval(coefficients, x)
     residual_sum_squares = np.sum(
@@ -629,7 +626,7 @@ def fig_404_eei_quadratic():
         plot_data["EEI"],
         color="#b22222",
         linewidth=1.8,
-        label=f"CERES EEI {figure404}-month average",
+        label=f"CERES EEI {window_months}-month average",
     )
     ax.plot(
         plot_data["date"],
@@ -643,8 +640,8 @@ def fig_404_eei_quadratic():
         0.02,
         0.98,
         (
-            f"EEI = {coefficients[0]:.6f}(year - 2000)^2 "
-            f"{coefficients[1]:+.6f}(year - 2000) "
+            f"EEI = {coefficients[0]:.6f}(year - {x_anf})^2 "
+            f"{coefficients[1]:+.6f}(year - {x_anf}) "
             f"{coefficients[2]:+.6f} W/m²\n"
             f"R² = {r_squared:.4f}"
         ),
@@ -652,11 +649,15 @@ def fig_404_eei_quadratic():
         va="top",
         bbox={"facecolor": "white", "alpha": 0.9, "edgecolor": "#777777"},
     )
-    ax.set_title(f"CERES Earth Energy Imbalance ({figure404}-month average)")
+    ax.set_title(f"CERES Earth Energy Imbalance ({window_months}-month average)")
     ax.set_xlabel("Year")
     ax.set_ylabel("EEI (W/m²)")
     ax.grid(True, alpha=0.3)
     ax.legend(loc="best")
+    ax.set_xlim(
+        pd.Timestamp(year=x_anf, month=1, day=1),
+        pd.Timestamp(year=x_end, month=12, day=31),
+    )
     fig.autofmt_xdate()
     fig.tight_layout()
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -664,8 +665,8 @@ def fig_404_eei_quadratic():
 
     print(
         "Figure 404 quadratic fit: "
-        f"EEI = {coefficients[0]:.9f}(year - 2000)^2 "
-        f"{coefficients[1]:+.9f}(year - 2000) "
+        f"EEI = {coefficients[0]:.9f}(year - {x_anf})^2 "
+        f"{coefficients[1]:+.9f}(year - {x_anf}) "
         f"{coefficients[2]:+.9f} W/m²; R² = {r_squared:.6f}"
     )
     print(f"Saved Figure 404 to {output_path}")

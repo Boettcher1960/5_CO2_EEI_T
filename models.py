@@ -1053,7 +1053,10 @@ figure404 = 12 # 12=create a separate quadratic-fit figure for play_61_EEI = 12
 figure404 = 24 # 24=create a separate quadratic-fit figure for play_61_EEI = 24
 figure404 = 48 # 48=create a separate quadratic-fit figure for play_61_EEI = 48
 
-4=create a separate quadratic-fit figure for play_61_EEI = 12
+modify figure404 to start in the year 2005
+x_anf = 2005
+and end in the year 2024
+x_end = 2024 
 
 
 """
