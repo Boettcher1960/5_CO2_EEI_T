@@ -628,11 +628,12 @@ def fig_404_eei_quadratic():
         quadratic_r_squared = linear_r_squared = float("nan")
 
     fig, ax = plt.subplots(figsize=(13, 9))
+    # 404.67 the red line for EEI averaged
     ax.plot(
         plot_data["date"],
         plot_data["EEI"],
-        color="#b22222",
-        linewidth=1.8,
+        color="#b22222",  
+        linewidth=3.5,
         label=f"CERES EEI {window_months}-month average",
     )
     ax.plot(
