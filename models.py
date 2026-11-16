@@ -1048,6 +1048,14 @@ this is file work/61c_out_EEI.csv column EEI
 print the quadratic equation for EEI inside figure404
 
 
+modify the figure404 for
+figure404 = 12 # 12=create a separate quadratic-fit figure for play_61_EEI = 12
+figure404 = 24 # 24=create a separate quadratic-fit figure for play_61_EEI = 24
+figure404 = 48 # 48=create a separate quadratic-fit figure for play_61_EEI = 48
+
+4=create a separate quadratic-fit figure for play_61_EEI = 12
+
+
 """
 
 

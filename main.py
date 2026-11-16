@@ -1,5 +1,6 @@
 # main.py
-v = "5M19" # make a separate new figure404 for play_61_EEI = 12 this is file work/61c_out_EEI.csv column EEI print the quadratic equation for EEI inside figure404
+v = "5M20" # make a separate new figure404 for play_61_EEI = 12 this is file work/61c_out_EEI.csv column EEI 
+#            print the quadratic equation for EEI inside figure404
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -174,12 +175,14 @@ def run_optional_figures():
         Figure_303()
     elif figure303 == 4:
         Figure_304()
-    if figure404 == 4:
+    if figure404 in (12, 24, 48):
         fig_404_eei_quadratic()
 
 def main():
     """Main execution function"""
     if figure100 == 0:
+        if figure404 in (12, 24, 48):
+            ceres_process_data()
         run_optional_figures()
         return
 

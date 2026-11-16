@@ -552,16 +552,37 @@ def fig_202_era5_temp_quadratic():
     # 200.36 close the figure to free up memory
     plt.close(fig)
 
-
+# 404.10 make a separate new figure404 for
+#        play_61_EEI = 12
+#        this is file work/61c_out_EEI.csv column EEI
+#        print the quadratic equation for EEI inside figure404
 def fig_404_eei_quadratic():
-    """Plot the 12-month CERES EEI series with a quadratic fit."""
-    if play_61_EEI != 12:
+    """Plot the selected CERES EEI running average with a quadratic fit."""
+
+    if figure404 == 24: play_61_EEI = 24
+    if figure404 == 48: play_61_EEI = 48
+
+    if figure404 not in (12, 24, 48):
+        raise ValueError("Figure 404 must be set to 12, 24, or 48.")
+    if play_61_EEI != figure404:
         raise ValueError(
-            "Figure 404 requires play_61_EEI = 12 to match work/61c_out_EEI.csv."
+            f"Figure 404 is set to {figure404}, but play_61_EEI is "
+            f"{play_61_EEI}; set both to the same value (12, 24, or 48)."
         )
 
-    input_path = "work/61c_out_EEI.csv"
-    output_path = "work/figure404_EEI_quadratic.png"
+    min1_periods = 12
+    use_center=False
+    df404c = create_running_average( 'work/61b_out_in_ceres.csv', 
+                                     'work/404c_out_EEI.csv',
+                                            window_months=play_61_EEI,
+                                            min_periods=min1_periods,
+                                            center=use_center,
+                                            column_name='EEI')
+
+
+
+    input_path = "work/404c_out_EEI.csv"
+    output_path = f"work/figure404_EEI_{figure404}month_quadratic.png"
     data = pd.read_csv(input_path)
     required_columns = {"date", "EEI"}
     missing_columns = required_columns.difference(data.columns)
@@ -608,7 +629,7 @@ def fig_404_eei_quadratic():
         plot_data["EEI"],
         color="#b22222",
         linewidth=1.8,
-        label="CERES EEI 12-month average",
+        label=f"CERES EEI {figure404}-month average",
     )
     ax.plot(
         plot_data["date"],
@@ -631,7 +652,7 @@ def fig_404_eei_quadratic():
         va="top",
         bbox={"facecolor": "white", "alpha": 0.9, "edgecolor": "#777777"},
     )
-    ax.set_title("CERES Earth Energy Imbalance (12-month average)")
+    ax.set_title(f"CERES Earth Energy Imbalance ({figure404}-month average)")
     ax.set_xlabel("Year")
     ax.set_ylabel("EEI (W/m²)")
     ax.grid(True, alpha=0.3)
@@ -650,4 +671,3 @@ def fig_404_eei_quadratic():
     print(f"Saved Figure 404 to {output_path}")
     plt.show()
     plt.close(fig)
-
