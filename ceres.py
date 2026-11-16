@@ -1,6 +1,7 @@
 # ceres.py
 
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 import pandas as pd
 import numpy as np
 import os
@@ -700,10 +701,26 @@ def fig_404_eei_quadratic():
         y=1 - headline_margin_points / figure_height_points,
         va="top",
     )
-    ax.set_xlabel("Year")
-    ax.set_ylabel("EEI (W/m²)")
+    ax.set_xlabel("year", fontsize=16, fontweight="black")
+    ax.set_ylabel("EEI (W/m²)", fontsize=16, fontweight="bold")
+    ax.tick_params(axis="y", labelsize=12)
+    for label in ax.get_yticklabels():
+        label.set_fontweight("normal")
     ax.set_ylim(y_61min, y_61max)
-    ax.grid(True, alpha=0.3)
+    ax.xaxis.set_major_locator(mdates.YearLocator(5))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+    ax.xaxis.set_minor_locator(mdates.YearLocator(1))
+    ax.xaxis.set_minor_formatter(mdates.DateFormatter("%Y"))
+    for label in ax.xaxis.get_majorticklabels():
+        label.set_fontweight("black")
+        label.set_fontsize(12)
+    for label in ax.xaxis.get_minorticklabels():
+        label.set_fontweight("normal")
+        label.set_fontsize(9)
+    ax.grid(True, axis="y", which="major", alpha=0.3)
+    ax.grid(True, axis="x", which="major", alpha=0.55, linewidth=1.5)
+    ax.grid(True, axis="x", which="minor", alpha=0.3, linewidth=0.7)
+    ax.tick_params(axis="x", which="minor", labelbottom=True)
     ax.legend(loc="best")
     ax.set_xlim(
         pd.Timestamp(year=x_anf, month=1, day=1),
