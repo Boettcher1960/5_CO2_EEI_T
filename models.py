@@ -1064,6 +1064,11 @@ y_61max = 2  #   EEI in W/m2 y axis left mode
 modify figure404 to start y axis with y_61max
 
 
+modify figure404 to print x_anf = 2005 
+and 
+x_end = 2024 in the headline
+
+
 """
 
 

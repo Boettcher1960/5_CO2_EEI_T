@@ -652,7 +652,11 @@ def fig_404_eei_quadratic():
         fontsize=14,
         bbox={"facecolor": "white", "alpha": 0.9, "edgecolor": "#777777"},
     )
-    ax.set_title(f"CERES Earth Energy Imbalance ({window_months}-month average)")
+    ax.set_title(
+        f"CERES Earth Energy Imbalance ({window_months}-month average) "
+        f"     plotted years {x_anf} to {x_end}",
+        fontsize=20,
+    )
     ax.set_xlabel("Year")
     ax.set_ylabel("EEI (W/m²)")
     ax.set_ylim(y_61min, y_61max)
