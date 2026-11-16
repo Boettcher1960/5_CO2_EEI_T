@@ -1,5 +1,5 @@
 # main.py
-v = "5M05" # work on 
+v = "5M06" # work on 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -51,7 +51,7 @@ def process_ceres_data():
        #
        # 60.14 add the temperature for every month, no averaging is done for play_60_T_E=1
        print(f"main__53: play_60_T_E=1    60.25    ={play_60_T_E}")
-       if play_60_T_E < 3: # 
+       if play_60_T_E < 3: # bug play_60_T_E =1 does not work
            print(f"main__54: play_60_T_E=1    60.25    ={play_60_T_E}")
            # 60.15 read csv produced in 60.11
            use_center=False
