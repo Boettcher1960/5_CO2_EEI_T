@@ -989,6 +989,9 @@ def T_78(t):
 #  https://www.science.org/doi/10.1126/science.adk3705?referrer=https%3A%2F%2Fwww.google.com%2F
 #
 #
+# figure303 = 0 # 3 , 4 
+# for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
+# for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
 def Figure_303():
     """Create and save Rovang Figure 1."""
     from Rovang.Rovang_figure_303 import figure_303_Rovang as create_figure
@@ -1002,6 +1005,18 @@ def Figure_304():
     from Rovang.Rovang_figure_303 import figure_304_Rovang as create_figure
 
     return create_figure()
+
+
+###############################################################
+# 404      plot200   make a new figure  as AI coded   #########
+###############################################################
+#
+# Figure 404 quadratic fit: EEI = 0.000859832(year - 2005)^2 +0.029327812(year - 2005) +0.474645167 W/m²; R² = 0.959348
+# Figure 404 linear fit: EEI = 0.047882325(year - 2005) +0.408183537 W/m²; R² = 0.949764
+#
+#
+# figure404 = 48 # 12, 24, 36 , 48  96    48=create quadratic-fit figure for matching play_61_EEI
+
 
 
 """Figure 1 (v5) - the equilibrium relationship and how the band is defined.
