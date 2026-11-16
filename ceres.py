@@ -685,7 +685,7 @@ def fig_404_eei_quadratic():
             f"{linear_coefficients[1]:+.6f} W/m²\n"
             f"Linear R² = {linear_r_squared:.4f} dotted"
         ),
-        color="black",
+        color="green",
         **annotation_style,
     )
     ax.set_title(
