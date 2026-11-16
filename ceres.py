@@ -226,9 +226,8 @@ def ceres_process_data():
        if print_debug > 19:
           print(f"ceres227: create read_csv/_64c_ASR.csv 64    ={play_64_ASR_anomaly}")
 
-# main.play_65_ASR line 141
-# CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
-if play_65_ASR > 1: #  
+    # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
+    if play_65_ASR > 1: #  
        column_read    ='ASR'
        column_average ='ASR_average'
        use_center=False
@@ -243,7 +242,7 @@ if play_65_ASR > 1: #
                                                 center=use_center
                                                 )
        if print_debug > 9:
-          print(f"ceres165: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
+          print(f"ceres245: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
 
 
 # main.play_66_OLR line 144

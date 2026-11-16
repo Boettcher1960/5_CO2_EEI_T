@@ -1,5 +1,5 @@
 # main.py
-v = "5M09" # new file ceres.py 
+v = "5M10" # new file ceres.py 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -30,25 +30,6 @@ if print_debug > 9:
    print("")
    print("main_030: start main ", line2_play , line3_play , line4_play)
 
-
-# main.play_65_ASR line 141
-# CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
-if play_65_ASR > 1: #  
-       column_read    ='ASR'
-       column_average ='ASR_average'
-       use_center=False
-       # part 65.37  CERES.csv (perform averaging for albedo)
-       # note part 67.31 write df2 to  work/_CERES_raw.csv'
-       df65a = create67_running_average( 'work/_CERES_raw.csv', 
-                                         'work/_CERES_65_ASR.csv',
-                                                column_read,             #  column_name='ASR')
-                                                column_average,          #  column_name='ASR_average')
-                                                window_months=play_65_ASR,
-                                                min_periods=12,
-                                                center=use_center
-                                                )
-       if print_debug > 9:
-          print(f"main_165: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
 
 
 # main.play_66_OLR line 144
