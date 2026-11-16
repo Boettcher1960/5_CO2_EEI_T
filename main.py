@@ -1,5 +1,5 @@
 # main.py
-v = "5M07" # new file ceres.py 
+v = "5M08" # new file ceres.py 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -30,27 +30,6 @@ if print_debug > 9:
    print("")
    print("main_030: start main ", line2_play , line3_play , line4_play)
 
-
-    
-# main.play_64_ASR_anomaly line 124
-if play_64_ASR_anomaly > 1: #  
-       df64b = convert_ceres_to_csv('work/64a_in__2026_08_ASR_anomaly.txt', 
-                                    'read_csv/_64b_ASR.csv')
-       if print_debug > 19:
-          print(f"main_110: create read_csv/_64b_ASR.csv  64.b ={play_64_ASR_anomaly}")
-       
-       window_months=play_64_ASR_anomaly
-       min_periods=12
-       use_center=False
-       keep_original=True,
-       df64c = create_running_average( 'read_csv/_64b_ASR.csv', 
-                                       'read_csv/_64c_ASR.csv',
-                                            window_months=play_64_ASR_anomaly,
-                                            min_periods=12,
-                                            center=use_center,
-                                            column_name='ASR')
-       if print_debug > 19:
-          print(f"main_123: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
 
 # main.play_65_ASR line 141
 # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt

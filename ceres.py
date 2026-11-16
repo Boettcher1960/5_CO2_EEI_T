@@ -206,25 +206,25 @@ def process_ceres_data():
        if print_debug > 9:
           print(f"ceres147: create work/62e_EEA.csv   62    ={play_62_EEA}")
 
-# main.play_64_ASR_anomaly line 124
-if play_64_ASR_anomaly > 1: #  
+    # 64.20 
+    if play_64_ASR_anomaly > 1: #  
        df64b = convert_ceres_to_csv('work/64a_in__2026_08_ASR_anomaly.txt', 
-                                    'read_csv/_64b_ASR.csv')
-       if print_debug > 19:
-          print(f"ceres110: create read_csv/_64b_ASR.csv  64.b ={play_64_ASR_anomaly}")
+                                    'work/64b_ASR.csv')
+       if print_debug > 9:
+          print(f"ceres214: create    work/64b_ASR.csv  64.b ={play_64_ASR_anomaly}")
        
        window_months=play_64_ASR_anomaly
        min_periods=12
        use_center=False
        keep_original=True,
-       df64c = create_running_average( 'read_csv/_64b_ASR.csv', 
+       df64c = create_running_average( 'work/64b_ASR.csv', 
                                        'read_csv/_64c_ASR.csv',
                                             window_months=play_64_ASR_anomaly,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='ASR')
        if print_debug > 19:
-          print(f"ceres123: create read_csv/_62e_LongWave.csv 64    ={play_64_ASR_anomaly}")
+          print(f"ceres227: create read_csv/_64c_ASR.csv 64    ={play_64_ASR_anomaly}")
 
 # main.play_65_ASR line 141
 # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
@@ -384,23 +384,40 @@ if play69_AA > 1:                                       # 69.20  main.py   line 
 
 
 
-def hide_other_right_axes(ax1, keep_axis):
-    """Hide all right y-axes except the one we want to keep"""
-    # Get all axes in the figure
-    all_axes = ax1.get_figure().get_axes()
-    for ax in all_axes:
-        if ax != ax1 and ax != keep_axis:
-            # Check if this is a right y-axis (has a spine on the right)
-            if ax.spines['right'].get_visible():
-                ax.spines["right"].set_visible(False)
-                ax.tick_params(right=False, labelright=False)
-
-
+# part 62.b convert download.txt to CERES.csv (no averaging) convert_ceres_to_csv(input_file, output_file)
+def convert_ceres_to_csv(input_file, output_file):
+    """Convert CERES TOA flux ASCII file to CSV format"""
+    data = []
+    with open(input_file, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('#') or line.startswith('CERES'):
+                continue
+            parts = line.split()
+            if len(parts) >= 3:
+                try:
+                    year = int(parts[0])
+                    month = int(parts[1])
+                    flux = float(parts[2])
+                    data.append([year, month, flux])
+                except ValueError:
+                    continue
+    
+    df = pd.DataFrame(data, columns=['year', 'month', 'toa_net_flux_w_m2'])
+    df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str) + '-01')
+    df['decimal_year'] = df['year'] + (df['month'] - 0.5) / 12
+    df = df[['date', 'year', 'month', 'toa_net_flux_w_m2', 'decimal_year']]
+    df.to_csv(output_file, index=False, float_format='%.6f')
+    if print_debug_DP > 19:
+        print(f"DataP_40: Successfully converted {len(df)} records to {output_file}")
+    return df
+    # end part 62.b convert download.txt to CERES.csv (no averaging)
 
 
 
 # 200.2 main.py line 422 fig_202_era5_temp_quadratic
-def fig_202_era5_temp_quadratic2():
+def fig_202_era5_temp_quadratic222():
     """Plot the ERA5 running mean and its post-2000 quadratic trend."""
     # input_path = "work/_48_era5_in.csv"
     input_path = "work/_68_out.csv"
