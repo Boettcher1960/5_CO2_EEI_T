@@ -688,10 +688,17 @@ def fig_404_eei_quadratic():
         color="green",
         **annotation_style,
     )
-    ax.set_title(
+    headline = (
         f"CERES Earth Energy Imbalance ({window_months}-month average) "
-        f"     plotted years {x_anf} to {x_end}",
+        f"     plotted years {x_anf} to {x_end}"
+    )
+    headline_margin_points = 30
+    figure_height_points = fig.get_figheight() * 72
+    headline_artist = fig.suptitle(
+        headline,
         fontsize=20,
+        y=1 - headline_margin_points / figure_height_points,
+        va="top",
     )
     ax.set_xlabel("Year")
     ax.set_ylabel("EEI (W/m²)")
@@ -704,6 +711,29 @@ def fig_404_eei_quadratic():
     )
     fig.autofmt_xdate()
     fig.tight_layout()
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    headline_bbox = headline_artist.get_window_extent(renderer)
+    top_margin_points = (fig.bbox.y1 - headline_bbox.y1) * 72 / fig.dpi
+    headline_artist.set_y(
+        headline_artist.get_position()[1]
+        + (top_margin_points - headline_margin_points) / figure_height_points
+    )
+    fig.canvas.draw()
+    headline_bbox = headline_artist.get_window_extent(fig.canvas.get_renderer())
+    gap_pixels = headline_margin_points * fig.dpi / 72
+    plot_top = (
+        headline_bbox.y0 - gap_pixels - fig.bbox.y0
+    ) / fig.bbox.height
+    axes_position = ax.get_position()
+    ax.set_position(
+        (
+            axes_position.x0,
+            axes_position.y0,
+            axes_position.width,
+            plot_top - axes_position.y0,
+        )
+    )
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     fig.savefig(output_path, dpi=300, bbox_inches="tight")
 
