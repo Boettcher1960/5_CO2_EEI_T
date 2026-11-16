@@ -1074,9 +1074,25 @@ add to figure404 the linear fit
 write more comments in the code for
 fig_404_eei_quadratic():
 always start with the comment with
+
+
+use the quadratic function and make a new csv file
+column 1 is the digital date for every month
+column 2 is the value of the quadrattic function
+start with year 1990
+end with year 2050
+the file is /work/file404_48Month.csv
+
+
+
 # 402.11 comment 1
 # 402.12 comment 3
-# 402.15 call the running average function with figure404 month averaging    
+# 402.15 call the running average function with figure404 month averaging   
+# 
+# 
+# 
+# 
+#  
 """
 
 

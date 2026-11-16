@@ -619,11 +619,35 @@ def fig_404_eei_quadratic():
     x = plot_data["decimal_year"] - x_anf
     coefficients = np.polyfit(x, plot_data["EEI"], 2)
     plot_data["quadratic_fit"] = np.polyval(coefficients, x)
-    # 404.24 Calculate a linear fit as a visual comparison with the quadratic trend.
+    # 404.24 Generate one monthly forecast date from January 1990 through December 2200.
+    forecast_months = pd.date_range("1990-01-01", "2200-12-01", freq="MS")
+    # 404.25 Represent each month by its midpoint as a decimal (digital) year.
+    forecast_digital_dates = (
+        forecast_months.year + (forecast_months.month - 0.5) / 12
+    )
+    # 404.26 Evaluate the fitted quadratic using its existing x_anf-centered year scale.
+    forecast_values = np.polyval(
+        coefficients, forecast_digital_dates - x_anf
+    )
+    # 404.27 Store only the requested digital-date and quadratic-value columns.
+    forecast_data = pd.DataFrame(
+        {
+            "digital_date": forecast_digital_dates,
+            "quadratic_value": forecast_values,
+        }
+    )
+    # 404.28 Name the export for the averaging window used to calculate the fit.
+    forecast_output_path = f"work/file404_{window_months}Month.csv"
+    # 404.29 Ensure the output directory exists before writing the monthly series.
+    os.makedirs(os.path.dirname(forecast_output_path), exist_ok=True)
+    forecast_data.to_csv(
+        forecast_output_path, index=False, float_format="%.9f"
+    )
+    # 404.30 Calculate a linear fit as a visual comparison with the quadratic trend.
     linear_coefficients = np.polyfit(x, plot_data["EEI"], 1)
     plot_data["linear_fit"] = np.polyval(linear_coefficients, x)
 
-    # 404.25 Compute R² for both fits against the same observed EEI values.
+    # 404.31 Compute R² for both fits against the same observed EEI values.
     quadratic_residual_sum_squares = np.sum(
         (plot_data["EEI"] - plot_data["quadratic_fit"]) ** 2
     )
@@ -637,9 +661,9 @@ def fig_404_eei_quadratic():
     else:
         quadratic_r_squared = linear_r_squared = float("nan")
 
-    # 404.26 Create the canvas and axes for the Figure 404 plot.
+    # 404.32 Create the canvas and axes for the Figure 404 plot.
     fig, ax = plt.subplots(figsize=(13, 9))
-    # 404.27 Draw the averaged EEI observations as a red line.
+    # 404.33 Draw the averaged EEI observations as a red line.
     ax.plot(
         plot_data["date"],
         plot_data["EEI"],
@@ -647,7 +671,7 @@ def fig_404_eei_quadratic():
         linewidth=3.5,
         label=f"CERES EEI {window_months}-month average",
     )
-    # 404.28 Add the quadratic trend as a dashed purple line.
+    # 404.34 Add the quadratic trend as a dashed purple line.
     ax.plot(
         plot_data["date"],
         plot_data["quadratic_fit"],
@@ -656,7 +680,7 @@ def fig_404_eei_quadratic():
         linewidth=2.5,
         label="Quadratic fit",
     )
-    # 404.29 Add the linear comparison as a dotted green line.
+    # 404.35 Add the linear comparison as a dotted green line.
     ax.plot(
         plot_data["date"],
         plot_data["linear_fit"],
@@ -666,14 +690,14 @@ def fig_404_eei_quadratic():
         label="Linear fit",
     )
 
-    # 404.30 Use axes-relative placement so annotations stay inside the plot.
+    # 404.36 Use axes-relative placement so annotations stay inside the plot.
     annotation_style = {
         "transform": ax.transAxes,
         "va": "top",
         "fontsize": 14,
         "bbox": {"facecolor": "white", "alpha": 0.9, "edgecolor": "#777777"},
     }
-    # 404.31 Identify the figure, averaging window, repository, and version.
+    # 404.37 Identify the figure, averaging window, repository, and version.
     ax.text(
         0.02,
         0.98,
@@ -684,7 +708,7 @@ def fig_404_eei_quadratic():
         color="black",
         **annotation_style,
     )
-    # 404.32 Display the quadratic equation and its goodness-of-fit value.
+    # 404.38 Display the quadratic equation and its goodness-of-fit value.
     ax.text(
         0.02,
         0.84,
@@ -697,7 +721,7 @@ def fig_404_eei_quadratic():
         color="purple",
         **annotation_style,
     )
-    # 404.33 Display the linear equation and its goodness-of-fit value.
+    # 404.39 Display the linear equation and its goodness-of-fit value.
     ax.text(
         0.02,
         0.71,
@@ -710,16 +734,16 @@ def fig_404_eei_quadratic():
         **annotation_style,
     )
 
-    # 404.34 Build the headline with the averaging period and displayed year range.
+    # 404.40 Build the headline with the averaging period and displayed year range.
     headline = (
         f"CERES Earth Energy Imbalance ({window_months}-month average) "
         f"     plotted years {x_anf} to {x_end}"
     )
-    # 404.35 Specify the desired distance from the figure's top edge in points.
+    # 404.41 Specify the desired distance from the figure's top edge in points.
     headline_margin_points = 30
-    # 404.36 Convert figure height from inches to points for positioning.
+    # 404.42 Convert figure height from inches to points for positioning.
     figure_height_points = fig.get_figheight() * 72
-    # 404.37 Add the headline before layout so its final position can be measured.
+    # 404.43 Add the headline before layout so its final position can be measured.
     headline_artist = fig.suptitle(
         headline,
         fontsize=20,
@@ -727,83 +751,83 @@ def fig_404_eei_quadratic():
         va="top",
     )
 
-    # 404.38 Label the horizontal axis with calendar year.
+    # 404.44 Label the horizontal axis with calendar year.
     ax.set_xlabel("year", fontsize=16, fontweight="black")
-    # 404.39 Label the vertical axis with the EEI units.
+    # 404.45 Label the vertical axis with the EEI units.
     ax.set_ylabel("EEI (W/m²)", fontsize=16, fontweight="bold")
-    # 404.40 Keep y-axis tick labels smaller than the axis title.
+    # 404.46 Keep y-axis tick labels smaller than the axis title.
     ax.tick_params(axis="y", labelsize=12)
-    # 404.41 Add unlabeled horizontal minor grid positions every 0.05 W/m².
+    # 404.47 Add unlabeled horizontal minor grid positions every 0.05 W/m².
     ax.yaxis.set_minor_locator(MultipleLocator(0.05))
     ax.tick_params(
         axis="y", which="minor",
         left=False, right=False, labelleft=False, labelright=False,
     )
-    # 404.42 Keep y tick labels at normal weight and apply configured y bounds.
+    # 404.48 Keep y tick labels at normal weight and apply configured y bounds.
     for label in ax.get_yticklabels():
         label.set_fontweight("normal")
     ax.set_ylim(y_61min, y_61max)
-    # 404.43 Mark every fifth year as a major tick and label.
+    # 404.49 Mark every fifth year as a major tick and label.
     ax.xaxis.set_major_locator(mdates.YearLocator(5))
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
-    # 404.44 Add yearly minor ticks and labels between the five-year marks.
+    # 404.50 Add yearly minor ticks and labels between the five-year marks.
     ax.xaxis.set_minor_locator(mdates.YearLocator(1))
     ax.xaxis.set_minor_formatter(mdates.DateFormatter("%Y"))
-    # 404.45 Style the five-year labels with the larger, heavier type.
+    # 404.51 Style the five-year labels with the larger, heavier type.
     for label in ax.xaxis.get_majorticklabels():
         label.set_fontweight("black")
         label.set_fontsize(12)
-    # 404.46 Style the intervening annual labels smaller and lighter.
+    # 404.52 Style the intervening annual labels smaller and lighter.
     for label in ax.xaxis.get_minorticklabels():
         label.set_fontweight("normal")
         label.set_fontsize(9)
-    # 404.47 Set the color used for major horizontal grid lines.
+    # 404.53 Set the color used for major horizontal grid lines.
     mcolor="#9F2044"
     ax.grid(True, axis="y", which="major", color=mcolor, alpha=0.4, linewidth=1.3)
-    # 404.48 Draw thinner black horizontal minor grid lines.
+    # 404.54 Draw thinner black horizontal minor grid lines.
     ax.grid(True, axis="y", which="minor", color="black", alpha=0.25, linewidth=0.5)
 
-    # 404.49 Draw the five-year vertical grid lines.
+    # 404.55 Draw the five-year vertical grid lines.
     ax.grid(True, axis="x", which="major", alpha=0.55, linewidth=1.5)
-    # 404.50 Draw lighter vertical grid lines for individual years.
+    # 404.56 Draw lighter vertical grid lines for individual years.
     ax.grid(True, axis="x", which="minor", alpha=0.3, linewidth=0.7)
-    # 404.51 Show the yearly minor tick labels along the bottom edge.
+    # 404.57 Show the yearly minor tick labels along the bottom edge.
     ax.tick_params(axis="x", which="minor", labelbottom=True)
-    # 404.52 Let Matplotlib position the legend to avoid plotted data where possible.
+    # 404.58 Let Matplotlib position the legend to avoid plotted data where possible.
     ax.legend(loc="best")
-    # 404.53 Restrict the horizontal axis to the configured start and end years.
+    # 404.59 Restrict the horizontal axis to the configured start and end years.
     ax.set_xlim(
         pd.Timestamp(year=x_anf, month=1, day=1),
         pd.Timestamp(year=x_end, month=12, day=31),
     )
 
-    # 404.54 Rotate date labels as needed to prevent crowding.
+    # 404.60 Rotate date labels as needed to prevent crowding.
     fig.autofmt_xdate()
-    # 404.55 Apply Matplotlib's initial spacing before measuring the headline.
+    # 404.61 Apply Matplotlib's initial spacing before measuring the headline.
     fig.tight_layout()
-    # 404.56 Render once so the headline's bounding box can be measured.
+    # 404.62 Render once so the headline's bounding box can be measured.
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
-    # 404.57 Measure the headline's top margin in points.
+    # 404.63 Measure the headline's top margin in points.
     headline_bbox = headline_artist.get_window_extent(renderer)
     top_margin_points = (fig.bbox.y1 - headline_bbox.y1) * 72 / fig.dpi
-    # 404.58 Adjust the headline to the requested top margin.
+    # 404.64 Adjust the headline to the requested top margin.
     headline_artist.set_y(
         headline_artist.get_position()[1]
         + (top_margin_points - headline_margin_points) / figure_height_points
     )
-    # 404.59 Re-render after moving the headline to refresh its measured bounds.
+    # 404.65 Re-render after moving the headline to refresh its measured bounds.
     fig.canvas.draw()
     headline_bbox = headline_artist.get_window_extent(fig.canvas.get_renderer())
-    # 404.60 Convert the requested headline-to-plot gap from points to pixels.
+    # 404.66 Convert the requested headline-to-plot gap from points to pixels.
     gap_pixels = headline_margin_points * fig.dpi / 72
-    # 404.61 Calculate the plot area's top edge below the headline and gap.
+    # 404.67 Calculate the plot area's top edge below the headline and gap.
     plot_top = (
         headline_bbox.y0 - gap_pixels - fig.bbox.y0
     ) / fig.bbox.height
-    # 404.62 Read the current axes rectangle before changing its height.
+    # 404.68 Read the current axes rectangle before changing its height.
     axes_position = ax.get_position()
-    # 404.63 Keep the axes width and bottom while moving its top below the headline.
+    # 404.69 Keep the axes width and bottom while moving its top below the headline.
     ax.set_position(
         (
             axes_position.x0,
@@ -812,12 +836,12 @@ def fig_404_eei_quadratic():
             plot_top - axes_position.y0,
         )
     )
-    # 404.64 Create the output folder if it does not already exist.
+    # 404.70 Create the output folder if it does not already exist.
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    # 404.65 Save a high-resolution image, including labels outside the axes.
+    # 404.71 Save a high-resolution image, including labels outside the axes.
     fig.savefig(output_path, dpi=300, bbox_inches="tight")
 
-    # 404.66 Print the quadratic fit equation and R-squared value.
+    # 404.72 Print the quadratic fit equation and R-squared value.
     print(
         "Figure 404 quadratic fit: "
         f"EEI = {coefficients[0]:.9f}(year - {x_anf})^2 "
@@ -825,16 +849,18 @@ def fig_404_eei_quadratic():
         f"{coefficients[2]:+.9f} W/m²; "
         f"R² = {quadratic_r_squared:.6f}"
     )
-    # 404.67 Print the linear fit equation and R-squared value.
+    # 404.73 Print the linear fit equation and R-squared value.
     print(
         "Figure 404 linear fit: "
         f"EEI = {linear_coefficients[0]:.9f}(year - {x_anf}) "
         f"{linear_coefficients[1]:+.9f} W/m²; "
         f"R² = {linear_r_squared:.6f}"
     )
-    # 404.68 Report where the generated image was saved.
+    # 404.74 Report where the generated image was saved.
     print(f"Saved Figure 404 to {output_path}")
-    # 404.69 Display the figure interactively.
+    # 404.75 Report where the fitted monthly quadratic series was saved.
+    print(f"Saved monthly quadratic values to {forecast_output_path}")
+    # 404.76 Display the figure interactively.
     plt.show()
-    # 404.70 Release the figure resources after it has been shown.
+    # 404.77 Release the figure resources after it has been shown.
     plt.close(fig)
