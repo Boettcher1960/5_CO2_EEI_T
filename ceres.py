@@ -416,8 +416,8 @@ def convert_ceres_to_csv(input_file, output_file):
 
 
 
-# 200.2 main.py line 422 fig_202_era5_temp_quadratic
-def fig_202_era5_temp_quadratic222():
+# 200.2 ceres.py line 422 fig_202_era5_temp_quadratic
+def fig_202_era5_temp_quadratic():
     """Plot the ERA5 running mean and its post-2000 quadratic trend."""
     # input_path = "work/_48_era5_in.csv"
     input_path = "work/_68_out.csv"
