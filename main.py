@@ -1,5 +1,5 @@
 # main.py
-v = "5M21" # make a separate new figure404 for play_61_EEI = 12 this is file work/61c_out_EEI.csv column EEI 
+v = "5M22" # make a separate new figure404 for play_61_EEI = 12 this is file work/61c_out_EEI.csv column EEI 
 #            print the quadratic equation for EEI inside figure404
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -175,7 +175,7 @@ def run_optional_figures():
         Figure_303()
     elif figure303 == 4:
         Figure_304()
-    if figure404 in (12, 24, 48):
+    if figure404 > 1:
         fig_404_eei_quadratic()
 
 def main():

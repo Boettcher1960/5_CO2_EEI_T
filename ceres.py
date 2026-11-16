@@ -559,8 +559,8 @@ def fig_202_era5_temp_quadratic():
 def fig_404_eei_quadratic():
     """Plot the selected CERES EEI running average with a quadratic fit."""
 
-    if figure404 not in (12, 24, 48):
-        raise ValueError("Figure 404 must be set to 12, 24, or 48.")
+    #if figure404 not in (12, 24, 48):
+    #    raise ValueError("Figure 404 must be set to 12, 24, or 48.")
 
     window_months = figure404
     min1_periods = 12
@@ -640,6 +640,8 @@ def fig_404_eei_quadratic():
         0.02,
         0.98,
         (
+            f"Figure 404 ({window_months}-month average)\n"
+            f"https://github.com/Boettcher1960/5_CO2_EEI_T      version  {v}\n\n"
             f"EEI = {coefficients[0]:.6f}(year - {x_anf})^2 "
             f"{coefficients[1]:+.6f}(year - {x_anf}) "
             f"{coefficients[2]:+.6f} W/m²\n"
@@ -647,6 +649,7 @@ def fig_404_eei_quadratic():
         ),
         transform=ax.transAxes,
         va="top",
+        fontsize=14,
         bbox={"facecolor": "white", "alpha": 0.9, "edgecolor": "#777777"},
     )
     ax.set_title(f"CERES Earth Energy Imbalance ({window_months}-month average)")
