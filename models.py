@@ -1068,6 +1068,7 @@ modify figure404 to print x_anf = 2005
 and 
 x_end = 2024 in the headline
 
+add to figure404 the linear fit
 
 """
 

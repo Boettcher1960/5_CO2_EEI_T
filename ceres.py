@@ -610,15 +610,20 @@ def fig_404_eei_quadratic():
     x = plot_data["decimal_year"] - x_anf
     coefficients = np.polyfit(x, plot_data["EEI"], 2)
     plot_data["quadratic_fit"] = np.polyval(coefficients, x)
-    residual_sum_squares = np.sum(
+    linear_coefficients = np.polyfit(x, plot_data["EEI"], 1)
+    plot_data["linear_fit"] = np.polyval(linear_coefficients, x)
+    quadratic_residual_sum_squares = np.sum(
         (plot_data["EEI"] - plot_data["quadratic_fit"]) ** 2
     )
-    total_sum_squares = np.sum((plot_data["EEI"] - plot_data["EEI"].mean()) ** 2)
-    r_squared = (
-        1 - residual_sum_squares / total_sum_squares
-        if total_sum_squares > 0
-        else float("nan")
+    linear_residual_sum_squares = np.sum(
+        (plot_data["EEI"] - plot_data["linear_fit"]) ** 2
     )
+    total_sum_squares = np.sum((plot_data["EEI"] - plot_data["EEI"].mean()) ** 2)
+    if total_sum_squares > 0:
+        quadratic_r_squared = 1 - quadratic_residual_sum_squares / total_sum_squares
+        linear_r_squared = 1 - linear_residual_sum_squares / total_sum_squares
+    else:
+        quadratic_r_squared = linear_r_squared = float("nan")
 
     fig, ax = plt.subplots(figsize=(13, 7))
     ax.plot(
@@ -631,26 +636,57 @@ def fig_404_eei_quadratic():
     ax.plot(
         plot_data["date"],
         plot_data["quadratic_fit"],
-        color="#1f4e79",
+        color="purple",
         linestyle="--",
         linewidth=2.5,
         label="Quadratic fit",
     )
+    ax.plot(
+        plot_data["date"],
+        plot_data["linear_fit"],
+        color="#228B22",
+        linestyle=":",
+        linewidth=2.5,
+        label="Linear fit",
+    )
+    annotation_style = {
+        "transform": ax.transAxes,
+        "va": "top",
+        "fontsize": 14,
+        "bbox": {"facecolor": "white", "alpha": 0.9, "edgecolor": "#777777"},
+    }
     ax.text(
         0.02,
         0.98,
         (
             f"Figure 404 ({window_months}-month average)\n"
-            f"https://github.com/Boettcher1960/5_CO2_EEI_T      version  {v}\n\n"
+            f"https://github.com/Boettcher1960/5_CO2_EEI_T      version  {v}"
+        ),
+        color="black",
+        **annotation_style,
+    )
+    ax.text(
+        0.02,
+        0.84,
+        (
             f"EEI = {coefficients[0]:.6f}(year - {x_anf})^2 "
             f"{coefficients[1]:+.6f}(year - {x_anf}) "
             f"{coefficients[2]:+.6f} W/m²\n"
-            f"R² = {r_squared:.4f}"
+            f"Quadratic R² = {quadratic_r_squared:.4f} dashed purple"
         ),
-        transform=ax.transAxes,
-        va="top",
-        fontsize=14,
-        bbox={"facecolor": "white", "alpha": 0.9, "edgecolor": "#777777"},
+        color="purple",
+        **annotation_style,
+    )
+    ax.text(
+        0.02,
+        0.71,
+        (
+            f"EEI = {linear_coefficients[0]:.6f}(year - {x_anf}) "
+            f"{linear_coefficients[1]:+.6f} W/m²\n"
+            f"Linear R² = {linear_r_squared:.4f} dotted"
+        ),
+        color="black",
+        **annotation_style,
     )
     ax.set_title(
         f"CERES Earth Energy Imbalance ({window_months}-month average) "
@@ -675,7 +711,14 @@ def fig_404_eei_quadratic():
         "Figure 404 quadratic fit: "
         f"EEI = {coefficients[0]:.9f}(year - {x_anf})^2 "
         f"{coefficients[1]:+.9f}(year - {x_anf}) "
-        f"{coefficients[2]:+.9f} W/m²; R² = {r_squared:.6f}"
+        f"{coefficients[2]:+.9f} W/m²; "
+        f"R² = {quadratic_r_squared:.6f}"
+    )
+    print(
+        "Figure 404 linear fit: "
+        f"EEI = {linear_coefficients[0]:.9f}(year - {x_anf}) "
+        f"{linear_coefficients[1]:+.9f} W/m²; "
+        f"R² = {linear_r_squared:.6f}"
     )
     print(f"Saved Figure 404 to {output_path}")
     plt.show()
