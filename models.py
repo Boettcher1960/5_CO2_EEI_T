@@ -1084,6 +1084,9 @@ end with year 2050
 the file is /work/file404_48Month.csv
 
 
+add to /work/file404_48Month.csv
+column 3 with the linear fit
+
 
 # 402.11 comment 1
 # 402.12 comment 3

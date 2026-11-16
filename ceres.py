@@ -619,33 +619,37 @@ def fig_404_eei_quadratic():
     x = plot_data["decimal_year"] - x_anf
     coefficients = np.polyfit(x, plot_data["EEI"], 2)
     plot_data["quadratic_fit"] = np.polyval(coefficients, x)
-    # 404.24 Generate one monthly forecast date from January 1990 through December 2200.
+    # 404.24 Calculate the linear fit used for both the plot and monthly CSV.
+    linear_coefficients = np.polyfit(x, plot_data["EEI"], 1)
+    plot_data["linear_fit"] = np.polyval(linear_coefficients, x)
+    # 404.25 Generate one monthly forecast date from January 1990 through December 2200.
     forecast_months = pd.date_range("1990-01-01", "2200-12-01", freq="MS")
-    # 404.25 Represent each month by its midpoint as a decimal (digital) year.
+    # 404.26 Represent each month by its midpoint as a decimal (digital) year.
     forecast_digital_dates = (
         forecast_months.year + (forecast_months.month - 0.5) / 12
     )
-    # 404.26 Evaluate the fitted quadratic using its existing x_anf-centered year scale.
+    # 404.27 Evaluate both fits using their existing x_anf-centered year scale.
     forecast_values = np.polyval(
         coefficients, forecast_digital_dates - x_anf
     )
-    # 404.27 Store only the requested digital-date and quadratic-value columns.
+    forecast_linear_values = np.polyval(
+        linear_coefficients, forecast_digital_dates - x_anf
+    )
+    # 404.28 Store the digital date, quadratic value, and linear fit as columns.
     forecast_data = pd.DataFrame(
         {
             "digital_date": forecast_digital_dates,
             "quadratic_value": forecast_values,
+            "linear_fit": forecast_linear_values,
         }
     )
-    # 404.28 Name the export for the averaging window used to calculate the fit.
+    # 404.29 Name the export for the averaging window used to calculate the fit.
     forecast_output_path = f"work/file404_{window_months}Month.csv"
-    # 404.29 Ensure the output directory exists before writing the monthly series.
+    # 404.30 Ensure the output directory exists before writing the monthly series.
     os.makedirs(os.path.dirname(forecast_output_path), exist_ok=True)
     forecast_data.to_csv(
         forecast_output_path, index=False, float_format="%.9f"
     )
-    # 404.30 Calculate a linear fit as a visual comparison with the quadratic trend.
-    linear_coefficients = np.polyfit(x, plot_data["EEI"], 1)
-    plot_data["linear_fit"] = np.polyval(linear_coefficients, x)
 
     # 404.31 Compute R² for both fits against the same observed EEI values.
     quadratic_residual_sum_squares = np.sum(
