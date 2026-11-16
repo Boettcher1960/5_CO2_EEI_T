@@ -1042,7 +1042,10 @@ df60g["T_E"] = (
            * factor
        )
 
-
+make a separate new figure404 for
+play_61_EEI = 12
+this is file work/61c_out_EEI.csv column EEI
+print the quadratic equation for EEI inside figure404
 
 
 """
