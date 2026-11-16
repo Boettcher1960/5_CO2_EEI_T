@@ -1058,6 +1058,11 @@ x_anf = 2005
 and end in the year 2024
 x_end = 2024 
 
+modify figure404 to start y axis with y_61min
+y_61min = 0  #   EEI in W/m2 y axis left mode
+y_61max = 2  #   EEI in W/m2 y axis left mode
+modify figure404 to start y axis with y_61max
+
 
 """
 

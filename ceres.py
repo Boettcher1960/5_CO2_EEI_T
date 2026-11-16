@@ -652,6 +652,7 @@ def fig_404_eei_quadratic():
     ax.set_title(f"CERES Earth Energy Imbalance ({window_months}-month average)")
     ax.set_xlabel("Year")
     ax.set_ylabel("EEI (W/m²)")
+    ax.set_ylim(y_61min, y_61max)
     ax.grid(True, alpha=0.3)
     ax.legend(loc="best")
     ax.set_xlim(
