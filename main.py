@@ -1,5 +1,5 @@
 # main.py
-v = "5M11" # new file ceres.py 
+v = "5M12" # new file ceres.py 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -30,40 +30,6 @@ if print_debug > 9:
    print("")
    print("main_030: start main ", line2_play , line3_play , line4_play)
 
-
-
-# main.play_66_OLR line 144
-# CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
-if play_66_OLR > 1: #  
-       # part 66.b convert download.txt to CERES.csv (no averaging)
-       # CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt downloaded
-       # copy to 'work/_66_TOA_OLR_all_sky_2026_07.txt'
-       df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_08.txt', 
-                                    'work/_66b_OLR_raw.csv',
-                                    'OLR'
-                                    )
-       if print_debug > 9:
-          print(f"main_169: created.  work/_66b_OLR.csv  66.b ={play_66_OLR}")
-       
-       window_months=play_66_OLR
-       min_periods=12
-       use_center=False
-       keep_original=True
-       columnname ='OLR48'
-       column_read    ='OLR'
-       column_average ='OLR48'
-       # part 66.c  CERES.csv (perform averaging)
-       df66c = create66_running_average( 'work/_66b_OLR_raw.csv', 
-                                         'work/_66c_OLR.csv',
-                                          column_read,             #  column_name='OLR')
-                                          column_average,          #  column_name='OLR48')
-                                          columnname,              #  column_name='SW_in')
-                                            window_months=play_66_OLR,
-                                            min_periods=12,
-                                            center=use_center,
-                                            column_name=columnname)
-       if print_debug > 9:
-          print(f"main_210: created. OLR48 work/_66c_OLR.csv  66.c ={play_66_OLR}")
 
 
 # part 67.1 create work/_CERES_raw.csv with 13 columns

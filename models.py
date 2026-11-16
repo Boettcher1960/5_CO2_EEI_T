@@ -1022,50 +1022,7 @@ chat08
 make a function 
 Rovang_figure_1()
 which produces Rovang_figure01.png
-chat09
-make a green line for 14°C temperature and
-280 ppm CO2 in Rovang_figure_1.png
 
-make the green line for 280 ppm CO2 only from 5°C to 25°C in Rovang_figure_1.png
-not to spoil the legend
-
-make a new legend line with writing 280 ppm 14°C preindustieal in Rovang_figure_1.png
-
-how to show Rovang_figure_1.png when running main.py
-
-make a new legend line with writing 280 ppm 14°C preindustieal in Rovang_figure_1.png
-
-how to show Rovang_figure_1.png when running main.py
-
-make a light blue band for 15.5 to 16°C °C temperature and write 1,5°C Paris treaty in Rovang_figure_1.png
-
-make a light blue band for 430ppm to 480ppm CO2 x axis in 2026 in Rovang_figure_1.png
-
-when running main.px only show Rovang_figure_1.png when plot210 = 3
-do not show old figure100
-figure100 = 0 # 0 means create no old figure 
----
-5K40 when running main.px only show Rovang_figure_1.png when figure100 = 0 
----
-for figure210 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
-for figure210 = 4 make no logarthmic x axis and plot in Rovang_figure_2.png
--5k43
-in Rovang_figure_303.py make a headline like in def text_2_print_head_line():
--5k44
-in Rovang_figure_303.py make 4 text lines below the plot like in text_9_print_7_lines():
-in Rovang_figure_303.py move the bottom_lines more away from the plot 
-
-in Rovang_figure_303.py insert the blue band before the text "blue band for 1.5\u00b0C Paris treaty below 2°C"
-
-if ( y_303max - y_303min ) < 5 make grid lines every 0.2°C
-if ( y_303max - y_303min ) < 20 make grid lines every 0.5°C
-if ( y_303max - y_303min ) < 30 make grid lines every 1°C
-
-if ( y_303max - y_303min ) < 30 make major grid lines every 5°C
-if ( y_303max - y_303min ) < 30 make minor grid lines every 1°C
-
-if ( y_303max - y_303min ) < 20 make major grid lines every 2°C
-if ( y_303max - y_303min ) < 20 make minor grid lines every 1°C
 
 if ( y_303max - y_303min ) < 5 make major grid lines every 0.5°C
 if ( y_303max - y_303min ) < 5 make minor grid lines every 0.2°C
@@ -1073,64 +1030,6 @@ if ( y_303max - y_303min ) < 5 make minor grid lines every 0.2°C
 
 if ( figure303 == 4 ) make major grid lines every 100 ppm
 if ( figure303 == 4 ) make minor grid lines every 20 ppm
-
-
-if ( x_303max - y_303min ) < 260 make minor grid lines every 10 ppm
-
-add a square with red border and light red inside
-420ppm to 440ppm wide
-14°C to 18.1°C high
-v = "5K59"
-instead of writing "label 5 in line 5" plot a smal  square with red border and light red inside
-and write 426ppm resulted in 4°C warming in the emian, 3 Million years ago
-
-
-headline2 = "Where on Earth are we Heading: Pliocene or Miocene?"
-headline3 = " temperature plotted against CO$_2$"
-
-print headline2 in bold and green and bigger
-print headline3 in black after headline2
-v = "5K59"
-
-make an orange arrow pointing to 426 ppm, 15.5°C from right below from 
-a white bubble with text "We are here 2026 426ppm 1.5°C warming"
-make the bubble more oval and the black edge thicker
-
-make the orange arrow thicker and change the black edge color to orange
-
-make a green arrow pointing to 280 ppm, 14°C from right below from 
-a white bubble with text "Civilization evolved in stable climate up to 1750"
-make the bubble more oval and the green edge thicker
-
-move the green box to the left 320ppm
-and down 12°C
-
-move the green box to the right 380ppm
-
-move the green box to the left 360ppm
-
-make a black arrow pointing to 450 ppm, 17°C from left from 
-a white bubble with text "Best case like Pliocene 2.5°C warming"
-
-move the black box to the right 500ppm
-a white bubble with text "Best case like Pliocene 2.5°C warming means 4°C warming on land"
-
-move the black box to the right 550ppm
-move the black box to the right 530ppm
-move the black box to the left 510ppm
-
-move the black box 1°C up and change the black color to cbox303Maedge
-
-make a thick red arrow pointing to 420 ppm, 19°C from top from 
-a white bubble with text "We are heading back to Miocene 5°C warming like 16 million years ago"
-
-scale the x axis with x_303min and x_303max 
-
-on x axis allways print x_303min and x_303max with ppm
-
-how much does an earth energy imbalance of
-1 W/m² 
-warm the earth in 1 month - in °C ?
 
 
 modify line 91 of main   (that only values after year a60_start are summed) 

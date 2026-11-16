@@ -32,9 +32,10 @@ from Rovang import *
 
 
 def ceres_process_data():
-    """Process CERES data based on configuration"""
-    print(f"ceres_36: play_60_T_E=1    60.00    ={play_60_T_E}")
-    print(f"")
+    """Process CERES data based on configuration""" 
+    if print_debug > 19:
+        print(f"ceres_36: play_60_T_E=1    60.00    ={play_60_T_E}")
+        print(f"")
     # play_60_T_E = 48    # add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
     # Earth Energy Accumulated EEA is sum of EEI
     if play_60_T_E > 1: #  
@@ -50,7 +51,8 @@ def ceres_process_data():
        #                       a60_offset = 0.2 # add offset 0.2°C at start of adding
        #
        # 60.14 add the temperature for every month, no averaging is done for play_60_T_E=1
-       print(f"ceres_53: play_60_T_E=1    60.25    ={play_60_T_E}")
+       if print_debug > 19:
+           print(f"ceres_53: play_60_T_E=1    60.25    ={play_60_T_E}")
        if play_60_T_E < 3: # bug play_60_T_E =1 does not work
            print(f"ceres_54: play_60_T_E=1    60.25    ={play_60_T_E}")
            # 60.15 read csv produced in 60.11
@@ -245,18 +247,18 @@ def ceres_process_data():
           print(f"ceres245: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
 
 
-# main.play_66_OLR line 144
-# CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
-if play_66_OLR > 1: #  
+    # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
+    if play_66_OLR > 1: #  
        # part 66.b convert download.txt to CERES.csv (no averaging)
        # CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt downloaded
        # copy to 'work/_66_TOA_OLR_all_sky_2026_07.txt'
-       df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_08.txt', 
-                                    'work/_66b_OLR_raw.csv',
+       # copy to 'work/66a_CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+       df66b = convert66_txt_to_csv('work/66a_CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt', 
+                                    'work/66b_OLR_raw.csv',
                                     'OLR'
                                     )
        if print_debug > 9:
-          print(f"ceres169: created.  work/_66b_OLR.csv  66.b ={play_66_OLR}")
+          print(f"ceres169: created.  work/66b_OLR.csv  66.b ={play_66_OLR}")
        
        window_months=play_66_OLR
        min_periods=12
@@ -266,7 +268,7 @@ if play_66_OLR > 1: #
        column_read    ='OLR'
        column_average ='OLR48'
        # part 66.c  CERES.csv (perform averaging)
-       df66c = create66_running_average( 'work/_66b_OLR_raw.csv', 
+       df66c = create66_running_average( 'work/66b_OLR_raw.csv', 
                                          'work/_66c_OLR.csv',
                                           column_read,             #  column_name='OLR')
                                           column_average,          #  column_name='OLR48')
