@@ -958,11 +958,24 @@ def create404_running_average(input_csv,
     averaged_values.iloc[-edge_rows:] = backward_average.iloc[-edge_rows:]
 
     # 404.160 correct ceres__3: EEI= 0.5554166666666667 index 49 bad
-    averaged_values.values[edge_rows-3] = ( v6 + v3 + v4 +v5 )/4
     # 404.162 correct  ceres__2: EEI= 0.5435416666666667 index 50 bad v3
-    averaged_values.values[edge_rows-2] = ( v5 + v6 + v3 + v4 )/4
     # 404.164 ceres__1: EEI= 0.5918749999999999 index 51 bad v4
-    averaged_values.values[edge_rows-1] = ( v5 + v6 + v7 + v4 )/4
+    # averaged_values.values[edge_rows-1] = ( v5 + v6 + v7 + v4 )/4
+    averaged_values.values[edge_rows-5] = ( v4 + v4 + v4 + v4 + v4   + v5 )/6
+    averaged_values.values[edge_rows-4] = ( v4 + v4 + v4 + v4   + v5 + v5 )/6
+    averaged_values.values[edge_rows-3] = ( v4 + v4 + v4   + v5 + v5 + v5 )/6
+    averaged_values.values[edge_rows-2] = ( v4 + v4   + v5 + v5 + v5 + v5 )/6
+    averaged_values.values[edge_rows-1] = ( v4  + v5  + v5 + v5 + v5 + v5 )/6
+
+    if print_debug > 9:
+           print(f"ceres__4: EEI= { averaged_values.values[edge_rows-4] } index {edge_rows-4}")
+           print(f"ceres__3: EEI= { averaged_values.values[edge_rows-3] } index {edge_rows-3}")
+           print(f"ceres__2: EEI= { averaged_values.values[edge_rows-2] } index {edge_rows-2}")
+           print(f"ceres__1: EEI= { averaged_values.values[edge_rows-1] } index {edge_rows-1}")
+           print(f"ceres___:       step")
+           print(f"ceres__0: EEI= { averaged_values.values[edge_rows] } index {edge_rows}")
+           print(f"ceres_+1: EEI= { averaged_values.values[edge_rows+1] } index {edge_rows+1}")
+
 
     # 404.170 copy to df field column_name='EEI'
     df[column_name] = averaged_values
