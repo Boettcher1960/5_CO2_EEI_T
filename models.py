@@ -1109,6 +1109,15 @@ to take the average of the passed months for the last (figure404+4) months
 to take the middle average for the rest
 
 
+Modify
+create404_running_average()
+to take the average of the following months for the first month
+to take the average of the following months-1 for the first+1 month and the first month
+to take the average of the following months-2 for the first+2 month and the first+second month
+
+to take the average of the following months for the first (figure404+4) months
+
+
 """
 
 

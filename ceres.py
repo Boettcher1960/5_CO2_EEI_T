@@ -873,7 +873,7 @@ def fig_404_eei_quadratic():
 # part 62.c  CERES.csv (perform averaging) create_running_average(input_csv, output_csv, 
 def create404_running_average(input_csv, 
                            output_csv, 
-                           window_months, 
+                           window_months,   # figure404
                           min_periods=None, 
                           center=True, 
                           keep_original=True,
@@ -895,13 +895,15 @@ def create404_running_average(input_csv,
     ).mean()
 
     # 404.120 Use forward averages at the beginning and backward averages at the end.
-    edge_rows = window_months + 4
+    edge_rows = window_months + 4    # edge_rows = figure404 + 4 = 48+4 = 52
     if len(df) < 2 * edge_rows:
         raise ValueError(
             f"At least {2 * edge_rows} monthly records are required for "
             f"non-overlapping {edge_rows}-month edge regions; found {len(df)}."
         )
     # 404.130 foreward_average is special with a sharp step
+    #      EEI= 0.591875   2004.458333 
+    #      EEI= 0.427917   2004.541667
     forward_average = (
         source_values.iloc[::-1]
         .rolling(window=window_months, min_periods=window_months)
@@ -913,11 +915,47 @@ def create404_running_average(input_csv,
     backward_average = source_values.rolling(
         window=window_months, min_periods=window_months
     ).mean()
-
+    # 404.150 the first 48 months
     averaged_values.iloc[:edge_rows] = forward_average.iloc[:edge_rows]
+
+    # 404.152 48 months # edge_rows = figure404 + 4 = 48+4 = 52
+    if print_debug > 9:
+        print(f"ceres__4: EEI= { averaged_values.values[edge_rows-4] } index {edge_rows-4}")
+        print(f"ceres__3: EEI= { averaged_values.values[edge_rows-3] } index {edge_rows-3}")
+        print(f"ceres__2: EEI= { averaged_values.values[edge_rows-2] } index {edge_rows-2}")
+        print(f"ceres__1: EEI= { averaged_values.values[edge_rows-1] } index {edge_rows-1}")
+        print(f"ceres___:       step")
+        print(f"ceres__0: EEI= { averaged_values.values[edge_rows] } index {edge_rows}")
+        print(f"ceres_+1: EEI= { averaged_values.values[edge_rows+1] } index {edge_rows+1}")
+        print(f"ceres_+2: EEI= { averaged_values.values[edge_rows+2] } index {edge_rows+2}")
+        print(f"ceres_+3: EEI= { averaged_values.values[edge_rows+3] } index {edge_rows+3}")
+    v1 =  averaged_values.values[edge_rows-4]  
+    v2 =  averaged_values.values[edge_rows-3]  
+    v3 =  averaged_values.values[edge_rows-2]  
+    v4 =  averaged_values.values[edge_rows-1]  
+    v5 =  averaged_values.values[edge_rows]  
+    v6 =  averaged_values.values[edge_rows+1]  
+    v7 =  averaged_values.values[edge_rows+2]     
+
+    if print_debug > 9:
+        print(f"__: EEI= { v1 }  { v2 }  { v3 }  { v4 }  { v5 }  { v6 }  { v7 }   ")
+
+        # averaged_values.index[edge_rows-1] = index = 51 = edge_rows-1}
+        # averaged_values.values[edge_rows-1]
+
+    # 404.154 after 48 months
     averaged_values.iloc[-edge_rows:] = backward_average.iloc[-edge_rows:]
+
+    # 404.156 copy to df field column_name='EEI'
     df[column_name] = averaged_values
+
+    # 404.160 48 months # edge_rows = figure404 + 4 = 48+4 = 52
+    #      EEI= 0.591875   2004.458333 
+    #      EEI= 0.427917   2004.541667
     
+    
+
+    # 404.180 configure the output csv 
     output_columns = ['date', 'year', 'month', 'decimal_year']
     if keep_original:
         output_columns.append('toa_net_flux_w_m2')
@@ -929,8 +967,8 @@ def create404_running_average(input_csv,
     valid_records = df_output[column_name].notna().sum()
     #print(f"{window_months}-month running average saved to {output_csv}")
     #print(f"Valid records: {valid_records} out of {len(df_output)}")
-    if print_debug_DP > 19:
-        print(f"DataP_79: Valid records: {valid_records} out of {len(df_output)}")
-        print(f"DataP_80: {window_months}-month running average saved to {output_csv} ")
+    if print_debug > 9:
+        print(f"ceres935: Valid records: {valid_records} out of {len(df_output)}")
+        print(f"ceres936: {window_months}-month running average saved to {output_csv} ")
     return df_output
     # end part 62.c  CERES.csv (perform averaging)
