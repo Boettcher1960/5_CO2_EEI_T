@@ -222,8 +222,8 @@ y_55max = 9 # plot55_population_on = 5
 
 y_60min = 1  #  Temperature in °C y axis left mode
 y_60max = 2  #  Temperature in °C y axis left mode
-y_61min = 0  #   EEI in W/m2 y axis left mode
-y_61max = 2  #   EEI in W/m2 y axis left mode
+y_61min = 0.2  #   EEI in W/m2 y axis left mode
+y_61max = 1.6  #   EEI in W/m2 y axis left mode
 
 y_62min = 0  # EEA in ZJ
 y_62max = 400  # EEA in ZJ
@@ -281,7 +281,7 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 2000   # 2005
+x_anf = 2005   # 2005
 x_end = 2026   # 2028
 
 # XLO, XHI = 125, 1500
