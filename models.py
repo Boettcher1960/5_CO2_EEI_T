@@ -1102,15 +1102,13 @@ the file is /work/file404_48Month.csv
 add to /work/file404_48Month.csv
 column 3 with the linear fit
 
+Modify
+create404_running_average()
+to take the average of the following months for the first (figure404+4) months
+to take the average of the passed months for the last (figure404+4) months
+to take the middle average for the rest
 
-# 402.11 comment 1
-# 402.12 comment 3
-# 402.15 call the running average function with figure404 month averaging   
-# 
-# 
-# 
-# 
-#  
+
 """
 
 

@@ -878,20 +878,42 @@ def create404_running_average(input_csv,
                           center=True, 
                           keep_original=True,
                           column_name='EEI'):
-    """Create running average for specified window size"""
+    """Create a running average with forward and backward averages at the edges."""
     df = pd.read_csv(input_csv)
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values('date').reset_index(drop=True)
     
     if min_periods is None:
-        # min_periods = window_months // 2
         min_periods = window_months
-   
-    df[column_name] = df['toa_net_flux_w_m2'].rolling(
+
+    # 404.78 Keep the source series and calculate its regular middle average.
+    source_values = df['toa_net_flux_w_m2']
+    averaged_values = source_values.rolling(
         window=window_months, 
         center=center,
         min_periods=min_periods
     ).mean()
+
+    # 404.79 Use forward averages at the beginning and backward averages at the end.
+    edge_rows = window_months + 4
+    if len(df) < 2 * edge_rows:
+        raise ValueError(
+            f"At least {2 * edge_rows} monthly records are required for "
+            f"non-overlapping {edge_rows}-month edge regions; found {len(df)}."
+        )
+    forward_average = (
+        source_values.iloc[::-1]
+        .rolling(window=window_months, min_periods=window_months)
+        .mean()
+        .iloc[::-1]
+        .reset_index(drop=True)
+    )
+    backward_average = source_values.rolling(
+        window=window_months, min_periods=window_months
+    ).mean()
+    averaged_values.iloc[:edge_rows] = forward_average.iloc[:edge_rows]
+    averaged_values.iloc[-edge_rows:] = backward_average.iloc[-edge_rows:]
+    df[column_name] = averaged_values
     
     output_columns = ['date', 'year', 'month', 'decimal_year']
     if keep_original:
@@ -909,4 +931,3 @@ def create404_running_average(input_csv,
         print(f"DataP_80: {window_months}-month running average saved to {output_csv} ")
     return df_output
     # end part 62.c  CERES.csv (perform averaging)
-
