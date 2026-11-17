@@ -221,8 +221,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_60min = 0.6  #  Temperature in °C y axis left mode
-y_60max = 1.6  #  Temperature in °C y axis left mode
+y_60min = 0.8  #  Temperature in °C y axis left mode
+y_60max = 3.2  #  Temperature in °C y axis left mode
 y_61min = 0.4  #   EEI in W/m2 y axis left mode
 y_61max = 1.6  #   EEI in W/m2 y axis left mode
 
@@ -242,8 +242,8 @@ y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.296  # Hansen no swap albedo in %
 y_67max = 0.286   # Hansen no swap albedo in %
 
-y_68min = 0.6  # for era5 Temperature
-y_68max = 1.6 # for era5 Temperature 
+y_68min = 0.8  # for era5 Temperature
+y_68max = 3.2 # for era5 Temperature 
 
 y_69min = 1.6   # albedo anomaly in W/m2 
 y_69max = -1.6  # albedo anomaly in W/m2
@@ -266,8 +266,8 @@ y_76min = 0 #  Temperature
 y_76max = 4   #  Temperature 
 y_77min = 0 #  Temperature  
 y_77max = 4 #  Temperature 
-y_78min = 0.6 #  for Tom Harris Temperature 
-y_78max = 1.6 #  for Tom Harris Temperature
+y_78min = 0.8 #  for Tom Harris Temperature 
+y_78max = 3.2 #  for Tom Harris Temperature
 
 # YLO, YHI = 5, 40
 x_303min = 200   # 125  figure303 CO2 x axis 
@@ -283,7 +283,7 @@ cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
 x_anf = 2005   # 2005
-x_end = 2028   # 2028
+x_end = 2060   # 2028
 
 # XLO, XHI = 125, 1500
 

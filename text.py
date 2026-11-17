@@ -511,8 +511,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot25_long_CO2 == 5: # 25.9.4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c23)
         text_4_add_text(ax1, tr2x, tr5y,  text25,   c25, trs)
-    elif a60_start > 2000:
-        text_4_add_text(ax1, tr1x, tr5y,  text60a,   c60a, 15)
     elif plot42_EEI_48month == 5:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c42)
         text_4_add_text(ax1, tr2x, tr5y, 
@@ -531,6 +529,8 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot55_population_on == 5: # 55.4 row 5 legende world data plot22_CO2_Mauna_Loa
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c55)
         text_4_add_text(ax1, tr2x, tr5y, text55, c55, trs) 
+    elif a60_start > 2050:
+        text_4_add_text(ax1, tr1x, tr5y,  text60a,   c60a, 15)
     elif play_61_EEI > 0 and line5_play == 61:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c61)
         p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"
@@ -569,7 +569,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
         p61_text = f"Earth Energy Imbalance [W/m²]  CERES 2026_08     moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
-    elif a60_start > 2000:
+    elif a60_start > 2050:
         text_4_add_text(ax1, tr1x, tr6y,  text60b,   c60a, 15)
     elif play_62_EEA > 0 and line6_play == 62:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c62)
@@ -592,7 +592,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     if plot74_GIS_T == 7: # 74.6 tr7y = -.57
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr7y, c74)
         text_4_add_text(ax1, tr2x, tr7y, text74 , c74, trs)
-    elif a60_start > 2000:
+    elif a60_start > 2050:
         text_4_add_text(ax1, tr1x, -.58,  text60c,   c60a, 15)
     else: # row 7
         row7_text = f"Parameter {header_parameter}  Text564:"
