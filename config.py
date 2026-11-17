@@ -12,8 +12,8 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 1 # 0 means create no old figure 1= make old figuure
-figure202 = 0 # 2=new figure with era5 temperature and quadratic curve
+figure100 = 0 # 0 means create no old figure 1= make old figuure
+figure202 = 1 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
@@ -29,6 +29,8 @@ yr_delete = 1 # 9 = delete all axes delete axe 4
 plot22_CO2_Mauna_Loa = 0 # 2 ,3    22.1 declare global integer variable (2= print in line 2)
 plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0   # 4 2, 3 25.1 
+
+plot26_E_T = 0 #
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission = 0  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 

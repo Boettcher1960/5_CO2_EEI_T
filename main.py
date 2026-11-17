@@ -1,5 +1,5 @@
 # main.py
-v = "5M53" # add to /work/file404_48Month.csv
+v = "5M54" # if figure202 > 0:         fig_202_era5_temp_quadratic()
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -168,7 +168,7 @@ def save_png(fig, header_parameter):
 
 # main program
 def run_optional_figures():
-    if figure202 == 2:
+    if figure202 > 0:
         fig_202_era5_temp_quadratic()
     if figure303 == 3:
         Figure_303()
