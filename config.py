@@ -12,8 +12,8 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 0 # 0 means create no old figure 1= make old figuure
-figure202 = 1 # 1 2=new figure with era5 temperature and quadratic curve
+figure100 = 1 # 0 means create no old figure 1= make old figuure
+figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
@@ -59,7 +59,7 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 play_60_T_E = 48   # 2=no average 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
 a60_start = 2005   # 2015 starting year of play_60_T_E
 a60_offset = 1.01     # 1 , 0.85 add offset 0.2°C at start of adding
-play_61_EEI = 48   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 0   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
                 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
@@ -67,7 +67,7 @@ play_64_ASR_anomaly = 0 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly =
 play_65_ASR         = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR         = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo      = 0   # line2 1..12..48..99 create 1..12..48..99 CERES
-play68_ERA          = 0 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+play68_ERA          = 1461 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 play69_AA           = 0 # 48 , 3,  7 , 11, 12, 13,48    albedo anomaly  # 69.12
 play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   play69_AA_in = "69a_AA_Albedo_anomaly_2026_08.txt" input filename
 
@@ -78,10 +78,10 @@ plot74_GIS_T = 0 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
-plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
+plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
-line2_play = 61  # 60 61  62
+line2_play = 68  # 60 61  62
 line3_play = 60  # 60 play_62_EEA #   68 play68_ERA = 720
 line4_play = 0  # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
@@ -112,7 +112,7 @@ c49 = "#DB1ADECC"
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"
-c60 = "#D20E119F"
+c60 = "#B50ED29F"
 c60a ="black"
 c61 = "#34D48FC7"
 c62 = "#BEBE21DD"
@@ -122,8 +122,7 @@ c65 = "#390509E1"
 c66 = "#AB263590"
 c67 = "#0F9BE190"
 c67 = "red"
-c68 = "#36970FD4"
-c68 = "red"
+c68 = "#0F9735D3"
 c69 = "#1652D490"
 
 c71 = "red"
@@ -222,7 +221,7 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_60min = 1  #  Temperature in °C y axis left mode
+y_60min = 0.6  #  Temperature in °C y axis left mode
 y_60max = 1.6  #  Temperature in °C y axis left mode
 y_61min = 0.4  #   EEI in W/m2 y axis left mode
 y_61max = 1.6  #   EEI in W/m2 y axis left mode
@@ -243,8 +242,8 @@ y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.296  # Hansen no swap albedo in %
 y_67max = 0.286   # Hansen no swap albedo in %
 
-y_68min = 0  # for era5 Temperature
-y_68max = 2  # for era5 Temperature 
+y_68min = 0.6  # for era5 Temperature
+y_68max = 1.6 # for era5 Temperature 
 
 y_69min = 1.6   # albedo anomaly in W/m2 
 y_69max = -1.6  # albedo anomaly in W/m2
