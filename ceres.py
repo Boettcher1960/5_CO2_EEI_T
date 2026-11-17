@@ -886,7 +886,7 @@ def create404_running_average(input_csv,
     if min_periods is None:
         min_periods = window_months
 
-    # 404.78 Keep the source series and calculate its regular middle average.
+    # 404.110 Keep the source series and calculate its regular middle average.
     source_values = df['toa_net_flux_w_m2']
     averaged_values = source_values.rolling(
         window=window_months, 
@@ -894,13 +894,14 @@ def create404_running_average(input_csv,
         min_periods=min_periods
     ).mean()
 
-    # 404.79 Use forward averages at the beginning and backward averages at the end.
+    # 404.120 Use forward averages at the beginning and backward averages at the end.
     edge_rows = window_months + 4
     if len(df) < 2 * edge_rows:
         raise ValueError(
             f"At least {2 * edge_rows} monthly records are required for "
             f"non-overlapping {edge_rows}-month edge regions; found {len(df)}."
         )
+    # 404.130 foreward_average is special with a sharp step
     forward_average = (
         source_values.iloc[::-1]
         .rolling(window=window_months, min_periods=window_months)
@@ -908,9 +909,11 @@ def create404_running_average(input_csv,
         .iloc[::-1]
         .reset_index(drop=True)
     )
+    # 404.140 backward_average is the normal average
     backward_average = source_values.rolling(
         window=window_months, min_periods=window_months
     ).mean()
+
     averaged_values.iloc[:edge_rows] = forward_average.iloc[:edge_rows]
     averaged_values.iloc[-edge_rows:] = backward_average.iloc[-edge_rows:]
     df[column_name] = averaged_values
