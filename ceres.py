@@ -886,6 +886,9 @@ def create404_running_average(input_csv,
     if min_periods is None:
         min_periods = window_months
 
+    if figure404 == 3:
+        min_periods = 2
+
     # 404.110 Keep the source series and calculate its regular middle average.
     source_values = df['toa_net_flux_w_m2']
     averaged_values = source_values.rolling(
