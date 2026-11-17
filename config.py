@@ -12,12 +12,12 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 0 # 0 means create no old figure 1= make old figuure
+figure100 = 1 # 0 means create no old figure 1= make old figuure
 figure202 = 0 # 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
-figure404 = 3 # 12, 24, 36 , 48 60 72 96    48=create quadratic-fit figure for matching play_61_EEI
+figure404 = 0 # 3 , 12, 24, 36 , 48 60 72 96    48=create quadratic-fit figure for matching play_61_EEI
 
 
 # 8.5 configure the right axis legend 
@@ -57,7 +57,7 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 play_60_T_E = 0   # 2=no average 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
 a60_start = 2005   # 2015 starting year of play_60_T_E
 a60_offset = 1.01     # 1 , 0.85 add offset 0.2°C at start of adding
-play_61_EEI = 12   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 48   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
                 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
@@ -222,8 +222,8 @@ y_55max = 9 # plot55_population_on = 5
 
 y_60min = 1  #  Temperature in °C y axis left mode
 y_60max = 2  #  Temperature in °C y axis left mode
-y_61min = -10  #   EEI in W/m2 y axis left mode
-y_61max = 20  #   EEI in W/m2 y axis left mode
+y_61min = 0.2  #   EEI in W/m2 y axis left mode
+y_61max = 1.6  #   EEI in W/m2 y axis left mode
 
 y_62min = 0  # EEA in ZJ
 y_62max = 400  # EEA in ZJ
@@ -282,7 +282,7 @@ cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
 x_anf = 2005   # 2005
-x_end = 2026   # 2028
+x_end = 2028   # 2028
 
 # XLO, XHI = 125, 1500
 
