@@ -936,9 +936,20 @@ def create404_running_average(input_csv,
     v5 =  averaged_values.values[edge_rows]  
     v6 =  averaged_values.values[edge_rows+1]  
     v7 =  averaged_values.values[edge_rows+2]     
-
+    v8 =  averaged_values.values[edge_rows+3]   
+    #    ceres__4: EEI= 0.5139583333333334 index 48 bad v1
+    #    ceres__3: EEI= 0.5554166666666667 index 49 bad v2
+    #    ceres__2: EEI= 0.5435416666666667 index 50 bad v3
+    #    ceres__1: EEI= 0.5918749999999999 index 51 bad v4
+    #    ceres___:       step
+    #    ceres__0: EEI= 0.42791666666666667 index 52  ok v5
+    #    ceres_+1: EEI= 0.42812500000000003 index 53  ok v6
+    #    ceres_+2: EEI= 0.44604166666666667 index 54  ok v7
+    #    ceres_+3: EEI= 0.43979166666666664 index 55  ok v8
+    # __: EEI= 0.5139583333333334  0.5554166666666667  0.5435416666666667  0.5918749999999999  
+    #          0.42791666666666667  0.42812500000000003  0.44604166666666667   
     if print_debug > 9:
-        print(f"__: EEI= { v1 }  { v2 }  { v3 }  { v4 }  { v5 }  { v6 }  { v7 }   ")
+        print(f"__: EEI= { v1 }  { v2 }  { v3 }  { v4 } step { v5 }  { v6 }  { v7 }   { v8 } ")
 
         # averaged_values.index[edge_rows-1] = index = 51 = edge_rows-1}
         # averaged_values.values[edge_rows-1]
@@ -946,7 +957,10 @@ def create404_running_average(input_csv,
     # 404.154 after 48 months
     averaged_values.iloc[-edge_rows:] = backward_average.iloc[-edge_rows:]
 
-    # 404.156 copy to df field column_name='EEI'
+    # 404.160 correct ceres__3: EEI= 0.5554166666666667 index 49 bad
+    averaged_values.values[edge_rows-3] = v5 + v6 
+
+    # 404.170 copy to df field column_name='EEI'
     df[column_name] = averaged_values
 
     # 404.160 48 months # edge_rows = figure404 + 4 = 48+4 = 52
