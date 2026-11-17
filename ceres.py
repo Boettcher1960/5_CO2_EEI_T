@@ -560,7 +560,6 @@ def fig_202_era5_temp_quadratic():
 #        print the quadratic equation for EEI inside figure404
 def fig_404_eei_quadratic():
     """Plot the selected CERES EEI running average with a quadratic fit."""
-
     # 402.11 comment 1
     # 402.12 comment 3
     #if figure404 not in (12, 24, 48):
@@ -572,8 +571,8 @@ def fig_404_eei_quadratic():
     # 402.13  work/61b_out_in_ceres.csv is the input file
     # 402.14  work/404c_out_EEI.csv is the ouput file
     # 402.15 call the running average function with figure404 month averaging
-    df404c = create_running_average( 'work/61b_out_in_ceres.csv',
-                                     'work/404c_out_EEI.csv',
+    df404c = create404_running_average( 'work/61b_out_in_ceres.csv',
+                                        'work/404c_out_EEI.csv',
                                             window_months=window_months,
                                             min_periods=min1_periods,
                                             center=use_center,
@@ -868,3 +867,46 @@ def fig_404_eei_quadratic():
     plt.show()
     # 404.77 Release the figure resources after it has been shown.
     plt.close(fig)
+
+
+
+# part 62.c  CERES.csv (perform averaging) create_running_average(input_csv, output_csv, 
+def create404_running_average(input_csv, 
+                           output_csv, 
+                           window_months, 
+                          min_periods=None, 
+                          center=True, 
+                          keep_original=True,
+                          column_name='EEI'):
+    """Create running average for specified window size"""
+    df = pd.read_csv(input_csv)
+    df['date'] = pd.to_datetime(df['date'])
+    df = df.sort_values('date').reset_index(drop=True)
+    
+    if min_periods is None:
+        # min_periods = window_months // 2
+        min_periods = window_months
+   
+    df[column_name] = df['toa_net_flux_w_m2'].rolling(
+        window=window_months, 
+        center=center,
+        min_periods=min_periods
+    ).mean()
+    
+    output_columns = ['date', 'year', 'month', 'decimal_year']
+    if keep_original:
+        output_columns.append('toa_net_flux_w_m2')
+    output_columns.append(column_name)
+    
+    df_output = df[output_columns].copy()
+    df_output.to_csv(output_csv, index=False, float_format='%.6f')
+    
+    valid_records = df_output[column_name].notna().sum()
+    #print(f"{window_months}-month running average saved to {output_csv}")
+    #print(f"Valid records: {valid_records} out of {len(df_output)}")
+    if print_debug_DP > 19:
+        print(f"DataP_79: Valid records: {valid_records} out of {len(df_output)}")
+        print(f"DataP_80: {window_months}-month running average saved to {output_csv} ")
+    return df_output
+    # end part 62.c  CERES.csv (perform averaging)
+
