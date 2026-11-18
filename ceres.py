@@ -39,7 +39,7 @@ def ceres_process_data():
        df28g = pd.read_csv("work/_404EEI_48Month.csv")
        # 28.41
        df28g["T_E"] = (
-              df28g["quadratic_value"]
+              df28g["linear_fit"]
               .where(df28g["digital_date"] >= a28_start)
               .cumsum()
               * factor          # factor = 0.00208 to convert it to °C
