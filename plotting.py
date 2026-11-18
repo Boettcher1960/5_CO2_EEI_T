@@ -397,7 +397,7 @@ def plot8_right_y_axe_for_C_28(ax28,right28): # 28.5
     elif plot28_E_T  > 0 and line4_play == 28:
         outward_right =  ( 3.5 *  60 ) - yr_150
     else:
-        outward_right =  ( 4.5 *  yr_60 ) - yr_150
+        outward_right =  ( 4.5 *  60 ) - yr_150
     ax28.spines.right.set_position(("outward", outward_right))
     ax28.set_ylabel("Temperatur °C calculated from EEI   28", color=c28, fontname="Arial",fontsize=18)
     ax28.tick_params(axis="y", labelcolor=c28)
@@ -792,6 +792,8 @@ def plot8_right_y_axe_for_T_78(ax78,right52): # 78.6
         outward_right = right52
     elif plot_T_78 == 3: # 76.61 scale for line 3 the first y axis on the left
         outward_right =  ( 2.5 * 60 ) - yr_150
+    elif plot_T_78 == 4: # 76.61 scale for line 3 the first y axis on the left
+        outward_right =  ( 3.5 * 60 ) - yr_150
     else:
         outward_right =  ( plot_T_78 * yr_60 ) - yr_150
     ax78.spines.right.set_position(("outward", outward_right))
@@ -887,7 +889,7 @@ def plot_9_create_all_plots(ax1, data):
            if plot25_long_CO2 > 2:
               plot8_right_y_axe_for_ppm_25( ax25 , 0 ) # 22.4
 
-
+    # ax78.plot(df78["Year78"], df78["Modeled78"], '--', label="T formula CO2=  K78", color=c78, linewidth=3)
     if plot28_E_T > 0:
        if line2_play == 28:
            # Plot on the left axis (ax1) instead of creating a right axis
@@ -896,7 +898,7 @@ def plot_9_create_all_plots(ax1, data):
            # The left axis is already configured in plot_1_axe
        else:
          ax28 = ax1.twinx()
-         ax28.plot(data['ceres_28']["digital_date"], data['ceres_28']["T_E"], '-', 
+         ax28.plot(data['ceres_28']["digital_date"], data['ceres_28']["T_E"], '--', 
                   label="EEI K28", color=c28, linewidth=2)
          ax28.tick_params(axis="y", labelcolor=c28)
          ax28.set_ylim(y_28min, y_28max)

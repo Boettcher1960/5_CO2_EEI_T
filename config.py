@@ -32,8 +32,8 @@ plot25_long_CO2 = 0   # 4 2, 3 25.1
 
 # plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
 plot28_E_T = 5 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
-a28_start = 2005   # 2015 starting year of play_60_T_E
-a28_offset = 1.5  
+a28_start = 1990   # 2015 starting year of play_60_T_E
+a28_offset = 0.7  
 plot29_ETq = 0 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
@@ -98,7 +98,7 @@ c21 = "blue"
 c22 = "blue"
 c23 = "#4554A8C6"
 c25 = "green"
-c28 = "#AB23E19F"
+c28 = "#E123539F"
 
 c31 = "#9B107F90"
 c32 = "#10929B90"
@@ -146,6 +146,7 @@ c78 = "#9D2A9984"
 blue22_text      = "blue dots: CO$_2$ measured at Mauna Loa (2025 = 427.35 ppm)                            22"
 text23 = "CO$_2$ calculated dashed blue line      CO2 = 0.0132251t² - 51.0337t + 49,536 ppm    23"
 text25 = "green: CO$_2$ in ppm    NOAA     800_000 year ice data                                                 25"
+text28 = "Temperature in °C simulated        from EEI calculated quadratic      28" 
 
 text31 = "dots: cumulative CO2 emissions in GtCO2     Carbon Brief / Our World in Data           31"
 text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World in Data              32"
@@ -293,8 +294,8 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 2005   # 2005
-x_end = 2028   # 2028
+x_anf = 1990   # 2005
+x_end = 2060   # 2028
 
 # XLO, XHI = 125, 1500
 
