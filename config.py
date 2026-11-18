@@ -77,7 +77,7 @@ play_64_ASR_anomaly = 0 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly =
 play_65_ASR         = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR         = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo      = 0   # line2 1..12..48..99 create 1..12..48..99 CERES
-play68_ERA          = 1461 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+play68_ERA          = 720 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 play69_AA           = 0 # 48 , 3,  7 , 11, 12, 13,48    albedo anomaly  # 69.12
 play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   play69_AA_in = "69a_AA_Albedo_anomaly_2026_08.txt" input filename
 
@@ -305,8 +305,8 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 2000   # 2005
-x_end = 2060   # 2028
+x_anf = 2005   # 2005
+x_end = 2065   # 2028
 
 # XLO, XHI = 125, 1500
 

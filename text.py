@@ -91,7 +91,7 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
             ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                                 transform=ax1.transAxes)
     elif line2_play == 68   :
-        header = f"Temperature in °C  era5        Plot {x_anf} to {x_end}."
+        header = f"Temperature in °C measured era5 and calculated with EEI    Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                             transform=ax1.transAxes)
     elif plot71_temperature == 2:
