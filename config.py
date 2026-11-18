@@ -37,7 +37,7 @@ a28_offset = 1.5
 plot29_ETq = 6 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
 a29_start = 2026.5   # 2015 starting year of play_60_T_E
 a29_offset = 1.5  
-plot30_c = 4 #  EEI =1.5W T linear add 0.00208°C for every 1 W/m²/month 
+plot30_c = 0 #  EEI =1.5W T linear add 0.00208°C for every 1 W/m²/month 
 a30_start = 2026.5   # 2015 starting year of play_60_T_E
 a30_offset = 1.5  
 a30_value = 1.5 # const value  W/m²
@@ -88,7 +88,7 @@ plot74_GIS_T = 0 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
-plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
+plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 68  # 60 61  62

@@ -1,5 +1,5 @@
 # main.py
-v = "5M80" # Global Heating calculated with EEI and 3 Futures
+v = "5M81" # plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
