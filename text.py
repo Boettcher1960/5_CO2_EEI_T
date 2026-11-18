@@ -212,6 +212,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        text_4_add_text(ax1, tr2x, tr2y, 
          "green: CO$_2$ NOAA     800_000 year ice data                                                               25", 
          c25, trs)
+    elif plot29_ETq == 2:    # 29.6
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c29)
+        text_4_add_text(ax1, tr2x, tr3y,  text29,   c29, trs)
+    elif plot30_c == 2:    # 29.6
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c30)
+        text_4_add_text(ax1, tr2x, tr3y,  text30,   c30, trs)
     elif plot31_CO2_emission == 2: # 31.8
        print("text_094: plot31_CO2_emission = ", plot31_CO2_emission,  " 31.8 ") # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr2y, c31)
@@ -292,6 +298,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c25)
        text_4_add_text(ax1, tr2x, tr3y, 
          text25, c25, trs)
+    elif plot29_ETq == 3:    # 29.6
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c29)
+        text_4_add_text(ax1, tr2x, tr3y,  text29,   c29, trs)
+    elif plot30_c == 3:    # 29.6
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c30)
+        text_4_add_text(ax1, tr2x, tr3y,  text30,   c30, trs)
     elif plot31_CO2_emission == 3: # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c31)
        text_4_add_text(ax1, tr2x, tr3y, 

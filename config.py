@@ -39,8 +39,8 @@ a29_start = 2026.5   # 2015 starting year of play_60_T_E
 a29_offset = 1.5  
 plot30_c = 3 #  EEI =1.5W T linear add 0.00208°C for every 1 W/m²/month 
 a30_start = 2026.5   # 2015 starting year of play_60_T_E
-a30_offset = 1.5  
-a30_value = 1.5  
+a30_offset = 2  
+a30_value = 2  
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission = 0  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
@@ -106,6 +106,7 @@ c23 = "#4554A8C6"
 c25 = "green"
 c28 = "#E123539F"
 c29 = "#1A27DECC"
+c30 = "#0F9BE190"
 c31 = "#9B107F90"
 c32 = "#10929B90"
 c32 = "red"
@@ -154,7 +155,7 @@ text23 = "CO$_2$ calculated dashed blue line      CO2 = 0.0132251t² - 51.0337t 
 text25 = "green: CO$_2$ in ppm    NOAA     800_000 year ice data                                                 25"
 text28 = "Temperature in °C         with  EEI calculated linear     T = 0.04788 x + 0.408             28" 
 text29 = "Temperature in °C  with EEI calculated quadratic   T = 0.0008x² +0.0293x +0.474    29" 
-
+text30 = "Temperature in °C  with constant EEI = 1.5 W/m²        30" 
 text31 = "dots: cumulative CO2 emissions in GtCO2     Carbon Brief / Our World in Data           31"
 text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World in Data              32"
 text34 = "purple dots: cumulative CO2 emissions Carbon Brief 34 mode                                   34"
@@ -201,7 +202,8 @@ y_28min = 0.8  #  Temperature in °C y axis left mode
 y_28max = 3.2  #  Temperature in °C y axis left mode
 y_29min = 0.8  #  Temperature in °C y axis left mode
 y_29max = 3.2  #  Temperature in °C y axis left mode
-
+y_30min = 0.8  #  Temperature in °C y axis left mode
+y_30max = 3.2  #  Temperature in °C y axis left mode
 y_Gmin = 0 # 250 ppm CO2 
 y_Gmax = 2000 # 2500 Gt CO2  
 y_31Gmin = 0 # 250 ppm CO2  

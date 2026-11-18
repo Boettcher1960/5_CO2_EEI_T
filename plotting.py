@@ -415,6 +415,20 @@ def plot8_right_y_axe_for_C_29(ax29,right29): # 29.5
     ax29.tick_params(axis="y", labelcolor=c29)
     ax29.set_ylim(y_29min, y_29max) #
 
+def plot8_right_y_axe_for_C_30(ax30,right30): # 30.5
+    if plot30_c == 3:
+        outward_right =  ( 2.5 *  60 ) - yr_150
+    elif plot30_c  == 4:
+        outward_right =  ( 3.5 *  60 ) - yr_150
+    else:
+        outward_right =  ( 4.5 *  60 ) - yr_150
+    ax30.spines.right.set_position(("outward", outward_right))
+    ax30.set_ylabel("Temperatur °C from EEI  30", color=c30, fontname="Arial",fontsize=18)
+    ax30.tick_params(axis="y", labelcolor=c30)
+    ax30.set_ylim(y_30min, y_30max) #
+
+
+
 # plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
 def plot8_right_y_axe_for_C_31(ax31,right52): # 31.6 
     if right52 > 0:
@@ -935,6 +949,23 @@ def plot_9_create_all_plots(ax1, data):
            print(f"plot_923: ax29 29.8 ={plot29_ETq}")
          if plot29_ETq > 2 and line2_play != 29:
            plot8_right_y_axe_for_C_29( ax29 , 0 ) # 29.4 line 967
+
+    if plot30_c > 0:
+       if line2_play == 30:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['ceres_30']["digital_date"], data['ceres_30']["T_E"], '--', 
+                             label="EEI K30", color=c30, linewidth=2)
+           # The left axis is already configured in plot_1_axe
+       else:
+         ax30 = ax1.twinx()
+         ax30.plot(data['ceres_30']["digital_date"], data['ceres_30']["T_E"], '--', 
+                  label="EEI K30", color=c30, linewidth=2)
+         ax30.tick_params(axis="y", labelcolor=c30)
+         ax30.set_ylim(y_30min, y_30max)
+         if print_debug > 9:
+           print(f"plot_923: ax30 30.8 ={plot30_c}")
+         if plot30_c > 2 and line2_play != 30:
+           plot8_right_y_axe_for_C_30( ax30 , 0 ) # 30.4 line 967
 
 
     # plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603
