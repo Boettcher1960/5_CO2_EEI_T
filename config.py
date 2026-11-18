@@ -98,6 +98,8 @@ c21 = "blue"
 c22 = "blue"
 c23 = "#4554A8C6"
 c25 = "green"
+c28 = "#AB23E19F"
+
 c31 = "#9B107F90"
 c32 = "#10929B90"
 c32 = "red"
@@ -186,6 +188,11 @@ y_22min = 360 # ppm CO2
 y_22max = 440 # ppm CO2
 y_25min = 370 # nok   only for y axis 
 y_25max = 430 # only for y axis
+
+y_28min = 0.8  #  Temperature in °C y axis left mode
+y_28max = 3.2  #  Temperature in °C y axis left mode
+
+
 y_Gmin = 0 # 250 ppm CO2 
 y_Gmax = 2000 # 2500 Gt CO2  
 y_31Gmin = 0 # 250 ppm CO2  

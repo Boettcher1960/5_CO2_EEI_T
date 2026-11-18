@@ -1,5 +1,5 @@
 # main.py
-v = "5M66" # plot28_E_T
+v = "5M67" # plot28_E_T
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -50,7 +50,11 @@ def load_plot_data():
         if print_debug > 19:
            print(f"main_168: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
            print(f"main_169: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")     
-
+    if plot28_E_T > 0: # 28.9 read
+        # data['ceres_62'] = pd.read_csv("work/28g_T_E.csv")
+        data['ceres_28'] = pd.read_csv("work/28g_T_E.csv")
+        if print_debug > 9:
+           print(f"main_410: 28.69 read ={plot28_E_T}")  
     if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
         data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
