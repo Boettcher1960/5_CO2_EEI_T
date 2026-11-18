@@ -54,7 +54,12 @@ def load_plot_data():
         # data['ceres_62'] = pd.read_csv("work/28g_T_E.csv")
         data['ceres_28'] = pd.read_csv("work/28g_T_E.csv")
         if print_debug > 9:
-           print(f"main_410: 28.69 read ={plot28_E_T}")  
+           print(f"main__56: 28.69 read ={plot28_E_T}")  
+    if plot29_ETq > 0: # 29.9 read
+        # data['ceres_62'] = pd.read_csv("work/29g_T_E.csv")
+        data['ceres_29'] = pd.read_csv("work/29g_T_E.csv")
+        if print_debug > 9:
+            print(f"main__62: 29.69 read ={plot29_ETq}")  
     if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
         data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")

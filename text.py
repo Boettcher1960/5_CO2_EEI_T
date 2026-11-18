@@ -520,6 +520,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot28_E_T == 5:    # 28.9.4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c28)
         text_4_add_text(ax1, tr2x, tr5y,  text28,   c28, trs)
+    elif plot29_ETq == 5:    # 28.9.4
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c29)
+        text_4_add_text(ax1, tr2x, tr5y,  text29,   c29, trs)
     elif plot42_EEI_48month == 5:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c42)
         text_4_add_text(ax1, tr2x, tr5y, 

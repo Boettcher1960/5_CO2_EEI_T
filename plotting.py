@@ -403,6 +403,18 @@ def plot8_right_y_axe_for_C_28(ax28,right28): # 28.5
     ax28.tick_params(axis="y", labelcolor=c28)
     ax28.set_ylim(y_28min, y_28max) #
 
+def plot8_right_y_axe_for_C_29(ax29,right29): # 29.5
+    if plot29_ETq  > 0 and line3_play == 29:
+        outward_right =  ( 2.5 *  60 ) - yr_150
+    elif plot29_ETq  > 0 and line4_play == 29:
+        outward_right =  ( 3.5 *  60 ) - yr_150
+    else:
+        outward_right =  ( 4.5 *  60 ) - yr_150
+    ax29.spines.right.set_position(("outward", outward_right))
+    ax29.set_ylabel("Temperatur °C calculated from EEI   29", color=c29, fontname="Arial",fontsize=18)
+    ax29.tick_params(axis="y", labelcolor=c29)
+    ax29.set_ylim(y_29min, y_29max) #
+
 # plot8_right_y_axe_for_C_31 ,  plot31_CO2_emission , cumulative CO2 emissions , line  402
 def plot8_right_y_axe_for_C_31(ax31,right52): # 31.6 
     if right52 > 0:
@@ -893,7 +905,7 @@ def plot_9_create_all_plots(ax1, data):
     if plot28_E_T > 0:
        if line2_play == 28:
            # Plot on the left axis (ax1) instead of creating a right axis
-           ax1.plot(data['ceres_28']["decimal_year"], data['ceres_28']["T_E"], '-', 
+           ax1.plot(data['ceres_28']["digital_date"], data['ceres_28']["T_E"], '--', 
                              label="EEI K28", color=c28, linewidth=2)
            # The left axis is already configured in plot_1_axe
        else:
@@ -907,6 +919,22 @@ def plot_9_create_all_plots(ax1, data):
          if plot28_E_T > 2 and line2_play != 28:
            plot8_right_y_axe_for_C_28( ax28 , 0 ) # 28.4 line 967
 
+    if plot29_ETq > 0:
+       if line2_play == 29:
+           # Plot on the left axis (ax1) instead of creating a right axis
+           ax1.plot(data['ceres_29']["digital_date"], data['ceres_29']["T_E"], '--', 
+                             label="EEI K29", color=c29, linewidth=2)
+           # The left axis is already configured in plot_1_axe
+       else:
+         ax29 = ax1.twinx()
+         ax29.plot(data['ceres_29']["digital_date"], data['ceres_29']["T_E"], '--', 
+                  label="EEI K29", color=c29, linewidth=2)
+         ax29.tick_params(axis="y", labelcolor=c29)
+         ax29.set_ylim(y_29min, y_29max)
+         if print_debug > 9:
+           print(f"plot_923: ax29 29.8 ={plot29_ETq}")
+         if plot29_ETq > 2 and line2_play != 29:
+           plot8_right_y_axe_for_C_29( ax29 , 0 ) # 29.4 line 967
 
 
     # plot31_CO2_emission summed  co2_cumul.csv   Entity,Code,Year,Cumula           , line 603

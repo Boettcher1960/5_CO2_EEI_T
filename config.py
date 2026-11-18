@@ -31,10 +31,10 @@ plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print
 plot25_long_CO2 = 0   # 4 2, 3 25.1 
 
 # plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
-plot28_E_T = 5 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
+plot28_E_T = 4 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
 a28_start = 2026.5   # 2015 starting year of play_60_T_E
-a28_offset = 1.5  
-plot29_ETq = 4 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
+a28_offset = 1.8  
+plot29_ETq = 5 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
 a29_start = 2026.5   # 2015 starting year of play_60_T_E
 a29_offset = 1.5  
 
@@ -149,8 +149,8 @@ c78 = "#9D2A9984"
 blue22_text      = "blue dots: CO$_2$ measured at Mauna Loa (2025 = 427.35 ppm)                            22"
 text23 = "CO$_2$ calculated dashed blue line      CO2 = 0.0132251t² - 51.0337t + 49,536 ppm    23"
 text25 = "green: CO$_2$ in ppm    NOAA     800_000 year ice data                                                 25"
-text28 = "Temperature in °C  with  EEI calculated quadratic   T = 0.0008x² +0.0293x +0.474    28" 
-text29 = "Temperature in °C         with  EEI calculated linear     T = 0.04788 x + 0.408             29" 
+text28 = "Temperature in °C         with  EEI calculated linear     T = 0.04788 x + 0.408             28" 
+text29 = "Temperature in °C  with EEI calculated quadratic   T = 0.0008x² +0.0293x +0.474    29" 
 
 text31 = "dots: cumulative CO2 emissions in GtCO2     Carbon Brief / Our World in Data           31"
 text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World in Data              32"
@@ -196,7 +196,8 @@ y_25max = 430 # only for y axis
 
 y_28min = 0.8  #  Temperature in °C y axis left mode
 y_28max = 3.2  #  Temperature in °C y axis left mode
-
+y_29min = 0.8  #  Temperature in °C y axis left mode
+y_29max = 3.2  #  Temperature in °C y axis left mode
 
 y_Gmin = 0 # 250 ppm CO2 
 y_Gmax = 2000 # 2500 Gt CO2  
