@@ -54,6 +54,26 @@ def T_model76(t):
 
 
 
+#########################################################
+# 27    play_60_EEI_T = 12   ############################
+#########################################################
+#--- see 41 process 4 CERES files ---------------------
+# Piers Forster slide:
+# "An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming"
+# Piers Forster An EEI of 2 W/m² results in 0.5°C warming. Piers Forster slide
+# Temperature accelerates 
+# 
+# https://www.youtube.com/watch?v=lx4k97DsrBU&t=700s
+# https://bsky.app/profile/thomas-boettcher.bsky.social/post/3my6e6h2ius24
+# Piers Forster 2 W/m²
+# Piers Forster 2 W/m² in 10a make 0.5°C
+# Piers Forster 2 W/m² in 1year makes 0.05°C
+# Piers Forster 1 W/m² in 1 year warmes 0.025°C
+# Piers Forster 1 W/m² in 1month warmes 0.00208°C 
+
+
+
+
 
 #########################################################
 # plot31_CO2_emission  ##############################
@@ -1019,125 +1039,9 @@ def Figure_304():
 
 
 
-"""Figure 1 (v5) - the equilibrium relationship and how the band is defined.
-
-Three reconstructions, each with its own marker, and the York fit to each.
-The gray envelope is the union of the three fits, widened by each fit's slope
-uncertainty, and is the band used in every later figure.
-
-No annotation is drawn - labelling is done in PowerPoint. Waypoint values are
-printed to the console instead.
-
-Conventions: round axis limits, band extending past the data on all sides,
-legend entries giving the range each record covers rather than a point count.
-
-chat07: 
-how to call Rovang_figure_1.py with plot210 = 3 and show Rovang_figure01.png
-chat08
-make a function 
-Rovang_figure_1()
-which produces Rovang_figure01.png
-
-
-if ( y_303max - y_303min ) < 5 make major grid lines every 0.5°C
-if ( y_303max - y_303min ) < 5 make minor grid lines every 0.2°C
-
-
-if ( figure303 == 4 ) make major grid lines every 100 ppm
-if ( figure303 == 4 ) make minor grid lines every 20 ppm
-
-
-modify line 91 of main   (that only values after year a60_start are summed) 
-
-modify line 93 of main.py  (that  a60_offset = 0.2 is the starting value of the sum) 
-df60g["T_E"] = (
-           df60g["EEI36"]
-           .where(df60g["year"] >= a60_start)
-           .cumsum()
-           * factor
-       )
-
-make a separate new figure404 for
-play_61_EEI = 12
-this is file work/61c_out_EEI.csv column EEI
-print the quadratic equation for EEI inside figure404
-
-
-modify the figure404 for
-figure404 = 12 # 12=create a separate quadratic-fit figure for play_61_EEI = 12
-figure404 = 24 # 24=create a separate quadratic-fit figure for play_61_EEI = 24
-figure404 = 48 # 48=create a separate quadratic-fit figure for play_61_EEI = 48
-
-modify figure404 to start in the year 2005
-x_anf = 2005
-and end in the year 2024
-x_end = 2024 
-
-modify figure404 to start y axis with y_61min
-y_61min = 0  #   EEI in W/m2 y axis left mode
-y_61max = 2  #   EEI in W/m2 y axis left mode
-modify figure404 to start y axis with y_61max
-
-
-modify figure404 to print x_anf = 2005 
-and 
-x_end = 2024 in the headline
-
-add to figure404 the linear fit
-
-
-write more comments in the code for
-fig_404_eei_quadratic():
-always start with the comment with
-
-
-use the quadratic function and make a new csv file
-column 1 is the digital date for every month
-column 2 is the value of the quadrattic function
-start with year 1990
-end with year 2050
-the file is /work/file404_48Month.csv
-
-
-add to /work/file404_48Month.csv
-column 3 with the linear fit
-
-Modify
-create404_running_average()
-to take the average of the following months for the first (figure404+4) months
-to take the average of the passed months for the last (figure404+4) months
-to take the middle average for the rest
-
-
-Modify
-create404_running_average()
-to take the average of the following months for the first month
-to take the average of the following months-1 for the first+1 month and the first month
-to take the average of the following months-2 for the first+2 month and the first+second month
-
-to take the average of the following months for the first (figure404+4) months
-
-
 """
 
 
 
 
-# chat01 /work/_68_out.csv
-#   reduce this file to only monthly numbers and copy in this workdir
-# chat02: # visualize
-#
-# 01.11.2026 version 5K13
-# chat04: replace CO₂ with Matplotlib math text, such as "CO$_2$" (and GtCO$_2$ where needed).
-#
-# chat05 visualize work/_48_era5_in.csv column temp_average like
-# https://climatecasino.substack.com/p/dear-everyone-150c-is-yesterdays
-# Run: python3 main.py --visualize-era5-temp-average
-#
-# Fit: T = 0.000610555(year − 2000)² + 0.009740682(year − 2000) + 0.736626732
-# R²: 0.953830
-# make quadratic equation and visualize work/_48_era5_in.csv column temp_average like
-# https://climatecasino.substack.com/p/dear-everyone-150c-is-yesterdays
-# Fit the quadratic trend from 2000 onward and show its equation on the plot.
-#
-#
+"""

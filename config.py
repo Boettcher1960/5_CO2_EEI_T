@@ -30,7 +30,9 @@ plot22_CO2_Mauna_Loa = 0 # 2 ,3    22.1 declare global integer variable (2= prin
 plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0   # 4 2, 3 25.1 
 
-plot26_E_T = 0 #
+plot27_EsT = 0 #  EEI simulates T linear  add 0.00208°C for every 1 W/m²/month 
+plot28_ETl = 0 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
+plot29_ETq = 0 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission = 0  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
@@ -112,7 +114,7 @@ c49 = "#DB1ADECC"
 c52 = "#7C8825FA"
 c52bar = "#C1D43408"
 c55 = "#34D48FC7"
-c60 = "#B50ED29F"
+c60 = "#E14C239F"
 c60a ="black"
 c61 = "#34D48FC7"
 c62 = "#BEBE21DD"
