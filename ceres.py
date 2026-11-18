@@ -18,26 +18,45 @@ from text import *
 from Rovang import *
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def ceres_process_data():
     """Process CERES data based on configuration""" 
     if print_debug > 19:
         print(f"ceres_36: play_60_T_E=1    60.00    ={play_60_T_E}")
         print(f"")
+    
+    # plot28_E_T    # add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
+    if plot28_E_T> 1: #  
+       # 28.11 convert download.txt to CERES.csv (no averaging)
+       print(f"ceres_42: plot28_E_T    28.11    ={plot28_E_T}")
+       
+       # 28.12. summ the averaged column "EEI36" and store it in new column 'T_A'
+       # 28.    Piers Forster: An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming.
+       factor = 0.00208  #     then multiplied by a constant 0.00208 to convert it to °C. 
+       #                       a60_start = 2005
+       #                       a60_offset = 0.2 # add offset 0.2°C at start of adding
+       #
+       # 28.14 add the temperature for every month, no averaging is done for play_60_T_E=1
+       if print_debug > 9:
+           print(f"ceres_41: plot28_E_T   28.25    ={plot28_E_T}")
+           # 28.33  CERES.csv (perform averaging)
+           
+           # 28.39 read above created CSV-file _404EEI_48Month
+           df28g = pd.read_csv("work/_404EEI_48Month.csv")
+           # 28.41
+           df28g["T_E"] = (
+              df28g["quadratic_value"]
+              .where(df28g["digital_date"] >= a28_start)
+              .cumsum()
+              * factor          # factor = 0.00208 to convert it to °C
+              + a28_offset      # add offset 0.2°C at start of adding
+           )
+           # 28.43. store 62g*csv to print it later, or copy it and use for other plots
+           df28g.to_csv("work/28g_T_E.csv", index=False, float_format='%.6f')
+           if print_debug > 9:
+              print(f"ceres118: create work/28g_T_E.csv   28    ={plot28_E_T}")
+    
+    
+    
     # play_60_T_E = 48    # add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
     # Earth Energy Accumulated EEA is sum of EEI
     if play_60_T_E > 1: #  

@@ -77,7 +77,7 @@ def T_model76(t):
 # 5M64 run 2005 48month
 # Figure 404 quadratic fit: EEI = 0.000859832(year - 2005)^2 +0.029327812(year - 2005) +0.474645167 W/m²; R² = 0.959348
 # Figure 404 linear fit: EEI = 0.047882325(year - 2005) +0.408183537 W/m²; R² = 0.949764
-# file404_48Month.csv   404EEI_48Month Kopie 2.csv
+# copy file404_48Month.csv  to _404EEI_48Month.csv
 # 2050   3.540003616  2.564883279
 
 

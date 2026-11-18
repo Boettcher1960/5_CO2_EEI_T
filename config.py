@@ -17,7 +17,7 @@ figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
-figure404 = 48 # 3 , 12, 24, 36 , 48 60 72 96    48=create quadratic-fit figure for matching play_61_EEI
+figure404 = 0 # 3 , 12, 24, 36 , 48 60 72 96    48=create quadratic-fit figure for matching play_61_EEI
 
 
 # 8.5 configure the right axis legend 
@@ -30,8 +30,10 @@ plot22_CO2_Mauna_Loa = 0 # 2 ,3    22.1 declare global integer variable (2= prin
 plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print in line 4)
 plot25_long_CO2 = 0   # 4 2, 3 25.1 
 
-plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
-plot28_ETl = 0 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
+# plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
+plot28_E_T = 5 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
+a28_start = 2005   # 2015 starting year of play_60_T_E
+a28_offset = 1.01  
 plot29_ETq = 0 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
