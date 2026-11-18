@@ -346,7 +346,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr3y, text63, c63, trs) 
     elif play_64_ASR_anomaly > 0 and line3_play == 64:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c64)
-        p64_text = f"ASRA absorbed solar radiation Anomaly in  [W/m²]      moving average {play_64_ASR_anomaly} month    64"
+        p64_text = f"ASR absorbed solar radiation Anomaly in  [W/m²]       moving average {play_64_ASR_anomaly} month    64"
         text_4_add_text(ax1, tr2x, tr3y, p64_text, c64, trs) 
     elif play_65_ASR > 0 and line3_play == 65:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c65)

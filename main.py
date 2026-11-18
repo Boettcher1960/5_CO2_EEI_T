@@ -1,5 +1,5 @@
 # main.py
-v = "5M57" # end draft https://thomas1960.substack.com/publish/post/225400625
+v = "5M58" # [12] pdf from CERES Science Team Meeting, May 12-14, 2026 …Loeb… 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
