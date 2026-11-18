@@ -68,7 +68,7 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 
 play_60_T_E = 48   # 2=no average 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
 a60_start = 2005   # 2015 starting year of play_60_T_E
-a60_offset = 1.01     # 1 , 0.85 add offset 0.2°C at start of adding
+a60_offset = 1.01     # 1.01 1 , 0.85 add offset 0.2°C at start of adding
 play_61_EEI = 0   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
@@ -154,8 +154,8 @@ c78 = "#9D2A9984"
 blue22_text      = "blue dots: CO$_2$ measured at Mauna Loa (2025 = 427.35 ppm)                            22"
 text23 = "CO$_2$ calculated dashed blue line      CO2 = 0.0132251t² - 51.0337t + 49,536 ppm    23"
 text25 = "green: CO$_2$ in ppm    NOAA     800_000 year ice data                                                 25"
-text28 = "Temperature in °C  with  EEI calculated linear          T = 0.04788 x + 0.408               28" 
-text29 = "Temperature in °C  with EEI calculated quadratic   T = 0.0008x² +0.0293x +0.474    29" 
+text28 = "Temperature in °C   with   calculated   linear      EEI = 0.04788 x + 0.408                  28" 
+text29 = "Temperature in °C  with calculated  quadratic    EEI = 0.0008x² +0.0293x +0.474     29" 
 text30 = "Temperature in °C   with constant EEI = 1.5 W/m²       warms 0.5°C in 14 years        30" 
 text31 = "dots: cumulative CO2 emissions in GtCO2     Carbon Brief / Our World in Data           31"
 text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World in Data              32"
@@ -306,7 +306,7 @@ cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
 x_anf = 2005   # 2005
-x_end = 2065   # 2028
+x_end = 2065   # 2028   2065
 
 # XLO, XHI = 125, 1500
 
