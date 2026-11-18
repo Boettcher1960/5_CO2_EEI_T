@@ -399,7 +399,7 @@ def plot8_right_y_axe_for_C_28(ax28,right28): # 28.5
     else:
         outward_right =  ( 4.5 *  60 ) - yr_150
     ax28.spines.right.set_position(("outward", outward_right))
-    ax28.set_ylabel("Temperatur °C calculated EEI linear  28", color=c28, fontname="Arial",fontsize=18)
+    ax28.set_ylabel("Temperature °C calculated EEI linear  28", color=c28, fontname="Arial",fontsize=18)
     ax28.tick_params(axis="y", labelcolor=c28)
     ax28.set_ylim(y_28min, y_28max) #
 
@@ -411,7 +411,7 @@ def plot8_right_y_axe_for_C_29(ax29,right29): # 29.5
     else:
         outward_right =  ( 4.5 *  60 ) - yr_150
     ax29.spines.right.set_position(("outward", outward_right))
-    ax29.set_ylabel("Temperatur °C from EEI quadratic  29", color=c29, fontname="Arial",fontsize=18)
+    ax29.set_ylabel("Temperature °C from EEI quadratic  29", color=c29, fontname="Arial",fontsize=18)
     ax29.tick_params(axis="y", labelcolor=c29)
     ax29.set_ylim(y_29min, y_29max) #
 
@@ -423,7 +423,7 @@ def plot8_right_y_axe_for_C_30(ax30,right30): # 30.5
     else:
         outward_right =  ( 4.5 *  60 ) - yr_150
     ax30.spines.right.set_position(("outward", outward_right))
-    ax30.set_ylabel("Temperatur °C from EEI  30", color=c30, fontname="Arial",fontsize=18)
+    ax30.set_ylabel("Temperature °C from const EEI  30", color=c30, fontname="Arial",fontsize=18)
     ax30.tick_params(axis="y", labelcolor=c30)
     ax30.set_ylim(y_30min, y_30max) #
 

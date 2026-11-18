@@ -40,7 +40,7 @@ a29_offset = 1.5
 plot30_c = 3 #  EEI =1.5W T linear add 0.00208°C for every 1 W/m²/month 
 a30_start = 2026.5   # 2015 starting year of play_60_T_E
 a30_offset = 2  
-a30_value = 2  
+a30_value = 1.5 # const value  W/m²
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission = 0  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 

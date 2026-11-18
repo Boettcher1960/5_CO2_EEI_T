@@ -1,5 +1,5 @@
 # main.py
-v = "5M75" # text28 = "Temperature in °C  quadratic with  EEI calculated   T = 0.0008x² +0.0293x +0.474    28" 
+v = "5M77" # text28 = "Temperature in °C  quadratic with  EEI calculated   T = 0.0008x² +0.0293x +0.474    28" 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification

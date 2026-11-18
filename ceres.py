@@ -78,12 +78,15 @@ def ceres_process_data():
         factor = 0.00208  #     then multiplied by a constant 0.00208 to convert it to °C. 
         # 30.14 add the temperature for every month, no averaging is done 
         if print_debug > 9:
-            print(f"ceres_62: plot30_c   28.25    ={plot30_c}")
+            print(f"ceres_81: plot30_c   28.25    ={plot30_c}")
         # 30.39 read the file created in figure404    work/_404EEI_48Month.csv
         df30g = pd.read_csv("work/_404EEI_48Month.csv")
+        df30g["const"] = a30_value
+
         # 30.41
         df30g["T_E"] = (
-            df30g["quadratic_value"]
+            # df30g["quadratic_value"] - df30g["quadratic_value"] + a30_value
+            df30g["const"]
             .where(df30g["digital_date"] >= a30_start)
             .cumsum()
             * factor          # factor = 0.00208 to convert it to °C
@@ -92,7 +95,7 @@ def ceres_process_data():
         # 30.43. store 62g*csv to print it later, or copy it and use for other plots
         df30g.to_csv("work/30g_T_E.csv", index=False, float_format='%.6f')
         if print_debug > 9:
-            print(f"ceres_76: create work/30g_T_E.csv   28    ={plot30_c }")
+            print(f"ceres_95: create work/30g_T_E.csv   28    ={plot30_c }")
 
 
 
