@@ -32,9 +32,12 @@ plot25_long_CO2 = 0   # 4 2, 3 25.1
 
 # plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
 plot28_E_T = 5 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
-a28_start = 1990   # 2015 starting year of play_60_T_E
-a28_offset = 0.7  
-plot29_ETq = 0 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
+a28_start = 2026.5   # 2015 starting year of play_60_T_E
+a28_offset = 1.5  
+plot29_ETq = 4 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
+a29_start = 2026.5   # 2015 starting year of play_60_T_E
+a29_offset = 1.5  
+
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission = 0  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
@@ -82,7 +85,7 @@ plot74_GIS_T = 0 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
-plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
+plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 68  # 60 61  62
@@ -99,7 +102,7 @@ c22 = "blue"
 c23 = "#4554A8C6"
 c25 = "green"
 c28 = "#E123539F"
-
+c29 = "#1A27DECC"
 c31 = "#9B107F90"
 c32 = "#10929B90"
 c32 = "red"
@@ -146,7 +149,8 @@ c78 = "#9D2A9984"
 blue22_text      = "blue dots: CO$_2$ measured at Mauna Loa (2025 = 427.35 ppm)                            22"
 text23 = "CO$_2$ calculated dashed blue line      CO2 = 0.0132251t² - 51.0337t + 49,536 ppm    23"
 text25 = "green: CO$_2$ in ppm    NOAA     800_000 year ice data                                                 25"
-text28 = "Temperature in °C  quadratic with  EEI calculated   T = 0.0008x² +0.0293x +0.474    28" 
+text28 = "Temperature in °C  with  EEI calculated quadratic   T = 0.0008x² +0.0293x +0.474    28" 
+text29 = "Temperature in °C         with  EEI calculated linear     T = 0.04788 x + 0.408             29" 
 
 text31 = "dots: cumulative CO2 emissions in GtCO2     Carbon Brief / Our World in Data           31"
 text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World in Data              32"
@@ -294,7 +298,7 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 1990   # 2005
+x_anf = 2000   # 2005
 x_end = 2060   # 2028
 
 # XLO, XHI = 125, 1500

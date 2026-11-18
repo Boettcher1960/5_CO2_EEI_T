@@ -34,7 +34,7 @@ def ceres_process_data():
        #
        # 28.14 add the temperature for every month, no averaging is done 
        if print_debug > 9:
-           print(f"ceres_41: plot28_E_T   28.25    ={plot28_E_T}")
+           print(f"ceres_37: plot28_E_T   28.25    ={plot28_E_T}")
        # 28.39 read the file created in figure404    work/_404EEI_48Month.csv
        df28g = pd.read_csv("work/_404EEI_48Month.csv")
        # 28.41
@@ -48,9 +48,33 @@ def ceres_process_data():
        # 28.43. store 62g*csv to print it later, or copy it and use for other plots
        df28g.to_csv("work/28g_T_E.csv", index=False, float_format='%.6f')
        if print_debug > 9:
-           print(f"ceres_56: create work/28g_T_E.csv   28    ={plot28_E_T}")
+           print(f"ceres_51: create work/28g_T_E.csv   28    ={plot28_E_T}")
     
-    
+    if plot29_ETq > 1: #  
+           # 29.12. summ the averaged column "quadratic_value" and store it in new column 'T_A'
+           # 29.    Piers Forster: An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming.
+           factor = 0.00208  #     then multiplied by a constant 0.00208 to convert it to °C. 
+           #                       a60_start = 2005
+           #                       a60_offset = 0.2 # add offset 0.2°C at start of adding
+           #
+           # 29.14 add the temperature for every month, no averaging is done 
+           if print_debug > 9:
+               print(f"ceres_62: plot29_ETq   28.25    ={plot29_ETq}")
+           # 29.39 read the file created in figure404    work/_404EEI_48Month.csv
+           df29g = pd.read_csv("work/_404EEI_48Month.csv")
+           # 29.41
+           df29g["T_E"] = (
+                  df29g["quadratic_value"]
+                  .where(df29g["digital_date"] >= a29_start)
+                  .cumsum()
+                  * factor          # factor = 0.00208 to convert it to °C
+                  + a29_offset      # add offset 0.2°C at start of adding
+               )
+           # 29.43. store 62g*csv to print it later, or copy it and use for other plots
+           df29g.to_csv("work/29g_T_E.csv", index=False, float_format='%.6f')
+           if print_debug > 9:
+                print(f"ceres_76: create work/29g_T_E.csv   28    ={plot29_ETq }")
+
     
     # play_60_T_E = 48    # add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
     # Earth Energy Accumulated EEA is sum of EEI

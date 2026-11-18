@@ -403,6 +403,12 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot25_long_CO2 == 4: # 25.9.4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c23)
         text_4_add_text(ax1, tr2x, tr4y,  text25,   c25, trs)
+    elif plot28_E_T == 4:    # 28.9.4
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c28)
+        text_4_add_text(ax1, tr2x, tr4y,  text28,   c28, trs)
+    elif plot29_ETq == 4:    # 28.9.4
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c29)
+        text_4_add_text(ax1, tr2x, tr4y,  text29,   c29, trs)
     elif plot31_CO2_emission == 4: # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c31)
        text_4_add_text(ax1, tr2x, tr4y, 
