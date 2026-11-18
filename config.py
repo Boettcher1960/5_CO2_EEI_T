@@ -146,7 +146,7 @@ c78 = "#9D2A9984"
 blue22_text      = "blue dots: CO$_2$ measured at Mauna Loa (2025 = 427.35 ppm)                            22"
 text23 = "CO$_2$ calculated dashed blue line      CO2 = 0.0132251t² - 51.0337t + 49,536 ppm    23"
 text25 = "green: CO$_2$ in ppm    NOAA     800_000 year ice data                                                 25"
-text28 = "Temperature in °C simulated        from EEI calculated quadratic      28" 
+text28 = "Temperature in °C  quadratic with  EEI calculated   T = 0.0008x² +0.0293x +0.474    28" 
 
 text31 = "dots: cumulative CO2 emissions in GtCO2     Carbon Brief / Our World in Data           31"
 text32 = "dots: cumulative CO2 emissions in GtC       Carbon Brief / Our World in Data              32"
@@ -178,7 +178,7 @@ text74 = "Temperature in °C   giss.nasa.gov   Hansen+0.3°C                    
 text75 = "Hansen linear fit   from 2015    +0.41°C                       75"  # Added for linear_41_75
 text76 = "Temperature in °C   my guess quadratic increase                                                      76" 
 text77 = "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2022=1.5°C       77" 
-text78 = "Temperature in °C   quadratic       Tom Harris  y = 0.0004x2 + 0.0019x + 0.5079      78" 
+text78 = "Temperature in °C   quadratic       Tom Harris   T = 0.0004x²  + 0.0019x + 0.5079      78" 
 
 
 # Axis ranges
