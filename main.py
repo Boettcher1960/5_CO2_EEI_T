@@ -1,5 +1,5 @@
 # main.py
-v = "5M72" # text28 = "Temperature in °C  quadratic with  EEI calculated   T = 0.0008x² +0.0293x +0.474    28" 
+v = "5M74" # text28 = "Temperature in °C  quadratic with  EEI calculated   T = 0.0008x² +0.0293x +0.474    28" 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -60,6 +60,11 @@ def load_plot_data():
         data['ceres_29'] = pd.read_csv("work/29g_T_E.csv")
         if print_debug > 9:
             print(f"main__62: 29.69 read ={plot29_ETq}")  
+    if plot30_c > 0: # 30.9 read
+        # data['ceres_62'] = pd.read_csv("work/30g_T_E.csv")
+        data['ceres_30'] = pd.read_csv("work/30g_T_E.csv")
+        if print_debug > 9:
+            print(f"main__62: 30.69 read ={plot30_c}")  
     if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
         data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
         # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")

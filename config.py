@@ -31,13 +31,16 @@ plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print
 plot25_long_CO2 = 0   # 4 2, 3 25.1 
 
 # plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
-plot28_E_T = 4 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
+plot28_E_T = 0 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
 a28_start = 2026.5   # 2015 starting year of play_60_T_E
 a28_offset = 1.5  
 plot29_ETq = 5 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
 a29_start = 2026.5   # 2015 starting year of play_60_T_E
 a29_offset = 1.5  
-
+plot30_c = 3 #  EEI =1.5W T linear add 0.00208°C for every 1 W/m²/month 
+a30_start = 2026.5   # 2015 starting year of play_60_T_E
+a30_offset = 1.5  
+a30_value = 1.5  
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
 plot32_CO2_emission = 0  # 2, 3 # CO2_emission 600 GtC Carbon Brief made with play_63_CB 
@@ -89,8 +92,8 @@ plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 68  # 60 61  62
-line3_play = 60  # 60 play_62_EEA #   68 play68_ERA = 720
-line4_play = 0  # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
+line3_play = 0  # 60 play_62_EEA #   68 play68_ERA = 720
+line4_play = 60 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
 line6_play = 0
 
