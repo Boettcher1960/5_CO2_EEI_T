@@ -57,8 +57,18 @@ def T_model76(t):
 #########################################################
 # 27    play_60_EEI_T = 12   ############################
 #########################################################
+# plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
+# 5M50 run 2000 48month
+# Figure 404 quadratic fit: EEI = 0.001172890(year - 2000)^2 +0.009681549(year - 2000) +0.437438919 W/m²; R² = 0.960527
+# Figure 404 linear fit: EEI = 0.041051726(year - 2000) +0.296319164 W/m²; R² = 0.925173
+
+
+
+#########################################################
+# 28          plot28_ETl     ############################
+#########################################################
 #--- see 41 process 4 CERES files ---------------------
-# Piers Forster slide:
+# plot28_ETl = 0 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
 # "An EEI of 2 W/m² sustained over a decade would add roughly half a degree of warming"
 # Piers Forster An EEI of 2 W/m² results in 0.5°C warming. Piers Forster slide
 # Temperature accelerates 
@@ -70,8 +80,6 @@ def T_model76(t):
 # Piers Forster 2 W/m² in 1year makes 0.05°C
 # Piers Forster 1 W/m² in 1 year warmes 0.025°C
 # Piers Forster 1 W/m² in 1month warmes 0.00208°C 
-
-
 
 
 
