@@ -421,6 +421,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     elif plot29_ETq == 4:    # 28.9.4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c29)
         text_4_add_text(ax1, tr2x, tr4y,  text29,   c29, trs)
+    elif plot30_c == 4:    # 29.6
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c30)
+        text_4_add_text(ax1, tr2x, tr4y,  text30,   c30, trs)
     elif plot31_CO2_emission == 4: # 31.8
        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c31)
        text_4_add_text(ax1, tr2x, tr4y, 
@@ -593,6 +596,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c61)
         p61_text = f"Earth Energy Imbalance [W/m²]  CERES 2026_08     moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
+    elif plot29_ETq == 6:    # 28.9.4
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c29)
+        text_4_add_text(ax1, tr2x, tr6y,  text29,   c29, trs)
     elif a60_start > 2050:
         text_4_add_text(ax1, tr1x, tr6y,  text60b,   c60a, 15)
     elif play_62_EEA > 0 and line6_play == 62:
@@ -618,6 +624,6 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr7y, text74 , c74, trs)
     elif a60_start > 2050:
         text_4_add_text(ax1, tr1x, -.58,  text60c,   c60a, 15)
-    else: # row 7
-        row7_text = f"Parameter {header_parameter}  Text564:"
+    elif line7_play < 9: # row 7 line7_play = 99 # 99 no line 7 
+        row7_text = f"Parameter {header_parameter}  Text628:"
         text_4_add_text(ax1, tr2x, tr7y, row7_text, "black", 16) 

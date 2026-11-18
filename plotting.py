@@ -408,6 +408,8 @@ def plot8_right_y_axe_for_C_29(ax29,right29): # 29.5
         outward_right =  ( 2.5 *  60 ) - yr_150
     elif plot29_ETq  == 4:
         outward_right =  ( 3.5 *  60 ) - yr_150
+    elif plot29_ETq  == 6:
+        outward_right =  ( 5.5 *  60 ) - yr_150
     else:
         outward_right =  ( 4.5 *  60 ) - yr_150
     ax29.spines.right.set_position(("outward", outward_right))
