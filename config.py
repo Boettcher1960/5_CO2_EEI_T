@@ -33,7 +33,7 @@ plot25_long_CO2 = 0   # 4 2, 3 25.1
 # plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
 plot28_E_T = 5 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
 a28_start = 2005   # 2015 starting year of play_60_T_E
-a28_offset = 1.01  
+a28_offset = 1.5  
 plot29_ETq = 0 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
 
 plot31_CO2_emission = 0  # 2, 3, 4   # 31.1 CO2_emission 1800 Gt CO2 Carbon Brief made with play_63_CB 
