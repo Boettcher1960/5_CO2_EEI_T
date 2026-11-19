@@ -1,5 +1,5 @@
 # main.py
-v = "5M91" # no bug for linear_41_75 = 5 a second y axis is made 
+v = "5M93" #  ax1.plot(data['ceres_75']["Year75"], data['ceres_75']["temp"], ':' ,label="T75", color=c75, linewidth=3)
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification

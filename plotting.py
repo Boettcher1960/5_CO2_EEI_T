@@ -1580,11 +1580,10 @@ def plot_9_create_all_plots(ax1, data):
     if linear_41_75 > 0:
        df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
        if plot74_GIS_T == 2:
-          ax1.plot(data['ceres_75']["Year75"], data['ceres_75']["temp"], '--',  
-                         label="EEI K75", color=c75, linewidth=2)
+          ax1.plot(data['ceres_75']["Year75"], data['ceres_75']["temp"], ':' ,label="T75", color=c75, linewidth=3)
        else: 
           ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
-          ax75.plot(data['ceres_75']["Year75"], data['ceres_75']["temp"], '--', 
+          ax75.plot(data['ceres_75']["Year75"], data['ceres_75']["temp"], ':', 
                          label="EEI K75", color=c75, linewidth=2)
           ax75.tick_params(axis="y", labelcolor=c75)
           ax75.set_ylim(y_75min, y_75max) # scale
