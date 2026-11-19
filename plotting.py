@@ -89,7 +89,7 @@ def add_temperature_band(ax, y_min=1.5, y_max=2.0):
     if hasattr(ax, 'get_ylabel'):
         ylabel = ax.get_ylabel()
         if 'Temperature' in ylabel or '°C' in ylabel:
-            ax.axhspan(y_min, y_max, color="#88D12184", alpha=0.2, zorder=0)
+            ax.axhspan(y_min, y_max, color="#2196D19A", alpha=0.06, zorder=0)
 
 def add_vertical_bands(ax1, C280):
     """Add vertical bands for CO2 levels"""
@@ -283,7 +283,7 @@ def plot_1_axe(ax1):
         # a Temperature in °C giss.nasa.gov Hansen+0.3°C 74 
         ax1.spines.left.set_position(("outward", 0))
         ax1.set_ylim(y_74min, y_74max)
-        ax1.set_ylabel(" GISS Temperature in °C   74  ", color=c74, fontsize=20)
+        ax1.set_ylabel("Temperature in °C", color=c74, fontsize=20)
         ax1.tick_params(axis="y", labelcolor=c74, labelsize=20)
         if y_74max < 2:
            y_mayor_ticks = 0.2 
@@ -777,12 +777,13 @@ def plot8_right_y_axe_for_T_75(ax75,right52): # 75.6
         outward_right = right52
     else:
         outward_right =  ( linear_41_75 * yr_60 ) - yr_150
-    ax75.spines.right.set_position(("outward", outward_right))
+    # ax75.spines.right.set_position(("outward", outward_right))
     if plot74_GIS_T == 2: # T axis already on the left
         print(f"plot 474: no need for second T axis linear_41_75 ={linear_41_75} ")
         ax75.yaxis.set_ticks([])
         ax75.spines['right'].set_visible(False)
     else:    
+       ax75.spines.right.set_position(("outward", outward_right))
        ax75.set_ylabel("Temperature in °C        plot589          75", color=c75, fontname="Arial",fontsize=18)
        ax75.tick_params(axis="y", labelcolor=c75)
    
@@ -1577,17 +1578,22 @@ def plot_9_create_all_plots(ax1, data):
     # https://www.columbia.edu/~jeh1/mailings/2026/ElNino.2026.02.06.pdf
     # 7.5.2 Year75,GIS_temp
     if linear_41_75 > 0:
-       print75_text ="Hansen linear fit from 2015 +0.41°C     75"
-       df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
-       #print(df75.head(2))
-       ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
-       # part 7.4.6 add 0.3°C same as Hansen to GIS
-       ax75.plot(df75["Year75"], df75["temp"]+0.1, '--', label="T GIS  K75", color=c75, linewidth=2)
-       ax75.tick_params(axis="y", labelcolor=c75)
-       ax75.set_ylim(y_Tmin, y_Tmax) # scale
-       if linear_41_75 > 2:
-            plot8_right_y_axe_for_T_75(ax75,0) # 75.5 line 530
-       # end 7.5
+       if plot74_GIS_T == 2:
+          # do nothing as y axis on left is sufficent
+          if print_debug > 9:
+             print("plot_1583:  do nothing for linear_41_75 ")
+       else:
+          print75_text ="Hansen linear fit from 2015 +0.41°C     75"
+          df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
+          #print(df75.head(2))
+          ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+          # part 7.4.6 add 0.3°C same as Hansen to GIS
+          ax75.plot(df75["Year75"], df75["temp"]+0.1, '--', label="T GIS  K75", color=c75, linewidth=2)
+          ax75.tick_params(axis="y", labelcolor=c75)
+          ax75.set_ylim(y_Tmin, y_Tmax) # scale
+          if linear_41_75 > 2:
+             plot8_right_y_axe_for_T_75(ax75,0) # 75.5 line 530
+          # end 7.5
 
     if plot76_my_T > 0:
        # 76.2 years scale x axis

@@ -85,7 +85,7 @@ plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
 plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
-linear_41_75 = 0 # 3 4 5
+linear_41_75 = 2 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
@@ -433,6 +433,9 @@ if figure100 == 11:
    c74 =  "green"
    y_74min = 0  # for GIS Temperature 
    y_74max = 3  # 1.6 for GIS Temperature 
+   c75 = "#3DBA2084"
+   y_75min = 0 #  Temperature  
+   y_75max = 3   #  Temperature 
 
    plot28_E_T = 5 # linear EEI increase in line 5
    text28 = "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x  +  0.408              28"
