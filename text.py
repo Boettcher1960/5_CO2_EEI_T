@@ -185,7 +185,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     # text_4_add_text(ax1, tr2x, tr5y, "--row5---main338--- tr5y", c43, trs)
     text_4_add_text(ax1, 0.9, tr7y, 
                     "-text184", 
-                    c43, 10)
+                    "#EBEAD809", 10)
 
     # Add legend lines for active plots 
     # part 9.2 print line 2 below the plot main_350
@@ -616,6 +616,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
     if plot74_GIS_T == 7: # 74.6 tr7y = -.57
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr7y, c74)
         text_4_add_text(ax1, tr2x, tr7y, text74 , c74, trs)
+    elif plot_T_78 == 7: # 78.5.3 legend
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr7y, c78)
+        text_4_add_text(ax1, tr2x, tr7y, text78, c78, trs)
     elif a60_start > 2050:
         text_4_add_text(ax1, tr1x, -.58,  text60c,   c60a, 15)
     elif line7_play < 9: # row 7 line7_play = 99 # 99 no line 7 
