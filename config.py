@@ -12,7 +12,7 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 11 # 11      0 means create no old figure 1= make old figuure
+figure100 = 102 # 101      0 means create no old figure 1= make old figuure
 figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
@@ -424,8 +424,8 @@ print_debug = 10 # print some items
 #
 
 # 111.1 overwrite config values 
-if figure100 == 11:
-   text101 = "Figure 1: Global Warming ... possible Temperatures in ..2050...  EEI, Hansen..."
+if figure100 == 101:
+   text100 = "Figure 1: Global Warming ... possible Temperatures in ..2050...  EEI, Hansen..."
 
    plot74_GIS_T = 2 # Hansen GISS temperature
    text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
@@ -440,7 +440,55 @@ if figure100 == 11:
    y_75min = 0 #  Temperature  
    y_75max = 3   #  Temperature 
 
+   line4_play = 60
+   play_60_T_E = 48
+
+
    plot28_E_T = 5 # linear EEI increase in line 5
+   text28 = "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x  +  0.408              28"
+   y_28min = 0  #  Temperature in °C y axis left mode
+   y_28max = 3  #  Temperature in °C y axis left mode
+
+
+   plot29_ETq = 6 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
+   y_29min = 0  #  Temperature in °C y axis left mode
+   y_29max = 3  #  Temperature in °C y axis left mode
+
+   y_60min = 0  #  Temperature in °C y axis left mode
+   y_60max = 3  #  Temperature in °C y axis left mode
+
+   plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
+   y_78min = 0 #  for Tom Harris Temperature 
+   y_78max = 3 #  for Tom Harris Temperature
+
+   if print_debug > 9:
+      # print(f"config__433  {plot28_E_T}", text28)
+      print(f"config__450  {figure100}", text100)
+   print_debug = 2
+elif figure100 == 102:
+   text100 = "Figure 2: Global Warming ... possible Temperature in 2050 = 2.5°C   Hansen liner fit +0.4°C"
+
+   plot74_GIS_T = 2 # Hansen GISS temperature
+   text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
+   c74 =  "#2EDF1B90"
+   c74 =  "green"
+   y_74min = 0  # for GIS Temperature 
+   y_74max = 3  # 1.6 for GIS Temperature 
+
+   linear_41_75 = 3
+   text75 = "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75"  # Added for linear_41_75
+   c75 = "#226C12CC"
+   y_75min = 0 #  Temperature  
+   y_75max = 3   #  Temperature 
+
+   line4_play = 0
+   play_60_T_E = 0
+
+   plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
+
+   plot29_ETq = 0 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
+
+   plot28_E_T = 0 # linear EEI increase in line 5
    text28 = "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x  +  0.408              28"
    y_28min = 0  #  Temperature in °C y axis left mode
    y_28max = 3  #  Temperature in °C y axis left mode
@@ -457,6 +505,5 @@ if figure100 == 11:
 
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
-      print(f"config__450  {figure100}", text101)
+      print(f"config__450  {figure100}", text100)
    print_debug = 2
-

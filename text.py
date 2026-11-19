@@ -43,8 +43,8 @@ def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
 # text_2_print_head_line(ax1, x_anf, x_end, yl_mode): line 30
 def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
     trs = 20
-    if figure100 == 11:  
-       ax1.text(-0.1, 1.05, text101, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
+    if figure100 > 100:  
+       ax1.text(-0.1, 1.05, text100, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
 
     # "CO2 concentration in ppm   CO2= 0.0132t² - 51t + 49,536   (CO2 emission linear)  23", 
     elif plot23_Glen_CO2 == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
@@ -496,7 +496,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c69)
         p69_text = f"AA    Albedo Anomaly in  [W/m²]     sw out / sw in          moving average {play69_AA} month    69"
         text_4_add_text(ax1, tr2x, tr4y, p69_text, c69, trs) 
-        
+
     elif plot71_temperature == 4:  
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c71)
         text_4_add_text(ax1, tr2x, tr4y, text71, c71, trs)

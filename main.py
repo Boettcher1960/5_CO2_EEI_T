@@ -1,5 +1,5 @@
 # main.py
-v = "5M95" #  ax1.plot(data['ceres_75']["Year75"], data['ceres_75']["temp"], ':' ,label="T75", color=c75, linewidth=3)
+v = "5M96" #  "Figure 2: Global Warming ... possible Temperature in 2050 = 2.5°C   Hansen liner fit +0.4°C"
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
