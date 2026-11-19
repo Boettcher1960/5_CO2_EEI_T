@@ -12,7 +12,7 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 5 # 0 means create no old figure 1= make old figuure
+figure100 = 11 # 11      0 means create no old figure 1= make old figuure
 figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
@@ -423,13 +423,17 @@ print_debug = 10 # print some items
 # 25) copy /work/c44d_ceres.csv to /read_csv/c44d_ceres_48month_EEI.csv
 #
 
-
-if figure100 > 3:
-    if print_debug > 9: 
-       print(f"config__430  {plot28_E_T}", text28)
-    text28 = "neu Temperature in °C   with   calculated   linear      EEI = 0.04788 x + 0.408                  28"
-    plot28_E_T = 5
-    if print_debug > 9:
-        print(f"config__433  {plot28_E_T}", text28)
+# 111.1 overwrite config values 
+if figure100 == 11:
+   text101 = "Figure 1: Global Warming - possible Temperatures in ..2050..  EEI, Hansen..."
    
+   plot28_E_T = 5 # linear EEI increase in line 5
+   text28 = "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x + 0.408              28"
+
+
+
+   if print_debug > 9:
+      # print(f"config__433  {plot28_E_T}", text28)
+      print(f"config__450  {figure100}", text101)
+   print_debug = 20
 

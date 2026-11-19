@@ -42,14 +42,16 @@ def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
 # row 0  ,    print line 0 above the plot ,     text_2_print_head_line() ,         line  40
 # text_2_print_head_line(ax1, x_anf, x_end, yl_mode): line 30
 def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
-    """Add header text above the plot"""
     trs = 20
+    if figure100 == 11:  
+       ax1.text(-0.1, 1.05, text101, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
+
     # "CO2 concentration in ppm   CO2= 0.0132t² - 51t + 49,536   (CO2 emission linear)  23", 
-    if plot23_Glen_CO2 == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
+    elif plot23_Glen_CO2 == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
         header = f"CO2 concentration in ppm calculated   {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                 transform=ax1.transAxes)
-    if plot25_long_CO2 == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
+    elif plot25_long_CO2 == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
         header = f"CO$_2$ concentration matches the absorbed long wave radiation    {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                         transform=ax1.transAxes)
