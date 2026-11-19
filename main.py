@@ -1,5 +1,5 @@
 # main.py
-v = "5M88" # add_temperature_band(ax, y_min=1.5, y_max=2.0):
+v = "5M90" # bug for linear_41_75 = 5 a second y axis is made 
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -152,11 +152,12 @@ def load_plot_data():
         data['ceres_69'] = pd.read_csv("work/69c_AA.csv") # 69.56 read into data field
         if print_debug > 9:
            print(f"main_386: 64.57 read 69c_AA.csv  play69_AA ={play69_AA}") 
-
-
     # Load GIS temperature data
     if plot74_GIS_T > 0: # 74.33 models.py line 600 
         data['gis_temp'] = load74_gis_T()
+    if linear_41_75 > 0: # 75.55 read df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
+        data['ceres_75'] = pd.read_csv("read_csv/_75_hansen_41C.csv") # 75.56 read into data field
+
     return data
     # end load_plot_data():
 

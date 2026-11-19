@@ -1579,23 +1579,33 @@ def plot_9_create_all_plots(ax1, data):
     # 7.5.2 Year75,GIS_temp
     if linear_41_75 > 0:
        df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
-       #print(df75.head(2))
-       ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
        if plot74_GIS_T == 2:
-          # ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+          ax1.plot(data['ceres_75']["Year75"], data['ceres_75']["temp"], '--',  
+                         label="EEI K75", color=c75, linewidth=2)
+       else: 
+          ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+          ax75.plot(data['ceres_75']["Year75"], data['ceres_75']["temp"], '--', 
+                         label="EEI K75", color=c75, linewidth=2)
+          ax75.tick_params(axis="y", labelcolor=c75)
+          ax75.set_ylim(y_75min, y_75max) # scale
+       
+       if linear_41_75 > 22:
+          df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
+          ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
           ax75.plot(df75["Year75"], df75["temp"]+0.1, '--', label="T GIS  K75", color=c75, linewidth=2)
           ax75.tick_params(axis="y", labelcolor=c75)
-          ax75.set_ylim(y_Tmin, y_Tmax) # scale
-       else:
+          ax75.set_ylim(y_75min, y_75max) # scale
+       elif linear_41_75 > 222:
           print75_text ="Hansen linear fit from 2015 +0.41°C     75"
+          df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
           # df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
-          #print(df75.head(2))
-          ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+          # print(df75.head(2))
+          ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right 
           # part 7.4.6 add 0.3°C same as Hansen to GIS
           ax75.plot(df75["Year75"], df75["temp"]+0.1, '--', label="T GIS  K75", color=c75, linewidth=2)
 
           ax75.tick_params(axis="y", labelcolor=c75)
-          ax75.set_ylim(y_Tmin, y_Tmax) # scale
+          ax75.set_ylim(y_75min, y_75max) # scale
           if linear_41_75 > 2:
              plot8_right_y_axe_for_T_75(ax75,0) # 75.5 line 530
           # end 7.5
@@ -1615,7 +1625,7 @@ def plot_9_create_all_plots(ax1, data):
        ax76.tick_params(axis="y", labelcolor=c76)
        ax76.set_ylim(y_76min, y_76max) # scale
        if print_debug > 9:
-            print(f"plot1326: ax76 ={plot76_my_T} {'='*2}")
+            print(f"plot1617: ax76 ={plot76_my_T} {'='*2}")
        if plot76_my_T > 2:
             plot8_right_y_axe_for_T_76(ax76,0) # 76.5 line 540
        # end 7.6 plot76_my_T
