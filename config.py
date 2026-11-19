@@ -12,7 +12,7 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 104 # 101 , 102 , 103 , 104 , 105 ,    0 means create no old figure 1= make old figuure
+figure100 = 106 # 101 , 102 , 103 , 104 , 105 ,    0 means create no old figure 1= make old figuure
 figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
@@ -609,6 +609,45 @@ elif figure100 == 105:
    y_29min = 0  #  Temperature in °C y axis left mode
    y_29max = 3  #  Temperature in °C y axis left mode
 
+   plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
+
+   if print_debug > 9:
+      # print(f"config__433  {plot28_E_T}", text28)
+      print(f"config__534  {figure100}", text100)
+   print_debug = 2
+
+elif figure100 == 106:
+   text100 = "Figure 6: Global Warming Temperature  calculated with constant EEI = 1.5     in 2050 = 2.4°C  "
+
+   plot74_GIS_T = 2 # Hansen GISS temperature
+   text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
+   c74 =  "#2EDF1B90"
+   c74 =  "green"
+   y_74min = 0  # for GIS Temperature 
+   y_74max = 3  # 1.6 for GIS Temperature 
+
+   linear_41_75 = 3
+   text75 = "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75"  # Added for linear_41_75
+   c75 = "#226C12CC"
+   y_75min = 0 #  Temperature  
+   y_75max = 3   #  Temperature 
+
+   play_60_T_E = 48   # 2=no average 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
+   a60_start = 2005   # 2015 starting year of play_60_T_E
+   a60_offset = 1.01 
+   line4_play = 60
+   y_60min = 0  #  Temperature in °C y axis left mode
+   y_60max = 3  #  Temperature in °C y axis left mode
+
+   plot30_c = 5 #  EEI =1.5W T linear add 0.00208°C for every 1 W/m²/month 
+   a30_start = 2026.5   # 2015 starting year of play_60_T_E
+   a30_offset = 1.5  
+   a30_value = 1.5 # const value  W/m²
+   y_30min = 0  #  Temperature in °C y axis left mode
+   y_30max = 3  #  Temperature in °C y axis left mode 
+
+   plot29_ETq = 0 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
+   
    plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
    if print_debug > 9:
