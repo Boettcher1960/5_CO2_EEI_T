@@ -12,7 +12,7 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 102 # 101      0 means create no old figure 1= make old figuure
+figure100 = 103 # 101 , 102 , 103     0 means create no old figure 1= make old figuure
 figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
@@ -34,7 +34,7 @@ plot25_long_CO2 = 0   # 4 2, 3 25.1
 plot28_E_T = 0 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
 a28_start = 2026.5   # 2015 starting year of play_60_T_E
 a28_offset = 1.5  
-plot29_ETq = 6 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
+plot29_ETq = 4 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
 a29_start = 2026.5   # 2015 starting year of play_60_T_E
 a29_offset = 1.5  
 plot30_c = 0 #  EEI =1.5W T linear add 0.00208°C for every 1 W/m²/month 
@@ -93,8 +93,8 @@ plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
 # variable to show play variable in line 4
 line2_play = 0  # 60 61  62
 line3_play = 0  # 60 play_62_EEA #   68 play68_ERA = 720
-line4_play = 60 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
-line5_play = 0  # 62 61 68
+line4_play = 0 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
+line5_play = 60  # 62 61 68
 line6_play = 0
 line7_play = 99 # 99 no line 7 
 
@@ -440,15 +440,17 @@ if figure100 == 101:
    y_75min = 0 #  Temperature  
    y_75max = 3   #  Temperature 
 
-   line4_play = 60
-   play_60_T_E = 48
+   plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
+   y_78min = 0 #  for Tom Harris Temperature 
+   y_78max = 3 #  for Tom Harris Temperature
 
+   line5_play = 60 
+   play_60_T_E = 48
 
    plot28_E_T = 5 # linear EEI increase in line 5
    text28 = "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x  +  0.408              28"
    y_28min = 0  #  Temperature in °C y axis left mode
    y_28max = 3  #  Temperature in °C y axis left mode
-
 
    plot29_ETq = 6 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
    y_29min = 0  #  Temperature in °C y axis left mode
@@ -457,9 +459,6 @@ if figure100 == 101:
    y_60min = 0  #  Temperature in °C y axis left mode
    y_60max = 3  #  Temperature in °C y axis left mode
 
-   plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
-   y_78min = 0 #  for Tom Harris Temperature 
-   y_78max = 3 #  for Tom Harris Temperature
 
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
@@ -493,7 +492,6 @@ elif figure100 == 102:
    y_28min = 0  #  Temperature in °C y axis left mode
    y_28max = 3  #  Temperature in °C y axis left mode
 
-
    y_29min = 0  #  Temperature in °C y axis left mode
    y_29max = 3  #  Temperature in °C y axis left mode
 
@@ -505,5 +503,38 @@ elif figure100 == 102:
 
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
-      print(f"config__450  {figure100}", text100)
+      print(f"config__508  {figure100}", text100)
    print_debug = 2
+
+elif figure100 == 103:
+   text100 = "Figure 3: Global Warming ... possible Temperature in 2050 = 2.6°C   Tom Harris quadratic fit "
+
+   plot74_GIS_T = 2 # Hansen GISS temperature
+   text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
+   c74 =  "#2EDF1B90"
+   c74 =  "green"
+   y_74min = 0  # for GIS Temperature 
+   y_74max = 3  # 1.6 for GIS Temperature 
+
+   linear_41_75 = 3
+   text75 = "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75"  # Added for linear_41_75
+   c75 = "#226C12CC"
+   y_75min = 0 #  Temperature  
+   y_75max = 3   #  Temperature 
+
+   plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
+   text78 = "Temperature in °C   quadratic       Tom Harris   T = 0.0004x²  + 0.0019x + 0.5079      78" 
+   text78 = "Temperature in °C      Tom Harris  quadratic   T = 0.0004 x²  + 0.0019 x + 0.5079      78" 
+   y_78min = 0 #  for Tom Harris Temperature 
+   y_78max = 3 #  for Tom Harris Temperature
+
+   plot29_ETq = 0 
+   line4_play = 0
+   play_60_T_E = 0
+
+   if print_debug > 9:
+      # print(f"config__433  {plot28_E_T}", text28)
+      print(f"config__534  {figure100}", text100)
+   print_debug = 2
+
+
