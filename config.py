@@ -12,7 +12,7 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 1 # 0 means create no old figure 1= make old figuure
+figure100 = 5 # 0 means create no old figure 1= make old figuure
 figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
@@ -31,7 +31,7 @@ plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print
 plot25_long_CO2 = 0   # 4 2, 3 25.1 
 
 # plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
-plot28_E_T = 5 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
+plot28_E_T = 0 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
 a28_start = 2026.5   # 2015 starting year of play_60_T_E
 a28_offset = 1.5  
 plot29_ETq = 6 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
@@ -422,3 +422,14 @@ print_debug = 10 # print some items
 #                                            column_name='EEI')
 # 25) copy /work/c44d_ceres.csv to /read_csv/c44d_ceres_48month_EEI.csv
 #
+
+
+if figure100 > 3:
+    if print_debug > 9: 
+       print(f"config__430  {plot28_E_T}", text28)
+    text28 = "neu Temperature in °C   with   calculated   linear      EEI = 0.04788 x + 0.408                  28"
+    plot28_E_T = 5
+    if print_debug > 9:
+        print(f"config__433  {plot28_E_T}", text28)
+   
+

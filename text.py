@@ -59,16 +59,13 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
                 transform=ax1.transAxes)
     elif plot32_CO2_emission == 2: # cumulative CO2 emissions in Gt     Carbon Brief / Our World in Data  
         header = f"! cumulative CO2 emissions in GtC. Carbon_Brief_2024=500GtC + 275GtC from AMOC = 780 GtC !!"
-        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
-                transform=ax1.transAxes)
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
     elif plot42_EEI_48month == 2:
         header = f"Earth Energy Imbalance EEI warms the Earth     CERES Aug.2026     Plot {x_anf} to {x_end}."
-        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
-                transform=ax1.transAxes)
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,  transform=ax1.transAxes)
     elif plot43_eei_12month == 2:
-                header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Aug. 2026 Plot {x_anf} to {x_end}."
-                ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
-                        transform=ax1.transAxes)
+        header = f"Earth Energy Imbalance EEI=ASR-OLR  CERES-TOA Aug. 2026 Plot {x_anf} to {x_end}."
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,   transform=ax1.transAxes)
     elif plot45_OLR == 2:
         header = f"Outgoing Longwave Radiation OLR in   W/m²  Plot {x_anf} to {x_end}."
         ax1.text(-0.1, 1.05, header, color=c45, fontname="Arial", fontsize=trs,
@@ -80,20 +77,16 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
                 transform=ax1.transAxes)
     elif line2_play == 60   :
         header = f"Globale Warming  - - Temperature in °C  calculated from EEI - - years {x_anf} to {x_end}."
-        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
-                                transform=ax1.transAxes)
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,    transform=ax1.transAxes)
     elif line2_play == 61   :
         header = f"EEI Earth Energy Imbalance   CERES data from Aug. 2026    Plot {x_anf} to {x_end}."
-        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
-                            transform=ax1.transAxes)
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,     transform=ax1.transAxes)
     elif line2_play == 67   :
             header = f"Earth’s albedo (reflectivity, in percent) CERES data from Aug. 2026    Plot {x_anf} to {x_end}."
-            ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
-                                transform=ax1.transAxes)
+            ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,    transform=ax1.transAxes)
     elif line2_play == 68   :
         header = f"Temperature in °C measured era5 and calculated with EEI    Plot {x_anf} to {x_end}."
-        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
-                            transform=ax1.transAxes)
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
     elif plot71_temperature == 2:
         header = f"Temperature in °C     71 quadratic calculation      year {x_anf} to {x_end}"
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
@@ -103,16 +96,13 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
     elif plot74_GIS_T == 2:
         # header = f"Global Surface Temperature GISS (74 Hansen +0.3°C ) years {x_anf} to {x_end}."   
         header = f"Global Surface Temperature in °C       year {x_anf} to {x_end}."       
-        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
-                        transform=ax1.transAxes)
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,   transform=ax1.transAxes)
     elif yl_mode == 4:
         header = f"Earth Energy Imbalance CERES_EBAF-TOA_Ed4.2.1 Aug. 2026 data. Plot {x_anf} to {x_end}."
-        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
-                transform=ax1.transAxes)
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,   transform=ax1.transAxes)
     else:
         header = f"CO$_2$ measured at Mauna Loa {x_anf} to {x_end}"
-        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs,
-                transform=ax1.transAxes)
+        ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
 
 # text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5): line48
 def text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5):

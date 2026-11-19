@@ -1,5 +1,5 @@
 # main.py
-v = "5M81" # plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
+v = "5M82" # plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
@@ -210,7 +210,7 @@ def main():
                        f"{linear_41_75}{plot76_my_T}")
     
     if print_debug > 9:
-       print("main_490: begin ", header_parameter)
+       print("main_213: begin ", header_parameter)
 
     # Process CERES data
     ceres_process_data()
