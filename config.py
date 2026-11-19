@@ -77,21 +77,21 @@ play_64_ASR_anomaly = 0 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly =
 play_65_ASR         = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR         = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo      = 0   # line2 1..12..48..99 create 1..12..48..99 CERES
-play68_ERA          = 720 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+play68_ERA          = 0 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 play69_AA           = 0 # 48 , 3,  7 , 11, 12, 13,48    albedo anomaly  # 69.12
 play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   play69_AA_in = "69a_AA_Albedo_anomaly_2026_08.txt" input filename
 
 plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
-plot74_GIS_T = 0 # 2, 3,4,5,6,7 =right y axis
+plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 0 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
-line2_play = 68  # 60 61  62
+line2_play = 0  # 60 61  62
 line3_play = 60  # 60 play_62_EEA #   68 play68_ERA = 720
 line4_play = 0 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
@@ -425,15 +425,32 @@ print_debug = 10 # print some items
 
 # 111.1 overwrite config values 
 if figure100 == 11:
-   text101 = "Figure 1: Global Warming - possible Temperatures in ..2050..  EEI, Hansen..."
-   
+   text101 = "Figure 1: Global Warming ... possible Temperatures in ..2050...  EEI, Hansen..."
+
+   plot74_GIS_T = 2 # Hansen GISS temperature
+   text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
+   c74 =  "#2EDF1B90"
+   c74 =  "green"
+   y_74min = 0  # for GIS Temperature 
+   y_74max = 3  # 1.6 for GIS Temperature 
+
    plot28_E_T = 5 # linear EEI increase in line 5
-   text28 = "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x + 0.408              28"
+   text28 = "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x  +  0.408              28"
+   y_28min = 0  #  Temperature in °C y axis left mode
+   y_28max = 3  #  Temperature in °C y axis left mode
 
 
+   y_29min = 0  #  Temperature in °C y axis left mode
+   y_29max = 3  #  Temperature in °C y axis left mode
+
+   y_60min = 0  #  Temperature in °C y axis left mode
+   y_60max = 3  #  Temperature in °C y axis left mode
+
+   y_78min = 0 #  for Tom Harris Temperature 
+   y_78max = 3 #  for Tom Harris Temperature
 
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
       print(f"config__450  {figure100}", text101)
-   print_debug = 20
+   print_debug = 2
 

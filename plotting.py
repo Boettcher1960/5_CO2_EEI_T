@@ -290,7 +290,7 @@ def plot_1_axe(ax1):
            y_minor_ticks = 0.05
         else:
            y_mayor_ticks = 0.5 
-           y_minor_ticks = 0.2
+           y_minor_ticks = 0.1
         ax1.yaxis.set_major_locator(MultipleLocator(y_mayor_ticks))
         ax1.yaxis.set_minor_locator(MultipleLocator(y_minor_ticks))
     elif plot76_my_T == 2:  # 76.5 y axe left  red 
@@ -321,7 +321,8 @@ def plot_1_axe(ax1):
 def plot_6_remove_axe1(axes,yr6_delete):
     for i, ax in enumerate(plt.gcf().get_axes()):
         ylabel = ax.get_ylabel()
-        print(f"plot_272: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
+        if print_debug > 9:
+           print(f"plot_325: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
     if yr6_delete == 9:
        print("plot_274: no right y axes in figure")
        for i in range(1, len(axes)): # remove Axis 3, 4
@@ -345,7 +346,8 @@ def plot_6_remove_axe1(axes,yr6_delete):
        axes[i].spines['right'].set_visible(False)
        axes[i].set_ylabel('') # Remove any label
     elif yr6_delete == -1:
-       print("plot_296: no x axe removed ", i, len(axes)) 
+       if print_debug > 9:
+          print("plot_349: no x axe removed ", i, len(axes)) 
 
 # plot8_right_y_axe_for_ppm_22  plot22_CO2_Mauna_Loa                         ,   line  415
 def plot8_right_y_axe_for_ppm_22(ax22,right22): # 22.4 line 375
