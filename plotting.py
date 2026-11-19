@@ -1578,17 +1578,22 @@ def plot_9_create_all_plots(ax1, data):
     # https://www.columbia.edu/~jeh1/mailings/2026/ElNino.2026.02.06.pdf
     # 7.5.2 Year75,GIS_temp
     if linear_41_75 > 0:
+       df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
+       #print(df75.head(2))
+       ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
        if plot74_GIS_T == 2:
-          # do nothing as y axis on left is sufficent
-          if print_debug > 9:
-             print("plot_1583:  do nothing for linear_41_75 ")
+          # ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
+          ax75.plot(df75["Year75"], df75["temp"]+0.1, '--', label="T GIS  K75", color=c75, linewidth=2)
+          ax75.tick_params(axis="y", labelcolor=c75)
+          ax75.set_ylim(y_Tmin, y_Tmax) # scale
        else:
           print75_text ="Hansen linear fit from 2015 +0.41°C     75"
-          df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
+          # df75 = pd.read_csv("read_csv/_75_hansen_41C.csv") # our world in data file
           #print(df75.head(2))
           ax75 = ax1.twinx()  # twinx(): Shares the same x-axis Adds a new y-axis on the right
           # part 7.4.6 add 0.3°C same as Hansen to GIS
           ax75.plot(df75["Year75"], df75["temp"]+0.1, '--', label="T GIS  K75", color=c75, linewidth=2)
+
           ax75.tick_params(axis="y", labelcolor=c75)
           ax75.set_ylim(y_Tmin, y_Tmax) # scale
           if linear_41_75 > 2:

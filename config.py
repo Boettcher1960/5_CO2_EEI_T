@@ -85,7 +85,7 @@ plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
 plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
-linear_41_75 = 2 # 3 4 5
+linear_41_75 = 5 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
