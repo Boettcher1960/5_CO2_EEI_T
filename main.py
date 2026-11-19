@@ -1,5 +1,5 @@
 # main.py
-v = "5N03" #  Figure 7: Global Warming calculated with EEI constant & linear & quadratic   in 2050 = 2.4...3°C
+v = "5N04" #  Figure 7: Global Warming calculated with EEI constant & linear & quadratic   in 2050 = 2.4...3°C
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
