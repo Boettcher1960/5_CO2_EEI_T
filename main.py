@@ -1,5 +1,5 @@
 # main.py
-v = "5M97" #   text100 = "Figure 3: Global Warming ... possible Temperature in 2050 = 2.6°C   Tom Harris quadratic fit "
+v = "5M99" #   Figure 4: Global Warming Temperature  calculated with EEI linear increase in 2050 = 2.7°C  "
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
 # https://drtomharris.substack.com/p/the-great-decoupling-how-ocean-stratification
