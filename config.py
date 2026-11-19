@@ -92,8 +92,8 @@ plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 0  # 60 61  62
-line3_play = 60  # 60 play_62_EEA #   68 play68_ERA = 720
-line4_play = 0 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
+line3_play = 0  # 60 play_62_EEA #   68 play68_ERA = 720
+line4_play = 60 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
 line6_play = 0
 line7_play = 99 # 99 no line 7 
@@ -434,8 +434,8 @@ if figure100 == 11:
    y_74min = 0  # for GIS Temperature 
    y_74max = 3  # 1.6 for GIS Temperature 
 
-   linear_41_75 = 4
-   text75 = "James Hansen: linear 0.4°C warming every 10 years  - doted green               75"  # Added for linear_41_75
+   linear_41_75 = 3
+   text75 = "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75"  # Added for linear_41_75
    c75 = "#226C12CC"
    y_75min = 0 #  Temperature  
    y_75max = 3   #  Temperature 
