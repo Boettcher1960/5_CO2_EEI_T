@@ -89,7 +89,7 @@ def add_temperature_band(ax, y_min=1.5, y_max=2.0):
     if hasattr(ax, 'get_ylabel'):
         ylabel = ax.get_ylabel()
         if 'Temperature' in ylabel or '°C' in ylabel:
-            ax.axhspan(y_min, y_max, color="#B3D9FF87", alpha=0.2, zorder=0)
+            ax.axhspan(y_min, y_max, color="#88D12184", alpha=0.2, zorder=0)
 
 def add_vertical_bands(ax1, C280):
     """Add vertical bands for CO2 levels"""
