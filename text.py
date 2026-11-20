@@ -41,12 +41,24 @@ def text_add_dotted_line(fig, x1, x2, y, color, linewidth=2, marker="o", markers
            color=color,
            # linestyle="None", 
            linestyle=":",
-           linewidth = 3
-            )
-
+           linewidth = 3                  )
     fig.add_artist(line)
     return line
 
+def text_add_dashed_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=3):
+    # line = Line2D([x1, x2+0.02], [y, y], transform=fig.transFigure,
+    #              marker=marker, markersize=markersize, color=color, linewidth=linewidth)
+    line = Line2D(
+           [x1, x2 + 0.02], [y + 0.01, y+ 0.01],
+           transform=fig.transFigure,
+           marker=marker,
+           markersize=markersize,
+           color=color,
+           # linestyle="None", 
+           linestyle="--",
+           linewidth = 3                  )
+    fig.add_artist(line)
+    return line
 
 def text_4_add_text(ax, x, y, text, color, fontsize=20):
     """Add a text row below the plot"""
@@ -533,7 +545,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_4_add_text(ax1, tr2x, tr4y, 
                     "Temperature in °C   quadratic           1950=0.2°C     2013=1°C     2023=1.5°C         77", c77, trs)
     elif plot_T_78 == 4: # 78.5.3 legend
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c78)
+        text_add_dashed_line(fig, lr2x1, lr2x2, lr4y, c78)
         text_4_add_text(ax1, tr2x, tr4y, text78, c78, trs)
 
 
