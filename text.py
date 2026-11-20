@@ -34,7 +34,7 @@ def text_add_dotted_line(fig, x1, x2, y, color, linewidth=2, marker="o", markers
     # line = Line2D([x1, x2+0.02], [y, y], transform=fig.transFigure,
     #              marker=marker, markersize=markersize, color=color, linewidth=linewidth)
     line = Line2D(
-           [x1, x2 + 0.02], [y + 0.01, y+ 0.01],
+           [x1, x2 + 0.02], [y , y],
            transform=fig.transFigure,
            marker=marker,
            markersize=markersize,
@@ -493,9 +493,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
                     "plot52_delta_CO2_red_bars  (text259)  52", 
                     c52, trs)
     elif play_60_T_E > 0 and line4_play == 60: # EEI of 2 W/m² over 10 years results in 0.5°C warming
-            text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c60)
-            p60_text = f"Warming °C EEI of 2 W/m² applied 10 years warmes 0.5°C     m={play_60_T_E} y={a60_start} +{a60_offset}  60"
-            text_4_add_text(ax1, tr2x, tr4y, p60_text, c60, trs) 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c60)
+        p60_text = f"Warming °C EEI of 2 W/m² applied 10 years warmes 0.5°C     m={play_60_T_E} y={a60_start} +{a60_offset}  60"
+        if figure100 > 100: p60_text = text60
+        text_4_add_text(ax1, tr2x, tr4y, p60_text, c60, trs) 
     elif play_61_EEI > 0 and line4_play == 61:
             text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c61)
             p61_text = f"Earth Energy Imbalance [W/m2]  CERES 2026_08      moving average {play_61_EEI} month     61"

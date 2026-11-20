@@ -174,7 +174,8 @@ text60a = "An EEI of 2 W/m² sustained over a decade would add roughly half a de
 text60b = "with EEI of 2 W/m²    sustained over decades:     2035=2°C    2055=3°C     2075=4°C"
 # 10 years 0.5°C * 1.5/2 = 0.375°C x years = 10 * 2 /1.5 = 13.3 years 27 years for 1°C more
 text60c = "with EEI of 1.5 W/m² sustained over decades:     2038=2°C    2065=3°C     2092=4°C"
-
+text60 = "the measured EEI - CERES satellites -  warmed the earth 1.5°C in the year 2025       60"  # if figure100 > 99
+  
 
 text63 = "carbon brief cummulative CO2 emissions in GtCO2 since 1750    ourworldindata     63"
 
@@ -528,7 +529,7 @@ elif figure100 == 103:
    print_debug = 2
 
 elif figure100 == 104:
-   text100 = "Figure 5: Global Warming Temperature  calculated with EEI linear increase in 2050 = 2.7°C  "
+   text100 = "Figure 5: Global Warming calculated with linear EEI increase.   Result = 2.7°C in the year 2050"
 
    plot74_GIS_T = 2 # Hansen GISS temperature
    text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
@@ -538,12 +539,15 @@ elif figure100 == 104:
    y_74max = 3  # 1.6 for GIS Temperature 
 
    linear_41_75 = 3
-   text75 = "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75"  # Added for linear_41_75
+   text75 = "James Hansen:  linear 0.4°C warming  every  10  years      =  2.4°C in year 2050      75"  # Added for linear_41_75
+     
    c75 = "#226C12CC"
    y_75min = 0 #  Temperature  
    y_75max = 3   #  Temperature 
 
    play_60_T_E = 48   # 2=no average 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
+   text60 = "the measured EEI - CERES satellites -  warmed the earth 1.5°C in the year 2025       60"  # Added for linear_41_75
+      
    a60_start = 2005   # 2015 starting year of play_60_T_E
    a60_offset = 1.01 
    line4_play = 60
