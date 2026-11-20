@@ -25,7 +25,7 @@ from main import v
 # text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5): line48
 def text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=4):
     """Add a legend line to the figure"""
-    line = Line2D([x1, x2+0.02], [y, y], transform=fig.transFigure,
+    line = Line2D([x1, x2+0.02], [y+ 0.003, y+ 0.003], transform=fig.transFigure,
                   marker=marker, markersize=markersize, color=color, linewidth=linewidth)
     fig.add_artist(line)
     return line
@@ -34,12 +34,15 @@ def text_add_dotted_line(fig, x1, x2, y, color, linewidth=2, marker="o", markers
     # line = Line2D([x1, x2+0.02], [y, y], transform=fig.transFigure,
     #              marker=marker, markersize=markersize, color=color, linewidth=linewidth)
     line = Line2D(
-           [x1, x2 + 0.02], [y, y],
+           [x1, x2 + 0.02], [y + 0.01, y+ 0.01],
            transform=fig.transFigure,
            marker=marker,
            markersize=markersize,
            color=color,
-           linestyle="None",  )
+           # linestyle="None", 
+           linestyle=":",
+           linewidth = 3
+            )
 
     fig.add_artist(line)
     return line
