@@ -626,7 +626,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         p61_text = f"Earth Energy Imbalance [W/m²]  CERES 2026_08     moving average {play_61_EEI} month     61"
         text_4_add_text(ax1, tr2x, tr6y, p61_text, c61, trs) 
     elif plot29_ETq == 6:    # 28.9.4
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr6y, c29)
+        text_add_dashed_line(fig, lr2x1, lr2x2, lr6y, c29)
         text_4_add_text(ax1, tr2x, tr6y,  text29,   c29, trs)
     elif a60_start > 2050:
         text_4_add_text(ax1, tr1x, tr6y,  text60b,   c60a, 15)

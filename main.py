@@ -1,5 +1,5 @@
 # main.py
-v = "5N22" #  the measured EEI - CERES satellites -  warmed the earth 1.5°C in the year 2025     
+v = "5N23" #  the measured EEI - CERES satellites -  warmed the earth 1.5°C in the year 2025     
 #
 #
 #
