@@ -611,7 +611,7 @@ elif figure100 == 105:
    print_debug = 2
 
 elif figure100 == 106:
-   text100 = "Figure 6: Global Warming Temperature  calculated with constant EEI = 1.5 W/m²  in 2050 = 2.4°C  "
+   text100 = "Figure 7: Global Warming Temperature  calculated with constant EEI = 1.5 W/m²  in 2050 = 2.4°C  "
 
    plot74_GIS_T = 2 # Hansen GISS temperature
    text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
