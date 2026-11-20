@@ -935,7 +935,7 @@ def plot_9_create_all_plots(ax1, data):
          ax28.set_ylim(y_28min, y_28max)
          if print_debug > 9:
            print(f"plot_1242: ax28 28.8 ={plot28_E_T}")
-         if plot28_E_T > 2 and line2_play != 28:
+         if plot28_E_T > 2 and figure100 < 99:
            plot8_right_y_axe_for_C_28( ax28 , 0 ) # 28.4 line 967
 
     if plot29_ETq > 0:
@@ -1347,7 +1347,8 @@ def plot_9_create_all_plots(ax1, data):
          ax60.set_ylim(y_60min, y_60max)
          if print_debug > 9:
            print(f"plot_1242: ax60 60.8 ={play_60_T_E}")
-         if play_60_T_E > 2 and line2_play != 60:
+           # and figure100 < 99:
+         if (play_60_T_E > 2 and line2_play != 60) and figure100 < 99:
            plot8_right_y_axe_for_C_60( ax60 , 0 ) # 60.4 line 967
 
 
