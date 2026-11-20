@@ -12,7 +12,7 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 103 # 101 , 102 , 103 , 104 , 105 , 106 , 107 , 108  0 means create no old figure 1= make old figuure
+figure100 = 104 # 101 , 102 , 103 , 104 , 105 , 106 , 107 , 108  0 means create no old figure 1= make old figuure
 figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
@@ -528,7 +528,7 @@ elif figure100 == 103:
    print_debug = 2
 
 elif figure100 == 104:
-   text100 = "Figure 4: Global Warming Temperature  calculated with EEI linear increase in 2050 = 2.7°C  "
+   text100 = "Figure 5: Global Warming Temperature  calculated with EEI linear increase in 2050 = 2.7°C  "
 
    plot74_GIS_T = 2 # Hansen GISS temperature
    text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  

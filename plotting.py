@@ -929,7 +929,7 @@ def plot_9_create_all_plots(ax1, data):
            # The left axis is already configured in plot_1_axe
        else:
          ax28 = ax1.twinx()
-         ax28.plot(data['ceres_28']["digital_date"], data['ceres_28']["T_E"], '--', 
+         ax28.plot(data['ceres_28']["digital_date"], data['ceres_28']["T_E"], ':', 
                   label="EEI K28", color=c28, linewidth=2)
          ax28.tick_params(axis="y", labelcolor=c28)
          ax28.set_ylim(y_28min, y_28max)

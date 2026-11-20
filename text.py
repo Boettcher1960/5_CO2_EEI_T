@@ -49,7 +49,7 @@ def text_add_dashed_line(fig, x1, x2, y, color, linewidth=2, marker="o", markers
     # line = Line2D([x1, x2+0.02], [y, y], transform=fig.transFigure,
     #              marker=marker, markersize=markersize, color=color, linewidth=linewidth)
     line = Line2D(
-           [x1, x2 + 0.02], [y + 0.01, y+ 0.01],
+           [x1, x2 + 0.01], [y , y ],
            transform=fig.transFigure,
            marker=marker,
            markersize=markersize,
@@ -558,7 +558,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c23)
         text_4_add_text(ax1, tr2x, tr5y,  text25,   c25, trs)
     elif plot28_E_T == 5:    # 28.9.4
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c28)
+        text_add_dotted_line(fig, lr2x1, lr2x2, lr5y, c28)
         text_4_add_text(ax1, tr2x, tr5y,  text28,   c28, trs)
     elif plot29_ETq == 5:    # 28.9.4
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr5y, c29)
