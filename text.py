@@ -21,6 +21,37 @@ from plotting import *
 from data_processing import *
 from main import v
 
+
+# text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5): line48
+def text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=4):
+    """Add a legend line to the figure"""
+    line = Line2D([x1, x2+0.02], [y, y], transform=fig.transFigure,
+                  marker=marker, markersize=markersize, color=color, linewidth=linewidth)
+    fig.add_artist(line)
+    return line
+
+def text_add_dotted_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=3):
+    # line = Line2D([x1, x2+0.02], [y, y], transform=fig.transFigure,
+    #              marker=marker, markersize=markersize, color=color, linewidth=linewidth)
+    line = Line2D(
+           [x1, x2 + 0.02], [y, y],
+           transform=fig.transFigure,
+           marker=marker,
+           markersize=markersize,
+           color=color,
+           linestyle="None",  )
+
+    fig.add_artist(line)
+    return line
+
+
+def text_4_add_text(ax, x, y, text, color, fontsize=20):
+    """Add a text row below the plot"""
+    ax.text(x, y, text, color=color, fontname="Arial", fontsize=fontsize,
+           transform=ax.transAxes)
+
+
+
 # row 1  ,    print line 1 below the plot ,     text_1_print_line() ,              line  21
 def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
     """Add text below the plot (line 1)"""
@@ -106,18 +137,6 @@ def text_2_print_head_line(ax1, x_anf, x_end, yl_mode):
         header = f"CO$_2$ measured at Mauna Loa {x_anf} to {x_end}"
         ax1.text(-0.1, 1.05, header, color="black", fontname="Arial", fontsize=trs, transform=ax1.transAxes)
 
-# text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5): line48
-def text_3_add_legend_line(fig, x1, x2, y, color, linewidth=2, marker="o", markersize=5):
-    """Add a legend line to the figure"""
-    line = Line2D([x1, x2], [y, y], transform=fig.transFigure,
-                  marker=marker, markersize=markersize, color=color, linewidth=linewidth)
-    fig.add_artist(line)
-    return line
-
-def text_4_add_text(ax, x, y, text, color, fontsize=20):
-    """Add a text row below the plot"""
-    ax.text(x, y, text, color=color, fontname="Arial", fontsize=fontsize,
-           transform=ax.transAxes)
 
 
 
@@ -377,7 +396,7 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c74)
         text_4_add_text(ax1, tr2x, tr3y, text74, c74, trs)
     elif linear_41_75 == 3: # 75.6
-        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c75)
+        text_add_dotted_line(fig, lr2x1, lr2x2, lr3y, c75)
         text_4_add_text(ax1, tr2x, tr3y, text75, c75, trs)
     elif plot76_my_T == 3: # 76.5.3 legend
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c76)
