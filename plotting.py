@@ -1646,7 +1646,7 @@ def plot_9_create_all_plots(ax1, data):
        ax78.set_ylim(y_78min, y_78max) # scale
        if print_debug > 9:
             print(f"plot1143: no need for second T axis on the right ax78 ={plot_T_78} {'='*2}")
-       if plot_T_78 > 2:
+       if plot_T_78 > 2 and figure100 < 99:
             plot8_right_y_axe_for_T_78(ax78,0) # 78.5 line 540
        # end 78.66 plot_T_78
 

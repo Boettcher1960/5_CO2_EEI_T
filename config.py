@@ -12,7 +12,7 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 104 # 101 , 102 , 103 , 104 , 105 , 106 , 107 , 108  0 means create no old figure 1= make old figuure
+figure100 = 103 # 101 , 102 , 103 , 104 , 105 , 106 , 107 , 108  0 means create no old figure 1= make old figuure
 figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
@@ -498,7 +498,7 @@ elif figure100 == 102:
    print_debug = 2
 
 elif figure100 == 103:
-   text100 = "Figure 4: Global Warming ... possible Temperature in 2050 = 2.6°C   Tom Harris quadratic fit "
+   text100 = "Figure 4: Global Warming ... possible Temperature in 2050 = 2.6°C using Tom Harris quadratic fit"
 
    plot74_GIS_T = 2 # Hansen GISS temperature
    text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
@@ -575,7 +575,7 @@ elif figure100 == 104:
    print_debug = 2
 
 elif figure100 == 105:
-   text100 = "Figure 5: Global Warming Temperature  calculated with EEI quadratic increase in 2050 = 3°C  "
+   text100 = "Figure 6: Global Warming Temperature  calculated with EEI quadratic increase in 2050 = 3°C  "
 
    plot74_GIS_T = 2 # Hansen GISS temperature
    text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
@@ -585,7 +585,7 @@ elif figure100 == 105:
    y_74max = 3  # 1.6 for GIS Temperature 
 
    linear_41_75 = 3
-   text75 = "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75"  # Added for linear_41_75
+   text75 = "James Hansen:   linear 0.4°C   warming  every  10  years    -  dotted  green              75"  # Added for linear_41_75
    c75 = "#226C12CC"
    y_75min = 0 #  Temperature  
    y_75max = 3   #  Temperature 
