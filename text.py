@@ -69,14 +69,13 @@ def text_4_add_text(ax, x, y, text, color, fontsize=20):
 
 # row 1  ,    print line 1 below the plot ,     text_1_print_line() ,              line  21
 def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
-    """Add text below the plot (line 1)"""
-
     #text_below = (f"Figure from  "
     #              f"https://github.com/Boettcher1960/5_CO2_EEI_T      "
     #              f" {filename} version {v} ")
+    #               https://thomas1960.substack.com/
     text_below = (f"  "
                   f"https://github.com/Boettcher1960/5_CO2_EEI_T"
-                  f" {filename} version {v} ")
+                  f"   figure:{figure100}  version:{v} https://thomas1960.substack.com/  ")
    
     # f"https://github.com/Boettcher1960/co2_python       Parameter {header_parameter}")
     ax1.text(-0.1, tr1y, text_below, color="black", fontname="Arial", fontsize=14,
