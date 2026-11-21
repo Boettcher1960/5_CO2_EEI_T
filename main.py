@@ -1,5 +1,5 @@
 # main.py
-v = "5N27" #   f"   figure:{figure100}  version:{v} https://thomas1960.substack.com/  ")      
+v = "5N28" #   substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 , 409 Global Warming EEI sets the World on Fire #28 Published 20. Nov
 #
 #
 #
