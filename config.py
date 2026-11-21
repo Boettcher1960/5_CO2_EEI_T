@@ -12,7 +12,8 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 103 # 101 , 102 , 103 ,    104 , 105 , 106 , 107 , 108 , 110 0 means create no old figure 1= make old figuure
+figure100 = 107 # substack #28 uses 102 , 104 , 105 , 106 , 107
+                #  108 , 110 0 means create no old figure 1= make old figuure
 figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
@@ -174,7 +175,7 @@ text60a = "An EEI of 2 W/m² sustained over a decade would add roughly half a de
 text60b = "with EEI of 2 W/m²    sustained over decades:     2035=2°C    2055=3°C     2075=4°C"
 # 10 years 0.5°C * 1.5/2 = 0.375°C x years = 10 * 2 /1.5 = 13.3 years 27 years for 1°C more
 text60c = "with EEI of 1.5 W/m² sustained over decades:     2038=2°C    2065=3°C     2092=4°C"
-text60 = "the measured EEI - CERES satellites -  warmed the earth 1.5°C in the year 2025       60"  # if figure100 > 99
+text60 = "the measured EEI - CERES satellites -  warmed the earth 1.5°C in the year 2025     60"  # if figure100 > 99
   
 
 text63 = "carbon brief cummulative CO2 emissions in GtCO2 since 1750    ourworldindata     63"
@@ -425,50 +426,8 @@ print_debug = 10 # print some items
 #
 
 # 111.1 overwrite config values 
-if figure100 == 101:
-   text100 = "Figure 10: Global Warming ... possible Temperatures in ..2050...  EEI, Hansen..."
 
-   plot74_GIS_T = 2 # Hansen GISS temperature
-   text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
-   c74 =  "#2EDF1B90"
-   c74 =  "green"
-   y_74min = 0.5  # for GIS Temperature 
-   y_74max = 3  # 1.6 for GIS Temperature 
-
-   linear_41_75 = 3
-   text75 = "James Hansen:  linear 0.4°C warming every 10  years.        The year 2050 result = 2.4°C"  # Added for linear_41_75
-      
-   c75 = "#226C12CC"
-   y_75min = 0.5 #  Temperature  
-   y_75max = 3   #  Temperature 
-
-   plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
-   y_78min = 0.5 #  for Tom Harris Temperature 
-   y_78max = 3 #  for Tom Harris Temperature
-
-   line5_play = 60 
-   play_60_T_E = 48
-
-   plot28_E_T = 5 # linear EEI increase in line 5
-   text28 = "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x  +  0.408              28"
-   y_28min = 0.5  #  Temperature in °C y axis left mode
-   y_28max = 3  #  Temperature in °C y axis left mode
-
-   plot29_ETq = 6 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
-   y_29min = 0.5  #  Temperature in °C y axis left mode
-   y_29max = 3  #  Temperature in °C y axis left mode
-
-   y_60min = 0.5  #  Temperature in °C y axis left mode
-   y_60max = 3  #  Temperature in °C y axis left mode
-
-   x_anf = 2005   # 2005
-   x_end = 2065   # 2028   2065
-
-   if print_debug > 9:
-      # print(f"config__433  {plot28_E_T}", text28)
-      print(f"config__450  {figure100}", text100)
-   print_debug = 2
-elif figure100 == 102:
+if figure100 == 102:
    # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 2: Global Warming ... possible Temperature in 2050 = 2.5°C with  Hansen linear fit +0.4°C"
 
@@ -499,7 +458,7 @@ elif figure100 == 102:
       print(f"config__508  {figure100}", text100)
    print_debug = 2
 
-elif figure100 == 103:
+elif figure100 == 104:
    # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 4: Global Warming ... possible Temperature in 2050 = 2.6°C using Tom Harris quadratic fit"
 
@@ -531,7 +490,7 @@ elif figure100 == 103:
       print(f"config__534  {figure100}", text100)
    print_debug = 2
 
-elif figure100 == 104:
+elif figure100 == 105:
    # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 5: Global Warming calculated with linear EEI increase.   Result = 2.7°C in the year 2050"
 
@@ -563,8 +522,6 @@ elif figure100 == 104:
    y_28min = 0.5  #  Temperature in °C y axis left mode
    y_28max = 3  #  Temperature in °C y axis left mode
 
-
-
    plot29_ETq = 0 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
    a29_start = 2026.5   # 2015 starting year of play_60_T_E
    a29_offset = 1.5  
@@ -578,7 +535,7 @@ elif figure100 == 104:
       print(f"config__534  {figure100}", text100)
    print_debug = 2
 
-elif figure100 == 105:
+elif figure100 == 106:
    # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 6: Global Warming Temperature  calculated with EEI quadratic increase in 2050 = 3°C  "
 
@@ -615,7 +572,7 @@ elif figure100 == 105:
       print(f"config__534  {figure100}", text100)
    print_debug = 2
 
-elif figure100 == 106:
+elif figure100 == 107:
    # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 7: Global Warming Temperature  calculated with constant EEI = 1.5 W/m²  in 2050 = 2.4°C  "
 
@@ -790,6 +747,49 @@ if figure100 == 110:
 
    plot29_ETq = 6 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
    text29 = "Global Warming in °C  using quadratic increasing EEI.        The year 2050 result =  3  °C" 
+   y_29min = 0.5  #  Temperature in °C y axis left mode
+   y_29max = 3  #  Temperature in °C y axis left mode
+
+   y_60min = 0.5  #  Temperature in °C y axis left mode
+   y_60max = 3  #  Temperature in °C y axis left mode
+
+   x_anf = 2005   # 2005
+   x_end = 2065   # 2028   2065
+
+   if print_debug > 9:
+      # print(f"config__433  {plot28_E_T}", text28)
+      print(f"config__450  {figure100}", text100)
+   print_debug = 2
+elif figure100 == 111:
+   text100 = "Figure 10: Global Warming ... possible Temperatures in ..2050...  EEI, Hansen..."
+
+   plot74_GIS_T = 2 # Hansen GISS temperature
+   text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
+   c74 =  "#2EDF1B90"
+   c74 =  "green"
+   y_74min = 0.5  # for GIS Temperature 
+   y_74max = 3  # 1.6 for GIS Temperature 
+
+   linear_41_75 = 3
+   text75 = "James Hansen:  linear 0.4°C warming every 10  years.        The year 2050 result = 2.4°C"  # Added for linear_41_75
+      
+   c75 = "#226C12CC"
+   y_75min = 0.5 #  Temperature  
+   y_75max = 3   #  Temperature 
+
+   plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
+   y_78min = 0.5 #  for Tom Harris Temperature 
+   y_78max = 3 #  for Tom Harris Temperature
+
+   line5_play = 60 
+   play_60_T_E = 48
+
+   plot28_E_T = 5 # linear EEI increase in line 5
+   text28 = "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x  +  0.408              28"
+   y_28min = 0.5  #  Temperature in °C y axis left mode
+   y_28max = 3  #  Temperature in °C y axis left mode
+
+   plot29_ETq = 6 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
    y_29min = 0.5  #  Temperature in °C y axis left mode
    y_29max = 3  #  Temperature in °C y axis left mode
 
