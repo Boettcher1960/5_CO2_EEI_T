@@ -1,5 +1,5 @@
 # main.py
-v = "5N25" #   f"   figure:{figure100}  version:{v} https://thomas1960.substack.com/  ")      
+v = "5N26" #   f"   figure:{figure100}  version:{v} https://thomas1960.substack.com/  ")      
 #
 #
 #

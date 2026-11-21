@@ -12,7 +12,7 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 110 # 101 , 102 , 103 , 104 , 105 , 106 , 107 , 108 , 110 0 means create no old figure 1= make old figuure
+figure100 = 103 # 101 , 102 , 103 ,    104 , 105 , 106 , 107 , 108 , 110 0 means create no old figure 1= make old figuure
 figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
@@ -469,6 +469,7 @@ if figure100 == 101:
       print(f"config__450  {figure100}", text100)
    print_debug = 2
 elif figure100 == 102:
+   # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 2: Global Warming ... possible Temperature in 2050 = 2.5°C with  Hansen linear fit +0.4°C"
 
    plot74_GIS_T = 2 # Hansen GISS temperature
@@ -499,6 +500,7 @@ elif figure100 == 102:
    print_debug = 2
 
 elif figure100 == 103:
+   # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 4: Global Warming ... possible Temperature in 2050 = 2.6°C using Tom Harris quadratic fit"
 
    plot74_GIS_T = 2 # Hansen GISS temperature
@@ -530,6 +532,7 @@ elif figure100 == 103:
    print_debug = 2
 
 elif figure100 == 104:
+   # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 5: Global Warming calculated with linear EEI increase.   Result = 2.7°C in the year 2050"
 
    plot74_GIS_T = 2 # Hansen GISS temperature
@@ -576,6 +579,7 @@ elif figure100 == 104:
    print_debug = 2
 
 elif figure100 == 105:
+   # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 6: Global Warming Temperature  calculated with EEI quadratic increase in 2050 = 3°C  "
 
    plot74_GIS_T = 2 # Hansen GISS temperature
@@ -612,6 +616,7 @@ elif figure100 == 105:
    print_debug = 2
 
 elif figure100 == 106:
+   # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 7: Global Warming Temperature  calculated with constant EEI = 1.5 W/m²  in 2050 = 2.4°C  "
 
    plot74_GIS_T = 2 # Hansen GISS temperature
@@ -701,6 +706,7 @@ elif figure100 == 107:
    print_debug = 2
 
 elif figure100 == 108:
+   # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 8: Global Warming calculated with EEI and Temperature   in 2050 = 2.4...3°C  "
 
    plot74_GIS_T = 2 # Hansen GISS temperature

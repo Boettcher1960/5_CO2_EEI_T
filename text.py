@@ -73,10 +73,10 @@ def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
     #              f"https://github.com/Boettcher1960/5_CO2_EEI_T      "
     #              f" {filename} version {v} ")
     #               https://thomas1960.substack.com/
-    text_below = (f"         https://thomas1960.substack.com/ "
-                  f"     figure:{figure100} "
+    text_below = (f"             https://thomas1960.substack.com/ "
+                  f"        figure={figure100} "
                   f"     https://github.com/Boettcher1960/5_CO2_EEI_T"
-                  f"     version:{v}"
+                  f"       version={v}"
                   f"  ")
 
    
