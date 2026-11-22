@@ -86,6 +86,7 @@ play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   pl
 plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
+global plot74_GIS_T 
 plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 4 # 3 4 5
 plot76_my_T = 0 # 3, 5
@@ -145,8 +146,8 @@ c71 = "red"
 c71 =  "#AB263590"
 c72 =  "#31BD9590"
 c73 =  "red"
-c74 = "red"
-#c74 = "#9522AA90"
+global c74
+c74 = "#9522AA90"
 c75 = "#371EA484"
 c76 = "#13DF2F84"
 c77 = "#34753D84"
@@ -787,10 +788,10 @@ if figure404 == 409:
       print(f"config__450  {figure404}", text400)
    print_debug = 2
 
-def figure_10():
+def figure_10(figure100):
    # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 10: Global Warming ... possible Temperatures in ..2050...  EEI, Hansen..."
-
+   figure100 = 110
    plot74_GIS_T = 2 # Hansen GISS temperature
    text74 = "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74"  
    c74 =  "#2EDF1B90"
@@ -831,7 +832,7 @@ def figure_10():
 
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
-      print(f"config__450  {figure100}", text100)
-   
+      print(f"config__835  {figure100}", text100)
+   return figure100
 
    

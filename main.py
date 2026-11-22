@@ -1,5 +1,5 @@
 # main.py
-v = "5N36" #   def main_figure_1():
+v = "5N37" #   def main_figure_1():
 #
 #
 #
@@ -302,12 +302,10 @@ def main():
         run_optional_figures()
         return
     if figure100 > 0:
-        figure100 = 10
-        figure_10()
+        figure100 = 105
+        figure100 = figure_10(figure100)
         main_figure_1()
-        figure100 = 104
-        main_figure_1()
-        figure_10()
+        
     
     run_optional_figures()
 

@@ -321,10 +321,10 @@ def plot_1_axe(ax1):
 def plot_6_remove_axe1(axes,yr6_delete):
     for i, ax in enumerate(plt.gcf().get_axes()):
         ylabel = ax.get_ylabel()
-        if print_debug > 9:
+        if print_debug > 19:
            print(f"plot_325: Axis {i}: yaxis side = {ax.yaxis.get_ticks_position()}, label = '{ylabel}'")
     if yr6_delete == 9:
-       print("plot_274: no right y axes in figure")
+       print("plot_327: no right y axes in figure")
        for i in range(1, len(axes)): # remove Axis 3, 4
            axes[i].yaxis.set_ticks([])  # Remove tick numbers
            axes[i].set_yticklabels([])  # Remove tick labels
