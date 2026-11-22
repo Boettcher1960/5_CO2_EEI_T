@@ -1086,6 +1086,13 @@ Please add 3 more values
    figure100 = 106
    figure100 = 110
 
+(102, 104, 105, 106, 110):
 
-
+save the figures to
+/png/figure102_EEI_T.png
+/png/figure104_EEI_T.png
+/png/figure105_EEI_T.png
+/png/figure106_EEI_T.png
+/png/figure110_EEI_T.png
+   
 """

@@ -1,5 +1,5 @@
 # main.py
-v = "5N41" #   def main_figure_1():
+v = "5N42" #  save 5 files /png/figure110_EEI_T.png
 #
 #
 #
@@ -172,22 +172,13 @@ def load_plot_data():
 
 
 def save_png1(fig, header_parameter):
-    """Save the plot if configured"""
-    if print_debug > 19:
-           print(f"main_213 save png as file {fig}")
-    # print(f"main_save_plot_389: {fig}")
-    if parameter84_save_png > 0:
-        filename = os.path.basename(__file__)[:parameter84_save_png]
-        filename = f"{filename}_{header_parameter}{x_end}"
-        filename = "figure_5_EEI"
-        path2 = f"/Users/thomasboettcher/Desktop/{filename}"
-        fig.savefig(path2, dpi=300, bbox_inches="tight")
-        
-        # https://github.com/Boettcher1960/5_CO2_EEI_T
-        path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/5_CO2_EEI_T.png"
-        fig.savefig(path, dpi=300, bbox_inches="tight")
-        if print_debug > 9:
-           print(f"main_382 saved png as file {path}")
+    """Save the current Figure 100 variant under its numbered PNG filename."""
+    output_dir = os.path.join(os.path.dirname(__file__), "png")
+    os.makedirs(output_dir, exist_ok=True)
+    path = os.path.join(output_dir, f"figure{figure100}_EEI_T.png")
+    fig.savefig(path, dpi=300, bbox_inches="tight")
+    if print_debug > 9:
+        print(f"main: saved figure {figure100} to {path}")
 
 
 def main_figure_1():  # make one figure only
@@ -271,13 +262,6 @@ def main_figure_1():  # make one figure only
     # Save plot
     save_png1(fig, header_parameter)
 
-    if figure202 == 200:
-           figure100 = 102 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110
-           # path2 = f"/Users/thomasboettcher/Desktop/{filename}"
-           path = f"/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/png/figure{figure100}_EEI_T.png"
-           #path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/png/figure000_EEI_T.png"
-           fig.savefig(path, dpi=300, bbox_inches="tight")
-    
     # Close figure
     plt.close(fig)
     # end main_figure_1() make one figure only
