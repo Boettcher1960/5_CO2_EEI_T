@@ -12,7 +12,7 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 110 #  0 means create no old figure 1= make old figuure
+figure100 = 105 #  0 means create no old figure 1= make old figuure
                 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 Global Warming EEI sets the World on Fire #28 Published 20. Nov. at 21:18
                 #  0 means create no old figure 1= make old figuure
 figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve 209
@@ -457,8 +457,7 @@ if figure100 == 102:
 
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
-      print(f"config__508  {figure100}", text100)
-   print_debug = 2
+      print(f"config__460  {figure100}", text100)
 
 elif figure100 == 104:
    # used in Substack: Global Warming EEI sets the World on Fire #28
@@ -489,8 +488,8 @@ elif figure100 == 104:
 
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
-      print(f"config__534  {figure100}", text100)
-   print_debug = 2
+      print(f"config__492  {figure100}", text100)
+
 
 elif figure100 == 105:
    # used in Substack: Global Warming EEI sets the World on Fire #28
@@ -535,7 +534,6 @@ elif figure100 == 105:
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
       print(f"config__534  {figure100}", text100)
-   print_debug = 2
 
 elif figure100 == 106:
    # used in Substack: Global Warming EEI sets the World on Fire #28
@@ -572,7 +570,6 @@ elif figure100 == 106:
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
       print(f"config__534  {figure100}", text100)
-   print_debug = 2
 
 elif figure100 == 107:
    # used in Substack: Global Warming EEI sets the World on Fire #28
@@ -611,8 +608,8 @@ elif figure100 == 107:
 
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
-      print(f"config__534  {figure100}", text100)
-   print_debug = 2
+      print(f"config__614  {figure100}", text100)
+
 
 if figure100 == 110:
    # used in Substack: Global Warming EEI sets the World on Fire #28
@@ -659,7 +656,7 @@ if figure100 == 110:
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
       print(f"config__450  {figure100}", text100)
-   print_debug = 2
+
 elif figure100 == 111:
    text100 = "Figure 111: Global Warming calculated with EEI constant & linear & quadratic   in 2050 = 2.4...3°C  "
 
@@ -707,7 +704,7 @@ elif figure100 == 111:
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
       print(f"config__699  {figure100}", text100)
-   print_debug = 2
+
 
 elif figure100 == 112:
    text100 = "Figure 112: Global Warming calculated with EEI and Temperature   in 2050 = 2.4...3°C  "
@@ -759,7 +756,6 @@ elif figure100 == 112:
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
       print(f"config__757  {figure100}", text100)
-   print_debug = 2
    
 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 , 409 Global Warming EEI sets the World on Fire #28 Published 20. Nov
 if figure404 == 409:  
@@ -786,9 +782,8 @@ if figure404 == 409:
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
       print(f"config__450  {figure404}", text400)
-   print_debug = 2
 
-def figure_10(figure100):
+def figure_10():
    # used in Substack: Global Warming EEI sets the World on Fire #28
    text100 = "Figure 10: Global Warming ... possible Temperatures in ..2050...  EEI, Hansen..."
    figure100 = 110
@@ -833,6 +828,62 @@ def figure_10(figure100):
    if print_debug > 9:
       # print(f"config__433  {plot28_E_T}", text28)
       print(f"config__835  {figure100}", text100)
-   return figure100
 
+
+def apply_figure100_settings(figure_id):
+   """Apply and return the settings for one supported Figure 100 variant."""
+   shared_settings = {
+       "figure100": figure_id,
+       "plot74_GIS_T": 2,
+       "text74": "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74",
+       "c74": "green",
+       "y_74min": 0.5,
+       "y_74max": 3,
+       "linear_41_75": 3,
+       "c75": "#226C12CC",
+       "y_75min": 0.5,
+       "y_75max": 3,
+       "plot29_ETq": 0,
+       "plot28_E_T": 0,
+       "line5_play": 60,
+       "y_28min": 0.5,
+       "y_28max": 3,
+       "y_29min": 0.5,
+       "y_29max": 3,
+       "y_60min": 0.5,
+       "y_60max": 3,
+   }
+   if figure_id == 104:
+       shared_settings.update({
+           "text100": "Figure 4: Global Warming ... possible Temperature in 2050 = 2.6°C using Tom Harris quadratic fit",
+           "text75": "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75",
+           "plot_T_78": 4,
+           "text78": "Temperature in °C      Tom Harris  quadratic   T = 0.0004 x²  + 0.0019 x + 0.5079      78",
+           "y_78min": 0.5,
+           "y_78max": 3,
+           "line4_play": 0,
+           "play_60_T_E": 0,
+       })
+   elif figure_id == 105:
+       shared_settings.update({
+           "text100": "Figure 5: Global Warming calculated with linear EEI increase.   Result = 2.7°C in the year 2050",
+           "text75": "James Hansen:  linear 0.4°C warming  every  10  years      =  2.4°C in year 2050      75",
+           "plot_T_78": 0,
+           "play_60_T_E": 48,
+           "text60": "the measured EEI - CERES satellites -  warmed the earth 1.5°C in the year 2025       60",
+           "a60_start": 2005,
+           "a60_offset": 1.01,
+           "line4_play": 60,
+           "plot28_E_T": 5,
+           "text28": "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x  +  0.408              28",
+           "a29_start": 2026.5,
+           "a29_offset": 1.5,
+       })
+   else:
+       raise ValueError(f"Unsupported Figure 100 variant: {figure_id}")
+
+   globals().update(shared_settings)
+   if print_debug > 9:
+       print(f"config: applied Figure {figure_id} settings")
+   return shared_settings
    

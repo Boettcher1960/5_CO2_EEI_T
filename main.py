@@ -1,5 +1,5 @@
 # main.py
-v = "5N37" #   def main_figure_1():
+v = "5N40" #   def main_figure_1():
 #
 #
 #
@@ -28,6 +28,12 @@ from plotting import *
 from text import *
 from Rovang import *
 from ceres import *
+import config as config_module
+import data_processing as data_processing_module
+import models as models_module
+import plotting as plotting_module
+import text as text_module
+import ceres as ceres_module
 
 if print_debug > 9:
    print("")
@@ -289,6 +295,18 @@ def run_optional_figures():
         fig_404_eei_quadratic()
 
 
+def apply_figure100_settings(figure_id):
+    """Apply one Figure 100 configuration to every module that consumes it."""
+    settings = config_module.apply_figure100_settings(figure_id)
+    globals().update(settings)
+    for module in (
+        data_processing_module,
+        models_module,
+        plotting_module,
+        text_module,
+        ceres_module,
+    ):
+        vars(module).update(settings)
 
 
 
@@ -302,11 +320,9 @@ def main():
         run_optional_figures()
         return
     if figure100 > 0:
-        figure100 = 105
-        figure100 = figure_10(figure100)
-        main_figure_1()
-        figure100 = 102
-        main_figure_1()
+        for figure_id in (104, 105):
+            apply_figure100_settings(figure_id)
+            main_figure_1()
     
     run_optional_figures()
 

@@ -1070,7 +1070,12 @@ def Figure_304():
 
 """
 
-
-
+how to make 2 figures in one run of main.py
+first figure with all the parameters after elif figure100 == 104:
+text100 = "Figure 4: Global Warming ... possible Temperature in 2050 = 2.6°C using Tom Harris quadratic fit"
+...
+first figure with all the parameters after elif figure100 == 105:
+text100 = "Figure 5: Global Warming calculated with linear EEI increase.   Result = 2.7°C in the year 2050"
+...
 
 """
