@@ -1,5 +1,5 @@
 # main.py
-v = "5N34" #   def main_figure_1():
+v = "5N36" #   def main_figure_1():
 #
 #
 #
@@ -184,11 +184,10 @@ def save_png1(fig, header_parameter):
            print(f"main_382 saved png as file {path}")
 
 
-def main_figure_1():
+def main_figure_1():  # make one figure only
     """Main execution function"""
     global figure100
     
-
     # Create header parameter string
     header_parameter = (f" "
                        f"2({plot22_CO2_Mauna_Loa}{plot23_Glen_CO2}{plot25_long_CO2}" 
@@ -200,7 +199,7 @@ def main_figure_1():
                        f"{linear_41_75}{plot76_my_T}")
     
     if print_debug > 9:
-       print("main_207: main_figure_1", header_parameter)
+       print("main_202: main_figure_1", figure100, header_parameter)
 
     # Process CERES data
     ceres_process_data()
@@ -273,17 +272,9 @@ def main_figure_1():
            #path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/png/figure000_EEI_T.png"
            fig.savefig(path, dpi=300, bbox_inches="tight")
     
-    # Show plot
-    # plt.show()
-    
-    # Save plot
-    # save_png1(fig, header_parameter)
-
-    
-    
     # Close figure
     plt.close(fig)
-
+    # end main_figure_1() make one figure only
 
 
 # main program
@@ -311,8 +302,12 @@ def main():
         run_optional_figures()
         return
     if figure100 > 0:
+        figure100 = 10
+        figure_10()
         main_figure_1()
-
+        figure100 = 104
+        main_figure_1()
+        figure_10()
     
     run_optional_figures()
 
