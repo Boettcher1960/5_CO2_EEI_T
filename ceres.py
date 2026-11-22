@@ -618,9 +618,9 @@ def fig_202_era5_temp_quadratic():
     plt.close(fig)
 
 # 404.10 make a separate new figure404 for
-#        play_61_EEI = 12
-#        this is file work/61c_out_EEI.csv column EEI
-#        print the quadratic equation for EEI inside figure404
+#       figure4_9 = 9 # write figure 9 and use the 48 month averaging
+#       
+#        
 def fig_404_eei_quadratic():
     """Plot the selected CERES EEI running average with a quadratic fit."""
     # 402.11 comment 1
@@ -768,7 +768,7 @@ def fig_404_eei_quadratic():
         0.02,
         0.98,
         (
-            f"Figure 404 ({window_months}-month average)\n"
+            f"Figure {figure4_9}: ({window_months}-month average)\n"
             f"https://github.com/Boettcher1960/5_CO2_EEI_T      version  {v}"
         ),
         color="black",
@@ -801,7 +801,7 @@ def fig_404_eei_quadratic():
     )
 
     # 404.40 Build the headline with the averaging period and displayed year range.
-    
+
     headline = (
         f"CERES Earth Energy Imbalance ({window_months}-month average) "
         f"     plotted years {x_anf} to {x_end}"
