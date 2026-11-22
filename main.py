@@ -305,7 +305,8 @@ def main():
         figure100 = 105
         figure100 = figure_10(figure100)
         main_figure_1()
-        
+        figure100 = 102
+        main_figure_1()
     
     run_optional_figures()
 
