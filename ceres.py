@@ -801,10 +801,12 @@ def fig_404_eei_quadratic():
     )
 
     # 404.40 Build the headline with the averaging period and displayed year range.
+    
     headline = (
         f"CERES Earth Energy Imbalance ({window_months}-month average) "
         f"     plotted years {x_anf} to {x_end}"
     )
+
     # 404.41 Specify the desired distance from the figure's top edge in points.
     headline_margin_points = 30
     # 404.42 Convert figure height from inches to points for positioning.

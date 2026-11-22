@@ -1,5 +1,5 @@
 # main.py
-v = "5N43" #  all 4 figures work
+v = "5N46" # figure 404
 #
 #
 #
@@ -267,18 +267,6 @@ def main_figure_1():  # make one figure only
     # end main_figure_1() make one figure only
 
 
-# main program
-def run_optional_figures():
-    if figure202 > 0:
-        fig_202_era5_temp_quadratic()
-    if figure303 == 3:
-        Figure_303()
-    elif figure303 == 4:
-        Figure_304()
-    if figure404 > 1:
-        fig_404_eei_quadratic()
-
-
 def apply_figure100_settings(figure_id):
     """Apply one Figure 100 configuration to every module that consumes it."""
     settings = config_module.apply_figure100_settings(figure_id)
@@ -298,29 +286,24 @@ def apply_figure100_settings(figure_id):
 def main():
     """Main execution function"""
     global figure100
-    if figure100 == 0:
-        if figure404 in (12, 24, 48):
-            ceres_process_data()
-        run_optional_figures()
-        return
+
     # process 5 figure ibn one run:  figure102....figure110 
     if run_10_png > 0:
         for figure_id in (102, 104, 105, 106, 110):
             apply_figure100_settings(figure_id)
             main_figure_1()
-    if figure100 > 0: # one figure 
+
+    if figure100 > 0:    # one figure 100
         main_figure_1()
-    if figure202 > 0:
+    if figure202 > 0:    # one figure 200
         fig_202_era5_temp_quadratic()
-    if figure303 == 3:
+    if figure303 == 3:   # one figure 300
         Figure_303()
-    elif figure303 == 4:
+    elif figure303 == 4: # one figure 300
         Figure_304()
-    if figure404 > 1:
+    if figure404 > 1:    # one figure 400
         fig_404_eei_quadratic()
     
-    
-    #run_optional_figures()
 
 
 if __name__ == "__main__":
