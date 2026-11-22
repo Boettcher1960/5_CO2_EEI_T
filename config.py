@@ -12,14 +12,14 @@
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
 
-figure100 = 0 #  0 means create no old figure 1= make old figuure
+figure100 = 1 #  0 means create no old figure 1= make old figuure
                 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 Global Warming EEI sets the World on Fire #28 Published 20. Nov. at 21:18
                 #  0 means create no old figure 1= make old figuure
-figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve 209
+figure202 = 200 # 1 2=new figure with era5 temperature and quadratic curve 209
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
-figure404 = 409 # 3 , 12, 24, 36 , 48 60 72 96    48=create quadratic-fit figure for matching play_61_EEI
+figure404 = 0 # 3 , 12, 24, 36 , 48 60 72 96   409 48=create quadratic-fit figure for matching play_61_EEI
 
 
 # 8.5 configure the right axis legend 
@@ -90,7 +90,7 @@ plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 4 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
-plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
+plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 0  # 60 61  62
@@ -204,8 +204,8 @@ y_25max = 430 # only for y axis
 
 y_28min = 0.8  #  Temperature in °C y axis left mode
 y_28max = 3.2  #  Temperature in °C y axis left mode
-y_29min = 0.8  #  Temperature in °C y axis left mode
-y_29max = 3.2  #  Temperature in °C y axis left mode
+y_29min = 0.5  #  Temperature in °C y axis left mode
+y_29max = 3  #  Temperature in °C y axis left mode
 y_30min = 0.8  #  Temperature in °C y axis left mode
 y_30max = 3.2  #  Temperature in °C y axis left mode
 y_Gmin = 0 # 250 ppm CO2 
@@ -247,8 +247,8 @@ y_52max = 4 # plot52_delta_CO2_red_bars
 y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
-y_60min = 0.8  #  Temperature in °C y axis left mode
-y_60max = 3.2  #  Temperature in °C y axis left mode
+y_60min = 0.5  #  Temperature in °C y axis left mode
+y_60max = 3  #  Temperature in °C y axis left mode
 y_61min = 0  #   EEI in W/m2 y axis left mode
 y_61max = 1.6  #   EEI in W/m2 y axis left mode
 
@@ -284,10 +284,10 @@ y_72min = 0
 y_72max = 6 # 
 y_73min = 0
 y_73max = 6 # 
-y_74min = 0  # for GIS Temperature 
-y_74max = 2  # 1.6 for GIS Temperature 
-y_75min = 0 #  Temperature  
-y_75max = 2   #  Temperature 
+y_74min = 0.5  # for GIS Temperature 
+y_74max = 3  # 1.6 for GIS Temperature 
+y_75min = 0.5 #  Temperature  
+y_75max = 3   #  Temperature 
 y_76min = 0 #  Temperature  
 y_76max = 4   #  Temperature 
 y_77min = 0 #  Temperature  
