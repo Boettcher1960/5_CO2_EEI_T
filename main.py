@@ -1,5 +1,5 @@
 # main.py
-v = "5N42" #  save 5 files /png/figure110_EEI_T.png
+v = "5N43" #  all 4 figures work
 #
 #
 #
@@ -303,12 +303,24 @@ def main():
             ceres_process_data()
         run_optional_figures()
         return
-    if figure100 > 0:
+    # process 5 figure ibn one run:  figure102....figure110 
+    if run_10_png > 0:
         for figure_id in (102, 104, 105, 106, 110):
             apply_figure100_settings(figure_id)
             main_figure_1()
+    if figure100 > 0: # one figure 
+        main_figure_1()
+    if figure202 > 0:
+        fig_202_era5_temp_quadratic()
+    if figure303 == 3:
+        Figure_303()
+    elif figure303 == 4:
+        Figure_304()
+    if figure404 > 1:
+        fig_404_eei_quadratic()
     
-    run_optional_figures()
+    
+    #run_optional_figures()
 
 
 if __name__ == "__main__":

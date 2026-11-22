@@ -11,11 +11,11 @@
 
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
-
-figure100 = 105 #  0 means create no old figure 1= make old figuure
+run_10_png = 5 # 5 run 5 figures : 0 = no automatic
+figure100 = 107 #  0 means create no old figure 1= make old figuure
                 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 Global Warming EEI sets the World on Fire #28 Published 20. Nov. at 21:18
                 #  0 means create no old figure 1= make old figuure
-figure202 = 0 # 1 2=new figure with era5 temperature and quadratic curve 209
+figure202 = 0 # 2=new figure with era5 temperature and quadratic curve 209
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
@@ -33,10 +33,10 @@ plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print
 plot25_long_CO2 = 0   # 4 2, 3 25.1 
 
 # plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
-plot28_E_T = 0 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
+plot28_E_T = 5 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
 a28_start = 2026.5   # 2015 starting year of play_60_T_E
 a28_offset = 1.5  
-plot29_ETq = 4 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
+plot29_ETq = 0 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
 a29_start = 2026.5   # 2015 starting year of play_60_T_E
 a29_offset = 1.5  
 plot30_c = 0 #  EEI =1.5W T linear add 0.00208°C for every 1 W/m²/month 
@@ -88,7 +88,7 @@ plot72_AESS_T = 0 # 2 , 3
 plot73_ECS_T = 0 # 3
 global plot74_GIS_T 
 plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
-linear_41_75 = 4 # 3 4 5
+linear_41_75 = 3 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
@@ -96,8 +96,8 @@ plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 # variable to show play variable in line 4
 line2_play = 0  # 60 61  62
 line3_play = 0  # 60 play_62_EEA #   68 play68_ERA = 720
-line4_play = 0 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
-line5_play = 60  # 62 61 68
+line4_play = 60 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
+line5_play = 0  # 62 61 68
 line6_play = 0
 line7_play = 99 # 99 no line 7 
 
@@ -146,9 +146,8 @@ c71 = "red"
 c71 =  "#AB263590"
 c72 =  "#31BD9590"
 c73 =  "red"
-global c74
-c74 = "#9522AA90"
-c75 = "#371EA484"
+c74 = "#31CC1990"
+c75 = "#7ECA3B84"
 c76 = "#13DF2F84"
 c77 = "#34753D84"
 c78 = "#9D2A9984"
@@ -203,8 +202,8 @@ y_22max = 440 # ppm CO2
 y_25min = 370 # nok   only for y axis 
 y_25max = 430 # only for y axis
 
-y_28min = 0.8  #  Temperature in °C y axis left mode
-y_28max = 3.2  #  Temperature in °C y axis left mode
+y_28min = 0.5  #  Temperature in °C y axis left mode
+y_28max = 3  #  Temperature in °C y axis left mode
 y_29min = 0.5  #  Temperature in °C y axis left mode
 y_29max = 3  #  Temperature in °C y axis left mode
 y_30min = 0.8  #  Temperature in °C y axis left mode
