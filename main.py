@@ -1,5 +1,5 @@
 # main.py
-v = "5N30" #   substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 , 409 Global Warming EEI sets the World on Fire #28 Published 20. Nov
+v = "5N31" #   substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 , 409 Global Warming EEI sets the World on Fire #28 Published 20. Nov
 #
 #
 #
@@ -197,6 +197,7 @@ def run_optional_figures():
 
 def main():
     """Main execution function"""
+    global figure100
     if figure100 == 0:
         if figure404 in (12, 24, 48):
             ceres_process_data()
@@ -279,6 +280,14 @@ def main():
     
     # Save plot
     save_png(fig, header_parameter)
+
+    if figure202 == 200:
+       figure100 = 102 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110
+       # path2 = f"/Users/thomasboettcher/Desktop/{filename}"
+       path = f"/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/png/figure{figure100}_EEI_T.png"
+       #path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/png/figure000_EEI_T.png"
+       fig.savefig(path, dpi=300, bbox_inches="tight")
+
     
     # Close figure
     plt.close(fig)
