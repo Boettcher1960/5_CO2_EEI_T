@@ -1078,4 +1078,14 @@ first figure with all the parameters after elif figure100 == 105:
 text100 = "Figure 5: Global Warming calculated with linear EEI increase.   Result = 2.7°C in the year 2050"
 ...
 
+modify 
+apply_figure100_settings()
+to support not only 104 and 105
+Please add 3 more values
+   figure100 = 102
+   figure100 = 106
+   figure100 = 110
+
+
+
 """

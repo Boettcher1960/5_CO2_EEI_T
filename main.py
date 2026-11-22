@@ -1,5 +1,5 @@
 # main.py
-v = "5N40" #   def main_figure_1():
+v = "5N41" #   def main_figure_1():
 #
 #
 #
@@ -320,7 +320,7 @@ def main():
         run_optional_figures()
         return
     if figure100 > 0:
-        for figure_id in (104, 105):
+        for figure_id in (102, 104, 105, 106, 110):
             apply_figure100_settings(figure_id)
             main_figure_1()
     

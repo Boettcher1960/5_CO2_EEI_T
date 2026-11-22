@@ -831,7 +831,7 @@ def figure_10():
 
 
 def apply_figure100_settings(figure_id):
-   """Apply and return the settings for one supported Figure 100 variant."""
+   """Apply and return the settings for a supported Figure 100 variant."""
    shared_settings = {
        "figure100": figure_id,
        "plot74_GIS_T": 2,
@@ -852,8 +852,23 @@ def apply_figure100_settings(figure_id):
        "y_29max": 3,
        "y_60min": 0.5,
        "y_60max": 3,
+       "x_anf": 2005,
+       "x_end": 2065,
    }
-   if figure_id == 104:
+   if figure_id == 102:
+       shared_settings.update({
+           "text100": "Figure 2: Global Warming ... possible Temperature in 2050 = 2.5°C with  Hansen linear fit +0.4°C",
+           "y_74min": -0.5,
+           "y_75min": -0.5,
+           "text75": "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75",
+           "plot_T_78": 0,
+           "line4_play": 0,
+           "play_60_T_E": 0,
+           "plot28_E_T": 0,
+           "plot29_ETq": 0,
+           "x_anf": 1880,
+       })
+   elif figure_id == 104:
        shared_settings.update({
            "text100": "Figure 4: Global Warming ... possible Temperature in 2050 = 2.6°C using Tom Harris quadratic fit",
            "text75": "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75",
@@ -876,6 +891,40 @@ def apply_figure100_settings(figure_id):
            "line4_play": 60,
            "plot28_E_T": 5,
            "text28": "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x  +  0.408              28",
+           "a29_start": 2026.5,
+           "a29_offset": 1.5,
+       })
+   elif figure_id == 106:
+       shared_settings.update({
+           "text100": "Figure 6: Global Warming Temperature calculated with EEI quadratic increase in 2050 = 3°C",
+           "text75": "James Hansen:   linear 0.4°C   warming  every  10  years    -  dotted  green              75",
+           "play_60_T_E": 48,
+           "a60_start": 2005,
+           "a60_offset": 1.01,
+           "line4_play": 60,
+           "plot29_ETq": 5,
+           "a29_start": 2026.5,
+           "a29_offset": 1.5,
+           "plot_T_78": 0,
+       })
+   elif figure_id == 110:
+       shared_settings.update({
+           "text100": "Figure 10: Global Warming ... possible Temperatures in ..2050...  EEI, Hansen...",
+           "text75": "James Hansen:  linear 0.4°C warming every 10  years.        The year 2050 result = 2.4°C",
+           "text78": "Temperature in °C using Tom Harris quadratic formula.        The year 2050 result = 2.6°C",
+           "plot_T_78": 4,
+           "y_78min": 0.5,
+           "y_78max": 3,
+           "line5_play": 60,
+           "play_60_T_E": 48,
+           "text60": "the measured EEI - CERES satellites -  warmed the earth 1.5°C in the year 2025       60",
+           "a60_start": 2005,
+           "a60_offset": 1.01,
+           "line4_play": 60,
+           "plot28_E_T": 5,
+           "text28": "Global Warming in °C  using linear increasing EEI.              The year 2050 result = 2.7°C",
+           "plot29_ETq": 6,
+           "text29": "Global Warming in °C  using quadratic increasing EEI.        The year 2050 result =  3  °C",
            "a29_start": 2026.5,
            "a29_offset": 1.5,
        })
