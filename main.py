@@ -1,5 +1,5 @@
 # main.py
-v = "5N33" #   def main_figure_1():
+v = "5N34" #   def main_figure_1():
 #
 #
 #
@@ -32,10 +32,6 @@ from ceres import *
 if print_debug > 9:
    print("")
    print("main_030: start main ", line2_play , line3_play , line4_play)
-
-
-
-
 
 
 def hide_other_right_axes(ax1, keep_axis):
@@ -270,7 +266,24 @@ def main_figure_1():
     # Save plot
     save_png1(fig, header_parameter)
 
+    if figure202 == 200:
+           figure100 = 102 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110
+           # path2 = f"/Users/thomasboettcher/Desktop/{filename}"
+           path = f"/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/png/figure{figure100}_EEI_T.png"
+           #path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/png/figure000_EEI_T.png"
+           fig.savefig(path, dpi=300, bbox_inches="tight")
     
+    # Show plot
+    # plt.show()
+    
+    # Save plot
+    # save_png1(fig, header_parameter)
+
+    
+    
+    # Close figure
+    plt.close(fig)
+
 
 
 # main program
@@ -300,78 +313,7 @@ def main():
     if figure100 > 0:
         main_figure_1()
 
-    # Process CERES data
-    ceres_process_data()
     
-    # Setup figure
-    fig, ax1 = setup_figure(scale_mode)
-    
-    # Load data
-    data = load_plot_data()
-    
-    # 8.3 print the left y axis  # Configure axes plotting.py 
-    ax1 = plot_1_axe(ax1)
-    
-    # call plotting.py line 200 to line 500
-    plot_9_create_all_plots(ax1, data)
-    
-    # Add grid lines
-    add_grid_lines(ax1)
-    
-    # Add vertical bands
-    add_vertical_bands(ax1, C280)
-    
-    # Add temperature band if temperature plots are active # 74.9
-    if plot71_temperature > 0 or plot72_AESS_T > 0 or plot73_ECS_T > 0 or plot74_GIS_T > 0:
-        if print_debug > 13:
-            print(f"main_372: bug6 temperature band on left y axis only plot74_GIS_T={plot74_GIS_T} {'='*5}")
-        add_temperature_band(ax1) # 1.5 to 2 on left y axis
-        # Find the active temperature axis
-        for ax in [ax1] + ax1.get_figure().get_axes():
-            if hasattr(ax, 'get_ylabel') and 'Temperature' in ax.get_ylabel():
-                add_temperature_band(ax)
-                print(f"main_378{'='*1} temperature_band")
-                break
-    
-    
-    # Add x-axis label
-    ax1.set_xlabel("year", fontsize=20)
-    plt.xticks(fontsize=20)
-    ax1.tick_params(axis="x", labelcolor="black", labelsize=20)
-    
-    axes = plt.gcf().get_axes()
-    # Keep axes 0, 1, 2, hide all others
-    # print("main_468: call plot_6_remove_axe1.")
-    #plot_6_remove_axe1(axes,yr_delete)
-    plot_6_remove_axe1(axes,-1) # -1= no delete, print only
-    #plot_6_remove_axe1(axes,0) # delete axe 
-    # plot_6_remove_axe1(axes,1) # delete axe 
-    #plot_6_remove_axe1(axes,2) # delete axe 
-    #plot_6_remove_axe1(axes,3) # delete axe 
-    #plot_6_remove_axe1(axes,4) # delete axe 
-    #plot_6_remove_axe1(axes,5) # delete axe 5, not axe 0
-    #plot_6_remove_axe1(axes,6)  # delete axe 6
-    
-    # Adjust layout
-    fig.tight_layout()
-    plt.tight_layout()
-    
-    # Show plot
-    plt.show()
-    
-    # Save plot
-    # save_png1(fig, header_parameter)
-
-    if figure202 == 200:
-       figure100 = 102 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110
-       # path2 = f"/Users/thomasboettcher/Desktop/{filename}"
-       path = f"/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/png/figure{figure100}_EEI_T.png"
-       #path = "/Users/thomasboettcher/documents/Python/5_CO2_EEI_T/png/figure000_EEI_T.png"
-       fig.savefig(path, dpi=300, bbox_inches="tight")
-
-    
-    # Close figure
-    plt.close(fig)
     run_optional_figures()
 
 
