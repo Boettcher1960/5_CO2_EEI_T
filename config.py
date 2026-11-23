@@ -19,7 +19,7 @@ figure202 = 0 # 2=new figure with era5 temperature and quadratic curve 209
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
-figure404 = 48 # 3 , 12, 24, 36 , 48 60 72 96   409 48=create quadratic-fit figure for matching play_61_EEI
+figure404 = 0 # 3 , 12, 24, 36 , 48 60 72 96   409 48=create quadratic-fit figure for matching play_61_EEI
 figure4_9 = 9 # write figure 9 and use the 48 month averaging
 
 # 8.5 configure the right axis legend 
@@ -55,7 +55,7 @@ plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 2, 3, 4 ,5 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei   = 0  # 47, 3, 48,   is local 
-plot45_OLR         = 0 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
+plot45_OLR         = 4 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 plot46_ASR         = 0 # 2, 3 ASR Absorbed Solar Radiation from _CERES_ASR 48 months average [W/m2]
 plot47_albedo48    = 0  # 4  
 plank48 = 0 # 3 , 5 plank feedback is 68_ERA temperature * 3.22
@@ -232,8 +232,8 @@ y_43max = 2  # EEI in W/m2
 y_44min = 0.0 #   EEI in W/m2 y axis left mode
 y_44max = 2 #   EEI in W/m2 y axis left mode
 
-y_45min = 240    # OLR in W/m2
-y_45max = 243  # OLR in W/m2 242.8
+y_45min = 239.6    # OLR in W/m2
+y_45max = 243.6  # OLR in W/m2 242.8
 y_46min = 240    # ASR in W/m2
 y_46max = 242.8  # ASR in W/m2
 y_47min = 0.294 # albedo in %

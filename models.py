@@ -280,18 +280,22 @@ def T_model76(t):
 
 
 #########################################################
-# 45_OLR_48month_2026_07.csv ############################
+#  plot45_OLR                ############################
 #########################################################
 # 1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 # 41.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
-# 41.11 copy txt to work/_66_TOA_OLR_all_sky_2026_08.txt
-# 41.17 in config.py set play_66_OLR = 48 
-# 41.21 copy the new file  work/66c_OLR.csv has the column OLR48
-# 41.22 to   read_csv/_45_OLR_48month_2026_08.csv
+# 41.11 copy to   read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 45.12 in config.py set play_66_OLR = 48 
+# 41.13 the new file  work/_66c_OLR.csv has the column OLR48 
+#        copy to read_csv/_45_OLR_48month_2026_09.csv
+# 41.22 to   read_csv/_45_OLR_48month_2026_08.csv    data['ceres_45'] = pd.read_csv("read_csv/_45_OLR_48month_2026_09.csv")
 # plot45_OLR = 2 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07
 # 2026.10.15 plots plot45_OLR = 2
 # 2026.10.15 plots plot45_OLR = 3
 # 2026.10.20 plots plot45_OLR = 3
+# 2026.11.23 plots plot45_OLR = 4
+
+
 
 
 #########################################################
@@ -548,6 +552,7 @@ def T_model76(t):
 #
 # 2026.10.25 plots play_61_EEI = 12    # 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv 
 ####### o k ##################################################
+# 2026.11.23 plots   line1_play = 61 and lay_61_EEI = 48 better average
 
 
 ##################################################################
@@ -661,7 +666,7 @@ def T_model76(t):
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3miz5mmll3k2z
 # 2026.10.25 plots   line3_play = 64 and play_64_ASR_anomaly = 12 
 # 2026.10.25 plots   line3_play = 64 and play_64_ASR_anomaly = 24
-# 2026.10.25 plots   line3_play = 64 and play_64_ASR_anomaly = 48 
+
 
 
 ##################################################################
@@ -674,6 +679,7 @@ def T_model76(t):
 # 41.39  ceres line 333 edit    df66b = convert66_txt_to_csv('read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt', 
 #        df66c = create404_running_average( 'work/66b_OLR_raw.csv', 
 #
+# 2026.11.23 plots   line3_play = 66 and play_66_OLR  = 48 better average
 
 
 
@@ -1121,167 +1127,8 @@ def Figure_304():
 
 """
 
-new    
-def ceres_running_average(input_csv, 
-
-def ceres_running_average(input_csv, 
-                           output_csv, 
-                           window_months,   # figure404
-                          min_periods=None, 
-                          center=True, 
-                          keep_original=True,
-                          column_name='EEI',
-                          column_old='toa_net_flux_w_m2'
-                          ):
 
 
-
-old nur 2 mal aufgerufen
-def create404_running_average(input_csv, 
-ceres 243  df61c = create404_running_average( 'work/61b_out_in_ceres.csv', 
-ceres 650  df404c = create404_running_average( 'work/61b_out_in_ceres.csv',
-# 404.10 create_running_average(input_csv, output_csv, 
-def create404_running_average(input_csv, 
-                           output_csv, 
-                           window_months,   # figure404
-                          min_periods=None, 
-                          center=True, 
-                          keep_original=True,
-                          column_name='EEI'):
-
-
-
-
-# 404.10 create_running_average(input_csv, output_csv, 
-def not_used_create404_running_average(input_csv, 
-                           output_csv, 
-                           window_months,   # figure404
-                          min_periods=None, 
-                          center=True, 
-                          keep_original=True,
-                          column_name='EEI'):
-   
-    df = pd.read_csv(input_csv)
-    df['date'] = pd.to_datetime(df['date'])
-    df = df.sort_values('date').reset_index(drop=True)
-    
-    if min_periods is None:
-        min_periods = window_months
-
-    if figure404 == 3:
-        min_periods = 2
-
-    # 404.110 Keep the source series and calculate its regular middle average.
-    source_values = df['toa_net_flux_w_m2']
-    averaged_values = source_values.rolling(
-        window=window_months, 
-        center=center,
-        min_periods=min_periods
-    ).mean()
-
-    # 404.120 Use forward averages at the beginning and backward averages at the end.
-    edge_rows = window_months + 4    # edge_rows = figure404 + 4 = 48+4 = 52
-    if len(df) < 2 * edge_rows:
-        raise ValueError(
-            f"At least {2 * edge_rows} monthly records are required for "
-            f"non-overlapping {edge_rows}-month edge regions; found {len(df)}."
-        )
-    # 404.130 foreward_average is special with a sharp step
-    #      EEI= 0.591875   2004.458333 
-    #      EEI= 0.427917   2004.541667
-    forward_average = (
-        source_values.iloc[::-1]
-        .rolling(window=window_months, min_periods=window_months)
-        .mean()
-        .iloc[::-1]
-        .reset_index(drop=True)
-    )
-    # 404.140 backward_average is the normal average
-    backward_average = source_values.rolling(
-        window=window_months, min_periods=window_months
-    ).mean()
-    # 404.150 the first 48 months
-    averaged_values.iloc[:edge_rows] = forward_average.iloc[:edge_rows]
-
-    # 404.152 48 months # edge_rows = figure404 + 4 = 48+4 = 52
-    if print_debug > 19:
-        print(f"ceres__4: EEI= { averaged_values.values[edge_rows-4] } index {edge_rows-4}")
-        print(f"ceres__3: EEI= { averaged_values.values[edge_rows-3] } index {edge_rows-3}")
-        print(f"ceres__2: EEI= { averaged_values.values[edge_rows-2] } index {edge_rows-2}")
-        print(f"ceres__1: EEI= { averaged_values.values[edge_rows-1] } index {edge_rows-1}")
-        print(f"ceres___:       step")
-        print(f"ceres__0: EEI= { averaged_values.values[edge_rows] } index {edge_rows}")
-        print(f"ceres_+1: EEI= { averaged_values.values[edge_rows+1] } index {edge_rows+1}")
-        print(f"ceres_+2: EEI= { averaged_values.values[edge_rows+2] } index {edge_rows+2}")
-        print(f"ceres_+3: EEI= { averaged_values.values[edge_rows+3] } index {edge_rows+3}")
-    v1 =  averaged_values.values[edge_rows-4]  
-    v2 =  averaged_values.values[edge_rows-3]  
-    v3 =  averaged_values.values[edge_rows-2]  
-    v4 =  averaged_values.values[edge_rows-1]  
-    v5 =  averaged_values.values[edge_rows]  
-    v6 =  averaged_values.values[edge_rows+1]  
-    v7 =  averaged_values.values[edge_rows+2]     
-    v8 =  averaged_values.values[edge_rows+3]   
-    #    ceres__4: EEI= 0.5139583333333334 index 48 bad v1
-    #    ceres__3: EEI= 0.5554166666666667 index 49 bad v2
-    #    ceres__2: EEI= 0.5435416666666667 index 50 bad v3
-    #    ceres__1: EEI= 0.5918749999999999 index 51 bad v4
-    #    ceres___:       step
-    #    ceres__0: EEI= 0.42791666666666667 index 52  ok v5
-    #    ceres_+1: EEI= 0.42812500000000003 index 53  ok v6
-    #    ceres_+2: EEI= 0.44604166666666667 index 54  ok v7
-    #    ceres_+3: EEI= 0.43979166666666664 index 55  ok v8
-    # __: EEI= 0.5139583333333334  0.5554166666666667  0.5435416666666667  0.5918749999999999  
-    #          0.42791666666666667  0.42812500000000003  0.44604166666666667   
-    if print_debug > 9:
-        print(f"__: EEI= { v1 }  { v2 }  { v3 }  { v4 } step { v5 }  { v6 }  { v7 }   { v8 } ")
-
-        # averaged_values.index[edge_rows-1] = index = 51 = edge_rows-1}
-        # averaged_values.values[edge_rows-1]
-
-    # 404.154 after 48 months
-    averaged_values.iloc[-edge_rows:] = backward_average.iloc[-edge_rows:]
-
-    # 404.160 correct ceres__3: EEI= 0.5554166666666667 index 49 bad
-    # 404.162 correct  ceres__2: EEI= 0.5435416666666667 index 50 bad v3
-    # 404.164 ceres__1: EEI= 0.5918749999999999 index 51 bad v4
-    # averaged_values.values[edge_rows-1] = ( v5 + v6 + v7 + v4 )/4
-    averaged_values.values[edge_rows-5] = ( v4 + v4 + v4 + v4 + v4   + v5 )/6
-    averaged_values.values[edge_rows-4] = ( v4 + v4 + v4 + v4   + v5 + v5 )/6
-    averaged_values.values[edge_rows-3] = ( v4 + v4 + v4   + v5 + v5 + v5 )/6
-    averaged_values.values[edge_rows-2] = ( v4 + v4   + v5 + v5 + v5 + v5 )/6
-    averaged_values.values[edge_rows-1] = ( v4  + v5  + v5 + v5 + v5 + v5 )/6
-
-    if print_debug > 29:
-           print(f"ceres__4: EEI= { averaged_values.values[edge_rows-4] } index {edge_rows-4}")
-           print(f"ceres__3: EEI= { averaged_values.values[edge_rows-3] } index {edge_rows-3}")
-           print(f"ceres__2: EEI= { averaged_values.values[edge_rows-2] } index {edge_rows-2}")
-           print(f"ceres__1: EEI= { averaged_values.values[edge_rows-1] } index {edge_rows-1}")
-           print(f"ceres___:       step")
-           print(f"ceres__0: EEI= { averaged_values.values[edge_rows] } index {edge_rows}")
-           print(f"ceres_+1: EEI= { averaged_values.values[edge_rows+1] } index {edge_rows+1}")
-    # 404.170 copy to df field column_name='EEI'
-    df[column_name] = averaged_values
-    
-    # 404.180 configure the output csv 
-    output_columns = ['date', 'year', 'month', 'decimal_year']
-    if keep_original:
-        output_columns.append('toa_net_flux_w_m2')
-    output_columns.append(column_name)
-    
-    df_output = df[output_columns].copy()
-    df_output.to_csv(output_csv, index=False, float_format='%.6f')
-    
-    valid_records = df_output[column_name].notna().sum()
-    #print(f"{window_months}-month running average saved to {output_csv}")
-    #print(f"Valid records: {valid_records} out of {len(df_output)}")
-    if print_debug > 9:
-        print(f"ceres935: Valid records: {valid_records} out of {len(df_output)}")
-        print(f"ceres936: {window_months}-month running average saved to {output_csv} ")
-    return df_output
-    # end part 62.c  CERES.csv (perform averaging)
-
-                          
 
 
    

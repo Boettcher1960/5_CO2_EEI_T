@@ -1,5 +1,5 @@
 # main.py
-v = "5N61" # def ceres_running_average(input_csv, 
+v = "5N62" # plots plot45_OLR = 4
 #
 #
 #
@@ -87,9 +87,9 @@ def load_plot_data():
            print(f"main_180: custom-read 44.7 ={part44_ceres_eei}")
         data['ceres_custom'] = pd.read_csv("work/c44d_ceres.csv")
     if plot45_OLR > 0: # Outgoing Longwave Radiation OLR
-        data['ceres_45'] = pd.read_csv("read_csv/_45_OLR_48month_2026_08.csv")
+        data['ceres_45'] = pd.read_csv("read_csv/_45_OLR_48month_2026_09.csv")
         if print_debug > 9:
-           print(f"main_302: OLR read 45.1 ={plot45_OLR}")
+           print(f"main__92: OLR read 45.1 ={plot45_OLR}")
     if plot46_ASR > 0: # Outgoing Longwave Radiation OLR
         data['ceres_46'] = pd.read_csv("read_csv/_46_ASR_48month_2026_08.csv")
         if print_debug > 9:
