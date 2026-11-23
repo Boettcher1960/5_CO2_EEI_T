@@ -1121,29 +1121,34 @@ def Figure_304():
 
 """
 
-how to make 2 figures in one run of main.py
-first figure with all the parameters after elif figure100 == 104:
-text100 = "Figure 4: Global Warming ... possible Temperature in 2050 = 2.6°C using Tom Harris quadratic fit"
-...
-first figure with all the parameters after elif figure100 == 105:
-text100 = "Figure 5: Global Warming calculated with linear EEI increase.   Result = 2.7°C in the year 2050"
-...
+new    
+def ceres_running_average(input_csv, 
 
-modify 
-apply_figure100_settings()
-to support not only 104 and 105
-Please add 3 more values
-   figure100 = 102
-   figure100 = 106
-   figure100 = 110
+def ceres_running_average(input_csv, 
+                           output_csv, 
+                           window_months,   # figure404
+                          min_periods=None, 
+                          center=True, 
+                          keep_original=True,
+                          column_name='EEI',
+                          column_old='toa_net_flux_w_m2'
+                          ):
 
-(102, 104, 105, 106, 110):
 
-save the figures to
-/png/figure102_EEI_T.png
-/png/figure104_EEI_T.png
-/png/figure105_EEI_T.png
-/png/figure106_EEI_T.png
-/png/figure110_EEI_T.png
+
+old nur 2 mal aufgerufen
+def create404_running_average(input_csv, 
+ceres 243  df61c = create404_running_average( 'work/61b_out_in_ceres.csv', 
+ceres 650  df404c = create404_running_average( 'work/61b_out_in_ceres.csv',
+# 404.10 create_running_average(input_csv, output_csv, 
+def create404_running_average(input_csv, 
+                           output_csv, 
+                           window_months,   # figure404
+                          min_periods=None, 
+                          center=True, 
+                          keep_original=True,
+                          column_name='EEI'):
+
+
    
 """
