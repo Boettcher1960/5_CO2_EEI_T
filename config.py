@@ -19,7 +19,7 @@ figure202 = 0 # 2=new figure with era5 temperature and quadratic curve 209
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
-figure404 = 0 # 3 , 12, 24, 36 , 48 60 72 96   409 48=create quadratic-fit figure for matching play_61_EEI
+figure404 = 48 # 3 , 12, 24, 36 , 48 60 72 96   409 48=create quadratic-fit figure for matching play_61_EEI
 figure4_9 = 9 # write figure 9 and use the 48 month averaging
 
 # 8.5 configure the right axis legend 
@@ -71,7 +71,7 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 play_60_T_E = 0   # 2=no average 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
 a60_start = 2005   # 2015 starting year of play_60_T_E
 a60_offset = 1.01     # 1.01 1 , 0.85 add offset 0.2°C at start of adding
-play_61_EEI = 12   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 48   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 p61raw = "read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt" # raw CERES downloaded 
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..

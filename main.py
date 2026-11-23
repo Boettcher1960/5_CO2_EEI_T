@@ -1,5 +1,5 @@
 # main.py
-v = "5N50" # df61b = convert_ceres_to_csv(p61raw, 'work/61b_out_in_ceres.csv')
+v = "5N51" # df61c = create404_running_average( 'work/61b_out_in_ceres.csv', 
 #
 #
 #
@@ -35,10 +35,10 @@ import plotting as plotting_module
 import text as text_module
 import ceres as ceres_module
 
-if print_debug > 9:
+if print_debug > 19:
    print("")
    print("main_030: start main ", line2_play , line3_play , line4_play)
-
+   
 
 def hide_other_right_axes(ax1, keep_axis):
     """Hide all right y-axes except the one we want to keep"""
@@ -196,7 +196,7 @@ def main_figure_1():  # make one figure only
                        f"{linear_41_75}{plot76_my_T}")
     
     if print_debug > 9:
-       print("main_202: main_figure_1", figure100, header_parameter)
+       print("main_199: start figure_1 =", figure100)
 
     # Process CERES data
     ceres_process_data()

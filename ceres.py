@@ -215,12 +215,14 @@ def ceres_process_data():
               print(f"ceres118: create work/60g_T_E.csv   60    ={play_60_T_E}")
 
     # main.play_61_EEI line 65
-    if play_61_EEI > 0: # 61.10
+    if play_61_EEI > 0: # 61.20
+       #  df61b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
+       #  61.22 input CERES txt file "read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt" # raw CERES downloaded 
+       #  61.23 output file                     'work/61b_out_in_ceres.csv
        df61b = convert_ceres_to_csv(p61raw, 'work/61b_out_in_ceres.csv')
-       #df61b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
-       #                             'work/61b_out_in_ceres.csv')
+       
        if print_debug > 9:
-          print(f"ceres125: create work/61b_out_in_ceres.csv'  61.b ={play_61_EEI}")
+          print(f"ceres223:   {p61raw}   61.b ={play_61_EEI}  ")
        
        window_months=play_61_EEI
 
@@ -230,16 +232,24 @@ def ceres_process_data():
           min1_periods=play_61_EEI
        use_center=False
        keep_original=True,
-       
-       df61c = create_running_average( 'work/61b_out_in_ceres.csv', 
-                                       'work/61c_out_EEI.csv',
+       # 61.33 wave years 2001..2003  df61c = create_running_average( 'work/61b_out_in_ceres.csv', 
+       # 61.34  df404c = create404_running_average( 'work/61b_out_in_ceres.csv',
+       #                                        'work/404c_out_EEI.csv',
+       #                                             window_months=window_months,
+       #                                            min_periods=min1_periods,
+       #                                            center=use_center,
+       #                                            column_name='EEI')
+       #
+       # df61c = create_running_average( 'work/61b_out_in_ceres.csv', 
+       df61c = create404_running_average( 'work/61b_out_in_ceres.csv', 
+                                          'work/61c_out_EEI.csv',
                                             window_months=play_61_EEI,
                                             min_periods=min1_periods,
                                             center=use_center,
                                             column_name='EEI')
         
        if print_debug > 9:
-          print(f"ceres123: create work/61c_out_EEI.csv  61.gut ={play_61_EEI}")
+          print(f"ceres242: create work/61c_out_EEI.csv  61.gut ={play_61_EEI}")
 
     # Earth Energy Accumulated EEA is sum of EEI
     if play_62_EEA > 1: #  
