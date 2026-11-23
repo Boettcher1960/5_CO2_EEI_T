@@ -649,12 +649,14 @@ def fig_404_eei_quadratic():
     # 402.13  work/61b_out_in_ceres.csv is the input file
     # 402.14  work/404c_out_EEI.csv is the ouput file
     # 402.15 call the running average function with figure404 month averaging
-    df404c = create404_running_average( 'work/61b_out_in_ceres.csv',
+    df404c = ceres_running_average( 'work/61b_out_in_ceres.csv',
                                         'work/404c_out_EEI.csv',
                                             window_months=window_months,
                                             min_periods=min1_periods,
                                             center=use_center,
-                                            column_name='EEI')
+                                            column_name='EEI',             # 
+                                            column_source='toa_net_flux_w_m2' # the to be read column
+                                       )
 
 
     # 404.21 Read the generated average and fail clearly if its expected columns are absent.
@@ -953,7 +955,7 @@ def fig_404_eei_quadratic():
 
 
 # 404.10 create_running_average(input_csv, output_csv, 
-def create404_running_average(input_csv, 
+def not_used_create404_running_average(input_csv, 
                            output_csv, 
                            window_months,   # figure404
                           min_periods=None, 
