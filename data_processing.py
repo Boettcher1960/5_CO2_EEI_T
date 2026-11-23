@@ -13,7 +13,7 @@ print_debug_DP = 10 # global variable print_debug = 10
 
 
 # part 62.c  CERES.csv (perform averaging) create_running_average(input_csv, output_csv, 
-def create_running_average(input_csv, 
+def create64_running_average(input_csv, 
                            output_csv, 
                            window_months, 
                           min_periods=None, 

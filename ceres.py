@@ -294,7 +294,7 @@ def ceres_process_data():
        min_periods=12
        use_center=False
        keep_original=True,
-       df64c = create_running_average( 'work/64b_ASR.csv', 
+       df64c = create64_running_average( 'work/64b_ASR.csv', 
                                        'read_csv/_64c_ASR.csv',
                                             window_months=play_64_ASR_anomaly,
                                             min_periods=12,
@@ -950,7 +950,7 @@ def fig_404_eei_quadratic():
 
 
 
-# part 62.c  CERES.csv (perform averaging) create_running_average(input_csv, output_csv, 
+# 404.10 create_running_average(input_csv, output_csv, 
 def create404_running_average(input_csv, 
                            output_csv, 
                            window_months,   # figure404
@@ -958,6 +958,7 @@ def create404_running_average(input_csv,
                           center=True, 
                           keep_original=True,
                           column_name='EEI'):
+    
     """Create a running average with forward and backward averages at the edges."""
     df = pd.read_csv(input_csv)
     df['date'] = pd.to_datetime(df['date'])
@@ -1050,7 +1051,7 @@ def create404_running_average(input_csv,
     averaged_values.values[edge_rows-2] = ( v4 + v4   + v5 + v5 + v5 + v5 )/6
     averaged_values.values[edge_rows-1] = ( v4  + v5  + v5 + v5 + v5 + v5 )/6
 
-    if print_debug > 9:
+    if print_debug > 29:
            print(f"ceres__4: EEI= { averaged_values.values[edge_rows-4] } index {edge_rows-4}")
            print(f"ceres__3: EEI= { averaged_values.values[edge_rows-3] } index {edge_rows-3}")
            print(f"ceres__2: EEI= { averaged_values.values[edge_rows-2] } index {edge_rows-2}")
@@ -1058,17 +1059,9 @@ def create404_running_average(input_csv,
            print(f"ceres___:       step")
            print(f"ceres__0: EEI= { averaged_values.values[edge_rows] } index {edge_rows}")
            print(f"ceres_+1: EEI= { averaged_values.values[edge_rows+1] } index {edge_rows+1}")
-
-
     # 404.170 copy to df field column_name='EEI'
     df[column_name] = averaged_values
-
-    # 404.160 48 months # edge_rows = figure404 + 4 = 48+4 = 52
-    #      EEI= 0.591875   2004.458333 
-    #      EEI= 0.427917   2004.541667
     
-    
-
     # 404.180 configure the output csv 
     output_columns = ['date', 'year', 'month', 'decimal_year']
     if keep_original:
