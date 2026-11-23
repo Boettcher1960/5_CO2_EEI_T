@@ -1,5 +1,5 @@
 # main.py
-v = "5N52" # # 42.12    main.py line 78   change the path      data['ceres_42'] = pd.read_csv("read_csv/42_EEI48month_2026_09.csv")
+v = "5N53" # 2026.11.23 plots plot43_eei_12month = 4
 #
 #
 #
@@ -77,9 +77,8 @@ def load_plot_data():
     if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
         data['ceres_42'] = pd.read_csv("read_csv/42_EEI48month_2026_09.csv")
         # data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
-    if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
-    #   data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_02.csv")
-        data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_08.csv")
+    if plot43_eei_12month > 0: # 43.2 data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_08.csv")
+        data['ceres_43'] = pd.read_csv("read_csv/43_EEI12month_2026_09.csv")
         if print_debug > 19:
            print(f"main_176: 43.2 read ={plot43_eei_12month}")
            #data['ceres_43'] = pd.read_csv("csv/csv44/_plot_41_41g12.csv")

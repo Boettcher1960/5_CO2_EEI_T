@@ -231,7 +231,7 @@ def T_model76(t):
 # 42.3 move to     read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 # 42.4 run with play_61_EEI = 48
 # 42.5 doublicate    work/61c_out_EEI.csv   to
-# 42.6 paste to    read_csv/_42_EEI48month_2026_09.csv
+# 42.6 paste to    read_csv/42_EEI48month_2026_09.csv
 # 42.11 in main.py line 77  if plot42_EEI_48month > 0: # 
 # 42.12    main.py line 78   change the path      data['ceres_42'] = pd.read_csv("read_csv/42_EEI48month_2026_09.csv")
 # 42.18 set plot42_EEI_48month = 3  # 2,3,4,5 print EEI 48 month running mean
@@ -239,20 +239,22 @@ def T_model76(t):
 # 2026.10.15 plots  plot42_EEI_48month = 2
 # 2026.10.15 plots  plot42_EEI_48month = 3
 # 2026.10.20 plots  plot42_EEI_48month = 4
+# 2026.11.23 plots  plot42_EEI_48month = 3
 
 
 #################################################################
 # plot43_eei_12month ############################################
 ############### see 41 process 4 CERES files ####################
 # 43.1 open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
-# 41.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toAugust-2026.txt
-# 41.3 copy txt to work/_61_in__2026_08_EEI_CERES.txt
-# 41.52 set    play_61_EEI = 12 
-# 42.56 copy           work/61c_out_EEI.csv to 
-# 42.57  to    read_csv/_43_EEI12month_2026_08.csv
+# 43.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 42.3 move to     read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 43.4 run with play_61_EEI = 12
+# 42.5 Douplizieren    work/61c_out_EEI.csv   to
+# 42.6 paste to    read_csv/43_EEI12month_2026_09.csv
+# 42.11 in main.py line 81  data['ceres_43'] = pd.read_csv("read_csv/43_EEI12month_2026_09.csv")
 # 2026.10.15 plots plot43_eei_12month = 2
 # 2026.10.15 plots plot43_eei_12month = 3
-# 2026.10.20 plots plot43_eei_12month = 4
+# 2026.11.23 plots plot43_eei_12month = 4
 
 
 #################################################################
