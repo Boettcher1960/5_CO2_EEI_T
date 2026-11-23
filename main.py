@@ -1,5 +1,5 @@
 # main.py
-v = "5N52" # df61c = create404_running_average( 'work/61b_out_in_ceres.csv', 
+v = "5N52" # # 42.12    main.py line 78   change the path      data['ceres_42'] = pd.read_csv("read_csv/42_EEI48month_2026_09.csv")
 #
 #
 #
@@ -75,8 +75,8 @@ def load_plot_data():
         if print_debug > 9:
             print(f"main__62: 30.69 read ={plot30_c}")  
     if plot42_EEI_48month > 0: # _plot_42_41g50.csv"
-        data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
-        # 249 bug data['ceres_48'] = pd.read_csv("read_csv/_42_EEI48month_made_by_61c.csv")
+        data['ceres_42'] = pd.read_csv("read_csv/42_EEI48month_2026_09.csv")
+        # data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
     if plot43_eei_12month > 0: # 43.2 read1 _43_EEI12month_made_by_61c.csv a44d_ceres_12month_EEI
     #   data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_02.csv")
         data['ceres_43'] = pd.read_csv("read_csv/_43_EEI12month_2026_08.csv")
