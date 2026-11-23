@@ -290,10 +290,25 @@ def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'  _CERES_raw.c
 
  # part 67.1 create work/_CERES_raw.csv with 14 columns
  # https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
- # 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
+ # 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+ # 67.2 copy to read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+  
+ 
+#      select file 2
+# 41.10 download   CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 41.11 copy to   read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+#      select file 4
+# 41.14 download    CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
+# 41.15 copy txt to work/_66_TOA_Incoming_Solar_2026_08.txt
+#                   read_csv/CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
+
+ #
+
+
  # 67.2 copy to read_csv/_66_TOA_Shortwave_Flux_All_Sky2026_07.txt'
- # 67.6 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt
- # 67.7 copy to read_csv/_66_TOA_Incoming_Solar_2026_07.txt'
+ # 67.6 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
+ # 67.7 copy to read_csv/CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
+
  # 67.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toJuly-2026.txt
  # 67.11 copy to 'read_csv/_67_EEI_TOA_Net_Flux_2026_07.txt'
 def ceres67_to_csv(
@@ -305,11 +320,10 @@ def ceres67_to_csv(
     data3 = []
     data4 = []
 
-    # part 67.3 read1 txt
-    # 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
-    # 67.2 copy to work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt'
-    # 67.3 read .txt' into data
-    with open('work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt', 'r') as f:
+    # 67.1 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+    # 67.2 copy to read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+    # 67.3 read1 txt      #with open('work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt', 'r') as f:
+    with open('read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
             line = line.strip()
@@ -336,11 +350,11 @@ def ceres67_to_csv(
         print(f"DataP387: part 67.5 write df to {output_file1}")
 
     # part 67.6 read2 txt
-    # 67.6 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toJuly-2026.txt
-    # 67.7 copy to rwork/_66_TOA_Incoming_Solar_2026_08.txt'
+    # 67.6 download           CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
+    # 67.7 copy to   read_csv/CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
     #  with open(input_file2, 'r') as f: 
     # 67.8 read  work/67a_CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toAugust-2026.txt  into data2
-    with open('work/67a_CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toAugust-2026.txt', 'r') as f:
+    with open('read_csv/CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
             line = line.strip()
