@@ -152,6 +152,9 @@ def T_model76(t):
 #               CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 # 41.3 copy txt to work/_61_in__2026_08_EEI_CERES.txt
 #                  read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 41.4 in config.py set the path 
+#       p61raw = "read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt" # raw CERES downloaded 
+#
 #      select file 1
 # 41.6 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
 #               CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt

@@ -216,8 +216,9 @@ def ceres_process_data():
 
     # main.play_61_EEI line 65
     if play_61_EEI > 0: # 61.10
-       df61b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
-                                    'work/61b_out_in_ceres.csv')
+       df61b = convert_ceres_to_csv(p61raw, 'work/61b_out_in_ceres.csv')
+       #df61b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt', 
+       #                             'work/61b_out_in_ceres.csv')
        if print_debug > 9:
           print(f"ceres125: create work/61b_out_in_ceres.csv'  61.b ={play_61_EEI}")
        
