@@ -1,5 +1,5 @@
 # main.py
-v = "5N67" # play_67_albedo read_csv/CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
+v = "5N68" # play_67_albedo read_csv/CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
 #
 #
 #

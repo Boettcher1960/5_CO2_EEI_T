@@ -310,18 +310,17 @@ def ceres_process_data():
        column_read    ='ASR'
        column_average ='ASR_average'
        use_center=False
-       # part 65.37  CERES.csv (perform averaging for albedo)
-       # note part 67.31 write df2 to  work/_CERES_raw.csv'
-       df65a = create67_running_average( 'work/_CERES_raw.csv', 
-                                         'work/_CERES_65_ASR.csv',
-                                                column_read,             #  column_name='ASR')
-                                                column_average,          #  column_name='ASR_average')
-                                                window_months=play_65_ASR,
-                                                min_periods=12,
-                                                center=use_center
-                                                )
+       # part 65.37  CERES.csv (perform averaging for ASR)
+       df65b = ceres_running_average( 'work/_CERES_raw.csv',
+                                      'work/_CERES_65_ASR.csv',
+                                                   window_months=window_months,
+                                                   min_periods=min1_periods,
+                                                   center=use_center,
+                                                   column_name=column_average,  #  ='ASR_average' 
+                                                   column_source=column_read    # the to be read column ASR
+                                              )
        if print_debug > 9:
-          print(f"ceres245: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
+          print(f"ceres323: created.  work/_CERES_65_ASR.csv  65.50 ={play_65_ASR}")
 
 
     # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
@@ -391,28 +390,24 @@ def ceres_process_data():
        column_average ='ASR48'
        # part 66.35  CERES.csv (perform averaging for ASR)
        df67c = create67_running_average( 'work/_CERES_raw.csv', 
-                                         'work/_CERES_ASR.csv',
+                                         'work/_CERES_ASR3.csv',
                                           column_read,             #  column_name='ASR')
                                           column_average,          #  column_name='ASR48')
                                             window_months=play_67_albedo,
                                             min_periods=12,
                                             center=use_center)
-
-
-
-
-       
+       df67e = ceres_running_average( 'work/_CERES_raw.csv',
+                                      'work/_CERES_ASR.csv',
+                                            window_months=window_months,
+                                            min_periods=min1_periods,
+                                            center=use_center,
+                                            column_name=column_average,  #  ='albedo48'
+                                            column_source=column_read    # the to be read column
+                                       )
        column_read    ='albedo'
        column_average ='albedo48'
        # part 67.37  CERES.csv (perform averaging for albedo)
-       df67d = create67_running_average( 'work/_CERES_raw.csv', 
-                                         'work/_CERES_albedo3.csv',
-                                                column_read,             #  column_name='albedo')
-                                                column_average,          #  column_name='albedo48')
-                                                window_months=play_67_albedo,
-                                                min_periods=12,
-                                                center=use_center)
-       df67e = ceres_running_average( 'work/_CERES_raw.csv',
+       df67g = ceres_running_average( 'work/_CERES_raw.csv',
                                       'work/_CERES_albedo.csv',
                                             window_months=window_months,
                                             min_periods=min1_periods,
@@ -420,11 +415,9 @@ def ceres_process_data():
                                             column_name=column_average,  #  ='albedo48'
                                             column_source=column_read    # the to be read column
                                        )
-
-
         # part 66.58
        if print_debug > 9:
-          print(f"ceres242:  done play_67_albedo={play_67_albedo}")
+          print(f"ceres420:  done play_67_albedo={play_67_albedo}")
 
 
     # 68.12 the main.py part line 266
