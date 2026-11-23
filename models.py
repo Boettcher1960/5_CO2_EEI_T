@@ -149,16 +149,24 @@ def T_model76(t):
 #  open https://ceres-tool.larc.nasa.gov/ord-tool/srbavg
 #      select file 3 
 # 41.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toAugust-2026.txt
+#               CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 # 41.3 copy txt to work/_61_in__2026_08_EEI_CERES.txt
+#                  read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 #      select file 1
 # 41.6 download CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+#               CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 # 41.7 copy txt to work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt
+#                  read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 #      select file 2
 # 41.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
+#                CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 # 41.11 copy txt to work/_66_TOA_OLR_all_sky_2026_08.txt
+#                  read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 #      select file 4
 # 41.14 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toAugust-2026.txt
+#                CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
 # 41.15 copy txt to work/_66_TOA_Incoming_Solar_2026_08.txt
+#                   read_csv/CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
 ############################ play_66_OLR = 48 #####################################
 # 41.17 in config.py set play_66_OLR = 48 
 # 41.18 in main.py  line 164       df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
