@@ -347,29 +347,16 @@ def ceres_process_data():
        else:
             min1_periods=play_66_OLR
        # 66.44  CERES.csv (perform averaging)
-       #            df61c = create404_running_average( 'work/61b_out_in_ceres.csv', 
-       df66c = create66_running_average( 'work/66b_OLR_raw.csv', 
-                                         'work/_66c_OLR.csv',
-                                           column_read,             #  column_name='OLR')
-                                           column_average,          #  column_name='OLR48')
-                                           columnname,              #  column_name='SW_in')
-                                           window_months=play_66_OLR,
-                                           min_periods=12,
-                                           center=use_center,
-                                           column_name=columnname)
        df61d = ceres_running_average( 'work/66b_OLR_raw.csv', 
-                                      'work/_66d_OLR.csv',
+                                      'work/_66c_OLR.csv',
                                             window_months=play_66_OLR,
                                             min_periods=12,
                                             center=use_center,
                                             column_name='OLR48',             # 
                                             column_source='OLR' # the to be read column
                                             )
-       
-
-
        if print_debug > 9:
-          print(f"ceres210: created. OLR48 work/_66c_OLR.csv  66.c ={play_66_OLR}")
+          print(f"ceres359: created. OLR48 work/_66c_OLR.csv  66.c ={play_66_OLR}")
 
 
     # part 67.1 create work/_CERES_raw.csv with 13 columns
