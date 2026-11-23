@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 from config import *
 from config import *
-import config
+#import config
 
 C280 = 280
 
@@ -161,17 +161,41 @@ def T_model76(t):
 # 41.7 copy txt to work/_66_TOA_Shortwave_Flux_All_Sky2026_08.txt
 #                  read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Shortwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 #      select file 2
-# 41.10 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
-#                CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
-# 41.11 copy txt to work/_66_TOA_OLR_all_sky_2026_08.txt
-#                  read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 41.10 download   CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 41.11 copy to   read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 #      select file 4
 # 41.14 download CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toAugust-2026.txt
 #                CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
 # 41.15 copy txt to work/_66_TOA_Incoming_Solar_2026_08.txt
 #                   read_csv/CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
+# 61.18 run with play_61_EEI = 48 
+# 61.19 copy dokumente/5_CO2_EEI_T/read_csv/_61c_out_ceres.csv to
+# 61.20.1      dokumente/5_CO2_EEI_T/read_csv/42_EEI48month_2026_09.csv
+############################ plot42_EEI_48month #####################################
+# 42.22 run with play_61_EEI = 48
+# 42.23 copy           work/61c_out_EEI.csv to 
+# 42.24      read_csv/_42_EEI48month_2026_08.csv
+# 41.25 old in main.py  line 298      data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_07.csv")
+# 41.25 new in main.py  line 298      data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
+# 41.26 works with august data plot42_EEI_48month = 4 
+############################ plot43_eei_12month #####################################
+# 43.27 run with play_61_EEI = 12
+# 43.28 Duplizieren    work/61c_out_EEI.csv   to
+# 43.29 paste to    read_csv/43_EEI12month_2026_09.csv
+# 43.31 in main.py line 81  data['ceres_43'] = pd.read_csv("read_csv/43_EEI12month_2026_09.csv")
+#
+# 404.32 run with figure404 = 48 
+# 404.33 the file  work/file404_48Month.csv is created by fig_404_eei_quadratic()
+#
+#
 ############################ play_66_OLR = 48 #####################################
-# 41.17 in config.py set play_66_OLR = 48 
+# 41.37 in config.py set play_66_OLR = 48 
+# 41.38 in config.py set line3_play = 66 
+# 41.10 download   CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 41.11 copy to   read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 41.39  ceres line 333 edit    df66b = convert66_txt_to_csv('read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt', 
+#        df66c = create404_running_average( 'work/66b_OLR_raw.csv', 
+#
 # 41.18 in main.py  line 164       df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_07.txt', 
 # 41.19 in main.py  line 164       df66b = convert66_txt_to_csv('work/_66_TOA_OLR_all_sky_2026_08.txt', 
 # 41.20                                         the new file     work/66c_OLR.csv has the column OLR48
@@ -195,23 +219,6 @@ def T_model76(t):
 # 41.39       dokumente/5_CO2_EEI_T/read_csv/_46_ASR_48month_2026_08.csv
 # 41.40 old in main.py  line 315      data['ceres_46'] = pd.read_csv("read_csv/_46_ASR_48month_2026_07.csv")
 # 41.41 new in main.py  line 315      data['ceres_46'] = pd.read_csv("read_csv/_46_ASR_48month_2026_08.csv")                                               
-############################ plot42_EEI_48month #####################################
-# 41.43 old in main.py  line 64  df61b = convert_ceres_to_csv('read_csv/_61_in__2026_07_EEI_CERES.txt', 
-# 41.44 new in main.py  line 64  df61b = convert_ceres_to_csv('work/61_in__2026_08_EEI_CERES.txt',   
-# 41.45 new in main.py  line 65                               'work/61b_out_in_ceres.csv')
-# 42.46 run with play_61_EEI = 48
-# 42.47 copy           work/61c_out_EEI.csv to 
-# 42.48      read_csv/_42_EEI48month_2026_08.csv
-# 41.49 old in main.py  line 298      data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_07.csv")
-# 41.50 new in main.py  line 298      data['ceres_42'] = pd.read_csv("read_csv/_42_EEI48month_2026_08.csv")
-# 41.51 works with august data plot42_EEI_48month = 4 
-############################ plot43_eei_12month #####################################
-# 41.52 set    play_61_EEI = 12 
-# 41.53 set    plot43_eei_12month = 4 
-# 41.54 old in main.py  line 339      data['ceres_61'] = pd.read_csv("read_csv/_61c_out_ceres.csv")
-# 41.55 new in main.py  line 339      data['ceres_61'] = pd.read_csv("work/61c_out_EEI.csv")
-# 41.56 copy           work/61c_out_EEI.csv to 
-# 41.57  to    read_csv/_43_EEI12month_2026_08.csv
 ############################ plot47_albedo48 #####################################
 # 41.58 run with play_67_albedo = 48
 # 41.59 copy dokumente/5_CO2_EEI_T/work/_CERES_albedo.csv to
@@ -249,9 +256,9 @@ def T_model76(t):
 # 43.2 download CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 # 42.3 move to     read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt
 # 43.4 run with play_61_EEI = 12
-# 42.5 Douplizieren    work/61c_out_EEI.csv   to
-# 42.6 paste to    read_csv/43_EEI12month_2026_09.csv
-# 42.11 in main.py line 81  data['ceres_43'] = pd.read_csv("read_csv/43_EEI12month_2026_09.csv")
+# 43.5 Duplizieren    work/61c_out_EEI.csv   to
+# 43.6 paste to    read_csv/43_EEI12month_2026_09.csv
+# 43.11 in main.py line 81  data['ceres_43'] = pd.read_csv("read_csv/43_EEI12month_2026_09.csv")
 # 2026.10.15 plots plot43_eei_12month = 2
 # 2026.10.15 plots plot43_eei_12month = 3
 # 2026.11.23 plots plot43_eei_12month = 4
@@ -660,6 +667,16 @@ def T_model76(t):
 ##################################################################
 # 66    play_66_OLR                                      #########   
 ##################################################################
+# 41.37 in config.py set play_66_OLR = 48 
+# 41.38 in config.py set line3_play = 66 
+# 41.10 download   CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 41.11 copy to   read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+# 41.39  ceres line 333 edit    df66b = convert66_txt_to_csv('read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt', 
+#        df66c = create404_running_average( 'work/66b_OLR_raw.csv', 
+#
+
+
+
 
 
 #########################################################
@@ -1074,14 +1091,31 @@ def Figure_304():
 
 
 ###############################################################
-# 404      plot200   make a new figure  as AI coded   #########
+# 404   figure404 = 48   make a new Figure 404        #########
 ###############################################################
 #
-# Figure 404 quadratic fit: EEI = 0.000859832(year - 2005)^2 +0.029327812(year - 2005) +0.474645167 W/m²; R² = 0.959348
-# Figure 404 linear fit: EEI = 0.047882325(year - 2005) +0.408183537 W/m²; R² = 0.949764
+#   figure404 = 12 = 1 years moving average
+#   figure404 = 24 = 2 years moving average
+#   figure404 = 36 = 3 years moving average
+#   figure404 = 48 = 4 years moving average
+
+#
+#  Aug.26 data Figure 404 quadratic fit: EEI = 0.000859832(year - 2005)^2 +0.029327812(year - 2005) +0.474645167 W/m²; R² = 0.959348
+#  Aug.26 data Figure 404 linear fit: EEI = 0.047882325(year - 2005) +0.408183537 W/m²; R² = 0.949764
+#
+#  Sep.26 data Figure 404 quadratic fit: EEI = 0.001162255(year - 2000)^2 +0.009909988(year - 2000) +0.436661712 W/m²; R² = 0.960761
+#  Sep.26 data Figure 404 linear fit: EEI = 0.041092612(year - 2000) +0.295952384 W/m²; R² = 0.925869
 #
 #
 # figure404 = 48 # 12, 24, 36 , 48  96    48=create quadratic-fit figure for matching play_61_EEI
+#
+# 404.20 run with figure404 = 48 
+# 404.21 the file  work/file404_48Month.csv is created by fig_404_eei_quadratic()
+# 404.22       3.843055830 W/m²  quadratic value for 2050
+# 404.23       2.352295190 W/m²  linear    value for 2050
+# 404.24
+# 404.2
+#
 
 
 

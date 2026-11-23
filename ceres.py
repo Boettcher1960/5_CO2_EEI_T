@@ -231,7 +231,6 @@ def ceres_process_data():
        else:
           min1_periods=play_61_EEI
        use_center=False
-       keep_original=True,
        # 61.33 wave years 2001..2003  df61c = create_running_average( 'work/61b_out_in_ceres.csv', 
        # 61.34  df404c = create404_running_average( 'work/61b_out_in_ceres.csv',
        #                                        'work/404c_out_EEI.csv',
@@ -324,35 +323,38 @@ def ceres_process_data():
 
 
     # CERES Outgoing Longwave Radiation OLR  # _66_TOA_OLR_all_sky_2026_07.txt
-    if play_66_OLR > 1: #  
-       # part 66.b convert download.txt to CERES.csv (no averaging)
-       # CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt downloaded
-       # copy to 'work/_66_TOA_OLR_all_sky_2026_07.txt'
-       # copy to 'work/66a_CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt
-       df66b = convert66_txt_to_csv('work/66a_CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt', 
+    if play_66_OLR > 1:  
+       # 41.37 in config.py set play_66_OLR = 48 
+       # 41.38 in config.py set line3_play = 66 
+       # 41.10 download   CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+       # 41.11 copy to   read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
+       # 41.39  ceres line 333 edit    df66b = convert66_txt_to_csv('read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt', 
+       # 41.40 old  df66b = convert66_txt_to_csv('read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt', 
+       df66b = convert66_txt_to_csv('read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt', 
                                     'work/66b_OLR_raw.csv',
                                     'OLR'
                                     )
        if print_debug > 9:
-          print(f"ceres169: created.  work/66b_OLR.csv  66.b ={play_66_OLR}")
-       
-       window_months=play_66_OLR
-       min_periods=12
+          print(f"ceres338: created.  work/66b_OLR.csv  66.b ={play_66_OLR}")
        use_center=False
-       keep_original=True
        columnname ='OLR48'
        column_read    ='OLR'
        column_average ='OLR48'
-       # part 66.c  CERES.csv (perform averaging)
+       if play_66_OLR > 11:
+            min1_periods=12
+       else:
+            min1_periods=play_66_OLR
+       # 66.44  CERES.csv (perform averaging)
+       #            df61c = create404_running_average( 'work/61b_out_in_ceres.csv', 
        df66c = create66_running_average( 'work/66b_OLR_raw.csv', 
-                                         'work/_66c_OLR.csv',
-                                          column_read,             #  column_name='OLR')
-                                          column_average,          #  column_name='OLR48')
-                                          columnname,              #  column_name='SW_in')
-                                            window_months=play_66_OLR,
-                                            min_periods=12,
-                                            center=use_center,
-                                            column_name=columnname)
+                                        'work/_66c_OLR.csv',
+                                           column_read,             #  column_name='OLR')
+                                           column_average,          #  column_name='OLR48')
+                                           columnname,              #  column_name='SW_in')
+                                           window_months=play_66_OLR,
+                                           min_periods=12,
+                                           center=use_center,
+                                           column_name=columnname)
        if print_debug > 9:
           print(f"ceres210: created. OLR48 work/_66c_OLR.csv  66.c ={play_66_OLR}")
 

@@ -649,7 +649,12 @@ def plot8_right_y_axe_for_C_65(ax65,right62): # 62.5
 
 # play_66_OLR  W/m² moving average 48 month 
 def plot8_right_y_axe_for_C_66(ax66,right62): # 66.50
-    outward_right =  ( 4 *  yr_60 ) - yr_150
+    if play_66_OLR > 0 and line3_play == 66:
+        outward_right =  ( 2.5 *  yr_60 ) - yr_150
+    elif play_66_OLR > 0 and line4_play == 67:
+        outward_right =  ( 3.5 *  yr_60 ) - yr_150
+    else:
+        outward_right =  ( 5 *  yr_60 ) - yr_150
     ax66.spines.right.set_position(("outward", outward_right))
     ax66.set_ylabel("OLR Outgoing Longwave Radiation in W/m²       66", color=c66, fontname="Arial",fontsize=18)
     ax66.tick_params(axis="y", labelcolor=c66)
