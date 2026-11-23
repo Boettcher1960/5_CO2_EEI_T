@@ -52,7 +52,7 @@ plot34_CO2_emission_mode = 0 # 4, 2, 4   # 34.1 mode
 # plot31__CO2_emission mode 1 # plot32__CO2_emission mode 2 # plot33__CO2_emission mode 3
 plot34_CO2 = 0 # 0     plot34_CO2_emission mode 4
 
-plot42_EEI_48month = 4  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
+plot42_EEI_48month = 0  # 2,3,4,5 print EEI 48 month running mean. Info in line 4 below the plot
 plot43_eei_12month = 0  # 2, 3, 4 ,5 2=left y axis 3,4 print EEI 12 month running mean. [W/m2]
 part44_ceres_eei   = 0  # 47, 3, 48,   is local 
 plot45_OLR         = 0 # 2, 3, 4 looks like simons 48 months. Outgoing Longwave Radiation OLR updated to 2026_07

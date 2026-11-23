@@ -349,7 +349,7 @@ def ceres_process_data():
        # 66.44  CERES.csv (perform averaging)
        #            df61c = create404_running_average( 'work/61b_out_in_ceres.csv', 
        df66c = create66_running_average( 'work/66b_OLR_raw.csv', 
-                                        'work/_66c_OLR.csv',
+                                         'work/_66c_OLR.csv',
                                            column_read,             #  column_name='OLR')
                                            column_average,          #  column_name='OLR48')
                                            columnname,              #  column_name='SW_in')
@@ -357,6 +357,17 @@ def ceres_process_data():
                                            min_periods=12,
                                            center=use_center,
                                            column_name=columnname)
+       df61d = ceres_running_average( 'work/66b_OLR_raw.csv', 
+                                      'work/_66d_OLR.csv',
+                                            window_months=play_66_OLR,
+                                            min_periods=12,
+                                            center=use_center,
+                                            column_name='OLR48',             # 
+                                            column_source='OLR' # the to be read column
+                                            )
+       
+
+
        if print_debug > 9:
           print(f"ceres210: created. OLR48 work/_66c_OLR.csv  66.c ={play_66_OLR}")
 
@@ -1205,7 +1216,8 @@ def ceres_running_average(input_csv,
     # 404.180 configure the output csv 
     output_columns = ['date', 'year', 'month', 'decimal_year']
     if keep_original:
-        output_columns.append('toa_net_flux_w_m2')
+        # output_columns.append('toa_net_flux_w_m2')
+        output_columns.append(column_source)
     output_columns.append(column_name)
     
     df_output = df[output_columns].copy()
