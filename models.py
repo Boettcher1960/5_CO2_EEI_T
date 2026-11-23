@@ -1137,5 +1137,22 @@ df65a = create67_running_average( 'work/_CERES_raw.csv',
                                          'work/_CERES_65_ASR.csv',
 
 
+dp 243              def create67_running_average(input_csv,  # 'work/_66b_OLR_raw.csv'  _CERES_raw.csv
+                             output_csv, # 'work/_66c_OLR.csv',     _CERES_65_ASR.csv
+                             column_read,             #  column_name='ASR'
+                             column_average,          #  column_name='ASR_average'
+                             window_months, 
+                             min_periods=None, 
+                             center=True, 
+                             keep_original=True,
+                             # column_name='ASR48'   # not used if main has different parameter
+                             ):                            
+
+
+ceres 400
+  # part 66.35  CERES.csv (perform averaging for ASR)
+  393:        df67c = create67_running_average( 'work/_CERES_raw.csv', 
+  394                                           'work/_CERES_ASR.csv',                            
+
    
 """

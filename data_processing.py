@@ -391,13 +391,9 @@ def ceres67_to_csv(
     df3 = pd.DataFrame(data3, columns=['year', 'month', 'EEI_raw'])
 
     # read4
-    # 67.15 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toJuly-2026.txt
-    # 67.16 copy to 'work/_66_TOA_OLR_all_sky_2026_08.txt'
-    # 67.17 read 4    into data4 field   'work/66a_CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt', 
     # 67.15 download CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt
     # 67.16 copy to 'read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt'
     # 67.17 read 4    into data4 field   'read_csv/66a_CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toAugust-2026.txt', 
-
     with open('read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Longwave_Flux_-_All-Sky_March-2000toSeptember-2026.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:

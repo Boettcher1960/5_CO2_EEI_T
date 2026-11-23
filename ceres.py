@@ -397,16 +397,30 @@ def ceres_process_data():
                                             window_months=play_67_albedo,
                                             min_periods=12,
                                             center=use_center)
+
+
+
+
+       
        column_read    ='albedo'
        column_average ='albedo48'
        # part 67.37  CERES.csv (perform averaging for albedo)
        df67d = create67_running_average( 'work/_CERES_raw.csv', 
-                                         'work/_CERES_albedo.csv',
+                                         'work/_CERES_albedo3.csv',
                                                 column_read,             #  column_name='albedo')
                                                 column_average,          #  column_name='albedo48')
                                                 window_months=play_67_albedo,
                                                 min_periods=12,
                                                 center=use_center)
+       df67e = ceres_running_average( 'work/_CERES_raw.csv',
+                                      'work/_CERES_albedo.csv',
+                                            window_months=window_months,
+                                            min_periods=min1_periods,
+                                            center=use_center,
+                                            column_name=column_average,  #  ='albedo48'
+                                            column_source=column_read    # the to be read column
+                                       )
+
 
         # part 66.58
        if print_debug > 9:
