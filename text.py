@@ -396,6 +396,10 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c66)
         p66_text = f"OLR Outgoing Longwave Radiation in W/m²- All-Sky    moving average {play_66_OLR} month   66"
         text_4_add_text(ax1, tr2x, tr3y, p66_text, c66, trs) 
+    elif play_67_albedo > 0 and line3_play == 67:
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c67)
+        p67_text = f"Albedo = sw_out / sw_in             {play_67_albedo}-month moving average - min-max swapped      67"
+        text_4_add_text(ax1, tr2x, tr3y, p67_text, c67, trs) 
     elif play68_ERA > 0 and line3_play == 68:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr3y, c68)
         p68_text = f"Temperature in °C climate.copernicus.eu/datasets/-era5-single-levels   {play68_ERA} days    68"
@@ -525,10 +529,9 @@ def text_9_print_7_lines(fig, ax1, header_parameter):
         p66_text = f"OLR Outgoing Longwave Radiation in W/m²- All-Sky    moving average {play_66_OLR} month   66"
         text_4_add_text(ax1, tr2x, tr4y, p66_text, c66, trs) 
     elif play_67_albedo > 0 and line4_play == 67:
-            text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c67)
-            # albedo
-            p67_text = f"Albedo = sw_out / sw_in             {play_67_albedo}-month moving average - min-max swapped      67"
-            text_4_add_text(ax1, tr2x, tr4y, p67_text, c67, trs) 
+        text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c67)
+        p67_text = f"Albedo = sw_out / sw_in             {play_67_albedo}-month moving average - min-max swapped      67"
+        text_4_add_text(ax1, tr2x, tr4y, p67_text, c67, trs) 
     elif play68_ERA > 0 and line4_play == 68:
         text_3_add_legend_line(fig, lr2x1, lr2x2, lr4y, c68)
         p68_text = f"Temperature in °C climate.copernicus.eu/datasets/-era5-single-levels   {play68_ERA} days    68"

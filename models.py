@@ -1128,7 +1128,13 @@ def Figure_304():
 """
 
 
+play_67_albedo      = 48 
 
+
+--problem 65 wartet auf _CERES_raw.csv
+play_65_ASR         = 48  wellig liest 
+df65a = create67_running_average( 'work/_CERES_raw.csv', 
+                                         'work/_CERES_65_ASR.csv',
 
 
    
