@@ -11,7 +11,7 @@
 
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
-run_10_png = 3 # 5 run 5 figures : 0 = no automatic
+run_10_png = 4 # 5 run 5 figures : 0 = no automatic
 figure100 = 2 #  0 means create no old figure 1= make old figuure
                 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 Global Warming EEI sets the World on Fire #28 Published 20. Nov. at 21:18
                 #  0 means create no old figure 1= make old figuure
@@ -92,7 +92,7 @@ plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 3 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
-plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
+plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 0  # 60 61  62
@@ -293,8 +293,8 @@ y_76min = 0 #  Temperature
 y_76max = 4   #  Temperature 
 y_77min = 0 #  Temperature  
 y_77max = 2.5 #  Temperature 
-y_78min = 0.5 #  for Tom Harris Temperature 
-y_78max = 2.5 #  for Tom Harris Temperature
+y_78min = 1.9 #  for Tom Harris Temperature 
+y_78max = 2.1 #  for Tom Harris Temperature
 
 # YLO, YHI = 5, 40
 x_303min = 200   # 125  figure303 CO2 x axis 
@@ -309,8 +309,8 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 2005   # 2005   2000
-x_end = 2045   # 2028   2065
+x_anf = 2038   # 2005   2000
+x_end = 2040   # 2028   2065
 
 # XLO, XHI = 125, 1500
 
@@ -823,10 +823,10 @@ def apply_figure100_settings(figure_id):
        })
    elif figure_id == 104:
        shared_settings.update({
-           "text100": "Figure 4: Global Warming ... possible Temperature in 2050 = 2.6°C using Tom Harris quadratic fit",
-           "text75": "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75",
+           "text100": "Figure 4: Tom Harris quadratic fit passes 2°C in the year 2038 - same as Hansen ",
+           "text75": "James Hansen: linear 0.4°C warming every 10 years passes the 2°C in the year 2038.5",
            "plot_T_78": 4,
-           "text78": "Temperature in °C      Tom Harris  quadratic   T = 0.0004 x²  + 0.0019 x + 0.5079      78",
+           "text78": "Temperature in °C  Tom Harris  T = 0.0004 x²  + 0.0019 x + 0.5079 = 2°C in 2038.75",
            "y_78min": 0.5,
            "y_78max": 2.5,
            "line4_play": 0,

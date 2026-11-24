@@ -1,5 +1,5 @@
 # main.py
-v = "5N70" # James Hansen: linear 0.4°C warming every 10 years passes the 2°C in the year 2038.5", # col 115
+v = "5N71" # James Hansen: linear 0.4°C warming every 10 years passes the 2°C in the year 2038.5", # col 115
 #
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
@@ -169,14 +169,21 @@ def load_plot_data():
     # end load_plot_data():
 
 
-def save_png1(fig, header_parameter):
+def save_png1(fig):
     """Save the current Figure 100 variant under its numbered PNG filename."""
     output_dir = os.path.join(os.path.dirname(__file__), "png")
     os.makedirs(output_dir, exist_ok=True)
     path = os.path.join(output_dir, f"figure{figure100}_EEI_T.png")
     fig.savefig(path, dpi=300, bbox_inches="tight")
     if print_debug > 9:
-        print(f"main: saved figure {figure100} to {path}")
+        print(f"main_179: saved figure {figure100} to {path}")
+
+def save_png5(fig):
+    filename = "figure_5_EEI"
+    path2 = f"/Users/thomasboettcher/Desktop/{filename}"
+    fig.savefig(path2, dpi=300, bbox_inches="tight")
+    if print_debug > 9:
+        print(f"main_186: saved figure_5 to {path2}")
 
 
 def main_figure_1():  # make one figure only
@@ -258,7 +265,8 @@ def main_figure_1():  # make one figure only
     plt.show()
     
     # Save plot
-    save_png1(fig, header_parameter)
+    save_png1(fig)
+    save_png5(fig)
 
     # Close figure
     plt.close(fig)
@@ -286,10 +294,15 @@ def main():
     global figure100
 
     # process 5 figure ibn one run:  figure102....figure110 
-    if run_10_png > 0:
+    if run_10_png > 10:
         for figure_id in (102, 104, 105, 106, 110):
             apply_figure100_settings(figure_id)
             main_figure_1()
+    elif run_10_png == 4:
+        figure_id = 104
+        apply_figure100_settings(figure_id)
+        main_figure_1()
+
 
     if figure100 > 0:    # one figure 100
         main_figure_1()
