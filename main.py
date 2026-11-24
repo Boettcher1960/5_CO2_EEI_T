@@ -1,5 +1,5 @@
 # main.py
-v = "5N72" # figure 4
+v = "5N74" # figure 4
 #
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T

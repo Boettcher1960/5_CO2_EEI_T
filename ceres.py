@@ -666,7 +666,7 @@ def fig_404_eei_quadratic():
 
     # 404.21 Read the generated average and fail clearly if its expected columns are absent.
     input_path = "work/404c_out_EEI.csv"
-    output_path = f"work/figure404_EEI_{figure404}month_quadratic.png"
+    output_path = f"png/figure404_EEI_{figure404}month_quadratic.png"
     data = pd.read_csv(input_path)
     required_columns = {"date", "EEI"}
     missing_columns = required_columns.difference(data.columns)
