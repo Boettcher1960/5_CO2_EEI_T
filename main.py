@@ -59,7 +59,7 @@ def load_plot_data():
            print(f"main_168: plot22_CO2_Mauna_Loa 22.3 ={plot22_CO2_Mauna_Loa}")
            print(f"main_169: Last 3 CO2 rows: {data['co2'][-3:] if len(data['co2']) >= 3 else data['co2']}")     
     if plot28_E_T > 0: # 28.9 read
-        # data['ceres_62'] = pd.read_csv("work/28g_T_E.csv")
+        # data['ceres_28'] = pd.read_csv("work/28g_T_E.csv") august 2026 data
         data['ceres_28'] = pd.read_csv("work/28g_T_E.csv")
         if print_debug > 9:
            print(f"main__56: 28.69 read ={plot28_E_T}")  
@@ -302,7 +302,10 @@ def main():
         figure_id = 103
         apply_figure100_settings(figure_id)
         main_figure_1()
-
+    elif run_10_png == 5:
+        figure_id = 105
+        apply_figure100_settings(figure_id)
+        main_figure_1()
 
     if figure100 > 0:    # one figure 100
         main_figure_1()

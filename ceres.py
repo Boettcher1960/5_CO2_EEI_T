@@ -35,8 +35,9 @@ def ceres_process_data():
        # 28.14 add the temperature for every month, no averaging is done 
        if print_debug > 9:
            print(f"ceres_37: plot28_E_T   28.25    ={plot28_E_T}")
-       # 28.39 read the file created in figure404    work/_404EEI_48Month.csv
-       df28g = pd.read_csv("work/_404EEI_48Month.csv")
+       # 28.39 read the file created in figure404   df28g = pd.read_csv("work/_404EEI_48Month.csv")
+       # df28g = pd.read_csv("work/file404_48Month.csv") # made by figure 404
+       df28g = pd.read_csv("read_csv/_28_EEI_calc_Sep2026_48Month.csv") # made by figure 404
        # 28.41
        df28g["T_E"] = (
               df28g["linear_fit"]
