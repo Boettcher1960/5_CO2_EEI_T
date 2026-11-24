@@ -505,7 +505,7 @@ def convert_ceres_to_csv(input_file, output_file):
 
 # 200.2 ceres.py line 422 fig_202_era5_temp_quadratic
 def fig_202_era5_temp_quadratic():
-    """Plot the ERA5 running mean and its post-2000 quadratic trend."""
+    """Plot ERA5 temperature averages with linear and quadratic trends to 2055."""
     # input_path = "work/_48_era5_in.csv"
     input_path = "work/_68_out.csv"
     output_path = "work/_48_era5_temp_average.png"
@@ -528,39 +528,54 @@ def fig_202_era5_temp_quadratic():
     data = data.dropna(subset=["date", "temp_average"]).sort_values("date")
     if data.empty:
         raise ValueError(f"{input_path} has no valid date/temp_average rows")
-    # 200.9 filter data for plotting and ensure enough points for quadratic fit
+    # 200.9 Filter data for fitting and plotting and ensure enough points for both fits.
     plot_data = data.loc[data["date"] >= "2000-01-01"].copy()
     if len(plot_data) < 3:
-        raise ValueError("At least three valid observations since 2000 are required for a quadratic fit")
+        raise ValueError("At least three valid observations since 2000 are required for the fits")
     # 200.10 calculate decimal year for quadratic fitting
     plot_data["decimal_year"] = (
         plot_data["date"].dt.year
         + (plot_data["date"].dt.dayofyear - 1)
         / np.where(plot_data["date"].dt.is_leap_year, 366, 365)
     )
-    # 200.11 perform quadratic fit and calculate R²
+    # 200.11 Fit quadratic and linear trends to the observed post-2000 data.
     x = plot_data["decimal_year"] - 2000
-    # 200.12 fit a quadratic polynomial to the data
     coefficients = np.polyfit(x, plot_data["temp_average"], 2)
-    # 200.13 evaluate the polynomial at the x values to get the trend
     trend = np.polyval(coefficients, x)
-    # 200.14 calculate R² to assess the fit quality
+    linear_coefficients = np.polyfit(x, plot_data["temp_average"], 1)
+    linear_trend = np.polyval(linear_coefficients, x)
+
+    # 200.12 Calculate R² for both fits using the same observed values.
     residual_sum_squares = np.sum((plot_data["temp_average"] - trend) ** 2)
-    # 200.15 calculate total sum of squares for R² calculation
+    linear_residual_sum_squares = np.sum(
+        (plot_data["temp_average"] - linear_trend) ** 2
+    )
     total_sum_squares = np.sum(
         (plot_data["temp_average"] - plot_data["temp_average"].mean()) ** 2
     )
-    # 200.16 calculate R² value
-    r_squared = 1 - residual_sum_squares / total_sum_squares
-    # 200.17 add the quadratic fit to the plot_data DataFrame for plotting
-    plot_data["quadratic_fit"] = trend
-    # 200.18 create the plot
+    if total_sum_squares > 0:
+        r_squared = 1 - residual_sum_squares / total_sum_squares
+        linear_r_squared = 1 - linear_residual_sum_squares / total_sum_squares
+    else:
+        r_squared = linear_r_squared = float("nan")
+
+    # 200.13 Evaluate both fitted curves monthly through the requested final year.
+    x_end = 2055
+    forecast_dates = pd.date_range("2000-01-01", f"{x_end}-12-01", freq="MS")
+    forecast_decimal_year = (
+        forecast_dates.year
+        + (forecast_dates.dayofyear - 1)
+        / np.where(forecast_dates.is_leap_year, 366, 365)
+    )
+    forecast_x = forecast_decimal_year - 2000
+    quadratic_forecast = np.polyval(coefficients, forecast_x)
+    linear_forecast = np.polyval(linear_coefficients, forecast_x)
+
+    # 200.14 Get the latest observation and define the reference benchmark.
     latest = plot_data.iloc[-1]
-    # 200.19 define the benchmark temperature for reference
     benchmark = 1.5
-    # 200.20 create the figure and axis for plotting
     fig, ax = plt.subplots(figsize=(13, 7))
-    # 200.21 plot the ERA5 temperature anomaly
+    # 200.15 Plot observed ERA5 values and both fitted trends.
     ax.plot(
         plot_data["date"],
         plot_data["temp_average"],
@@ -568,16 +583,23 @@ def fig_202_era5_temp_quadratic():
         linewidth=2,
         label="ERA5 temp_average",
     )
-    # 200.22 plot the quadratic fit since 2000
     ax.plot(
-        plot_data["date"],
-        plot_data["quadratic_fit"],
+        forecast_dates,
+        quadratic_forecast,
         color="#1f4e79",
         linestyle=":",
         linewidth=2.5,
-        label="Quadratic fit (2000 onward)",
+        label=f"Quadratic fit (through {x_end})",
     )
-    # 200.23 add a horizontal line for the 1.5 °C benchmark
+    ax.plot(
+        forecast_dates,
+        linear_forecast,
+        color="#228B22",
+        linestyle="--",
+        linewidth=2.5,
+        label=f"Linear fit (through {x_end})",
+    )
+    # 200.16 Add the 1.5 °C benchmark and mark the latest observation.
     ax.axhline(
         benchmark,
         color="black",
@@ -585,13 +607,9 @@ def fig_202_era5_temp_quadratic():
         linewidth=1.5,
         label="1.5 °C is above the planetary boundary",
     )
-    # 200.24 highlight the latest data point on the plot
     ax.scatter(latest["date"], latest["temp_average"], color="#b22222", zorder=3)
-    # 200.25 add text annotations for the quadratic equation, R², and latest temperature
 
-    text_below = ( f"https://github.com/Boettcher1960/5_CO2_EEI_T"
-                   f"    version {v} ")
-
+    # 200.17 Display both fit equations and their R² values with the latest observation.
     ax.text(
         0.02, 0.84,
         (
@@ -599,44 +617,45 @@ def fig_202_era5_temp_quadratic():
             f"https://github.com/Boettcher1960/5_CO2_EEI_T      version  {v} \n"
             f"T = {coefficients[0]:.6f}(year - 2000)^2 "
             f"{coefficients[1]:+.6f}(year - 2000) {coefficients[2]:+.6f} °C\n"
-            f"R² = {r_squared:.4f}\n"
+            f"Quadratic R² = {r_squared:.4f}\n"
+            f"T = {linear_coefficients[0]:.6f}(year - 2000) "
+            f"{linear_coefficients[1]:+.6f} °C\n"
+            f"Linear R² = {linear_r_squared:.4f}\n"
             f"Latest: {latest['temp_average']:.3f} °C ({latest['date']:%Y-%m-%d})"
         ),
         transform=ax.transAxes,
         va="top",
         bbox={"facecolor": "white", "alpha": 0.85, "edgecolor": "none"},
     )
-    # 200.26 set the title, labels, limits, grid, and legend for the plot
+    # 200.18 Set axis labels, include projected values in y-limits, and end x-axis in 2055.
     ax.set_title("The ERA5 temperature -4 years rolling average- is above the planetary boundary of 1.5 °C", fontsize=16)
     ax.set_xlabel("Date")
     ax.set_ylabel("Temperature anomaly (°C)")
-    # 200.27 set y-axis limits to include the benchmark and data range with some padding
     ax.set_ylim(
-        min(float(plot_data["temp_average"].min()), benchmark) - 0.05,
-        max(float(plot_data["temp_average"].max()), benchmark) + 0.05,
+        min(float(plot_data["temp_average"].min()), benchmark, float(quadratic_forecast.min()), float(linear_forecast.min())) - 0.05,
+        max(float(plot_data["temp_average"].max()), benchmark, float(quadratic_forecast.max()), float(linear_forecast.max())) + 0.05,
     )
-    # 200.28 set x-axis limits to the range of the data
+    ax.set_xlim(plot_data["date"].min(), pd.Timestamp(year=x_end, month=12, day=31))
     ax.grid(True, alpha=0.3)
-    # 200.29 add a legend in the upper left corner with a specific bounding box
     ax.legend(loc="upper left", bbox_to_anchor=(0, 0.68))
-    # 200.30 format the x-axis dates for better readability
     fig.autofmt_xdate()
-    # 200.31 adjust layout and save the figure to the specified output path
     fig.tight_layout()
-    # 200.32 save the figure with high resolution and tight bounding box
     fig.savefig(output_path, dpi=300, bbox_inches="tight")
-    # 200.33 print the quadratic fit equation and R² value to the console
+    # 200.19 Print both fitted equations and R² values to the console.
     print(
         "ceres540: Quadratic fit since 2000: "
         f"T = {coefficients[0]:.9f}(year - 2000)^2 "
         f"{coefficients[1]:+.9f}(year - 2000) {coefficients[2]:+.9f}; "
         f"R² = {r_squared:.6f}"
     )
-    # 200.34 print the path where the visualization was saved
+    print(
+        "ceres: Linear fit since 2000: "
+        f"T = {linear_coefficients[0]:.9f}(year - 2000) "
+        f"{linear_coefficients[1]:+.9f}; "
+        f"R² = {linear_r_squared:.6f}"
+    )
     print(f"ceres546: Saved ERA5 temperature visualization to {output_path}")
-    # 200.35 show the plot and close the figure to free memory
     plt.show()
-    # 200.36 close the figure to free up memory
     plt.close(fig)
 
 # 404.10 make a separate new figure404 for
@@ -1095,7 +1114,6 @@ def ceres_running_average(input_csv,
         print(f"ceres936: {window_months}-month running average saved to {output_csv} ")
     return df_output
     # end part 62.c  CERES.csv (perform averaging)
-
 
 
 

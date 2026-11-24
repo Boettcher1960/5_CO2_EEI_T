@@ -1171,5 +1171,12 @@ ceres 400
   393:        df67c = create67_running_average( 'work/_CERES_raw.csv', 
   394                                           'work/_CERES_ASR.csv',                            
 
-   
+update
+fig_202_era5_temp_quadratic()
+with longer x axis up to  x_end = 2055  
+and print and plot a linear fit curve
+  
+
+
+
 """
