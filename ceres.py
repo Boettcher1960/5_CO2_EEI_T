@@ -59,7 +59,8 @@ def ceres_process_data():
         if print_debug > 9:
             print(f"ceres_62: plot29_ETq   28.25    ={plot29_ETq}")
         # 29.39 read the file created in figure404    work/_404EEI_48Month.csv
-        df29g = pd.read_csv("work/_404EEI_48Month.csv")
+        # df29g = pd.read_csv("work/_404EEI_48Month.csv")
+        df29g = pd.read_csv("read_csv/_28_EEI_calc_Sep2026_48Month.csv") # made by figure 404
         # 29.41
         df29g["T_E"] = (
             df29g["quadratic_value"]

@@ -11,7 +11,7 @@
 
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
-run_10_png = 5 # 5 run 5 figures : 0 = no automatic
+run_10_png = 6 # 2 , 4, 5, 6 , 11 run 5 figures : 0 = no automatic
 figure100 = 5 #  0 means create no old figure 1= make old figuure
                 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 Global Warming EEI sets the World on Fire #28 Published 20. Nov. at 21:18
                 #  0 means create no old figure 1= make old figuure
@@ -33,10 +33,10 @@ plot23_Glen_CO2 = 0      # 2, 3 , 23.1 declare global integer variable (4= print
 plot25_long_CO2 = 0   # 4 2, 3 25.1 
 
 # plot27_EsT = 0 #  EEI simulates EEI linear  every 1 W/m²/month 
-plot28_E_T = 5 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
+plot28_E_T = 0 #  EEI simulates T linear add 0.00208°C for every 1 W/m²/month 
 a28_start = 2026.5   # 2015 starting year of play_60_T_E
 a28_offset = 1.5  
-plot29_ETq = 0 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
+plot29_ETq = 5 #  EEI simulates T quadratic  add 0.00208°C for every 1 W/m²/month 
 a29_start = 2026.5   # 2015 starting year of play_60_T_E
 a29_offset = 1.5  
 plot30_c = 0 #  EEI =1.5W T linear add 0.00208°C for every 1 W/m²/month 
@@ -203,10 +203,10 @@ y_22max = 440 # ppm CO2
 y_25min = 370 # nok   only for y axis 
 y_25max = 430 # only for y axis
 
-y_28min = 0.5  #  Temperature in °C y axis left mode
-y_28max = 2.5  #  Temperature in °C y axis left mode
-y_29min = 0.5  #  Temperature in °C y axis left mode
-y_29max = 3  #  Temperature in °C y axis left mode
+y_28min = 1.9  #  Temperature in °C y axis left mode
+y_28max = 2.1  #  Temperature in °C y axis left mode
+y_29min = 1.9  #  Temperature in °C y axis left mode
+y_29max = 2.1 #  Temperature in °C y axis left mode
 y_30min = 0.8  #  Temperature in °C y axis left mode
 y_30max = 3.2  #  Temperature in °C y axis left mode
 y_Gmin = 0 # 250 ppm CO2 
@@ -309,8 +309,8 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 2005   # 2005   2000
-x_end = 2050   # 2028   2065
+x_anf = 2037   # 2005   2000
+x_end = 2039   # 2028   2065
 
 # XLO, XHI = 125, 1500
 
@@ -834,7 +834,7 @@ def apply_figure100_settings(figure_id):
        })
    elif figure_id == 105:
        shared_settings.update({
-           "text100": "Figure 5: Global Warming calculated with linear EEI increase.   Result = 2.7°C in the year 2050",
+           "text100": "Figure 5: Warming calculated with linear EEI increase. Result: 2°C is passed in year 2038 ",
            "text75": "James Hansen:  linear 0.4°C warming  every  10  years      =  2.4°C in year 2050      75",
            "plot_T_78": 0,
            "play_60_T_E": 48,
@@ -843,13 +843,13 @@ def apply_figure100_settings(figure_id):
            "a60_offset": 1.01,
            "line4_play": 60,
            "plot28_E_T": 5,
-           "text28": "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04788 x  +  0.408              28",
+           "text28": "Global Warming  in  °C  calculated  with  -> linear  EEI = 0.04789 x  +  0.408              28",
            "a29_start": 2026.5,
            "a29_offset": 1.5,
        })
    elif figure_id == 106:
        shared_settings.update({
-           "text100": "Figure 6: Global Warming Temperature calculated with EEI quadratic increase in 2050 = 3°C",
+           "text100": "Figure 6: Warming calculated with quadratic EEI increase. Result: 2°C is passed in year 2037",
            "text75": "James Hansen:   linear 0.4°C   warming  every  10  years    -  dotted  green              75",
            "play_60_T_E": 48,
            "a60_start": 2005,

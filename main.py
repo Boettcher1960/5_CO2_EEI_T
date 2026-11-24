@@ -1,5 +1,5 @@
 # main.py
-v = "5N74" # figure 4
+v = "5N75" # 2°C Warming in year 2037 + EEI Calculations  --substack
 #
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
@@ -306,6 +306,11 @@ def main():
         figure_id = 105
         apply_figure100_settings(figure_id)
         main_figure_1()
+    elif run_10_png == 6:
+        figure_id = 106
+        apply_figure100_settings(figure_id)
+        main_figure_1()
+
 
     if figure100 > 0:    # one figure 100
         main_figure_1()

@@ -185,8 +185,16 @@ def T_model76(t):
 # 43.31 in main.py line 81  data['ceres_43'] = pd.read_csv("read_csv/43_EEI12month_2026_09.csv")
 #
 # 404.32 run with figure404 = 48 
-# 404.33 the file  work/file404_48Month.csv is created by fig_404_eei_quadratic()
+#        EEI = 0.000844284(year - 2005)^2 +0.029596477(year - 2005) +0.473924168 W/m²; 
+#        Figure 4  linear fit: EEI = 0.047885872(year - 2005) +0.408158029 W/m²; R² = 0.950318
+# 404.33 the file            work/file404_48Month.csv is created by fig_404_eei_quadratic()
+# 404.34  copy the file read_csv/_28_EEI_calc_Sep2026_48Month.csv
+# 404.35  edit cees line 40 df28g = pd.read_csv("read_csv/_28_EEI_calc_Sep2026_48Month.csv") # made by figure 404
 #
+# 28.36 run plot28_E_T = 5 ; a28_start = 2026.5 ; a28_offset = 1.5 
+# 28.3
+#
+#         edit ceres line 63 df29g = pd.read_csv("read_csv/_28_EEI_calc_Sep2026_48Month.csv") # made by figure 404
 #
 ############################ play_66_OLR = 48 #####################################
 # 41.37 in config.py set play_66_OLR = 48 
