@@ -11,7 +11,7 @@
 
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
-run_10_png = 6 # 2 , 4, 5, 6 , 11 run 5 figures : 0 = no automatic
+run_10_png = 0 # 2 , 4, 5, 6 , 11 run 5 figures : 0 = no automatic
 figure100 = 5 #  0 means create no old figure 1= make old figuure
                 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 Global Warming EEI sets the World on Fire #28 Published 20. Nov. at 21:18
                 #  0 means create no old figure 1= make old figuure
@@ -80,7 +80,7 @@ play_64_ASR_anomaly = 0 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly =
 play_65_ASR         = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR         = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
 play_67_albedo      = 0   # line2 1..12..48..99 create 1..12..48..99 CERES
-play68_ERA          = 0 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+play68_ERA          = 1461 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 play69_AA           = 0 # 48 , 3,  7 , 11, 12, 13,48    albedo anomaly  # 69.12
 play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   play69_AA_in = "69a_AA_Albedo_anomaly_2026_08.txt" input filename
 
@@ -96,7 +96,7 @@ plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 0  # 60 61  62
-line3_play = 0  # 60 play_62_EEA #   68 play68_ERA = 720
+line3_play = 68  # 60 play_62_EEA #   68 play68_ERA = 720
 line4_play = 60 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
 line5_play = 28  # 62 61 68
 line6_play = 0
@@ -203,10 +203,10 @@ y_22max = 440 # ppm CO2
 y_25min = 370 # nok   only for y axis 
 y_25max = 430 # only for y axis
 
-y_28min = 1.9  #  Temperature in °C y axis left mode
-y_28max = 2.1  #  Temperature in °C y axis left mode
-y_29min = 1.9  #  Temperature in °C y axis left mode
-y_29max = 2.1 #  Temperature in °C y axis left mode
+y_28min = 0.5 #  Temperature in °C y axis left mode
+y_28max = 2.5  #  Temperature in °C y axis left mode
+y_29min = 0.5  #  Temperature in °C y axis left mode
+y_29max = 2.5 #  Temperature in °C y axis left mode
 y_30min = 0.8  #  Temperature in °C y axis left mode
 y_30max = 3.2  #  Temperature in °C y axis left mode
 y_Gmin = 0 # 250 ppm CO2 
@@ -269,8 +269,8 @@ y_67max = 0.2862  # 0.286 albedo in %
 y_67min = 0.296  # Hansen no swap albedo in %
 y_67max = 0.286   # Hansen no swap albedo in %
 
-y_68min = 0.8  # for era5 Temperature
-y_68max = 3.2 # for era5 Temperature 
+y_68min = 0.5  # for era5 Temperature
+y_68max = 2.5 # for era5 Temperature 
 
 y_69min = 1.6   # albedo anomaly in W/m2 
 y_69max = -1.6  # albedo anomaly in W/m2
@@ -309,8 +309,8 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 2037   # 2005   2000
-x_end = 2039   # 2028   2065
+x_anf = 2005   # 2005   2000
+x_end = 2055   # 2028   2065
 
 # XLO, XHI = 125, 1500
 

@@ -1,5 +1,5 @@
 # main.py
-v = "5N75" # 2°C Warming in year 2037 + EEI Calculations  --substack
+v = "5N77" # play68_ERA          = 1461
 #
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
