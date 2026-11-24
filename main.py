@@ -1,6 +1,5 @@
 # main.py
-v = "5N69" # play_67_albedo read_csv/CERES_EBAF-TOA_Ed4.2.1_Incoming_Solar_Flux_March-2000toSeptember-2026.txt
-#
+v = "5N70" # James Hansen: linear 0.4°C warming every 10 years passes the 2°C in the year 2038.5", # col 115
 #
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T

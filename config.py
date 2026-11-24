@@ -11,8 +11,8 @@
 
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
-run_10_png = 0 # 5 run 5 figures : 0 = no automatic
-figure100 = 61 #  0 means create no old figure 1= make old figuure
+run_10_png = 3 # 5 run 5 figures : 0 = no automatic
+figure100 = 2 #  0 means create no old figure 1= make old figuure
                 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 Global Warming EEI sets the World on Fire #28 Published 20. Nov. at 21:18
                 #  0 means create no old figure 1= make old figuure
 figure202 = 0 # 2=new figure with era5 temperature and quadratic curve 209
@@ -71,15 +71,15 @@ plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4
 play_60_T_E = 0   # 2=no average 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
 a60_start = 2005   # 2015 starting year of play_60_T_E
 a60_offset = 1.01     # 1.01 1 , 0.85 add offset 0.2°C at start of adding
-play_61_EEI = 48   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
+play_61_EEI = 0   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
 p61raw = "read_csv/CERES_EBAF-TOA_Ed4.2.1_TOA_Net_Flux_-_All-Sky_March-2000toSeptember-2026.txt" # raw CERES downloaded 
 play_62_EEA = 0    # 12, 24, 36, 48  Earth Energy Accumulated EEA is sum of EEI
 play_63_CB  = 0 # 5=world   plan 2=germany..
                 # carbon brief CO2 values https://ourworldindata.org/grapher/cumulative-co-emissions?country=~OWID_WRL&overlay=download-data
 play_64_ASR_anomaly = 0 #  12 , 24 , 48 # absorbed solar radiation ASR anomaly = 1.48 W/m² 2.1_anom_TOA_Shortwave_Flux_-_All-Sky
-play_65_ASR         = 48 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
+play_65_ASR         = 0 # 12 ASR = 242 W/m² TOA_Shortwave_Flux_-_All-Sky
 play_66_OLR         = 0 # 12, 24 looks like GISS temp 48, 36, 24, 12 ok outgoing longwave radiation OLR = 240 [W/m2]
-play_67_albedo      = 48   # line2 1..12..48..99 create 1..12..48..99 CERES
+play_67_albedo      = 0   # line2 1..12..48..99 create 1..12..48..99 CERES
 play68_ERA          = 0 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 play69_AA           = 0 # 48 , 3,  7 , 11, 12, 13,48    albedo anomaly  # 69.12
 play69_AA_in = "work/69a_AA_Albedo_anomaly_2026_08.txt"  # 69.13  config.py   play69_AA_in = "69a_AA_Albedo_anomaly_2026_08.txt" input filename
@@ -88,16 +88,16 @@ plot71_temperature = 0 # 2 3 5
 plot72_AESS_T = 0 # 2 , 3 
 plot73_ECS_T = 0 # 3
 global plot74_GIS_T 
-plot74_GIS_T = 0 # 2, 3,4,5,6,7 =right y axis
-linear_41_75 = 0 # 3 4 5
+plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
+linear_41_75 = 3 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
 plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
-line2_play = 61  # 60 61  62
-line3_play = 67  # 60 play_62_EEA #   68 play68_ERA = 720
-line4_play = 65 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
+line2_play = 0  # 60 61  62
+line3_play = 0  # 60 play_62_EEA #   68 play68_ERA = 720
+line4_play = 0 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
 line5_play = 0  # 62 61 68
 line6_play = 0
 line7_play = 99 # 99 no line 7 
@@ -147,8 +147,8 @@ c71 = "red"
 c71 =  "#AB263590"
 c72 =  "#31BD9590"
 c73 =  "red"
-c74 = "#31CC1990"
-c75 = "#7ECA3B84"
+c74 = "#26D00BC2"
+c75 = "#6EC91FB3"
 c76 = "#13DF2F84"
 c77 = "#34753D84"
 c78 = "#9D2A9984"
@@ -249,7 +249,7 @@ y_55min = 2 # plot55_population_on = 5
 y_55max = 9 # plot55_population_on = 5
 
 y_60min = 0.5  #  Temperature in °C y axis left mode
-y_60max = 3  #  Temperature in °C y axis left mode
+y_60max = 2.5  #  Temperature in °C y axis left mode
 y_61min = 0  #  also for figure 404  EEI in W/m2 y axis left mode
 y_61max = 2  #   also for figure 404  EEI in W/m2 y axis left mode
 
@@ -278,7 +278,7 @@ y_69max = -1.6  # albedo anomaly in W/m2
 #y_69max = -1.5  # albedo anomaly in W/m2
 
 y_Tmin = 0
-y_Tmax = 2 # 1.7
+y_Tmax = 2.5 # 1.7
 y_71min = 0
 y_71max = 3 # 1.7
 y_72min = 0
@@ -286,15 +286,15 @@ y_72max = 6 #
 y_73min = 0
 y_73max = 6 # 
 y_74min = 0.5  # for GIS Temperature 
-y_74max = 3  # 1.6 for GIS Temperature 
+y_74max = 2.5  # 1.6 for GIS Temperature 
 y_75min = 0.5 #  Temperature  
-y_75max = 3   #  Temperature 
+y_75max = 2.5   #  Temperature 
 y_76min = 0 #  Temperature  
 y_76max = 4   #  Temperature 
 y_77min = 0 #  Temperature  
-y_77max = 4 #  Temperature 
-y_78min = 0.8 #  for Tom Harris Temperature 
-y_78max = 3.2 #  for Tom Harris Temperature
+y_77max = 2.5 #  Temperature 
+y_78min = 0.5 #  for Tom Harris Temperature 
+y_78max = 2.5 #  for Tom Harris Temperature
 
 # YLO, YHI = 5, 40
 x_303min = 200   # 125  figure303 CO2 x axis 
@@ -309,8 +309,8 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 2000   # 2005   2000
-x_end = 2028   # 2028   2065
+x_anf = 2005   # 2005   2000
+x_end = 2045   # 2028   2065
 
 # XLO, XHI = 125, 1500
 
@@ -791,29 +791,29 @@ def apply_figure100_settings(figure_id):
        "text74": "measured Temperature in °C from  giss.nasa.gov   Hansen+0.3°C                             74",
        "c74": "green",
        "y_74min": 0.5,
-       "y_74max": 3,
+       "y_74max": 2.5,
        "linear_41_75": 3,
        "c75": "#226C12CC",
        "y_75min": 0.5,
-       "y_75max": 3,
+       "y_75max": 2.5,
        "plot29_ETq": 0,
        "plot28_E_T": 0,
        "line5_play": 60,
        "y_28min": 0.5,
-       "y_28max": 3,
+       "y_28max": 2.5,
        "y_29min": 0.5,
-       "y_29max": 3,
+       "y_29max": 2.5,
        "y_60min": 0.5,
-       "y_60max": 3,
+       "y_60max": 2.5,
        "x_anf": 2005,
-       "x_end": 2065,
+       "x_end": 2050,
    }
    if figure_id == 102:
        shared_settings.update({
-           "text100": "Figure 2: Global Warming ... possible Temperature in 2050 = 2.5°C with  Hansen linear fit +0.4°C",
+           "text100": "Figure 2: James Hansen linear fit +0.4°C passes 2°C in the year 2038",
            "y_74min": -0.5,
            "y_75min": -0.5,
-           "text75": "James Hansen:   linear 0.4°C   warming  every  10  years    -  doted  green               75",
+           "text75": "James Hansen: linear 0.4°C warming every 10 years passes the 2°C in the year 2038.5", # col 115
            "plot_T_78": 0,
            "line4_play": 0,
            "play_60_T_E": 0,
@@ -828,7 +828,7 @@ def apply_figure100_settings(figure_id):
            "plot_T_78": 4,
            "text78": "Temperature in °C      Tom Harris  quadratic   T = 0.0004 x²  + 0.0019 x + 0.5079      78",
            "y_78min": 0.5,
-           "y_78max": 3,
+           "y_78max": 2.5,
            "line4_play": 0,
            "play_60_T_E": 0,
        })
@@ -867,7 +867,7 @@ def apply_figure100_settings(figure_id):
            "text78": "Temperature in °C using Tom Harris quadratic formula.        The year 2050 result = 2.6°C",
            "plot_T_78": 4,
            "y_78min": 0.5,
-           "y_78max": 3,
+           "y_78max": 2.5,
            "line5_play": 60,
            "play_60_T_E": 48,
            "text60": "the measured EEI - CERES satellites -  warmed the earth 1.5°C in the year 2025       60",
