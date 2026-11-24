@@ -1,5 +1,5 @@
 # main.py
-v = "5N78" #fig_202_era5_temp_quadratic()
+v = "5N79" #fig_202_era5_temp_quadratic()
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

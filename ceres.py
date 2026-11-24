@@ -508,7 +508,7 @@ def fig_202_era5_temp_quadratic():
     """Plot ERA5 temperature averages with linear and quadratic trends to 2055."""
     # input_path = "work/_48_era5_in.csv"
     input_path = "work/_68_out.csv"
-    output_path = "work/_48_era5_temp_average.png"
+    output_path = "png/figure2_era5_temperature_quadratic_trend.png"
     # 200.3 read CSV and validate columns
     data = pd.read_csv(input_path)
     required_columns = {"date", "temp_average"}
@@ -560,7 +560,7 @@ def fig_202_era5_temp_quadratic():
         r_squared = linear_r_squared = float("nan")
 
     # 200.13 Evaluate both fitted curves monthly through the requested final year.
-    x_end = 2055
+    # x_end = 2055 
     forecast_dates = pd.date_range("2000-01-01", f"{x_end}-12-01", freq="MS")
     forecast_decimal_year = (
         forecast_dates.year
@@ -615,6 +615,7 @@ def fig_202_era5_temp_quadratic():
         (
             f"https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv  (Nov. 1, 2026 downloaded)\n"
             f"https://github.com/Boettcher1960/5_CO2_EEI_T      version  {v} \n"
+            f"\n"
             f"T = {coefficients[0]:.6f}(year - 2000)^2 "
             f"{coefficients[1]:+.6f}(year - 2000) {coefficients[2]:+.6f} °C\n"
             f"Quadratic R² = {r_squared:.4f}\n"
@@ -628,15 +629,60 @@ def fig_202_era5_temp_quadratic():
         bbox={"facecolor": "white", "alpha": 0.85, "edgecolor": "none"},
     )
     # 200.18 Set axis labels, include projected values in y-limits, and end x-axis in 2055.
-    ax.set_title("The ERA5 temperature -4 years rolling average- is above the planetary boundary of 1.5 °C", fontsize=16)
+    # ax.set_title("The ERA5 temperature -4 years rolling average- is above the planetary boundary of 1.5 °C", fontsize=16)
+    # 200.40 Build the headline with the averaging period and displayed year range.
+    headline = (
+            f"Figure {figure4_9}: ERA5 quadratic and linear fit "
+            f"   years {x_anf} to {x_end}"
+        )
+    # 200.41 Specify the desired distance from the figure's top edge in points.
+    headline_margin_points = 30
+    # 200.42 Convert figure height from inches to points for positioning.
+    figure_height_points = fig.get_figheight() * 72
+    # 200.43 Add the headline before layout so its final position can be measured.
+    headline_artist = fig.suptitle(
+            headline,
+            fontsize=20,
+            y=1 - headline_margin_points / figure_height_points,
+            va="top",
+        )
+
+
+
     ax.set_xlabel("Date")
     ax.set_ylabel("Temperature anomaly (°C)")
     ax.set_ylim(
         min(float(plot_data["temp_average"].min()), benchmark, float(quadratic_forecast.min()), float(linear_forecast.min())) - 0.05,
         max(float(plot_data["temp_average"].max()), benchmark, float(quadratic_forecast.max()), float(linear_forecast.max())) + 0.05,
     )
+
+
     ax.set_xlim(plot_data["date"].min(), pd.Timestamp(year=x_end, month=12, day=31))
     ax.grid(True, alpha=0.3)
+
+    renderer = fig.canvas.get_renderer()
+    # 404.63 Measure the headline's top margin in points.
+    headline_bbox = headline_artist.get_window_extent(renderer)
+    top_margin_points = (fig.bbox.y1 - headline_bbox.y1) * 72 / fig.dpi
+    # 404.64 Adjust the headline to the requested top margin.
+    headline_artist.set_y(
+        headline_artist.get_position()[1]
+        + (top_margin_points - headline_margin_points) / figure_height_points
+    )
+    # 404.65 Re-render after moving the headline to refresh its measured bounds.
+    fig.canvas.draw()
+    headline_bbox = headline_artist.get_window_extent(fig.canvas.get_renderer())
+    # 404.66 Convert the requested headline-to-plot gap from points to pixels.
+    gap_pixels = headline_margin_points * fig.dpi / 72
+    # 404.67 Calculate the plot area's top edge below the headline and gap.
+    plot_top = (
+        headline_bbox.y0 - gap_pixels - fig.bbox.y0
+    ) / fig.bbox.height
+    # 404.68 Read the current axes rectangle before changing its height.
+
+
+
+
     ax.legend(loc="upper left", bbox_to_anchor=(0, 0.68))
     fig.autofmt_xdate()
     fig.tight_layout()
@@ -654,6 +700,10 @@ def fig_202_era5_temp_quadratic():
         f"{linear_coefficients[1]:+.9f}; "
         f"R² = {linear_r_squared:.6f}"
     )
+
+
+
+
     print(f"ceres546: Saved ERA5 temperature visualization to {output_path}")
     plt.show()
     plt.close(fig)
