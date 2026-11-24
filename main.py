@@ -1,5 +1,5 @@
 # main.py
-v = "5N71" # James Hansen: linear 0.4°C warming every 10 years passes the 2°C in the year 2038.5", # col 115
+v = "5N72" # figure 4
 #
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
@@ -295,11 +295,11 @@ def main():
 
     # process 5 figure ibn one run:  figure102....figure110 
     if run_10_png > 10:
-        for figure_id in (102, 104, 105, 106, 110):
+        for figure_id in (102, 103, 105, 106, 110):
             apply_figure100_settings(figure_id)
             main_figure_1()
-    elif run_10_png == 4:
-        figure_id = 104
+    elif run_10_png == 3:
+        figure_id = 103
         apply_figure100_settings(figure_id)
         main_figure_1()
 

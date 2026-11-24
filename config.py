@@ -11,16 +11,16 @@
 
 # 8.3 print the left y axis 
 # line 2 defines the left Y axis. example
-run_10_png = 4 # 5 run 5 figures : 0 = no automatic
-figure100 = 2 #  0 means create no old figure 1= make old figuure
+run_10_png = 0 # 5 run 5 figures : 0 = no automatic
+figure100 = 0 #  0 means create no old figure 1= make old figuure
                 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 Global Warming EEI sets the World on Fire #28 Published 20. Nov. at 21:18
                 #  0 means create no old figure 1= make old figuure
 figure202 = 0 # 2=new figure with era5 temperature and quadratic curve 209
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
-figure404 = 0 # 3 , 12, 24, 36 , 48 60 72 96   409 48=create quadratic-fit figure for matching play_61_EEI
-figure4_9 = 9 # write figure 9 and use the 48 month averaging
+figure404 = 48 # 3 , 12, 24, 36 , 48 60 72 96   409 48=create quadratic-fit figure for matching play_61_EEI
+figure4_9 = 4 # write figure 9 and use the 48 month averaging
 
 # 8.5 configure the right axis legend 
 yr_60  = 60  # 60 50 (0=no right yaxis) 60 * 4 = 240 pixel to the right
@@ -68,7 +68,7 @@ plot55_population_on = 0 # 5 word with y axis right
 plot56_delta_CO2_4years = 0 # # no curve is visible 3, 4 
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mnkupgsz7s2k
 
-play_60_T_E = 0   # 2=no average 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
+play_60_T_E = 48   # 2=no average 12 , 24 , 48 add 0.00208°C for every 1 W/m²/month    Piers Forster 1 W/m² in 1month warmes 0.00208°C 
 a60_start = 2005   # 2015 starting year of play_60_T_E
 a60_offset = 1.01     # 1.01 1 , 0.85 add offset 0.2°C at start of adding
 play_61_EEI = 0   # 2; 12, 24, 36, 48 create 1..12..48..99 CERES EEI.csv _c61_out_ceres.csv // copy to 41_ceres_eei
@@ -92,13 +92,13 @@ plot74_GIS_T = 2 # 2, 3,4,5,6,7 =right y axis
 linear_41_75 = 3 # 3 4 5
 plot76_my_T = 0 # 3, 5
 plot_T_77 = 0 # 3, 4
-plot_T_78 = 4 # 3 , 4 , 5 Tom Harris
+plot_T_78 = 0 # 3 , 4 , 5 Tom Harris
 
 # variable to show play variable in line 4
 line2_play = 0  # 60 61  62
 line3_play = 0  # 60 play_62_EEA #   68 play68_ERA = 720
-line4_play = 0 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
-line5_play = 0  # 62 61 68
+line4_play = 60 # 68 , 67 , 66 , 62 , 61 play_61_EEI = 36 
+line5_play = 28  # 62 61 68
 line6_play = 0
 line7_play = 99 # 99 no line 7 
 
@@ -309,8 +309,8 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 2038   # 2005   2000
-x_end = 2040   # 2028   2065
+x_anf = 2005   # 2005   2000
+x_end = 2026   # 2028   2065
 
 # XLO, XHI = 125, 1500
 
@@ -821,9 +821,9 @@ def apply_figure100_settings(figure_id):
            "plot29_ETq": 0,
            "x_anf": 1880,
        })
-   elif figure_id == 104:
+   elif figure_id == 103:
        shared_settings.update({
-           "text100": "Figure 4: Tom Harris quadratic fit passes 2°C in the year 2038 - same as Hansen ",
+           "text100": "Figure 3: Tom Harris quadratic fit passes 2°C in the year 2038 - same as Hansen ",
            "text75": "James Hansen: linear 0.4°C warming every 10 years passes the 2°C in the year 2038.5",
            "plot_T_78": 4,
            "text78": "Temperature in °C  Tom Harris  T = 0.0004 x²  + 0.0019 x + 0.5079 = 2°C in 2038.75",
