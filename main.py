@@ -1,5 +1,5 @@
 # main.py
-v = "5N83" # figure5_era5_temperature
+v = "5N84" # figure5_era5_temperature
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

@@ -211,12 +211,17 @@ def fig_505_era5_temp_quadratic():
     )
     ax.text(
         0.02,
-        0.98,
+        0.82,
         quadratic_formula,
         transform=ax.transAxes,
         va="top",
         color="purple",
-        bbox={"facecolor": "white", "alpha": 0.85, "edgecolor": "none"},
+        bbox={
+            "facecolor": "white",
+            "alpha": 0.9,
+            "edgecolor": "purple",
+            "boxstyle": "round,pad=0.4",
+        },
     )
     ax.set_title(f"ERA5 {rolling_rows}-row temperature average and fitted trends")
     ax.set_xlabel("Year")
