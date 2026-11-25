@@ -113,12 +113,12 @@ def fig_505_era5_temp_quadratic():
     data["digital_date"] = (
         data["date"].dt.year + data["date"].dt.dayofyear / days_in_year
     )
-    # 500.29 Calculate the backward rolling anomaly average and convert it to the fit scale.
+    # 500.29 Calculate the backward rolling average on the offset temperature scale.
     data["T_average"] = data["ano_91-20"].rolling(
         window=rolling_rows,
         min_periods=rolling_rows,
-    ).mean()
-    data["temp_average"] = data["T_average"] + figure505_offset
+    ).mean() + figure505_offset
+    data["temp_average"] = data["T_average"]
 
     # 500.32  Fit only valid smoothed observations within the requested fitting period.
     fit_data = data.loc[

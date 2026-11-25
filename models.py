@@ -1221,5 +1221,9 @@ use backward_average
         window=window_months, min_periods=window_months
     ).mean()
 
+update
+fig_505_era5_temp_quadratic()
+add figure505_offset = 0.88 to the red curve labeled ERA5 1461-row.. 
+add figure505_offset to the column T_average
 
 """
