@@ -1226,4 +1226,24 @@ fig_505_era5_temp_quadratic()
 add figure505_offset = 0.88 to the red curve labeled ERA5 1461-row.. 
 add figure505_offset to the column T_average
 
+update
+fig_505_era5_temp_quadratic()
+make minor lines every 0.1°C parallel to x axis inside the plot area
+make major lines every 0.5°C  parallel to x axis inside the plot area
+make major lines every 5 years  parallel to Y axis inside the plot area
+
+
+update
+fig_505_era5_temp_quadratic()
+make a minor grid-net with long lines every 0.1°C parallel to x axis 
+make a major grid-net with long lines every 0.5°C parallel to x axis 
+make a minor grid-net with long lines every 5 years parallel to y axis 
+
+update
+fig_505_era5_temp_quadratic()
+make a minor grid-net mor bl
+
+
+
+
 """
