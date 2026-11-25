@@ -66,8 +66,9 @@ def fig_505_era5_temp_quadratic():
     )
     output_csv = "temp/era5.csv"
     output_plot = "temp/figure5_era5_temperature.png"
-    x_anf = 2000
-    x_end = 2050
+    output_plot2 = "temp/figure6_era5.png"
+    # x_anf = 2000 from config.py
+    # x_end = 2050
     rolling_rows = figure505
 
     if not isinstance(rolling_rows, int) or rolling_rows < 1:
@@ -279,4 +280,7 @@ def fig_505_era5_temp_quadratic():
     print(f"Saved ERA5 fit data to {output_csv}")
     print(f"Saved ERA5 temperature plot to {output_plot}")
     plt.show()
+    fig.savefig(output_plot2, dpi=300, bbox_inches="tight")
+
+
     plt.close(fig)
