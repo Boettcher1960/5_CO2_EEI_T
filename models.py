@@ -1192,5 +1192,10 @@ update
 fig_505_era5_temp_quadratic()
 to write the quadratic formula inside the plot in a purple box below "Linear fit (through 2050)"
 
+update
+fig_505_era5_temp_quadratic()
+to write the linear formula inside the plot in a green box below "Linear fit (through 2050)"
+and print the linear formula
+
 
 """

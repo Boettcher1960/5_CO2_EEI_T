@@ -209,6 +209,11 @@ def fig_505_era5_temp_quadratic():
         f"{quadratic_coefficients[2]:+.6f} °C\n"
         f"Quadratic R² = {quadratic_r_squared:.4f}"
     )
+    linear_formula = (
+        f"T = {linear_coefficients[0]:.6f}(year - {x_anf}) "
+        f"{linear_coefficients[1]:+.6f} °C\n"
+        f"Linear R² = {linear_r_squared:.4f}"
+    )
     ax.text(
         0.02,
         0.82,
@@ -220,6 +225,20 @@ def fig_505_era5_temp_quadratic():
             "facecolor": "white",
             "alpha": 0.9,
             "edgecolor": "purple",
+            "boxstyle": "round,pad=0.4",
+        },
+    )
+    ax.text(
+        0.02,
+        0.68,
+        linear_formula,
+        transform=ax.transAxes,
+        va="top",
+        color="green",
+        bbox={
+            "facecolor": "white",
+            "alpha": 0.9,
+            "edgecolor": "green",
             "boxstyle": "round,pad=0.4",
         },
     )
@@ -250,6 +269,7 @@ def fig_505_era5_temp_quadratic():
         f"{quadratic_coefficients[2]:+.9f}; R² = {quadratic_r_squared:.6f}"
     )
     print(f"Figure 505 quadratic formula: {quadratic_formula.replace(chr(10), '; ')}")
+    print(f"Figure 505 linear formula: {linear_formula.replace(chr(10), '; ')}")
     print(
         "Figure 505 linear fit: "
         f"T = {linear_coefficients[0]:.9f}(year - {x_anf}) "
