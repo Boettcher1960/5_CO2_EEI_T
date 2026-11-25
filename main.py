@@ -1,5 +1,5 @@
 # main.py
-v = "5N79" #fig_202_era5_temp_quadratic()
+v = "5N81" # figure5_era5_temperature
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -19,6 +19,7 @@ import os
 import sys
 
 # Import modules
+from temp import *
 from config import *
 from data_processing import *
 from models import *
@@ -321,6 +322,9 @@ def main():
         Figure_304()
     if figure404 > 1:    # one figure 400
         fig_404_eei_quadratic()
+    if figure505 > 1:    # one figure 5 era5 temperature
+        fig_505_era5_temp_quadratic()
+
     
 
 

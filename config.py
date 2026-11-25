@@ -15,12 +15,14 @@ run_10_png = 0 # 2 , 4, 5, 6 , 11 run 5 figures : 0 = no automatic
 figure100 = 0 #  0 means create no old figure 1= make old figuure
                 # substack #28 uses 102 , 104 , 105 , 106 , 107 , 110 Global Warming EEI sets the World on Fire #28 Published 20. Nov. at 21:18
                 #  0 means create no old figure 1= make old figuure
-figure202 = 2 # 2=new figure with era5 temperature and quadratic curve 209
+figure202 = 0 # 2=new figure with era5 temperature and quadratic curve 209
 figure303 = 0 # 3 , 4 
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
 figure404 = 0 # 3 , 12, 24, 36 , 48 60 72 96   409 48=create quadratic-fit figure for matching play_61_EEI
 figure4_9 = 7 # write figure 9 and use the 48 month averaging
+figure505 = 1461 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+
 
 # 8.5 configure the right axis legend 
 yr_60  = 60  # 60 50 (0=no right yaxis) 60 * 4 = 240 pixel to the right

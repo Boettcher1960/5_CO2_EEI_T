@@ -680,6 +680,17 @@ def fig_202_era5_temp_quadratic():
     ) / fig.bbox.height
     # 404.68 Read the current axes rectangle before changing its height.
 
+    axes_position = ax.get_position()
+    # 404.69 Keep the axes width and bottom while moving its top below the headline.
+    ax.set_position(
+        (
+            axes_position.x0,
+            axes_position.y0,
+            axes_position.width,
+            plot_top - axes_position.y0,
+        )
+    )
+    # 404.70 Create the output folder if it does not already exist.
 
 
 
