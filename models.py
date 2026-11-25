@@ -1172,10 +1172,18 @@ ceres 400
   394                                           'work/_CERES_ASR.csv',                            
 
 update
-fig_202_era5_temp_quadratic()
-with longer x axis up to  x_end = 2055  
-and print and plot a linear fit curve
-  
+fig_505_era5_temp_quadratic()
+to read the values of
+https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+and perform averaging for figure505 = 1461 rows
+and perform linear and quadratic fit
+and write temp/era5.csv with columns digital_date, date,2t,clim_91-20,ano_91-20,linear_fit,quadratic_fit
+and plot the x range x_anf = 2000  to x_end = 2050  
+and write the date of the last entry below the plot "last era5 date = 2026-11-23"
+ 
+
+
+
 
 
 
