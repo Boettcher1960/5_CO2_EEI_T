@@ -1182,9 +1182,15 @@ and plot the x range x_anf = 2000  to x_end = 2050
 and write the date of the last entry below the plot "last era5 date = 2026-11-23"
  
 
+update
+fig_505_era5_temp_quadratic()
+to write the quadratic formula inside the plot in purple
+and change the dotted quadratic line to dashed purple
+and print the quadratic formula
 
-
-
+update
+fig_505_era5_temp_quadratic()
+to write the quadratic formula inside the plot in a purple box below "Linear fit (through 2050)"
 
 
 """

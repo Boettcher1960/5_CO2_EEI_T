@@ -190,8 +190,8 @@ def fig_505_era5_temp_quadratic():
     ax.plot(
         forecast_dates,
         forecast_quadratic_fit,
-        color="#1f4e79",
-        linestyle=":",
+        color="purple",
+        linestyle="--",
         linewidth=2.5,
         label=f"Quadratic fit (through {x_end})",
     )
@@ -202,6 +202,21 @@ def fig_505_era5_temp_quadratic():
         linestyle="--",
         linewidth=2.5,
         label=f"Linear fit (through {x_end})",
+    )
+    quadratic_formula = (
+        f"T = {quadratic_coefficients[0]:.6f}(year - {x_anf})² "
+        f"{quadratic_coefficients[1]:+.6f}(year - {x_anf}) "
+        f"{quadratic_coefficients[2]:+.6f} °C\n"
+        f"Quadratic R² = {quadratic_r_squared:.4f}"
+    )
+    ax.text(
+        0.02,
+        0.98,
+        quadratic_formula,
+        transform=ax.transAxes,
+        va="top",
+        color="purple",
+        bbox={"facecolor": "white", "alpha": 0.85, "edgecolor": "none"},
     )
     ax.set_title(f"ERA5 {rolling_rows}-row temperature average and fitted trends")
     ax.set_xlabel("Year")
@@ -229,6 +244,7 @@ def fig_505_era5_temp_quadratic():
         f"{quadratic_coefficients[1]:+.9f}(year - {x_anf}) "
         f"{quadratic_coefficients[2]:+.9f}; R² = {quadratic_r_squared:.6f}"
     )
+    print(f"Figure 505 quadratic formula: {quadratic_formula.replace(chr(10), '; ')}")
     print(
         "Figure 505 linear fit: "
         f"T = {linear_coefficients[0]:.9f}(year - {x_anf}) "
