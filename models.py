@@ -1243,6 +1243,14 @@ update
 fig_505_era5_temp_quadratic()
 make a minor grid-net mor bl
 
+move the headline more to the left and insert 10 space before the headline and 10 space between headline and plot
+ # 500.140 print the headline 
+    ax.set_title(
+        f"Figure 505: ERA5 temperature average and linear and quadratic trends {rolling_rows}",
+        loc="left",
+        fontsize=20,
+    )
+
 
 
 

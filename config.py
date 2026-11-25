@@ -21,7 +21,7 @@ figure303 = 0 # 3 , 4
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
 figure404 = 0 # 3 , 12, 24, 36 , 48 60 72 96   409 48=create quadratic-fit figure for matching play_61_EEI
 figure4_9 = 7 # write figure 9 and use the 48 month averaging
-figure505 = 1461 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+figure505 = 720 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 figure505_offset = 0.91 # 0.91 ClimateCasino 0.90 Niko Freudsheim apply its 0.88 °C offset.
 
 # 8.5 configure the right axis legend 
@@ -311,7 +311,7 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 1980   # 2005   2000
+x_anf = 2005   # 2005   2000
 x_end = 2050   # 2028   2065
 
 # XLO, XHI = 125, 1500

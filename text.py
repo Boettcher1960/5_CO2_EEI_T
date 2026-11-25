@@ -78,9 +78,7 @@ def text_1_print_line(fig, ax1, filename, v, header_parameter, tr1y):
                   f"     https://github.com/Boettcher1960/5_CO2_EEI_T"
                   f"       version={v}"
                   f"  ")
-
-   
-    # f"https://github.com/Boettcher1960/co2_python       Parameter {header_parameter}")
+    
     ax1.text(-0.1, tr1y, text_below, color="black", fontname="Arial", fontsize=14,
             transform=ax1.transAxes)
 

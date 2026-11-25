@@ -216,6 +216,8 @@ def fig_505_era5_temp_quadratic():
     ]
     # 500.75
     average_plot_data = data.loc[data["T_average"].notna()]
+    
+    
     # 500.77  size of the figure 13 inch wide  7 inch high
     fig, ax = plt.subplots(figsize=(13, 7))
     # 500.80 line and text for curve 1
@@ -289,8 +291,14 @@ def fig_505_era5_temp_quadratic():
             "boxstyle": "round,pad=0.4",
         },
     )
-    # 500.140 print legend inside the plot
-    ax.set_title(f"Figure 505: ERA5 temperature average and linear and quadratic trends {rolling_rows}  ")
+    # 500.140 print the headline 
+    ax.set_title(
+        f"Figure 505: ERA5 temperature average and linear and quadratic trends {rolling_rows}",
+        loc="left",
+        x=-0.05,
+        fontsize=16,
+        pad=20,   # gap between title baseline and top of axes (points)
+    )
     # 500.150 x axis
     ax.set_xlabel("Year")
      # 500.160 y axis
@@ -324,25 +332,53 @@ def fig_505_era5_temp_quadratic():
     # 500.220
     ax.grid(True, which="major", axis="y", alpha=0.3)
     ax.grid(True, which="minor", axis="y", alpha=0.15)
+    # 500.225 temperature band 1.5 to 2.0 °C
+    ax.axhspan(1.5, 2.0, color="#2196D19A", alpha=0.06, zorder=0)
+
     # 500.230 print the legend (line 1 line 2 line 3)
     ax.legend(loc="upper left")
 
+    ax.axhspan(1.5, 2.0, color="#2196D19A", alpha=0.06, zorder=0)
 
-    # 500.260   print in line 12 below the plot
+
+    # 500.240   print in line 12 below the plot
     fig.text(
         0.3, # x value 0.5 is middle
-        0.035,
+        0.01,
         f"{latest_era5_date:%Y-%m-%d}  "
         f"  Temperature = {latest_era5_temp} °C   from ERA5 + {figure505_offset} ",
         ha="center",
-        fontsize=16,
+        fontsize=14,
     )
- 
+
+
+    # 500.240   print in line 14 below the plot
     text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
 
 
+    # 500.250  text_1_print_line(ax)
+    text_below = (f"             https://thomas1960.substack.com/ "
+                  f"   "
+                  f"     https://github.com/Boettcher1960/5_CO2_EEI_T"
+                  f"       version={v}"
+                  f"  ")
+    
+    # 500.260  text_1_print_line tr2y = -.26  tr4y = -.40
+    lry = -0.34
+    ax.text(-0.1, lry , text_below, color="black", fontname="Arial", fontsize=12,
+            transform=ax.transAxes)
 
-    fig.tight_layout(rect=(0, 0.05, 1, 0.95))
+
+   
+ 
+    text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
+
+    # 500.270
+    # left = 0	Left edge of subplot area at x = 0 (very left of figure)
+    # bottom = 0.05	Subplots can't go below 5% from the bottom
+    # right = 1	Right edge at x = 1 (very right of figure)
+    # top = 0.95	Subplots can't go above 95% from the bottom (5% margin at top)
+    # fig.tight_layout(rect=(0, 0.08, 1, 0.94))
     # fig.savefig(output_plot, dpi=300, bbox_inches="tight")
 
     print(
@@ -361,9 +397,9 @@ def fig_505_era5_temp_quadratic():
     print(f"Last ERA5 source date: {latest_era5_date:%Y-%m-%d}")
     print(f"Saved ERA5 fit data to {output_csv}")
     print(f"Saved ERA5 temperature plot to {output_plot}")
+
     fig.savefig(output_plot, dpi=300, bbox_inches="tight")
+
     plt.show()
     
-
-
     plt.close(fig)
