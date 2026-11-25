@@ -69,24 +69,32 @@ def fig_505_era5_temp_quadratic():
     output_plot2 = "temp/figure6_era5.png"
     # x_anf = 2000 from config.py
     # x_end = 2050
+    # 500.10 consider 1461 days consider 4 years
     rolling_rows = figure505
 
+    # 500.11 error 501
     if not isinstance(rolling_rows, int) or rolling_rows < 1:
-        raise ValueError(f"figure505 must be a positive integer; got {rolling_rows!r}")
+        raise ValueError(f"error 501 figure505 must be a positive integer; got {rolling_rows!r}")
 
-    # The source has descriptive comment lines before the CSV header.
+    # 500.13 The source has descriptive comment lines before the CSV header.
     tls_context = ssl.create_default_context(cafile=certifi.where())
+    # 500.14 open the file sites.ecmwf.int/data/climatepulse/data/series/
+    # 500.15               copy the contents to data field
     with urlopen(source_url, context=tls_context, timeout=30) as response:
         data = pd.read_csv(response, comment="#")
+    # 500.16 read all columns
     required_columns = {"date", "2t", "clim_91-20", "ano_91-20"}
+
     missing_columns = required_columns.difference(data.columns)
+    # 500.18 error 2 if one column is missing
     if missing_columns:
         raise ValueError(
-            f"ERA5 source is missing required columns: {', '.join(sorted(missing_columns))}"
+            f"error 502 ERA5 source is missing required columns: {', '.join(sorted(missing_columns))}"
         )
-
+    # 500.20 copy data to
     data = data.loc[:, ["date", "2t", "clim_91-20", "ano_91-20"]].copy()
     data["date"] = pd.to_datetime(data["date"], errors="raise")
+    # 500.22 sort the data field
     for column in ("2t", "clim_91-20", "ano_91-20"):
         data[column] = pd.to_numeric(data[column], errors="raise")
     data = (
@@ -94,23 +102,25 @@ def fig_505_era5_temp_quadratic():
         .sort_values("date")
         .reset_index(drop=True)
     )
+    # 500.25 error 503
     if data.empty:
-        raise ValueError("ERA5 source contains no valid daily temperature records")
-
+        raise ValueError("error 503 ERA5 source contains no valid daily temperature records")
+    # 500.26 interface the lastest date
     latest_era5_date = data["date"].max()
+    # 500.27 leap year has 366 days
     days_in_year = np.where(data["date"].dt.is_leap_year, 366, 365)
+    # 500.28 digital year
     data["digital_date"] = (
         data["date"].dt.year + data["date"].dt.dayofyear / days_in_year
     )
-    # Match the existing ERA5 processing: smooth anomalies, then apply its 0.88 °C offset.
-    data["temp_average"] = (
-        data["ano_91-20"].rolling(
-            window=rolling_rows, center=True, min_periods=rolling_rows
-        ).mean()
-        + 0.88
-    )
+    # 500.29 Calculate the backward rolling anomaly average and convert it to the fit scale.
+    data["T_average"] = data["ano_91-20"].rolling(
+        window=rolling_rows,
+        min_periods=rolling_rows,
+    ).mean()
+    data["temp_average"] = data["T_average"] + figure505_offset
 
-    # Fit only valid smoothed observations within the requested fitting period.
+    # 500.32  Fit only valid smoothed observations within the requested fitting period.
     fit_data = data.loc[
         data["date"].between(
             pd.Timestamp(year=x_anf, month=1, day=1),
@@ -118,21 +128,27 @@ def fig_505_era5_temp_quadratic():
         )
         & data["temp_average"].notna()
     ].copy()
+    # 500.35 error 504
     if len(fit_data) < 3:
         raise ValueError(
-            f"At least three valid {rolling_rows}-row averages from "
+            f"error 504 At least three valid {rolling_rows}-row averages from "
             f"{x_anf} through {x_end} are required for fitting"
         )
-
+    # 500.40 length of data rows
     fit_x = fit_data["digital_date"] - x_anf
+    # 500.41 quadratic_coefficients
     quadratic_coefficients = np.polyfit(fit_x, fit_data["temp_average"], 2)
+    # 500.42 linear_coefficients
     linear_coefficients = np.polyfit(fit_x, fit_data["temp_average"], 1)
+    # 500.4
     quadratic_fit = np.polyval(quadratic_coefficients, fit_x)
+    # 500.44
     linear_fit = np.polyval(linear_coefficients, fit_x)
-
+    # 500.45
     total_sum_squares = np.sum(
         (fit_data["temp_average"] - fit_data["temp_average"].mean()) ** 2
     )
+    # 500.47
     if total_sum_squares > 0:
         quadratic_r_squared = 1 - np.sum(
             (fit_data["temp_average"] - quadratic_fit) ** 2
@@ -143,21 +159,30 @@ def fig_505_era5_temp_quadratic():
     else:
         quadratic_r_squared = linear_r_squared = float("nan")
 
-    # Save the source series and fitted values using the requested column order.
+    # 500.52 Save the source series and fitted values using the requested column order.
     output_data = data.loc[
         :, ["digital_date", "date", "2t", "clim_91-20", "ano_91-20"]
     ].copy()
+    # 500.53 Export the moving average of the ERA5 anomaly column.
+    output_data["T_average"] = data["T_average"]
+    # 500.55
     output_data["linear_fit"] = np.nan
+    # 500.56
     output_data["quadratic_fit"] = np.nan
+    # 500.57
     all_fit_x = data["digital_date"] - x_anf
+    # 500.58
     fit_rows = data["date"] >= pd.Timestamp(year=x_anf, month=1, day=1)
+    # 500.59
     output_data.loc[fit_rows, "linear_fit"] = np.polyval(
         linear_coefficients, all_fit_x.loc[fit_rows]
     )
     output_data.loc[fit_rows, "quadratic_fit"] = np.polyval(
         quadratic_coefficients, all_fit_x.loc[fit_rows]
     )
+
     os.makedirs(os.path.dirname(output_csv), exist_ok=True)
+    # 500.64 write to temp/era5.csv
     output_data.to_csv(output_csv, index=False, float_format="%.6f")
 
     # Extend both fitted curves monthly to the requested end year.
@@ -179,14 +204,15 @@ def fig_505_era5_temp_quadratic():
         )
         & data["temp_average"].notna()
     ]
-
+    average_plot_data = data.loc[data["T_average"].notna()]
+    # 500.55  size of the figure 13 inch wide  7 inch high
     fig, ax = plt.subplots(figsize=(13, 7))
     ax.plot(
-        plot_data["date"],
-        plot_data["temp_average"],
+        average_plot_data["date"],
+        average_plot_data["T_average"],
         color="#b22222",
         linewidth=1.5,
-        label=f"ERA5 {rolling_rows}-row centered average + 0.88 °C",
+        label=f"ERA5 {rolling_rows}-row average (T_average)",
     )
     ax.plot(
         forecast_dates,

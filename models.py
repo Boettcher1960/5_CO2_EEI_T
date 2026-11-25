@@ -1197,5 +1197,29 @@ fig_505_era5_temp_quadratic()
 to write the linear formula inside the plot in a green box below "Linear fit (through 2050)"
 and print the linear formula
 
+update
+output_csv = "temp/era5.csv"
+with a new column T_average
+which is the moving average 1461 (  rolling_rows = figure505 )
+
+update
+fig_505_era5_temp_quadratic()
+the red curve labeled ERA5 1461-row.. shall plot all data - including 2026
+the red curve labeled ERA5 1461-row.. shall be the contens of the column T_average
+
+
+update
+fig_505_era5_temp_quadratic()
+the red curve labeled ERA5 1461-row.. shall be the rolling_rows average of the column "ano_91-20"
+the column T_average shall be the rolling_rows average of the column "ano_91-20"
+
+update
+fig_505_era5_temp_quadratic()
+use backward_average
+ # 404.140 backward_average is the normal average
+    backward_average = source_values.rolling(
+        window=window_months, min_periods=window_months
+    ).mean()
+
 
 """
