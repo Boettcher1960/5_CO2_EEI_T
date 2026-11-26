@@ -1286,4 +1286,10 @@ shall be used to calculate linear fit2 calculated from
 figure505_days_linear_fit rows.
 The result shall be plotted in dotted orange and printed
 
+update
+fig_505_era5_temp_quadratic()
+the calculated linear fit2 formula shall be printed inside the plott field in a orange box.
+
+
+
 """

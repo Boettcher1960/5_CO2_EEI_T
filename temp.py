@@ -372,6 +372,11 @@ def fig_505_era5_temp_quadratic():
         f"{linear_coefficients[1]:+.6f} °C\n"
         f"Linear R² = {linear_r_squared:.4f}"
     )
+    linear_fit2_formula = (
+        f"T = {linear_fit2_coefficients[0]:.6f}(year - {x_anf}) "
+        f"{linear_fit2_coefficients[1]:+.6f} °C\n"
+        f"Linear fit2 ({len(linear_fit2_data)} rows) R² = {linear_fit2_r_squared:.4f}"
+    )
     # 500.120 line 4, 5 
     ax.text(
         0.02, # x value
@@ -401,6 +406,21 @@ def fig_505_era5_temp_quadratic():
             "facecolor": "white",
             "alpha": 0.9,
             "edgecolor": "green",
+            "boxstyle": "round,pad=0.4",
+        },
+    )
+    ax.text(
+        0.02,
+        0.54,
+        linear_fit2_formula,
+        transform=ax.transAxes,
+        fontsize=12,
+        va="top",
+        color="darkorange",
+        bbox={
+            "facecolor": "white",
+            "alpha": 0.9,
+            "edgecolor": "orange",
             "boxstyle": "round,pad=0.4",
         },
     )
