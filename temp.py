@@ -349,7 +349,7 @@ def fig_505_era5_temp_quadratic():
 
     # 500.240   print in line 12 below the plot
     fig.text(
-        0.3, # x value 0.5 is middle
+        0.4, # x value 0.5 is middle
         0.01,
         f"{latest_era5_date:%Y-%m-%d} "
         # f"  Temperature={latest_era5_temp}°C  10d={temp_last_10_days:.3f}°C   30d={temp_last_30_days:.3f}°C  90d={temp_last_90_days:.3f}°C  from ERA5 + {figure505_offset} ",
@@ -406,10 +406,10 @@ def fig_505_era5_temp_quadratic():
         f"{linear_coefficients[1]:+.9f}; R² = {linear_r_squared:.6f}"
     )
     print(f"Last ERA5 source date: {latest_era5_date:%Y-%m-%d}")
-    print(f"Average temperature of the last 1 day: {temp_last_1_day:.3f} °C")
-    print(f"Average temperature of the last 10 days: {temp_last_10_days:.3f} °C")
-    print(f"Average temperature of the last 30 days: {temp_last_30_days:.3f} °C")
-    print(f"Average temperature of the last 90 days: {temp_last_90_days:.3f} °C")
+    print(f"Average temperature of the last   1 day : {latest_era5_temp:.3f} °C")
+    print(f"Average temperature of the last  10 days: {temp_last_10_days:.3f} °C")
+    print(f"Average temperature of the last  30 days: {temp_last_30_days:.3f} °C")
+    print(f"Average temperature of the last  90 days: {temp_last_90_days:.3f} °C")
     print(f"Average temperature of the last 180 days: {temp_last_180_days:.3f} °C")
     print(f"Average temperature of the last 365 days: {temp_last_365_days:.3f} °C")
     print(f"Saved ERA5 fit data to {output_csv}")
