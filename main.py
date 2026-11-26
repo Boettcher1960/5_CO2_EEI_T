@@ -1,5 +1,5 @@
 # main.py
-v = "5P12" # https://thomas1960.substack.com/i/226687563/figure-3-era5-temperature-zoom
+v = "5P13" # https://thomas1960.substack.com/i/226687563/figure-4-era5-temperature-zoom
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
