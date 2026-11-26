@@ -107,8 +107,14 @@ def fig_505_era5_temp_quadratic():
         raise ValueError("error 503 ERA5 source contains no valid daily temperature records")
     # 500.26 interface the lastest date
     latest_era5_date = data["date"].max()
+    temp_last_1_day = data["date"].max()
     # 500.27 interface the lastest temperature value figure505_offset = 0.91
     latest_era5_temp= data["ano_91-20"].max() + figure505_offset
+    temp_last_10_days = data["ano_91-20"].tail(10).mean() + figure505_offset
+    temp_last_30_days = data["ano_91-20"].tail(30).mean() + figure505_offset
+    temp_last_90_days = data["ano_91-20"].tail(90).mean() + figure505_offset
+    temp_last_180_days = data["ano_91-20"].tail(180).mean() + figure505_offset
+    temp_last_365_days = data["ano_91-20"].tail(365).mean() + figure505_offset
     # 500.28 leap year has 366 days
     days_in_year = np.where(data["date"].dt.is_leap_year, 366, 365)
     # 500.29 digital year
@@ -345,10 +351,15 @@ def fig_505_era5_temp_quadratic():
     fig.text(
         0.3, # x value 0.5 is middle
         0.01,
-        f"{latest_era5_date:%Y-%m-%d}  "
-        f"  Temperature = {latest_era5_temp} °C   from ERA5 + {figure505_offset} ",
+        f"{latest_era5_date:%Y-%m-%d} "
+        # f"  Temperature={latest_era5_temp}°C  10d={temp_last_10_days:.3f}°C   30d={temp_last_30_days:.3f}°C  90d={temp_last_90_days:.3f}°C  from ERA5 + {figure505_offset} ",
+        f"  Temperature={latest_era5_temp}°C   10d={temp_last_10_days:.3f}°C"
+        f"  30d={temp_last_30_days:.3f}°C"
+        f"  90d={temp_last_90_days:.3f}°C"
+        f"  180d={temp_last_180_days:.3f}°C"
+        f"  365d={temp_last_365_days:.3f}°C ",
         ha="center",
-        fontsize=14,
+        fontsize=12,
     )
 
 
@@ -395,11 +406,17 @@ def fig_505_era5_temp_quadratic():
         f"{linear_coefficients[1]:+.9f}; R² = {linear_r_squared:.6f}"
     )
     print(f"Last ERA5 source date: {latest_era5_date:%Y-%m-%d}")
+    print(f"Average temperature of the last 1 day: {temp_last_1_day:.3f} °C")
+    print(f"Average temperature of the last 10 days: {temp_last_10_days:.3f} °C")
+    print(f"Average temperature of the last 30 days: {temp_last_30_days:.3f} °C")
+    print(f"Average temperature of the last 90 days: {temp_last_90_days:.3f} °C")
+    print(f"Average temperature of the last 180 days: {temp_last_180_days:.3f} °C")
+    print(f"Average temperature of the last 365 days: {temp_last_365_days:.3f} °C")
     print(f"Saved ERA5 fit data to {output_csv}")
     print(f"Saved ERA5 temperature plot to {output_plot}")
 
     fig.savefig(output_plot, dpi=300, bbox_inches="tight")
 
-    plt.show()
-    
+    # plt.show()
+    save_png5(fig)
     plt.close(fig)

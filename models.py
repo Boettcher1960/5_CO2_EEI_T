@@ -1251,6 +1251,11 @@ move the headline more to the left and insert 10 space before the headline and 1
         fontsize=20,
     )
 
+update
+fig_505_era5_temp_quadratic()
+calculate the average temperature of the last 10 days
+in a variable temp_last_10_days
+print the variable    
 
 
 
