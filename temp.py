@@ -476,8 +476,8 @@ def fig_505_era5_temp_quadratic():
     )
     # 500.154  green linear_formula box2 plot
     ax.text(
-        0.02, # x value
-        0.59, # y value
+        0.55, # x value
+        0.35, # y value
         linear_formula,
         transform=ax.transAxes,
         fontsize=12,
@@ -502,7 +502,7 @@ def fig_505_era5_temp_quadratic():
     # 500.164  orange linear2_formula box3 plot
     ax.text(
         0.02,
-        0.43,
+        0.6,
         linear_fit2_formula,
         transform=ax.transAxes,
         fontsize=12,
@@ -526,8 +526,8 @@ def fig_505_era5_temp_quadratic():
     )
     # 500.172  red box4 plot
     ax.text(
-        0.4,
-        0.97,
+        0.5,
+        0.15,
         red_box,
         transform=ax.transAxes,
         fontsize=12,

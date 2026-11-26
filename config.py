@@ -20,7 +20,7 @@ figure303 = 0 # 3 , 4
               # for figure303 = 3 keep the x axis logarithmic and plot in Rovang_figure_1.png
               # for figure303 = 4 make linear x axis and plot in Rovang_figure_2.png
 figure404 = 0 # 3 , 12, 24, 36 , 48 60 72 96   409 48=create quadratic-fit figure for matching play_61_EEI
-figure4_9 = 1 # write figure 9 and use the 48 month averaging
+figure4_9 = 3 # write figure 9 and use the 48 month averaging
 figure505 = 1461 # 1461, 1095, 720, 365, 24  1826 3650  # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 figure505_offset = 0.90 # 0.91 ClimateCasino 0.90 Zeke, Rahmstorf..Niko Freudsheim apply its 0.88 °C offset.
 figure505_days_linear_fit = 2000 # 10 years 3652, 1461, 1095, 720, 365,   1826
@@ -304,7 +304,7 @@ x_303min = 200   # 125  figure303 CO2 x axis
 x_303max = 600  # 1500 figure303 CO2 x axis 
 y_303min = 10  # 5 13 figure303 Temperature y axis left
 y_303max = 25 # 30 17 figure303 Temperature y axis left
-y_505min = 0 # manimum 0°C
+y_505min = 0.5 # manimum 0°C
 y_505max = 3 # maximum 4°C
 
 
@@ -316,7 +316,7 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 1945   # 2005   2000
+x_anf = 2005   # 2005   2000
 x_end = 2055   # 2028   2065
 
 # XLO, XHI = 125, 1500

@@ -1,5 +1,5 @@
 # main.py
-v = "5P11" # linear fit2 (2000 rows): T = 0.056515439 year -113.060031353; R² = 0.923857
+v = "5P12" # https://thomas1960.substack.com/i/226687563/figure-3-era5-temperature-zoom
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
