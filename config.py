@@ -312,7 +312,7 @@ cbox304Ma="#ffcccc"
 cbox304Maedge="red"
 plot304_450ppm_blue_band = 0 # 0 , 1 = plot
 
-x_anf = 2005   # 2005   2000
+x_anf = 1950   # 2005   2000
 x_end = 2050   # 2028   2065
 
 # XLO, XHI = 125, 1500

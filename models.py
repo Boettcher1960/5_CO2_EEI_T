@@ -1304,4 +1304,11 @@ in a variable
 year_pass_2C_linear
 and print year_pass_2C_linear
 
+update
+fig_505_era5_temp_quadratic()
+instead of using "(year - 1950)"
+use "year"
+in all formulas
+
+
 """

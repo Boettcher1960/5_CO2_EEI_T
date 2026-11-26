@@ -150,6 +150,13 @@ def fig_505_era5_temp_quadratic():
     linear_fit2_coefficients = np.polyfit(
         linear_fit2_x, linear_fit2_data["temp_average"], 1
     )
+    linear_fit2_year_coefficients = np.array(
+        [
+            linear_fit2_coefficients[0],
+            linear_fit2_coefficients[1]
+            - linear_fit2_coefficients[0] * x_anf,
+        ]
+    )
     linear_fit2_crossing_year = (
         x_anf
         + (2.0 - linear_fit2_coefficients[1]) / linear_fit2_coefficients[0]
@@ -258,6 +265,22 @@ def fig_505_era5_temp_quadratic():
     )
     # 500.42 linear_coefficients
     linear_coefficients = np.polyfit(fit_x, fit_data["temp_average"], 1)
+    linear_year_coefficients = np.array(
+        [
+            linear_coefficients[0],
+            linear_coefficients[1] - linear_coefficients[0] * x_anf,
+        ]
+    )
+    quadratic_year_coefficients = np.array(
+        [
+            quadratic_coefficients[0],
+            quadratic_coefficients[1]
+            - 2 * quadratic_coefficients[0] * x_anf,
+            quadratic_coefficients[0] * x_anf**2
+            - quadratic_coefficients[1] * x_anf
+            + quadratic_coefficients[2],
+        ]
+    )
     linear_crossing_year = (
         x_anf + (2.0 - linear_coefficients[1]) / linear_coefficients[0]
         if linear_coefficients[0] > 0
@@ -384,21 +407,21 @@ def fig_505_era5_temp_quadratic():
     )
     # 500.100 line 4 + line 5 for curve 2 forecast_quadratic_fit
     quadratic_formula = (
-        f"T = {quadratic_coefficients[0]:.6f}(year - {x_anf})² "
-        f"{quadratic_coefficients[1]:+.6f}(year - {x_anf}) "
-        f"{quadratic_coefficients[2]:+.6f} °C\n"
+        f"T = {quadratic_year_coefficients[0]:.6f} year² "
+        f"{quadratic_year_coefficients[1]:+.6f} year "
+        f"{quadratic_year_coefficients[2]:+.6f} °C\n"
         f"Quadratic R² = {quadratic_r_squared:.4f}"
     )
     # 500.110 line 6 + line 7 for curve 3 forecast_linear_fit
     linear_formula = (
-        f"T = {linear_coefficients[0]:.6f}(year - {x_anf}) "
-        f"{linear_coefficients[1]:+.6f} °C\n"
+        f"T = {linear_year_coefficients[0]:.6f} year "
+        f"{linear_year_coefficients[1]:+.6f} °C\n"
         f"Linear fit all ERA5 data R² = {linear_r_squared:.4f}"
     )
     # 500. line 8 + line 9 for curve 4 forecast_linear_fit2
     linear_fit2_formula = (
-        f"T = {linear_fit2_coefficients[0]:.6f}(year - {x_anf}) "
-        f"{linear_fit2_coefficients[1]:+.6f} °C\n"
+        f"T = {linear_fit2_year_coefficients[0]:.6f} year "
+        f"{linear_fit2_year_coefficients[1]:+.6f} °C\n"
         f"Linear fit2 ( {len(linear_fit2_data)} days ) R² = {linear_fit2_r_squared:.4f}"
     )
     # 500.120 line 4, 5 
@@ -567,9 +590,9 @@ def fig_505_era5_temp_quadratic():
     print()
     print(
         "Figure 505 quadratic fit: "
-        f"T = {quadratic_coefficients[0]:.9f}(year - {x_anf})^2 "
-        f"{quadratic_coefficients[1]:+.9f}(year - {x_anf}) "
-        f"{quadratic_coefficients[2]:+.9f}; R² = {quadratic_r_squared:.6f}"
+        f"T = {quadratic_year_coefficients[0]:.9f} year^2 "
+        f"{quadratic_year_coefficients[1]:+.9f} year "
+        f"{quadratic_year_coefficients[2]:+.9f}; R² = {quadratic_r_squared:.6f}"
     )
     print(f"Figure 505 quadratic formula: {quadratic_formula.replace(chr(10), '; ')}")
     print(f"year_pass_1C7_quadratic: {year_pass_1C7_quadratic:.3f}")
@@ -580,15 +603,15 @@ def fig_505_era5_temp_quadratic():
     print(f"Figure 505 linear formula: {linear_formula.replace(chr(10), '; ')}")
     print(
         "Figure 505 linear fit: "
-        f"T = {linear_coefficients[0]:.9f}(year - {x_anf}) "
-        f"{linear_coefficients[1]:+.9f}; R² = {linear_r_squared:.6f}"
+        f"T = {linear_year_coefficients[0]:.9f} year "
+        f"{linear_year_coefficients[1]:+.9f}; R² = {linear_r_squared:.6f}"
     )
     print(f"year_pass_2C_linear: {year_pass_2C_linear:.3f}")
     
     print(
         f"Figure 505 linear fit2 ({len(linear_fit2_data)} rows): "
-        f"T = {linear_fit2_coefficients[0]:.9f}(year - {x_anf}) "
-        f"{linear_fit2_coefficients[1]:+.9f}; "
+        f"T = {linear_fit2_year_coefficients[0]:.9f} year "
+        f"{linear_fit2_year_coefficients[1]:+.9f}; "
         f"R² = {linear_fit2_r_squared:.6f}"
     )
     print(f"year_pass_2C_linear2: {year_pass_2C_linear2:.3f}")
