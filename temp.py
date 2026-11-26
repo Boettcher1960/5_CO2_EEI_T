@@ -470,7 +470,7 @@ def fig_505_era5_temp_quadratic():
     linear_formula = (
         f"T = {linear_year_coefficients[0]:.4f} * year "
         f"{linear_year_coefficients[1]:+.1f} °C     R² = {linear_r_squared:.4f}\n"
-        f"Linear fit all daily ERA5 data since 1940 are used"
+        f"Linear fit all daily ERA5 data since {x_anf} are used"
         f"\n"
         f"The linear fit breaches 2°C in the year {year_pass_2C_linear:.1f}"
     )
