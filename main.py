@@ -1,5 +1,5 @@
 # main.py
-v = "5N99" # figure5_era5_temperature
+v = "5P01" # linear fit2 (3652 rows): T = 0.034029860(year - 2005) +0.765452176; R² = 0.528841
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

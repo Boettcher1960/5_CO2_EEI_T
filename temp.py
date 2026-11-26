@@ -130,6 +130,39 @@ def fig_505_era5_temp_quadratic():
     ).mean() + figure505_offset # add 0.91°C to 1991 to 2020 value
     # 500.33 copy column "T_average" to column "T_average" 
     data["temp_average"] = data["T_average"]
+    if (
+        not isinstance(figure505_days_linear_fit, int)
+        or figure505_days_linear_fit < 2
+    ):
+        raise ValueError(
+            "figure505_days_linear_fit must be an integer of at least 2; "
+            f"got {figure505_days_linear_fit!r}"
+        )
+    linear_fit2_data = data.loc[data["temp_average"].notna()].tail(
+        figure505_days_linear_fit
+    )
+    if len(linear_fit2_data) < 2:
+        raise ValueError(
+            "At least two valid rolling-average rows are required for "
+            f"linear fit2; got {len(linear_fit2_data)}"
+        )
+    linear_fit2_x = linear_fit2_data["digital_date"] - x_anf
+    linear_fit2_coefficients = np.polyfit(
+        linear_fit2_x, linear_fit2_data["temp_average"], 1
+    )
+    linear_fit2_values = np.polyval(
+        linear_fit2_coefficients, linear_fit2_x
+    )
+    linear_fit2_total_sum_squares = np.sum(
+        (linear_fit2_data["temp_average"] - linear_fit2_data["temp_average"].mean()) ** 2
+    )
+    linear_fit2_r_squared = (
+        1
+        - np.sum((linear_fit2_data["temp_average"] - linear_fit2_values) ** 2)
+        / linear_fit2_total_sum_squares
+        if linear_fit2_total_sum_squares > 0
+        else float("nan")
+    )
 
     # 500.34  Fit only valid smoothed observations within the requested fitting period.
     fit_data = data.loc[
@@ -274,6 +307,10 @@ def fig_505_era5_temp_quadratic():
     forecast_quadratic_fit = np.polyval(quadratic_coefficients, forecast_x)
     # 500.71
     forecast_linear_fit = np.polyval(linear_coefficients, forecast_x)
+    forecast_fit2_mask = forecast_dates >= linear_fit2_data["date"].iloc[0]
+    forecast_linear_fit2 = np.polyval(
+        linear_fit2_coefficients, forecast_x[forecast_fit2_mask]
+    )
     # 500.72
     plot_data = data.loc[
         data["date"].between(
@@ -313,6 +350,14 @@ def fig_505_era5_temp_quadratic():
         linestyle="--",
         linewidth=2.5,
         label=f"Linear fit ",
+    )
+    ax.plot(
+        forecast_dates[forecast_fit2_mask],
+        forecast_linear_fit2,
+        color="orange",
+        linestyle=":",
+        linewidth=2.5,
+        label=f"Linear fit ({figure505_days_linear_fit} rows)",
     )
     # 500.100 line 4 + line 5 for curve 2 forecast_quadratic_fit
     quadratic_formula = (
@@ -466,6 +511,12 @@ def fig_505_era5_temp_quadratic():
         "Figure 505 linear fit: "
         f"T = {linear_coefficients[0]:.9f}(year - {x_anf}) "
         f"{linear_coefficients[1]:+.9f}; R² = {linear_r_squared:.6f}"
+    )
+    print(
+        f"Figure 505 linear fit2 ({len(linear_fit2_data)} rows): "
+        f"T = {linear_fit2_coefficients[0]:.9f}(year - {x_anf}) "
+        f"{linear_fit2_coefficients[1]:+.9f}; "
+        f"R² = {linear_fit2_r_squared:.6f}"
     )
     print(f"Last ERA5 source date: {latest_era5_date:%Y-%m-%d}")
     print(f"year_pass_2C_quadratic: {year_pass_2C_quadratic:.3f}")

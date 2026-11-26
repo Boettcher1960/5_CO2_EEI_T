@@ -1278,6 +1278,12 @@ in a variable
 year_pass_2C5_quadratic
 and print year_pass_2C5_quadratic
 
-
+update
+fig_505_era5_temp_quadratic()
+the new variable
+figure505_days_linear_fit = 3652
+shall be used to calculate linear fit2 calculated from 
+figure505_days_linear_fit rows.
+The result shall be plotted in dotted orange and printed
 
 """
