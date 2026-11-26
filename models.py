@@ -1318,5 +1318,11 @@ and store in the new variable
 temp_linear2_decade
 and print
 
+update
+fig_505_era5_temp_quadratic()
+scale the y axis with:
+y_505min = 0 # manimum 0°C
+y_505max = 4 # maximum 4°C
+
 
 """

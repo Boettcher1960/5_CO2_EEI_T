@@ -477,8 +477,8 @@ def fig_505_era5_temp_quadratic():
     )
     # 500. line 8 + line 9 for curve 4 forecast_linear_fit2
     red_box = (
-        f"ERA5 Temperature averaged over running {figure505} days."
-        f" \n"
+        f"ERA5 Temperature moving average over {figure505} days.\n"
+        f"ERA5 data 1940 to {latest_era5_date:%Y-%m-%d} "
         f"  "
     )
     ax.text(
@@ -518,6 +518,7 @@ def fig_505_era5_temp_quadratic():
         pd.Timestamp(year=x_anf, month=1, day=1),
         pd.Timestamp(year=x_end, month=12, day=31),
     )
+    ax.set_ylim(y_505min, y_505max)
     # 500.180 print legend inside the plot
     ax.yaxis.set_major_locator(MultipleLocator(0.5))
     ax.yaxis.set_minor_locator(MultipleLocator(0.1))
