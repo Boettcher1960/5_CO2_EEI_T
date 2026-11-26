@@ -150,6 +150,8 @@ def fig_505_era5_temp_quadratic():
     linear_fit2_coefficients = np.polyfit(
         linear_fit2_x, linear_fit2_data["temp_average"], 1
     )
+    # calculate the decadial temperature change
+    temp_linear2_decade = float(linear_fit2_coefficients[0] * 10)
     linear_fit2_year_coefficients = np.array(
         [
             linear_fit2_coefficients[0],
@@ -407,22 +409,22 @@ def fig_505_era5_temp_quadratic():
     )
     # 500.100 line 4 + line 5 for curve 2 forecast_quadratic_fit
     quadratic_formula = (
-        f"T = {quadratic_year_coefficients[0]:.6f} year² "
-        f"{quadratic_year_coefficients[1]:+.6f} year "
-        f"{quadratic_year_coefficients[2]:+.6f} °C\n"
+        f"T = {quadratic_year_coefficients[0]:.5f} year² "
+        f"{quadratic_year_coefficients[1]:+.1f} * year "
+        f"{quadratic_year_coefficients[2]:+.1f} °C\n"
         f"Quadratic R² = {quadratic_r_squared:.4f}"
     )
     # 500.110 line 6 + line 7 for curve 3 forecast_linear_fit
     linear_formula = (
-        f"T = {linear_year_coefficients[0]:.6f} year "
-        f"{linear_year_coefficients[1]:+.6f} °C\n"
-        f"Linear fit all ERA5 data R² = {linear_r_squared:.4f}"
+        f"T = {linear_year_coefficients[0]:.4f} * year "
+        f"{linear_year_coefficients[1]:+.1f} °C     R² = {linear_r_squared:.4f}\n"
+        f"Linear fit all daily ERA5 data since 1940 are used"
     )
     # 500. line 8 + line 9 for curve 4 forecast_linear_fit2
     linear_fit2_formula = (
-        f"T = {linear_fit2_year_coefficients[0]:.6f} year "
-        f"{linear_fit2_year_coefficients[1]:+.6f} °C\n"
-        f"Linear fit2 ( {len(linear_fit2_data)} days ) R² = {linear_fit2_r_squared:.4f}"
+        f"T = {linear_fit2_year_coefficients[0]:.5f} year "
+        f"{linear_fit2_year_coefficients[1]:+.1f} °C   R² = {linear_fit2_r_squared:.4f}\n"
+        f"Linear fit2 {len(linear_fit2_data)} days => decadial warming = {temp_linear2_decade:.2f}°C"
     )
     # 500.120 line 4, 5 
     ax.text(
@@ -474,7 +476,7 @@ def fig_505_era5_temp_quadratic():
     # 500.140 print the headline 
     ax.set_title(
         # f"Figure 505: ERA5 temperature average and linear and quadratic trends {rolling_rows}",   figure4_9
-        f"Figure {figure4_9}: ERA5 Temperature with quadratic trends and two linear trends",
+        f"Figure {figure4_9}: ERA5 Temperature with quadratic and two linear fits",
 
         loc="left",
         x=-0.05,
@@ -614,6 +616,8 @@ def fig_505_era5_temp_quadratic():
         f"{linear_fit2_year_coefficients[1]:+.9f}; "
         f"R² = {linear_fit2_r_squared:.6f}"
     )
+     # calculate the decadial temperature change
+    print(f"temp_linear2_decade: {temp_linear2_decade:.3f} °C per decade")
     print(f"year_pass_2C_linear2: {year_pass_2C_linear2:.3f}")
     print()
 

@@ -1310,5 +1310,13 @@ instead of using "(year - 1950)"
 use "year"
 in all formulas
 
+update
+fig_505_era5_temp_quadratic()
+calculate the decadial temperature change 
+useing the calculated linear fit2 formula
+and store in the new variable
+temp_linear2_decade
+and print
+
 
 """
