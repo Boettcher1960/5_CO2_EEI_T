@@ -615,22 +615,6 @@ def fig_505_era5_temp_quadratic():
     # text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
 
 
-    
-
-
-    # 500.250  text_1_print_line(ax)
-    text_below = (f"    https://thomas1960.substack.com/ "
-                  f"   "
-                  f"     https://github.com/Boettcher1960/5_CO2_EEI_T"
-                  f"                  version ={v}"
-                  f"  ")
-    
-    # 500.260  text_1_print_line   lry = -0.34     tr2y = -.26  tr4y = -.40
-    lry = -0.35
-    ax.text(-0.08, lry , text_below, color="black", fontname="Arial", fontsize=12,
-            transform=ax.transAxes)
-
-
    
  
     # text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
@@ -642,22 +626,38 @@ def fig_505_era5_temp_quadratic():
                   f"           last ERA5 entry: {latest_era5_date:%Y-%m-%d}"
                 )
     # 500.260  line 14    lry = -0.4     tr2y = -.26  tr4y = -.40
-    lry = -0.4
+    lry = -0.21
     lrx = -0.06
     ax.text(lrx, lry , text_below, color="black", fontname="Arial", fontsize=12,
             transform=ax.transAxes)
 
+
     # 500.250  text_1_print_line(ax)
-    text_below = (f"-0.45 Source"
-                  f" https://sites.ecmwf.int/data/climatepulse/data/series/"
-                  f" era5_daily_series_2t_global.csv"
-                  f"           last ERA5 entry: {latest_era5_date:%Y-%m-%d}"
-                )
     # 500.260  text_1_print_line   lry = -0.34     tr2y = -.26  tr4y = -.40
     lry = -0.45
     lrx = -0.06
     # ax.text(lrx, lry , text_below, color="black", fontname="Arial", fontsize=12,
     #        transform=ax.transAxes)
+
+
+
+
+    # 500.350  text_1_print_line(ax)
+    text_below = (f"    https://thomas1960.substack.com/ "
+                  f"   "
+                  f"     https://github.com/Boettcher1960/5_CO2_EEI_T"
+                  f"                  version ={v}"
+                  f"  ")
+    
+    # 500.360  text_1_print_line   lry = -0.34     tr2y = -.26  tr4y = -.40
+    lry = -0.26
+    ax.text(-0.08, lry , text_below, color="black", fontname="Arial", fontsize=12,
+            transform=ax.transAxes)
+
+
+
+
+
 
 
     # 500.270

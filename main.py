@@ -1,5 +1,5 @@
 # main.py
-v = "5P10" # linear fit2 (1461 rows): T = 0.102177872 year -205.440977502; R² = 0.703643 
+v = "5P11" # linear fit2 (2000 rows): T = 0.056515439 year -113.060031353; R² = 0.923857
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -8,8 +8,8 @@ v = "5P10" # linear fit2 (1461 rows): T = 0.102177872 year -205.440977502; R² =
 #
 # https://www.nature.com/articles/s43247-026-03427-w#
 # https://bsky.app/profile/thomas-boettcher.bsky.social/post/3miz5mmll3k2z
-# play68_ERA = 48 
-# https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+#
+# 
 #
 
 import matplotlib.pyplot as plt
