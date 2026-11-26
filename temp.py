@@ -105,6 +105,7 @@ def fig_505_era5_temp_quadratic():
     # 500.25 error 503
     if data.empty:
         raise ValueError("error 503 ERA5 source contains no valid daily temperature records")
+    
     # 500.26 interface the lastest date
     latest_era5_date = data["date"].max()
     temp_last_1_day = data["date"].max()
@@ -138,20 +139,25 @@ def fig_505_era5_temp_quadratic():
             "figure505_days_linear_fit must be an integer of at least 2; "
             f"got {figure505_days_linear_fit!r}"
         )
+    # 500.35
     linear_fit2_data = data.loc[data["temp_average"].notna()].tail(
         figure505_days_linear_fit
     )
+    # 500.36 Error_506
     if len(linear_fit2_data) < 2:
         raise ValueError(
-            "At least two valid rolling-average rows are required for "
+            "Error_506: At least two valid rolling-average rows are required for "
             f"linear fit2; got {len(linear_fit2_data)}"
         )
+    # 500.37
     linear_fit2_x = linear_fit2_data["digital_date"] - x_anf
+    # 500.38
     linear_fit2_coefficients = np.polyfit(
         linear_fit2_x, linear_fit2_data["temp_average"], 1
     )
-    # calculate the decadial temperature change
+    # 500.40 calculate the decadial temperature change
     temp_linear2_decade = float(linear_fit2_coefficients[0] * 10)
+    # 500.41
     linear_fit2_year_coefficients = np.array(
         [
             linear_fit2_coefficients[0],
@@ -159,24 +165,30 @@ def fig_505_era5_temp_quadratic():
             - linear_fit2_coefficients[0] * x_anf,
         ]
     )
+    # 500.43
     linear_fit2_crossing_year = (
         x_anf
         + (2.0 - linear_fit2_coefficients[1]) / linear_fit2_coefficients[0]
         if linear_fit2_coefficients[0] > 0
         else float("nan")
     )
+    # 500.45
     latest_era5_digital_year = data["digital_date"].iloc[-1]
+    # 500.46
     year_pass_2C_linear2 = (
         float(linear_fit2_crossing_year)
         if linear_fit2_crossing_year > latest_era5_digital_year
         else float("nan")
     )
+    # 500.47
     linear_fit2_values = np.polyval(
         linear_fit2_coefficients, linear_fit2_x
     )
+    # 500.48
     linear_fit2_total_sum_squares = np.sum(
         (linear_fit2_data["temp_average"] - linear_fit2_data["temp_average"].mean()) ** 2
     )
+    # 500.50
     linear_fit2_r_squared = (
         1
         - np.sum((linear_fit2_data["temp_average"] - linear_fit2_values) ** 2)
@@ -185,7 +197,7 @@ def fig_505_era5_temp_quadratic():
         else float("nan")
     )
 
-    # 500.34  Fit only valid smoothed observations within the requested fitting period.
+    # 500.54  Fit only valid smoothed observations within the requested fitting period.
     fit_data = data.loc[
         data["date"].between(
             pd.Timestamp(year=x_anf, month=1, day=1),
@@ -193,17 +205,17 @@ def fig_505_era5_temp_quadratic():
         )
         & data["temp_average"].notna()
     ].copy()
-    # 500.38 error 504
+    # 500.58 error 507
     if len(fit_data) < 3:
         raise ValueError(
-            f"error 504 At least three valid {rolling_rows}-row averages from "
+            f"error 507 At least three valid {rolling_rows}-row averages from "
             f"{x_anf} through {x_end} are required for fitting"
         )
-    # 500.40 length of data rows
+    # 500.60 length of data rows
     fit_x = fit_data["digital_date"] - x_anf
-    # 500.41 quadratic_coefficients
+    # 500.61 quadratic_coefficients
     quadratic_coefficients = np.polyfit(fit_x, fit_data["temp_average"], 2)
-    # 500.415 Find the first upward 2°C crossing after the latest observation.
+    # 500.65 Find the first upward 2°C crossing after the latest observation.
     threshold_roots = np.roots(
         [
             quadratic_coefficients[0],
@@ -211,7 +223,9 @@ def fig_505_era5_temp_quadratic():
             quadratic_coefficients[2] - 2.0,
         ]
     )
+    # 500.66
     latest_fit_x = data["digital_date"].iloc[-1] - x_anf
+    # 500.67
     future_upward_roots = [
         root.real
         for root in threshold_roots
@@ -220,11 +234,13 @@ def fig_505_era5_temp_quadratic():
         and 2 * quadratic_coefficients[0] * root.real
         + quadratic_coefficients[1] > 0
     ]
+    # 500.68
     year_pass_2C_quadratic = (
         float(min(future_upward_roots) + x_anf)
         if future_upward_roots
         else float("nan")
     )
+    # 500.70
     threshold_roots_1C7 = np.roots(
         [
             quadratic_coefficients[0],
@@ -232,6 +248,7 @@ def fig_505_era5_temp_quadratic():
             quadratic_coefficients[2] - 1.7,
         ]
     )
+    # 500.72
     future_upward_roots_1C7 = [
         root.real
         for root in threshold_roots_1C7
@@ -240,11 +257,13 @@ def fig_505_era5_temp_quadratic():
         and 2 * quadratic_coefficients[0] * root.real
         + quadratic_coefficients[1] > 0
     ]
+    # 500.74
     year_pass_1C7_quadratic = (
         float(min(future_upward_roots_1C7) + x_anf)
         if future_upward_roots_1C7
         else float("nan")
     )
+    # 500.76
     threshold_roots_2C5 = np.roots(
         [
             quadratic_coefficients[0],
@@ -252,6 +271,7 @@ def fig_505_era5_temp_quadratic():
             quadratic_coefficients[2] - 2.5,
         ]
     )
+    # 500.78
     future_upward_roots_2C5 = [
         root.real
         for root in threshold_roots_2C5
@@ -260,19 +280,22 @@ def fig_505_era5_temp_quadratic():
         and 2 * quadratic_coefficients[0] * root.real
         + quadratic_coefficients[1] > 0
     ]
+    # 500.80
     year_pass_2C5_quadratic = (
         float(min(future_upward_roots_2C5) + x_anf)
         if future_upward_roots_2C5
         else float("nan")
     )
-    # 500.42 linear_coefficients
+    # 500.82 linear_coefficients
     linear_coefficients = np.polyfit(fit_x, fit_data["temp_average"], 1)
+    # 500.83
     linear_year_coefficients = np.array(
         [
             linear_coefficients[0],
             linear_coefficients[1] - linear_coefficients[0] * x_anf,
         ]
     )
+    # 500.85
     quadratic_year_coefficients = np.array(
         [
             quadratic_coefficients[0],
@@ -283,25 +306,27 @@ def fig_505_era5_temp_quadratic():
             + quadratic_coefficients[2],
         ]
     )
+    # 500.87
     linear_crossing_year = (
         x_anf + (2.0 - linear_coefficients[1]) / linear_coefficients[0]
         if linear_coefficients[0] > 0
         else float("nan")
     )
+    # 500.88
     year_pass_2C_linear = (
         float(linear_crossing_year)
         if linear_crossing_year > latest_era5_digital_year
         else float("nan")
     )
-    # 500.43 
+    # 500.90 
     quadratic_fit = np.polyval(quadratic_coefficients, fit_x)
-    # 500.44
+    # 500.94
     linear_fit = np.polyval(linear_coefficients, fit_x)
-    # 500.45
+    # 500.95
     total_sum_squares = np.sum(
         (fit_data["temp_average"] - fit_data["temp_average"].mean()) ** 2
     )
-    # 500.47
+    # 500.97
     if total_sum_squares > 0:
         quadratic_r_squared = 1 - np.sum(
             (fit_data["temp_average"] - quadratic_fit) ** 2
@@ -312,53 +337,56 @@ def fig_505_era5_temp_quadratic():
     else:
         quadratic_r_squared = linear_r_squared = float("nan")
 
-    # 500.52 Save the source series and fitted values using the requested column order.
+    # 500.100 Save the source series and fitted values using the requested column order.
     output_data = data.loc[
         :, ["digital_date", "date", "2t", "clim_91-20", "ano_91-20"]
     ].copy()
-    # 500.53 Export the moving average of the ERA5 anomaly column.
+    # 500.103 Export the moving average of the ERA5 anomaly column.
     output_data["T_average"] = data["T_average"]
-    # 500.55
+    # 500.105
     output_data["linear_fit"] = np.nan
-    # 500.56
+    # 500.106
     output_data["quadratic_fit"] = np.nan
-    # 500.57
+    # 500.107
     all_fit_x = data["digital_date"] - x_anf
-    # 500.58
+    # 500.108
     fit_rows = data["date"] >= pd.Timestamp(year=x_anf, month=1, day=1)
-    # 500.59
+    # 500.110
     output_data.loc[fit_rows, "linear_fit"] = np.polyval(
         linear_coefficients, all_fit_x.loc[fit_rows]
     )
+    # 500.111
     output_data.loc[fit_rows, "quadratic_fit"] = np.polyval(
         quadratic_coefficients, all_fit_x.loc[fit_rows]
     )
-
+    # 500.113
     os.makedirs(os.path.dirname(output_csv), exist_ok=True)
-    # 500.64 write to temp/era5.csv
+    # 500.114 write to temp/era5.csv
     output_data.to_csv(output_csv, index=False, float_format="%.6f")
 
-    # 500.65 Extend both fitted curves monthly to the requested end year.
+    # 500.115 Extend both fitted curves monthly to the requested end year.
     forecast_dates = pd.date_range(
         f"{x_anf}-01-01", f"{x_end}-12-01", freq="MS"
     )
-    # 500.66 
+    # 500.116 
     forecast_decimal_year = (
         forecast_dates.year
         + forecast_dates.dayofyear
         / np.where(forecast_dates.is_leap_year, 366, 365)
     )
-    # 500.68
+    # 500.118
     forecast_x = forecast_decimal_year - x_anf
-    # 500.69
+    # 500.119
     forecast_quadratic_fit = np.polyval(quadratic_coefficients, forecast_x)
-    # 500.71
+    # 500.120
     forecast_linear_fit = np.polyval(linear_coefficients, forecast_x)
+    # 500.121
     forecast_fit2_mask = forecast_dates >= linear_fit2_data["date"].iloc[0]
+    # 500.122
     forecast_linear_fit2 = np.polyval(
         linear_fit2_coefficients, forecast_x[forecast_fit2_mask]
     )
-    # 500.72
+    # 500.123
     plot_data = data.loc[
         data["date"].between(
             pd.Timestamp(year=x_anf, month=1, day=1),
@@ -366,13 +394,14 @@ def fig_505_era5_temp_quadratic():
         )
         & data["temp_average"].notna()
     ]
-    # 500.75
+    # 500.125
     average_plot_data = data.loc[data["T_average"].notna()]
     
-    
-    # 500.77  size of the figure 13 inch wide  7 inch high
+    #######################################################
+    # 500.127  size of the figure 13 inch wide  7 inch high
+    ########################################################
     fig, ax = plt.subplots(figsize=(13, 7))
-    # 500.80 line and text for curve 1
+    # 500.129 line and text for curve 1
     ax.plot(
         average_plot_data["date"],
         average_plot_data["T_average"],
@@ -380,7 +409,8 @@ def fig_505_era5_temp_quadratic():
         linewidth=3, # for curve and legend
         label=f"Temperature moving average {rolling_rows } ",
     )
-    # 500.85 line and text for curve 2
+
+    # 500.135 line and text for curve 2
     ax.plot(
         forecast_dates,
         forecast_quadratic_fit,
@@ -389,6 +419,8 @@ def fig_505_era5_temp_quadratic():
         linewidth=2.5,
         label=f"Quadratic fit ERA5",
     )
+
+
     # 500.90 line and text for curve 3
     ax.plot(
         forecast_dates,
@@ -398,6 +430,8 @@ def fig_505_era5_temp_quadratic():
         linewidth=2.5,
         label=f"Linear fit ",
     )
+
+
     # 500.90 line and text for curve 4
     ax.plot(
         forecast_dates[forecast_fit2_mask],
@@ -407,6 +441,8 @@ def fig_505_era5_temp_quadratic():
         linewidth=2.5,
         label=f"Linear fit ({figure505_days_linear_fit} days)",
     )
+
+
     # 500.100 line 4 + line 5 for curve 2 forecast_quadratic_fit
     quadratic_formula = (
         f"T = {quadratic_year_coefficients[0]:.5f} * year² "
@@ -414,18 +450,8 @@ def fig_505_era5_temp_quadratic():
         f"{quadratic_year_coefficients[2]:+.1f} °C\n"
         f"Quadratic fit   R² = {quadratic_r_squared:.4f}"
     )
-    # 500.110 line 6 + line 7 for curve 3 forecast_linear_fit
-    linear_formula = (
-        f"T = {linear_year_coefficients[0]:.4f} * year "
-        f"{linear_year_coefficients[1]:+.1f} °C     R² = {linear_r_squared:.4f}\n"
-        f"Linear fit all daily ERA5 data since 1940 are used"
-    )
-    # 500. line 8 + line 9 for curve 4 forecast_linear_fit2
-    linear_fit2_formula = (
-        f"T = {linear_fit2_year_coefficients[0]:.5f} * year "
-        f"{linear_fit2_year_coefficients[1]:+.1f} °C   R² = {linear_fit2_r_squared:.4f}\n"
-        f"Linear fit2 {len(linear_fit2_data)} days => decadial warming = {temp_linear2_decade:.2f}°C"
-    )
+    
+   
 
     # 500.120 line 4, 5 
     ax.text(
@@ -443,6 +469,13 @@ def fig_505_era5_temp_quadratic():
             "boxstyle": "round,pad=0.4",
         },
     )
+
+   # 500.110 line 6 + line 7 for curve 3 forecast_linear_fit
+    linear_formula = (
+        f"T = {linear_year_coefficients[0]:.4f} * year "
+        f"{linear_year_coefficients[1]:+.1f} °C     R² = {linear_r_squared:.4f}\n"
+        f"Linear fit all daily ERA5 data since 1940 are used"
+    )
     # 500.130 line 6, 7 
     ax.text(
         0.02, # x value
@@ -458,6 +491,14 @@ def fig_505_era5_temp_quadratic():
             "edgecolor": "green",
             "boxstyle": "round,pad=0.4",
         },
+    )
+
+
+    # 500. line 8 + line 9 for curve 4 forecast_linear_fit2
+    linear_fit2_formula = (
+        f"T = {linear_fit2_year_coefficients[0]:.5f} * year "
+        f"{linear_fit2_year_coefficients[1]:+.1f} °C   R² = {linear_fit2_r_squared:.4f}\n"
+        f"Linear fit2 {len(linear_fit2_data)} days => decadial warming = {temp_linear2_decade:.2f}°C"
     )
 
     ax.text(
@@ -593,7 +634,7 @@ def fig_505_era5_temp_quadratic():
     # text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
 
     # 500.250  line 14 (f"-0.4 Source"
-    text_below = (f"-0.4 Source"
+    text_below = (f"Source"
                   f" https://sites.ecmwf.int/data/climatepulse/data/series/"
                   f" era5_daily_series_2t_global.csv"
                   f"           last ERA5 entry: {latest_era5_date:%Y-%m-%d}"
