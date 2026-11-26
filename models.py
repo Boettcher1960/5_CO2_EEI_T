@@ -1290,6 +1290,18 @@ update
 fig_505_era5_temp_quadratic()
 the calculated linear fit2 formula shall be printed inside the plott field in a orange box.
 
+update
+fig_505_era5_temp_quadratic()
+calculate the year the linear fit2  passes 2°C
+in a variable 
+year_pass_2C_linear2
+and print year_pass_2C_linear2
 
+update
+fig_505_era5_temp_quadratic()
+calculate the year the linear fit -in green color-  passes 2°C
+in a variable 
+year_pass_2C_linear
+and print year_pass_2C_linear
 
 """

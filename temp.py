@@ -150,6 +150,18 @@ def fig_505_era5_temp_quadratic():
     linear_fit2_coefficients = np.polyfit(
         linear_fit2_x, linear_fit2_data["temp_average"], 1
     )
+    linear_fit2_crossing_year = (
+        x_anf
+        + (2.0 - linear_fit2_coefficients[1]) / linear_fit2_coefficients[0]
+        if linear_fit2_coefficients[0] > 0
+        else float("nan")
+    )
+    latest_era5_digital_year = data["digital_date"].iloc[-1]
+    year_pass_2C_linear2 = (
+        float(linear_fit2_crossing_year)
+        if linear_fit2_crossing_year > latest_era5_digital_year
+        else float("nan")
+    )
     linear_fit2_values = np.polyval(
         linear_fit2_coefficients, linear_fit2_x
     )
@@ -246,6 +258,16 @@ def fig_505_era5_temp_quadratic():
     )
     # 500.42 linear_coefficients
     linear_coefficients = np.polyfit(fit_x, fit_data["temp_average"], 1)
+    linear_crossing_year = (
+        x_anf + (2.0 - linear_coefficients[1]) / linear_coefficients[0]
+        if linear_coefficients[0] > 0
+        else float("nan")
+    )
+    year_pass_2C_linear = (
+        float(linear_crossing_year)
+        if linear_crossing_year > latest_era5_digital_year
+        else float("nan")
+    )
     # 500.43 
     quadratic_fit = np.polyval(quadratic_coefficients, fit_x)
     # 500.44
@@ -351,13 +373,14 @@ def fig_505_era5_temp_quadratic():
         linewidth=2.5,
         label=f"Linear fit ",
     )
+    # 500.90 line and text for curve 4
     ax.plot(
         forecast_dates[forecast_fit2_mask],
         forecast_linear_fit2,
         color="orange",
         linestyle=":",
         linewidth=2.5,
-        label=f"Linear fit ({figure505_days_linear_fit} rows)",
+        label=f"Linear fit ({figure505_days_linear_fit} days)",
     )
     # 500.100 line 4 + line 5 for curve 2 forecast_quadratic_fit
     quadratic_formula = (
@@ -370,17 +393,18 @@ def fig_505_era5_temp_quadratic():
     linear_formula = (
         f"T = {linear_coefficients[0]:.6f}(year - {x_anf}) "
         f"{linear_coefficients[1]:+.6f} °C\n"
-        f"Linear R² = {linear_r_squared:.4f}"
+        f"Linear fit all ERA5 data R² = {linear_r_squared:.4f}"
     )
+    # 500. line 8 + line 9 for curve 4 forecast_linear_fit2
     linear_fit2_formula = (
         f"T = {linear_fit2_coefficients[0]:.6f}(year - {x_anf}) "
         f"{linear_fit2_coefficients[1]:+.6f} °C\n"
-        f"Linear fit2 ({len(linear_fit2_data)} rows) R² = {linear_fit2_r_squared:.4f}"
+        f"Linear fit2 ( {len(linear_fit2_data)} days ) R² = {linear_fit2_r_squared:.4f}"
     )
     # 500.120 line 4, 5 
     ax.text(
         0.02, # x value
-        0.82, # y value
+        0.77, # y value
         quadratic_formula,
         transform=ax.transAxes,
         fontsize=12,
@@ -396,7 +420,7 @@ def fig_505_era5_temp_quadratic():
     # 500.130 line 6, 7 
     ax.text(
         0.02, # x value
-        0.68, # y value
+        0.64, # y value
         linear_formula,
         transform=ax.transAxes,
         fontsize=12,
@@ -411,7 +435,7 @@ def fig_505_era5_temp_quadratic():
     )
     ax.text(
         0.02,
-        0.54,
+        0.53,
         linear_fit2_formula,
         transform=ax.transAxes,
         fontsize=12,
@@ -426,7 +450,9 @@ def fig_505_era5_temp_quadratic():
     )
     # 500.140 print the headline 
     ax.set_title(
-        f"Figure 505: ERA5 temperature average and linear and quadratic trends {rolling_rows}",
+        # f"Figure 505: ERA5 temperature average and linear and quadratic trends {rolling_rows}",   figure4_9
+        f"Figure {figure4_9}: ERA5 Temperature with quadratic trends and two linear trends",
+
         loc="left",
         x=-0.05,
         fontsize=16,
@@ -476,40 +502,53 @@ def fig_505_era5_temp_quadratic():
 
     # 500.240   print in line 12 below the plot
     fig.text(
-        0.4, # x value 0.5 is middle
+        0.08, # x value 0.5 is middle  0.4 center
         0.01,
         f"{latest_era5_date:%Y-%m-%d} "
         # f"  Temperature={latest_era5_temp}°C  10d={temp_last_10_days:.3f}°C   30d={temp_last_30_days:.3f}°C  90d={temp_last_90_days:.3f}°C  from ERA5 + {figure505_offset} ",
-        f"  Temperature={latest_era5_temp}°C   10d={temp_last_10_days:.3f}°C"
+        f"  Temperature={latest_era5_temp:.3f}°C   10d={temp_last_10_days:.3f}°C"
         f"  30d={temp_last_30_days:.3f}°C"
         f"  90d={temp_last_90_days:.3f}°C"
         f"  180d={temp_last_180_days:.3f}°C"
         f"  365d={temp_last_365_days:.3f}°C ",
-        ha="center",
+        ha="left",   # ha="center",
         fontsize=12,
     )
 
 
     # 500.240   print in line 14 below the plot
-    text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
+    # text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
 
 
     # 500.250  text_1_print_line(ax)
-    text_below = (f"             https://thomas1960.substack.com/ "
+    text_below = (f"Source"
+                  f" https://sites.ecmwf.int/data/climatepulse/data/series/"
+                  f" era5_daily_series_2t_global.csv"
+                  f"           last ERA5 entry: {latest_era5_date:%Y-%m-%d}"
+                )
+    # 500.260  text_1_print_line   lry = -0.34     tr2y = -.26  tr4y = -.40
+    lry = -0.21
+    lrx = -0.06
+    ax.text(lrx, lry , text_below, color="black", fontname="Arial", fontsize=12,
+            transform=ax.transAxes)
+
+
+    # 500.250  text_1_print_line(ax)
+    text_below = (f"    https://thomas1960.substack.com/ "
                   f"   "
                   f"     https://github.com/Boettcher1960/5_CO2_EEI_T"
-                  f"       version={v}"
+                  f"                  version ={v}"
                   f"  ")
     
-    # 500.260  text_1_print_line tr2y = -.26  tr4y = -.40
-    lry = -0.34
-    ax.text(-0.1, lry , text_below, color="black", fontname="Arial", fontsize=12,
+    # 500.260  text_1_print_line   lry = -0.34     tr2y = -.26  tr4y = -.40
+    lry = -0.27
+    ax.text(-0.08, lry , text_below, color="black", fontname="Arial", fontsize=12,
             transform=ax.transAxes)
 
 
    
  
-    text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
+    # text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
 
     # 500.270
     # left = 0	Left edge of subplot area at x = 0 (very left of figure)
@@ -518,7 +557,14 @@ def fig_505_era5_temp_quadratic():
     # top = 0.95	Subplots can't go above 95% from the bottom (5% margin at top)
     # fig.tight_layout(rect=(0, 0.08, 1, 0.94))
     # fig.savefig(output_plot, dpi=300, bbox_inches="tight")
-
+    print(f"Last ERA5 source date: {latest_era5_date:%Y-%m-%d}")
+    print(f"Average temperature of the last   1 day : {latest_era5_temp:.3f} °C")
+    print(f"Average temperature of the last  10 days: {temp_last_10_days:.3f} °C")
+    print(f"Average temperature of the last  30 days: {temp_last_30_days:.3f} °C")
+    print(f"Average temperature of the last  90 days: {temp_last_90_days:.3f} °C")
+    print(f"Average temperature of the last 180 days: {temp_last_180_days:.3f} °C")
+    print(f"Average temperature of the last 365 days: {temp_last_365_days:.3f} °C")
+    print()
     print(
         "Figure 505 quadratic fit: "
         f"T = {quadratic_coefficients[0]:.9f}(year - {x_anf})^2 "
@@ -526,28 +572,28 @@ def fig_505_era5_temp_quadratic():
         f"{quadratic_coefficients[2]:+.9f}; R² = {quadratic_r_squared:.6f}"
     )
     print(f"Figure 505 quadratic formula: {quadratic_formula.replace(chr(10), '; ')}")
+    print(f"year_pass_1C7_quadratic: {year_pass_1C7_quadratic:.3f}")
+    print(f"year_pass_2C_quadratic: {year_pass_2C_quadratic:.3f}")
+    print(f"year_pass_2C5_quadratic: {year_pass_2C5_quadratic:.3f}")
+    print()           
+
     print(f"Figure 505 linear formula: {linear_formula.replace(chr(10), '; ')}")
     print(
         "Figure 505 linear fit: "
         f"T = {linear_coefficients[0]:.9f}(year - {x_anf}) "
         f"{linear_coefficients[1]:+.9f}; R² = {linear_r_squared:.6f}"
     )
+    print(f"year_pass_2C_linear: {year_pass_2C_linear:.3f}")
+    
     print(
         f"Figure 505 linear fit2 ({len(linear_fit2_data)} rows): "
         f"T = {linear_fit2_coefficients[0]:.9f}(year - {x_anf}) "
         f"{linear_fit2_coefficients[1]:+.9f}; "
         f"R² = {linear_fit2_r_squared:.6f}"
     )
-    print(f"Last ERA5 source date: {latest_era5_date:%Y-%m-%d}")
-    print(f"year_pass_2C_quadratic: {year_pass_2C_quadratic:.3f}")
-    print(f"year_pass_1C7_quadratic: {year_pass_1C7_quadratic:.3f}")
-    print(f"year_pass_2C5_quadratic: {year_pass_2C5_quadratic:.3f}")
-    print(f"Average temperature of the last   1 day : {latest_era5_temp:.3f} °C")
-    print(f"Average temperature of the last  10 days: {temp_last_10_days:.3f} °C")
-    print(f"Average temperature of the last  30 days: {temp_last_30_days:.3f} °C")
-    print(f"Average temperature of the last  90 days: {temp_last_90_days:.3f} °C")
-    print(f"Average temperature of the last 180 days: {temp_last_180_days:.3f} °C")
-    print(f"Average temperature of the last 365 days: {temp_last_365_days:.3f} °C")
+    print(f"year_pass_2C_linear2: {year_pass_2C_linear2:.3f}")
+    print()
+
     print(f"Saved ERA5 fit data to {output_csv}")
     print(f"Saved ERA5 temperature plot to {output_plot}")
 
