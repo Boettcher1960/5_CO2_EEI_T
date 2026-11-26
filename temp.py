@@ -401,7 +401,8 @@ def fig_505_era5_temp_quadratic():
     # 500.127  size of the figure 13 inch wide  7 inch high
     ########################################################
     fig, ax = plt.subplots(figsize=(13, 7))
-    # 500.129 line and text for curve 1
+    
+    # 500.131 upper legend  line1 and text for red curve 1
     ax.plot(
         average_plot_data["date"],
         average_plot_data["T_average"],
@@ -410,7 +411,7 @@ def fig_505_era5_temp_quadratic():
         label=f"Temperature moving average {rolling_rows } ",
     )
 
-    # 500.135 line and text for curve 2
+    # 500.132  upper legend  line2 and text for purple quadratic_fit
     ax.plot(
         forecast_dates,
         forecast_quadratic_fit,
@@ -419,9 +420,7 @@ def fig_505_era5_temp_quadratic():
         linewidth=2.5,
         label=f"Quadratic fit ERA5",
     )
-
-
-    # 500.90 line and text for curve 3
+    # 500.133  upper legend  line3 and text for green linear_fit
     ax.plot(
         forecast_dates,
         forecast_linear_fit,
@@ -431,8 +430,7 @@ def fig_505_era5_temp_quadratic():
         label=f"Linear fit ",
     )
 
-
-    # 500.90 line and text for curve 4
+    # 500.134  upper legend  line4 and text for orange linear_fit2
     ax.plot(
         forecast_dates[forecast_fit2_mask],
         forecast_linear_fit2,
@@ -442,18 +440,16 @@ def fig_505_era5_temp_quadratic():
         label=f"Linear fit ({figure505_days_linear_fit} days)",
     )
 
-
-    # 500.100 line 4 + line 5 for curve 2 forecast_quadratic_fit
+    # 500.141  purple quadratic_fit box1 text
     quadratic_formula = (
         f"T = {quadratic_year_coefficients[0]:.5f} * year² "
         f"{quadratic_year_coefficients[1]:+.1f} * year "
         f"{quadratic_year_coefficients[2]:+.1f} °C\n"
         f"Quadratic fit   R² = {quadratic_r_squared:.4f}"
+        f"\n"
+        f"The quadratic fit breaches 2°C in the year {year_pass_2C_quadratic:.1f}"
     )
-    
-   
-
-    # 500.120 line 4, 5 
+    # 500.144   purple quadratic_fit box1 plot
     ax.text(
         0.02, # x value
         0.77, # y value
@@ -470,16 +466,18 @@ def fig_505_era5_temp_quadratic():
         },
     )
 
-   # 500.110 line 6 + line 7 for curve 3 forecast_linear_fit
+    # 500.151  green linear_formula box2 text
     linear_formula = (
         f"T = {linear_year_coefficients[0]:.4f} * year "
         f"{linear_year_coefficients[1]:+.1f} °C     R² = {linear_r_squared:.4f}\n"
         f"Linear fit all daily ERA5 data since 1940 are used"
+        f"\n"
+        f"The linear fit breaches 2°C in the year {year_pass_2C_linear:.1f}"
     )
-    # 500.130 line 6, 7 
+    # 500.154  green linear_formula box2 plot
     ax.text(
         0.02, # x value
-        0.64, # y value
+        0.59, # y value
         linear_formula,
         transform=ax.transAxes,
         fontsize=12,
@@ -492,18 +490,19 @@ def fig_505_era5_temp_quadratic():
             "boxstyle": "round,pad=0.4",
         },
     )
-
-
-    # 500. line 8 + line 9 for curve 4 forecast_linear_fit2
+    # 500.161  orange linear2_formula box3 text
     linear_fit2_formula = (
         f"T = {linear_fit2_year_coefficients[0]:.5f} * year "
-        f"{linear_fit2_year_coefficients[1]:+.1f} °C   R² = {linear_fit2_r_squared:.4f}\n"
+        f"{linear_fit2_year_coefficients[1]:+.1f} °C   R² = {linear_fit2_r_squared:.4f}"
+        f"\n"
         f"Linear fit2 {len(linear_fit2_data)} days => decadial warming = {temp_linear2_decade:.2f}°C"
+        f"\n"
+        f"The linear fit2 breaches 2°C in the year {year_pass_2C_linear2:.1f}"
     )
-
+    # 500.164  orange linear2_formula box3 plot
     ax.text(
         0.02,
-        0.53,
+        0.43,
         linear_fit2_formula,
         transform=ax.transAxes,
         fontsize=12,
@@ -516,12 +515,16 @@ def fig_505_era5_temp_quadratic():
             "boxstyle": "round,pad=0.4",
         },
     )
-    # 500. line 8 + line 9 for curve 4 forecast_linear_fit2
+    # 500.171  red box4 text ERA5 Temperature moving average
     red_box = (
-        f"ERA5 Temperature moving average over {figure505} days.\n"
-        f"ERA5 data 1940 to {latest_era5_date:%Y-%m-%d} "
-        f"  "
+        # f"ERA5 Temperature moving average over {figure505} days.\n"
+        f"{latest_era5_temp:.3f} °C     on    {latest_era5_date:%Y-%m-%d}        ERA5 data"
+        f"\n"
+        f"{temp_last_365_days:.3f} °C is the average temperature the last 365 days."
+        f"\n"
+        f"The red curve below is the {figure505} days moving average."
     )
+    # 500.172  red box4 plot
     ax.text(
         0.4,
         0.97,
@@ -539,18 +542,17 @@ def fig_505_era5_temp_quadratic():
     )
 
 
-
-    # 500.140 print the headline 
+    ###############################################################
+    # 500.190 print the headline 
     ax.set_title(
-        # f"Figure 505: ERA5 temperature average and linear and quadratic trends {rolling_rows}",   figure4_9
         f"Figure {figure4_9}: ERA5 Temperature with quadratic and linear fits",
-
         loc="left",
         x=-0.05,
         fontsize=18,
         pad=20,   # gap between title baseline and top of axes (points)
     )
-    # 500.150 x axis
+
+    # 500.200 x axis
     ax.set_xlabel("Year")
      # 500.160 y axis
     ax.set_ylabel("Temperature (°C)")
