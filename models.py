@@ -1257,6 +1257,27 @@ calculate the average temperature of the last 10 days
 in a variable temp_last_10_days
 print the variable    
 
+update
+fig_505_era5_temp_quadratic()
+calculate the year  the quadratic fit passes 2°C
+in a variable 
+year_pass_2C_quadratic
+and print year_pass_2C_quadratic 
+
+update
+fig_505_era5_temp_quadratic()
+calculate the year  the quadratic fit passes 1.7°C
+in a variable 
+year_pass_1C7_quadratic
+and print year_pass_1C7_quadratic 
+
+update
+fig_505_era5_temp_quadratic()
+calculate the year  the quadratic fit passes 2.5°C
+in a variable 
+year_pass_2C5_quadratic
+and print year_pass_2C5_quadratic
+
 
 
 """

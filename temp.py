@@ -149,6 +149,68 @@ def fig_505_era5_temp_quadratic():
     fit_x = fit_data["digital_date"] - x_anf
     # 500.41 quadratic_coefficients
     quadratic_coefficients = np.polyfit(fit_x, fit_data["temp_average"], 2)
+    # 500.415 Find the first upward 2°C crossing after the latest observation.
+    threshold_roots = np.roots(
+        [
+            quadratic_coefficients[0],
+            quadratic_coefficients[1],
+            quadratic_coefficients[2] - 2.0,
+        ]
+    )
+    latest_fit_x = data["digital_date"].iloc[-1] - x_anf
+    future_upward_roots = [
+        root.real
+        for root in threshold_roots
+        if np.isclose(root.imag, 0)
+        and root.real > latest_fit_x
+        and 2 * quadratic_coefficients[0] * root.real
+        + quadratic_coefficients[1] > 0
+    ]
+    year_pass_2C_quadratic = (
+        float(min(future_upward_roots) + x_anf)
+        if future_upward_roots
+        else float("nan")
+    )
+    threshold_roots_1C7 = np.roots(
+        [
+            quadratic_coefficients[0],
+            quadratic_coefficients[1],
+            quadratic_coefficients[2] - 1.7,
+        ]
+    )
+    future_upward_roots_1C7 = [
+        root.real
+        for root in threshold_roots_1C7
+        if np.isclose(root.imag, 0)
+        and root.real > latest_fit_x
+        and 2 * quadratic_coefficients[0] * root.real
+        + quadratic_coefficients[1] > 0
+    ]
+    year_pass_1C7_quadratic = (
+        float(min(future_upward_roots_1C7) + x_anf)
+        if future_upward_roots_1C7
+        else float("nan")
+    )
+    threshold_roots_2C5 = np.roots(
+        [
+            quadratic_coefficients[0],
+            quadratic_coefficients[1],
+            quadratic_coefficients[2] - 2.5,
+        ]
+    )
+    future_upward_roots_2C5 = [
+        root.real
+        for root in threshold_roots_2C5
+        if np.isclose(root.imag, 0)
+        and root.real > latest_fit_x
+        and 2 * quadratic_coefficients[0] * root.real
+        + quadratic_coefficients[1] > 0
+    ]
+    year_pass_2C5_quadratic = (
+        float(min(future_upward_roots_2C5) + x_anf)
+        if future_upward_roots_2C5
+        else float("nan")
+    )
     # 500.42 linear_coefficients
     linear_coefficients = np.polyfit(fit_x, fit_data["temp_average"], 1)
     # 500.43 
@@ -406,6 +468,9 @@ def fig_505_era5_temp_quadratic():
         f"{linear_coefficients[1]:+.9f}; R² = {linear_r_squared:.6f}"
     )
     print(f"Last ERA5 source date: {latest_era5_date:%Y-%m-%d}")
+    print(f"year_pass_2C_quadratic: {year_pass_2C_quadratic:.3f}")
+    print(f"year_pass_1C7_quadratic: {year_pass_1C7_quadratic:.3f}")
+    print(f"year_pass_2C5_quadratic: {year_pass_2C5_quadratic:.3f}")
     print(f"Average temperature of the last   1 day : {latest_era5_temp:.3f} °C")
     print(f"Average temperature of the last  10 days: {temp_last_10_days:.3f} °C")
     print(f"Average temperature of the last  30 days: {temp_last_30_days:.3f} °C")
