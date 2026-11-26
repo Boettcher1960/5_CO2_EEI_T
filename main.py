@@ -1,5 +1,5 @@
 # main.py
-v = "5P07" # linear fit2 (1461 rows): T = 0.102177872 year -205.440977502; R² = 0.703643 
+v = "5P08" # linear fit2 (1461 rows): T = 0.102177872 year -205.440977502; R² = 0.703643 
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

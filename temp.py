@@ -409,10 +409,10 @@ def fig_505_era5_temp_quadratic():
     )
     # 500.100 line 4 + line 5 for curve 2 forecast_quadratic_fit
     quadratic_formula = (
-        f"T = {quadratic_year_coefficients[0]:.5f} year² "
+        f"T = {quadratic_year_coefficients[0]:.5f} * year² "
         f"{quadratic_year_coefficients[1]:+.1f} * year "
         f"{quadratic_year_coefficients[2]:+.1f} °C\n"
-        f"Quadratic R² = {quadratic_r_squared:.4f}"
+        f"Quadratic fit   R² = {quadratic_r_squared:.4f}"
     )
     # 500.110 line 6 + line 7 for curve 3 forecast_linear_fit
     linear_formula = (
@@ -422,10 +422,11 @@ def fig_505_era5_temp_quadratic():
     )
     # 500. line 8 + line 9 for curve 4 forecast_linear_fit2
     linear_fit2_formula = (
-        f"T = {linear_fit2_year_coefficients[0]:.5f} year "
+        f"T = {linear_fit2_year_coefficients[0]:.5f} * year "
         f"{linear_fit2_year_coefficients[1]:+.1f} °C   R² = {linear_fit2_r_squared:.4f}\n"
         f"Linear fit2 {len(linear_fit2_data)} days => decadial warming = {temp_linear2_decade:.2f}°C"
     )
+
     # 500.120 line 4, 5 
     ax.text(
         0.02, # x value
@@ -458,6 +459,7 @@ def fig_505_era5_temp_quadratic():
             "boxstyle": "round,pad=0.4",
         },
     )
+
     ax.text(
         0.02,
         0.53,
@@ -473,14 +475,38 @@ def fig_505_era5_temp_quadratic():
             "boxstyle": "round,pad=0.4",
         },
     )
+    # 500. line 8 + line 9 for curve 4 forecast_linear_fit2
+    red_box = (
+        f"ERA5 Temperature averaged over running {figure505} days."
+        f" \n"
+        f"  "
+    )
+    ax.text(
+        0.4,
+        0.97,
+        red_box,
+        transform=ax.transAxes,
+        fontsize=12,
+        va="top",
+        color="red",
+        bbox={
+            "facecolor": "white",
+            "alpha": 0.9,
+            "edgecolor": "red",
+            "boxstyle": "round,pad=0.4",
+        },
+    )
+
+
+
     # 500.140 print the headline 
     ax.set_title(
         # f"Figure 505: ERA5 temperature average and linear and quadratic trends {rolling_rows}",   figure4_9
-        f"Figure {figure4_9}: ERA5 Temperature with quadratic and two linear fits",
+        f"Figure {figure4_9}: ERA5 Temperature with quadratic and linear fits",
 
         loc="left",
         x=-0.05,
-        fontsize=16,
+        fontsize=18,
         pad=20,   # gap between title baseline and top of axes (points)
     )
     # 500.150 x axis
@@ -531,11 +557,11 @@ def fig_505_era5_temp_quadratic():
         0.01,
         f"{latest_era5_date:%Y-%m-%d} "
         # f"  Temperature={latest_era5_temp}°C  10d={temp_last_10_days:.3f}°C   30d={temp_last_30_days:.3f}°C  90d={temp_last_90_days:.3f}°C  from ERA5 + {figure505_offset} ",
-        f"  Temperature={latest_era5_temp:.3f}°C   10d={temp_last_10_days:.3f}°C"
+        f"  Temperature={latest_era5_temp:.3f}°C  Last 10days={temp_last_10_days:.3f}°C"
         f"  30d={temp_last_30_days:.3f}°C"
         f"  90d={temp_last_90_days:.3f}°C"
         f"  180d={temp_last_180_days:.3f}°C"
-        f"  365d={temp_last_365_days:.3f}°C ",
+        f"  last year={temp_last_365_days:.3f}°C ",
         ha="left",   # ha="center",
         fontsize=12,
     )
@@ -545,17 +571,7 @@ def fig_505_era5_temp_quadratic():
     # text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
 
 
-    # 500.250  text_1_print_line(ax)
-    text_below = (f"Source"
-                  f" https://sites.ecmwf.int/data/climatepulse/data/series/"
-                  f" era5_daily_series_2t_global.csv"
-                  f"           last ERA5 entry: {latest_era5_date:%Y-%m-%d}"
-                )
-    # 500.260  text_1_print_line   lry = -0.34     tr2y = -.26  tr4y = -.40
-    lry = -0.21
-    lrx = -0.06
-    ax.text(lrx, lry , text_below, color="black", fontname="Arial", fontsize=12,
-            transform=ax.transAxes)
+    
 
 
     # 500.250  text_1_print_line(ax)
@@ -566,7 +582,7 @@ def fig_505_era5_temp_quadratic():
                   f"  ")
     
     # 500.260  text_1_print_line   lry = -0.34     tr2y = -.26  tr4y = -.40
-    lry = -0.27
+    lry = -0.35
     ax.text(-0.08, lry , text_below, color="black", fontname="Arial", fontsize=12,
             transform=ax.transAxes)
 
@@ -574,6 +590,31 @@ def fig_505_era5_temp_quadratic():
    
  
     # text_4_add_text(ax, tr2x, tr2y, text68, c68, trs) # from text.py 
+
+    # 500.250  line 14 (f"-0.4 Source"
+    text_below = (f"-0.4 Source"
+                  f" https://sites.ecmwf.int/data/climatepulse/data/series/"
+                  f" era5_daily_series_2t_global.csv"
+                  f"           last ERA5 entry: {latest_era5_date:%Y-%m-%d}"
+                )
+    # 500.260  line 14    lry = -0.4     tr2y = -.26  tr4y = -.40
+    lry = -0.4
+    lrx = -0.06
+    ax.text(lrx, lry , text_below, color="black", fontname="Arial", fontsize=12,
+            transform=ax.transAxes)
+
+    # 500.250  text_1_print_line(ax)
+    text_below = (f"-0.45 Source"
+                  f" https://sites.ecmwf.int/data/climatepulse/data/series/"
+                  f" era5_daily_series_2t_global.csv"
+                  f"           last ERA5 entry: {latest_era5_date:%Y-%m-%d}"
+                )
+    # 500.260  text_1_print_line   lry = -0.34     tr2y = -.26  tr4y = -.40
+    lry = -0.45
+    lrx = -0.06
+    # ax.text(lrx, lry , text_below, color="black", fontname="Arial", fontsize=12,
+    #        transform=ax.transAxes)
+
 
     # 500.270
     # left = 0	Left edge of subplot area at x = 0 (very left of figure)
@@ -626,6 +667,6 @@ def fig_505_era5_temp_quadratic():
 
     fig.savefig(output_plot, dpi=300, bbox_inches="tight")
 
-    # plt.show()
+    plt.show()
     save_png5(fig)
     plt.close(fig)
