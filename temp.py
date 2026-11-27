@@ -245,7 +245,7 @@ def fig_504_era5_temp_last_365_days():
     ax.text(-0.05, 1.05, header, color="black", fontname="Arial", fontsize=trs,
                     transform=ax.transAxes)
 
-    # 504.90
+    # 504.90 latest_era5_temp = data["ano_91-20"].iloc[-1] + figure505_offset
     latest_era5_temp = (
         data.loc[data["date"].eq(latest_era5_date), "ano_91-20"].iloc[-1]
         + figure505_offset
@@ -441,9 +441,9 @@ def fig_505_era5_temp_quadratic():
     
     # 500.26 interface the lastest date
     latest_era5_date = data["date"].max()
-    temp_last_1_day = data["date"].max()
+    # temp_last_1_day = data["date"].max()
     # 500.27 interface the lastest temperature value figure505_offset = 0.91
-    latest_era5_temp= data["ano_91-20"].max() + figure505_offset
+    latest_era5_temp = data["ano_91-20"].iloc[-1] + figure505_offset
     temp_last_10_days = data["ano_91-20"].tail(10).mean() + figure505_offset
     temp_last_30_days = data["ano_91-20"].tail(30).mean() + figure505_offset
     temp_last_90_days = data["ano_91-20"].tail(90).mean() + figure505_offset

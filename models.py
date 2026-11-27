@@ -1380,6 +1380,16 @@ red_box = (
         f"The red curve below is the {figure505} days moving average."
     )
 
+update
+fig_505_era5_temp_quadratic
+the value of latest_era5_temp is wrong.
+
+correct is  Average temperature of the last 1 day : 2.159 °C
+        1.259000 + 0.9 =  2.159000
+
+wrong is    "Average temperature of the last 1 day : 2.242 °C" in fig_505_era5_temp_quadratic()
+
+
 
 
 
