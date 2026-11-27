@@ -352,6 +352,33 @@ def fig_504_era5_temp_last_365_days():
         },
     )
 
+     # 500.250  line 14 (f"-0.4 Source"
+    text_below = (f"Source"
+                  f" https://sites.ecmwf.int/data/climatepulse/data/series/"
+                  f" era5_daily_series_2t_global.csv"
+                  f"           last ERA5 entry: {latest_era5_date:%Y-%m-%d}"
+                )
+    # 500.260  line 14    lry = -0.4     tr2y = -.26  tr4y = -.40
+    lry = -0.21
+    lrx = -0.06
+    ax.text(lrx, lry , text_below, color="black", fontname="Arial", fontsize=12,
+            transform=ax.transAxes)
+
+
+
+    # 500.350  text_1_print_line(ax)
+    text_below = (f"    https://thomas1960.substack.com/      "
+                  # f"https://github.com/Boettcher1960/5_CO2_EEI_T   "
+                  f"  https://github.com/Boettcher1960                  version ={v}"
+                  f"  ")
+    
+    # 500.360  text_1_print_line   lry = -0.34     tr2y = -.26  tr4y = -.40
+    lry = -0.26
+    ax.text(-0.08, lry , text_below, color="black", fontname="Arial", fontsize=12,
+            transform=ax.transAxes)
+
+
+
 
     ax.set_xlabel("Date")
     ax.set_ylabel("Temperature (°C)")
@@ -774,6 +801,7 @@ def fig_505_era5_temp_quadratic():
         label=f"Linear fit ({figure505_days_linear_fit} days)",
     )
 
+    ########################################
     # 500.141  purple quadratic_fit box1 text
     quadratic_formula = (
         f"T = {quadratic_year_coefficients[0]:.5f} * year² "
@@ -800,6 +828,7 @@ def fig_505_era5_temp_quadratic():
         },
     )
 
+    ########################################
     # 500.151  green linear_formula box2 text
     linear_formula = (
         f"T = {linear_year_coefficients[0]:.4f} * year "
@@ -810,8 +839,8 @@ def fig_505_era5_temp_quadratic():
     )
     # 500.154  green linear_formula box2 plot
     ax.text(
-        0.55, # x value
-        0.35, # y value
+        0.5, # x value
+        0.77, # y value
         linear_formula,
         transform=ax.transAxes,
         fontsize=12,
@@ -824,6 +853,7 @@ def fig_505_era5_temp_quadratic():
             "boxstyle": "round,pad=0.4",
         },
     )
+    ########################################
     # 500.161  orange linear2_formula box3 text
     linear_fit2_formula = (
         f"T = {linear_fit2_year_coefficients[0]:.5f} * year "
@@ -849,6 +879,7 @@ def fig_505_era5_temp_quadratic():
             "boxstyle": "round,pad=0.4",
         },
     )
+    ########################################
     # 500.171  red box4 text ERA5 Temperature moving average
     red_box = (
         # f"ERA5 Temperature moving average over {figure505} days.\n"
@@ -861,7 +892,7 @@ def fig_505_era5_temp_quadratic():
     # 500.172  red box4 plot
     ax.text(
         0.5,
-        0.15,
+        0.95,
         red_box,
         transform=ax.transAxes,
         fontsize=12,
