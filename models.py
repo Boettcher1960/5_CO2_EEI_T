@@ -1348,5 +1348,14 @@ Average temperature of the last 365 days: 1.564 °C
 ERA5 source date: 2026-11-24
 Average temperature of the last 365 days: 1.563 °C
 
+update
+fig_504_era5_temp_last_365_days()
+and add a linear fit in dotted green
+and add a quadratic fit in dashed purple
+which use the last 30 days.
+figure504_days_linear_fit = 30 # use 30 days for quadratic fit
+
+add a text-box for linear fit in green
+add a text-box for quadratic fit in purple
 
 """

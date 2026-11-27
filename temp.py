@@ -106,6 +106,48 @@ def fig_504_era5_temp_last_365_days():
             "ERA5 source has no valid 365-day averages in the requested "
             f"plot interval starting {plot_start_date:%Y-%m-%d}"
         )
+    if (
+        not isinstance(figure504_days_linear_fit, int)
+        or figure504_days_linear_fit < 3
+    ):
+        raise ValueError(
+            "figure504_days_linear_fit must be an integer of at least 3; "
+            f"got {figure504_days_linear_fit!r}"
+        )
+
+    fit_start_date = latest_era5_date - pd.Timedelta(
+        days=figure504_days_linear_fit - 1
+    )
+    fit_data = plot_data.loc[plot_data["date"] >= fit_start_date].copy()
+    if len(fit_data) < 3:
+        raise ValueError(
+            f"At least three valid daily averages are required for the "
+            f"{figure504_days_linear_fit}-day fits; got {len(fit_data)}"
+        )
+
+    fit_x = (fit_data["date"] - latest_era5_date).dt.days.to_numpy()
+    fit_y = fit_data["temperature_average_365_days"].to_numpy()
+    linear_coefficients = np.polyfit(fit_x, fit_y, 1)
+    quadratic_coefficients = np.polyfit(fit_x, fit_y, 2)
+    linear_fit_values = np.polyval(linear_coefficients, fit_x)
+    quadratic_fit_values = np.polyval(quadratic_coefficients, fit_x)
+
+    fit_curve_dates = pd.date_range(fit_start_date, plot_end_date, freq="D")
+    fit_curve_x = (fit_curve_dates - latest_era5_date).days.to_numpy()
+    linear_fit_curve = np.polyval(linear_coefficients, fit_curve_x)
+    quadratic_fit_curve = np.polyval(quadratic_coefficients, fit_curve_x)
+
+    total_sum_squares = np.sum((fit_y - fit_y.mean()) ** 2)
+    linear_r_squared = (
+        1 - np.sum((fit_y - linear_fit_values) ** 2) / total_sum_squares
+        if total_sum_squares > 0
+        else float("nan")
+    )
+    quadratic_r_squared = (
+        1 - np.sum((fit_y - quadratic_fit_values) ** 2) / total_sum_squares
+        if total_sum_squares > 0
+        else float("nan")
+    )
 
     os.makedirs(os.path.dirname(output_plot), exist_ok=True)
     fig, ax = plt.subplots(figsize=(13, 7))
@@ -116,9 +158,66 @@ def fig_504_era5_temp_last_365_days():
         linewidth=2,
         label="ERA5 trailing 365-day average",
     )
+    ax.plot(
+        fit_curve_dates,
+        linear_fit_curve,
+        color="green",
+        linestyle=":",
+        linewidth=2,
+        label=f"Linear fit (last {figure504_days_linear_fit} days)",
+    )
+    ax.plot(
+        fit_curve_dates,
+        quadratic_fit_curve,
+        color="purple",
+        linestyle="--",
+        linewidth=2,
+        label=f"Quadratic fit (last {figure504_days_linear_fit} days)",
+    )
+    linear_formula = (
+        f"d = days since {latest_era5_date:%Y-%m-%d}\n"
+        f"T = {linear_coefficients[0]:+.6f} × d "
+        f"{linear_coefficients[1]:+.6f} °C\n"
+        f"Linear fit R² = {linear_r_squared:.4f}"
+    )
+    quadratic_formula = (
+        f"d = days since {latest_era5_date:%Y-%m-%d}\n"
+        f"T = {quadratic_coefficients[0]:+.8f} × d² "
+        f"{quadratic_coefficients[1]:+.6f} × d "
+        f"{quadratic_coefficients[2]:+.6f} °C\n"
+        f"Quadratic fit R² = {quadratic_r_squared:.4f}"
+    )
     ax.set_title(
         "Figure 504: ERA5 trailing 365-day temperature average",
         loc="left",
+    )
+    ax.text(
+        0.02,
+        0.6,
+        linear_formula,
+        transform=ax.transAxes,
+        va="top",
+        color="green",
+        bbox={
+            "facecolor": "white",
+            "alpha": 0.9,
+            "edgecolor": "green",
+            "boxstyle": "round,pad=0.4",
+        },
+    )
+    ax.text(
+        0.02,
+        0.80,
+        quadratic_formula,
+        transform=ax.transAxes,
+        va="top",
+        color="purple",
+        bbox={
+            "facecolor": "white",
+            "alpha": 0.9,
+            "edgecolor": "purple",
+            "boxstyle": "round,pad=0.4",
+        },
     )
     ax.set_xlabel("Date")
     ax.set_ylabel("Temperature (°C)")
