@@ -10,6 +10,7 @@ import sys
 import ssl
 import certifi
 from urllib.request import urlopen
+# from colorama import init, Style
 
 # Import modules
 from main import *
@@ -56,7 +57,14 @@ def convert_ceres_to_csv(input_file, output_file):
 
 
 
-
+###########################################################################
+#    504       figure504 = 4
+###########################################################################
+# figure504 = 4 # 1=create ERA5 trailing 365-day temperature figure
+# figure504_days_linear_fit = 50 # use 30 days for quadratic fit
+#
+# figure4_9 = 5 # write figure 9 and use the 48 month averaging
+###########################################################################
 def fig_504_era5_temp_last_365_days():
     """Plot the daily trailing 365-day ERA5 temperature average."""
     source_url = (
@@ -65,47 +73,59 @@ def fig_504_era5_temp_last_365_days():
     )
     output_plot = "temp/figure4_era5_temp_last_365_days.png"
     tls_context = ssl.create_default_context(cafile=certifi.where())
-
+    # 504.10 read ERA5 raw data since 1940 one row per day
     with urlopen(source_url, context=tls_context, timeout=30) as response:
         data = pd.read_csv(response, comment="#")
-
+    # 504.11 read ERA5 raw data
     required_columns = {"date", "ano_91-20"}
+    print("temp__80: ", required_columns)
+    # 504.13 Error_510 
     missing_columns = required_columns.difference(data.columns)
     if missing_columns:
         raise ValueError(
-            "ERA5 source is missing required columns: "
+            "Error_510  ERA5 source is missing required columns: "
             f"{', '.join(sorted(missing_columns))}"
         )
-
+    # 504.15 copy into data field
     data = data.loc[:, ["date", "ano_91-20"]].copy()
+    # 504.16
     data["date"] = pd.to_datetime(data["date"], errors="raise")
+    # 504.1
     data["ano_91-20"] = pd.to_numeric(data["ano_91-20"], errors="raise")
+    # 504.18
     data = (
         data.dropna(subset=["date", "ano_91-20"])
         .sort_values("date")
         .drop_duplicates(subset="date", keep="last")
         .reset_index(drop=True)
     )
+    # 504.19 Error_511
     if len(data) < 365:
         raise ValueError(
-            "ERA5 source must contain at least 365 valid daily records to "
+            "Error_511 ERA5 source must contain at least 365 valid daily records to "
             f"calculate the trailing average; got {len(data)}"
         )
-
+    
+    ######################################
+    # 504.20 calculate rolling 365 average
     data["temperature_average_365_days"] = (
         data["ano_91-20"].rolling(window=365, min_periods=365).mean()
         + figure505_offset
     )
+
+    # 504.24 last date
     latest_era5_date = data["date"].max()
+
     plot_start_date = latest_era5_date - pd.DateOffset(years=1)
     plot_end_date = latest_era5_date + pd.Timedelta(days=135)
     plot_data = data.loc[
         data["date"].between(plot_start_date, latest_era5_date)
         & data["temperature_average_365_days"].notna()
     ]
+    # 504.29 Error_512
     if plot_data.empty:
         raise ValueError(
-            "ERA5 source has no valid 365-day averages in the requested "
+            "Error_512 ERA5 source has no valid 365-day averages in the requested "
             f"plot interval starting {plot_start_date:%Y-%m-%d}"
         )
     if (
@@ -113,57 +133,72 @@ def fig_504_era5_temp_last_365_days():
         or figure504_days_linear_fit < 3
     ):
         raise ValueError(
-            "figure504_days_linear_fit must be an integer of at least 3; "
+            "Error_513 figure504_days_linear_fit must be an integer of at least 3; "
             f"got {figure504_days_linear_fit!r}"
         )
-
+    
+    # 504.33 
     fit_start_date = latest_era5_date - pd.Timedelta(
         days=figure504_days_linear_fit - 1
     )
+    # 504.35 fit_data
     fit_data = plot_data.loc[plot_data["date"] >= fit_start_date].copy()
+    # 504.36 Error_514
     if len(fit_data) < 3:
         raise ValueError(
-            f"At least three valid daily averages are required for the "
+            f"Error_514 At least three valid daily averages are required for the "
             f"{figure504_days_linear_fit}-day fits; got {len(fit_data)}"
         )
-
+    # 504.37 fit_data 
     fit_x = (fit_data["date"] - latest_era5_date).dt.days.to_numpy()
     fit_y = fit_data["temperature_average_365_days"].to_numpy()
+    # 504.39 fit_data linear
     linear_coefficients = np.polyfit(fit_x, fit_y, 1)
+    # 504.40 fit_data quadratic
     quadratic_coefficients = np.polyfit(fit_x, fit_y, 2)
+    # 504.41 fit_data
     target_date = pd.Timestamp("2026-12-31")
     target_days = (target_date - latest_era5_date).days
+    # 504.43 fit_data temperature 2027 with linear fit
     temp504_2027_linear = float(
         np.polyval(linear_coefficients, target_days)
     )
+    # 504.44 fit_data temperature 2027 with quadratic fit
     temp504_2027_quadratic = float(
         np.polyval(quadratic_coefficients, target_days)
     )
+
     linear_fit_values = np.polyval(linear_coefficients, fit_x)
     quadratic_fit_values = np.polyval(quadratic_coefficients, fit_x)
 
     fit_curve_dates = pd.date_range(fit_start_date, plot_end_date, freq="D")
     fit_curve_x = (fit_curve_dates - latest_era5_date).days.to_numpy()
     linear_fit_curve = np.polyval(linear_coefficients, fit_curve_x)
+    # 504.49
     quadratic_fit_curve = np.polyval(quadratic_coefficients, fit_curve_x)
-
+    # 504.5
     total_sum_squares = np.sum((fit_y - fit_y.mean()) ** 2)
+    # 504.51
     linear_r_squared = (
         1 - np.sum((fit_y - linear_fit_values) ** 2) / total_sum_squares
         if total_sum_squares > 0
         else float("nan")
     )
+     # 504.55
     quadratic_r_squared = (
         1 - np.sum((fit_y - quadratic_fit_values) ** 2) / total_sum_squares
         if total_sum_squares > 0
         else float("nan")
     )
-
+     # 504.58
     os.makedirs(os.path.dirname(output_plot), exist_ok=True)
 
+    ########################################
+    # 504.59 size 13 inch wide 7 inch high
     fig, ax = plt.subplots(figsize=(13, 7))
 
-    # 505.55 a pink band for first days in 2027
+    ########
+    # 504.60 a pink band for first days in 2027
     ax.axvspan(
         pd.Timestamp("2027-01-01"),
         pd.Timestamp("2027-01-10"),
@@ -172,6 +207,7 @@ def fig_504_era5_temp_last_365_days():
         zorder=0,
     )
 
+    # 504.65
     ax.plot(
         plot_data["date"],
         plot_data["temperature_average_365_days"],
@@ -180,7 +216,8 @@ def fig_504_era5_temp_last_365_days():
         label="ERA5 trailing 365-day average",
     )
 
-
+    ########
+    # 504.70 green for linear_formula
     ax.plot(
         fit_curve_dates,
         linear_fit_curve,
@@ -190,7 +227,8 @@ def fig_504_era5_temp_last_365_days():
         label=f"Linear fit (last {figure504_days_linear_fit} days)",
     )
 
-
+    ########
+    # 504.75 purple for quadratic_fit_curve
     ax.plot(
         fit_curve_dates,
         quadratic_fit_curve,
@@ -200,16 +238,19 @@ def fig_504_era5_temp_last_365_days():
         label=f"Quadratic fit (last {figure504_days_linear_fit} days)",
     )
 
+    ####################################################
+    # 504.80 headline   print(f"Last ERA5 source date: {latest_era5_date:%Y-%m-%d}")
+    header = f"Figure {figure4_9}: Global Surface Temperature, calculated as 365-day running average   {latest_era5_date:%Y-%m-%d}"
+    # 504.85 print the headline
+    ax.text(-0.05, 1.05, header, color="black", fontname="Arial", fontsize=trs,
+                    transform=ax.transAxes)
 
-
-    ax.set_title(
-        "Figure 504: ERA5 trailing 365-day temperature average {latest_era5_date:%Y-%m-%d}",
-        loc="left",
-    )
+    # 504.90
     latest_era5_temp = (
         data.loc[data["date"].eq(latest_era5_date), "ano_91-20"].iloc[-1]
         + figure505_offset
     )
+    # 504.100
     latest_365_day_average = plot_data.loc[
         plot_data["date"].eq(latest_era5_date),
         "temperature_average_365_days",
@@ -217,16 +258,25 @@ def fig_504_era5_temp_last_365_days():
 
     ##########################################
     # 505.110 red box for overview
+    temp_diff = 1.6 - latest_365_day_average
     red_box = (
         f"{latest_era5_temp:.3f} °C     on    "
-        f"{latest_era5_date:%Y-%m-%d}        ERA5 data\n"
+        f"{latest_era5_date:%Y-%m-%d}        ERA5 data"
+        f"\n"
         f"{latest_365_day_average:.3f} °C is the average temperature "
-        "over the last 365 days.\n"
-        "The red curve below is the 365-day moving average."
+        f"over the last 365 days."
+        f"\n"
+        f"1.600°C was the global hottest year 2024. "
+        f"\n"
+        f"The red curve below is the 365-day moving average."
+        f"\n"
+        f"\n"
+        f"{temp_diff:.3f} °C are needed to make 2026 the warmest year."
+        #f"\n"
     )
-     # 505.114 red box for overview
+    # 505.114 red box for overview
     ax.text(
-        0.35,
+        0.3,
         0.95,
         red_box,
         transform=ax.transAxes,
@@ -256,8 +306,8 @@ def fig_504_era5_temp_last_365_days():
     )
     # 505.124 green box for linear_formula
     ax.text(
-        0.7,
-        0.2,
+        0.3,
+        0.5,
         linear_formula,
         transform=ax.transAxes,
         va="top",
@@ -287,8 +337,8 @@ def fig_504_era5_temp_last_365_days():
     )
     # 505.134 purple box for quadratic_formula
     ax.text(
-        0.35,
-        0.80,
+        0.3,
+        0.70,
         quadratic_formula,
         transform=ax.transAxes,
         va="top",
