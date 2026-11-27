@@ -1,5 +1,5 @@
 # main.py
-v = "5P19" #output_plot = "temp/figure4_era5_temp_last_365_days.png"
+v = "5P20" #output_plot = "temp/figure4_era5_temp_last_365_days.png"
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

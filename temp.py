@@ -55,6 +55,8 @@ def convert_ceres_to_csv(input_file, output_file):
     # end part 62.b convert download.txt to CERES.csv (no averaging)
 
 
+
+
 def fig_504_era5_temp_last_365_days():
     """Plot the daily trailing 365-day ERA5 temperature average."""
     source_url = (
@@ -129,6 +131,14 @@ def fig_504_era5_temp_last_365_days():
     fit_y = fit_data["temperature_average_365_days"].to_numpy()
     linear_coefficients = np.polyfit(fit_x, fit_y, 1)
     quadratic_coefficients = np.polyfit(fit_x, fit_y, 2)
+    target_date = pd.Timestamp("2026-12-31")
+    target_days = (target_date - latest_era5_date).days
+    temp504_2027_linear = float(
+        np.polyval(linear_coefficients, target_days)
+    )
+    temp504_2027_quadratic = float(
+        np.polyval(quadratic_coefficients, target_days)
+    )
     linear_fit_values = np.polyval(linear_coefficients, fit_x)
     quadratic_fit_values = np.polyval(quadratic_coefficients, fit_x)
 
@@ -151,6 +161,13 @@ def fig_504_era5_temp_last_365_days():
 
     os.makedirs(os.path.dirname(output_plot), exist_ok=True)
     fig, ax = plt.subplots(figsize=(13, 7))
+    ax.axvspan(
+        pd.Timestamp("2027-01-01"),
+        pd.Timestamp("2027-01-10"),
+        color="pink",
+        alpha=0.25,
+        zorder=0,
+    )
     ax.plot(
         plot_data["date"],
         plot_data["temperature_average_365_days"],
@@ -178,18 +195,52 @@ def fig_504_era5_temp_last_365_days():
         f"d = days since {latest_era5_date:%Y-%m-%d}\n"
         f"T = {linear_coefficients[0]:+.6f} × d "
         f"{linear_coefficients[1]:+.6f} °C\n"
-        f"Linear fit R² = {linear_r_squared:.4f}"
+        f"Linear fit R² = {linear_r_squared:.4f}\n"
+        f"temp504_2027_linear ({target_date:%Y-%m-%d}) = "
+        f"{temp504_2027_linear:.3f} °C"
     )
     quadratic_formula = (
         f"d = days since {latest_era5_date:%Y-%m-%d}\n"
         f"T = {quadratic_coefficients[0]:+.8f} × d² "
         f"{quadratic_coefficients[1]:+.6f} × d "
         f"{quadratic_coefficients[2]:+.6f} °C\n"
-        f"Quadratic fit R² = {quadratic_r_squared:.4f}"
+        f"Quadratic fit R² = {quadratic_r_squared:.4f}\n"
+        f"temp504_2027_quadratic ({target_date:%Y-%m-%d}) = "
+        f"{temp504_2027_quadratic:.3f} °C"
     )
     ax.set_title(
         "Figure 504: ERA5 trailing 365-day temperature average",
         loc="left",
+    )
+    latest_era5_temp = (
+        data.loc[data["date"].eq(latest_era5_date), "ano_91-20"].iloc[-1]
+        + figure505_offset
+    )
+    latest_365_day_average = plot_data.loc[
+        plot_data["date"].eq(latest_era5_date),
+        "temperature_average_365_days",
+    ].iloc[-1]
+    red_box = (
+        f"{latest_era5_temp:.3f} °C     on    "
+        f"{latest_era5_date:%Y-%m-%d}        ERA5 data\n"
+        f"{latest_365_day_average:.3f} °C is the average temperature "
+        "over the last 365 days.\n"
+        "The red curve below is the 365-day moving average."
+    )
+    ax.text(
+        0.5,
+        0.98,
+        red_box,
+        transform=ax.transAxes,
+        ha="center",
+        va="top",
+        color="red",
+        bbox={
+            "facecolor": "white",
+            "alpha": 0.9,
+            "edgecolor": "red",
+            "boxstyle": "round,pad=0.4",
+        },
     )
     ax.text(
         0.02,
@@ -242,16 +293,11 @@ def fig_504_era5_temp_last_365_days():
     fig.tight_layout()
     fig.savefig(output_plot, dpi=300, bbox_inches="tight")
 
-    latest_average = plot_data.loc[
-        plot_data["date"].eq(latest_era5_date),
-        "temperature_average_365_days",
-    ]
-    if not latest_average.empty:
-        print(
-            f"ERA5 source date: {latest_era5_date:%Y-%m-%d}; "
-            f"Average temperature of the last 365 days: "
-            f"{latest_average.iloc[0]:.3f} °C"
-        )
+    print(
+        f"ERA5 source date: {latest_era5_date:%Y-%m-%d}; "
+        f"Average temperature of the last 365 days: "
+        f"{latest_365_day_average:.3f} °C"
+    )
     print(f"Saved ERA5 365-day temperature plot to {output_plot}")
     plt.show()
     # output_plot = "temp/figure4_era5_temp_last_365_days.png"

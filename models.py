@@ -1358,4 +1358,30 @@ figure504_days_linear_fit = 30 # use 30 days for quadratic fit
 add a text-box for linear fit in green
 add a text-box for quadratic fit in purple
 
+update
+fig_504_era5_temp_last_365_days()
+add two variables and print in the boxes:
+temp504_2027_linear
+temp504_2027_quadratic
+
+temp504_2027_linear is the calculated temperature for 2026-12-31
+temp504_2027_quadratic is the calculated temperature for 2026-12-31
+
+update
+fig_504_era5_temp_last_365_days()
+make a pink band between 2027-01-01  2027-01-10
+add a red box in the upper middle:
+red_box = (
+        # f"ERA5 Temperature moving average over {figure505} days.\n"
+        f"{latest_era5_temp:.3f} °C     on    {latest_era5_date:%Y-%m-%d}        ERA5 data"
+        f"\n"
+        f"{temp_last_365_days:.3f} °C is the average temperature the last 365 days."
+        f"\n"
+        f"The red curve below is the {figure505} days moving average."
+    )
+
+
+
+
+
 """
