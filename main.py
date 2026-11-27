@@ -1,5 +1,5 @@
 # main.py
-v = "5P23" #ok  Average temperature of the last 1 day : 2.159 °C    1.259000 + 0.9 =  2.159000
+v = "5P25" #ok  Average temperature of the last 1 day : 2.159 °C    1.259000 + 0.9 =  2.159000
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26

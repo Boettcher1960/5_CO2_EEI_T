@@ -62,7 +62,7 @@ def convert_ceres_to_csv(input_file, output_file):
 ###########################################################################
 # figure504 = 4 # 1=create ERA5 trailing 365-day temperature figure
 # figure504_days_linear_fit = 50 # use 30 days for quadratic fit
-#
+#     figure504_days_linear_fit = 30
 # figure4_9 = 5 # write figure 9 and use the 48 month averaging
 ###########################################################################
 def fig_504_era5_temp_last_365_days():
@@ -266,12 +266,12 @@ def fig_504_era5_temp_last_365_days():
         f"{latest_365_day_average:.3f} °C is the average temperature "
         f"over the last 365 days."
         f"\n"
-        f"1.600°C was the global hottest year 2024. "
+        f"1.600°C was the globaly hottest year 2024. "
         f"\n"
         f"The red curve below is the 365-day moving average."
         f"\n"
         f"\n"
-        f"{temp_diff:.3f} °C are needed to make 2026 the warmest year."
+        f"{temp_diff:.3f} °C are needed to make 2026 warmer than 2024."
         #f"\n"
     )
     # 505.114 red box for overview
@@ -321,9 +321,10 @@ def fig_504_era5_temp_last_365_days():
     )
 
     ##########################################
-    # 505.130 purple box for quadratic_formula
+    # 505.130 purple box for quadratic_formula figure504_days_linear_fit = 30
     quadratic_formula = (
-        f"{temp504_2027_quadratic:.3f} °C temperature for 2026 with ERA5 data"
+        # f"{temp504_2027_quadratic:.3f} °C temperature for 2026 with ERA5 data"
+        f"{temp504_2027_quadratic:.3f} °C temperature with last {figure504_days_linear_fit} days analyzed."
         f"\n"
         # f"d = days since {latest_era5_date:%Y-%m-%d}\n"
         f"T = {quadratic_coefficients[0]:+.8f} × d² "
