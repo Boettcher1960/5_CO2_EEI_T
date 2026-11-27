@@ -55,6 +55,102 @@ def convert_ceres_to_csv(input_file, output_file):
     # end part 62.b convert download.txt to CERES.csv (no averaging)
 
 
+def fig_504_era5_temp_last_365_days():
+    """Plot the daily trailing 365-day ERA5 temperature average."""
+    source_url = (
+        "https://sites.ecmwf.int/data/climatepulse/data/series/"
+        "era5_daily_series_2t_global.csv"
+    )
+    output_plot = "temp/figure4_era5_temp_last_365_days.png"
+    tls_context = ssl.create_default_context(cafile=certifi.where())
+
+    with urlopen(source_url, context=tls_context, timeout=30) as response:
+        data = pd.read_csv(response, comment="#")
+
+    required_columns = {"date", "ano_91-20"}
+    missing_columns = required_columns.difference(data.columns)
+    if missing_columns:
+        raise ValueError(
+            "ERA5 source is missing required columns: "
+            f"{', '.join(sorted(missing_columns))}"
+        )
+
+    data = data.loc[:, ["date", "ano_91-20"]].copy()
+    data["date"] = pd.to_datetime(data["date"], errors="raise")
+    data["ano_91-20"] = pd.to_numeric(data["ano_91-20"], errors="raise")
+    data = (
+        data.dropna(subset=["date", "ano_91-20"])
+        .sort_values("date")
+        .drop_duplicates(subset="date", keep="last")
+        .reset_index(drop=True)
+    )
+    if len(data) < 365:
+        raise ValueError(
+            "ERA5 source must contain at least 365 valid daily records to "
+            f"calculate the trailing average; got {len(data)}"
+        )
+
+    data["temperature_average_365_days"] = (
+        data["ano_91-20"].rolling(window=365, min_periods=365).mean()
+        + figure505_offset
+    )
+    latest_era5_date = data["date"].max()
+    plot_start_date = latest_era5_date - pd.DateOffset(years=1)
+    plot_end_date = latest_era5_date + pd.Timedelta(days=135)
+    plot_data = data.loc[
+        data["date"].between(plot_start_date, latest_era5_date)
+        & data["temperature_average_365_days"].notna()
+    ]
+    if plot_data.empty:
+        raise ValueError(
+            "ERA5 source has no valid 365-day averages in the requested "
+            f"plot interval starting {plot_start_date:%Y-%m-%d}"
+        )
+
+    os.makedirs(os.path.dirname(output_plot), exist_ok=True)
+    fig, ax = plt.subplots(figsize=(13, 7))
+    ax.plot(
+        plot_data["date"],
+        plot_data["temperature_average_365_days"],
+        color="#b22222",
+        linewidth=2,
+        label="ERA5 trailing 365-day average",
+    )
+    ax.set_title(
+        "Figure 504: ERA5 trailing 365-day temperature average",
+        loc="left",
+    )
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Temperature (°C)")
+    ax.set_xlim(plot_start_date, plot_end_date)
+    ax.set_ylim(y_505min, y_505max)
+    ax.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m-%d"))
+    ax.yaxis.set_major_locator(MultipleLocator(0.5))
+    ax.yaxis.set_minor_locator(MultipleLocator(0.1))
+    ax.grid(True, which="major", alpha=0.3)
+    ax.grid(True, which="minor", axis="y", alpha=0.15)
+    ax.axvline(latest_era5_date, color="0.4", linestyle="--", linewidth=1)
+    ax.legend(loc="upper left")
+    fig.autofmt_xdate()
+    fig.tight_layout()
+    fig.savefig(output_plot, dpi=300, bbox_inches="tight")
+
+    latest_average = plot_data.loc[
+        plot_data["date"].eq(latest_era5_date),
+        "temperature_average_365_days",
+    ]
+    if not latest_average.empty:
+        print(
+            f"ERA5 source date: {latest_era5_date:%Y-%m-%d}; "
+            f"Average temperature of the last 365 days: "
+            f"{latest_average.iloc[0]:.3f} °C"
+        )
+    print(f"Saved ERA5 365-day temperature plot to {output_plot}")
+    plt.show()
+    # output_plot = "temp/figure4_era5_temp_last_365_days.png"
+    plt.close(fig)
+
 
 # 500.2 fig_505_era5_temp_quadratic
 #  figure505 = 1461 # 1461, 1095, 720, 365, 24  1826   # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
@@ -554,14 +650,16 @@ def fig_505_era5_temp_quadratic():
 
     # 500.200 x axis
     ax.set_xlabel("Year")
-     # 500.160 y axis
+    # 500.160 y axis
     ax.set_ylabel("Temperature (°C)")
-     # 500.170 
+    # 500.170 
     ax.set_xlim(
         pd.Timestamp(year=x_anf, month=1, day=1),
         pd.Timestamp(year=x_end, month=12, day=31),
     )
+    # 500.174 scale the y axis, as declared in config.py
     ax.set_ylim(y_505min, y_505max)
+    
     # 500.180 print legend inside the plot
     ax.yaxis.set_major_locator(MultipleLocator(0.5))
     ax.yaxis.set_minor_locator(MultipleLocator(0.1))

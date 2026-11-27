@@ -1,5 +1,5 @@
 # main.py
-v = "5P15" # https://thomas1960.substack.com/i/226687563/figure-5-era5-averaging-3-years
+v = "5P17" #output_plot = "temp/figure4_era5_temp_last_365_days.png"
 #
 # https://github.com/Boettcher1960/5_CO2_EEI_T
 # ocean stratification https://bsky.app/profile/thomas-boettcher.bsky.social/post/3mj7zx7fzsc26
@@ -322,6 +322,8 @@ def main():
         Figure_304()
     if figure404 > 1:    # one figure 400
         fig_404_eei_quadratic()
+    if figure504 > 0:   # one figure 504 ERA5 trailing 365-day temperature
+        fig_504_era5_temp_last_365_days()
     if figure505 > 1:    # one figure 5 era5 temperature
         fig_505_era5_temp_quadratic()
 

@@ -1325,4 +1325,28 @@ y_505min = 0 # manimum 0°C
 y_505max = 4 # maximum 4°C
 
 
+
+create a new figure 
+fig_504_era5_temp_last_365_days()
+
+x axis shall be the date, having 500 days.
+(X=1) starting date shall be latest_era5_date - 1 year = 2025-11-25
+(X=365) latest date shall be latest_era5_date = 2026-11-25
+(X=500) shall be latest_era5_date + 135 days
+
+y axis is scaled with ax.set_ylim(y_505min, y_505max)
+for X=365 the 2026-11-25 value "Average temperature of the last 365 days: 1.564 °C" shall be used.
+for X=364 the 2026-11-24 value "Average temperature of the last 365 days: 1.563 °C" shall be used.
+for X=363 the 2026-11-23 value "Average temperature of the last 365 days shall be used.
+for X=362 the 2026-11-22 value "Average temperature of the last 365 days shall be used.
+..
+for X=1 the 2025-11-25 value "Average temperature of the last 365 days shall be used.
+
+from the last printous:
+ERA5 source date: 2026-11-25
+Average temperature of the last 365 days: 1.564 °C
+ERA5 source date: 2026-11-24
+Average temperature of the last 365 days: 1.563 °C
+
+
 """
