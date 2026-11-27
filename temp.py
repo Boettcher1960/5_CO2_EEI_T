@@ -160,7 +160,10 @@ def fig_504_era5_temp_last_365_days():
     )
 
     os.makedirs(os.path.dirname(output_plot), exist_ok=True)
+
     fig, ax = plt.subplots(figsize=(13, 7))
+
+    # 505.55 a pink band for first days in 2027
     ax.axvspan(
         pd.Timestamp("2027-01-01"),
         pd.Timestamp("2027-01-10"),
@@ -168,6 +171,7 @@ def fig_504_era5_temp_last_365_days():
         alpha=0.25,
         zorder=0,
     )
+
     ax.plot(
         plot_data["date"],
         plot_data["temperature_average_365_days"],
@@ -175,6 +179,8 @@ def fig_504_era5_temp_last_365_days():
         linewidth=2,
         label="ERA5 trailing 365-day average",
     )
+
+
     ax.plot(
         fit_curve_dates,
         linear_fit_curve,
@@ -183,6 +189,8 @@ def fig_504_era5_temp_last_365_days():
         linewidth=2,
         label=f"Linear fit (last {figure504_days_linear_fit} days)",
     )
+
+
     ax.plot(
         fit_curve_dates,
         quadratic_fit_curve,
@@ -191,25 +199,11 @@ def fig_504_era5_temp_last_365_days():
         linewidth=2,
         label=f"Quadratic fit (last {figure504_days_linear_fit} days)",
     )
-    linear_formula = (
-        f"d = days since {latest_era5_date:%Y-%m-%d}\n"
-        f"T = {linear_coefficients[0]:+.6f} × d "
-        f"{linear_coefficients[1]:+.6f} °C\n"
-        f"Linear fit R² = {linear_r_squared:.4f}\n"
-        f"temp504_2027_linear ({target_date:%Y-%m-%d}) = "
-        f"{temp504_2027_linear:.3f} °C"
-    )
-    quadratic_formula = (
-        f"d = days since {latest_era5_date:%Y-%m-%d}\n"
-        f"T = {quadratic_coefficients[0]:+.8f} × d² "
-        f"{quadratic_coefficients[1]:+.6f} × d "
-        f"{quadratic_coefficients[2]:+.6f} °C\n"
-        f"Quadratic fit R² = {quadratic_r_squared:.4f}\n"
-        f"temp504_2027_quadratic ({target_date:%Y-%m-%d}) = "
-        f"{temp504_2027_quadratic:.3f} °C"
-    )
+
+
+
     ax.set_title(
-        "Figure 504: ERA5 trailing 365-day temperature average",
+        "Figure 504: ERA5 trailing 365-day temperature average {latest_era5_date:%Y-%m-%d}",
         loc="left",
     )
     latest_era5_temp = (
@@ -220,6 +214,9 @@ def fig_504_era5_temp_last_365_days():
         plot_data["date"].eq(latest_era5_date),
         "temperature_average_365_days",
     ].iloc[-1]
+
+    ##########################################
+    # 505.110 red box for overview
     red_box = (
         f"{latest_era5_temp:.3f} °C     on    "
         f"{latest_era5_date:%Y-%m-%d}        ERA5 data\n"
@@ -227,12 +224,13 @@ def fig_504_era5_temp_last_365_days():
         "over the last 365 days.\n"
         "The red curve below is the 365-day moving average."
     )
+     # 505.114 red box for overview
     ax.text(
-        0.5,
-        0.98,
+        0.35,
+        0.95,
         red_box,
         transform=ax.transAxes,
-        ha="center",
+        ha="left",
         va="top",
         color="red",
         bbox={
@@ -242,9 +240,24 @@ def fig_504_era5_temp_last_365_days():
             "boxstyle": "round,pad=0.4",
         },
     )
+
+    ##########################################
+    # 505.120 green box for linear_formula
+    linear_formula = (
+        f"Linear fit R² = {linear_r_squared:.4f} see green dotted curve"
+        f"\n"
+        f"T = {linear_coefficients[0]:+.6f} × d "
+        f"{linear_coefficients[1]:+.6f} °C"
+        f"\n"
+        f"d = days since {latest_era5_date:%Y-%m-%d}"
+        f"\n"
+        f"{temp504_2027_linear:.3f} °C"
+        f" is the linear forecast {target_date:%Y-%m-%d} "
+    )
+    # 505.124 green box for linear_formula
     ax.text(
-        0.02,
-        0.6,
+        0.7,
+        0.2,
         linear_formula,
         transform=ax.transAxes,
         va="top",
@@ -256,8 +269,25 @@ def fig_504_era5_temp_last_365_days():
             "boxstyle": "round,pad=0.4",
         },
     )
+
+    ##########################################
+    # 505.130 purple box for quadratic_formula
+    quadratic_formula = (
+        f"{temp504_2027_quadratic:.3f} °C temperature for 2026 with ERA5 data"
+        f"\n"
+        # f"d = days since {latest_era5_date:%Y-%m-%d}\n"
+        f"T = {quadratic_coefficients[0]:+.8f} × d² "
+        f"{quadratic_coefficients[1]:+.6f} × d "
+        f"{quadratic_coefficients[2]:+.6f} °C"
+        f"\n"
+        f"Quadratic fit R² = {quadratic_r_squared:.4f} see purple curve"
+        f"\n"
+        f"{temp504_2027_quadratic:.3f} °C"
+        f" is the quadratic forecast {target_date:%Y-%m-%d} "
+    )
+    # 505.134 purple box for quadratic_formula
     ax.text(
-        0.02,
+        0.35,
         0.80,
         quadratic_formula,
         transform=ax.transAxes,
@@ -270,6 +300,8 @@ def fig_504_era5_temp_last_365_days():
             "boxstyle": "round,pad=0.4",
         },
     )
+
+
     ax.set_xlabel("Date")
     ax.set_ylabel("Temperature (°C)")
     ax.set_xlim(plot_start_date, plot_end_date)
@@ -302,6 +334,9 @@ def fig_504_era5_temp_last_365_days():
     plt.show()
     # output_plot = "temp/figure4_era5_temp_last_365_days.png"
     plt.close(fig)
+
+
+
 
 
 # 500.2 fig_505_era5_temp_quadratic
