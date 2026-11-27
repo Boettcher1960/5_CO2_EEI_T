@@ -123,13 +123,20 @@ def fig_504_era5_temp_last_365_days():
     ax.set_xlabel("Date")
     ax.set_ylabel("Temperature (°C)")
     ax.set_xlim(plot_start_date, plot_end_date)
-    ax.set_ylim(y_505min, y_505max)
+    # 504.   scale the y axis
+    ax.set_ylim(y_504min, y_504max)
+
+    # 504.225 temperature band 1.5 to 2.0 °C
+    ax.axhspan(1.5, 1.6, color="#2196D19A", alpha=0.06, zorder=0)
+
     ax.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m-%d"))
-    ax.yaxis.set_major_locator(MultipleLocator(0.5))
-    ax.yaxis.set_minor_locator(MultipleLocator(0.1))
+    ax.yaxis.set_major_locator(MultipleLocator(0.05))
+    ax.yaxis.set_minor_locator(MultipleLocator(0.01))
+
     ax.grid(True, which="major", alpha=0.3)
     ax.grid(True, which="minor", axis="y", alpha=0.15)
+
     ax.axvline(latest_era5_date, color="0.4", linestyle="--", linewidth=1)
     ax.legend(loc="upper left")
     fig.autofmt_xdate()
