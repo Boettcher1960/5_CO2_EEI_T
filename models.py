@@ -1392,6 +1392,29 @@ wrong is    "Average temperature of the last 1 day : 2.242 °C" in fig_505_era5_
 
 
 
+update
+fig_505_era5_temp_quadratic
+Average temperature of the last  30 days: 2.015 °C is wrong.
+Average temperature of the last  30 days: 1.99 °C is correct.
 
+
+correct is  Average temperature of the last 1 day : 2.159 °C
+        1.259000 + 0.9 =  2.159000
+
+
+        
+1 day : 2.159 °C -add 0.91 instead of 0.9 =2.17 no bug Average temperature of the last   1 day : 2.169 °C
+30 days: 2.005 °C = 1.99 Jacobson 
+90 days: 1.838 °C = 1.79
+180 days: 1.709 °C = 1.64
+365 days: 1.564 °C =1.54 Jacobson        
+
+Last ERA5 source date: 2026-11-25
+
+Average temperature of the last  10 days: 2.124 °C
+Average temperature of the last  30 days: 2.015 °C
+Average temperature of the last  90 days: 1.848 °C
+Average temperature of the last 180 days: 1.719 °C
+Average temperature of the last 365 days: 1.574 °C
 
 """

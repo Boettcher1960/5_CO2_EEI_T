@@ -25,7 +25,7 @@ figure504 = 0 #   5  1=create ERA5 trailing 365-day temperature figure
 figure504_days_linear_fit = 350 # use 30 days for quadratic fit
 
 figure4_9 = 6 # write figure 9 and use the 48 month averaging
-figure505 = 30  # 1095 , 1461, 1095, 720, 365, 24  1826 3650  # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+figure505 = 1461  # 1095 , 1461, 1095, 720, 365, 24  1826 3650  # https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
 figure505_offset = 0.90 # 0.91 ClimateCasino 0.90 Zeke, Rahmstorf..Niko Freudsheim apply its 0.88 °C offset.
 figure505_days_linear_fit = 720 # 10 years 3652, 1461, 1095, 720, 365,   1826
 
